@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row w-100 mt-3 justify-content-center">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center border w-100 px-5 mb-5 con">
+        {{errors}}
+        <form action="{% url 'users:login' %}" method="post" class="w-100 d-flex flex-column">
+            {% csrf_token %}
+            <h4 class="reg text-center pt-5">Вход</h4>
+            <div class="d-lg-flex w-100 align-items-center mt-3">
+                <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">Эл.
+                    почта</label>
+                {{form.email}}
+            </div>
+            <small class="text-danger align-self-end">{{form.email.errors}}</small>
+            
+            <div class="d-lg-flex w-100 align-items-center mt-3">
+                <label for="id_password" class="mr-5 k"
+                    style="min-width: 135px; margin-right:34px!important;">Пароль</label>
+                {{form.password}}
+            </div>
+            <small class="text-danger align-self-end">{{form.password.errors}}</small>
+            <div class="d-flex w-100 align-items-center mt-5 justify-content-between mb-5">
+                <small><a href="{% url 'users:register' %}" class="k">Регистрация</a></small>
+                <button type="submit" class="sign-up text-white font-weight-bold k">Вход</button>
+                <small><a href="" class="k">Forgot password</a></small>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

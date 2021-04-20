@@ -1,0 +1,72 @@
+/* fonts */
+@font-face {
+font-family: 'Geometria';
+font-style: normal;
+font-weight: normal;
+src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-logo{
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 44px;
+    color: #00A1A8;
+}
+
+.k{
+    font-family: Geometria;
+}
+
+.nav-holder{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.text-size-15{
+    font-size: 15px;
+}
+
+.text-style-normal{
+    font-style: normal;
+}
+
+.consultation{
+    width: 142px;
+    height: 41px;
+    border: 1px solid #00A1A8;
+    box-sizing: border-box;
+}
+
+.reg{
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 38px;
+    color: #00A1A8;
+}
+
+.sign-up{
+    width: 220px;
+    height: 50px;
+    background: #00A1A8;
+    border-radius: 5px;
+    border: none;
+}
+
+.con{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.errorlist{
+    list-style-type: none;
+}
