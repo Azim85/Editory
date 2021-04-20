@@ -21,6 +21,14 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
     color: #00A1A8;
 }
 
+.main-border{
+    border-color: #00A1A8;
+}
+
+.main-color{
+    color: #00A1A8;
+}
+
 .k{
     font-family: Geometria;
 }

@@ -11,3 +11,11 @@ class HomeView(TemplateView):
         return context 
 
 
+class Research(TemplateView):
+    template_name = 'research_platform.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Research, self).get_context_data(**kwargs)
+        return context
+
+
