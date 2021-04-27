@@ -1,3 +1,25 @@
 .banner{
     height: 420px;
 }
+
+.main-font{
+    font-family: Geometria;
+}
+
+.link-color{
+    color: #E6A151;
+}
+
+.link-color:hover{
+    color: #E6A151;
+}
+
+@media only screen and (max-width: 600px) {
+  .adaptive{
+      width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

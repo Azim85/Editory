@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/scientific.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="wrapper container-fluid px-0">
+    <div class="main w-100" style="background-image: url({% static 'pages/images/photo_4.jpg' %});">
+        <h1>Scientific papers</h1>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="container pt-5 title ">
+            <p>Научная работа - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание
+            исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые
+            могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.
+            </p><p>Научная работа - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание
+            исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые
+            могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row top w-100 justify-content-center px-0 mx-0" style="background-image: url({% static 'pages/images/photo_5.jpg' %})">
+    <div class="row container w-100 pb-5">
+        <div class="col-md-6 mt-5 px-lg-4">
+            <div class="d-flex flex-column bg-white p-5  card">
+                <img src="{% static 'pages/images/photo_2.jpg' %}" alt="" style="width: 66px; height:66px">
+                <h4>Top international researchers' papers</h4>
+                <p>Собраны 5 крупнейших рисерчеров, которые внесли огромный вклад в развитие медицины в стране</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5 px-lg-4">
+            <div class="d-flex flex-column bg-white p-5  card">
+                <img src="{% static 'pages/images/photo_1.jpg' %}" alt="" style="width: 66px; height:66px">
+                <h4>Top international researchers' papers</h4>
+                <p>Собраны 5 крупнейших рисерчеров, которые внесли огромный вклад в развитие медицины в стране</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5 px-lg-4">
+            <div class="d-flex flex-column bg-white p-5 card">
+                <img src="{% static 'pages/images/photo_3.jpg' %}" alt="" style="width: 66px; height:66px">
+                <h4>Top international researchers' papers</h4>
+                <p>Собраны 5 крупнейших рисерчеров, которые внесли огромный вклад в развитие медицины в стране</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5 px-lg-4">
+            <div class="d-flex flex-column bg-white p-5  card">
+                <img src="{% static 'pages/images/photo_3.jpg' %}" alt="" style="width: 66px; height:66px">
+                <h4>Top international researchers' papers</h4>
+                <p>Собраны 5 крупнейших рисерчеров, которые внесли огромный вклад в развитие медицины в стране</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

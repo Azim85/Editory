@@ -19,3 +19,18 @@ class Research(TemplateView):
         return context
 
 
+class Research_intelligense(TemplateView):
+    template_name = 'research_intelligense.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Research_intelligense, self).get_context_data(**kwargs)
+        return context
+
+
+class Scientific(TemplateView):
+    template_name = 'scientific_papers.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Scientific, self).get_context_data(**kwargs)
+        return context
+

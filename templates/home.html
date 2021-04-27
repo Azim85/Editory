@@ -1,5 +1,137 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick-theme.css' %}"/>
 
+{% endblock %}
 {% block content %}
-    home page
+    <div class="container-xl home-header py-5 my-4">
+        <div class="row px-5">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="font-size-4">Служба академической корректуры</h1>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <p class="font-size-5">Публикуем статьи в международных журналах,
+                            проводим конференции, корректируем диссертации</p>
+                    </div>
+                    <div class="col-12 mt-6">
+                        <button class="btn btn-success rounded-0">
+                            Бесплатная консультация
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <img src="{% static "pages/images/typewriter 1.svg" %}" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+    <div class="container-xl mb-14r">
+        <div class="row px-5">
+            <div class="col-12">
+                <p class="font-size-6">
+                    Консалтинговая компания «Эдитори» -
+                    лидер в области библиометрии и науки.
+                    На протяжении шести лет Editory предоставляет научному сообществу уникальные и высококачественные
+                    посреднические научные и издательские услуги.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-xl my-5">
+        <h1 class="h-40p mb-5">Наши услуги</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="wrapper w-100 inline-block">
+                    <div class="slick1 slider">
+
+                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                            <div class="">
+                                <img src="{% static "pages/images/Group 170.png" %}" class="mb-4"/>
+                                <h3 class="mb-3">Исследовательские
+                                    проекты</h3>
+                                <p class="text-break">
+                                    Научные конференции являются особенным видом взаимодействия между представителями
+                                    исследовательского сообщества
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                            <div class="">
+                                <img src="{% static "pages/images/Group 170.png" %}"/>
+                                <h3 class="mb-3">Исследовательские
+                                    проекты</h3>
+                                <p class="text-break">
+                                    Научные конференции являются особенным видом взаимодействия между представителями
+                                    исследовательского сообщества
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                            <div class="">
+                                <img src="{% static "pages/images/Group 170.png" %}"/>
+                                <h3 class="mb-3">Исследовательские
+                                    проекты</h3>
+                                <p class="text-break">
+                                    Научные конференции являются особенным видом взаимодействия между представителями
+                                    исследовательского сообщества
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                            <div class="">
+                                <img src="{% static "pages/images/Group 170.png" %}"/>
+                                <h3 class="mb-3">Исследовательские
+                                    проекты</h3>
+                                <p class="text-break">
+                                    Научные конференции являются особенным видом взаимодействия между представителями
+                                    исследовательского сообщества
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}
+{% block js %}
+    <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+
+
+        $('.slick1').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 2,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+    </script>
+{% endblock %}
