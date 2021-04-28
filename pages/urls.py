@@ -7,6 +7,9 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('research/', Research.as_view(), name='research'),
     path('research/intelligense/', Research_intelligense.as_view(), name='research_intelligense'),
-    path('scientific-papers/', Scientific.as_view(), name='scientific-papers')
+    path('scientific-papers/', Scientific.as_view(), name='scientific-papers'),
+    path('article/', News.as_view(), name='article'),
+    path('top_researches/', TopResearches.as_view(), name='top-researches'),
+    path('webinars/', WebinarsView.as_view(), name='webinars'),
 
 ]

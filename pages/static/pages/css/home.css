@@ -1,4 +1,9 @@
-.btn-success{
+header {
+    width: 100%;
+    height: calc(100vh - 70px); /* Navbar heigth o'zgarsa px ham o'zgarishi kere */
+}
+
+.btn-success {
     background-color: #54B9BD;
     color: #fff;
     border-color: #54B9BD;
@@ -6,48 +11,141 @@
 }
 
 .btn-success:hover {
-  background-color: #54B9BD;
-  border-color: #54B9BD;
+    background-color: #54B9BD;
+    border-color: #54B9BD;
 }
 
-.font-size-4{
+.font-size-4 {
     font-size: 4rem !important;
     line-height: 4.313rem;
 }
 
-.font-size-5{
+.font-size-5 {
     font-size: 1.375rem;
     font-weight: 400;
     line-height: 1.688rem;
 }
 
-.font-size-6{
+.font-size-6 {
     font-size: 2.188rem;
     font-weight: 400;
     font-style: normal;
     line-height: 2.75rem;
+    color: #283E3F;
+
 }
 
 .mt-6 {
     margin-top: 4.125rem;
 }
 
-.mb-14r{
+.mb-14r {
     margin-bottom: 14rem;
 }
 
-.h-40p{
+.h-40p {
     font-size: 2.5rem;
     line-height: 2.933rem;
 }
 
-.shadow-slider{
+.h-45p {
+    font-size: 2.813rem;
+}
+
+.shadow-slider {
     box-shadow: 0px 5px 40px rgba(132, 132, 132, 0.15);
     border-radius: 10px;
 }
 
-.content-slider{
-    background: #0f6674;
+.content-slider {
+    background: #fff;
     width: 490px !important;
     height: 380px;
+}
+
+.content-slider:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.section-1 {
+    background: #F3F3F3;
+    width: 100%;
+    height: 488px;
+}
+
+.section-2 {
+    width: 100%;
+    height: 866.76px;
+    left: -4.08px;
+    top: 1351px;
+    background: #89C5C8;
+}
+
+.section-3 {
+    width: 100%;
+    height: 1800px;
+    background: #F3F3F3;
+}
+
+.text-light {
+    color: #737373 !important;
+}
+
+.buttons {
+    width: 100%;
+    height: 100px;
+}
+
+button.slick-prev.slick-arrow {
+    font-size: 5px;
+}
+
+.slick-prev:before, .slick-next:before {
+    background-color: #1d2124;
+}
+
+
+.slick-prev {
+    margin-right: 0;
+    position: relative !important;
+    offset-position: top;
+}
+
+.slick-next {
+    margin-right: 0;
+    position: relative !important;
+    float: right;
+
+}
+
+.rounded-20 {
+    border-radius: 20px;
+}
+
+.m-botton-188 {
+    margin-bottom: 188px !important;
+}
+
+/* responsive */
+
+@media (max-width: 600px) {
+    font-size-4 {
+        font-size: 1.5rem !important;
+        line-height: 2.313rem;
+    }
+
+    .font-size-5 {
+        font-size: 1.375rem;
+        font-weight: 400;
+        line-height: 1.688rem;
+    }
+
+    .font-size-6 {
+        font-size: 2.188rem;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2.75rem;
+        color: #283E3F;
+
+    }
 }

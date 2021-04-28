@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/researches.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+       <div class="row px-0 mx-0">
+           <div class="col">
+            <h1 class="title">Top researchers</h1>
+           </div>
+       </div>
+
+       <div class="row description mt-5">
+           <div class="col-lg-2 ">
+               <img src="{% static 'pages/images/frame.png' %}" alt="">
+           </div>
+           <div class="col-lg-8 pl-lg-5">
+               <h3 class="">Исследования головного мозга человека</h3>
+               <small>Эрик Берн</small>
+               <p>Разнообразный и богатый опыт рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций,
+            занимаемых участниками в отношении поставленных задач..........</p>
+           </div>
+       </div>
+
+        <div class="row description mt-5">
+            <div class="col-lg-2">
+                <img src="{% static 'pages/images/frame.png' %}" alt="">
+            </div>
+            <div class="col-lg-8 pl-lg-5">
+                <h3 class="">Исследования головного мозга человека</h3>
+                <small>Эрик Берн</small>
+                <p>Разнообразный и богатый опыт рамки и место обучения кадров позволяет выполнять важные задания по разработке
+                    позиций,
+                    занимаемых участниками в отношении поставленных задач.....</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -7,98 +7,189 @@
 
 {% endblock %}
 {% block content %}
-    <div class="container-xl home-header py-5 my-4">
-        <div class="row px-5">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="font-size-4">Служба академической корректуры</h1>
+    <header class="d-flex flex-column justify-content-center">
+        <div class="container-xl py-5">
+            <div class="row px-sm-5">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="font-size-4">Служба академической корректуры</h1>
+                        </div>
+                        <div class="col-12 mt-5">
+                            <p class="font-size-5">Публикуем статьи в международных журналах,
+                                проводим конференции, корректируем диссертации</p>
+                        </div>
+                        <div class="col-12 mt-6">
+                            <button class="btn btn-success rounded-0">
+                                Бесплатная консультация
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-12 mt-5">
-                        <p class="font-size-5">Публикуем статьи в международных журналах,
-                            проводим конференции, корректируем диссертации</p>
-                    </div>
-                    <div class="col-12 mt-6">
-                        <button class="btn btn-success rounded-0">
-                            Бесплатная консультация
-                        </button>
-                    </div>
+
                 </div>
-
-            </div>
-            <div class="col-6">
-                <img src="{% static "pages/images/typewriter 1.svg" %}" class="img-fluid"/>
-            </div>
-        </div>
-    </div>
-    <div class="container-xl mb-14r">
-        <div class="row px-5">
-            <div class="col-12">
-                <p class="font-size-6">
-                    Консалтинговая компания «Эдитори» -
-                    лидер в области библиометрии и науки.
-                    На протяжении шести лет Editory предоставляет научному сообществу уникальные и высококачественные
-                    посреднические научные и издательские услуги.
-                </p>
+                <div class="col-12 col-md-6">
+                    <img src="{% static "pages/images/typewriter 1.svg" %}" class="img-fluid"/>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-xl my-5">
-        <h1 class="h-40p mb-5">Наши услуги</h1>
-        <div class="row">
-            <div class="col-12">
-                <div class="wrapper w-100 inline-block">
-                    <div class="slick1 slider">
-
-                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
-                            <div class="">
-                                <img src="{% static "pages/images/Group 170.png" %}" class="mb-4"/>
-                                <h3 class="mb-3">Исследовательские
-                                    проекты</h3>
-                                <p class="text-break">
-                                    Научные конференции являются особенным видом взаимодействия между представителями
-                                    исследовательского сообщества
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
-                            <div class="">
-                                <img src="{% static "pages/images/Group 170.png" %}"/>
-                                <h3 class="mb-3">Исследовательские
-                                    проекты</h3>
-                                <p class="text-break">
-                                    Научные конференции являются особенным видом взаимодействия между представителями
-                                    исследовательского сообщества
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
-                            <div class="">
-                                <img src="{% static "pages/images/Group 170.png" %}"/>
-                                <h3 class="mb-3">Исследовательские
-                                    проекты</h3>
-                                <p class="text-break">
-                                    Научные конференции являются особенным видом взаимодействия между представителями
-                                    исследовательского сообщества
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
-                            <div class="">
-                                <img src="{% static "pages/images/Group 170.png" %}"/>
-                                <h3 class="mb-3">Исследовательские
-                                    проекты</h3>
-                                <p class="text-break">
-                                    Научные конференции являются особенным видом взаимодействия между представителями
-                                    исследовательского сообщества
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    </header>
+    <div class="section-1 d-flex flex-column justify-content-center">
+        <div class="container-xl">
+            <div class="row px-5">
+                <div class="col-12">
+                    <p class="font-size-6">
+                        Консалтинговая компания «Эдитори» -
+                        лидер в области библиометрии и науки.
+                        На протяжении шести лет Editory предоставляет научному сообществу уникальные и
+                        высококачественные
+                        посреднические научные и издательские услуги.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="section-2 d-flex flex-column justify-content-center">
+        <div class="container-xl">
+            <h1 class="h-40p mb-5 text-white">Наши услуги</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrapper w-100 inline-block">
+                        <div class="slick1 slider">
+
+                            <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                                <div class="">
+                                    <img src="{% static "pages/images/Group 170.png" %}" class="mb-4"/>
+                                    <h3 class="mb-3">Исследовательские
+                                        проекты</h3>
+                                    <p class="text-break text-light">
+                                        Научные конференции являются особенным видом взаимодействия между
+                                        представителями
+                                        исследовательского сообщества
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                                <div class="">
+                                    <img src="{% static "pages/images/Group 170.png" %}"/>
+                                    <h3 class="mb-3">Исследовательские
+                                        проекты</h3>
+                                    <p class="text-break text-light">
+                                        Научные конференции являются особенным видом взаимодействия между
+                                        представителями
+                                        исследовательского сообщества
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                                <div class="">
+                                    <img src="{% static "pages/images/Group 170.png" %}"/>
+                                    <h3 class="mb-3">Исследовательские
+                                        проекты</h3>
+                                    <p class="text-break text-light">
+                                        Научные конференции являются особенным видом взаимодействия между
+                                        представителями
+                                        исследовательского сообщества
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-slider pt-4 px-5 shadow-slider d-flex flex-column justify-content-center">
+                                <div class="">
+                                    <img src="{% static "pages/images/Group 170.png" %}"/>
+                                    <h3 class="mb-3">Исследовательские
+                                        проекты</h3>
+                                    <p class="text-break text-light">
+                                        Научные конференции являются особенным видом взаимодействия между
+                                        представителями
+                                        исследовательского сообщества
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-3 d-flex flex-column justify-content-around">
+        <div class="container-xl rounded-20 bg-white">
+            <div class="row p-5">
+                <div class="col-12 mb-5">
+                    <h1 class="h-45p mb-4">Партнеры и клиенты Editory</h1>
+                    <p class="">
+                        Консалтинговая компания «Эдитори» - лидер в области библиометрии и науки.
+                        На протяжении многих лет Editory предоставляет научному сообществу уникальные и
+                        высококачественные посреднические научные и издательские услуги.
+                    </p>
+                </div>
+                <div class="col-5">
+                    <img src="{% static 'pages/images/image 11.png' %}">
+                </div>
+                <div class="col-5 offset-2 d-flex flex-column justify-content-between">
+                    <h1>Национальная исламская академия Узбекистана</h1>
+                    <p>
+                        Вывели университет в QS Ranking за 12 месяцев. Провели 3 встречи для обсуждения важных моментов
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl">
+            <div class="row px-5 mb-5">
+                <h1 class="h-45p">Почему мы?</h1>
+            </div>
+            <div class="row px-5 mb-5 d-block d-md-flex m-botton-188">
+                <div class="col-5 d-flex justify-content-around align-items-center">
+                    <div class="img-icon mr-4">
+                        <img src="{% static 'pages/images/Group 174 (1).png' %}">
+                    </div>
+                    <div class="text-content">
+                        <h2>Репутация</h2>
+                        <p class="text-break text-light">
+                            Uzb National Uni - qs ranking,
+                            TMA Times higher education,
+                            TashPMI, International Islamic Academy, Economic, Finance
+                        </p>
+                    </div>
+                </div>
+                <div class="col-5 offset-2 d-flex justify-content-center align-items-center">
+                    <div class="img-icon mr-4">
+                        <img src="{% static 'pages/images/Group 171.png' %}" style="width: 130px;">
+                    </div>
+                    <div class="text-content">
+                        <h2>Командная работа</h2>
+                        <p class="text-break text-light">
+                            18 чел в команде – междунар эксперты.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-5 mt-5 d-block d-md-flex">
+                <div class="col-5 d-flex justify-content-around align-items-center">
+                    <div class="img-icon mr-4">
+                        <img src="{% static 'pages/images/Group 201.png' %}" style="width: 130px;">
+                    </div>
+                    <div class="text-content">
+                        <h2>Управление рисками</h2>
+                        <p class="text-break text-light">
+                            Знают что публиковать, что делать можно, что нельзя + подводные камни
+                        </p>
+                    </div>
+                </div>
+                <div class="col-5 offset-2 d-flex justify-content-center align-items-center">
+                    <div class="img-icon mr-4">
+                        <img src="{% static 'pages/images/Group 173.png' %}">
+                    </div>
+                    <div class="text-content">
+                        <h2>Скорость</h2>
+                        <p class="text-break text-light">
+                            Более 18 лет на рынке, бла-бла-бла
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock content %}
 {% block js %}

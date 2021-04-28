@@ -8,7 +8,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        return context 
+        return context
 
 
 class Research(TemplateView):
@@ -34,3 +34,26 @@ class Scientific(TemplateView):
         context = super(Scientific, self).get_context_data(**kwargs)
         return context
 
+
+class News(TemplateView):
+    template_name = 'article.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(News, self).get_context_data(**kwargs)
+        return context
+
+
+class TopResearches(TemplateView):
+    template_name = 'top_researches.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TopResearches, self).get_context_data(**kwargs)
+        return context
+
+
+class WebinarsView(TemplateView):
+    template_name = 'webinars.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(WebinarsView, self).get_context_data(**kwargs)
+        return context
