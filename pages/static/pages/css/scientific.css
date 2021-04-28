@@ -37,7 +37,6 @@
     margin-top: 50px;
     font-weight: bold;
     font-size: 22px;
-    white-space: nowrap;
 }
 
 .card p{
@@ -45,9 +44,21 @@
 }
 
 .main h1{
-    position:absolute;
-    left: 7.97%;
-    top: 350px;
+padding-top: 200px;
+    padding-left: 100px;
     font-weight: bolder;
     font-size: 55px;
 }
+
+@media screen and (max-width: 678px){
+
+.main h1{
+padding-top: 160px;
+    padding-left: 30px;
+
+}
+}
+/*.hashBir{*/
+/*    margin-top: 100px;*/
+/*}*/
+

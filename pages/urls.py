@@ -11,5 +11,6 @@ urlpatterns = [
     path('article/', News.as_view(), name='article'),
     path('top_researches/', TopResearches.as_view(), name='top-researches'),
     path('webinars/', WebinarsView.as_view(), name='webinars'),
+    path('news/', News.as_view(), name='webinars'),
 
 ]

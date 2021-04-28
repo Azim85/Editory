@@ -78,3 +78,42 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 .errorlist{
     list-style-type: none;
 }
+
+.main-font{
+    font-family: Geometria;
+}
+
+#showChild:hover #navChild{
+    display: block;
+}
+
+@media screen and (max-width: 568px) {
+    .dropdown-menu{
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (min-width: 568px) {
+    .navMe{
+        position: absolute;
+        top: 0px;
+        left: 280px;
+    }
+
+
+}
+
+
+/*.dropdown:hover > .dropdown-menu {*/
+/*  display: block;*/
+/*}*/
+
+/*.dropdown > .dropdown-toggle:active {*/
+/*  pointer-events: none;*/
+/*}*/
+
+.hidebutton{
+    display: none;
+}

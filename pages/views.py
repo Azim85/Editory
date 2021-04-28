@@ -57,3 +57,11 @@ class WebinarsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(WebinarsView, self).get_context_data(**kwargs)
         return context
+
+
+class News(TemplateView):
+    template_name = 'news.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(News, self).get_context_data(**kwargs)
+        return context

@@ -5,15 +5,12 @@
 .content1 h4{
     font-weight: bold;
     font-size: 45px;
-    line-height: 117.3%;
-    /* or 53px */
+
     color: #000000;
 }
 
 .content1 p{
-    /*font-family: Geometria;*/
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 18px;
     line-height: 23px;
     color: #000000;
@@ -36,9 +33,7 @@
 }
 
 .num h1{
-    font-family: Geometria;
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 70px;
     line-height: 88px;
     color: #00A1A8;
@@ -46,10 +41,14 @@
 
 .num p{
 
-    /*font-family: Geometria;*/
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 40px;
     line-height: 50px;
     color: #00A1A8;
+}
+
+@media screen and (max-width: 678px){
+    .elem{
+        width: 100%;
+}
 }

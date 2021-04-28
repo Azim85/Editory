@@ -87,6 +87,11 @@ header {
     background: #F3F3F3;
 }
 
+.section-4 {
+    width: 100%;
+    height: 600px;
+}
+
 .text-light {
     color: #737373 !important;
 }
@@ -129,23 +134,108 @@ button.slick-prev.slick-arrow {
 /* responsive */
 
 @media (max-width: 600px) {
-    font-size-4 {
-        font-size: 1.5rem !important;
-        line-height: 2.313rem;
-    }
-
     .font-size-5 {
-        font-size: 1.375rem;
+        font-size: 1.7rem;
         font-weight: 400;
         line-height: 1.688rem;
     }
 
     .font-size-6 {
-        font-size: 2.188rem;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 2.75rem;
-        color: #283E3F;
+        font-size: 1rem;
+        line-height: 1.75rem;
 
     }
+
+    .content-slider {
+        width: 270px !important;
+        height: 290px;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+
+    .content-slider div h3 {
+        font-size: 1.2rem;
+    }
+
+    .text-small {
+        font-size: .8rem;
+    }
+
+    .section-3 {
+        height: 2600px;
+    }
+
+    .section-4 {
+        height: 800px;
+    }
+
+    .rounded-20 {
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.42);
+    }
 }
+
+@media (max-width: 388px) {
+    .font-size-5 {
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.688rem;
+    }
+
+    .mt-6 {
+        margin-top: 2.125rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .text-small {
+        font-size: .8rem;
+    }
+
+    .section-2 {
+        height: 601.76px;
+    }
+
+    .section-3 {
+        height: 2500px;
+    }
+
+    .h-45p {
+        font-size: 2rem;
+    }
+
+    .m-botton-188 {
+        margin-bottom: 88px !important;
+    }
+
+    .btn-link {
+        font-size: 1rem !important;
+    }
+
+}
+
+/* bootstrap styles */
+
+.btn-link {
+    font-size: 25px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #00A1A8;
+    text-decoration: none;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}
+
+.btn-link:disabled, .btn-link.disabled {
+    color: #00A1A8;
+    pointer-events: none;
+}
+
+
