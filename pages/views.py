@@ -35,11 +35,11 @@ class Scientific(TemplateView):
         return context
 
 
-class News(TemplateView):
+class Articles(TemplateView):
     template_name = 'article.html'
 
     def get_context_data(self, **kwargs):
-        context = super(News, self).get_context_data(**kwargs)
+        context = super(Articles, self).get_context_data(**kwargs)
         return context
 
 
@@ -64,4 +64,12 @@ class News(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(News, self).get_context_data(**kwargs)
+        return context
+
+
+class About_us(TemplateView):
+    template_name = 'about_us.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(About_us, self).get_context_data(**kwargs)
         return context

@@ -2,56 +2,169 @@
 {% load static %}
 
 {% block css %}
-
+    <link rel="stylesheet" href="{% static 'pages/css/news.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row my-5">
-            <div class="col-lg-8 align-text-bottom mb-5" >
-                <div class="d-flex flex-column justify-content-end" style="background-image: url({% static 'pages/images/Rectangle 37.png' %}); height: 100%;">
-                    <div>БИОЛОГИЯ</div>
-                    <h4>Ученый получил вторую нобелевскую за диссертацию</h4>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="border">
-                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">
-                    <div class="pl-4 pt-4 pb-5 pr-5">
-                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>
-                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="border">
-                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">
-                    <div class="pl-4 pt-4 pb-5 pr-5">
-                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>
-                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="border">
-                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">
-                    <div class="pl-4 pt-4 pb-5 pr-5">
-                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>
-                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="border">
-                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">
-                    <div class="pl-4 pt-4 pb-5 pr-5">
-                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>
-                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>
-                    </div>
-                </div>
-            </div>
+{#    <div class="container">#}
+{#        <div class="row my-5">#}
+{#            <div class="col-lg-8 align-text-bottom mb-5" >#}
+{#                <div class="d-flex flex-column justify-content-end" style="background-image: url({% static 'pages/images/Rectangle 37.png' %}); height: 100%;">#}
+{#                    <div>БИОЛОГИЯ</div>#}
+{#                    <h4>Ученый получил вторую нобелевскую за диссертацию</h4>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4 mb-5">#}
+{#                <div class="border shadowMe">#}
+{#                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">#}
+{#                    <div class="pl-4 pt-4 pb-5 pr-5">#}
+{#                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>#}
+{#                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4 mb-5">#}
+{#                <div class="border">#}
+{#                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">#}
+{#                    <div class="pl-4 pt-4 pb-5 pr-5">#}
+{#                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>#}
+{#                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4 mb-5">#}
+{#                <div class="border">#}
+{#                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">#}
+{#                    <div class="pl-4 pt-4 pb-5 pr-5">#}
+{#                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>#}
+{#                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4 mb-5">#}
+{#                <div class="border">#}
+{#                    <img class="img-fluid" src="{% static 'pages/images/Rectangle 62.png' %}">#}
+{#                    <div class="pl-4 pt-4 pb-5 pr-5">#}
+{#                        <h6 class="main-color font-weight-bold pb-2" style="font-size: smaller">БИОЛОГИЯ</h6>#}
+{#                        <div class="h5 font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <h1 class="font-weight-bold">На этой неделе</h1>#}
+{#        <div class="row my-5">#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#        </div>#}
+{#    <div class="row my-5">#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>#}
+{#                <div class="small text-secondary">22 сентября</div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{##}
+{#        <div class="row">#}
+{##}
+{#            <div class="col-lg-6 align-text-bottom mb-5" >#}
+{#                <div class="d-flex flex-column justify-content-end paddingMe" style="background-image: url({% static 'pages/images/Rectangle 67.png' %}); height: 100%;">#}
+{#                    <div>БИОЛОГИЯ</div>#}
+{#                    <h4>Ученый получил вторую нобелевскую за диссертацию</h4>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-6 align-text-bottom mb-5" >#}
+{#                <div class="d-flex flex-column justify-content-end" style="background-image: url({% static 'pages/images/Rectangle 67.png' %}); height: 100%;">#}
+{#                    <div>БИОЛОГИЯ</div>#}
+{#                    <h4>Ученый получил вторую нобелевскую за диссертацию</h4>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+
+
+    <section class="container news-card mt-5 pt-2 ">
+    <div class="row">
+      <div class="col-lg-8 pb-4 mb-2">
+        <div class="position-relative">
+          <img class="img-fluid" src="{% static 'pages/images/news-37.png' %}" alt="" srcset="">
+          <div class="card-text-absolute">
+            <p style="color: #fff;">БИОЛОГИЯ</p>
+            <h2 class="font-weight-bold">Ученый получил вторую нобелевскую за диссертацию</h2>
+          </div>
         </div>
-        <h1 class="font-weight-bold">На этой неделе</h1>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 pb-4 mb-2">
+        <div>
+          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">
+          <div class="card-text p-4 m-1">
+            <p style="font-size: 13px; color: #15C0C7;">
+              БИОЛОГИЯ
+            </p>
+            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 pb-4 mb-2">
+        <div>
+          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">
+          <div class="card-text p-4 m-1">
+            <p style="font-size: 13px; color: #15C0C7;">
+              БИОЛОГИЯ
+            </p>
+            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 pb-4 mb-2">
+        <div>
+          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %} " alt="" srcset="">
+          <div class="card-text p-4 m-1">
+            <p style="font-size: 13px; color: #15C0C7;">
+              БИОЛОГИЯ
+            </p>
+            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 pb-4 mb-2">
+        <div>
+          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">
+          <div class="card-text p-4 m-1">
+            <p style="font-size: 13px; color: #15C0C7;">
+              БИОЛОГИЯ
+            </p>
+            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class=" container">
+     <h1 class="font-weight-bold">На этой неделе</h1>
         <div class="row my-5">
             <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
@@ -80,6 +193,87 @@
                 <div class="small text-secondary">22 сентября</div>
             </div>
         </div>
+  </section>
 
+  <section class="duble-card container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <img class="img-fluid" src="{% static 'pages/images/news-67.png' %}" alt="" srcset="">
+          <div class="card-text-absolute-min">
+            <p style="color: #fff;">БИОЛОГИЯ</p>
+            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <img class="img-fluid" src="{% static 'pages/images/news-67.png' %}" alt="" srcset="">
+          <div class="card-text-absolute-min">
+            <p style="color: #fff;">БИОЛОГИЯ</p>
+            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="section4 container">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-between mb-4 pb-2">
+        <h2>Ученый из Великобритании получил вторую нобелевскую
+          за диссертацию</h2>
+        <div>22 сентября</div>
+      </div>
+      <div class="col-lg-6 ">
+        <div class="row">
+          <div class="col-sm-6 mb-4 pb-2">
+            <h4>Ученый получил Нобелевскую за диссертацию</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+          </div>
+          <div class="col-sm-6 mb-4 pb-2">
+            <h4>Ученый получил Нобелевскую за диссертацию</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+          </div>
+          <div class="col-sm-6 mb-4 pb-2">
+            <h4>Ученый получил Нобелевскую за диссертацию</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+          </div>
+          <div class="col-sm-6 mb-4 pb-2">
+            <h4>Ученый получил Нобелевскую за диссертацию</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="last-section container">
+    <div class="row news-card">
+      <div class="col-lg-8 pb-4 mb-2">
+        <div class="position-relative">
+          <img class="img-fluid" src="{% static 'pages/images/news-37.png' %}" alt="" srcset="">
+          <div class="card-text-absolute">
+            <p style="color: #fff;">БИОЛОГИЯ</p>
+            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 pb-4 mb-2">
+        <div>
+          <img class="img-fluid" src="{% static 'pages/images/news-37.png' %}" alt="" srcset="">
+          <div class="card-text p-4 m-1">
+            <p style="font-size: 13px; color: #15C0C7;">
+              БИОЛОГИЯ
+            </p>
+            <h4 class="">Ученый получил вторую Нобелевскую за диссертацию</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
 {% endblock %}

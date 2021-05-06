@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
     <header class="d-flex flex-column justify-content-center my-2 mt-sm-0">
-        <div class="container-xl py-sm-5">
+        <div class="container py-sm-5">
             <div class="row px-sm-5">
                 <div class="col-12 col-md-6">
                     <div class="row">
@@ -35,7 +35,7 @@
         </div>
     </header>
     <div class="section-1 d-flex flex-column justify-content-center">
-        <div class="container-xl">
+        <div class="container">
             <div class="row px-md-5">
                 <div class="col-12">
                     <p class="font-size-6">
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="section-2 d-flex flex-column justify-content-center">
-        <div class="container-xl">
+        <div class="container">
             <h1 class="h-40p mb-5 text-white">Наши услуги</h1>
             <div class="row">
                 <div class="col-12">
@@ -112,7 +112,7 @@
         </div>
     </div>
     <div class="section-3 d-flex flex-column justify-content-around">
-        <div class="container-xl rounded-20 bg-white">
+        <div class="container rounded-20 bg-white">
             <div class="row py-5 p-md-5">
                 <div class="col-12 mb-5">
                     <h1 class="h-45p mb-4">Партнеры и клиенты Editory</h1>
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-xl">
+        <div class="container">
             <div class="row px-3 px-md-5 mb-5">
                 <h1 class="h-45p">Почему мы?</h1>
             </div>
@@ -190,8 +190,8 @@
             </div>
         </div>
     </div>
-    <div class="section-4 d-flex flex-column justify-content-center">
-        <div class="container-xl">
+    <div class="section-4 d-flex flex-column justify-content-center ">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-md-5">
                     <h1 class="h-45p">
@@ -200,52 +200,57 @@
                 </div>
                 <div class="col-12 col-md-7 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
+                        <div class="card border-0">
+                            <div class="card-header border-0 bg-white" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left btn-toggle" type="button"
+                                    <div class="btn btn-link btn-block text-left btn-toggle justify-content-between d-flex button-main" type="button"
                                             data-toggle="collapse" data-target="#collapseOne">
-                                        Сколько стоит публикация в международных журналах? <i
+                                        <div>Сколько стоит публикация в международных журналах?</div> <i
                                             class="bi bi-chevron-down"></i>
-                                    </button>
+                                    </div>
                                 </h2>
                             </div>
-
                             <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Зависит от сложности и срока подачи заявки. От 500 до 900$
+                                    <p class="pl-3">Зависит от сложности и срока подачи заявки. От 500 до 900$</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
+                        <div  class="d-flex w-100 justify-content-center">
+                        <hr class="" style="width: 93%; background-color: #00A1A8;">
+                            </div>
+                        <div class="card border-0">
+                            <div class="card-header border-0 bg-white" id="headingTwo">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left collapsed btn-toggle" type="button"
+                                    <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex" type="button"
                                             data-toggle="collapse" data-target="#collapseTwo">
-                                        Что если узнают, что диссертацию писал не я? <i class="bi bi-chevron-down"></i>
-                                    </button>
+                                        <div>Что если узнают, что диссертацию писал не я?</div> <i class="bi bi-chevron-down"></i>
+                                    </div>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    Some placeholder content for the second accordion panel. This panel is hidden by
-                                    default.
+                                <div class="card-body border-0">
+                                    <p class="pl-3">Some placeholder content for the second accordion panel. This panel is hidden by
+                                        default.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
+                        <div  class="d-flex w-100 justify-content-center">
+                        <hr class="" style="width: 93%; background-color: #00A1A8;">
+                            </div>
+                        <div class="card border-0">
+                            <div class="card-header border-0 bg-white" id="headingThree">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left collapsed btn-toggle" type="button"
+                                    <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex" type="button"
                                             data-toggle="collapse" data-target="#collapseThree">
-                                        Что если узнают, что диссертацию писал не я? <i class="bi bi-chevron-down"></i>
-                                    </button>
+                                        <div>Что если узнают, что диссертацию писал не я?</div> <i class="bi bi-chevron-down"></i>
+                                    </div>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    And lastly, the placeholder content for the third and final accordion panel. This
-                                    panel is hidden by default.
+                                    <p class="pl-3">And lastly, the placeholder content for the third and final accordion panel. This
+                                        panel is hidden by default.</p>
                                 </div>
                             </div>
                         </div>
@@ -276,16 +281,17 @@
                     settings: {
                         arrows: false,
                         centerMode: true,
-                        centerPadding: '95px',
+                        centerPadding: '0px',
                         slidesToShow: 1
                     }
-                },
+                }
+                ,
                 {
                     breakpoint: 480,
                     settings: {
                         arrows: false,
                         centerMode: true,
-                        centerPadding: '8px',
+                        centerPadding: '0px',
                         slidesToShow: 1
                     }
                 }

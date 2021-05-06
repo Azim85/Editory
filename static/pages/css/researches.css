@@ -1,0 +1,36 @@
+.title{
+    /*font-family: Geometria;*/
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 117.3%;
+    margin-top: 69px;
+}
+
+.description{
+    background: #F9F9F9;
+    padding-top: 43px;
+    padding-left: 51px;
+    padding-bottom: 43px;
+}
+
+.description h3{
+    /*font-family: Geometria;*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 117.3%;
+    /* or 29px */
+    color: #2B2A29;
+    width: 60%;
+}
+
+.description p{
+    /*font-family: Geometria;*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 42px;
+    color: #8A8A8A;
+}

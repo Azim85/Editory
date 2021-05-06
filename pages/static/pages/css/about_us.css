@@ -1,0 +1,19 @@
+.shadow_me{
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #0000001A;
+}
+
+
+button{
+    /*display: none !important;*/
+}
+
+
+
+
+div.slick-track{
+    width: 100px;
+}
+.slick-prev, .slick-next{
+    display: none !important;
+}

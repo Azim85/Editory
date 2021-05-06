@@ -1,4 +1,4 @@
-<div class="container p-0" style="z-index: 10000">
+<div class="container py-1" style="z-index: 10000; font-size: 18px !important;">
     <nav class="navbar navbar-expand-lg p-0 py-1">
         <a class="navbar-brand nav-logo k" href="{% url 'pages:home' %}">editory</a>
         <button class="navbar-toggler main-border" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -8,20 +8,20 @@
         <div class="collapse navbar-collapse font-weight-bold" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link ml-3 k text-dark text-size-15 text-style-normal" href="#">О нас</a>
+                    <a class="nav-link ml-3 k text-dark  text-style-normal" href="#">О нас</a>
                 </li>
                 <li class="nav-item ml-3">
-                    <a class="nav-link k text-dark text-size-15" href="#">Новости</a>
+                    <a class="nav-link k text-dark " href="#">Новости</a>
                 </li>
 
                  <li class="nav-item dropdown">
-                     <a class="nav-link pl-3 dropdown-toggle text-dark text-size-15" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Продукты/материалы
                      </a>
 
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                         <a class="dropdown-item font-weight-bold text-dark text-size-15 dropright"  id="showChild" role="button" data-toggle="dropdown" >Исследовательские платформы</a>
+                         <a class="dropdown-item font-weight-bold text-dark  dropright"  id="showChild" role="button" data-toggle="dropdown" >Исследовательские платформы</a>
 
                          <div id="navChild" class="hidebutton">
                                 <div class="navMe  border bg-white d-flex py-1 flex-column  rounded" >
@@ -33,32 +33,32 @@
                                 </div>
                          </div>
 
-                        <a class="dropdown-item font-weight-bold text-dark text-size-15" href="#">Research intelligence</a>
-                        <a class="dropdown-item font-weight-bold text-dark text-size-15" href="#">Образование</a>
+                        <a class="dropdown-item font-weight-bold text-dark " href="#">Research intelligence</a>
+                        <a class="dropdown-item font-weight-bold text-dark " href="#">Образование</a>
                     </div>
                 </li>
                 <li class="nav-item ml-3">
-                    <a class="nav-link k text-dark text-size-15" href="#">Услуги</a>
+                    <a class="nav-link k text-dark " href="#">Услуги</a>
                 </li>
                 <li class="nav-item ml-3">
-                    <a class="nav-link k text-dark text-size-15" href="#">Discover&Shop</a>
+                    <a class="nav-link k text-dark " href="#">Discover&Shop</a>
                 </li>
                 <li class="nav-item ml-3">
-                    <a class="nav-link k text-dark text-size-15" href="#">Контакты</a>
+                    <a class="nav-link k text-dark " href="#">Контакты</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item ml-3 text-center">
-                    <a class="nav-link k text-dark text-size-15 consultation" href="#">Консультация</a>
+                    <a class="nav-link k text-dark  consultation" href="#">Консультация</a>
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item ml-3 d-flex align-items-center">
-                        <a class="nav-link k text-dark text-size-15" href="{% url 'users:logout' %}"><i
+                        <a class="nav-link k text-dark " href="{% url 'users:logout' %}"><i
                                 class="bi bi-box-arrow-right"></i></a>
                     </li>
                 {% else %}
                     <li class="nav-item ml-3 d-flex align-items-center">
-                        <a class="nav-link k text-dark text-size-15" href="{% url 'users:login' %}"><i
+                        <a class="nav-link k text-dark " href="{% url 'users:login' %}"><i
                                 class="bi bi-person"
                                 style="font-size: 24px;"></i></a>
                     </li>

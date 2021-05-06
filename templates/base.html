@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="{% static 'pages/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'pages/bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/fonts/stylesheet.css' %}">
     {% block css %}{% endblock %}
 </head>
 
-<body class="main-font">
+<body class="main-font" style="font-size: 18px">
 
     <div class="container-fluid nav-holder w-100">
         {% include 'components/navbar.html' %}
@@ -22,7 +23,7 @@
 
     {% block content %}{% endblock content %}
 
-    <div style="background-color: #F8F8F8" >
+    <div>
         {% include 'components/footer.html' %}
     </div>
 
