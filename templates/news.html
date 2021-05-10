@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
     <section class="container news-card mt-5 pt-2 ">
     <div class="row">
       <div class="col-lg-8 pb-4 mb-2">
@@ -18,10 +17,11 @@
           </div>
         </div>
       </div>
+      
         {% for topic in top_4 %}
       <div class="col-lg-4 col-sm-6 pb-4 mb-2">
         <div>
-          <img src="{{ topic.main_image.url }}" alt="" width="100%" height="200px">
+          <img class="img-fluid" src="{{ topic.main_image.url }}" alt="" width="100%" height="200px">
           <div class="card-text p-4 m-1">
             <p style="font-size: 13px; color: #15C0C7;">
               {{ topic.material_name }}
@@ -72,20 +72,22 @@
   <section class=" container">
      <h1 class="font-weight-bold">На этой неделе</h1>
         <div class="row my-5">
-            <div class="col-lg-4">
+          {% for topic in last_week %}
+            <div class="col-lg-4 mb-3">
+                <p class="font-weight-bold">{{topic.title}}</p>
+                <div class="small text-secondary">{{topic.created_at|date:'d M'}}</div>
+            </div>
+          {% endfor %}
+            <!-- <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>
             </div>
             <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>
-            </div>
-            <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div>
+            </div> -->
         </div>
-    <div class="row my-5">
+    <!-- <div class="row my-5">
             <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>
@@ -98,57 +100,80 @@
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>
             </div>
-        </div>
+        </div> -->
   </section>
-
+  
+  
   <section class="duble-card container">
     <div class="row">
+      
+    {% if top_8.0 %}
       <div class="col-lg-6">
         <div class="position-relative">
-          <img class="img-fluid" src="{% static 'pages/images/news-67.png' %}" alt="" srcset="">
+          <img src="{{top_8.0.main_image.url}}" alt="" style="width: 100%; height:360px" >
           <div class="card-text-absolute-min">
-            <p style="color: #fff;">БИОЛОГИЯ</p>
-            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+            <p style="color: #fff;">{{top_8.0.material_name}}</p>
+            <h2>{{top_8.0.title}}</h2>
           </div>
         </div>
       </div>
+    {% endif %}  
+
+    {% if top_8.1 %}
       <div class="col-lg-6">
         <div class="position-relative">
-          <img class="img-fluid" src="{% static 'pages/images/news-67.png' %}" alt="" srcset="">
+          <img src="{{top_8.1.main_image.url}}" alt="" style="width: 100%; height:360px">
           <div class="card-text-absolute-min">
-            <p style="color: #fff;">БИОЛОГИЯ</p>
-            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+            <p style="color: #fff;">{{top_8.1.material_name}}</p>
+            <h2>{{top_8.1.title}}</h2>
           </div>
         </div>
       </div>
+    {% endif %}  
+
     </div>
   </section>
 
   <section class="section4 container">
     <div class="row">
+      
+      {% if top_8.2 %}
       <div class="col-lg-6 d-flex flex-column justify-content-between mb-4 pb-2">
-        <h2>Ученый из Великобритании получил вторую нобелевскую
-          за диссертацию</h2>
-        <div>22 сентября</div>
+        <h2 >{{top_8.2.title}}</h2>
+        <div>{{top_8.2.created_at|date:'d M'}}</div>
       </div>
+      {% endif %}
+
       <div class="col-lg-6 ">
         <div class="row">
+
+          {% if top_8.3 %}
           <div class="col-sm-6 mb-4 pb-2">
-            <h4>Ученый получил Нобелевскую за диссертацию</h4>
-            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+            <h4>{{top_8.3.title}}</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.3.created_at|date:'d M'}}</h5>
           </div>
+          {% endif %}
+
+          {% if top_8.4 %}
           <div class="col-sm-6 mb-4 pb-2">
-            <h4>Ученый получил Нобелевскую за диссертацию</h4>
-            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+            <h4>{{top_8.4.title}}</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.3.created_at|date:'d M'}}</h5>
           </div>
+          {% endif %}
+
+          {% if top_8.5 %}
           <div class="col-sm-6 mb-4 pb-2">
-            <h4>Ученый получил Нобелевскую за диссертацию</h4>
-            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+            <h4>{{top_8.5.title}}</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.5.created_at|date:'d M'}}</h5>
           </div>
+          {% endif %}
+
+          {% if top_8.6 %}
           <div class="col-sm-6 mb-4 pb-2">
-            <h4>Ученый получил Нобелевскую за диссертацию</h4>
-            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">22 сентября</h5>
+            <h4>{{top_8.6.title}}</h4>
+            <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.6.created_at|date:'d M'}}</h5>
           </div>
+          {% endif %}
 
         </div>
       </div>
@@ -157,27 +182,31 @@
 
   <section class="last-section container">
     <div class="row news-card">
+      {% if top_8.7 %}
       <div class="col-lg-8 pb-4 mb-2">
         <div class="position-relative">
-          <img class="img-fluid" src="{% static 'pages/images/news-37.png' %}" alt="" srcset="">
+          <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset="">
           <div class="card-text-absolute">
-            <p style="color: #fff;">БИОЛОГИЯ</p>
-            <h2>Ученый получил вторую нобелевскую за диссертацию</h2>
+            <p style="color: #fff;">{{top_8.7.title}}</p>
+            <h2>{{top_8.7.title}}</h2>
           </div>
         </div>
       </div>
+      {% endif %}
 
+      {% if top_8.8 %}
       <div class="col-lg-4 col-md-6 pb-4 mb-2">
         <div>
-          <img class="img-fluid" src="{% static 'pages/images/news-37.png' %}" alt="" srcset="">
+          <img src="{{ top_8.8.main_image.url }}" alt="" width="100%" height="200px">
           <div class="card-text p-4 m-1">
             <p style="font-size: 13px; color: #15C0C7;">
-              БИОЛОГИЯ
+              {{top_8.8.material_name}}
             </p>
-            <h4 class="">Ученый получил вторую Нобелевскую за диссертацию</h4>
+            <h4 class="">{{top_8.8.title}}</h4>
           </div>
         </div>
       </div>
+      {% endif %}
     </div>
 
   </section>

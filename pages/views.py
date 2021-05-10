@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import random
-from datetime import datetime, timedelta
+import datetime
 from django.views.generic import TemplateView, View
 from .models import Topic
 
@@ -27,16 +27,22 @@ class News(TemplateView):
 
     def get_context_data(self, **kwargs):
         random_topic = []
-        k = []
+        last_week = []
+        k = datetime.datetime.today() - datetime.timedelta(days=7)
         for i in Topic.objects.all():
             random_topic.append(i)
-            if timedelta(hours=i.created_at) > timedelta(hours=-168):
-                k.append(i)
+            if (k.month == i.created_at.month and k.year == i.created_at.year) and k.day < i.created_at.day:
+                last_week.append(i)
+            print(k.day)
+            print(i.created_at.day)
+        
+        top_8 = Topic.objects.order_by('-created_at')[:9]
 
         context = super(News, self).get_context_data(**kwargs)
         context['top_4'] = Topic.objects.order_by('-created_at')[:4]
         context['random_topic'] = random.choice(random_topic)
-        print(k)
+        context['last_week'] = last_week[:6]
+        context['top_8'] = top_8
         return context
 
 
