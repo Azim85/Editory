@@ -26,7 +26,7 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 }
 
 .main-background{
-    background-color: #62C7CB;
+    background-color: #00A1A8;
 }
 
 .main-color{
