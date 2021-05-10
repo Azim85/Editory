@@ -4,27 +4,27 @@
     <link rel="stylesheet" href="{% static 'pages/css/scientific.css' %}">
 {% endblock %}
 {% block content %}
-
-
-    <div class="wrapper container-fluid px-0">
-    <div class="main w-100" style="background-image: url({% static 'pages/images/photo_4.jpg' %});">
-        <h1 class="hashBir">Scientific papers</h1>
-    </div>
+<div class="bg-me">
     <div class="container">
-    <div class="row p-5 justify-content-start">
-        <div class="col-lg-9 my-3">
-            <p>Научная работа - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание
-            исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые
-            могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.
-            </p><p>Научная работа - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание
-            исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые
-            могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</p>
+        <div class="row py-5">
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="">
+                    <div class="h1 ">Scientific papers</div>
+                <div>Научная работа - это успешный инструмент для междисциплинарных исследовательских
+                    проектов сотрудничества. Создание исследовательских платформ инициируется учеными и
+                    исследовательскими группами различных дисциплин и факультетов, которые могут подавать
+                    свои заявки в ходе конкурса заявок. </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <img  src="{% static 'pages/images/scientific paper 1.png' %}">
+            </div>
         </div>
     </div>
-        </div>
-</div>
 
-<div class="row top w-100 justify-content-center px-0 mx-0" style="background-image: url({% static 'pages/images/photo_5.jpg' %})">
+
+
+<div class="row top w-100 justify-content-center px-0 mx-0">
     <div class="row container w-100 pb-5">
         <div class="col-md-6 mt-5 px-lg-4">
             <div class="d-flex flex-column bg-white p-5  card">
@@ -56,5 +56,5 @@
         </div>
     </div>
 </div>
-
+</div>
 {% endblock content %}
