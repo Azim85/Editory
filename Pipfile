@@ -7,6 +7,7 @@ name = "pypi"
 django = "==3.2.2"
 pillow = "*"
 django-ckeditor = "*"
+gunicorn = "*"
 
 [dev-packages]
 
