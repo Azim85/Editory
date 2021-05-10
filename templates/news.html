@@ -11,9 +11,11 @@
     <div class="row">
       {% if random_topic %}
         <div class="col-lg-8 pb-4 mb-2">
-            <div class="position-relative">
+            <div class="position-relative" style="width: 100%; height:424px; border-radius:10px">
               <a href="{{random_topic.get_absolute_url}}" class="text-dark text-decoration-none">
-                <img src="{{ random_topic.main_image.url }}" alt="" width="100%" height="400px">
+                <div class="" style=" width:100%; height:100%; background-image: url({{random_topic.main_image.url}}); 
+                background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px; z-index:100">
+                </div>
                 <div class="card-text-absolute ">
                   <p style="color: #fff;">{{ random_topic.material_name }}</p>
                   <h2 class="font-weight-bold">{{ random_topic.title }}</h2>
@@ -26,9 +28,11 @@
       
         {% for topic in top_4 %}
       <div class="col-lg-4 col-sm-6 pb-4 mb-2">
-          <div>
+          <div style="width: 100%; height:auto; border-radius:10px">
             <a href="{{topic.get_absolute_url}}" class="text-dark text-decoration-none">
-            <img class="img-fluid" src="{{ topic.main_image.url }}" alt="" width="100%" height="200px">
+              <div style=" width:100%; height:240px; background-image: url({{topic.main_image.url}}); 
+                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
+              </div>
             <div class="card-text p-4 m-1">
               <p style="font-size: 13px; color: #15C0C7;">
                 {{ topic.material_name }}
@@ -117,9 +121,11 @@
       
     {% if top_8.0 %}
       <div class="col-lg-6">
-          <div class="position-relative">
+          <div class="position-relative" style="width: 100%; height:380px; border-radius:10px">
             <a href="{{top_8.0.get_absolute_url}}" class="text-dark text-decoration-none">
-              <img src="{{top_8.0.main_image.url}}" alt="" style="width: 100%; height:360px">
+              <div style=" width:100%; height:100%; background-image: url({{top_8.0.main_image.url}}); 
+                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+              </div>
               <div class="card-text-absolute-min">
                 <p style="color: #fff;">{{top_8.0.material_name}}</p>
                 <h2>{{top_8.0.title}}</h2>
@@ -131,9 +137,12 @@
 
     {% if top_8.1 %}
       <div class="col-lg-6">
-          <div class="position-relative">
+          <div class="position-relative" style="width: 100%; height:380px; border-radius:10px">
             <a href="{{top_8.1.get_absolute_url}}" class="text-dark text-decoration-none">
-              <img src="{{top_8.1.main_image.url}}" alt="" style="width: 100%; height:360px">
+              <div style=" width:100%; height:100%; background-image: url({{top_8.1.main_image.url}}); 
+                                background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+              </div>
+              <!-- <img src="{{top_8.1.main_image.url}}" alt="" style="width: 100%; height:360px"> -->
               <div class="card-text-absolute-min">
                 <p style="color: #fff;">{{top_8.1.material_name}}</p>
                 <h2>{{top_8.1.title}}</h2>
@@ -206,9 +215,12 @@
     <div class="row news-card">
       {% if top_8.7 %}
       <div class="col-lg-8 pb-4 mb-2">
-          <div class="position-relative">
+          <div class="position-relative" style="width: 100%; height:424px; border-radius:10px">
             <a href="{{top_8.7.get_absolute_url}}" class="text-dark text-decoration-none">
-              <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset="">
+              <div style=" width:100%; height:100%; background-image: url({{random_topic.main_image.url}}); 
+                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+              </div>
+              <!-- <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset=""> -->
               <div class="card-text-absolute">
                 <p style="color: #fff;">{{top_8.7.title}}</p>
                 <h2>{{top_8.7.title}}</h2>
@@ -220,9 +232,12 @@
 
       {% if top_8.8 %}
       <div class="col-lg-4 col-md-6 pb-4 mb-2">
-          <div class="">
+          <div style="width: 100%; height:auto; border-radius:10px">
             <a href="{{top_8.8.get_absolute_url}}" class="text-dark text-decoration-none">
-              <img src="{{ top_8.8.main_image.url }}" alt="" width="100%" height="200px">
+              <div style=" width:100%; height:240px; background-image: url({{top_8.8.main_image.url}}); 
+                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
+              </div>
+              <!-- <img src="{{ top_8.8.main_image.url }}" alt="" width="100%" height="200px"> -->
               <div class="card-text p-4 m-1">
                 <p style="font-size: 13px; color: #15C0C7;">
                   {{top_8.8.material_name}}
