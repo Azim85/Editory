@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import random
 import datetime
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, DetailView
 from .models import Topic
 
 
@@ -14,15 +14,18 @@ class HomeView(TemplateView):
         return context
 
 
-class Articles(TemplateView):
+class Article(DetailView):
     template_name = 'article.html'
+    model = Topic
+    context_object_name = 'topic'
 
     def get_context_data(self, **kwargs):
-        context = super(Articles, self).get_context_data(**kwargs)
+        context = super(Article, self).get_context_data(**kwargs)
+        context['get_by_theme'] = Topic.objects.filter(material_name=self.object.material_name).exclude(pk=self.object.pk)[:3]
         return context
 
 
-class News(TemplateView):
+class Articles(TemplateView):
     template_name = 'news.html'
 
     def get_context_data(self, **kwargs):
@@ -33,12 +36,10 @@ class News(TemplateView):
             random_topic.append(i)
             if (k.month == i.created_at.month and k.year == i.created_at.year) and k.day < i.created_at.day:
                 last_week.append(i)
-            print(k.day)
-            print(i.created_at.day)
         
         top_8 = Topic.objects.order_by('-created_at')[:9]
 
-        context = super(News, self).get_context_data(**kwargs)
+        context = super(Articles, self).get_context_data(**kwargs)
         context['top_4'] = Topic.objects.order_by('-created_at')[:4]
         context['random_topic'] = random.choice(random_topic)
         context['last_week'] = last_week[:6]

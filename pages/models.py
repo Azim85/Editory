@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -14,3 +15,6 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.material_name
+
+    def get_absolute_url(self):
+        return reverse_lazy('pages:article', kwargs = {'pk':self.pk})

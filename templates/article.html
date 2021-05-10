@@ -7,19 +7,17 @@
 
 {% block content %}
     <div class="container mt-5">
-        <img src="{% static 'pages/images/Rectangle 63.png' %}" width="100%">
+        <img src="{{topic.main_image.url}}" width="100%">
         <div class="row mt-5">
             <div class="col-lg-9">
-                <h6 class="main-color">БИОЛОГИЯ</h6>
-                <div class="font-weight-bold h3">Ученый получил вторую<br>Нобелевскую за диссертацию</div>
-                <sub class="text-secondary">22 сентября    8:45</sub>
-                <div class="mt-3 mb-5" style="font-size: 22px">Повседневная практика показывает, что консультация с
-                    широким активом позволяет выполнять важные задания по разработке
-                    системы обучения кадров, соответствует насущным потребностям. Повседневная практика
-                    показывает, что постоянный количественный рост и сфера нашей активности обеспечивает
-                    широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует
-                    насущным потребностям.</div>
-                <div class="font-weight-bold h4 mb-3">Ученый получил вторую <br>Нобелевскую за диссертацию</div>
+                <h6 class="main-color">{{topic.material_name|upper}}</h6>
+                <div class="font-weight-bold h3" style="max-width: 400px;">{{topic.title}}</div>
+                <sub class="text-secondary">{{topic.created_at|date:'d M'}}</sub>
+                <div class="mt-3 mb-5" style="font-size: 22px">{{topic.description|safe}}</div>
+
+                {{topic.others|safe}}
+
+                <!-- <div class="font-weight-bold h4 mb-3">Ученый получил вторую <br>Нобелевскую за диссертацию</div>
                 <div>Задача организации, в особенности же рамки и место обучения кадров играет
                     важную роль в формировании модели развития. Равным образом дальнейшее развитие
                     различных форм деятельности требуют определения и уточнения модели развития.
@@ -60,7 +58,7 @@
                     участия.
                 </div>
                 <img src="{% static 'pages/images/Rectangle 65.png' %}" class="img-fluid">
-                <div class="text-secondary">Нобелевская премия</div>
+                <div class="text-secondary">Нобелевская премия</div> -->
             </div>
             <div class="col-lg-3 " style="padding-left: 52px">
                 <div class="main-background text-white pl-3 py-3">
@@ -72,9 +70,23 @@
             </div>
         </div>
 
+        {% if get_by_theme %}
         <div class="font-weight-bold h4 mt-5">Читайте также:</div>
             <div class="row mb-5">
+                {% for topic in get_by_theme %}
                 <div class="col-lg-4 my-2">
+                    <div class="border">
+                        <a href="{{topic.get_absolute_url}}" class="text-dark text-decoration-none">
+                            <img class="" src="{{ topic.main_image.url }}" alt="" width="100%" height="200px">
+                            <div class="mt-4 mb-5 px-4">
+                                <div class="main-color font-weight-bold mb-2" style="font-size: smaller">{{topic.material_name}}</div>
+                                <div class="font-weight-bold">{{topic.title}}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="col-lg-4 my-2">
                     <div class="border">
                         <img src="{% static 'pages/images/Rectangle 67.png' %}" width="100%">
                         <div class="mt-4 mb-5 px-4">
@@ -91,17 +103,9 @@
                             <div class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 my-2">
-                    <div class="border">
-                        <img src="{% static 'pages/images/Rectangle 67.png' %}" width="100%">
-                        <div class="mt-4 mb-5 px-4">
-                            <div class="main-color font-weight-bold mb-2" style="font-size: smaller">БИОЛОГИЯ</div>
-                            <div class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
+        {% endif %}
     </div>
 {% endblock %}
