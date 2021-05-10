@@ -6,8 +6,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class ResearchGrant(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     organization = models.CharField(max_length=255)
@@ -27,8 +27,8 @@ class ResearchGrant(models.Model):
 
 class GetPatent(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     organization = models.CharField(max_length=255)
@@ -48,8 +48,8 @@ class GetPatent(models.Model):
 
 class PublicationToScopus(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     organization = models.CharField(max_length=255)
@@ -91,8 +91,8 @@ class OrderReviewForDissertation(models.Model):
 
 class PublicationToMagazines(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField(blank=True)
     organization = models.CharField(max_length=255)
@@ -113,8 +113,8 @@ TOPICS = (
 
 class OrganizeResearches(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField(blank=True)
     select_topic = models.CharField(max_length=100, choices=TOPICS)
@@ -127,8 +127,8 @@ class OrganizeResearches(models.Model):
 
 class OrderToGraphicalMaterials(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     organization = models.CharField(max_length=255)
@@ -136,6 +136,8 @@ class OrderToGraphicalMaterials(models.Model):
     org_address = models.CharField(max_length=255)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
 
 
 

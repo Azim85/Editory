@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView, View
+from pages.models import TopResearches
 
 
 class Research(TemplateView):
@@ -27,11 +28,12 @@ class Scientific(TemplateView):
         return context
 
 
-class TopResearches(TemplateView):
+class TopResearchess(TemplateView):
     template_name = 'top_researches.html'
 
     def get_context_data(self, **kwargs):
-        context = super(TopResearches, self).get_context_data(**kwargs)
+        context = super(TopResearchess, self).get_context_data(**kwargs)
+        context['top_researches'] = TopResearches.objects.all()
         return context
 
 

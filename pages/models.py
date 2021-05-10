@@ -18,3 +18,19 @@ class Topic(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('pages:article', kwargs = {'pk':self.pk})
+
+
+class TopResearches(models.Model):
+    image = models.ImageField(upload_to = 'top_researches/')
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=100)
+    description = models.TextField()
+    more = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse_lazy('pages:paper', kwargs = {'pk':self.pk})
+

@@ -5,25 +5,27 @@
 {% endblock %}
 {% block content %}
 <div class="container">
+    
        <div class="row px-0 mx-0">
            <div class="col">
             <h1 class="title">Top researchers</h1>
            </div>
        </div>
 
+       {% for research in top_researches %}
        <div class="row description mt-5">
            <div class="col-lg-2 ">
-               <img src="{% static 'pages/images/frame.png' %}" alt="">
+               <img src="{{research.image.url}}" alt="" style="width: 100%;">
            </div>
            <div class="col-lg-8 pl-lg-5">
-               <h3 class="">Исследования головного мозга человека</h3>
-               <small>Эрик Берн</small>
-               <p>Разнообразный и богатый опыт рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций,
-            занимаемых участниками в отношении поставленных задач..........</p>
+               <a href="{{research.get_absolute_url}}"><h3 class="">{{research.title}}</h3></a>
+               <small>{{research.author}}</small>
+               <p>{{research.description|truncatewords:29}}</p>
            </div>
        </div>
+       {% endfor %}
 
-        <div class="row description mt-5">
+        <!-- <div class="row description mt-5">
             <div class="col-lg-2">
                 <img src="{% static 'pages/images/frame.png' %}" alt="">
             </div>
@@ -34,6 +36,6 @@
                     позиций,
                     занимаемых участниками в отношении поставленных задач.....</p>
             </div>
-        </div>
+        </div> -->
     </div>
 {% endblock content %}
