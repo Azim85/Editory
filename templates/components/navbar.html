@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse font-weight-bold" id="navbarNav" style=" font-weight: 500 !important;">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link ml-3 k text-dark  text-style-normal" href="#">О нас</a>
+                    <a class="nav-link ml-3 k text-dark  text-style-normal" href="{% url 'pages:webinars' %}">О нас</a>
                 </li>
                 <li class="nav-item ml-3">
                     <a class="nav-link k text-dark " href="{% url 'pages:news' %}">Новости</a>
@@ -34,7 +34,7 @@
                          </div>
 
                         <a class="dropdown-item font-weight-bold text-dark " href="#">Research intelligence</a>
-                        <a class="dropdown-item font-weight-bold text-dark " href="#">Образование</a>
+                        <a class="dropdown-item font-weight-bold text-dark " href="{% url 'requests:scientific-papers' %}">Образование</a>
                     </div>
                 </li>
                 <li class="nav-item ml-3">

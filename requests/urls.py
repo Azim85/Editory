@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (Research, ResearchIntelligense, Scientific, TopResearches, WebinarsView)
 
+app_name = 'requests'
 
 urlpatterns = [
     path('research/', Research.as_view(), name='research'),
