@@ -16,13 +16,13 @@ class UserRegisterView(View):
 
     def post(self, request):
         form = RegisterForm(request.POST)
+        first_name = request.POST.get('first_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        password = make_password(request.POST.get('password1'))
         if form.is_valid():
-            user = form.save(commit=False)
-            raw_pass = form.cleaned_data.get('password')
-            raw_pass = make_password(form.cleaned_data.get('password'))
-            user.password = raw_pass
-            user.save()
-            return redirect('pages:home')
+            User.objects.create(first_name=first_name, email=email, phone=phone, password=password)
+            return redirect('users:login')
 
         context = {'form':form}
         return render(request, 'users/register.html', context)

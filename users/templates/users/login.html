@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row w-100 mt-3 justify-content-center">
+<div class="row w-100 mt-5 justify-content-center">
     <div class="col-md-6 d-flex flex-column justify-content-center align-items-center border w-100 px-5 mb-5 con">
         {{errors}}
         <form action="{% url 'users:login' %}" method="post" class="w-100 d-flex flex-column">
@@ -23,7 +23,7 @@
             <div class="d-flex w-100 align-items-center mt-5 justify-content-between mb-5">
                 <small><a href="{% url 'users:register' %}" class="k">Регистрация</a></small>
                 <button type="submit" class="sign-up text-white font-weight-bold k">Вход</button>
-                <small><a href="" class="k">Forgot password</a></small>
+                <small><a href="" class="k">забыл пароль?</a></small>
             </div>
         </form>
     </div>
