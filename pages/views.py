@@ -3,7 +3,7 @@ from django.http import HttpResponse
 import random
 import datetime
 from django.views.generic import TemplateView, View, DetailView
-from .models import Topic
+from .models import Topic, TopResearches
 
 
 class HomeView(TemplateView):
@@ -55,8 +55,10 @@ class AboutUs(TemplateView):
         return context
 
 
-class Paper(TemplateView):
+class Paper(DetailView):
     template_name = 'paper.html'
+    model = TopResearches
+    context_object_name = 'single_research'
 
     def get_context_data(self, **kwargs):
         context = super(Paper, self).get_context_data(**kwargs)
