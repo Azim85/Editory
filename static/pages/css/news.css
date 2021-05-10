@@ -17,11 +17,11 @@ h2{
 header .nav-link{
 margin-left: 30px;
 }
-.news-card .col-lg-4>div,.news-card.col-lg-8>div{
+.news-card .col-lg-4>div,.news-card .col-lg-8>div{
     border: 0.5px solid #D2D2D2;
     height: 100%;
 }
-.news-card .col-lg-4:hover>div,.news-card.col-lg-8:hover>div{
+.news-card .col-lg-4:hover>div,.news-card .col-lg-8:hover>div{
     box-shadow: 0px 10px 25px 0px #0000001A;
 }
 section{

@@ -17,3 +17,45 @@ div.slick-track{
 .slick-prev, .slick-next{
     display: none !important;
 }
+
+
+#rasm{
+    margin: 0 0 0 0;
+}
+
+
+.head-word{
+    font-size: 65px;
+    line-height: 70px;
+    font-weight: 700
+}
+
+
+.slideres{
+   margin-left: 100px
+}
+
+@media screen and (max-width: 568px){
+    .slideres{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .head-word{
+        font-size: 40px;
+        line-height: 40px;
+        padding-bottom: 100px;
+    }
+
+    .h3{
+        font-size: 20px;
+    }
+
+    .font-16{
+        font-size: 16px;
+    }
+
+    .resp-box{
+        padding: 0;
+        margin: 0;
+    }
+}
