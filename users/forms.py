@@ -28,6 +28,9 @@ class RegisterForm(forms.Form):
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
+        qs = get_user_model().objects.filter(email=email)
+        if qs.exists():
+            raise forms.ValidationError('этот адрес электронной почты уже существует')
         if not '@' in email:
             raise forms.ValidationError('электронная почта недействительна')
         return email
