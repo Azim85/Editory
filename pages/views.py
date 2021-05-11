@@ -71,3 +71,19 @@ class Services(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Services, self).get_context_data(**kwargs)
         return context
+
+
+class Dissertation(TemplateView):
+    template_name = 'dissertation.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Dissertation, self).get_context_data(**kwargs)
+        return context
+
+
+class Research_strategy(TemplateView):
+    template_name = 'research_strategy.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Research_strategy, self).get_context_data(**kwargs)
+        return context
