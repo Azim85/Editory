@@ -51,9 +51,7 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 }
 
 .consultation{
-    width: 142px;
-    height: 41px;
-    border: 1px solid #00A1A8;
+    white-space: nowrap;
     box-sizing: border-box;
 }
 
