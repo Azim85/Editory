@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/dashboard.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<div class="w-100 h-100 mx-0 px-0 mt-5">
+    <div class="container">
+        <div class="main-box d-flex justify-content-around align-items-center">
+
+            <div class="profile d-flex align-items-center justify-content-center border">
+                <img src="{% static 'pages/images/no-photo.jpeg' %}" alt="profile-image" class="profile-picture mr-3">
+                <div class="profile-info d-flex flex-column h-100 align-items-start justify-content-center">
+                    <h4>Иван Иванов</h4>
+                    <p style="margin-bottom: 0;">Программист</p>
+                </div>
+            </div>
+
+            <div class="edit">
+                <a href="#"><i class="bi bi-pencil-fill"></i>Редактировать профиль</a>
+            </div>
+            <div class="choose">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

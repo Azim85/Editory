@@ -33,7 +33,7 @@
                                 </div>
                          </div>
 
-                        <a class="dropdown-item font-weight-bold text-dark " href="#">Research intelligence</a>
+                        <a class="dropdown-item font-weight-bold text-dark " href="{% url 'requests:research_intelligense' %}">Research intelligence</a>
                         <a class="dropdown-item font-weight-bold text-dark " href="{% url 'requests:scientific-papers' %}">Образование</a>
                     </div>
                 </li>
@@ -48,13 +48,14 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <li class="nav-item ml-3 text-center">
-                    <a class="nav-link k text-dark  consultation" href="#">Консультация</a>
-                </li>
-                {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item ml-3 text-center">
+                        <a class="nav-link k text-dark  consultation" href="{% url 'users:dashboard' %}"><i class="bi bi-person" style="font-size: 24px;"></i></a>
+                    </li>
+                
                     <li class="nav-item ml-3 d-flex align-items-center">
                         <a class="nav-link k text-dark " href="{% url 'users:logout' %}"><i
-                                class="bi bi-box-arrow-right"></i></a>
+                                class="bi bi-box-arrow-right" style="font-size: 24px;"></i></a>
                     </li>
                 {% else %}
                     <li class="nav-item ml-3 d-flex align-items-center">

@@ -53,6 +53,12 @@ class UserLogoutView(View):
         return render(request, 'home.html')
 
 
+class DasboardView(View):
+
+    def get(self, request):
+        return render(request, 'users/dashboard.html')
+
+
 
 
 
