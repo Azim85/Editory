@@ -28,8 +28,7 @@
 
         <div class="py-5">
 
-            <div class="row justify-content-center">
-                <div class=" col-lg-10">
+
                     <div class="h2">
                         Услуги Editory
                     </div>
@@ -85,8 +84,7 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
+
     </div>
     </div>
     <div class="slideres">
@@ -94,7 +92,7 @@
             <div class="row  mr-0">
                 <div class="col-12 px-0">
                     <div class="wrapper w-100 inline-block">
-                        <div class="slick2 slider p-0">
+                        <div class="slick1 slider p-0">
 
                             <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">
 
@@ -154,7 +152,7 @@
         <div class="row  mr-0">
                 <div class="col-12 px-0">
                     <div class="wrapper w-100 inline-block">
-                        <div class="slick1 slider p-0">
+                        <div class="slick2 slider p-0">
 
                             <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center w-75">
 
@@ -261,20 +259,21 @@
 
     <div style="background-color: #F7F7F7;" class="py-5">
         <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-4 "><img src="{% static 'pages/images/WUR.png' %}" class="mx-auto"></div>
-                <div class="col-lg-4"><img src="{% static 'pages/images/elsavier.png' %}" class="mx-auto"></div>
-                <div class="col-lg-4"><img src="{% static 'pages/images/WUR2.png' %}" class="mx-auto"></div>
+            <div class="row ">
+                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/WUR.png' %}" class="wur"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavier.png' %}" class="elsavier"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/WUR2.png' %}" class="qswur"></a></div>
             </div>
         </div>
     </div>
+
     <div class="mt-5 main-background">
         <div class="container">
             <div class="py-5">
                 <div class="row text-white">
                     <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
-                    <div class=" col-lg-2">Заполните форму и наш консультант свяжется с вами в течение часа</div>
-                    <div class="offset-2 col-lg-3 "><div class="btn btn-light px-4 py-2">Получить консультацию</div></div>
+                    <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
+                    <div class="offset-1 col-lg-3 mt-3"><div class="btn btn-light px-4 py-2">Получить консультацию</div></div>
                 </div>
 
             </div>
@@ -323,46 +322,76 @@
 
         $('.slick1').slick({
 
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 4,
-  startMode: true,
-  variableWidth: false,
-            {#   responsive: [#}
-            {#    {#}
-            {#        breakpoint: 575,#}
-            {#        settings: {#}
-            {#             dots: true,#}
-            {##}
-            {#            infinite: false,#}
-            {#            speed: 300,#}
-            {#              startMode: true,#}
-            {##}
-            {#             variableWidth: true#}
-            {#        }#}
-            {#    },#}
-            {#       {#}
-            {#        breakpoint: 768,#}
-            {#        settings: {#}
-            {#              dots: true,#}
-            {#              infinite: true,#}
-            {#              speed: 300,#}
-            {#              slidesToShow: 1,#}
-            {#              startMode: true,#}
-            {#              variableWidth: false,#}
-            {#        }#}
-            {#    }#}
-            {#]#}
-});
-
-        $('.slick2').slick({
-  dots: true,
+             dots: true,
   infinite: true,
   speed: 300,
   slidesToShow: 1,
   startMode: true,
   variableWidth: true
+
 });
+
+        $('.slick2').slick({
+
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4.7,
+  startMode: true,
+  variableWidth: false,
+               responsive: [
+                {
+                    breakpoint: 1370,
+                    settings: {
+                           slidesToShow: 3,
+                    }},
+                   {
+                       breakpoint: 768,
+                       settings: {
+                           dots: true,
+                           infinite: true,
+                           speed: 300,
+                           slidesToShow: 1,
+                           startMode: true,
+                           variableWidth: true
+                       }
+
+                }
+            ]
+});
+
+
+         $('.wur').hover(function(){
+            $("img.wur").on({
+             "mouseover" : function() {
+                this.src = "{% static 'pages/images/the world.png' %}";
+              },
+              "mouseout" : function() {
+                this.src="{% static 'pages/images/WUR.png' %}";
+              }
+            });
+        });
+
+        $('.elsavier').hover(function(){
+            $("img.elsavier").on({
+             "mouseover" : function() {
+                this.src = "{% static 'pages/images/elsavierr.png' %}";
+              },
+              "mouseout" : function() {
+                this.src="{% static 'pages/images/elsavier.png' %}";
+              }
+            });
+        });
+
+        $('.qswur').hover(function(){
+            $("img.qswur").on({
+             "mouseover" : function() {
+                this.src = "{% static 'pages/images/wurankings.png' %}";
+              },
+              "mouseout" : function() {
+                this.src="{% static 'pages/images/WUR2.png' %}";
+              }
+            });
+        });
     </script>
 {% endblock %}
