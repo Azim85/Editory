@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 django = "==3.2.2"
 pillow = "*"
-django-ckeditor = "*"
+django-ckeditor = "==6.0.0"
 gunicorn = "*"
 django-resized = "*"
 
