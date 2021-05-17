@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django_resized import ResizedImageField
 
 
 class Topic(models.Model):

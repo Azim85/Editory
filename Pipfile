@@ -8,6 +8,7 @@ django = "==3.2.2"
 pillow = "*"
 django-ckeditor = "*"
 gunicorn = "*"
+django-resized = "*"
 
 [dev-packages]
 

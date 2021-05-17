@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View
-from .forms import RegisterForm, LoginForm
+from django.views.generic import View, UpdateView
+from .forms import RegisterForm, LoginForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
+from django.urls import reverse_lazy
 User = get_user_model()
 
 class UserRegisterView(View):
@@ -56,7 +57,20 @@ class UserLogoutView(View):
 class DasboardView(View):
 
     def get(self, request):
-        return render(request, 'users/dashboard.html')
+        form = ProfileForm(instance=request.user)
+        context = {'form':form}
+        return render(request, 'users/dashboard.html', context)
+
+
+class ProfileChange(UpdateView):
+    model = User
+    form_class = ProfileForm
+    success_url = reverse_lazy('users:dashboard')
+    template_name = 'users/dashboard.html'
+        
+        
+
+        
 
 
 

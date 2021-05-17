@@ -66,4 +66,18 @@ class RegisterForm(forms.Form):
 class LoginForm(forms.Form):
     email = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'style':'height:50px'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'style':'height:50px'}))
-    
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = get_user_model()
+        fields = ['first_name', 'phone', 'address', 'email', 'profile_image']
+
+        widgets = {
+        'first_name' : forms.TextInput(attrs={'class':'form-control'}),
+        'phone' : forms.TextInput(attrs={'class':'form-control'}),
+        'address' : forms.TextInput(attrs={'class':'form-control'}),
+        'email' : forms.TextInput(attrs={'class':'form-control'}),
+        'image_field' : forms.ImageField(),
+        }

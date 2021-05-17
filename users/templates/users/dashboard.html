@@ -6,12 +6,17 @@
 {% block content %}
 
 
-<div class="w-100 h-100 mx-0 px-0 mt-5">
+<div class="w-100 h-100 mx-0 px-0 mt-5" style="min-height: 100vh;">
     <div class="container">
-        <div class="main-box d-flex justify-content-around align-items-center">
+        <div class="main-box d-flex justify-content-around align-items-center flex-wrap">
 
-            <div class="profile d-flex align-items-center justify-content-center border">
-                <img src="{% static 'pages/images/no-photo.jpeg' %}" alt="profile-image" class="profile-picture mr-3">
+            <div class="profile d-flex align-items-center justify-content-center">
+                {% if request.user.profile_image %}
+                    <img src="{{request.user.profile_image.url}}" alt="profile-image" class="profile-picture mr-3">
+                {% else %}
+                    <img src="{% static 'pages/images/no-photo.jpeg' %}" alt="profile-image" class="profile-picture mr-3">
+                {% endif %}
+                
                 <div class="profile-info d-flex flex-column h-100 align-items-start justify-content-center">
                     <h4>Иван Иванов</h4>
                     <p style="margin-bottom: 0;">Программист</p>
@@ -19,19 +24,101 @@
             </div>
 
             <div class="edit">
-                <a href="#"><i class="bi bi-pencil-fill"></i>Редактировать профиль</a>
+                <a href="#" id="show_form"><i class="bi bi-pencil-fill"></i>Редактировать профиль</a>
             </div>
-            <div class="choose">
 
+            <div class="choose d-flex border " style=" border-radius:8px; min-width:340px">
+                <form action="#" class="w-50">
+                    <div class="bg-white p-2" style="border-top-left-radius:8px; border-bottom-left-radius:8px">
+                        <select name="" id="" class="border-0 bg-transparent form-control">
+                            <option value="Author" class="border-0">Author</option>
+                            <option value="Librarian">Librarian</option>
+                        </select>
+                    </div>
+                </form>
+                <span class="d-flex justify-content-center align-items-center" style="background-color:#00A1A8; border-top-right-radius:8px; border-bottom-right-radius:8px">
+                    <div class="py-2 mx-3 text-white" >
+                        Сменить статус
+                    </div>
+                </span>
             </div>
+
+        </div>
+    </div>
+
+<div class="row mt-5" id="profile" style="display: none;">
+    <div class="container">
+        <div class="col-lg-6">
+            <form action="{% url 'users:profile_change' request.user.id %}" enctype="multipart/form-data" method="post"
+                class="w-100 d-flex flex-column">
+                {% csrf_token %}
+                <div class="d-lg-flex w-100 align-items-center mt-3">
+                    <label for="id_first_name" class="mr-5 k"
+                        style="min-width: 135px; margin-right:34px!important;">Имя</label>
+                    {{form.first_name}}
+                </div>
+                <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
+
+                <div class="d-lg-flex w-100 align-items-center mt-3">
+                    <label for="id_phone" class="mr-5 k"
+                        style="min-width: 135px; margin-right:34px!important;">Телефон</label>
+                    {{form.phone}}
+                </div>
+                <small class="text-danger align-self-end">{{form.phone.errors}}</small>
+
+                <div class="d-lg-flex w-100 align-items-center mt-3">
+                    <label for="id_address" class="mr-5 k"
+                        style="min-width: 135px; margin-right:34px!important;">Адрес</label>
+                    {{form.address}}
+                </div>
+                <small class="text-danger align-self-end">{{form.address.errors}}</small>
+
+                <div class="d-lg-flex w-100 align-items-center mt-3">
+                    <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">Эл.
+                        почта</label>
+                    {{form.email}}
+                </div>
+                <small class="text-danger align-self-end">{{form.email.errors}}</small>
+
+                <div class="d-flex  mt-3">
+                    <label for="profile_image" class="mr-5 k"
+                        style="min-width: 135px; margin-right:34px!important;">picture</label>
+                    <small>
+                        {{form.profile_image}}
+                    </small>
+
+                </div>
+                <small class="text-danger align-self-end">{{form.profile_image.errors}}</small>
+
+                <div class="d-flex justify-content-end mt-5">
+                    <button type="submit" class="btn text-white" style="background-color: #62C7CB;">Сохранить
+                        изменения</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
 
-
-
+</div>
 
 
 
 {% endblock content %}
+
+{% block js %}
+
+<script>
+    const profile_form = document.getElementById('profile')
+    const show_form = document.getElementById('show_form')
+
+    show_form.addEventListener('click', function(){
+        if(profile_form.style.display=='none'){
+            profile_form.style.display = 'block'
+        }else{
+            profile_form.style.display = 'none'
+        }
+    })
+</script>
+
+{% endblock %}
