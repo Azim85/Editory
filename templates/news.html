@@ -14,10 +14,14 @@
             <div class="position-relative" style="width: 100%; height:424px; border-radius:10px">
               <a href="{{random_topic.get_absolute_url}}" class="text-dark text-decoration-none">
                 <div class="" style=" width:100%; height:100%; background-image: url({{random_topic.main_image.url}}); 
-                background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px; z-index:100">
+                                    background-repeat:no-repeat;
+                                    background-position:center;
+                                    background-size:cover;
+                                    border-radius:10px;
+                                    z-index:100">
                 </div>
-                <div class="card-text-absolute ">
-                  <p style="color: #fff;">{{ random_topic.material_name }}</p>
+                <div class="card-text-absolute text-hover">
+                  <p style="" class="main-color">{{ random_topic.material_name }}</p>
                   <h2 class="font-weight-bold">{{ random_topic.title }}</h2>
                 </div>
               </a>

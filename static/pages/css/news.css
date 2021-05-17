@@ -42,6 +42,7 @@ section{
     width: 100%;
 }
 
+
 /* Responsive */
 
 @media (max-width: 1199.98px) {
@@ -115,4 +116,28 @@ section{
     section{
         margin-bottom: 70px;
     }
+    .text-hover{
+    width: 100%;
+    color: black !important;
+    background: white !important;
+    }
+
   }
+
+.text-hover{
+    transition:  height 2s;
+    width: 100%;
+    color: white;
+  height: 200px;
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7567401960784313) 26%);
+}
+
+.text-hover:hover{
+    transition:  height 2s;
+    color: white;
+    height: 100%;
+    width: 100%;
+background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7567401960784313) 26%);
+}
