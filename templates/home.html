@@ -427,7 +427,7 @@
                 <div class="row text-white">
                     <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
                     <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
-                    <div class="offset-1 col-lg-3 mt-3"><div class="btn btn-light px-4 py-2">Получить консультацию</div></div>
+                    <div class="offset-1 col-lg-3 mt-3"><div id="commit" class="btn btn-light px-4 py-2">Получить консультацию</div></div>
                 </div>
 
             </div>
@@ -435,7 +435,9 @@
     </div>
 
     <div>
-    <div class="container border rounded py-5 px-5">
+
+    <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top " >
+        <h2 id="hideform" class="float-right btn  ">X</h2>
         <h2 class=" mb-5">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
         <form>
             <div class="row text-secondary">
@@ -443,19 +445,19 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Имя</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -477,19 +479,19 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">Контакты организации </label>
                         <div class="offset-4 col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="" class="form-control" id="inputPassword">
                         </div>
                     </div>
                     <div class="form-group row" style="margin-top: 60px">
@@ -511,6 +513,14 @@
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+    $('#commit').click(function (){
+        $('div.forma').css('display','inline')
+    });
+    $('#hideform').click(function (){
+        $('div.forma').css('display','none')
+    });
+
+
         $('.btn-toggle').click(function () {
             $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
         });
