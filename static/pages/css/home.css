@@ -22,7 +22,7 @@ header {
 }
 
 .my-text{
-    font-style: normal;
+
 font-weight: bold;
 font-size: 65px;
 line-height: 106.3%;
@@ -311,18 +311,21 @@ line-height: 106.3%;
 }
 
 
- .slick-next,  .slick-prev{
-        border: white solid 2px;
-        border-width: 1px;
-        background: transparent;
-        padding: 28px;
+ .section-2 .slick-next, .section-2 .slick-prev{
+        border: white solid 2px !important;
+        border-width: 1px !important;
+        background: transparent !important;
+        padding: 28px !important;
 }
- .slick-next:hover, .slick-prev:hover{
+ .section-2 .slick-next:hover, .section-2 .slick-prev:hover{
         background: #F4F4F4 81% !important;
         border: none;
         padding: 30px;
 }
- .slick-next:hover:before, .slick-prev:hover:before {
+ .section-2 .slick-next:hover:before, .section-2 .slick-prev:hover:before {
     color: #00A1A8 !important;
 }
 
+.kill .slick-next, .kill .slick-prev{
+    display: none !important;
+}

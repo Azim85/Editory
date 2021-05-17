@@ -79,10 +79,24 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 
 .errorlist{
     list-style-type: none;
+
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6{
+    font-family: Geometria !important;
+}
+
+.mt-200{
+    margin-top: 200px !important;
 }
 
 .main-font{
-    font-family: Geometria;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.geometria{
+        font-family: Geometria;
 }
 
 #showChild:hover #navChild{
@@ -97,11 +111,16 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 
 }
 
+
+.bordd{
+    border-radius: revert;
+}
+
 @media screen and (min-width: 568px) {
     .navMe{
         position: absolute;
         top: 0px;
-        left: 280px;
+        left: 298px !important;
     }
 
 
@@ -137,4 +156,29 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
     .nav-font{
         font-size: 16px;
     }
+}
+
+
+.border-hover{
+
+    border-color: white !important;
+    border-bottom-width: 2px !important;
+    width: 1px;
+}
+.border-hover:hover{
+    transition:  width 0.4s;
+    width: 100%;
+    border-color: #00B0E8 !important;
+    border-bottom-width: 2px !important;
+}
+
+.shadow_me{
+
+    box-shadow: 0px 0px 5px 0px #0000001A;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #00A1A8 !important;
+  border-color: #00A1A8 !important;
 }
