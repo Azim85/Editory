@@ -182,3 +182,10 @@ h1, h2, h3, h4, h5, h6{
   background-color: #00A1A8 !important;
   border-color: #00A1A8 !important;
 }
+
+
+.forma{
+    display: none;
+    top: 80px;
+    box-shadow: 0px 0px 250px 10px #000;
+}

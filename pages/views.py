@@ -4,6 +4,7 @@ import random
 import datetime
 from django.views.generic import TemplateView, View, DetailView
 from .models import Topic, TopResearches
+from requests.forms import ConsultationForm
 
 
 class HomeView(TemplateView):
@@ -11,6 +12,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
+        context['form'] = ConsultationForm()
         return context
 
 
@@ -21,7 +23,8 @@ class Article(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(Article, self).get_context_data(**kwargs)
-        context['get_by_theme'] = Topic.objects.filter(material_name=self.object.material_name).exclude(pk=self.object.pk)[:3]
+        context['get_by_theme'] = Topic.objects.filter(
+            material_name=self.object.material_name).exclude(pk=self.object.pk)[:3]
         return context
 
 
@@ -36,7 +39,7 @@ class Articles(TemplateView):
             random_topic.append(i)
             if (k.month == i.created_at.month and k.year == i.created_at.year) and k.day < i.created_at.day:
                 last_week.append(i)
-        
+
         top_8 = Topic.objects.order_by('-created_at')[:9]
 
         context = super(Articles, self).get_context_data(**kwargs)

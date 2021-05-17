@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
+from .forms import ConsultationForm
 
 
 class Research(TemplateView):
@@ -55,4 +56,7 @@ class Conferences(TemplateView):
 
 class ConsultationView(View):
     def post(self, request):
-        pass
+        form = ConsultationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pages:home')
