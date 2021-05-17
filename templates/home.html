@@ -10,14 +10,14 @@
 
     <div>
         <div class="container">
-            <div class="row py-me-5 header-me" style="background-image: url('{% static 'pages/images/Group 250.png' %}');">
+            <div class="row py-me-5 header-me " style="background-image: url('{% static 'pages/images/Group 250.png' %}');">
                 <div class="col-lg-6 pl-5">
-                    <div class="my-text"><span class="main-color">Полный</span> спектр
+                    <div class="my-text geometria"><span class="main-color">Полный</span> спектр
                     научных
                         консультаций</div>
                     <div class="my-5" style="font-size: 22px">Разрабатываем стратегии для исследований,
                         публикуем статьи в международных журналах, корректируем диссертации</div>
-                    <button class="btn btn-success rounded-0 font-weight-light">
+                    <button class="btn btn-success rounded-0 px-5 py-3 font-weight-light">
                                 Бесплатная консультация
                             </button>
                 </div>
@@ -66,7 +66,7 @@
     </div>
 
 
-    <div class="section-2 ">
+    <div class="section-2 mt-200" >
 
     <div class="slideres ">
             <h1 class="h-40p mb-5 text-white">Наши услуги</h1>
@@ -196,7 +196,7 @@
     </div>
     </div>
 
-    <div class="slideres kill">
+    <div class="slideres kill mt-5">
 
     <h1 class="h-40p my-5 " >Мы вывели в рейтинг QS</h1>
         <div class="row  mr-0" style="">
@@ -253,7 +253,7 @@
 </div>
 
 
-    <div class="section-3 d-flex flex-column justify-content-around">
+    <div class="section-3 d-flex flex-column justify-content-around ">
 {#        <div class="container rounded-20 bg-white">#}
 {#            <div class="row py-5 p-md-5">#}
 {#                <div class="col-12 mb-5">#}
@@ -277,7 +277,7 @@
 {#            </div>#}
 {#        </div>#}
 
-        <div class="container">
+        <div class="container mt-200">
             <div class="row px-3 px-md-5 mb-5">
                 <h1 class="h-45p">Наши принципы</h1>
             </div>
@@ -421,7 +421,7 @@
         </div>
     </div>
 
-    <div class="mt-5 main-background">
+    <div class="my-5 main-background">
         <div class="container">
             <div class="py-5">
                 <div class="row text-white">
@@ -432,6 +432,79 @@
 
             </div>
         </div>
+    </div>
+
+    <div>
+    <div class="container border rounded py-5 px-5">
+        <h2 class=" mb-5">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
+        <form>
+            <div class="row text-secondary">
+                <div class="col-lg-6">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Имя</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Тема вопроса</label>
+                        <div class="col-sm-6">
+                            <select id="inputState" class="form-control">
+
+                                <option class="rounded" selected>Стратегия исследования</option>
+                                <option>Партнёрство и сотрудничество</option>
+                                <option>Финансирование</option>
+                                <option>Управление исследовательским процессом</option>
+                                <option>Общая консультация</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">Контакты организации </label>
+                        <div class="offset-4 col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 60px">
+                        <div class="offset-4 col-sm-6">
+                            <div type="submit" class="btn btn-primary w-100">Заказать консультацию</div>
+{#                            <input type="button" class="form-control btn btn-primary" id="inputPassword" content="Заказать консультацию">#}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
     </div>
 {% endblock content %}
 {% block js %}
