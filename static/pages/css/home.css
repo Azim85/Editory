@@ -310,3 +310,19 @@ line-height: 106.3%;
 }
 }
 
+
+ .slick-next,  .slick-prev{
+        border: white solid 2px;
+        border-width: 1px;
+        background: transparent;
+        padding: 28px;
+}
+ .slick-next:hover, .slick-prev:hover{
+        background: #F4F4F4 81% !important;
+        border: none;
+        padding: 30px;
+}
+ .slick-next:hover:before, .slick-prev:hover:before {
+    color: #00A1A8 !important;
+}
+
