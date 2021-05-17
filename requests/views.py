@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
@@ -51,3 +51,8 @@ class Conferences(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Conferences, self).get_context_data(**kwargs)
         return context
+
+
+class ConsultationView(View):
+    def post(self, request):
+        pass

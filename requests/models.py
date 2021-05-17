@@ -106,7 +106,8 @@ TOPICS = (
     ('стратегия исследования', 'стратегия исследования'),
     ('партнёрство и сотрудничество', 'партнёрство и сотрудничество'),
     ('финансирование', 'финансирование'),
-    ('управление исследовательским процессом', 'управление исследовательским процессом'),
+    ('управление исследовательским процессом',
+     'управление исследовательским процессом'),
     ('общая консультация', 'общая консультация'),
 )
 
@@ -138,6 +139,19 @@ class OrderToGraphicalMaterials(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
+class Consultation(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    material = models.CharField(max_length=100, choices=TOPICS)
+    organization = models.CharField(max_length=255)
+    organization_contacts = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
 
+    def __str__(self):
+        return self.first_name
 
-
+    class Meta:
+        verbose_name = 'консультация'
+        verbose_name_plural = 'консультации'

@@ -7,6 +7,7 @@ from .models import (
     OrderToGraphicalMaterials,
     OrganizeResearches,
     PublicationToMagazines,
+    Consultation
 )
 
 admin.site.register(ResearchGrant)
@@ -16,3 +17,4 @@ admin.site.register(GetPatent)
 admin.site.register(OrderToGraphicalMaterials)
 admin.site.register(OrganizeResearches)
 admin.site.register(PublicationToMagazines)
+admin.site.register(Consultation)
