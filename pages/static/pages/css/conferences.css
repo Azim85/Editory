@@ -1,0 +1,44 @@
+.borderMe{
+    border: 2px solid #62C7CB;
+    border-radius: 10px;
+}
+
+
+.form_radio_btn input[type=radio]:checked + label {
+  background: #62C7CB;
+}
+.form_radio_btn input[type=radio] {
+  display: none;
+}
+.form_radio_btn label {
+  cursor: pointer;
+  line-height: 34px;
+  user-select: none;
+}
+.form-control, label{
+height: 48px;
+    align-content: center;
+}
+
+
+
+.input-preview__src {
+	display: none;
+}
+
+.input-preview {
+	border: 1px dashed #00A1A8;
+	border-radius: 15px;
+	width: 90vw;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	transition: ease-in-out 750ms;
+}
+
+
