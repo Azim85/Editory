@@ -139,6 +139,7 @@ class OrderToGraphicalMaterials(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
+
 class Consultation(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -155,3 +156,5 @@ class Consultation(models.Model):
     class Meta:
         verbose_name = 'консультация'
         verbose_name_plural = 'консультации'
+
+    

@@ -68,7 +68,10 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'style':'height:50px'}))
 
 
+
 class ProfileForm(forms.ModelForm):
+
+    first_name = forms.CharField(max_length=5)
 
     class Meta:
         model = get_user_model()
