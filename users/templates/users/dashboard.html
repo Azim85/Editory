@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load tags %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/dashboard.css' %}">
 {% endblock %}
 {% block content %}
 
+{% if request.user|has_group:"Author" %}
+    {% else %}
+
+{% endif %}
 
 <div class="w-100 h-100 mx-0 px-0 mt-5" style="min-height: 100vh;">
     <div class="container">
@@ -18,7 +23,7 @@
                 {% endif %}
                 
                 <div class="profile-info d-flex flex-column h-100 align-items-start justify-content-center">
-                    <h4>Иван Иванов</h4>
+                    <h4>{{request.user.first_name}}</h4>
                     <p style="margin-bottom: 0;">Программист</p>
                 </div>
             </div>

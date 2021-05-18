@@ -51,18 +51,16 @@ class Conferences(View):
         context = {'form':FreeConsultationForm()}
         return render(request, 'conferences.html', context)
 
-    def get_context_data(self, **kwargs):
-        context = super(Conferences, self).get_context_data(**kwargs)
-        return context
 
 
 class ConsultationView(View):
     def post(self, request):
         validated = False
         form = ConsultationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('pages:home')
+
+        if request.user.is_authenticated:
+            if form.is_valid():
+                form.save()
+                return redirect('pages:home')
         else:
-            validated = True
-        return render(request, 'home.html', {'form':form, 'validated':validated})
+            return redirect('users:login')

@@ -8,30 +8,30 @@
             {% csrf_token %}
             <h4 class="reg text-center pt-5">Регистрация</h4>
             <div class="d-lg-flex w-100 align-items-center mt-5">
-                <label for="id_username" class="mr-5 k" style="min-width: 138px; margin-right:34px!important;">Имя</label>
+                <label for="id_username" class="mr-5 k" style="min-width: 162px; margin-right:34px!important;">Имя</label>
                 {{form.first_name}}
             </div>
             <small class="text-danger align-self-end">{{form.username.errors}}</small>
             <div class="d-lg-flex w-100 align-items-center mt-3">
-                <label for="id_email" class="mr-5 k" style="min-width: 138px; margin-right:34px!important;">Эл.
+                <label for="id_email" class="mr-5 k" style="min-width: 162px; margin-right:34px!important;">Эл.
                     почта</label>
                 {{form.email}}
             </div>
             <small class="text-danger align-self-end">{{form.email.errors}}</small>
             <div class="d-lg-flex w-100 align-items-center mt-3">
-                <label for="id_phone" class="mr-5 k" style="min-width: 138px; margin-right:34px!important;">Номер
+                <label for="id_phone" class="mr-5 k" style="min-width: 162px; margin-right:34px!important;">Номер
                     телефона</label>
                 {{form.phone}}
             </div>
             <small class="text-danger align-self-end">{{form.phone.errors}}</small>
             <div class="d-lg-flex w-100 align-items-center mt-3">
                 <label for="id_password" class="mr-5 k"
-                    style="min-width: 138px; margin-right:34px!important;">Пароль</label>
+                    style="min-width: 162px; margin-right:34px!important;">Пароль</label>
                 {{form.password1}}
             </div>
             <small class="text-danger align-self-end">{{form.password1.errors}}</small>
             <div class="d-lg-flex w-100 align-items-center mt-3">
-                <label for="id_password" class="mr-5 k" style="min-width: 138px; margin-right:34px!important;">Подверждении пароля</label>
+                <label for="id_password" class="mr-5 k" style="min-width: 162px; margin-right:34px!important;">Подверждении пароля</label>
                 {{form.password2}}
             </div>
             <small class="text-danger align-self-end">{{form.password2.errors}}</small>

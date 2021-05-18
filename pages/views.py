@@ -39,14 +39,16 @@ class Articles(TemplateView):
             random_topic.append(i)
             if (k.month == i.created_at.month and k.year == i.created_at.year) and k.day < i.created_at.day:
                 last_week.append(i)
+        try:
+            top_8 = Topic.objects.order_by('-created_at')[:9]
 
-        top_8 = Topic.objects.order_by('-created_at')[:9]
-
-        context = super(Articles, self).get_context_data(**kwargs)
-        context['top_4'] = Topic.objects.order_by('-created_at')[:4]
-        context['random_topic'] = random.choice(random_topic)
-        context['last_week'] = last_week[:6]
-        context['top_8'] = top_8
+            context = super(Articles, self).get_context_data(**kwargs)
+            context['top_4'] = Topic.objects.order_by('-created_at')[:4]
+            context['random_topic'] = random.choice(random_topic)
+            context['last_week'] = last_week[:6]
+            context['top_8'] = top_8
+        except:
+            pass
         return context
 
 
@@ -89,4 +91,13 @@ class Research_strategy(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Research_strategy, self).get_context_data(**kwargs)
+        context['form'] = ConsultationForm()
+        return context
+
+
+class Language_editing(TemplateView):
+    template_name = 'language_editing.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Language_editing, self).get_context_data(**kwargs)
         return context

@@ -10,7 +10,7 @@
     <section class="container news-card mt-5 pt-2 " style="margin-top: 100px">
     <div class="row">
       {% if random_topic %}
-        <div class="col-lg-8 pb-4 mb-2">
+        <div class="col-lg-8 pb-4 mb-2 bognews">
             <div class="position-relative" style="width: 100%; height:100%; border-radius:10px">
               <a href="{{random_topic.get_absolute_url}}" class="text-dark text-decoration-none">
                 <div class="" style=" width:100%; height:100%; background-image: url({{random_topic.main_image.url}}); 
@@ -27,6 +27,7 @@
               </a>
             </div>
         </div>
+          {% else %}
         {% endif %}
       
       {% if top_4 %}
@@ -47,7 +48,10 @@
           </div>
       </div>
         {% endfor %}
-        {% endif %}
+
+    {% else %}
+    {% endif %}
+
 {#      <div class="col-lg-4 col-sm-6 pb-4 mb-2">#}
 {#        <div>#}
 {#          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">#}
@@ -89,14 +93,17 @@
   <section class=" container">
      <h1 class="font-weight-bold">На этой неделе</h1>
         <div class="row my-5">
-          {% if last_week %}
+
+        {% if last_week %}
           {% for topic in last_week %}
             <div class="col-lg-4 mb-3 ">
                 <a href="{{topic.get_absolute_url}}" class="text-dark text-decoration-none"><p class="font-weight-bold">{{topic.title}}</p></a>
                 <div class="small text-secondary">{{topic.created_at|date:'d M'}}</div>
             </div>
           {% endfor %}
-          {% endif %}
+
+        {% endif %}
+
             <!-- <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>

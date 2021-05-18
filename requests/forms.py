@@ -1,8 +1,7 @@
 from django import forms
-from django.forms import widgets
-from .models import Consultation
-from .models import ApplicationForFreeConsultation
 import re
+from .models import Consultation, ApplicationForFreeConsultation
+
 
 
 class ConsultationForm(forms.ModelForm):
@@ -22,26 +21,32 @@ class ConsultationForm(forms.ModelForm):
         }
 
 
-    def clean_phone(self):
-        phone = self.cleaned_data.get('phone')
-        if ('998' not in phone) or len(phone)>11:
-            raise forms.ValidationError('номер неправильного формата')
-        return phone
-
-    def clean_organization_contacts(self):
-        phone = self.cleaned_data.get('organization_contacts')
-        if ('998' not in phone) or len(phone)>11:
-            raise forms.ValidationError('номер неправильного формата')
-        return phone
-
-
 BUSYNESS = (
     ('student', 'student'),
-    ('busy', 'busy'),
+    ('busy', 'busy')
+)
+DEGREE = (
+    ('кандидат наук', 'кандидат наук '),
+    ('доктор наук', 'доктор  наук'),
+    ('доктор философии', 'доктор философии PhD'),
+    ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
 )
 
-class FreeConsultationForm(forms.Form):
+class FreeConsultationForm(forms.ModelForm):
+    busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect())
+    academic_degree = forms.ChoiceField(choices=DEGREE, widget=forms.Select(attrs={'class':'form-control'}))
+    upload_file = forms.ImageField(help_text='kkkkkkk')
+    class Meta:
+        model = ApplicationForFreeConsultation
+        fields = '__all__'
 
-    busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect(attrs={'class':'form-control'}))
-
-    
+        widgets = {
+            'first_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'last_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'place_of_work' : forms.TextInput(attrs={'class':'form-control'}),
+            'application_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'conference' : forms.TextInput(attrs={'class':'form-control'}),
+            'section' : forms.TextInput(attrs={'class':'form-control'}),
+            'phone' : forms.TextInput(attrs={'class':'form-control'}),
+            'email' : forms.TextInput(attrs={'class':'form-control'}),
+        }

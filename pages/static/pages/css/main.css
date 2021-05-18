@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .main-font{
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Exo 2', sans-seserif;
 }
 
 .geometria{
@@ -145,6 +145,15 @@ h1, h2, h3, h4, h5, h6{
     line-height: 26px;
 }
 
+.font-65{
+    font-size: 65px;
+    line-height: 70px;
+}
+
+.border-primary{
+    border-color: #00A1A8 !important;
+}
+
 .padding_me{
     padding-top: 100px !important;
     padding-bottom: 100px !important;
@@ -191,6 +200,14 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media  (max-width: 992px){
+    .padding_me{
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+
+}
+    .mt-200{
+    margin-top: 50px !important;
+        }
 	.forma{
     width: 90%;
     height: 90%;

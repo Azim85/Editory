@@ -9,6 +9,7 @@ pillow = "*"
 django-ckeditor = "==6.0.0"
 gunicorn = "*"
 django-resized = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
