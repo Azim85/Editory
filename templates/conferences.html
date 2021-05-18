@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
-                <img  src="{% static 'pages/images/conf 1.png' %}">
+                <img  src="{% static 'pages/images/conf 1.png' %}" width="100%">
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
 
                 <div  class=" borderMe p-4 rounded-20 d-flex justify-content-start h-100 ">
                     <div class="h2">Участвовать в конференции</div>
-                    <img src="{% static 'pages/svg/participation 1.svg' %}">
+                    <img src="{% static 'pages/svg/participation 1.svg' %} " width="100%">
 
                 </div>
 
@@ -63,7 +63,7 @@
 
                  <div class="borderMe p-4  rounded-20 d-flex justify-content-start h-100">
                      <div class="h2">Организовать конференцию</div>
-                    <img src="{% static 'pages/svg/stacking-rings 1.svg' %}">
+                    <img src="{% static 'pages/svg/stacking-rings 1.svg' %}" width="100%">
 
                 </div>
             </div>
@@ -77,8 +77,8 @@
     <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top ">
   <div>
      <h2 id="hideform2" class="float-right btn  ">X</h2>
-        <h2 class=" mb-5">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
-        <nav>
+        <h2 class=" mb-2">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
+        <nav class="mb-2">
               <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
                     <a class="nav-link active pl-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">1 Личные данные</a>
                     <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Конференция</a>
@@ -168,7 +168,7 @@
                             <div class="form-group row" style="margin-top: 160px">
                                 <div class="offset-6 col-sm-4">
                                     <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                        <a class="nav-link p-2 bg-primary rounded" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        <a class="nav-link p-2 main-background text-white rounded w-100 text-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
                                             Дальше <img src="{% static 'pages/svg/Union.svg' %}">
                                         </a>
 
@@ -181,13 +181,13 @@
                     </div>
 
                 </form>
-    </div>
+            </div>
 
           </div>
 
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-              <div class=" container  bg-white rounded-20 py-5 px-5 " >
+              <div class=" container  bg-white rounded-20" >
                 <form method="post" >
                     {% csrf_token %}
                     <div class="row text-secondary">
@@ -255,10 +255,10 @@
 
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <label for="file" class="input-preview h-100">
+              <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center ">
+                            <label for="file" class="input-preview h-100 w-100">
                                 <div class="  d-flex flex-column justify-content-center">
                                 <div class="btn-primary btn ">Выберите файл</div>
                                     <div>или перетащите документ</div>
@@ -268,7 +268,7 @@
 
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
-                            <img  src="{% static 'pages/svg/Group 299.svg' %}" width="50%">
+                            <img  src="{% static 'pages/svg/Group 299.svg' %}" width="195px">
                         </div>
                         </div>
                     </div>

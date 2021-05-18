@@ -8,7 +8,7 @@
   background: #62C7CB;
 }
 .form_radio_btn input[type=radio] {
-  display: none;
+  /*display: none;*/
 }
 .form_radio_btn label {
   cursor: pointer;
@@ -46,8 +46,8 @@ height: 48px;
 .input-preview {
 	border: 1px dashed #00A1A8;
 	border-radius: 15px;
-	width: 90vw;
-	height: 200px;
+	/*width: 90vw;*/
+	/*height: 200px;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -56,6 +56,12 @@ height: 48px;
 	background-position: center;
 	position: relative;
 	transition: ease-in-out 750ms;
+}
+
+@media  (max-width: 992px){
+	.h2{
+		font-size: 10px;
+	}
 }
 
 
