@@ -178,9 +178,6 @@ line-height: 106.3%;
 /*    float: right;*/
 /*}*/
 
-.rounded-20 {
-    border-radius: 20px;
-}
 
 .m-botton-188 {
     margin-bottom: 188px !important;
@@ -217,11 +214,11 @@ line-height: 106.3%;
     }
 
     .section-3 {
-        height: 2600px;
+        height: 800px;
     }
 
     .section-4 {
-        height: 800px;
+        height: 400px;
     }
 
     .rounded-20 {
@@ -253,7 +250,7 @@ line-height: 106.3%;
     }
 
     .section-3 {
-        height: 2500px;
+        height: 800px;
     }
 
     .h-45p {
@@ -294,6 +291,16 @@ line-height: 106.3%;
 }
 
 @media (max-width: 992px) {
+    .margin-b-100{
+    margin-bottom: 50px;
+}
+    .m-botton-188 {
+    margin-bottom: 60px !important;
+}
+    .py-me-5{
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
     button.slick-next.slick-arrow,
     button.slick-next.slick-arrow::before{
 

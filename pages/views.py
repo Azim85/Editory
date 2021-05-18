@@ -90,3 +90,11 @@ class Research_strategy(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Research_strategy, self).get_context_data(**kwargs)
         return context
+
+
+class Language_editing(TemplateView):
+    template_name = 'language_editing.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Language_editing, self).get_context_data(**kwargs)
+        return context

@@ -137,4 +137,115 @@
     </div>
 
 </div>
+
+     <div class="my-5 main-background">
+        <div class="container">
+            <div class="py-5">
+                <div class="row text-white">
+                    <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
+                    <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
+                    <div class="offset-1 col-lg-3 mt-3"><div id="commit" class="btn btn-light px-4 py-2">Получить консультацию</div></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+    <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top " >
+        <h2 id="hideform" class="float-right btn  ">X</h2>
+        <h2 class=" mb-5">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
+
+        <form method="post" action="{% url 'requests:consultation' %}">
+            {% csrf_token %}
+            <div class="row text-secondary">
+                <div class="col-lg-6">
+                    <div class="form-group row">
+                        <label for="" class="col-sm-4 col-form-label">Имя</label>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" name="first_name" class="form-control"> -->
+                            {{form.first_name}}
+                        </div>
+                        <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" name="last_name" class="form-control"> -->
+                            {{form.last_name}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" name="phone" class="form-control"> -->
+                            {{form.phone}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Тема вопроса</label>
+                        <div class="col-sm-6">
+                            {{form.material}}
+                            <!-- <select id="inputState" name="material" class="form-control">
+
+                                <option class="rounded" selected>Стратегия исследования</option>
+                                <option>Партнёрство и сотрудничество</option>
+                                <option>Финансирование</option>
+                                <option>Управление исследовательским процессом</option>
+                                <option>Общая консультация</option>
+
+                            </select> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" name="organization" class="form-control"> -->
+                            {{form.organization}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">Контакты организации </label>
+                        <div class="offset-4 col-sm-6">
+                            <!-- <input type="text" name="organization_contacts" class="form-control"> -->
+                            {{form.organization_contacts}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" name="address" class="form-control"> -->
+                            {{form.address}}
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 60px">
+                        <div class="offset-4 col-sm-6">
+                            <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+
+    <script>
+    $('#commit').click(function (){
+        $('div.forma').css('display','inline')
+    });
+    $('#hideform').click(function (){
+        $('div.forma').css('display','none')
+    });
+    </script>
+
 {% endblock %}

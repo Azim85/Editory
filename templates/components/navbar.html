@@ -14,27 +14,29 @@
                     <a class="nav-link k text-dark " href="{% url 'pages:news' %}">Новости</a>
                 </li>
 
-                 <li class="nav-item dropdown ">
+                 <li class="nav-item dropdown geometria">
                      <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Продукты/материалы
                      </a>
 
                      <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">
 
-                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark  dropright py-2"  id="showChild" role="button" ><div class="border-bottom border-hover">Исследовательские платформы</div></a>
+                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2"  ><div class="border-bottom border-hover">Исследовательские платформы</div></a>
 
-                         <div id="navChild"  class="hidebutton ">
+
+
+                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild" role="button" ><div class="border-bottom border-hover">Research intelligence</div></a>
+                            <div id="navChild"  class="hidebutton ">
                                 <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
                                     <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Стратегия исследования</div></a>
-                                    <a href="#" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Научное сотрудничество</div></a>
-                                    <a href="#" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Стратегия исследования</div></a>
-                                    <a href="#" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Научное сотрудничество</div></a>
-                                    <a href="#" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Бесплатная консультация</div></a>
+                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Научное сотрудничество</div></a>
+                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Стратегия исследования</div></a>
+                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="border-bottom border-hover">Научное сотрудничество</div></a>
+
                                 </div>
                          </div>
 
-                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:research_intelligense' %}"><div class="border-bottom border-hover">Research intelligence</div></a>
-                        <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="border-bottom border-hover">Образование</div></a>
+                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="border-bottom border-hover">Образование</div></a>
                     </div>
                 </li>
                 <li class="nav-item ml-3">
