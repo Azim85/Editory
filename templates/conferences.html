@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="bg-me">
 
     <div class="container mb-5">
@@ -72,7 +71,7 @@
     </div>
 </div>
 
-
+{{form.busyness}}
 
     <div class="container mt-4">
     <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top ">
@@ -97,37 +96,52 @@
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Имя</label>
                                 <div class="col-sm-6">
-                                     <input type="text" name="first_name" class="form-control">
-        {#                            {{form.first_name}}#}
+                                     <!-- <input type="text" name="first_name" class="form-control"> -->
+                                    {{form.first_name}}
                                 </div>
                                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="last_name" class="form-control">
-        {#                            {{form.last_name}}#}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
+                                    {{form.last_name}}
                                 </div>
                             </div>
+                            
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Занятость</label>
                                 <div class="col-sm-6 ">
-
                                       <div class="row ">
+
                                         <div class="form_radio_btn col-6 pr-0">
-                                          <input id="radio-1" type="radio" name="radio" value="1" checked>
-                                          <label class="form-control w-100" for="radio-1">Работаю</label>
+                                            <label class="form-control w-100" for="radio-1">Работаю</label>
+                                          <input id="radio-1" type="radio" name="busyness" value="1" checked>
                                         </div>
 
                                         <div class="form_radio_btn col-6 pl-0">
-                                          <input id="radio-2" type="radio" name="radio" value="2">
+                                          <input id="radio-2" type="radio" name="busyness" value="2">
                                           <label class="form-control " for="radio-2">Студент</label>
                                         </div>
+
                                       </div>
 
-        {#                            {{form.phone}}#}
                                 </div>
                             </div>
+
+                            <!-- <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Занятость</label>
+                                <div class="col-sm-6 ">
+                                    <div class="row classs">
+                            
+                                        {{form.busyness}}
+                            
+                                    </div>
+                            
+                                </div>
+                            </div> -->
+
+
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Место работы</label>
                                 <div class="col-sm-6">

@@ -19,6 +19,23 @@
 height: 48px;
     align-content: center;
 }
+/* 
+.classs ul li input[type=radio]:checked + label {
+  background: #62C7CB;
+}
+.classs ul li input[type=radio] {
+  display: none;
+}
+.classs label {
+  cursor: pointer;
+  line-height: 34px;
+  user-select: none;
+}
+.classs, label{
+height: 48px;
+    align-content: center;
+} */
+
 
 
 
