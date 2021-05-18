@@ -40,16 +40,8 @@ BUSYNESS = (
     ('busy', 'busy'),
 )
 
-class FreeConsultationForm(forms.ModelForm):
+class FreeConsultationForm(forms.Form):
 
-    busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect(attrs={'class':''}))
+    busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect(attrs={'class':'form-control'}))
 
-    class Meta:
-        model = ApplicationForFreeConsultation
-        fields = "__all__"
-
-
-        widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+    

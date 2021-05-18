@@ -48,7 +48,7 @@ class WebinarsView(TemplateView):
 
 class Conferences(View):
     def get(self, request):
-        context = {'form':FreeConsultationForm() }
+        context = {'form':FreeConsultationForm()}
         return render(request, 'conferences.html', context)
 
     def get_context_data(self, **kwargs):
