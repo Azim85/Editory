@@ -158,3 +158,22 @@ class Consultation(models.Model):
         verbose_name_plural = 'консультации'
 
     
+DEGREE = (
+    ('кандидат наук', 'кандидат наук '),
+    ('доктор наук', 'доктор  наук'),
+    ('доктор философии', 'доктор философии PhD'),
+    ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
+)
+class ApplicationForFreeConsultation(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    busyness = models.CharField(max_length=100)
+    place_of_work = models.CharField(max_length=100)
+    academic_degree = models.CharField(max_length=100, choices=DEGREE)
+    application_name = models.CharField(max_length=100)
+    conference = models.CharField(max_length=100)
+    section = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    upload_file = models.FileField(upload_to='files/')
+    created_at = models.DateTimeField(auto_now_add=True)

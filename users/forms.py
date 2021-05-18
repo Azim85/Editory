@@ -71,8 +71,6 @@ class LoginForm(forms.Form):
 
 class ProfileForm(forms.ModelForm):
 
-    first_name = forms.CharField(max_length=5)
-
     class Meta:
         model = get_user_model()
         fields = ['first_name', 'phone', 'address', 'email', 'profile_image']

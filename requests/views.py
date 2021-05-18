@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
-from .forms import ConsultationForm
+from .forms import ConsultationForm, FreeConsultationForm
 
 
 class Research(TemplateView):
@@ -46,17 +46,18 @@ class WebinarsView(TemplateView):
         return context
 
 
-class Conferences(TemplateView):
-    template_name = 'conferences.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Conferences, self).get_context_data(**kwargs)
-        return context
+class Conferences(View):
+    def get(self, request):
+        context = {'form':FreeConsultationForm()}
+        return render(request, 'conferences.html', context)
 
 
 class ConsultationView(View):
     def post(self, request):
         form = ConsultationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('pages:home')
+        if request.user.is_authenticated:
+            if form.is_valid():
+                form.save()
+                return redirect('pages:home')
+        else:
+            return redirect('users:login')

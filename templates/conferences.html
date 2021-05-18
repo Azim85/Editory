@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="bg-me">
 
     <div class="container mb-5">
@@ -97,58 +96,60 @@
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Имя</label>
                                 <div class="col-sm-6">
-                                     <input type="text" name="first_name" class="form-control">
-        {#                            {{form.first_name}}#}
+                                     <!-- <input type="text" name="first_name" class="form-control"> -->
+                                        {{form.first_name}}
                                 </div>
                                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="last_name" class="form-control">
-        {#                            {{form.last_name}}#}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
+                                         {{form.last_name}}
                                 </div>
                             </div>
                             <div class="form-group row">
+                              
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Занятость</label>
-                                <div class="col-sm-6 ">
-
+                                <div class="col-sm-6 check">
+                                    <div style="display:none">{{form.busyness}}</div>
                                       <div class="row ">
+                                          
                                         <div class="form_radio_btn col-6 pr-0">
-                                          <input id="radio-1" type="radio" name="radio" value="1" checked>
-                                          <label class="form-control w-100" for="radio-1">Работаю</label>
+                                          <!-- <input id="radio-1" type="radio" name="busyness" value="1" checked> -->
+                                          <label class="form-control w-100 text-center" for="radio-1" id="hey">Студент</label>
                                         </div>
 
                                         <div class="form_radio_btn col-6 pl-0">
-                                          <input id="radio-2" type="radio" name="radio" value="2">
-                                          <label class="form-control " for="radio-2">Студент</label>
+                                          <!-- <input id="radio-2" type="radio" name="busyness" value="2"> -->
+                                          <label class="form-control text-center " for="radio-2" id="vey">Работаю</label>
                                         </div>
+                                        
                                       </div>
-
-        {#                            {{form.phone}}#}
+        
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Место работы</label>
                                 <div class="col-sm-6">
-        {#                            {{form.material}}#}
-                                    <input type="text" name="last_name" class="form-control">
+                                    {{form.place_of_work}}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-group row">
+                            <div class="form-group row w-100">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Ученая степень</label>
                                 <div class="col-sm-6">
-        {#                            {{form.material}}#}
-                                    <select id="inputState" name="material" class="form-control">
+                              {{form.academic_degree}}
+                                    <!-- <select id="inputState" name="material" class="form-control">
 
                                         <option class="rounded" selected>Кандидат наук</option>
                                         <option>Доктор наук</option>
                                         <option>Доктор философии (PhD)</option>
                                         <option>Хабилитированный доктор (Dr. habil.)</option>
 
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
                             <div class="form-group row" style="margin-top: 160px">
@@ -181,32 +182,32 @@
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Название статьи</label>
                                 <div class="col-sm-6">
-                                     <input type="text" name="first_name" class="form-control">
-        {#                            {{form.first_name}}#}
+                                     <!-- <input type="text" name="first_name" class="form-control"> -->
+                                   {{form.application_name}}
                                 </div>
                                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Конференция</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="last_name" class="form-control">
-        {#                            {{form.last_name}}#}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
+                                   {{form.conference}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Секция</label>
                                 <div class="col-sm-6 ">
 
-                                      <input type="text" name="last_name" class="form-control">
+                                      <!-- <input type="text" name="last_name" class="form-control"> -->
 
-        {#                            {{form.phone}}#}
+                                    {{form.section}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                                 <div class="col-sm-6">
-        {#                            {{form.material}}#}
-                                    <input type="text" name="last_name" class="form-control">
+                                   {{form.phone}}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
                             </div>
                         </div>
@@ -214,8 +215,8 @@
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
                                 <div class="col-sm-6">
-        {#                            {{form.material}}#}
-                                    <input type="text" name="last_name" class="form-control">
+                                   {{form.email}}
+                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
                             </div>
                             <div class="form-group row" style="margin-top: 160px">
@@ -232,7 +233,7 @@
                         </div>
                     </div>
 
-                </form>
+                <!-- </form> -->
               </div>
           </div>
 
@@ -246,8 +247,10 @@
                         <div class="col-lg-6 d-flex align-items-center ">
                             <label for="file" class="input-preview h-100 w-100">
                                 <div class="  d-flex flex-column justify-content-center">
-                                <div class="btn-primary btn ">Выберите файл</div>
+                                <div class="btn-primary btn" id="drag">Выберите файл</div>
                                     <div>или перетащите документ</div>
+                                    
+                                    <div style="display:none">{{form.upload_file}}</div>
                                     </div>
 	                            <input name="file"  id="img" class="input-preview__src" type="file">
                             </label>
@@ -260,7 +263,7 @@
                     </div>
               </div>
 
-
+            </form>
 
 
 
@@ -273,20 +276,47 @@
 {% block js %}
     <script>
 
-        $('#commit2').click(function (){
+    $('#commit2').click(function (){
         $('div.forma').css('display','inline')
     });
+
     $('#hideform2').click(function (){
         $('div.forma').css('display','none')
     });
 
+    let drag = document.getElementById('drag')
+    let upload = document.getElementById('id_upload_file')
+    let hey = document.getElementById('hey')
+    let vey = document.getElementById('vey')
+    let student = document.getElementById('id_busyness_0')
+    let work = document.getElementById('id_busyness_1')
+    hey.style.backgroundColor = '#00A1A8'
+    hey.style.color = 'white'
+    hey.addEventListener('click', function(){
+        student.click()
+        this.style.backgroundColor = '#00A1A8'
+        this.style.color = 'white'
+        vey.style.backgroundColor = 'white'
+        vey.style.color = 'black'
+    })
 
+    vey.addEventListener('click', function () {
+        work.click()
+        this.style.backgroundColor = '#00A1A8'
+        this.style.color = 'white'
+        hey.style.backgroundColor = 'white'
+        hey.style.color = 'black'
+    })
+
+    drag.addEventListener('click', function(){
+        upload.click()
+    })
 
     const fileImage = document.querySelector('.input-preview__src');
-const filePreview = document.querySelector('.input-preview');
+    const filePreview = document.querySelector('.input-preview');
 
-fileImage.onchange = function () {
-    const reader = new FileReader();
+    fileImage.onchange = function () {
+        const reader = new FileReader();
 
     reader.onload = function (e) {
         // get loaded data and render thumbnail.

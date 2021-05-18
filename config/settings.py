@@ -72,6 +72,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'libraries':{
+            'tags': 'requests.templatetags.tags',
+
+            }
         },
     },
 ]
@@ -88,7 +92,7 @@ DATABASES = {
         'PORT': '3306',
         'NAME': 'editory',
         'USER': 'root',
-        'PASSWORD': 'Qwerty123$',
+        'PASSWORD': 'apple1976',
     }
 }
 
