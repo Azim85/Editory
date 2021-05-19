@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
 from .forms import ConsultationForm, FreeConsultationForm
@@ -61,8 +62,10 @@ class ConsultationView(View):
         form = ConsultationForm(request.POST)
         if request.user.is_authenticated:
             if form.is_valid():
-                form.save()
-                return redirect('pages:home')
+                done = form.save()
+                if done:
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('pages:home')
             else:    
                 return render(request,'home.html', {'validated':'validated', 'form':form})
         else:
@@ -73,8 +76,10 @@ class FreeConsultationView(View):
         form = FreeConsultationForm(request.POST, request.FILES)
         if request.user.is_authenticated:
             if form.is_valid():
-                form.save()
-                return redirect('requests:conferences')
+                done = form.save()
+                if done:
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('requests:conferences')
             else:    
                 return render(request,'conferences.html', {'validated':'validated', 'form':form})
         else:

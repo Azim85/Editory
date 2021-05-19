@@ -9,7 +9,6 @@
 
 .form_radio_btn input[type="radio"] {
   /*display: none;*/
-
 }
 .form_radio_btn label {
   cursor: pointer;
@@ -22,11 +21,9 @@ label {
   align-content: center;
 }
 
-
 .check ul {
   list-style-type: none;
 }
-
 
 .input-preview__src {
   display: none;
@@ -53,12 +50,26 @@ label {
   }
 }
 
-
-.form-input input{
+.form-input input {
   margin: 0 auto;
   padding: 10vw;
   /*height: 100%;*/
   border-radius: 15px;
   /*background-color: red;*/
+}
 
+.alert_message {
+  opacity: 0;
+  animation-name: message;
+  animation-duration: 7s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

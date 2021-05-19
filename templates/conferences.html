@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
+
 <div class="bg-me">
 
     <div class="container mb-5">
@@ -219,10 +228,13 @@
                             </div>
                             <div class="form-group row" style="margin-top: 160px">
                                 <div class="offset-6 col-sm-4">
-                                                  <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Конференция</a>
+                                    <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                        <a class="nav-link p-2 main-background text-white rounded w-100 text-center next_btn2" id="nav-profile-tab"
+                                            data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                            Дальше <img src="{% static 'pages/svg/Union.svg' %}">
+                                        </a>
 
-                                                  </div>
+                                    </div>
                                               
 
                                 </div>
@@ -250,7 +262,6 @@
                             <img  src="{% static 'pages/svg/Group 299.svg' %}" width="195px">
                             <button type="submit" class="btn btn-primary">Отправить работу</button>
                         </div>
-                            <button type="submit">save</button>
                         </div>
                     </div>
               </div>
@@ -270,6 +281,12 @@
     <script>
     $(document).ready(function(){
         let validated = document.getElementById('flag')
+        let alert_message = document.getElementById('alert_message')
+
+
+        if (alert_message) {
+            alert_message.classList.add('alert_message')
+        }
 
         if (validated) {
             $('div.forma').css('display', 'inline')
@@ -284,14 +301,16 @@
             $('div.forma').css('display', 'none')
         });
 
-        let drag = document.getElementById('drag')
-        let upload = document.getElementById('id_upload_file')
+     
         let hey = document.getElementById('hey')
         let vey = document.getElementById('vey')
         let student = document.getElementById('id_busyness_0')
         let work = document.getElementById('id_busyness_1')
         hey.style.backgroundColor = '#00A1A8'
         hey.style.color = 'white'
+        $(student).attr('checked', 'checked')
+
+       
         hey.addEventListener('click', function () {
             student.click()
             this.style.backgroundColor = '#00A1A8'
@@ -338,10 +357,59 @@
                 $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
             }
         })
+       
+        let btn2 = document.querySelector('.next_btn2')
+        let application_name = document.getElementById('id_application_name')
+        let conference = document.getElementById('id_conference')
+        let section = document.getElementById('id_section')
+        let phone = document.getElementById('id_phone')
+        let email = document.getElementById('id_email')
 
+        $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+
+        $(application_name).change(function () {
+            if ($(this).val() && $(conference).val() && $(section).val() && $(phone).val() && $(email).val()) {
+                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(conference).change(function () {
+            if ($(this).val() && $(application_name).val() && $(section).val() && $(phone).val() && $(email).val()) {
+                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(section).change(function () {
+            if ($(this).val() && $(application_name).val() && $(conference).val() && $(phone).val() && $(email).val()) {
+                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(phone).change(function () {
+            if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(email).val()) {
+                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(email).change(function () {
+            if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(phone).val()) {
+                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+       
 
     })
-
 
     const fileImage = document.querySelector('.input-preview__src');
     const filePreview = document.querySelector('.input-preview');
@@ -358,5 +426,5 @@
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 };
-    </script>
-{% endblock %}
+</script>
+{% endblock js %}

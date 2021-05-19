@@ -7,6 +7,15 @@
 
 {% endblock %}
 {% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} text-center" id="alert_message">
+        {{message}}
+    </div>
+    {% endfor %}
+{% endif %}
+
     <div>
         <div class="container">
             <div class="row py-me-5 header-me " style="background-image: url('{% static 'pages/images/Group 250.png' %}');">
@@ -549,6 +558,18 @@
 
     $(document).ready(function(){
         let validated = document.getElementById('flag')
+        let alert_message = document.getElementById('alert_message')
+
+   
+        if(alert_message){
+            alert_message.classList.add('alert_message')
+        }
+        
+
+        
+
+        
+        
 
         if (validated) {
             $('div.forma').css('display', 'inline')

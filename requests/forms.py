@@ -58,11 +58,6 @@ class FreeConsultationForm(forms.ModelForm):
             'email' : forms.TextInput(attrs={'class':'form-control'}),
         }
 
-    def clean_first_name(self):
-        firstname = self.cleaned_data.get('first_name')
-        if firstname != 'Azim':
-            raise forms.ValidationError('poof')
-        return firstname
 
     def clean_phone(self):
         phone_len = [10, 11]
