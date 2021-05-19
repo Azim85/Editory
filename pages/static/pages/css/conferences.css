@@ -52,3 +52,13 @@ label {
     font-size: 10px;
   }
 }
+
+
+.form-input input{
+  margin: 0 auto;
+  padding: 10vw;
+  /*height: 100%;*/
+  border-radius: 15px;
+  /*background-color: red;*/
+
+}
