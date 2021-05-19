@@ -144,11 +144,8 @@ class Consultation(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
-    material = models.CharField(max_length=100, choices=TOPICS)
-    organization = models.CharField(max_length=255)
-    organization_contacts = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    comment = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.first_name
@@ -156,6 +153,7 @@ class Consultation(models.Model):
     class Meta:
         verbose_name = 'консультация'
         verbose_name_plural = 'консультации'
+
 
     
 DEGREE = (
@@ -177,3 +175,10 @@ class ApplicationForFreeConsultation(models.Model):
     email = models.EmailField()
     upload_file = models.FileField(upload_to='files/')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        verbose_name = 'Заявка на бесплатную консультацию'
+        verbose_name_plural = 'Бесплатный Kонсультации'

@@ -48,8 +48,10 @@
           </div>
       </div>
         {% endfor %}
+
     {% else %}
     {% endif %}
+
 {#      <div class="col-lg-4 col-sm-6 pb-4 mb-2">#}
 {#        <div>#}
 {#          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">#}
@@ -91,6 +93,7 @@
   <section class=" container">
      <h1 class="font-weight-bold">На этой неделе</h1>
         <div class="row my-5">
+
         {% if last_week %}
           {% for topic in last_week %}
             <div class="col-lg-4 mb-3 ">
@@ -98,7 +101,9 @@
                 <div class="small text-secondary">{{topic.created_at|date:'d M'}}</div>
             </div>
           {% endfor %}
+
         {% endif %}
+
             <!-- <div class="col-lg-4">
                 <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
                 <div class="small text-secondary">22 сентября</div>
@@ -126,8 +131,8 @@
   
   
   <section class="duble-card container">
+    {% if top_8 %}
     <div class="row">
-      
     {% if top_8.0 %}
       <div class="col-lg-6">
           <div class="position-relative " style="width: 100%; height:380px; border-radius:10px">
@@ -258,7 +263,7 @@
       </div>
       {% endif %}
     </div>
-
+{% endif %}
   </section>
 
 {% endblock %}

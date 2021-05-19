@@ -82,3 +82,4 @@ class ProfileForm(forms.ModelForm):
         'email' : forms.TextInput(attrs={'class':'form-control'}),
         'image_field' : forms.ImageField(),
         }
+   
