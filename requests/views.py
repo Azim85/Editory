@@ -55,12 +55,24 @@ class Conferences(View):
 
 class ConsultationView(View):
     def post(self, request):
-        validated = False
         form = ConsultationForm(request.POST)
-
         if request.user.is_authenticated:
             if form.is_valid():
                 form.save()
                 return redirect('pages:home')
+            else:    
+                return render(request,'home.html', {'validated':'validated', 'form':form})
+        else:
+            return redirect('users:login')
+
+class FreeConsultationView(View):
+   def post(self, request):
+        form = FreeConsultationForm(request.POST, request.FILES)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                form.save()
+                return redirect('requests:conferences')
+            else:    
+                return render(request,'conferences.html', {'validated':'validated', 'form':form})
         else:
             return redirect('users:login')

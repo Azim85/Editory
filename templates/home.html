@@ -466,45 +466,18 @@
                             <small class="text-danger">{{form.phone.errors}}</small>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Тема вопроса</label>
-                        <div class="col-sm-6">
-                            {{form.material}}
-                            <!-- <select id="inputState" name="material" class="form-control">
-
-                                <option class="rounded" selected>Стратегия исследования</option>
-                                <option>Партнёрство и сотрудничество</option>
-                                <option>Финансирование</option>
-                                <option>Управление исследовательским процессом</option>
-                                <option>Общая консультация</option>
-
-                            </select> -->
-                        </div>
-                    </div>
+                
                 </div>
                 <div class="col-lg-6">
+                    
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
-                        <div class="col-sm-6">
-                            <!-- <input type="text" name="organization" class="form-control"> -->
-                            {{form.organization}}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">Контакты организации </label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">комментарий</label>
                         <div class="offset-4 col-sm-6 d-flex flex-column">
-                            <!-- <input type="text" name="organization_contacts" class="form-control"> -->
-                            {{form.organization_contacts}}
-                            <small class="text-danger">{{form.organization_contacts.errors}}</small>
+                            {{form.comment}}
+                            <small class="text-danger">{{form.comment.errors}}</small>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
-                        <div class="col-sm-6">
-                            <!-- <input type="text" name="address" class="form-control"> -->
-                            {{form.address}}
-                        </div>
-                    </div>
+                    
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="offset-4 col-sm-6">
                             <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
@@ -521,7 +494,7 @@
     </div>
     </div>
     {% if validated %}
-    <div id="flag" style="opacity: 0;">flag</div>
+    <div id="flag" style="opacity: 1;">flag</div>
     {% endif %}
         
 {% endblock content %}

@@ -144,11 +144,8 @@ class Consultation(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
-    material = models.CharField(max_length=100, choices=TOPICS)
-    organization = models.CharField(max_length=255)
-    organization_contacts = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    comment = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.first_name
@@ -157,32 +154,6 @@ class Consultation(models.Model):
         verbose_name = 'консультация'
         verbose_name_plural = 'консультации'
 
-DEGREE = (
-    ('кандидат наук', 'кандидат наук '),
-    ('доктор наук', 'доктор наук'),
-    ('доктор философии', 'доктор философии PhD'),
-    ('хабилитировании доктор', 'хабилитировании доктор (Dr. habil)'),
-)
-
-class ApplicationForFreeConsultation(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    busyness = models.CharField(max_length=50)
-    place_of_work = models.CharField(max_length=100)
-    academic_degree = models.CharField(max_length=100, choices=DEGREE)
-    article_title = models.CharField(max_length=100)
-    conference = models.CharField(max_length=100)
-    section = models.CharField(max_length=100)
-    phone = models.CharField(max_length=100)
-    email = models.EmailField()
-    file_upload = models.FileField(upload_to='files/')
-
-    def __str__(self):
-        return self.first_name
-
-    class Meta:
-        verbose_name = 'Заявка на бесплатную консультацию'
-        verbose_name_plural = 'Бесплатный Kонсультации'
 
     
 DEGREE = (
@@ -204,3 +175,10 @@ class ApplicationForFreeConsultation(models.Model):
     email = models.EmailField()
     upload_file = models.FileField(upload_to='files/')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        verbose_name = 'Заявка на бесплатную консультацию'
+        verbose_name_plural = 'Бесплатный Kонсультации'

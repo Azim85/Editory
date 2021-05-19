@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<form method="post" action="">
+<form method="post" action="{% url 'requests:free_consultation' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container mt-4">
     <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top ">
@@ -96,18 +96,18 @@
 
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Имя</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                     {{form.first_name}}
+                                    <small class="text-danger align-self-start">{{form.first_name.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                     {{form.last_name}}
+                                    <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.last_name.errors}}</small>
                             </div>
                             
                             <div class="form-group row">
@@ -130,8 +130,9 @@
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Место работы</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                     {{form.place_of_work}}
+                                    <small class="text-danger align-self-start">{{form.place_of_work.errors}}</small>
                                 </div>
                             </div>
                         </div>
@@ -140,15 +141,18 @@
 
                             <div class="form-group row w-100">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Ученая степень</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                     {{form.academic_degree}}
+                                    <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
                                 </div>
                             </div>
 
                             <div class="form-group row" style="margin-top: 160px">
                                 <div class="offset-6 col-sm-4">
                                     <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                        <a class="nav-link p-2 main-background text-white rounded w-100 text-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        <a class="nav-link p-2 main-background text-white rounded w-100 text-center next_btn"
+                                         id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                                          aria-controls="nav-profile" aria-selected="false">
                                             Дальше <img src="{% static 'pages/svg/Union.svg' %}">
                                         </a>
                                     </div>
@@ -172,34 +176,34 @@
 
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Название статьи</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                    {{form.application_name}}
+                                    <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Конференция</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                    {{form.conference}}
+                                    <small class="text-danger align-self-start">{{form.conference.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.conference.errors}}</small>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Секция</label>
-                                <div class="col-sm-6 ">
+                                <div class="col-sm-6 d-flex flex-column">
                                     {{form.section}}
+                                    <small class="text-danger align-self-start">{{form.section.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.section.errors}}</small>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                    {{form.phone}}
+                                    <small class="text-danger align-self-start">{{form.phone.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.phone.errors}}</small>
                             </div>
                         </div>
 
@@ -207,10 +211,10 @@
                             <div class="form-group row">
 
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex flex-column">
                                    {{form.email}}
+                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
                                 </div>
-                                <small class="text-danger align-self-end">{{form.email.errors}}</small>
                             </div>
                             <div class="form-group row" style="margin-top: 160px">
 
@@ -236,16 +240,12 @@
                             <label for="file" class="input-preview h-100 w-100 form-input">
 
                                 {{form.upload_file}}
-{#                                    <div>или перетащите документ</div>#}
                                     
-
-
-{#	                            <input name="file"  id="img" class="input-preview__src" type="image">#}
                             </label>
                         </div>
                         <div class="col-lg-4 d-flex justify-content-center align-items-center flex-column ">
                             <img  src="{% static 'pages/svg/Group 299.svg' %}" width="195px">
-                            <button class="btn btn-primary">Отправить работу</button>
+                            <button type="submit" class="btn btn-primary">Отправить работу</button>
                         </div>
                         </div>
                     </div>
@@ -255,47 +255,89 @@
     </div>
     </div>
 </form>
+
+{% if validated %}
+<div id="flag" style="opacity: 1;">flag</div>
+{% endif %}
 {% endblock %}
 
 
 {% block js %}
     <script>
+    $(document).ready(function(){
+        let validated = document.getElementById('flag')
 
-    $('#commit2').click(function (){
-        $('div.forma').css('display','inline')
-    });
+        if (validated) {
+            $('div.forma').css('display', 'inline')
+        }
 
-    $('#hideform2').click(function (){
-        $('div.forma').css('display','none')
-    });
+        $('#commit2').click(function () {
+            $('div.forma').css('display', 'inline')
+            
+        });
 
-    let drag = document.getElementById('drag')
-    let upload = document.getElementById('id_upload_file')
-    let hey = document.getElementById('hey')
-    let vey = document.getElementById('vey')
-    let student = document.getElementById('id_busyness_0')
-    let work = document.getElementById('id_busyness_1')
-    hey.style.backgroundColor = '#00A1A8'
-    hey.style.color = 'white'
-    hey.addEventListener('click', function(){
-        student.click()
-        this.style.backgroundColor = '#00A1A8'
-        this.style.color = 'white'
-        vey.style.backgroundColor = 'white'
-        vey.style.color = 'black'
+        $('#hideform2').click(function () {
+            $('div.forma').css('display', 'none')
+        });
+
+        let drag = document.getElementById('drag')
+        let upload = document.getElementById('id_upload_file')
+        let hey = document.getElementById('hey')
+        let vey = document.getElementById('vey')
+        let student = document.getElementById('id_busyness_0')
+        let work = document.getElementById('id_busyness_1')
+        hey.style.backgroundColor = '#00A1A8'
+        hey.style.color = 'white'
+        hey.addEventListener('click', function () {
+            student.click()
+            this.style.backgroundColor = '#00A1A8'
+            this.style.color = 'white'
+            vey.style.backgroundColor = 'white'
+            vey.style.color = 'black'
+        })
+
+        vey.addEventListener('click', function () {
+            work.click()
+            this.style.backgroundColor = '#00A1A8'
+            this.style.color = 'white'
+            hey.style.backgroundColor = 'white'
+            hey.style.color = 'black'
+        })
+
+        let btn = document.querySelector('.next_btn')
+        let first_name = document.getElementById('id_first_name')
+        let last_name = document.getElementById('id_last_name')
+        let work_place = document.getElementById('id_place_of_work')
+
+        $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+
+        $(first_name).change(function(){
+            if($(this).val() && $(last_name).val() && $(work_place).val()){
+                $(btn).css({ 'background': '#00A1A8', 'pointer-events':'auto' })
+            }else{
+                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(last_name).change(function () {
+            if ($(this).val() && $(first_name).val() && $(work_place).val()) {
+                $(btn).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+        $(work_place).change(function () {
+           if ($(this).val() && $(last_name).val() && $(first_name).val()) {
+                $(btn).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
+            } else {
+                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            }
+        })
+
+
     })
 
-    vey.addEventListener('click', function () {
-        work.click()
-        this.style.backgroundColor = '#00A1A8'
-        this.style.color = 'white'
-        hey.style.backgroundColor = 'white'
-        hey.style.color = 'black'
-    })
-
-    drag.addEventListener('click', function(){
-        upload.click()
-    })
 
     const fileImage = document.querySelector('.input-preview__src');
     const filePreview = document.querySelector('.input-preview');
