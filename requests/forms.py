@@ -36,6 +36,7 @@ class FreeConsultationForm(forms.ModelForm):
     busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect())
     academic_degree = forms.ChoiceField(choices=DEGREE, widget=forms.Select(attrs={'class':'form-control'}))
     upload_file = forms.ImageField(help_text='kkkkkkk')
+    
     class Meta:
         model = ApplicationForFreeConsultation
         fields = '__all__'
@@ -50,3 +51,9 @@ class FreeConsultationForm(forms.ModelForm):
             'phone' : forms.TextInput(attrs={'class':'form-control'}),
             'email' : forms.TextInput(attrs={'class':'form-control'}),
         }
+
+    def clean_first_name(self):
+        firstname = self.cleaned_data.get('first_name')
+        if firstname != 'Azim':
+            raise forms.ValidationError('poof')
+        return firstname

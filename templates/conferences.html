@@ -71,7 +71,8 @@
     </div>
 </div>
 
-
+<form method="post" action="">
+    {% csrf_token %}
     <div class="container mt-4">
     <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top ">
   <div>
@@ -88,94 +89,75 @@
     <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div class=" container " >
-                <form method="post" action="">
-                    {% csrf_token %}
+
+                <!-- forrm -->
                     <div class="row text-secondary">
                         <div class="col-lg-6">
+
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Имя</label>
                                 <div class="col-sm-6">
-
-                                     <!-- <input type="text" name="first_name" class="form-control"> -->
-                                        {{form.first_name}}
+                                    {{form.first_name}}
                                 </div>
                                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
+
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
                                 <div class="col-sm-6">
-
-                                    <!-- <input type="text" name="last_name" class="form-control"> -->
-                                         {{form.last_name}}
+                                    {{form.last_name}}
                                 </div>
+                                <small class="text-danger align-self-end">{{form.last_name.errors}}</small>
                             </div>
                             
                             <div class="form-group row">
-                              
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Занятость</label>
-
-
                                 <div class="col-sm-6 check">
                                     <div style="display:none">{{form.busyness}}</div>
                                       <div class="row ">
-                                          
+
                                         <div class="form_radio_btn col-6 pr-0">
-                                          <!-- <input id="radio-1" type="radio" name="busyness" value="1" checked> -->
                                           <label class="form-control w-100 text-center" for="radio-1" id="hey">Студент</label>
-
                                         </div>
-                            
-                                        <div class="form_radio_btn col-6 pl-0">
 
-                                          <!-- <input id="radio-2" type="radio" name="busyness" value="2"> -->
+                                        <div class="form_radio_btn col-6 pl-0">
                                           <label class="form-control text-center " for="radio-2" id="vey">Работаю</label>
                                         </div>
                                         
                                       </div>
-        
                                 </div>
                             </div>
-
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Место работы</label>
                                 <div class="col-sm-6">
                                     {{form.place_of_work}}
-                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-6">
+
                             <div class="form-group row w-100">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Ученая степень</label>
                                 <div class="col-sm-6">
-                              {{form.academic_degree}}
-                                    <!-- <select id="inputState" name="material" class="form-control">
-
-                                        <option class="rounded" selected>Кандидат наук</option>
-                                        <option>Доктор наук</option>
-                                        <option>Доктор философии (PhD)</option>
-                                        <option>Хабилитированный доктор (Dr. habil.)</option>
-
-                                    </select> -->
+                                    {{form.academic_degree}}
                                 </div>
                             </div>
+
                             <div class="form-group row" style="margin-top: 160px">
                                 <div class="offset-6 col-sm-4">
                                     <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
                                         <a class="nav-link p-2 main-background text-white rounded w-100 text-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
                                             Дальше <img src="{% static 'pages/svg/Union.svg' %}">
                                         </a>
-
                                     </div>
                                 </div>
                             </div>
 
-
                         </div>
-                    </div>
 
-                </form>
+                    </div>
             </div>
 
           </div>
@@ -184,65 +166,62 @@
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
               <div class=" container  bg-white rounded-20" >
-                <form method="post" >
-                    {% csrf_token %}
+                
                     <div class="row text-secondary">
                         <div class="col-lg-6">
+
                             <div class="form-group row">
                                 <label for="" class="col-sm-4 col-form-label">Название статьи</label>
                                 <div class="col-sm-6">
-                                     <!-- <input type="text" name="first_name" class="form-control"> -->
                                    {{form.application_name}}
                                 </div>
                                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
                             </div>
+
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Конференция</label>
                                 <div class="col-sm-6">
-                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                    {{form.conference}}
                                 </div>
+                                <small class="text-danger align-self-end">{{form.conference.errors}}</small>
                             </div>
+
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Секция</label>
                                 <div class="col-sm-6 ">
-
-                                      <!-- <input type="text" name="last_name" class="form-control"> -->
-
                                     {{form.section}}
                                 </div>
+                                <small class="text-danger align-self-end">{{form.section.errors}}</small>
                             </div>
+
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                                 <div class="col-sm-6">
                                    {{form.phone}}
-                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
+                                <small class="text-danger align-self-end">{{form.phone.errors}}</small>
                             </div>
                         </div>
+
                         <div class="col-lg-6">
                             <div class="form-group row">
+
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
                                 <div class="col-sm-6">
                                    {{form.email}}
-                                    <!-- <input type="text" name="last_name" class="form-control"> -->
                                 </div>
+                                <small class="text-danger align-self-end">{{form.email.errors}}</small>
                             </div>
                             <div class="form-group row" style="margin-top: 160px">
+
                                 <div class="offset-6 col-sm-4">
-                                                  <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Конференция</a>
-
-                                                  </div>
-
+                                    <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                        <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Конференция</a>
+                                    </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
-                <!-- </form> -->
               </div>
           </div>
 
@@ -271,13 +250,10 @@
                     </div>
               </div>
 
-            </form>
-
-
-
           </div>
     </div>
     </div>
+</form>
 {% endblock %}
 
 
