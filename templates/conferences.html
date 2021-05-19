@@ -89,7 +89,7 @@
     <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div class=" container " >
-                <form method="post" action="{% url 'requests:consultation' %}">
+                <form method="post" action="{% url 'requests:conferences' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row text-secondary">
                         <div class="col-lg-6">
@@ -167,7 +167,7 @@
                         </div>
                     </div>
 
-                </form>
+                <!-- </form> -->
             </div>
 
           </div>
@@ -175,8 +175,8 @@
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
               <div class=" container  bg-white rounded-20" >
-                <form method="post" >
-                    {% csrf_token %}
+                <!-- <form method="post" > -->
+                    <!-- {% csrf_token %} -->
                     <div class="row text-secondary">
                         <div class="col-lg-6">
                             <div class="form-group row">
@@ -225,7 +225,7 @@
                                                       <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Конференция</a>
 
                                                   </div>
-
+                                              
                                 </div>
                             </div>
 
@@ -259,6 +259,7 @@
                         <div class="col-lg-6 d-flex justify-content-center">
                             <img  src="{% static 'pages/svg/Group 299.svg' %}" width="195px">
                         </div>
+                            <button type="submit">save</button>
                         </div>
                     </div>
               </div>

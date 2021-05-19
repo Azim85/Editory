@@ -51,6 +51,9 @@ class Conferences(View):
         context = {'form':FreeConsultationForm()}
         return render(request, 'conferences.html', context)
 
+    def post(self, request):
+        print(request.POST)
+
 
 class ConsultationView(View):
     def post(self, request):
