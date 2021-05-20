@@ -74,6 +74,7 @@ class ConsultationView(View):
 class FreeConsultationView(View):
    def post(self, request):
         form = FreeConsultationForm(request.POST, request.FILES)
+        print(request.POST, request.FILES)
         if request.user.is_authenticated:
             if form.is_valid():
                 done = form.save()
