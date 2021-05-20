@@ -92,7 +92,7 @@ DATABASES = {
         'PORT': '3306',
         'NAME': 'editory',
         'USER': 'root',
-        'PASSWORD': 'apple1976',
+        'PASSWORD': 'Qwerty123$',
     }
 }
 
