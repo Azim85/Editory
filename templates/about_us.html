@@ -273,18 +273,56 @@
                 <div class="row text-white">
                     <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
                     <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
-                    <div class="offset-1 col-lg-3 mt-3"><div class="btn btn-light px-4 py-2">Получить консультацию</div></div>
+                    <div class="offset-1 col-lg-3 mt-3"><div id="commit" class="btn btn-light px-4 py-2">Получить консультацию</div></div>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+    <div>
+        {% include 'components/form_consultation.html' %}
+    </div>
+
+    {% if validated %}
+    <div id="flag" style="opacity: 1;">flag</div>
+    {% endif %}
 {% endblock %}
 
 {% block js %}
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+    $(document).ready(function(){
+        let validated = document.getElementById('flag')
+        let alert_message = document.getElementById('alert_message')
+
+
+        if(alert_message){
+            alert_message.classList.add('alert_message')
+        }
+
+
+        if (validated) {
+            $('div.forma').css('display', 'inline')
+        }
+
+        $('#commit').click(function () {
+            $('div.forma').css('display', 'inline')
+
+        });
+        $('#hideform').click(function () {
+            $('div.forma').css('display', 'none')
+        });
+
+
+        $('.btn-toggle').click(function () {
+            $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
+        });
+    })
+
+
         $('.btn-toggle').click(function () {
             $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
         });

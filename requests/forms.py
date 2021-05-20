@@ -18,7 +18,7 @@ class ConsultationForm(forms.ModelForm):
 
     
     def clean_phone(self):
-        phone_len = [10, 11]
+        phone_len = [12, 13]
         phone = self.cleaned_data.get('phone')
         if '+998'  or '998' in phone:
             if len(phone) in phone_len:

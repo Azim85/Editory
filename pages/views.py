@@ -57,6 +57,7 @@ class AboutUs(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutUs, self).get_context_data(**kwargs)
+        context['form'] = ConsultationForm()
         return context
 
 
