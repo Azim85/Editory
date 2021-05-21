@@ -257,12 +257,12 @@
 {#            </div>#}
     </div>
 
-    <div style="background-color: #F7F7F7;" class="py-5">
+    <div style="background-color: #F7F7F7;" class="py-5 mt-200">
         <div class="container py-5">
             <div class="row ">
-                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/WUR.png' %}" class="wur"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavier.png' %}" class="elsavier"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/WUR2.png' %}" class="qswur"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="qswur"></a></div>
             </div>
         </div>
     </div>
@@ -373,20 +373,24 @@
 
   dots: true,
   infinite: true,
-  speed: 300,
-  slidesToShow: 4.7,
-  startMode: true,
+  speed: 2000,
+            autoPlayClear:true,
+            autoplay: true,
+            autoplaySpeed: 500 ,
+  slidesToShow: 4,
+  startMode: false,
   variableWidth: false,
                responsive: [
                 {
                     breakpoint: 1370,
                     settings: {
-                           slidesToShow: 3,
+                           slidesToShow: 4,
                     }},
                    {
                        breakpoint: 768,
                        settings: {
                            dots: true,
+                           autoplay: false,
                            infinite: true,
                            speed: 300,
                            slidesToShow: 1,
