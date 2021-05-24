@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (Research, ResearchIntelligense, Scientific,
                     TopResearchess, WebinarsView, Conferences,
-                     ConsultationView, FreeConsultationView)
+                     ConsultationView, FreeConsultationView, Proofreading)
                      
 app_name = 'requests'
 
@@ -14,5 +14,6 @@ urlpatterns = [
     path('webinars/', WebinarsView.as_view(), name='webinars'),
     path('conferences/', Conferences.as_view(), name='conferences'),
     path('consultation/', ConsultationView.as_view(), name='consultation'),
-    path('free_consultation/', FreeConsultationView.as_view(), name='free_consultation' )
+    path('free_consultation/', FreeConsultationView.as_view(), name='free_consultation' ),
+    path('proofreading/', Proofreading.as_view(), name='proofreading' )
 ]

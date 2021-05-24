@@ -85,3 +85,12 @@ class FreeConsultationView(View):
                 return render(request,'conferences.html', {'validated':'validated', 'form':form})
         else:
             return redirect('users:login')
+
+
+class Proofreading(View):
+    def get(self, request):
+
+        return render(request, 'proofreading.html')
+
+    def post(self, request):
+        print(request.POST)
