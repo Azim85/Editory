@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import random
 import datetime
+from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
 from .models import Topic, TopResearches
-from requests.forms import ConsultationForm
+from requests.forms import ConsultationForm, OrganizeResearchForm
 
 
 class HomeView(TemplateView):
@@ -87,13 +88,26 @@ class Dissertation(TemplateView):
         return context
 
 
-class Research_strategy(TemplateView):
-    template_name = 'research_strategy.html'
+class Research_strategy(View):
+    
+    def get(self, request):
+        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm() }
+        return render(request, 'research_strategy.html', context)
 
-    def get_context_data(self, **kwargs):
-        context = super(Research_strategy, self).get_context_data(**kwargs)
-        context['form'] = ConsultationForm()
-        return context
+    def post(self, request):
+        forms = OrganizeResearchForm(request.POST)
+        print(request.POST)
+        if forms.is_valid():
+            if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                done = forms.save()
+                if done:
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('pages:research_strategy')
+            else:
+                return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated',})    
+        else:
+            return render(request, 'research_strategy.html', {'forms':forms})
+
 
 
 class Language_editing(TemplateView):

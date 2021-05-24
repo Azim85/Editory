@@ -104,16 +104,13 @@ class PublicationToMagazines(models.Model):
 
 TOPICS = (
     ('стратегия исследования', 'стратегия исследования'),
-    ('партнёрство и сотрудничество', 'партнёрство и сотрудничество'),
-    ('финансирование', 'финансирование'),
-    ('управление исследовательским процессом',
-     'управление исследовательским процессом'),
-    ('общая консультация', 'общая консультация'),
+    ('Научное сотрудничество', 'Научное сотрудничество'),
+    ('Научное финансирование', 'Научное финансирование'),
+    ('Управление и ведение', 'Управление и ведение'),
 )
 
-
+# #######################################################################################
 class OrganizeResearches(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=255, null=True)
     first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
@@ -125,6 +122,14 @@ class OrganizeResearches(models.Model):
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.last_name
+
+    class Meta:
+        verbose_name = 'исследование'
+        verbose_name_plural = 'Стратегия исследования'
+
+# ######################################################################################
 
 class OrderToGraphicalMaterials(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
