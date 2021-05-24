@@ -6,11 +6,10 @@
 {% endblock %}
 {% block content %}
 
-{% if request.user|has_group:"Author" %}
-    {% else %}
+<!-- {% if request.user|has_group:"Author" %}
 
-{% endif %}
-
+{% endif %} -->
+{% if request.user.is_authenticated %}
 <div class="w-100 h-100 mx-0 px-0 mt-5" style="min-height: 100vh;">
     <div class="container">
         <div class="main-box d-flex justify-content-around align-items-center flex-wrap">
@@ -107,7 +106,7 @@
 
 </div>
 
-
+{% endif %}
 
 {% endblock content %}
 

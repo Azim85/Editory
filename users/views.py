@@ -57,10 +57,12 @@ class UserLogoutView(View):
 class DasboardView(View):
 
     def get(self, request):
-        form = ProfileForm(instance=request.user)
-        context = {'form':form}
-        return render(request, 'users/dashboard.html', context)
-
+        if request.user.is_authenticated:
+            form = ProfileForm(instance=request.user)
+            context = {'form':form}
+            return render(request, 'users/dashboard.html', context)
+        else:
+            return redirect('users:login')
 
 class ProfileChange(UpdateView):
     model = User
