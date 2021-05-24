@@ -487,65 +487,9 @@
     </div>
 
     <div>
-
-    <div class="forma container border bg-white rounded-20 py-5 px-5 fixed-top " >
-        <h2 id="hideform" class="float-right btn  ">X</h2>
-        <h2 class=" mb-5">Заявка на <span class="main-color">бесплатную</span> <br>консультацию</h2>
-
-        <form method="post" action="{% url 'requests:consultation' %}">
-            {% csrf_token %}
-            <div class="row text-secondary">
-                <div class="col-lg-6">
-                    <div class="form-group row">
-                        <label for="" class="col-sm-4 col-form-label">Имя</label>
-                        <div class="col-sm-6 d-flex flex-column">
-                            {{form.first_name}}
-                            <small class="text-danger">{{form.first_name.errors}}</small>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
-                        <div class="col-sm-6">
-                            <!-- <input type="text" name="last_name" class="form-control"> -->
-                            {{form.last_name}}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
-                        <div class="col-sm-6 d-flex flex-column">
-                            <!-- <input type="text" name="phone" class="form-control"> -->
-                            {{form.phone}}
-                            <small class="text-danger">{{form.phone.errors}}</small>
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="col-lg-6">
-                    
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label position-absolute pt-0" style="line-height: 21.5px">комментарий</label>
-                        <div class="offset-4 col-sm-6 d-flex flex-column">
-                            {{form.comment}}
-                            <small class="text-danger">{{form.comment.errors}}</small>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group row" style="margin-top: 60px">
-                        <div class="offset-4 col-sm-6">
-                            <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
-                         
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-        </form>
-    
+        {% include 'components/form_consultation.html' %}
     </div>
-    </div>
+
     {% if validated %}
     <div id="flag" style="opacity: 1;">flag</div>
     {% endif %}
@@ -560,20 +504,15 @@
         let validated = document.getElementById('flag')
         let alert_message = document.getElementById('alert_message')
 
-   
+
         if(alert_message){
             alert_message.classList.add('alert_message')
         }
-        
 
-        
-
-        
-        
 
         if (validated) {
             $('div.forma').css('display', 'inline')
-        } 
+        }
 
         $('#commit').click(function () {
             $('div.forma').css('display', 'inline')
@@ -587,7 +526,7 @@
         $('.btn-toggle').click(function () {
             $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
         });
-    })    
+    })
 
     
 
@@ -688,7 +627,7 @@
   speed: 2000,
             autoPlayClear:true,
             autoplay: true,
-            autoplaySpeed: 1000 ,
+            autoplaySpeed: 500 ,
   slidesToShow: 4,
   startMode: false,
   variableWidth: false,

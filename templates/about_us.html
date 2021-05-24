@@ -257,12 +257,12 @@
 {#            </div>#}
     </div>
 
-    <div style="background-color: #F7F7F7;" class="py-5">
+    <div style="background-color: #F7F7F7;" class="py-5 mt-200">
         <div class="container py-5">
             <div class="row ">
-                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/WUR.png' %}" class="wur"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavier.png' %}" class="elsavier"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/WUR2.png' %}" class="qswur"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
+                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="qswur"></a></div>
             </div>
         </div>
     </div>
@@ -273,18 +273,56 @@
                 <div class="row text-white">
                     <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
                     <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
-                    <div class="offset-1 col-lg-3 mt-3"><div class="btn btn-light px-4 py-2">Получить консультацию</div></div>
+                    <div class="offset-1 col-lg-3 mt-3"><div id="commit" class="btn btn-light px-4 py-2">Получить консультацию</div></div>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+    <div>
+        {% include 'components/form_consultation.html' %}
+    </div>
+
+    {% if validated %}
+    <div id="flag" style="opacity: 1;">flag</div>
+    {% endif %}
 {% endblock %}
 
 {% block js %}
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+    $(document).ready(function(){
+        let validated = document.getElementById('flag')
+        let alert_message = document.getElementById('alert_message')
+
+
+        if(alert_message){
+            alert_message.classList.add('alert_message')
+        }
+
+
+        if (validated) {
+            $('div.forma').css('display', 'inline')
+        }
+
+        $('#commit').click(function () {
+            $('div.forma').css('display', 'inline')
+
+        });
+        $('#hideform').click(function () {
+            $('div.forma').css('display', 'none')
+        });
+
+
+        $('.btn-toggle').click(function () {
+            $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
+        });
+    })
+
+
         $('.btn-toggle').click(function () {
             $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
         });
@@ -335,20 +373,24 @@
 
   dots: true,
   infinite: true,
-  speed: 300,
-  slidesToShow: 4.7,
-  startMode: true,
+  speed: 2000,
+            autoPlayClear:true,
+            autoplay: true,
+            autoplaySpeed: 500 ,
+  slidesToShow: 4,
+  startMode: false,
   variableWidth: false,
                responsive: [
                 {
                     breakpoint: 1370,
                     settings: {
-                           slidesToShow: 3,
+                           slidesToShow: 4,
                     }},
                    {
                        breakpoint: 768,
                        settings: {
                            dots: true,
+                           autoplay: false,
                            infinite: true,
                            speed: 300,
                            slidesToShow: 1,

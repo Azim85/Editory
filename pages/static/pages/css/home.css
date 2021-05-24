@@ -222,18 +222,7 @@ header {
   }
 }
 
-.wur,
-.elsavier,
-.qswur {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-}
-.wur:hover,
-.elsavier:hover,
-.qswur:hover {
-  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(0%);
-}
+
 
 @media (max-width: 388px) {
   .font-size-5 {
