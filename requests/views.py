@@ -94,3 +94,11 @@ class Proofreading(View):
 
     def post(self, request):
         print(request.POST)
+
+class Peer_review(View):
+    def get(self, request):
+
+        return render(request, 'peer_review.html')
+
+    def post(self, request):
+        print(request.POST)
