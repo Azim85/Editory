@@ -13,5 +13,6 @@ urlpatterns = [
     path('dissertation/', Dissertation.as_view(), name='dissertation'),
     path('research_strategy/', Research_strategy.as_view(), name='research_strategy'),
     path('language_editing/', Language_editing.as_view(), name='language_editing'),
+    path('contact/', Contact.as_view(), name='contact'),
 
 ]

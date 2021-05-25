@@ -61,6 +61,14 @@ class AboutUs(TemplateView):
         context['form'] = ConsultationForm()
         return context
 
+class Contact(TemplateView):
+    template_name = 'contact.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Contact, self).get_context_data(**kwargs)
+
+        return context
+
 
 class Paper(DetailView):
     template_name = 'paper.html'
