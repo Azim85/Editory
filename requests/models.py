@@ -1,3 +1,4 @@
+from pages.models import Topic
 from django.db import models
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
@@ -187,3 +188,25 @@ class ApplicationForFreeConsultation(models.Model):
     class Meta:
         verbose_name = 'Заявка на бесплатную консультацию'
         verbose_name_plural = 'Бесплатный Kонсультации'
+
+
+
+
+class Proofreading(models.Model):
+    author = models.CharField(max_length=100)
+    material_name = models.CharField(max_length=255)
+    research_area = models.CharField(max_length=255)
+    choose = models.CharField(max_length=100, choices=TOPICS)
+    word_count = models.CharField(max_length=100)
+    language_editing = models.CharField(max_length=50)
+    certificate = models.TextField()
+    comment =models.TextField(blank=True)
+    upload_file = models.FileField(upload_to='files/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.author
+
+    class Meta:
+        verbose_name = 'Заявка на корректуру'
+        verbose_name_plural = 'Заявки на корректуру'

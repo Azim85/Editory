@@ -20,3 +20,19 @@
   border-radius: 15px;
   /*background-color: red;*/
 }
+
+.alert_message {
+  opacity: 0;
+  animation-name: message;
+  animation-duration: 7s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

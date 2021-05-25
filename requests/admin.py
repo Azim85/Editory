@@ -8,7 +8,8 @@ from .models import (
     OrganizeResearches,
     PublicationToMagazines,
     Consultation,
-    ApplicationForFreeConsultation
+    ApplicationForFreeConsultation,
+    Proofreading
 )
 
 admin.site.register(ResearchGrant)
@@ -20,4 +21,5 @@ admin.site.register(OrganizeResearches)
 admin.site.register(PublicationToMagazines)
 admin.site.register(Consultation)
 admin.site.register(ApplicationForFreeConsultation)
+admin.site.register(Proofreading)
 
