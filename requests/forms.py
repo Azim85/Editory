@@ -1,9 +1,11 @@
 from django import forms
 import re
-
 from django.forms import widgets
-from .models import Consultation, ApplicationForFreeConsultation, OrganizeResearches
-
+from .models import (   Consultation, 
+                        ApplicationForFreeConsultation, 
+                        OrganizeResearches, 
+                        Proofreading
+                    )
 
 
 class ConsultationForm(forms.ModelForm):
@@ -43,7 +45,7 @@ DEGREE = (
 class FreeConsultationForm(forms.ModelForm):
     busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect())
     academic_degree = forms.ChoiceField(choices=DEGREE, widget=forms.Select(attrs={'class':'form-control'}))
-    upload_file = forms.ImageField(help_text='kkkkkkk')
+    upload_file = forms.ImageField()
 
     class Meta:
         model = ApplicationForFreeConsultation
@@ -60,14 +62,9 @@ class FreeConsultationForm(forms.ModelForm):
             'email' : forms.TextInput(attrs={'class':'form-control'}),
         }
 
-    # def clean_first_name(self):
-    #     firstname = self.cleaned_data.get('first_name')
-    #     if firstname != 'Azim':
-    #         raise forms.ValidationError('poof')
-    #     return firstname
 
     def clean_phone(self):
-        phone_len = [10, 11]
+        phone_len = [12, 13]
         phone = self.cleaned_data.get('phone')
         if '+998'  or '998' in phone:
             if len(phone) in phone_len:
@@ -96,7 +93,6 @@ class OrganizeResearchForm(forms.ModelForm):
             'organization' : forms.TextInput(attrs={'class':'form-control'}),
             'org_contacts' : forms.TextInput(attrs={'class':'form-control'}),
             'org_address' : forms.TextInput(attrs={'class':'form-control'}),
-            # 'is_agree' : forms.CheckboxInput(),
         }
 
     def clean_phone(self):
@@ -114,3 +110,20 @@ class OrganizeResearchForm(forms.ModelForm):
             if len(org_contacts) in phone_len:
                 return org_contacts
         raise forms.ValidationError('неправильный формат номера телефона')
+
+class ProofreadingForm(forms.ModelForm):
+    upload_file = forms.ImageField()
+    class Meta:
+        model = Proofreading
+        fields = '__all__'
+
+        widgets = {
+            'author': forms.TextInput(attrs={'class':'form-control'}),
+            'material_name':forms.TextInput(attrs={'class':'form-control'}),
+            'research_area':forms.TextInput(attrs={'class':'form-control'}),
+            'choose':forms.Select(attrs={'class':'form-control'}),
+            'word_count':forms.NumberInput(attrs={'min': '0', 'class': 'form-control'}),
+            'language_editing':forms.TextInput(attrs={'class':'form-control'}),
+            'certificate':forms.Textarea(attrs={'class':'form-control', 'rows':4}),
+            'comment':forms.Textarea(attrs={'class':'form-control', 'rows':5}),
+        }

@@ -6,109 +6,112 @@
 {% endblock %}
 
 {% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
+
     <div class="container">
         <div class="">
                     <div class="h1">Заявка на корректуру и редактирование диссертации</div>
 
                 </div>
-            <form class="mt-5" method="post" action="{% url 'requests:consultation' %}">
+            <form class="mt-5" method="post" action="{% url 'requests:proofreading' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row text-secondary">
                     <div class="col-lg-6">
+
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-form-label">Имя автора</label>
                             <div class="col-sm-6 d-flex flex-column">
-                                <input type="text" name="last_name" class="form-control">
-                                <small class="text-danger">{{form.first_name.errors}}</small>
+                                <!-- <input type="text" name="last_name" class="form-control"> -->
+                                {{form.author}}
+                                <small class="text-danger">{{form.author.errors}}</small>
                             </div>
-
                         </div>
+
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Название материала</label>
                             <div class="col-sm-6">
-                                <input type="text" name="last_name" class="form-control">
-{#                                {{form.last_name}}#}
+                                {{form.material_name}}
+                                <small class="text-danger">{{form.material_name.errors}}</small>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Область исследований</label>
                             <div class="col-sm-6 d-flex flex-column">
-                                <input type="text" name="phone" class="form-control">
-{#                                {{form.phone}}#}
-                                <small class="text-danger">{{form.phone.errors}}</small>
+                                    {{form.research_area}}
+                                <small class="text-danger">{{form.research_area.errors}}</small>
                             </div>
                         </div>
+
                         <div class="form-group row">
-{#                            <label for="inputPassword" class="col-sm-4 col-form-label">State</label>#}
                             <div class="offset-4 col-sm-6 d-flex flex-column">
-                                <!-- <input type="text" name="phone" class="form-control"> -->
-    {#                            {{form.phone}}#}
-
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>Стратегия исследования</option>
-                                    <option>Научное сотрудничество</option>
-                                    <option>Научное финансирование</option>
-                                    <option>Управление и ведение</option>
-                                  </select>
-
+                                {{form.choose}}
                                 <small class="text-danger">{{form.phone.errors}}</small>
                             </div>
                         </div>
 
                     </div>
+
+
                     <div class="col-lg-6">
 
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Кол-во слов</label>
                             <div class="col-sm-6 d-flex flex-column">
-                                <input type="text" name="phone" class="form-control">
-{#                                {{form.phone}}#}
-                                <small class="text-danger">{{form.phone.errors}}</small>
+                                    {{form.word_count}}
+                                <small class="text-danger">{{form.word_count.errors}}</small>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Язык редактирования </label>
                             <div class="col-sm-6 d-flex flex-column">
-                                <input type="text" name="phone" class="form-control">
-{#                                {{form.phone}}#}
-                                <small class="text-danger">{{form.phone.errors}}</small>
+                                     {{form.language_editing}}
+                                <small class="text-danger">{{form.language_editing.errors}}</small>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Сертификат об использовании языкового
                                 редактирования</label>
                             <div class="col-sm-6 d-flex flex-column">
-{#                                <input type="" name="phone" class="form-control">#}
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-{#                                {{form.phone}}#}
-                                <small class="text-danger">{{form.phone.errors}}</small>
+                                      {{form.certificate}}
+                                <small class="text-danger">{{form.certificate.errors}}</small>
                             </div>
                         </div>
-
-                        <div class="form-group row" style="margin-top: 60px">
-                            <div class="offset-4 col-sm-6">
-                                <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
-
-                            </div>
-                        </div>
-
 
                     </div>
-
                 </div>
+
                 <div class="row">
                     <div class="col-lg-2">Комментарии/ особые пожелания</div>
                     <div class="col-lg-9 mb-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        {{form.comment}}
                     </div>
 
                     <div class="offset-2 col-lg-9  d-flex align-items-center">
                         <label for="file" class="input-preview h-100 w-100 form-input">
-                        <input type="file" class="bg-danger">
+                        <!-- <input type="file" class="bg-danger"> -->
+                        {{form.upload_file}}
                             </label>
                     </div>
                 </div>
+
+
+                <div class="form-group row d-flex justify-content-lg-end" style="margin-top: 60px; margin-right:6vw">
+                    <div class=" col-lg-3">
+                        <button type="submit" class="btn btn-primary w-100">Отправить работу</button>
+                    </div>
+                </div>
+                
+                
 
             </form>
         </div>
@@ -116,3 +119,14 @@
     </div>
 
 {% endblock %}
+
+{% block js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (alert_message) {
+            alert_message.classList.add('alert_message')
+        }
+    })
+</script>
+    
+{% endblock js %}
