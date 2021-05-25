@@ -25,7 +25,7 @@ class Article(DetailView):
     def get_context_data(self, **kwargs):
         context = super(Article, self).get_context_data(**kwargs)
         context['get_by_theme'] = Topic.objects.filter(
-            material_name=self.object.material_name).exclude(pk=self.object.pk)[:3]
+            material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
         return context
 
 
