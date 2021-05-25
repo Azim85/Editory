@@ -9,7 +9,8 @@ from .models import (
     PublicationToMagazines,
     Consultation,
     ApplicationForFreeConsultation,
-    Proofreading
+    Proofreading,
+    PeerReview
 )
 
 admin.site.register(ResearchGrant)
@@ -22,4 +23,5 @@ admin.site.register(PublicationToMagazines)
 admin.site.register(Consultation)
 admin.site.register(ApplicationForFreeConsultation)
 admin.site.register(Proofreading)
+admin.site.register(PeerReview)
 

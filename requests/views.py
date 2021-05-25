@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
-from .forms import ConsultationForm, FreeConsultationForm, ProofreadingForm
+from .forms import ConsultationForm, FreeConsultationForm, ProofreadingForm, PeerReviewForm
 
 
 class Research(TemplateView):
@@ -98,6 +98,7 @@ class Proofreading(View):
         if form.is_valid():
             done = form.save()
             if done:
+                print(request.POST)
                 messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
                 return redirect('requests:proofreading')
         return render(request, 'proofreading.html', {'form':form})
@@ -105,8 +106,14 @@ class Proofreading(View):
 
 class Peer_review(View):
     def get(self, request):
-
-        return render(request, 'peer_review.html')
+        context = {'form': PeerReviewForm()}
+        return render(request, 'peer_review.html', context)
 
     def post(self, request):
-        print(request.POST)
+        form = PeerReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            done = form.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:peer_review')
+        return render(request, 'peer_review.html', {'form':form})

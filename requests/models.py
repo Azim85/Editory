@@ -202,6 +202,7 @@ class Proofreading(models.Model):
     certificate = models.TextField()
     comment =models.TextField(blank=True)
     upload_file = models.FileField(upload_to='files/')
+    is_agree =models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -210,3 +211,23 @@ class Proofreading(models.Model):
     class Meta:
         verbose_name = 'Заявка на корректуру'
         verbose_name_plural = 'Заявки на корректуру'
+
+class PeerReview(models.Model):
+    author = models.CharField(max_length=100)
+    material_name = models.CharField(max_length=255)
+    research_area = models.CharField(max_length=255)
+    choose = models.CharField(max_length=100, choices=TOPICS)
+    academic_degree = models.CharField(max_length=255)
+    organization = models.CharField(max_length=255)
+    scientific_adviser = models.CharField(max_length=50)
+    comment = models.TextField(blank=True)
+    upload_file = models.FileField(upload_to='files/')
+    is_agree =models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.author
+
+    class Meta:
+        verbose_name = 'Заказ рецензии на диссертацию'
+        verbose_name_plural = 'Заказ рецензии на диссертацию'

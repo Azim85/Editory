@@ -4,7 +4,8 @@ from django.forms import widgets
 from .models import (   Consultation, 
                         ApplicationForFreeConsultation, 
                         OrganizeResearches, 
-                        Proofreading
+                        Proofreading,
+                        PeerReview
                     )
 
 
@@ -113,6 +114,7 @@ class OrganizeResearchForm(forms.ModelForm):
 
 class ProofreadingForm(forms.ModelForm):
     upload_file = forms.ImageField()
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = Proofreading
         fields = '__all__'
@@ -125,5 +127,23 @@ class ProofreadingForm(forms.ModelForm):
             'word_count':forms.NumberInput(attrs={'min': '0', 'class': 'form-control'}),
             'language_editing':forms.TextInput(attrs={'class':'form-control'}),
             'certificate':forms.Textarea(attrs={'class':'form-control', 'rows':4}),
+            'comment':forms.Textarea(attrs={'class':'form-control', 'rows':5}),
+        }
+
+class PeerReviewForm(forms.ModelForm):
+    upload_file = forms.ImageField()
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    class Meta:
+        model = PeerReview
+        fields = '__all__'
+
+        widgets = {
+            'author': forms.TextInput(attrs={'class':'form-control'}),
+            'material_name':forms.TextInput(attrs={'class':'form-control'}),
+            'research_area':forms.TextInput(attrs={'class':'form-control'}),
+            'choose':forms.Select(attrs={'class':'form-control'}),
+            'academic_degree':forms.TextInput(attrs={'class':'form-control'}),
+            'organization':forms.TextInput(attrs={'class':'form-control'}),
+            'scientific_adviser':forms.TextInput(attrs={'class':'form-control'}),
             'comment':forms.Textarea(attrs={'class':'form-control', 'rows':5}),
         }
