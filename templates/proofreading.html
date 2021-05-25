@@ -16,8 +16,8 @@
 {% endif %}
 
     <div class="container">
-        <div class="">
-                    <div class="h1">Заявка на корректуру и редактирование диссертации</div>
+        <div class="mt-5">
+                    <div class="h1">Заявка на корректуру <br>и редактирование диссертации</div>
 
                 </div>
             <form class="mt-5" method="post" action="{% url 'requests:proofreading' %}" enctype="multipart/form-data">
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-2">Комментарии/ особые пожелания</div>
+                    <div class="col-lg-2 text-secondary">Комментарии/ особые пожелания</div>
                     <div class="col-lg-9 mb-5">
                         {{form.comment}}
                     </div>
