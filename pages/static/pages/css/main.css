@@ -93,6 +93,12 @@ h1, h2, h3, h4, h5, h6{
 .mb-200{
     margin-bottom: 200px !important;
 }
+.mt-100{
+    margin-top: 100px !important;
+}
+.mb-100{
+    margin-bottom: 100px !important;
+}
 
 .main-font{
     font-family: 'Exo 2', sans-seserif;
