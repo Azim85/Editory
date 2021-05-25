@@ -93,6 +93,7 @@ class Proofreading(View):
         return render(request, 'proofreading.html', context)
 
     def post(self, request):
+
         form = ProofreadingForm(request.POST, request.FILES)
         if form.is_valid():
             done = form.save()
@@ -100,3 +101,12 @@ class Proofreading(View):
                 messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
                 return redirect('requests:proofreading')
         return render(request, 'proofreading.html', {'form':form})
+
+
+class Peer_review(View):
+    def get(self, request):
+
+        return render(request, 'peer_review.html')
+
+    def post(self, request):
+        print(request.POST)
