@@ -69,6 +69,7 @@ class ConsultationView(View):
             else:    
                 return render(request,'home.html', {'validated':'validated', 'form':form})
         else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
 
 class FreeConsultationView(View):
@@ -84,6 +85,7 @@ class FreeConsultationView(View):
             else:    
                 return render(request,'conferences.html', {'validated':'validated', 'form':form})
         else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
 
 
@@ -95,14 +97,18 @@ class Proofreading(View):
     def post(self, request):
 
         form = ProofreadingForm(request.POST, request.FILES)
-        if form.is_valid():
-            done = form.save()
-            if done:
-                print(request.POST)
-                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                return redirect('requests:proofreading')
-        return render(request, 'proofreading.html', {'form':form})
-
+        if request.user.is_authenticated:
+            if form.is_valid():
+                done = form.save()
+                if done:
+                    print(request.POST)
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('requests:proofreading')
+            return render(request, 'proofreading.html', {'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+        
 
 class Peer_review(View):
     def get(self, request):
@@ -111,9 +117,13 @@ class Peer_review(View):
 
     def post(self, request):
         form = PeerReviewForm(request.POST, request.FILES)
-        if form.is_valid():
-            done = form.save()
-            if done:
-                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                return redirect('requests:peer_review')
-        return render(request, 'peer_review.html', {'form':form})
+        if request.user.is_authenticated:
+            if form.is_valid():
+                done = form.save()
+                if done:
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('requests:peer_review')
+            return render(request, 'peer_review.html', {'form':form})
+        else:    
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
