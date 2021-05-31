@@ -25,7 +25,7 @@ class Article(DetailView):
     def get_context_data(self, **kwargs):
         context = super(Article, self).get_context_data(**kwargs)
         context['get_by_theme'] = Topic.objects.filter(
-            material_name=self.object.material_name).exclude(pk=self.object.pk)[:3]
+            material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
         return context
 
 
@@ -66,7 +66,6 @@ class Contact(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Contact, self).get_context_data(**kwargs)
-
         return context
 
 
@@ -104,18 +103,20 @@ class Research_strategy(View):
 
     def post(self, request):
         forms = OrganizeResearchForm(request.POST)
-        print(request.POST)
-        if forms.is_valid():
-            if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                done = forms.save()
-                if done:
-                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                    return redirect('pages:research_strategy')
+        if request.user.is_authenticated:
+            if forms.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = forms.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('pages:research_strategy')
+                else:
+                    return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated',})    
             else:
-                return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated',})    
+                return render(request, 'research_strategy.html', {'forms':forms})
         else:
-            return render(request, 'research_strategy.html', {'forms':forms})
-
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
 
 
 class Language_editing(TemplateView):
