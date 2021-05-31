@@ -90,6 +90,15 @@ h1, h2, h3, h4, h5, h6{
 .mt-200{
     margin-top: 200px !important;
 }
+.mb-200{
+    margin-bottom: 200px !important;
+}
+.mt-100{
+    margin-top: 100px !important;
+}
+.mb-100{
+    margin-bottom: 100px !important;
+}
 
 .main-font{
     font-family: 'Exo 2', sans-seserif;
@@ -100,6 +109,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #showChild:hover #navChild{
+    display: block;
+}
+#showChild1:hover #navChild1{
     display: block;
 }
 
@@ -200,13 +212,16 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media  (max-width: 992px){
+    #navbarNav{
+        padding-left: 0 !important;
+    }
     .padding_me{
     padding-top: 50px !important;
     padding-bottom: 50px !important;
 
 }
     .mt-200{
-    margin-top: 50px !important;
+    margin-top: 100px !important;
         }
 	.forma{
     width: 90%;
@@ -216,4 +231,19 @@ h1, h2, h3, h4, h5, h6{
     top: 50px;
     box-shadow: 0px 0px 250px 10px #000;
 }
+}
+
+
+
+.wur,
+.elsavier,
+.qswur {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.wur:hover,
+.elsavier:hover,
+.qswur:hover {
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
 }
