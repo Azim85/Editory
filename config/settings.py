@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'requests',
+    # 'rest_framework',
+    # 'PaycomUz' 
 
 ]
 

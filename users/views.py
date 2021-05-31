@@ -34,6 +34,8 @@ class UserLoginView(View):
     """ User Login """
 
     def get(self, request):
+        if request.user.is_authenticated:
+            return redirect('pages:home')
         form = LoginForm()
         context = {'form':form}
         return render(request, 'users/login.html', context)

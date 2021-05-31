@@ -10,6 +10,9 @@ django-ckeditor = "==6.0.0"
 gunicorn = "*"
 django-resized = "*"
 mysqlclient = "*"
+djangorestframework = "*"
+paycomuz = "*"
+requests = "*"
 
 [dev-packages]
 
