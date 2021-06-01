@@ -6,12 +6,17 @@
 {% endblock %}
 {% block content %}
 
-<!-- {% if request.user|has_group:"Author" %}
+{#<!-- {% if request.user|has_group:"Author" %}#}
 
-{% endif %} -->
+{#{% endif %} -->#}
 {% if request.user.is_authenticated %}
 <div class="w-100 h-100 mx-0 px-0 mt-5" style="min-height: 100vh;">
     <div class="container">
+     {% if request.user.is_staff %}
+         <div class="text-right"><a class="btn btn-info mb-3 " href="/admin/">Admin</a></div>
+
+                    {% else %}
+                {% endif %}
         <div class="main-box d-flex justify-content-around align-items-center flex-wrap">
 
             <div class="profile d-flex align-items-center justify-content-center">
@@ -20,9 +25,7 @@
                 {% else %}
                     <img src="{% static 'pages/images/no-photo.jpeg' %}" alt="profile-image" class="profile-picture mr-3">
                 {% endif %}
-                {% if request.user.is_staff %}
-                <a href="admin/">Admin</a>
-                {% endif %}
+
 
                 <div class="profile-info d-flex flex-column h-100 align-items-start justify-content-center">
                     <h4>{{request.user.first_name}}</h4>
