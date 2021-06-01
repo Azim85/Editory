@@ -126,9 +126,9 @@ class OrganizeResearches(models.Model):
     def __str__(self):
         return self.last_name
 
-    class Meta:
-        verbose_name = 'исследование'
-        verbose_name_plural = 'Стратегия исследования'
+    # class Meta:
+    #     verbose_name = 'исследование'
+    #     verbose_name_plural = 'Стратегия исследования'
 
 # ######################################################################################
 
@@ -156,9 +156,9 @@ class Consultation(models.Model):
     def __str__(self):
         return self.first_name
 
-    class Meta:
-        verbose_name = 'консультация'
-        verbose_name_plural = 'консультации'
+    # class Meta:
+    #     verbose_name = 'консультация'
+    #     verbose_name_plural = 'консультации'
 
 
     
@@ -185,9 +185,9 @@ class ApplicationForFreeConsultation(models.Model):
     def __str__(self):
         return self.first_name
 
-    class Meta:
-        verbose_name = 'Заявка на бесплатную консультацию'
-        verbose_name_plural = 'Бесплатный Kонсультации'
+    # class Meta:
+    #     verbose_name = 'Заявка на бесплатную консультацию'
+    #     verbose_name_plural = 'Бесплатный Kонсультации'
 
 
 
@@ -208,9 +208,9 @@ class Proofreading(models.Model):
     def __str__(self):
         return self.author
 
-    class Meta:
-        verbose_name = 'Заявка на корректуру'
-        verbose_name_plural = 'Заявки на корректуру'
+    # class Meta:
+    #     verbose_name = 'Заявка на корректуру'
+    #     verbose_name_plural = 'Заявки на корректуру'
 
 class PeerReview(models.Model):
     author = models.CharField(max_length=100)
@@ -228,6 +228,6 @@ class PeerReview(models.Model):
     def __str__(self):
         return self.author
 
-    class Meta:
-        verbose_name = 'Заказ рецензии на диссертацию'
-        verbose_name_plural = 'Заказ рецензии на диссертацию'
+    # class Meta:
+    #     verbose_name = 'Заказ рецензии на диссертацию'
+    #     verbose_name_plural = 'Заказ рецензии на диссертацию'

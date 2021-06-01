@@ -30,8 +30,17 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 }
 
 .main-color{
-    color: #00A1A8;
+    color: #2A819E;
 }
+
+.btn-color{
+  color:  white;
+  background-color: #CE935E;
+  border-color: #CE935E;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
 
 .k{
     font-family: Geometria;
@@ -98,6 +107,18 @@ h1, h2, h3, h4, h5, h6{
 }
 .mb-100{
     margin-bottom: 100px !important;
+}
+.pt-200{
+    padding-top: 200px !important;
+}
+.pb-200{
+    padding-bottom: 200px !important;
+}
+.pt-100{
+    padding-top: 100px !important;
+}
+.pb-100{
+    padding-bottom: 100px !important;
 }
 
 .main-font{

@@ -12,10 +12,10 @@ header {
   font-size: 1.25rem;
 }
 
-.py-me-5 {
-  padding-bottom: 200px;
-  padding-top: 200px;
-}
+/*.py-me-5 {*/
+/*  padding-bottom: 100px;*/
+/*  padding-top: 100px;*/
+/*}*/
 
 .header-me {
   background-repeat: no-repeat;
@@ -86,6 +86,15 @@ header {
 /*}*/
 
 .section-1 {
+  height: 100%;
+  width: 100%;
+  background: no-repeat;
+
+}
+
+.statistic{
+  bottom: -360px;
+  position: absolute !important;
 }
 
 .section-2 {
@@ -101,6 +110,11 @@ header {
   .header-me {
     background-image: none !important;
   }
+.statistic{
+ bottom: 0px;
+  background-color:#F2F2F2;
+  position: relative !important;
+}
   .my-text {
     font-style: normal;
     font-weight: bold;
@@ -127,6 +141,10 @@ header {
 }
 .shadow_me {
   border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px #0000001a;
+}
+
+.shadow-new{
   box-shadow: 0px 0px 20px 0px #0000001a;
 }
 
