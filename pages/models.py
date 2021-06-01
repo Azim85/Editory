@@ -20,6 +20,11 @@ class Topic(models.Model):
     def get_absolute_url(self):
         return reverse_lazy('pages:article', kwargs = {'pk':self.pk})
 
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = 'News'
+
+
 
 class TopResearches(models.Model):
     image = models.ImageField(upload_to = 'top_researches/')
