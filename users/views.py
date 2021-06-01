@@ -26,7 +26,7 @@ class UserRegisterView(View):
             User.objects.create(first_name=first_name, email=email, phone=phone, password=password)
             return redirect('users:login')
 
-        context = {'form':form}
+        context = {'form': form}
         return render(request, 'users/register.html', context)
 
 
@@ -65,10 +65,11 @@ class DasboardView(View):
     def get(self, request):
         if request.user.is_authenticated:
             form = ProfileForm(instance=request.user)
-            context = {'form':form}
+            context = {'form': form}
             return render(request, 'users/dashboard.html', context)
         else:
             return redirect('users:login')
+
 
 class ProfileChange(UpdateView):
     model = User
