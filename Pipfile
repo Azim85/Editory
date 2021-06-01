@@ -4,15 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==3.2.2"
-pillow = "*"
 django-ckeditor = "==6.0.0"
-gunicorn = "*"
-django-resized = "*"
-mysqlclient = "*"
+gunicorn = "==20.1.0"
+django-resized = "==0.3.11"
+mysqlclient = "==2.0.3"
 djangorestframework = "*"
-paycomuz = "*"
 requests = "*"
+django-jet = "==1.0.8"
+asgiref = "==3.3.4"
+django-js-asset = "==1.2.2"
+pytz = "==2021.1"
+six = "==1.16.0"
+sqlparse = "==0.4.1"
+Django = "==3.2.2"
+Pillow = "==8.2.0"
+PaycomUz = "*"
 
 [dev-packages]
 

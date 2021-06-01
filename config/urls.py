@@ -19,11 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    # path('admin/', include(admin.site.urls)),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('auth/', include('users.urls')),
     path('', include('pages.urls')),
     path('request_to/', include('requests.urls')),
+    path('paycom/api', include('py_check.urls')),
 ]
 
 

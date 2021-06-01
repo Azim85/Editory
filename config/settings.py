@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'requests',
-    # 'rest_framework',
-    # 'PaycomUz' 
-
+    'jet',
+    'django.contrib.admin',
+    'rest_framework',
+    'pay_check',
 ]
 
 MIDDLEWARE = [
