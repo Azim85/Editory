@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'jet',
     'django.contrib.admin',
     'rest_framework',
-    'pay_check',
+    # 'pay_check',
 ]
 
 MIDDLEWARE = [

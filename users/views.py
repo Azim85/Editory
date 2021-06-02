@@ -4,6 +4,7 @@ from .forms import RegisterForm, LoginForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse_lazy
+from django.contrib import messages
 User = get_user_model()
 
 class UserRegisterView(View):
@@ -44,10 +45,13 @@ class UserLoginView(View):
         form = LoginForm(data=request.POST)
         if form.is_valid():
             user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password'], backend='django.contrib.auth.backends.ModelBackend')
-            login(request, user)
-            return redirect('pages:home')
-        context = {'form':form}
-        return render(request, 'users/login.html', context)
+            if user is not None:
+                login(request, user)
+                return redirect('pages:home')
+            else:
+                messages.error(request, ' Invalid Email or Passwor')
+                context = {'form':form}
+                return render(request, 'users/login.html', context)
 
 
 class UserLogoutView(View):
