@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/pages/migrations/0001_initial.py" />
-    <file url="file://$PROJECT_DIR$/pages/migrations/0002_auto_20210506_0802.py" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Pipenv (Editory)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (E)" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
 </project>

@@ -26,6 +26,7 @@ urlpatterns = [
     path('auth/', include('users.urls')),
     path('', include('pages.urls')),
     path('request_to/', include('requests.urls')),
+    # path('paycom/api', include('py_check.urls')),
 ]
 
 
