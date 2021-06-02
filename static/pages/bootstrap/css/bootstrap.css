@@ -3196,7 +3196,7 @@ input[type="button"].btn-block {
 }
 
 .dropup,
-.dropright,
+.btn-successdropright,
 .dropdown,
 .dropleft {
   position: relative;
