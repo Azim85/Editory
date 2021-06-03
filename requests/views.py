@@ -132,3 +132,16 @@ class Peer_review(View):
 class BAKView(View):
     def get(self, request):
         return render(request, 'bak.html')
+
+
+class ScopusView(View):
+    def get(self, request):
+        return render(request, 'scopus.html')
+
+class GrantsView(View):
+    def get(self, request):
+        return render(request, 'grants.html')
+
+class PatentsView(View):
+    def get(self, request):
+        return render(request, 'patents.html')

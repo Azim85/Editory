@@ -1,63 +1,68 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'pages/css/bak.css' %}">{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'pages/css/bak.css' %}">{% endblock %}
 
 {% block content %}
 <div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
-    <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rectangle_grey.png' %}')">
+    <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rec-blue.png' %}')">
         <div class="container">
             <div class="row padding_me">
                 <div class="col-lg-6">
                     <div class=" head-word geometria pb-5"
-                        style="font-size: 55px; color:white; font-weight:bold; line-height:1">Публикация статьи
-                        в журналах ВАК</div>
-                    <div style="font-size: 22px; color:white" class="text-left">
-                        Прогресс в научной работе невозможен без регулярного подтверждения своего уровня публикациями в
-                        проверенных изданиях.
-                        Стремитесь к новым горизонтам и степеням? Сосредоточьтесь на работе, а специалисты Editory
-                        познакомят научное сообщество
-                        с её результатами
+                        style="font-size: 50px; color:white; font-weight:bold; line-height:1">Публикация статьи
+                        в Scopus и Web of Science</div>
+                    <div style=" color:white" class="text-left ">
+                    Рейтинг учёного напрямую зависит от взаимодействия с мировой научной общественностью. Чем выше ваш индекс цитирования,
+                    тем больше внимания будет направлено на ваши работы, и тем больший авторитет вы приобретёте.
+                    Специалисты Editory помогут вам подобрать наиболее подходящее издание и шаг за шагом проведут ваш материал через все
+                    стадии подготовки к публикации.
+                    </div>
+                    <div class="form-group row" style="margin-top: 60px">
+                        <div class="col col-md-6">
+                            <button type="submit" class="btn w-100 text-white self-align-left" style="background:#CE935E">Заказать консультацию</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="d-flex align-items-center">
-                        <img class="pt-auto" src="{% static 'pages/images/dots.png' %}" width="499">
+                        <img class="pt-auto" src="{% static 'pages/images/dots1.png' %}" style="width: 40vw;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="row mx-0 mt-100">
         <div class="container">
             <div class="text-left" style="font-size: 36px; color:#263236;">Наши гарантии</div>
         </div>
     </div>
-    
-    
+
+
 
     <div class="container">
         <div class="row row-cols-md-3 row-cols-1 mt-100 ">
             <div class="col text-center">
                 <img src="{% static 'pages/images/contract.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >Заключаем официальный договор с автором</p>
+                <p class="mx-auto pt-5" style="max-width:200px">Заключаем официальный договор с автором</p>
             </div>
             <div class="col text-center">
                 <img src="{% static 'pages/images/work.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >Предоставляем справку</p>
+                <p class="mx-auto pt-5" style="max-width:200px">Предоставляем справку</p>
             </div>
             <div class="col text-center">
                 <img src="{% static 'pages/images/exchange.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >Регулярно проверяем обновления списков журналов,
-                    рекомендованных ВАК 
+                <p class="mx-auto pt-5" style="max-width:200px">Регулярно проверяем обновления списков журналов,
+                    рекомендованных ВАК
                 </p>
             </div>
         </div>
-    
 
-    <div class="container py-5 mt-5" style="border: 2px solid #2A819E; border-radius:15px; padding:0px 100px;" >
-        <div>
-            <p style="font-size: 35px;">Памятка для авторов</p>
+
+        <div class="container py-5 mt-5" style="border: 2px solid #2A819E; border-radius:15px; padding:0px 100px;">
+            <div>
+                <p style="font-size: 35px;">Памятка для авторов</p>
                 <ul>
                     <li>Уровень оригинальности статьи — не менее 75%</li>
                     <li>Материал нигде ранее ни полностью, ни частично не публиковался</li>
@@ -66,14 +71,15 @@
                     <li>Графические материалы должны быть представлены в разрешении не менее 300 dpi</li>
                     <li>Большая часть работ в списке литературы — зарубежные публикации за последние 5 лет</li>
                 </ul>
+            </div>
         </div>
     </div>
-</div>
 
 </div>
 
 <div class="container mt-100 pb-100">
-    <p style="max-width: 635px;">Хотите опубликовать свой материал в журналах ВАК? Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!</p>
+    <p style="max-width: 660px;">Готовы познакомить международное научное сообщество со своей работой? Оставьте заявку — и наши консультанты свяжутся с
+    вами в течение часа!</p>
     <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}">
         {% csrf_token %}
         <div class="row text-secondary">
@@ -169,8 +175,8 @@
     </form>
 </div>
 
-    
-  
-    
-   
+
+
+
+
 {% endblock content %}

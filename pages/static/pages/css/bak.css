@@ -5,18 +5,19 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
+}
+.content{
+    font-size: 1.5vw;
     border: 1px solid red;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
-.pano-left p{
-    font-size: 50px;
-    max-width: 500px;
-    margin-bottom: 0;
-    font-weight: bold;
+@media screen and (max-width:992px) {
+    .pt-auto{
+        display: none;
+    }
+
+    .content{
+        font-size: 18px;
+    }
 }
 
-.pano-left{
-
-}
