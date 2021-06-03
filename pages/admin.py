@@ -17,8 +17,10 @@ class TopicAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+
 class TopicAdmin(admin.ModelAdmin):
     form = TopicAdminForm
+    list_display = ['material_name', 'title', 'created_at']
 
 class TopResearchesAdminForm(forms.ModelForm):
     more = forms.CharField(widget=CKEditorUploadingWidget())

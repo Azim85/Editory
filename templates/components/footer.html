@@ -1,14 +1,20 @@
+{% load static %}
 <div class="container pt-5">
 
     <div class="row pb-4" style="">
-        <div class="col-lg-2">
+        <div class="col-lg-2 d-flex flex-column justify-content-between">
             <h1 class="font-weight-bold main-color">editory</h1>
+            <div class=" " >
+                <img src="{% static 'pages/images/payme.png' %}">
+                <img class="my-3" src="{% static 'pages/images/apelsin.png' %}">
+            </div>
         </div>
         <div class="col-lg-3">
             <div class="pb-2 font-weight-bold">Карта сайта</div>
             <div class="my-2"><a class="text-dark text-decoration-none"> О нас</a></div>
             <div class="my-2"><a class="text-dark text-decoration-none ">Новости</a></div>
             <div class="my-2"><a class="text-dark text-decoration-none ">Продукты и материалы</a></div>
+            <div class="my-2"><a class="text-dark text-decoration-none ">Услуги</a></div>
             <div class="my-2"><a class="text-dark text-decoration-none ">Магазин</a></div>
         </div>
         <div class="col-lg-5">

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    <div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
+    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">
     <div class="container">
          <div class="row padding_me">
             <div class="col-lg-6">
@@ -21,72 +21,73 @@
             </div>
             <div class="col-lg-6">
                 <div class="d-flex align-items-center">
-                    <img class="pt-auto" src="{% static 'pages/images/image 14.png' %}" width="100%" >
+                    <img class="pt-auto" src="{% static 'pages/images/about_us.png' %}" width="100%" >
                 </div>
             </div>
          </div>
 
-        <div class="py-5">
-
-
-                    <div class="h2">
-                        Услуги Editory
-                    </div>
-                    <div class="row w-100 justify-content-center m-0 p-0">
-                        <div class="col-lg-6  py-5 px-4 ">
-                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
-                                <div class="d-flex mb-4">
-                                    <div ><img src="{% static 'pages/images/icon_rename.png' %}" ></div>
-                                    <div class="ml-4 h3 ">Патенты и<br>финансирование</div></div>
-                                <div class="text-break font-16">
-                                    Ищете возможность получить поддержку своих исследований или
-                                    защитить интеллектуальную собственность? Консультируем и оформляем все
-                                    необходимые документы.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6  py-5 px-4 ">
-                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
-                                <div class="d-flex mb-4">
-                                    <div><img src="{% static 'pages/images/icon_group.png' %}"></div>
-                                    <div class="ml-4 h3">Международные<br>конференции</div></div>
-                                <div class="text-break font-16">
-                                    Ищете возможность получить поддержку своих исследований или
-                                    защитить интеллектуальную собственность? Консультируем и оформляем все
-                                    необходимые документы.
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-lg-6  py-5 px-4 ">
-                            <div class="py-lg-5 px-lg-5 py-2 px-3  bg-white shadow_me h-100">
-                                <div class="d-flex mb-4">
-                                    <div><img src="{% static 'pages/images/icon_book.png' %}"></div>
-                                    <div class="ml-4 h3">Публикация работ</div></div>
-                                <div class="text-break font-16">
-                                    Ищете возможность получить поддержку своих исследований или
-                                    защитить интеллектуальную собственность? Консультируем и оформляем все
-                                    необходимые документы.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6  py-5 px-4 ">
-                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
-                                <div class="d-flex mb-4">
-                                    <div><img src="{% static 'pages/images/icon_head.png' %}"></div>
-                                    <div class="ml-4 h3">Консультация по <br>диссертациям</div></div>
-                                <div class="text-break font-16">
-                                    Ищете возможность получить поддержку своих исследований или
-                                    защитить интеллектуальную собственность? Консультируем и оформляем все
-                                    необходимые документы.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+{#        <div class="py-5">#}
+{##}
+{##}
+{#                    <div class="h2">#}
+{#                        Услуги Editory#}
+{#                    </div>#}
+{#                    <div class="row w-100 justify-content-center m-0 p-0">#}
+{#                        <div class="col-lg-6  py-5 px-4 ">#}
+{#                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">#}
+{#                                <div class="d-flex mb-4">#}
+{#                                    <div ><img src="{% static 'pages/images/icon_rename.png' %}" ></div>#}
+{#                                    <div class="ml-4 h3 ">Патенты и<br>финансирование</div></div>#}
+{#                                <div class="text-break font-16">#}
+{#                                    Ищете возможность получить поддержку своих исследований или#}
+{#                                    защитить интеллектуальную собственность? Консультируем и оформляем все#}
+{#                                    необходимые документы.#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-6  py-5 px-4 ">#}
+{#                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">#}
+{#                                <div class="d-flex mb-4">#}
+{#                                    <div><img src="{% static 'pages/images/icon_group.png' %}"></div>#}
+{#                                    <div class="ml-4 h3">Международные<br>конференции</div></div>#}
+{#                                <div class="text-break font-16">#}
+{#                                    Ищете возможность получить поддержку своих исследований или#}
+{#                                    защитить интеллектуальную собственность? Консультируем и оформляем все#}
+{#                                    необходимые документы.#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                         <div class="col-lg-6  py-5 px-4 ">#}
+{#                            <div class="py-lg-5 px-lg-5 py-2 px-3  bg-white shadow_me h-100">#}
+{#                                <div class="d-flex mb-4">#}
+{#                                    <div><img src="{% static 'pages/images/icon_book.png' %}"></div>#}
+{#                                    <div class="ml-4 h3">Публикация работ</div></div>#}
+{#                                <div class="text-break font-16">#}
+{#                                    Ищете возможность получить поддержку своих исследований или#}
+{#                                    защитить интеллектуальную собственность? Консультируем и оформляем все#}
+{#                                    необходимые документы.#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-6  py-5 px-4 ">#}
+{#                            <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">#}
+{#                                <div class="d-flex mb-4">#}
+{#                                    <div><img src="{% static 'pages/images/icon_head.png' %}"></div>#}
+{#                                    <div class="ml-4 h3">Консультация по <br>диссертациям</div></div>#}
+{#                                <div class="text-break font-16">#}
+{#                                    Ищете возможность получить поддержку своих исследований или#}
+{#                                    защитить интеллектуальную собственность? Консультируем и оформляем все#}
+{#                                    необходимые документы.#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
     </div>
     </div>
+
+
+
     <div class="slideres">
             <h1 class="h-40p my-5 ">Наша команда</h1>
             <div class="row  mr-0">

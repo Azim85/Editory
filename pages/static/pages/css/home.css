@@ -89,21 +89,34 @@ header {
   height: 100%;
   width: 100%;
   background: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 
 }
 
 .statistic{
-  bottom: -360px;
+  bottom: -10px;
   position: absolute !important;
+}
+
+.heightme{
+
 }
 
 .section-2 {
   padding-top: 200px;
   padding-bottom: 200px;
-  background: linear-gradient(143.37deg, #7cd2d6 -3.2%, #479598 100%);
+
 }
 .slideres {
   margin-left: 100px;
+}
+
+@media screen and (max-width: 1400px) {
+  .statistic{
+  bottom: -350px;
+  position: absolute !important;
+}
 }
 
 @media screen and (max-width: 568px) {
@@ -135,15 +148,22 @@ header {
 
   .shadow_me {
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px #0000001a;
+    box-shadow: 0px 0px 20px 0px #ABBFC8;
     padding: 20px;
   }
 }
 .shadow_me {
   border-radius: 10px;
-  box-shadow: 0px 0px 20px 0px #0000001a;
+  box-shadow: 0px 10px 10px 10px #E7EFF0;
+  border: rgba(42, 129, 158, 0.3) solid 1px;
 }
 
+a.me{
+  color: #2A819E !important;
+}
+a.me:hover{
+  color: #CE935E !important;
+}
 .shadow-new{
   box-shadow: 0px 0px 20px 0px #0000001a;
 }
@@ -159,6 +179,10 @@ header {
 .section-4 {
   width: 100%;
   /*height: 600px;*/
+  background: no-repeat;
+  background-size: cover;
+  background-position: top;
+
 }
 
 .text-light {
@@ -335,20 +359,24 @@ header {
 
 .section-2 .slick-next,
 .section-2 .slick-prev {
-  border: white solid 2px !important;
+  border: #F4F4F4  solid 2px !important;
   border-width: 1px !important;
-  background: transparent !important;
+  background: #F4F4F4 81% !important;
   padding: 28px !important;
+}
+.section-2 .slick-next:before,
+.section-2 .slick-prev:before {
+  color: #2A819E !important;
 }
 .section-2 .slick-next:hover,
 .section-2 .slick-prev:hover {
-  background: #f4f4f4 81% !important;
+  background: #2A819E !important;
   border: none;
   padding: 30px;
 }
 .section-2 .slick-next:hover:before,
 .section-2 .slick-prev:hover:before {
-  color: #00a1a8 !important;
+  color: #fff !important;
 }
 
 .kill .slick-next,
