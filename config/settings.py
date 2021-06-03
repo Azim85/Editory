@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'users',
     'pages',
+    'orders',
     'requests',
     'jet',
     'django.contrib.admin',
     'rest_framework',
-    # 'pay_check',
+    'paymeuz',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 'data' is my media folder
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+PAYMEUZ_SETTINGS = {
+    'TEST_ENV': True,
+    'ID': '60b7cf520d44ad636479d80b',
+    'KEY': 'DQ7jPsY%4Xg#F@v9@SEVf@1XoJNs9D9WY2cS',
+    'ACCOUNTS': {
+        'KEY_1': 'order_id',
+        'KEY_2': None
+    }
+}

@@ -98,7 +98,10 @@ class Dissertation(TemplateView):
 class Research_strategy(View):
     
     def get(self, request):
-        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm() }
+        # request.session['ordered'] = 'not ordered'
+        # a = request.session['ordered']
+       
+        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm()}
         return render(request, 'research_strategy.html', context)
 
     def post(self, request):
@@ -109,9 +112,11 @@ class Research_strategy(View):
                     done = forms.save()
                     if done:
                         messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        # if request.session['ordered']:
+                            # request.session['orderd'] = 'ordered'
                         return redirect('pages:research_strategy')
                 else:
-                    return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated',})    
+                    return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated'})    
             else:
                 return render(request, 'research_strategy.html', {'forms':forms})
         else:

@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (Research, ResearchIntelligense, Scientific, Peer_review,
                     TopResearchess, WebinarsView, Conferences,
-                     ConsultationView, FreeConsultationView, Proofreading)
+                     ConsultationView, FreeConsultationView, Proofreading,
+                     BAKView)
                      
 app_name = 'requests'
 
@@ -16,5 +17,10 @@ urlpatterns = [
     path('consultation/', ConsultationView.as_view(), name='consultation'),
     path('free_consultation/', FreeConsultationView.as_view(), name='free_consultation'),
     path('proofreading/', Proofreading.as_view(), name='proofreading'),
-    path('peer_review/', Peer_review.as_view(), name='peer_review')
+    path('peer_review/', Peer_review.as_view(), name='peer_review'),
+
+    path('bak/', BAKView.as_view(), name='bak'),
+    path('bak/', BAKView.as_view(), name='bak'),
+    path('bak/', BAKView.as_view(), name='bak'),
+    path('bak/', BAKView.as_view(), name='bak'),
 ]

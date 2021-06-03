@@ -127,3 +127,8 @@ class Peer_review(View):
         else:    
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
+
+
+class BAKView(View):
+    def get(self, request):
+        return render(request, 'bak.html')
