@@ -65,6 +65,15 @@ class CreateConferences(View):
         print(request.POST)
 
 
+class Design(View):
+    def get(self, request):
+        context = {'form': FreeConsultationForm()}
+        return render(request, 'design.html', context)
+
+    def post(self, request):
+        print(request.POST)
+
+
 
 class ConsultationView(View):
     def post(self, request):

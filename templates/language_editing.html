@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'pages/css/language.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row padding_me">
-            <div class="col-lg-5">
-                <div class=" font-65  geometria pb-5  font-weight-bold" >Корректура рукописей</div>
-                <div style="font-size: 22px">
-                    Грамотный текст — лицо автора, который работает со сложными темами.
-                    Ошибки существенно снизят уровень доверия как с самой работе, так и
-                    к вашей компетентности.
-                </div>
-            </div>
-            <div class=" offset-2 col-lg-5">
-                <div class="d-flex align-items-center">
-                    <img class="pt-auto img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
-                </div>
-            </div>
-         </div>
 
+    <div class="bg-me" style="background-image: url({% static 'pages/images/RectangleLang.png' %})">
+        <div class="container pt-100 pb-100">
+            <div class="row padding_me">
+                <div class="col-lg-5">
+                    <div class=" font-65  geometria pb-5  font-weight-bold" >Корректура рукописей</div>
+                    <div style="font-size: 22px">
+                        Грамотный текст — лицо автора, который работает со сложными темами.
+                        Ошибки существенно снизят уровень доверия как с самой работе, так и
+                        к вашей компетентности.
+                    </div>
+                </div>
+                <div class=" offset-2 col-lg-5">
+                    <div class="d-flex align-items-center">
+                        <img class="pt-auto img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
+                    </div>
+                </div>
+             </div>
+
+        </div>
+    </div>
+    <div class="container">
         <div class="padding_me text-center">
             <div class="h2">Количество слов:<input class="w-100 " type="range" id="volume" name="volume" min="0" max="2000"></div>
             <input  type="number" id="label" value="" class="h2 border-0 text-center labell" style="overflow: revert;
