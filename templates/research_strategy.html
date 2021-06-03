@@ -15,9 +15,9 @@
 {% endfor %}
 {% endif %}
 
-<div class="bg-me">
+<div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 131.png' %})">
 
-    <div class="container mt-4">
+    <div class="container pt-5">
         <nav>
               <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
                     <a class="nav-link active pl-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Research strategy</a>
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
-                            <img  src="{% static 'pages/images/strategy yell 1.png' %}" width="100%">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/strategy yell 1.png' %}">
                         </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
-                            <img  src="{% static 'pages/images/collab 1.png' %}" width="100%">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/collab 1.png' %}">
                         </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
-                            <img  src="{% static 'pages/images/funding 1.png' %}" width="100%">
+                            <img  class="img-fluid fix-img" src="{% static 'pages/images/funding 1.png' %}">
                         </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
-                            <img  src="{% static 'pages/images/funding 1.png' %}" width="100%">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 298.png' %}">
                         </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-200">
     <div class="">
                 <div class="h1">Как организовать и провести <br>научное исследование?</div>
                 После заполнения формы наш консультант свяжется с вами в течение часа
@@ -168,7 +168,7 @@
                     <div class="form-group row mt-5">
                         <div class="col-sm-6 d-flex flex-column">
                             <div class="d-flex align-items-center">
-                                {{forms.is_agree}} <small class="ml-4" style="white-space: nowrap;">Согласие с политикой конфиденциальности</small>
+                                {{forms.is_agree}} <small class="ml-4  chekbok" style="white-space: nowrap;">Согласие с политикой конфиденциальности</small>
                             </div> 
                             <small class="text-danger">{{forms.is_agree.errors}}</small>
                         </div>
@@ -218,22 +218,7 @@
 
 </div>
 
-        <div class="my-5 main-background">
-        <div class="container">
-            <div class="py-5">
-                <div class="row text-white">
-                    <div class="offset-1 col-lg-3 h2">Бесплатная консультация</div>
-                    <div class="offset-1 col-lg-3">Заполните форму и наш консультант свяжется с вами в течение часа</div>
-                    <div class="offset-1 col-lg-3 mt-3"><div id="commit" class="btn btn-light px-4 py-2">Получить консультацию</div></div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-
-    <div>
-        {% include 'components/form_consultation.html' %}
-    </div> 
 
     {% if validated %}
     <div id="flag" style="opacity: 1;">flag</div>
@@ -257,13 +242,13 @@
             if (validated) {
                 $('div.forma').css('display', 'inline')
             }
-
-            $('#commit').click(function (){
-                $('div.forma').css('display','inline')
-            });
-            $('#hideform').click(function (){
-                $('div.forma').css('display','none')
-            });
+            {##}
+            {#$('#commit').click(function (){#}
+            {#    $('div.forma').css('display','inline')#}
+            {#});#}
+            {#$('#hideform').click(function (){#}
+            {#    $('div.forma').css('display','none')#}
+            {#});#}
     </script>
 
 {% endblock %}

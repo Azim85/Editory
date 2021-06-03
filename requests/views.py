@@ -49,8 +49,17 @@ class WebinarsView(TemplateView):
 
 class Conferences(View):
     def get(self, request):
-        context = {'form':FreeConsultationForm()}
+        context = {'form': FreeConsultationForm()}
         return render(request, 'conferences.html', context)
+
+    def post(self, request):
+        print(request.POST)
+
+
+class CreateConferences(View):
+    def get(self, request):
+        context = {'form': FreeConsultationForm()}
+        return render(request, 'creat_conference.html', context)
 
     def post(self, request):
         print(request.POST)
