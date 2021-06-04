@@ -20,7 +20,7 @@
                 </div>
                 <div class=" offset-2 col-lg-5">
                     <div class="d-flex align-items-center">
-                        <img class="pt-auto img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
+                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
                     </div>
                 </div>
              </div>
@@ -28,15 +28,18 @@
         </div>
     </div>
     <div class="container">
-        <div class="padding_me text-center">
-            <div class="h2">Количество слов:<input class="w-100 " type="range" id="volume" name="volume" min="0" max="2000"></div>
-            <input  type="number" id="label" value="" class="h2 border-0 text-center labell" style="overflow: revert;
+        <div class="padding_me d-flex ">
+            <div class="h2">Количество слов:</div>
+            <input class="w-75 " type="range" id="volume" name="volume" min="0" max="25000">
+
+        </div>
+        <div class="text-center">
+            <input  type="number" id="label" value="" class="h2 border-0 text-center w-100 labell" style="overflow: revert;
     outline: none!important;
     border: none !important;
     ">
         </div>
-
-        <div>
+            <div>
             <div class="row mb-5">
                 <div class="col-lg-4 ">
                     <div class="border rounded-20 shadow py-5 px-5 ">
@@ -88,6 +91,112 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-100">
+    <div class="h2">Что входит в тариф</div>
+    <div class="row d-flex align-items-center">
+        <div class="col-5 my-3">Участие кандидата наук из области, соответствующей теме работы</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+
+        <div class="col-5 my-3">Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+
+        <div class="col-5 my-3">Корректоры — носители языка</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+
+        <div class="col-5">Работа в кратчайшие сроки</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+
+    </div>
+    </div>
+
+    <form class="mt-200 mb-100" method="post" action="{% url 'requests:free_consultation' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container mt-4">
+    <div class="forma container   rounded-20">
+        <div>
+
+            <h2 class=" mb-5">Не уверены, какой тариф вам подходит? Оставьте заявку,
+                и вас с удовольствием проконсультируют наши специалисты!</h2>
+
+        </div>
+    <div class="tab-content" id="nav-tabContent">
+{#          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">#}
+              <div class=" container " >
+
+                    <div class="row text-secondary">
+                        <div class="col-lg-6">
+
+                            <div class="form-group row my-4">
+                                <label for="" class="col-sm-4 col-form-label">Имя</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                    {{form.first_name}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.first_name.errors}}</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group row my-4">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                    {{form.last_name}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+
+
+
+                            <div class="form-group row my-4">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                   {{form.phone}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.phone.errors}}</small>
+                                </div>
+                            </div>
+
+                             <div class="form-group row my-4">
+
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                   {{form.email}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    </div>
+
+
+          </div>
+    </div>               <div class="row mb-100">
+                        <div class="col-lg-11 d-flex  justify-content-end">
+                            <button type="submit" class="btn btn-primary px-4 mr-4">Заказать консультацию</button>
+                        </div>
+                        </div>
+    </div>
+</form>
 {% endblock %}
 
 {% block js %}
@@ -96,7 +205,7 @@
         $('#label').val(1)
 
 
-    $('input').mousemove(function (){
+    $('#volume').on('click ',function (){
         a = $(this).val()
         cost = $(this).val() * 240
         $('#label').val(a)
@@ -105,11 +214,14 @@
         $('#cost2').html(cost)
     })
 
-    $('input').change(function (){
+    $('#label').change(function (){
         a = $(this).val()
+        $('#volume').val(a)
         cost = $(this).val() * 240
         $('#label').html(a)
         $('#cost').html(cost)
+        $('#cost1').html(cost)
+        $('#cost2').html(cost)
     })
 
     </script>
