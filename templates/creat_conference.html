@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
-                <img class="img-fluid" src="{% static 'pages/images/3987661 1.png' %}" width="100%">
+                <img class="img-fluid " src="{% static 'pages/images/3987661 1.png' %}" width="100%">
             </div>
         </div>
     </div>
@@ -75,42 +75,6 @@
                             </div>
                             
                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Занятость</label>
-                                <div class="col-sm-6 check">
-                                    <div style="display:none">{{form.busyness}}</div>
-                                      <div class="row ">
-
-                                        <div class="form_radio_btn col-6 pr-0">
-                                          <label class="form-control w-100 text-center" for="radio-1" id="hey">Студент</label>
-                                        </div>
-
-                                        <div class="form_radio_btn col-6 pl-0">
-                                          <label class="form-control text-center " for="radio-2" id="vey">Работаю</label>
-                                        </div>
-                                        
-                                      </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Место работы</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.place_of_work}}
-                                    <small class="text-danger align-self-start">{{form.place_of_work.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Ученая степень</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.academic_degree}}
-                                    <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group row my-4">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{form.phone}}
@@ -118,7 +82,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row my-4">
+                             <div class="form-group row my-4">
 
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
                                 <div class="col-sm-6 d-flex flex-column">
@@ -127,8 +91,16 @@
                                 </div>
                             </div>
 
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+
+
+
                             <div class="form-group row my-4">
-                                <label for="" class="col-sm-4 col-form-label">Название статьи</label>
+                                <label for="" class="col-sm-4 col-form-label">Организация</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{form.application_name}}
                                     <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
@@ -136,34 +108,24 @@
                             </div>
 
                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Конференция</label>
+                                <label for="" class="col-sm-4 col-form-label">Контакты организации </label>
                                 <div class="col-sm-6 d-flex flex-column">
-                                   {{form.conference}}
-                                    <small class="text-danger align-self-start">{{form.conference.errors}}</small>
+                                   {{form.application_name}}
+                                    <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group row my-4">
+                                <label for="" class="col-sm-4 col-form-label">Адрес организации </label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                   {{form.application_name}}
+                                    <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
                                 </div>
                             </div>
 
 
-                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Секция</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.section}}
-                                    <small class="text-danger align-self-start">{{form.section.errors}}</small>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-                  <div class="row my-5">
-                        <div class=" col-lg-11 d-flex align-items-center ">
-                            <label for="file" class="input-preview w-100 h-50 form-input">
-
-                                {{form.upload_file}}
-
-                            </label>
-                        </div>
-                  </div>
-
 
                     </div>
 

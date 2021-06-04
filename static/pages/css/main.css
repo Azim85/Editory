@@ -179,6 +179,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .font-65{
+    font-family: Geometria !important;
     font-size: 65px;
     line-height: 70px;
 }

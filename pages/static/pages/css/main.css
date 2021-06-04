@@ -150,6 +150,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media screen and (max-width: 568px) {
+
     .dropdown-menu{
         width: 100%;
     }
@@ -234,8 +235,8 @@ h1, h2, h3, h4, h5, h6{
 
 .btn-primary {
   color: #fff;
-  background-color: #00A1A8 !important;
-  border-color: #00A1A8 !important;
+  background-color: #2A819E !important;
+  border-color: #2A819E !important;
 }
 
 
@@ -246,6 +247,10 @@ h1, h2, h3, h4, h5, h6{
 /*}*/
 
 @media  (max-width: 992px){
+     .font-65{
+    font-size: 40px;
+    line-height: 106.3%;
+}
     #navbarNav{
         padding-left: 0 !important;
     }
