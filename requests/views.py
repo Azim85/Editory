@@ -163,3 +163,7 @@ class GrantsView(View):
 class PatentsView(View):
     def get(self, request):
         return render(request, 'patents.html')
+
+class TranslationView(View):
+    def get(self, request):
+        return render(request, 'translation.html')
