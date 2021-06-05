@@ -100,7 +100,10 @@ header {
 }
 
 .heightme{
-
+  height: 465px !important;
+}
+.w-100-me{
+  height: 425px !important;
 }
 
 .section-2 {

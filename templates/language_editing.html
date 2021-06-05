@@ -10,15 +10,20 @@
     <div class="bg-me" style="background-image: url({% static 'pages/images/RectangleLang.png' %})">
         <div class="container pt-100 pb-100">
             <div class="row padding_me">
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <div class=" font-65  geometria pb-5  font-weight-bold" >Корректура рукописей</div>
                     <div style="font-size: 22px">
                         Грамотный текст — лицо автора, который работает со сложными темами.
                         Ошибки существенно снизят уровень доверия как с самой работе, так и
                         к вашей компетентности.
+                        <br>
+                        <br>
+                        Специалисты Editory этого не допустят! Будьте уверены, что ваш
+                        материал не содержит орфографических, синтаксических и стилистических огрехов.
+
                     </div>
                 </div>
-                <div class=" offset-2 col-lg-5">
+                <div class=" offset-1 col-lg-5">
                     <div class="d-flex align-items-center">
                         <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
                     </div>
@@ -30,19 +35,16 @@
     <div class="container">
         <div class="padding_me d-flex ">
             <div class="h2">Количество слов:</div>
-            <input class="w-75 " type="range" id="volume" name="volume" min="0" max="25000">
+            <input  type="number" id="label" value="" class="h2 border-0 text-center w-100 labell">
 
         </div>
         <div class="text-center">
-            <input  type="number" id="label" value="" class="h2 border-0 text-center w-100 labell" style="overflow: revert;
-    outline: none!important;
-    border: none !important;
-    ">
+
         </div>
             <div>
             <div class="row mb-5">
-                <div class="col-lg-4 ">
-                    <div class="border rounded-20 shadow py-5 px-5 ">
+                <div class="col-lg-4 my-2">
+                    <div class="border rounded-20 shadow py-5 px-5 h-100">
                         <div class="h3 mb-4">Стандарт</div>
                         <div class="small">
                             <span class="text-secondary"><i class="bi-clock"></i>7-10 рабочих дней</span>
@@ -50,39 +52,40 @@
 
                         </div>
                         <div class="my-4">Вычитка и оформление вашего материала перед заявкой на издание</div>
-                        <label id="cost" class="h3 my-5 main-color">1</label><span class="h3 main-color"> сум</span>
+                        <label id="cost" class="h3 my-5 main-color">240</label><span class="h3 main-color"> сум</span>
                         <div class="d-flex justify-content-center">
                             <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 ">
-                    <div class="border rounded-20 shadow py-5 px-5 ">
+                <div class="col-lg-4 my-2">
+                    <div class="border rounded-20 shadow py-5 px-5 h-100">
                         <div class="h3 mb-4">Экспресс</div>
                         <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>7-10 рабочих дней</span>
-                            <span class="float-right" style="color: #62C7CB;">240 сумов/слово</span>
+                            <span class="text-secondary"><i class="bi-clock"></i>1-4 рабочих дней</span>
+                            <span class="float-right" style="color: #62C7CB;">300 сумов/слово</span>
 
                         </div>
-                        <div class="my-4">Вычитка и оформление вашего материала перед заявкой на издание</div>
-                        <label id="cost1" class="h3 my-5 main-color">1</label><span class="h3 main-color"> сум</span>
+                        <div class="my-4">Тот же уровень качества, но гораздо быстрее</div>
+                        <label id="cost1" class="h3 my-5 main-color">300</label><span class="h3 main-color"> сум</span>
                         <div class="d-flex justify-content-center">
                             <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 ">
-                    <div class="border rounded-20 shadow py-5 px-5 ">
+                <div class="col-lg-4 my-2">
+                    <div class="border rounded-20 shadow py-5 px-5 h-100">
                         <div class="h3 mb-4">Премиум</div>
                         <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>7-10 рабочих дней</span>
-                            <span class="float-right" style="color: #62C7CB;">240 сумов/слово</span>
+                            <span class="text-secondary"><i class="bi-clock"></i>2-10 рабочих дней</span>
+                            <span class="float-right" style="color: #62C7CB;">400 сумов/слово</span>
 
                         </div>
-                        <div class="my-4">Вычитка и оформление вашего материала перед заявкой на издание</div>
-                        <label id="cost2" class="h3 my-5 main-color">1</label><span class="h3 main-color"> сум</span>
+                        <div class="my-4">Глубокая редактура текста, улучшение структуры,
+                            стилистики и дальнейшая поддержка</div>
+                        <label id="cost2" class="h3 my-5 main-color">400</label><span class="h3 main-color"> сум</span>
                         <div class="d-flex justify-content-center">
                             <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
                         </div>
@@ -96,24 +99,90 @@
     <div class="h2">Что входит в тариф</div>
     <div class="row d-flex align-items-center">
         <div class="col-5 my-3">Участие кандидата наук из области, соответствующей теме работы</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
         <div class="col-5 my-3">Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
         <div class="col-5 my-3">Корректоры — носители языка</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5">Работа в кратчайшие сроки</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}"></div>
+        <div class="col-5 my-3">Работа в кратчайшие сроки</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Бесплатная корректорская помощь в течение 365 дней</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Внимание к логике, структуре и цельности материала</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Форматирование согласно требованиям конкретного журнала</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Редактирование ссылок</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Проверка ссылок на соответствие, полноту и структуру</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Сопроводительное письмо для отправки в журнал</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Подробный разбор языковых и структурных особенностей материала</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Сокращение количества слов (максимум на 20%)</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Детальная языковая проверка: стилистика, словоупотребление и терминология</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Профессиональное оформление рукописи</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+
+
+        <div class="col-5 my-3">Сертификат о языковом редактировании</div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
     </div>
     </div>
@@ -217,11 +286,13 @@
     $('#label').change(function (){
         a = $(this).val()
         $('#volume').val(a)
-        cost = $(this).val() * 240
+        cost1 = $(this).val() * 240
+        cost2 = $(this).val() * 300
+        cost3 = $(this).val() * 400
         $('#label').html(a)
-        $('#cost').html(cost)
-        $('#cost1').html(cost)
-        $('#cost2').html(cost)
+        $('#cost').html(cost1)
+        $('#cost1').html(cost2)
+        $('#cost2').html(cost3)
     })
 
     </script>
