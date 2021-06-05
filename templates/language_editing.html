@@ -44,7 +44,7 @@
             <div>
             <div class="row mb-5">
                 <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-5 h-100">
+                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
                         <div class="h3 mb-4">Стандарт</div>
                         <div class="small">
                             <span class="text-secondary"><i class="bi-clock"></i>7-10 рабочих дней</span>
@@ -52,15 +52,17 @@
 
                         </div>
                         <div class="my-4">Вычитка и оформление вашего материала перед заявкой на издание</div>
-                        <label id="cost" class="h3 my-5 main-color">240</label><span class="h3 main-color"> сум</span>
+                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color">240</label> сум</span>
                         <div class="d-flex justify-content-center">
-                            <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
+                            <a id="hideforma" href="{% if request.user.is_authenticated %}#{% else %}
+                            {% url 'users:login' %}{% endif %}"
+                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-5 h-100">
+                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
                         <div class="h3 mb-4">Экспресс</div>
                         <div class="small">
                             <span class="text-secondary"><i class="bi-clock"></i>1-4 рабочих дней</span>
@@ -68,15 +70,17 @@
 
                         </div>
                         <div class="my-4">Тот же уровень качества, но гораздо быстрее</div>
-                        <label id="cost1" class="h3 my-5 main-color">300</label><span class="h3 main-color"> сум</span>
+                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color">300</label> сум</div>
                         <div class="d-flex justify-content-center">
-                            <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
+                            <a id="hideforma1" href="{% if request.user.is_authenticated %}#{% else %}
+                            {% url 'users:login' %}{% endif %}"
+                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-5 h-100">
+                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
                         <div class="h3 mb-4">Премиум</div>
                         <div class="small">
                             <span class="text-secondary"><i class="bi-clock"></i>2-10 рабочих дней</span>
@@ -85,9 +89,11 @@
                         </div>
                         <div class="my-4">Глубокая редактура текста, улучшение структуры,
                             стилистики и дальнейшая поддержка</div>
-                        <label id="cost2" class="h3 my-5 main-color">400</label><span class="h3 main-color"> сум</span>
+                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color">400</label> сум</div>
                         <div class="d-flex justify-content-center">
-                            <button class="btn border-primary w-100 mx-2 py-3">Выбрать</button>
+                            <a id="hideforma2" href="{% if request.user.is_authenticated %}#{% else %}
+                            {% url 'users:login' %}{% endif %}"
+                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +204,6 @@
 
         </div>
     <div class="tab-content" id="nav-tabContent">
-{#          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">#}
               <div class=" container " >
 
                     <div class="row text-secondary">
@@ -221,17 +226,8 @@
                                     <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
                                 </div>
                             </div>
-
-
-
-
                         </div>
-
                         <div class="col-lg-6">
-
-
-
-
                             <div class="form-group row my-4">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                                 <div class="col-sm-6 d-flex flex-column">
@@ -250,8 +246,6 @@
                                     <small class="text-danger align-self-start">{{form.email.errors}}</small>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
 
@@ -266,10 +260,106 @@
                         </div>
     </div>
 </form>
+
+
+    <div id="formacha" style="display: none">
+        <form class="mt-100 mb-100 fixed-top " method="post" action="{% url 'requests:free_consultation' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container bg-white shadow rounded-20 p-5">
+    <div class="forma    ">
+        <div class="d-flex justify-content-between">
+
+            <h2 class=" mb-4">Payment form</h2><i class="bi bi-x-circle "></i>
+
+        </div>
+    <div class="tab-content" id="nav-tabContent">
+              <div class=" container " >
+
+                    <div class="row text-secondary">
+                        <div class="col-lg-6">
+
+                            <div class="form-group row my-4">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                   {{form.phone}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.phone.errors}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+
+
+                             <div class="form-group row my-4">
+
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
+                                <div class="col-sm-6 d-flex flex-column">
+                                   {{form.email}}
+                                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group d-flex my-4">
+
+                                <label for="inputPassword" class="col-form-label">File</label>
+                                <div class="col-sm-6 d-flex flex-column ml-5">
+{#                                   {{form.email}}#}
+                                    <input type="file" class="form-control p-5" id="exampleFormControlInput1">
+                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
+                                </div>
+                                <div>
+                                    <h4>Cost: <label id="formcost"></label> сум</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+
+          </div>
+    </div>               <div class="row ">
+                        <div class="col-lg-11 d-flex  justify-content-end">
+                            <button type="submit" class="btn btn-primary px-4 mr-4">Заказать</button>
+                        </div>
+                        </div>
+    </div>
+</form>
+    </div>
 {% endblock %}
 
 {% block js %}
     <script>
+
+    $("#hideforma").click(function () {
+        $("#formacha").css('display','inline')
+        a = $('#cost').html()
+        $('#formcost').html(a)
+    })
+     $("#hideforma1").click(function () {
+        $("#formacha").css('display','inline')
+        a = $('#cost1').html()
+        $('#formcost').html(a)
+    })
+     $("#hideforma2").click(function () {
+        $("#formacha").css('display','inline')
+        a = $('#cost2').html()
+        $('#formcost').html(a)
+    })
+
+    $('.bi-x-circle').click(function () {
+        $("#formacha").css('display','none')
+    })
+
+
+
+
+
+
+
+
         $('#volume').val(1)
         $('#label').val(1)
 
