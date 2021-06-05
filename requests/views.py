@@ -46,7 +46,7 @@ class WebinarsView(TemplateView):
         context = super(WebinarsView, self).get_context_data(**kwargs)
         return context
 
-
+# todo yangilash
 class Conferences(View):
     def get(self, request):
         context = {'form': FreeConsultationForm()}
