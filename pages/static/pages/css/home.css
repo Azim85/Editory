@@ -100,7 +100,10 @@ header {
 }
 
 .heightme{
-
+  height: 465px !important;
+}
+.w-100-me{
+  height: 425px !important;
 }
 
 .section-2 {
@@ -359,20 +362,24 @@ a.me:hover{
 
 .section-2 .slick-next,
 .section-2 .slick-prev {
-  border: white solid 2px !important;
+  border: #F4F4F4  solid 2px !important;
   border-width: 1px !important;
-  background: transparent !important;
+  background: #F4F4F4 81% !important;
   padding: 28px !important;
+}
+.section-2 .slick-next:before,
+.section-2 .slick-prev:before {
+  color: #2A819E !important;
 }
 .section-2 .slick-next:hover,
 .section-2 .slick-prev:hover {
-  background: #f4f4f4 81% !important;
+  background: #2A819E !important;
   border: none;
   padding: 30px;
 }
 .section-2 .slick-next:hover:before,
 .section-2 .slick-prev:hover:before {
-  color: #00a1a8 !important;
+  color: #fff !important;
 }
 
 .kill .slick-next,

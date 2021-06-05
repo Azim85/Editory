@@ -49,8 +49,26 @@ class WebinarsView(TemplateView):
 
 class Conferences(View):
     def get(self, request):
-        context = {'form':FreeConsultationForm()}
+        context = {'form': FreeConsultationForm()}
         return render(request, 'conferences.html', context)
+
+    def post(self, request):
+        print(request.POST)
+
+
+class CreateConferences(View):
+    def get(self, request):
+        context = {'form': FreeConsultationForm()}
+        return render(request, 'creat_conference.html', context)
+
+    def post(self, request):
+        print(request.POST)
+
+
+class Design(View):
+    def get(self, request):
+        context = {'form': FreeConsultationForm()}
+        return render(request, 'design.html', context)
 
     def post(self, request):
         print(request.POST)
@@ -127,3 +145,25 @@ class Peer_review(View):
         else:    
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
+
+
+class BAKView(View):
+    def get(self, request):
+        return render(request, 'bak.html')
+
+
+class ScopusView(View):
+    def get(self, request):
+        return render(request, 'scopus.html')
+
+class GrantsView(View):
+    def get(self, request):
+        return render(request, 'grants.html')
+
+class PatentsView(View):
+    def get(self, request):
+        return render(request, 'patents.html')
+
+class TranslationView(View):
+    def get(self, request):
+        return render(request, 'translation.html')

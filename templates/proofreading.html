@@ -15,7 +15,128 @@
     {% endfor %}
 {% endif %}
 
-    <div class="container">
+    <div class="bg-me-home" style="background: linear-gradient(286.84deg, #A2CCC7 -1.37%, #E5E5E5 97.92%);">
+
+    <div class="container pt-5">
+        <nav>
+              <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                    <a class="nav-link active pl-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Рецензирование</a>
+                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Методология исследования</a>
+                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Статистический анализ</a>
+                    <a class="nav-link" id="nav-fouth-tab" data-toggle="tab" href="#nav-fourth" role="tab" aria-controls="nav-fourth" aria-selected="false">Корректура и редактирование</a>
+              </div>
+        </nav>
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+              <div class="container mb-5">
+                    <div class="row py-5">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="">
+                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">Корректура и редактирование диссертации</div>
+                                <div class="pb-4">Как избежать ошибок в процессе исследования и получить объективные
+                                    показатели? Специалисты Editory знают, как этого добиться. Языковая и
+                                    фактологическая обработка вашей диссертации осуществляется подтверждёнными
+                                    экспертами в соответствующей области </div>
+                              <button class="btn btn-primary">Отправить работу </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">
+                        </div>
+                        </div>
+                    </div>
+              </div>
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+              <div class="container mb-5">
+                    <div class="row py-5">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="">
+                                <div class="h1 pb-4" style="font-weight: 600; line-height:106.3% ">Рецензирование диссертации</div>
+                                <div class="pb-4">Рецензия закрепляет успех диссертации, выявляя её достоинства
+                                    и предоставляя автору возможность подтвердить перед
+                                    сообществом свою компетентность</div>
+                                <button class="btn btn-primary">Отправить работу </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 450.png' %}">
+                        </div>
+                        </div>
+                    </div>
+              </div>
+
+
+
+
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+              <div class="container mb-5">
+                    <div class="row py-5">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="">
+                                <div class="h1 pb-4" style=" font-weight:600; line-height:106.3%">Методология исследования</div>
+                                <div class="pb-4">Как избежать ошибок в процессе исследования
+                                и получить объективные показатели?
+                                Специалисты Editory знают, как этого добиться
+
+                                </div>
+                                <button class="btn btn-primary">Отправить работу </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img  class="img-fluid fix-img" src="{% static 'pages/images/Group 451.png' %}">
+                        </div>
+                        </div>
+                    </div>
+              </div>
+
+
+
+          <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
+
+              <div class="container mb-5">
+                    <div class="row py-5">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="">
+                                <div class=" h1 pb-4" style=" font-weight:600; line-height:106.3%">Статистический анализ</div>
+                                <div class="pb-4">Собираем и обрабатываем конкретные цифры для вашего
+                                    исследования. Опирайтесь в работе на действительно достоверные данные
+                                    и будьте уверены в результате</div>
+                                 <button class="btn btn-primary">Отправить работу </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 452.png' %}">
+                        </div>
+                        </div>
+                    </div>
+              </div>
+
+          </div>
+
+
+    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 524.png' %})">
+        <div class="container pb-100 pt-200 text-white ">
+            <ul>
+                <li>Прикрепите документ в формате Word или PowerPoint;</li>
+                <li>В документе должен быть только один материал;</li>
+                <li>Убедитесь, что размер файла составляет менее Х Мб;</li>
+                <li>Проверьте название документа: в нём не должно быть пробелов или специальных символов;</li>
+                <li>Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами.</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <div class="container mb-100">
         <div class="mt-5">
                     <div class="h1">Заявка на корректуру <br>и редактирование диссертации</div>
 
@@ -118,7 +239,7 @@
             </form>
         </div>
 
-    </div>
+
 
 {% endblock %}
 
@@ -129,6 +250,20 @@
             alert_message.classList.add('alert_message')
         }
     })
+
+
+    $('#nav-home-tab').on('click', function (){
+            $('.bg-me-home').css('background','linear-gradient(286.84deg, #A2CCC7 -1.37%, #E5E5E5 97.92%)')
+        })
+        $('#nav-profile-tab').on('click', function (){
+            $('.bg-me-home').css('background','linear-gradient(286.84deg, #E4C9B0 -1.37%, #E5E5E5 97.92%)')
+        })
+        $('#nav-contact-tab').on('click', function (){
+            $('.bg-me-home').css('background','linear-gradient(286.84deg, #E4C9B0 -1.37%, #E5E5E5 97.92%)')
+        })
+        $('#nav-fouth-tab').on('click', function (){
+            $('.bg-me-home').css('background','linear-gradient(286.84deg, #A2CCC7 -1.37%, #E5E5E5 97.92%)')
+        })
 </script>
     
 {% endblock js %}

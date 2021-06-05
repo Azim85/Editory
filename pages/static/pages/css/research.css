@@ -2,6 +2,28 @@
     height: 420px;
 }
 
+.bg-me{
+      background: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.fix-img{
+  height: 400px !important;
+}
+
+
+a.nav-link{
+    color: black !important;
+}
+
+
+a.active{
+    background-color: transparent !important;
+    color:#2A819E !important;
+    border-bottom: #2A819E solid 2px !important;
+}
+
 .main-font{
     font-family: Geometria;
 }
@@ -15,6 +37,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .h1{
+        font-size: 30px;
+    }
+    .chekbok{
+        margin-left: 0 !important;
+    }
   .adaptive{
       width: 100%;
     padding-right: 25px;

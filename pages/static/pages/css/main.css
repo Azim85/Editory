@@ -6,6 +6,7 @@ font-weight: normal;
 src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 }
 
+
 *{
     padding: 0;
     margin: 0;
@@ -14,6 +15,14 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 .card-header-color{
     color: #CE935E !important;
 
+}
+
+.darken{
+    color:#000
+}
+
+.logo-color{
+    color: #40545C;
 }
 
 .nav-logo{
@@ -141,6 +150,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media screen and (max-width: 568px) {
+
     .dropdown-menu{
         width: 100%;
     }
@@ -184,7 +194,7 @@ h1, h2, h3, h4, h5, h6{
 
 .font-65{
     font-size: 65px;
-    line-height: 70px;
+    line-height: 106.3%;
 }
 
 .border-primary{
@@ -225,8 +235,8 @@ h1, h2, h3, h4, h5, h6{
 
 .btn-primary {
   color: #fff;
-  background-color: #00A1A8 !important;
-  border-color: #00A1A8 !important;
+  background-color: #2A819E !important;
+  border-color: #2A819E !important;
 }
 
 
@@ -237,6 +247,10 @@ h1, h2, h3, h4, h5, h6{
 /*}*/
 
 @media  (max-width: 992px){
+     .font-65{
+    font-size: 40px;
+    line-height: 106.3%;
+}
     #navbarNav{
         padding-left: 0 !important;
     }

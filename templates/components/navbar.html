@@ -1,7 +1,7 @@
 {% load static %}
 <div class="container py-1 nav-font" style="z-index: 10000;">
     <nav class="navbar navbar-expand-lg p-0 py-1">
-        <a class="navbar-brand nav-logo k" href="{% url 'pages:home' %}"><img src="{% static 'pages/svg/Logo.svg' %}"></a>
+        <a class="navbar-brand nav-logo k" href="{% url 'pages:home' %}">editory</a>
         <button class="navbar-toggler main-border" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi-list main-color"></i>
@@ -51,39 +51,49 @@
 
                          <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">Конференции</div></a>
                             <div id="navChild1"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Участие в конференциях</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Организация конференций</div></a>
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:conferences' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Участие в конференциях</div></a>
+                                    <a href="{% url 'requests:creat-conferences' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Организация конференций</div></a>
                                 </div>
                          </div>
 
 
                          <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">Исследовательские проекты</div></a>
                             <div id="navChild2"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Исследовательские гранты</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Исследовательские патенты</div></a>
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:grants' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Исследовательские гранты</div></a>
+                                    <a href="{% url 'requests:patents' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Исследовательские патенты</div></a>
                                 </div>
                          </div>
 
 
                          <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">Публикация работ</div></a>
                             <div id="navChild3"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Публикация в ВАК</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Публикация в Scopus/ Web <br>of Science</div></a>
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:bak' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Публикация в ВАК</div></a>
+                                    <a href="{% url 'requests:scopus' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Публикация в Scopus/ Web <br>of Science</div></a>
                                 </div>
                          </div>
 
 
                          <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">Консультация по диссертациям</div></a>
                             <div id="navChild4"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Корректура и редактирование</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Рецензирование диссертации <br>of Science</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Методология исследования <br>of Science</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Статистический анализ <br>of Science</div></a>
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Корректура и редактирование</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Рецензирование диссертации <br>of Science</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Методология исследования <br>of Science</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Статистический анализ <br>of Science</div></a>
                                 </div>
+                         </div>
+
+
+                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">Discover&Shop</div></a>
+                            <div id="navChild5"  class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:design' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Графические материалы</div></a>
+                                    <a href="{% url 'pages:language_editing' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Корректура и редактирование </div></a>
+                                    <a href="{% url 'requests:translation' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Переводы </div></a>
+                                   </div>
                          </div>
 
                     </div>
@@ -91,18 +101,18 @@
                 </li>
                 {#                    todo discover and shop#}
 
-                <li class="nav-item dropdown geometria">
-                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Discover&Shop
-                     </a>
-
-                     <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">
-
-                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2"  ><div class="">Графические материалы</div></a>
-                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="">Корректура и редактирование</div></a>
-                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'pages:language_editing' %}"><div class="">Переводы</div></a>
-                    </div>
-                </li>
+{#                <li class="nav-item dropdown geometria">#}
+{#                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            #}
+{#                     </a>#}
+{##}
+{#                     <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">#}
+{##}
+{#                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2"  ><div class="">Графические материалы</div></a>#}
+{#                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="">Корректура и редактирование</div></a>#}
+{#                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'pages:language_editing' %}"><div class="">Переводы</div></a>#}
+{#                    </div>#}
+{#                </li>#}
                 <li class="nav-item ml-3">
                     <a class="nav-link k text-dark " href="{% url 'pages:contact' %}">Контакты</a>
                 </li>

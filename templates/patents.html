@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'pages/css/bak.css' %}">{% endblock %}
+
+{% block content %}
+<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+    <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rectangle_grey.png' %}')">
+        <div class="container">
+            <div class="row padding_me">
+                <div class="col-lg-6">
+                    <div class=" head-word geometria pb-5"
+                        style="font-size: 50px; color:white; font-weight:bold; line-height:1">Как получить патент?</div>
+                    <div style=" color:white" class="text-left ">
+                        Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А
+                        Editory поможет со всем остальным.
+                    </div>
+                    <div class="form-group row" style="margin-top: 60px">
+                        <div class="col col-md-6">
+                            <button type="submit" class="btn w-100 text-white self-align-left"
+                                style="background:#2A819E">Заказать консультацию</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center">
+                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"
+                            style="width: 30vw;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-0 mt-100">
+        <div class="container">
+            <div class="text-left" style="font-size: 36px; color:#263236;">Заявка на получение патента</div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container mt-100 pb-100">
+
+    <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}">
+        {% csrf_token %}
+        <div class="row text-secondary">
+            <div class="col-lg-6">
+
+                <div class="form-group row">
+                    <label for="" class="col-sm-4 col-form-label">Имя</label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        {{forms.first_name}}
+                        <small class="text-danger">{{forms.first_name.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                    <div class="col-sm-6">
+                        {{forms.last_name}}
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        {{forms.phone}}
+                        <small class="text-danger">{{forms.phone.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        {{forms.select_topic}}
+                        <small class="text-danger">{{forms.select_topic.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row mt-5">
+                    <div class="col-sm-6 d-flex flex-column">
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox">
+                            {{forms.is_agree}} <small class="ml-4" style="white-space: nowrap;">Согласие с политикой
+                                конфиденциальности</small>
+                        </div>
+                        <small class="text-danger">{{forms.is_agree.errors}}</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        {{forms.organization}}
+                        <small class="text-danger">{{forms.organization.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Контакты организации </label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        <!-- <input type="text" name="phone" class="form-control"> -->
+                        {{forms.org_contacts}}
+                        <small class="text-danger">{{forms.org_contacts.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
+                    <div class="col-sm-6 d-flex flex-column">
+                        {{forms.org_address}}
+                        <small class="text-danger">{{forms.org_address.errors}}</small>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row" style="margin-top: 60px">
+                    <div class="col col-sm-6 col-md-6">
+                        <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+{% endblock content %}
