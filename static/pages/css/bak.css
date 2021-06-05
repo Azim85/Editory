@@ -1,0 +1,23 @@
+.pano{
+    position:relative;
+    height: 774.16px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+.content{
+    font-size: 1.5vw;
+    border: 1px solid red;
+}
+
+@media screen and (max-width:992px) {
+    .pt-auto{
+        display: none;
+    }
+
+    .content{
+        font-size: 18px;
+    }
+}
+

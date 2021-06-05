@@ -79,3 +79,20 @@ $(document).ready(function (){
     }
 
 })
+
+$(document).ready(function (){
+    if($(window).width() > 991) {
+        $('#showChild5,#navChild5').mouseenter(  function(){
+             $('#navChild5').css({ 'display': 'block'})
+         }).mouseleave( function(){
+             $('#navChild5').css({ 'display': 'none' })
+         })
+    }
+    if($(window).width() < 991) {
+        $('#showChild5,#navChild5').click(  function(){
+
+            $('#navChild5').toggleClass('hidebutton')
+        })
+    }
+
+})

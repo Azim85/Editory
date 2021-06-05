@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
 from .models import Topic, TopResearches
 from requests.forms import ConsultationForm, OrganizeResearchForm
+from orders.forms import OrderForm
 
 
 class HomeView(TemplateView):
@@ -124,8 +125,11 @@ class Research_strategy(View):
             return redirect('users:login')
 
 
-class Language_editing(TemplateView):
-    template_name = 'language_editing.html'
+
+class Language_editing(View):
+    def get(self, request):
+        form = OrderForm()
+        return render(request, 'language_editing.html', {'form':form} )
 
     def get_context_data(self, **kwargs):
         context = super(Language_editing, self).get_context_data(**kwargs)

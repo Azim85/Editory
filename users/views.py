@@ -4,6 +4,7 @@ from .forms import RegisterForm, LoginForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse_lazy
+from orders.models import OrderModel
 from django.contrib import messages
 User = get_user_model()
 
@@ -64,8 +65,10 @@ class DasboardView(View):
 
     def get(self, request):
         if request.user.is_authenticated:
+            orders = OrderModel.objects.all()
+            user_order = OrderModel.objects.filter(user=request.user)
             form = ProfileForm(instance=request.user)
-            context = {'form': form}
+            context = {'form': form, 'orders':orders, 'user_order':user_order}
             return render(request, 'users/dashboard.html', context)
         else:
             return redirect('users:login')
@@ -76,6 +79,14 @@ class ProfileChange(UpdateView):
     form_class = ProfileForm
     success_url = reverse_lazy('users:dashboard')
     template_name = 'users/dashboard.html'
+
+
+class ChangeStatusView(View):
+    def get(self, status, id):
+        order = OrderModel.objects.get(id=id)
+        order.payment_status = 3
+        order.save()
+        return redirect('users:dashboard')
         
         
 

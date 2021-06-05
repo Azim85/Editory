@@ -40,6 +40,7 @@ class OrderModel(models.Model):
     phone = models.CharField(max_length=13, verbose_name=_('phone'))
     # fio = models.CharField(max_length=255, verbose_name=_('fio'))
     email = models.EmailField(verbose_name=_('email'))
+    file = models.FileField(upload_to='files', null=True, blank=True)
     # city = models.CharField(max_length=255, verbose_name=_('city'), null=True, blank=True)
     # region = models.CharField(max_length=255, verbose_name=_('region'), null=True, blank=True)
     # street = models.CharField(max_length=255, verbose_name=_('street'), null=True, blank=True)
@@ -60,7 +61,7 @@ class OrderModel(models.Model):
     #     return books_str
 
     def __str__(self):
-        return self.product
+        return self.email
         # return _('Order #') + str(self.pk)
 
     class Meta:

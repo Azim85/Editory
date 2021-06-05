@@ -263,7 +263,7 @@
 
 
     <div id="formacha" style="display: none">
-        <form class="mt-100 mb-100 fixed-top " method="post" action="{% url 'requests:free_consultation' %}" enctype="multipart/form-data">
+        <form class="mt-100 mb-100 fixed-top " method="post" action="{% url 'orders:create-order' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container bg-white shadow rounded-20 p-5">
     <div class="forma    ">
@@ -276,37 +276,32 @@
               <div class=" container " >
 
                     <div class="row text-secondary">
-                        <div class="col-lg-6">
 
+                        <div class="col-lg-6">
                             <div class="form-group row my-4">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{form.phone}}
-                                    <input type="email" class="form-control" id="exampleFormControlInput1">
                                     <small class="text-danger align-self-start">{{form.phone.errors}}</small>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-6">
-
-
                              <div class="form-group row my-4">
-
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{form.email}}
-                                    <input type="email" class="form-control" id="exampleFormControlInput1">
                                     <small class="text-danger align-self-start">{{form.email.errors}}</small>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <div class="form-group d-flex my-4">
-
                                 <label for="inputPassword" class="col-form-label">File</label>
                                 <div class="col-sm-6 d-flex flex-column ml-5">
-{#                                   {{form.email}}#}
-                                    <input type="file" class="form-control p-5" id="exampleFormControlInput1">
+                                    {{form.file}}
                                     <small class="text-danger align-self-start">{{form.email.errors}}</small>
                                 </div>
                                 <div>
@@ -316,18 +311,24 @@
                         </div>
                     </div>
 
-                    </div>
-
-
+                </div>
           </div>
     </div>               <div class="row ">
-                        <div class="col-lg-11 d-flex  justify-content-end">
-                            <button type="submit" class="btn btn-primary px-4 mr-4">Заказать</button>
+                            <input type="hidden" name="product" value="editing" />
+                            <input type="hidden" class="amount" name="amount" value="" />
+                            <!-- <input type="hidden" name="phone" value="{{form.phone}}" />
+                            <input type="hidden" name="email" value="{{.email}}" /> -->
+                            <input type="hidden" name="payment_type" value="4" />
+                            <input type="hidden" name="payment_status" value="1" />
+                            <input type="hidden" name="delivery_status" value="1" />
+                            <div class="col-lg-11 d-flex  justify-content-end">
+                                <button type="submit" class="btn btn-primary px-4 mr-4">Заказать</button>
+                            </div>
                         </div>
-                        </div>
+                        
     </div>
 </form>
-    </div>
+</div>
 {% endblock %}
 
 {% block js %}
@@ -337,16 +338,19 @@
         $("#formacha").css('display','inline')
         a = $('#cost').html()
         $('#formcost').html(a)
+        $('.amount').val(a)
     })
      $("#hideforma1").click(function () {
         $("#formacha").css('display','inline')
         a = $('#cost1').html()
         $('#formcost').html(a)
+        $('.amount').val(a)
     })
      $("#hideforma2").click(function () {
         $("#formacha").css('display','inline')
         a = $('#cost2').html()
         $('#formcost').html(a)
+        $('.amount').val(a)
     })
 
     $('.bi-x-circle').click(function () {

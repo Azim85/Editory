@@ -220,7 +220,7 @@
 
         <form method="post" id="ordering" action="{% url 'create-order' %}">{% csrf_token %}
             <input type="hidden" name="product" value="product"/>
-            <input type="hidden" name="amount" value="0"/>
+            <input type="hidden" class="amount" name="amount" value=""/>
             <input type="hidden" name="phone" value="{{request.user.phone}}"/>
             <input type="hidden" name="email" value="{{request.user.email}}"/>
             <input type="hidden" name="payment_type" value="4"/>

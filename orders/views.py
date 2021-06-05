@@ -1,4 +1,6 @@
 from datetime import datetime
+from .forms import OrderForm
+from django.views.generic import View
 
 from django.shortcuts import redirect, render
 
@@ -125,17 +127,37 @@ def order_export(request):
     return response
 
 
-def create_order(request):
-    if request.method=='POST':
+# def create_order(request):
+#     if request.method=='POST':
+#         user = request.user
+#         product = request.POST.get('product')
+#         amount = request.POST.get('amount')
+#         phone = request.POST.get('phone')
+#         email = request.POST.get('email')
+#         file = request.POST.get('file')
+#         payment_type = request.POST.get('payment_type')
+#         payment_status = request.POST.get('payment_status')
+#         delivery_status = request.POST.get('delivery_status')
+#         print(request.POST)
+#         done =  OrderModel.objects.create(user=user, product=product, file=file, amount=amount, phone=phone, email=email,
+#         payment_type=int(payment_type), payment_status=int(payment_status), delivery_status=int(delivery_status) )
+#         if done:
+#             return redirect('pages:research_strategy')
+
+class CreateOrderView(View):
+    def post(self, request):
         user = request.user
         product = request.POST.get('product')
         amount = request.POST.get('amount')
-        phone = request.POST.get('phone')
-        email = request.user
         payment_type = request.POST.get('payment_type')
         payment_status = request.POST.get('payment_status')
         delivery_status = request.POST.get('delivery_status')
-        done =  OrderModel.objects.create(user=user, product=product, amount=amount, phone=phone, email=email,
-        payment_type=int(payment_type), payment_status=int(payment_status), delivery_status=int(delivery_status) )
-        if done:
-            return redirect('pages:research_strategy')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        file = request.FILES.get('file')
+        print(request.POST.get('product'))
+
+        OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type, payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
+            
+
+        return redirect('pages:language_editing')

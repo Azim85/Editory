@@ -15,7 +15,7 @@
      {% if request.user.is_staff %}
          <div class="text-right"><a class="btn btn-info mb-3 " href="/admin/">Admin</a></div>
 
-                    {% else %}
+                    
                 {% endif %}
         <div class="main-box d-flex justify-content-around align-items-center flex-wrap">
 
@@ -107,6 +107,64 @@
             </form>
         </div>
     </div>
+</div>
+
+<div class="container mt-100">
+    <h1>История</h1>
+
+    {% if request.user.is_staff %}
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th class="text-center">Действие</th>
+                    <th class="text-center">Дата</th>
+                    <th class="text-center">Статус</th>
+                    <th class="text-center">принимать</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td class="text-center">{{order.product}}</td>
+                    <td class="text-center">{{order.created_at|date:'m.d.Y'}}</td>
+                    {% if order.payment_status == 1 %}
+                    <td class="text-center">В ожидании</td>
+                    {% elif order.payment_status == 3 %}
+                    <td class="text-center">Завершено</td>
+                    {% endif %}
+                    <td class="text-center"><a href="{% url 'users:change_status' order.id %}" class="btn {% if order.payment_status == 3 %} disabled btn-secondary {% else %} btn-primary{% endif %}">принимать</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th class="text-center">Действие</th>
+                    <th class="text-center">Дата</th>
+                    <th class="text-center">Статус</th>
+                    <th class="text-center">способ оплаты</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in user_order %}
+                <tr>
+                    <td class="text-center">{{order.product}}</td>
+                    <td class="text-center">{{order.created_at|date:'m.d.Y'}}</td>
+                    {% if order.payment_status == 1 %}
+                    <td class="text-center">В ожидании</td>
+                    {% elif order.payment_status == 3 %}
+                        <td class="text-center">Завершено</td>
+                        <td class="text-center"><a href="#"><img src="{% static 'pages/images/payme.png' %}" alt=""></a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    
 </div>
 
 
