@@ -7,7 +7,8 @@ from .models import (   Consultation,
                         Proofreading,
                         PeerReview,
                         OrganizeConferences,
-                        Grants
+                        Grants,
+                        Translation
                     )
 
 
@@ -235,5 +236,29 @@ class GrantsForm(forms.ModelForm):
         if not '@' in email:
             raise forms.ValidationError('электронная почта недействительна')
         return email
+
+
+class TranslationForm(forms.ModelForm):
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    class Meta:
+        model = Translation
+        fields = '__all__'
+
+        widgets = {
+            'word_amount' : forms.NumberInput(attrs={'class':'form-control', 'min':0}),
+            'language' : forms.TextInput(attrs={'class':'form-control'}),
+            'research_area' : forms.Select(attrs={'class':'form-control'}),
+            'extra' : forms.Select(attrs={'class':'form-control'}),
+            'comment' : forms.Textarea(attrs={'class':'form-control', 'rows':5}),
+        }
+
+        def clean_word_amount(self):
+            amount = self.cleaned_data.get('word_amount')
+            if amount.isdigit():
+                return amount
+            raise forms.ValidationError('not digit')
+
+   
+
 
 

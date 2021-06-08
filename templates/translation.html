@@ -4,6 +4,21 @@
 <link rel="stylesheet" href="{% static 'pages/css/translation.css' %}">{% endblock %}
 
 {% block content %}
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-success text-center" id="alert_message">
+    {{message}}
+</div>
+{% else %}
+<div class="alert alert-danger text-center" id="alert_message">
+    {{message}}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
 <div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
     <div class=" pano mx-0 border" style="background-image: url('{% static 'pages/images/bg-gr.png' %}');" >
         <div class="container">
@@ -65,16 +80,16 @@
 
     <div class="container mt-100">
 
-        <form action="">
+        <form action="{% url 'requests:translation' %}" method='post' enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-row row row-cols-1 row-cols-md-2">
 
                 <div class="col">
                     <div class="form-group row my-3 ">
                         <label for="" class="col-sm-4 col-form-label">Кол-во слов</label>
                         <div class="col-sm-6 ">
-                            {{form.first_name}}
-                            <small class="text-danger align-self-start">{{form.first_name.errors}}</small>
-                            <input type="text" class="form-control">
+                            {{form.word_amount}}
+                            <small class="text-danger align-self-start">{{form.word_amount.errors}}</small>
                         </div>
                     </div>
                 </div>
@@ -83,12 +98,8 @@
                     <div class="form-group row  my-3  ">
                         <label for="inputPassword" class="col-sm-4 ">Область исследований</label>
                         <div class="col-sm-6">
-                            {{form.academic_degree}}
-                            <!-- <input type="email" class="form-control" id="exampleFormControlInput1"> -->
-                            <select name="" id="" class="form-control">
-                                <option value="">hello</option>
-                            </select>
-                            <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
+                            {{form.research_area}}
+                            <small class="text-danger align-self-start">{{form.research_area.errors}}</small>
                         </div>
                     </div>
                 </div>
@@ -98,9 +109,8 @@
                         <label for="inputPassword" class="col-sm-4 col-form-label">Язык
                             редактирования</label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{form.last_name}}
-                            <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
-                            <input type="text" class="form-control">
+                            {{form.language}}
+                            <small class="text-danger align-self-start">{{form.language.errors}}</small>
                         </div>
                     </div>
                 </div>
@@ -110,11 +120,8 @@
                         <label for="inputPassword" class="col-sm-4 col-form-label">
                             </label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{form.last_name}}
-                            <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
-                            <select name="" id="" class="form-control">
-                                <option value="">hello</option>
-                            </select>
+                            {{form.extra}}
+                            <small class="text-danger align-self-start">{{form.extra.errors}}</small>
                         </div>
                     </div>
                 </div>
@@ -126,9 +133,8 @@
                     <label for="inputPassword" class="text-secondary col-form-label">Комментарии/ особые пожелания</label>
                 </div>
                 <div class="col-lg-9 d-flex flex-column">
-                    {# {{form.last_name}}#}
-                    <textarea class="form-control" rows="6"></textarea>
-                    <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
+                        {{form.comment}}
+                    <small class="text-danger align-self-start">{{form.comment.errors}}</small>
                 </div>
             </div>
             
@@ -140,8 +146,8 @@
                     <div class="col-lg-12 d-flex ml-3 p-0 flex-column">
                         <label for="file" class="input-preview  form-input">
             
-                            {# {{form.upload_file}}#}
-                            <input type="file">
+                            {{form.file}}
+                            
                         </label>
                     </div>
             
@@ -149,7 +155,8 @@
             </div>
             <div class=" my-5 mr-5 d-flex justify-content-between flex-wrap">
                 <div class="mb-3">
-                    <input type="checkbox"> Согласие с политикой конфиденциальности
+                    <span class="mr-4">{{form.is_agree}}</span>
+                    Согласие с политикой конфиденциальности
                 </div>
                 <div class="">
                     <button class="btn btn-info px-5 mr-lg-5">Отправить резюме</button>
