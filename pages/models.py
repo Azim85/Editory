@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import BooleanField
 from django.urls import reverse_lazy
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
@@ -39,4 +40,25 @@ class TopResearches(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('pages:paper', kwargs = {'pk':self.pk})
+
+
+class ResumeModel(models.Model):
+    """
+    url:about/us, name:webinars
+    page:about_us.html
+    """
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    profession = models.CharField(max_length=100)
+    about_me = models.TextField(blank=True, null=True)
+    resume = models.FileField(upload_to='resume/')
+    is_agree = BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        verbose_name = 'Resume'
+        verbose_name_plural = 'Resumes'
 

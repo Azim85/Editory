@@ -10,11 +10,12 @@ from django.utils.translation import ugettext_lazy as _
 PAYMENT_TYPES = (
     (1, _('Наличные')),
     (2, _('Пластиковая карта')),
-    (3, _('Click')),
+    (3, _('Apelsin')),
     (4, _('Payme')),
 )
 
 PAYMENT_STATUS = (
+    (0, _('обрабатывается...')),
     (1, _('В ожидании')),
     (2, _('Ошибка')),
     (3, _('Завершено')),

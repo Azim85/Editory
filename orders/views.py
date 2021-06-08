@@ -127,22 +127,6 @@ def order_export(request):
     return response
 
 
-# def create_order(request):
-#     if request.method=='POST':
-#         user = request.user
-#         product = request.POST.get('product')
-#         amount = request.POST.get('amount')
-#         phone = request.POST.get('phone')
-#         email = request.POST.get('email')
-#         file = request.POST.get('file')
-#         payment_type = request.POST.get('payment_type')
-#         payment_status = request.POST.get('payment_status')
-#         delivery_status = request.POST.get('delivery_status')
-#         print(request.POST)
-#         done =  OrderModel.objects.create(user=user, product=product, file=file, amount=amount, phone=phone, email=email,
-#         payment_type=int(payment_type), payment_status=int(payment_status), delivery_status=int(delivery_status) )
-#         if done:
-#             return redirect('pages:research_strategy')
 
 class CreateOrderView(View):
     def post(self, request):

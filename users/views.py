@@ -84,7 +84,7 @@ class ProfileChange(UpdateView):
 class ChangeStatusView(View):
     def get(self, status, id):
         order = OrderModel.objects.get(id=id)
-        order.payment_status = 3
+        order.payment_status = 1
         order.save()
         return redirect('users:dashboard')
         

@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
-from .forms import ConsultationForm, FreeConsultationForm, ProofreadingForm, PeerReviewForm
+from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
+                    PeerReviewForm, OrganizeConferencesForm, GrantsForm)
 
 
 class Research(TemplateView):
@@ -58,20 +59,54 @@ class Conferences(View):
 
 class CreateConferences(View):
     def get(self, request):
-        context = {'form': FreeConsultationForm()}
+        context = {'form': OrganizeConferencesForm()}
         return render(request, 'creat_conference.html', context)
 
     def post(self, request):
-        print(request.POST)
+        form = OrganizeConferencesForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('pages:home')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'home.html', {'validated':'validated', 'form':form})            
+            else:    
+                return render(request,'home.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+
 
 
 class Design(View):
     def get(self, request):
-        context = {'form': FreeConsultationForm()}
+        context = {'form': GrantsForm()}
         return render(request, 'design.html', context)
 
     def post(self, request):
-        print(request.POST)
+        form = GrantsForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save(commit=False)
+                    done.theme = request.POST.get('theme')
+                    done.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:design')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'design.html', {'validated':'validated', 'form':form})
+            else:    
+                return render(request,'design.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+        
 
 
 
@@ -80,10 +115,14 @@ class ConsultationView(View):
         form = ConsultationForm(request.POST)
         if request.user.is_authenticated:
             if form.is_valid():
-                done = form.save()
-                if done:
-                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                    return redirect('pages:home')
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('pages:home')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'home.html', {'validated':'validated', 'form':form})            
             else:    
                 return render(request,'home.html', {'validated':'validated', 'form':form})
         else:
@@ -93,13 +132,16 @@ class ConsultationView(View):
 class FreeConsultationView(View):
    def post(self, request):
         form = FreeConsultationForm(request.POST, request.FILES)
-        print(request.POST, request.FILES)
         if request.user.is_authenticated:
             if form.is_valid():
-                done = form.save()
-                if done:
-                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                    return redirect('requests:conferences')
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:conferences')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'conferences.html', {'validated':'validated', 'form':form})
             else:    
                 return render(request,'conferences.html', {'validated':'validated', 'form':form})
         else:
@@ -149,20 +191,106 @@ class Peer_review(View):
 
 class BAKView(View):
     def get(self, request):
-        return render(request, 'bak.html')
+        form = GrantsForm()
+        return render(request, 'bak.html', {'form':form})
+
+    def post(self, request):
+        form = GrantsForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save(commit=False)
+                    done.theme = request.POST.get('theme')
+                    done.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:bak')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'bak.html', {'validated':'validated', 'form':form})
+            else:    
+                return render(request,'bak.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+
+    
 
 
 class ScopusView(View):
     def get(self, request):
-        return render(request, 'scopus.html')
+        form = GrantsForm()
+        return render(request, 'scopus.html', {'form':form})
+
+    def post(self, request):
+        form = GrantsForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save(commit=False)
+                    done.theme = request.POST.get('theme')
+                    done.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:scopus')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'scopus.html', {'validated':'validated', 'form':form})
+            else:    
+                return render(request,'scopus.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
 
 class GrantsView(View):
     def get(self, request):
-        return render(request, 'grants.html')
+        form = GrantsForm()
+        return render(request, 'grants.html', {'form':form})
+
+    def post(self, request):
+        form = GrantsForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save(commit=False)
+                    done.theme = request.POST.get('theme')
+                    done.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:grants')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'grants.html', {'validated':'validated', 'form':form})
+            else:    
+                return render(request,'grants.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
 
 class PatentsView(View):
     def get(self, request):
-        return render(request, 'patents.html')
+        form = GrantsForm()
+        return render(request, 'patents.html', {'form':form})
+
+    def post(self, request):
+        form = GrantsForm(request.POST)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save(commit=False)
+                    done.theme = request.POST.get('theme')
+                    done.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:patents')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request,'patents.html', {'validated':'validated', 'form':form})
+            else:    
+                return render(request,'patents.html', {'validated':'validated', 'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
 
 class TranslationView(View):
     def get(self, request):

@@ -7,8 +7,9 @@
 
 {% block content %}
 
+
 {% if messages %}
-<div id="succes">success</div>
+<div id="succes" style="opacity: 0;">success</div>
 {% for message in messages %}
 <div class="alert alert-{{message.tags}} text-center" id="alert_message">
     {{message}}
@@ -61,7 +62,6 @@
                                     исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется
                                     учеными и исследовательскими группами различных дисциплин и факультетов, которые могут
                                     подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</div>
-                                <!-- <button class="btn btn-primary">Бесплатная консультация</button> -->
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
@@ -216,21 +216,8 @@
 
         </form>
 
-        {% comment %} order {% endcomment %}
-
-        <form method="post" id="ordering" action="{% url 'create-order' %}">{% csrf_token %}
-            <input type="hidden" name="product" value="product"/>
-            <input type="hidden" class="amount" name="amount" value=""/>
-            <input type="hidden" name="phone" value="{{request.user.phone}}"/>
-            <input type="hidden" name="email" value="{{request.user.email}}"/>
-            <input type="hidden" name="payment_type" value="4"/>
-            <input type="hidden" name="payment_status" value="1"/>
-            <input type="hidden" name="delivery_status" value="1"/>
-            {% comment %} <button type="submit" class="order_to">button</button> {% endcomment %}
-        </form>
     </div>
 
-    {% comment %} <a href="{% url 'create-order' %}" class="order">button</a> {% endcomment %}
 
 </div>
 

@@ -8,6 +8,22 @@
 {% endblock %}
 
 {% block content %}
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-success text-center" id="alert_message">
+    {{message}}
+</div>
+{% else %}
+<div class="alert alert-danger text-center" id="alert_message">
+    {{message}}
+</div>
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
 <div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
     <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">
     <div class="container">
@@ -271,10 +287,10 @@
             работать и считаете, что ваши знания нам пригодятся? Заполните форму ниже —
             и HR-специалист обязательно ответит.
         </div>
-
-        <div class="row text-secondary mt-5">
+        <form method='post' enctype="multipart/form-data">
+            {% csrf_token %}
+                    <div class="row text-secondary mt-5">
                         <div class="col-lg-6">
-
                             <div class="form-group row my-5">
                                 <label for="" class="col-sm-4 col-form-label">Имя</label>
                                 <div class="col-sm-6 d-flex flex-column">
@@ -290,30 +306,26 @@
                                     <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
                                 </div>
                             </div>
-
-
                         </div>
 
                         <div class="col-lg-6">
-
                             <div class="form-group row w-100 my-5">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Профессия</label>
                                 <div class="col-sm-6 d-flex flex-column">
-                                    {{form.academic_degree}}
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" >
+                                    {{form.profession}}
                                     <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group row  my-5">
                         <div class="col-lg-2">
                             <label for="inputPassword" class="text-secondary col-form-label">Пара слов о себе</label>
                         </div>
                         <div class="col-lg-9 d-flex flex-column">
-{#                                    {{form.last_name}}#}
-                            <textarea class="form-control" rows="6"></textarea>
-                            <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
+                                {{form.about_me}}
+                            <small class="text-danger align-self-start">{{form.about_me.errors}}</small>
                         </div>
                     </div>
 
@@ -324,22 +336,21 @@
                         <div class="col-lg-9 row w-100">
                         <div class="col-lg-12 d-flex ml-3 p-0 flex-column">
                             <label for="file" class="input-preview  form-input">
-
-{#                                {{form.upload_file}}#}
-                                <input type="file">
+                               {{form.resume}}
                             </label>
                         </div>
-
                         </div>
                     </div>
+                    
                     <div class="offset-2 my-5 mr-5 d-flex justify-content-between">
                         <div>
-                            <input type="checkbox"> Согласие с политикой конфиденциальности
+                            <span class="mr-4">{{form.is_agree}}</span>Согласие с политикой конфиденциальности
                             </div>
                         <div class="">
-                            <button class="btn btn-info px-5 mr-lg-5">Отправить резюме</button>
+                            <button type="submit" class="btn btn-info px-5 mr-lg-5">Отправить резюме</button>
                         </div>
                     </div>
+            </form>
 
     </div>
 

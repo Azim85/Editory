@@ -8,11 +8,15 @@
 {% block content %}
 
 {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{message.tags}} text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endfor %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-success text-center" id="alert_message">
+    {{message}}
+</div>
+{% else %}
+<div class="alert alert-danger text-center" id="alert_message">
+    {{message}}
+</div>
 {% endif %}
 
 <div class="bg-me" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
@@ -42,7 +46,7 @@
 
 </div>
 
-<form class="mt-100" method="post" action="{% url 'requests:free_consultation' %}" enctype="multipart/form-data">
+<form class="mt-100" method="post" action="{% url 'requests:creat-conferences' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container mt-4">
     <div class="forma container   rounded-20">
@@ -102,7 +106,7 @@
                             <div class="form-group row my-4">
                                 <label for="" class="col-sm-4 col-form-label">Организация</label>
                                 <div class="col-sm-6 d-flex flex-column">
-                                   {{form.application_name}}
+                                   {{form.organization}}
                                     <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
                                 </div>
                             </div>
@@ -110,7 +114,7 @@
                             <div class="form-group row my-4">
                                 <label for="" class="col-sm-4 col-form-label">Контакты организации </label>
                                 <div class="col-sm-6 d-flex flex-column">
-                                   {{form.application_name}}
+                                   {{form.org_contacts}}
                                     <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
                                 </div>
                             </div>
@@ -118,7 +122,7 @@
                             <div class="form-group row my-4">
                                 <label for="" class="col-sm-4 col-form-label">Адрес организации </label>
                                 <div class="col-sm-6 d-flex flex-column">
-                                   {{form.application_name}}
+                                   {{form.org_address}}
                                     <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
                                 </div>
                             </div>
@@ -133,6 +137,9 @@
           </div>
     </div>               <div class="row mb-100">
                         <div class="col-lg-11 d-flex  justify-content-end">
+                            <div class="mr-auto">
+                                {{form.is_agree}}<span class="ml-4">Согласие с политикой конфиденциальности</span>
+                            </div>
                             <button type="submit" class="btn btn-primary px-4 mr-4">Отправить работу</button>
                         </div>
                         </div>

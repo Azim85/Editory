@@ -5,20 +5,22 @@ from .models import (   Consultation,
                         ApplicationForFreeConsultation, 
                         OrganizeResearches, 
                         Proofreading,
-                        PeerReview
+                        PeerReview,
+                        OrganizeConferences,
+                        Grants
                     )
 
 
 class ConsultationForm(forms.ModelForm):
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'phone', 'comment')
+        fields = ('first_name', 'last_name', 'phone', 'email', 'is_agree')
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'comment': forms.Textarea(attrs={'class': 'form-control', 'rows':7}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     
@@ -29,6 +31,12 @@ class ConsultationForm(forms.ModelForm):
             if len(phone) in phone_len:
                 return phone
         raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email
         
 
 
@@ -147,3 +155,85 @@ class PeerReviewForm(forms.ModelForm):
             'scientific_adviser':forms.TextInput(attrs={'class':'form-control'}),
             'comment':forms.Textarea(attrs={'class':'form-control', 'rows':5}),
         }
+
+
+class OrganizeConferencesForm(forms.ModelForm):
+    
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    class Meta:
+        model = OrganizeConferences
+        fields = '__all__'
+
+        widgets = {
+            'first_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'last_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'phone' : forms.TextInput(attrs={'class':'form-control'}),
+            'email' : forms.TextInput(attrs={'class':'form-control'}),
+            'organization' : forms.TextInput(attrs={'class':'form-control'}),
+            'org_contacts' : forms.TextInput(attrs={'class':'form-control'}),
+            'org_address' : forms.TextInput(attrs={'class':'form-control'}),
+        }
+
+    def clean_phone(self):
+        phone_len = [12, 13]
+        phone = self.cleaned_data.get('phone')
+        if '+998'  or '998' in phone:
+            if len(phone) in phone_len:
+                return phone
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_org_contacts(self):
+        phone_len = [12, 13]
+        org_contacts = self.cleaned_data.get('org_contacts')
+        if '+998'  or '998' in org_contacts:
+            if len(org_contacts) in phone_len:
+                return org_contacts
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email
+
+
+class GrantsForm(forms.ModelForm):
+    
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    class Meta:
+        model = Grants
+        fields = '__all__'
+
+        widgets = {
+            'first_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'last_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'phone' : forms.TextInput(attrs={'class':'form-control'}),
+            'email' : forms.TextInput(attrs={'class':'form-control'}),
+            'organization' : forms.TextInput(attrs={'class':'form-control'}),
+            'org_contacts' : forms.TextInput(attrs={'class':'form-control'}),
+            'org_address' : forms.TextInput(attrs={'class':'form-control'}),
+        }
+
+    def clean_phone(self):
+        phone_len = [12, 13]
+        phone = self.cleaned_data.get('phone')
+        if '+998'  or '998' in phone:
+            if len(phone) in phone_len:
+                return phone
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_org_contacts(self):
+        phone_len = [12, 13]
+        org_contacts = self.cleaned_data.get('org_contacts')
+        if '+998'  or '998' in org_contacts:
+            if len(org_contacts) in phone_len:
+                return org_contacts
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email
+
+

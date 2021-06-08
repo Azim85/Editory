@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
 from .models import Topic, TopResearches
 from requests.forms import ConsultationForm, OrganizeResearchForm
+from .forms import ResumeForm
 from orders.forms import OrderForm
 
 
@@ -54,13 +55,35 @@ class Articles(TemplateView):
         return context
 
 
-class AboutUs(TemplateView):
-    template_name = 'about_us.html'
+class AboutUs(View):
+    def get(self, request):
+        form = ResumeForm()
+        return render(request, 'about_us.html', {'form':form})
+    
+    def post(self, request):
+        form = ResumeForm(request.POST, request.FILES)
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('pages:webinars')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request, 'about_us.html', {'form':form})    
+            else:
+                return render(request, 'about_us.html', {'form':form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+
 
     def get_context_data(self, **kwargs):
         context = super(AboutUs, self).get_context_data(**kwargs)
-        context['form'] = ConsultationForm()
         return context
+
+        
 
 class Contact(TemplateView):
     template_name = 'contact.html'
@@ -99,8 +122,6 @@ class Dissertation(TemplateView):
 class Research_strategy(View):
     
     def get(self, request):
-        # request.session['ordered'] = 'not ordered'
-        # a = request.session['ordered']
        
         context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm()}
         return render(request, 'research_strategy.html', context)
@@ -113,10 +134,9 @@ class Research_strategy(View):
                     done = forms.save()
                     if done:
                         messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        # if request.session['ordered']:
-                            # request.session['orderd'] = 'ordered'
                         return redirect('pages:research_strategy')
                 else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
                     return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated'})    
             else:
                 return render(request, 'research_strategy.html', {'forms':forms})
@@ -129,7 +149,27 @@ class Research_strategy(View):
 class Language_editing(View):
     def get(self, request):
         form = OrderForm()
-        return render(request, 'language_editing.html', {'form':form} )
+        forms = ConsultationForm()
+        return render(request, 'language_editing.html', {'form':form, 'forms':forms} )
+
+    def post(self, request):
+        forms = ConsultationForm(request.POST)
+        if request.user.is_authenticated:
+            if forms.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = forms.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('pages:language_editing')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
+                    return render(request, 'language_editing.html', {'forms':forms, 'validated':'validated'})    
+            else:
+                return render(request, 'language_editing.html', {'forms':forms})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+
 
     def get_context_data(self, **kwargs):
         context = super(Language_editing, self).get_context_data(**kwargs)

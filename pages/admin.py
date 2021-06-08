@@ -4,7 +4,8 @@ from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import (
     Topic,
-    TopResearches
+    TopResearches,
+    ResumeModel
 )
 
 
@@ -33,5 +34,10 @@ class TopResearchesAdmin(admin.ModelAdmin):
     form = TopResearchesAdminForm
 
 
+class ResumeModelAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'last_name', 'profession', 'about_me']
+
+
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdmin)
+admin.site.register(ResumeModel, ResumeModelAdmin)

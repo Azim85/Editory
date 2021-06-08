@@ -1,3 +1,4 @@
+
 from pages.models import Topic
 from django.db import models
 from users.models import CustomUser
@@ -110,8 +111,12 @@ TOPICS = (
     ('Управление и ведение', 'Управление и ведение'),
 )
 
-# #######################################################################################
 class OrganizeResearches(models.Model):
+
+    """
+    url: research_strategy name:research_strategy
+    page: research_strategy.html
+    """
     last_name = models.CharField(max_length=255, null=True)
     first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
@@ -130,10 +135,12 @@ class OrganizeResearches(models.Model):
     #     verbose_name = 'исследование'
     #     verbose_name_plural = 'Стратегия исследования'
 
-# ######################################################################################
 
-class OrderToGraphicalMaterials(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+class OrganizeConferences(models.Model):
+    """
+    url:creat_conferences  name: 'creat_conferences'
+    page: creat_conference.html
+    """
     last_name = models.CharField(max_length=255, null=True)
     first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
@@ -144,21 +151,51 @@ class OrderToGraphicalMaterials(models.Model):
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.first_name
 
 
-class Consultation(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    class Meta:
+        verbose_name = 'Create Conference'
+        verbose_name_plural = 'Crete Conferences'
+
+
+class Grants(models.Model):
+    """
+    url:grants/  name: 'grants'
+    page: grants.html
+    """
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
-    comment = models.TextField(null=True, blank=True)
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
+    org_contacts = models.CharField(max_length=255)
+    org_address = models.CharField(max_length=255)
+    is_agree = models.BooleanField(default=False)
+    theme = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.first_name
 
-    # class Meta:
-    #     verbose_name = 'консультация'
-    #     verbose_name_plural = 'консультации'
+
+    class Meta:
+        verbose_name = 'Grant'
+        verbose_name_plural = 'Grants'
+
+
+class Consultation(models.Model):
+    first_name = models.CharField(max_length=100, null=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=15, null=True)
+    email = models.EmailField(blank=True)
+    is_agree = models.BooleanField(default=False )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.first_name
+
 
 
     
@@ -169,6 +206,11 @@ DEGREE = (
     ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
 )
 class ApplicationForFreeConsultation(models.Model):
+
+    """
+    url:conferences/   name:conferences
+    page: conferences.html  method:get
+    """
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     busyness = models.CharField(max_length=100)
@@ -180,14 +222,15 @@ class ApplicationForFreeConsultation(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     upload_file = models.FileField(upload_to='files/')
+    is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.first_name
 
-    # class Meta:
-    #     verbose_name = 'Заявка на бесплатную консультацию'
-    #     verbose_name_plural = 'Бесплатный Kонсультации'
+    class Meta:
+        verbose_name = 'Participation in Conference'
+        verbose_name_plural = 'Participation in Conference'
 
 
 

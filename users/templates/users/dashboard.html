@@ -118,6 +118,7 @@
                 <tr>
                     <th class="text-center">Действие</th>
                     <th class="text-center">Дата</th>
+                    <th class="text-center">способ оплаты</th>
                     <th class="text-center">Статус</th>
                     <th class="text-center">принимать</th>
                 </tr>
@@ -127,12 +128,17 @@
                 <tr>
                     <td class="text-center">{{order.product}}</td>
                     <td class="text-center">{{order.created_at|date:'m.d.Y'}}</td>
-                    {% if order.payment_status == 1 %}
-                    <td class="text-center">В ожидании</td>
-                    {% elif order.payment_status == 3 %}
-                    <td class="text-center">Завершено</td>
+                    {% if order.payment_type == 4 %}
+                        <td class="text-center">Payme</td>
+                    {% elif order.payment_type == 3 %}
+                        <td class="text-center">Apelsin</td>
                     {% endif %}
-                    <td class="text-center"><a href="{% url 'users:change_status' order.id %}" class="btn {% if order.payment_status == 3 %} disabled btn-secondary {% else %} btn-primary{% endif %}">принимать</a></td>
+                    {% if order.payment_status == 0 %}
+                        <td class="text-center">обрабатывается...</td>
+                    {% elif order.payment_status == 1 %}
+                        <td class="text-center">В ожидании</td>
+                    {% endif %}
+                    <td class="text-center"><a href="{% url 'users:change_status' order.id %}" class="btn {% if order.payment_status == 1 %} disabled btn-secondary {% else %} btn-primary{% endif %}">принимать</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -152,11 +158,15 @@
                 <tr>
                     <td class="text-center">{{order.product}}</td>
                     <td class="text-center">{{order.created_at|date:'m.d.Y'}}</td>
-                    {% if order.payment_status == 1 %}
-                    <td class="text-center">В ожидании</td>
-                    {% elif order.payment_status == 3 %}
-                        <td class="text-center">Завершено</td>
+                    {% if order.payment_status == 0 %}
+                    <td class="text-center">обрабатывается...</td>
+                    {% elif order.payment_status == 1 %}
+                        <td class="text-center">В ожидании</td>
+                        {% if order.payment_type == 4 %}
                         <td class="text-center"><a href="#"><img src="{% static 'pages/images/payme.png' %}" alt=""></a></td>
+                        {% elif order.payment_type == 3 %}
+                            <td class="text-center"><a href="#"><img src="{% static 'pages/images/apelsin.png' %}" alt=""></a></td>
+                        {% endif %}
                     {% endif %}
                 </tr>
                 {% endfor %}

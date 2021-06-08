@@ -9,9 +9,16 @@
 
 {% if messages %}
     {% for message in messages %}
-        <div class="alert alert-{{message.tags}} text-center" id="alert_message">
+        {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
             {{message}}
         </div>
+        {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
+        {% endif %}
+
     {% endfor %}
 {% endif %}
 
@@ -171,6 +178,9 @@
           </div>
     </div>               <div class="row mb-100">
                         <div class="col-lg-11 d-flex  justify-content-end">
+                            <div class="mr-auto">
+                                {{form.is_agree}}<span class="ml-4">Согласие с политикой конфиденциальности</span>
+                            </div>
                             <button type="submit" class="btn btn-primary px-4 mr-4">Отправить работу</button>
                         </div>
                         </div>
@@ -178,7 +188,7 @@
 </form>
 
 {% if validated %}
-<div id="flag" style="opacity: 1;">flag</div>
+<div id="flag" style="opacity: 0;">flag</div>
 {% endif %}
 {% endblock %}
 
