@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'orders',
-    'requests',
+    'my_requests',
     'jet',
     'django.contrib.admin',
     'rest_framework',
@@ -76,7 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
             ],
             'libraries':{
-            'tags': 'requests.templatetags.tags',
+            'tags': 'my_requests.templatetags.tags',
 
             }
         },

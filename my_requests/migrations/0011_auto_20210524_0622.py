@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('requests', '0010_remove_organizeresearches_user'),
+        ('my_requests', '0010_remove_organizeresearches_user'),
     ]
 
     operations = [

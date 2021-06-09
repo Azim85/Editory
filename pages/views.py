@@ -5,7 +5,7 @@ import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
 from .models import Topic, TopResearches
-from requests.forms import ConsultationForm, OrganizeResearchForm
+from my_requests.forms import ConsultationForm, OrganizeResearchForm
 from .forms import ResumeForm
 from orders.forms import OrderForm
 

@@ -24,7 +24,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('auth/', include('users.urls')),
     path('', include('pages.urls')),
-    path('request_to/', include('requests.urls')),
+    path('request_to/', include('my_requests.urls')),
     path('paycom/', include('paymeuz.urls')),
     path('orders/', include('orders.urls')),
 ]

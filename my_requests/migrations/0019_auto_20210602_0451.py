@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('requests', '0018_peerreview'),
+        ('my_requests', '0018_peerreview'),
     ]
 
     operations = [
