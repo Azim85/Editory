@@ -4,7 +4,8 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
-                    PeerReviewForm, OrganizeConferencesForm, GrantsForm)
+                    PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm)
+from .models import Translation
 
 
 class Research(TemplateView):
@@ -294,4 +295,31 @@ class PatentsView(View):
 
 class TranslationView(View):
     def get(self, request):
-        return render(request, 'translation.html')
+        form = TranslationForm()
+        return render(request, 'translation.html', {'form':form})
+
+    def post(self, request):
+        form = TranslationForm(request.POST, request.FILES)
+        if request.user.is_authenticated:
+            user = request.user
+            word_amount = request.POST.get('word_amount')
+            language = request.POST.get('language')
+            research_area = request.POST.get('research_area')
+            extra = request.POST.get('extra')
+            comment = request.POST.get('comment')
+            file = request.FILES.get('file')
+            
+            if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                is_agree = True
+                done = Translation.objects.create(user=user, word_amount=word_amount, language=language,
+                 research_area=research_area, extra=extra, comment=comment, file=file, is_agree=is_agree)
+                if done:
+                    messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                    return redirect('requests:translation')
+            else:
+                messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                return render(request,'translation.html', {'validated':'validated', 'form':form})
+            
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')

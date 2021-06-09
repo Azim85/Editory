@@ -197,6 +197,31 @@ class Consultation(models.Model):
         return self.first_name
 
 
+RESEARCH_AREA = (
+    ('TEXT', 'TEXT'),
+    ('TEXT', 'TEXT'),
+)
+
+class Translation(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    word_amount = models.IntegerField()
+    language = models.CharField(max_length=100)
+    research_area = models.CharField(max_length=100, choices=RESEARCH_AREA)
+    extra = models.CharField(max_length=100, choices=RESEARCH_AREA)
+    comment = models.TextField()
+    file = models.FileField(upload_to='files/')
+    is_agree = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.language
+
+    class Meta:
+        verbose_name = 'Translation'
+        verbose_name_plural = 'Translations'
+
+
+
+
 
     
 DEGREE = (

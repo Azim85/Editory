@@ -11,11 +11,15 @@ from .models import (
     Proofreading,
     PeerReview,
     OrganizeConferences,
-    Grants
+    Grants,
+    Translation
 )
 
 class GrantsAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'theme']
+
+class TranslationAdmin(admin.ModelAdmin):
+    list_display = ['user', 'language']
 
 admin.site.register(ResearchGrant)
 admin.site.register(PublicationToScopus)
@@ -29,4 +33,5 @@ admin.site.register(Proofreading)
 admin.site.register(PeerReview)
 admin.site.register(OrganizeConferences)
 admin.site.register(Grants, GrantsAdmin)
+admin.site.register(Translation, TranslationAdmin)
 
