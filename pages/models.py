@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+
 from django_resized import ResizedImageField
 
 
@@ -11,7 +12,7 @@ class Topic(models.Model):
     main_image = models.ImageField(upload_to='news/')
     material_name = models.CharField(max_length=100)
     title = models.CharField(max_length=255)
-    description = RichTextField()
+    description = RichTextUploadingField()
     others = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
 

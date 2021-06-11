@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'pages/css/translation.css' %}">{% endblock %}
 
@@ -25,20 +27,17 @@
             <div class="row padding_me">
                 <div class="col-lg-6">
                     <div class=" head-word geometria pb-5"
-                        style="font-size: 50px; color:#263236; font-weight:bold; line-height:1">Переводы статей</div>
+                        style="font-size: 50px; color:#263236; font-weight:bold; line-height:1">{% trans 'Переводы статей' %}</div>
                     <div style=" color:#263236" class="text-left ">
-                        Качественный перевод откроет материалу дорогу к признанию международным сообществом, а его автору — путь к дальнейшему
-                        росту в науке. Доверьте свою работу тем, кто действительно владеет языком и соответствующей тематикой — тогда на статью
-                        будут ссылаться эксперты с мировыми именами, и ваша репутация будет неуклонно расти.
+                        {% trans 'Качественный перевод откроет материалу дорогу к признанию международным сообществом, а его автору — путь к дальнейшему росту в науке. Доверьте свою работу тем, кто действительно владеет языком и соответствующей тематикой — тогда на статью будут ссылаться эксперты с мировыми именами, и ваша репутация будет неуклонно расти.' %}
                     </div>
                     <div style=" color:#263236" class="text-left mt-4">
-                        Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре
-                        вы получите готовый перевод.
+                        {% trans 'Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод.' %}
                     </div>
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
                             <button type="submit" class="btn w-100 text-white self-align-left"
-                                style="background:#2A819E">Заказать консультацию</button>
+                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</button>
                         </div>
                     </div>
                 </div>
@@ -52,11 +51,11 @@
         <div style="background-image: url('{% static 'pages/images/bottom-blue.png' %}'); " class="bot-blue">
         <div class="container pb-100 pt-200 text-white">
             <ul>
-                <li>Прикрепите документ в формате Word или PowerPoint;</li>
-                <li>В документе должен быть только один материал;</li>
-                <li>Убедитесь, что размер файла составляет менее Х Мб;</li>
-                <li>Проверьте название документа: в нём не должно быть пробелов или специальных символов;</li>
-                <li>Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами.</li>
+                <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
+                <li>{% trans 'В документе должен быть только один материал' %};</li>
+                <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
+                <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
+                <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами.' %}</li>
             </ul>
         </div>
         </div>
@@ -65,7 +64,7 @@
 
     <div class="row mx-0 mt-100">
         <div class="container">
-            <div class="text-left" style="font-size: 36px; color:#263236;">Заявка на перевод статьи</div>
+            <div class="text-left" style="font-size: 36px; color:#263236;">{% trans 'Заявка на перевод статьи' %}</div>
         </div>
     </div>
 
@@ -86,7 +85,7 @@
 
                 <div class="col">
                     <div class="form-group row my-3 ">
-                        <label for="" class="col-sm-4 col-form-label">Кол-во слов</label>
+                        <label for="" class="col-sm-4 col-form-label">{% trans 'Кол-во слов' %}</label>
                         <div class="col-sm-6 ">
                             {{form.word_amount}}
                             <small class="text-danger align-self-start">{{form.word_amount.errors}}</small>
@@ -96,7 +95,7 @@
 
                 <div class="col">
                     <div class="form-group row  my-3  ">
-                        <label for="inputPassword" class="col-sm-4 ">Область исследований</label>
+                        <label for="inputPassword" class="col-sm-4 ">{% trans 'Область исследований' %}</label>
                         <div class="col-sm-6">
                             {{form.research_area}}
                             <small class="text-danger align-self-start">{{form.research_area.errors}}</small>
@@ -106,8 +105,7 @@
                 
                 <div class="col">
                     <div class="form-group row my-3">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Язык
-                            редактирования</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Язык редактирования' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{form.language}}
                             <small class="text-danger align-self-start">{{form.language.errors}}</small>
@@ -130,7 +128,7 @@
             </div>
             <div class="form-group row  my-5">
                 <div class="col-lg-2">
-                    <label for="inputPassword" class="text-secondary col-form-label">Комментарии/ особые пожелания</label>
+                    <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Комментарии/ особые пожелания' %}</label>
                 </div>
                 <div class="col-lg-9 d-flex flex-column">
                         {{form.comment}}
@@ -140,7 +138,7 @@
             
             <div class="form-group row  mt-5">
                 <div class="col-lg-2">
-                    <label for="inputPassword" class="text-secondary col-form-label">Резюме</label>
+                    <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Резюме' %}</label>
                 </div>
                 <div class="col-lg-9 row w-100">
                     <div class="col-lg-12 d-flex ml-3 p-0 flex-column">
@@ -156,10 +154,10 @@
             <div class=" my-5 mr-5 d-flex justify-content-between flex-wrap">
                 <div class="mb-3">
                     <span class="mr-4">{{form.is_agree}}</span>
-                    Согласие с политикой конфиденциальности
+                    {% trans 'Согласие с политикой конфиденциальности' %}
                 </div>
                 <div class="">
-                    <button class="btn btn-info px-5 mr-lg-5">Отправить резюме</button>
+                    <button class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
                 </div>
             </div>
         </form>

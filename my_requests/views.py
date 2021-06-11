@@ -109,8 +109,6 @@ class Design(View):
             return redirect('users:login')
         
 
-
-
 class ConsultationView(View):
     def post(self, request):
         form = ConsultationForm(request.POST)
@@ -123,31 +121,31 @@ class ConsultationView(View):
                         return redirect('pages:home')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request,'home.html', {'validated':'validated', 'form':form})            
+                    return render(request, 'home.html', {'validated': 'validated', 'form': form})            
             else:    
-                return render(request,'home.html', {'validated':'validated', 'form':form})
+                return render(request, 'home.html', {'validated': 'validated', 'form': form})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
 
-class FreeConsultationView(View):
-   def post(self, request):
-        form = FreeConsultationForm(request.POST, request.FILES)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:conferences')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request,'conferences.html', {'validated':'validated', 'form':form})
-            else:    
-                return render(request,'conferences.html', {'validated':'validated', 'form':form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+# class FreeConsultationView(View):
+#    def post(self, request):
+#         form = FreeConsultationForm(request.POST, request.FILES)
+#         if request.user.is_authenticated:
+#             if form.is_valid():
+#                 if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+#                     done = form.save()
+#                     if done:
+#                         messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+#                         return redirect('requests:conferences')
+#                 else:
+#                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+#                     return render(request,'conferences.html', {'validated':'validated', 'form':form})
+#             else:
+#                 return render(request,'conferences.html', {'validated':'validated', 'form':form})
+#         else:
+#             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+#             return redirect('users:login')
 
 
 class Proofreading(View):

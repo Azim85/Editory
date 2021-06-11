@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,21 +32,25 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-
+    'modeltranslation',
+    'jet',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+
     'ckeditor',
     'ckeditor_uploader',
+
+
     'users',
     'pages',
     'orders',
     'my_requests',
-    'jet',
-    'django.contrib.admin',
-    'rest_framework',
     'paymeuz',
 ]
 
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -74,9 +81,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                # 'django.template.context_processors.settings',
             ],
-            'libraries':{
-            'tags': 'my_requests.templatetags.tags',
+            'libraries': {
+                'tags': 'my_requests.templatetags.tags',
 
             }
         },
@@ -120,9 +128,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tashkent'
+
+LANGUAGE_CODE = 'ru'
+
+LANGUAGES = [
+    ('en', '🇬🇧  English'),
+    ('ru', '🇷🇺  Русский'),
+    ('uz', '🇺🇿  O\'zbek'),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 USE_I18N = True
 
@@ -146,7 +165,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 'data' is my media folder
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
 
 PAYMEUZ_SETTINGS = {
     'TEST_ENV': False,

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block css %}
 
@@ -7,21 +8,21 @@
 
 {% block content %}
     <div class="container mt-100 mb-200">
-    <h2 class="mb-4">Есть вопросы? <br>Свяжитесь с Editory</h2>
+    <h2 class="mb-4">{% trans 'Есть вопросы' %}? <br>{% trans 'Свяжитесь с Editory' %}</h2>
     <div class="row">
         <div class="col-lg-6">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.915967326045!2d69.249667!3d41.331527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE5JzUzLjUiTiA2OcKwMTQnNTguOCJF!5e0!3m2!1sru!2s!4v1622012450708!5m2!1sru!2s"
                      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="offset-lg-1 col-lg-5 d-flex flex-column justify-content-end">
-            <div class="small text-secondary">Номера телефонов:</div>
+            <div class="small text-secondary">{% trans 'Номера телефонов' %}:</div>
             <div><a href="tel:+998 90 013 19 23" class="text-dark text-decoration-none">+998 90 013 19 23</a></div>
             <div><a href="tel:+998 99 115 01 77" class="text-dark text-decoration-none">+998 99 115 01 77</a></div>
             <div><a href="tel:+998 99 115 02 77" class="text-dark text-decoration-none">+998 99 115 02 77</a></div>
-            <div class="small text-secondary mt-5">Эл. почта</div>
+            <div class="small text-secondary mt-5">{% trans 'Эл. почта' %}</div>
             <div><a href="" class="text-dark text-decoration-none">oooeditory@gmail.com</a></div>
-            <div class="small text-secondary mt-5">Адрес:</div>
-            <div>г. Ташкент, Алмазарский район, Себзар 3</div>
+            <div class="small text-secondary mt-5">{% trans 'Адрес' %}:</div>
+            <div>{% trans 'г. Ташкент, Алмазарский район, Себзар 3' %}</div>
 
         </div>
     </div>

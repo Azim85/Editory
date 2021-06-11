@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
+
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/services.css' %}">
 {% endblock %}
@@ -14,11 +17,9 @@
                                     <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
                                         <div class="d-flex mb-4">
                                             <div ><img src="{% static 'pages/images/icon_rename.png' %}" ></div>
-                                            <div class="ml-4 h3 ">Патенты и<br>финансирование</div></div>
+                                            <div class="ml-4 h3 ">{% trans 'Патенты и' %}<br>{% trans 'финансирование' %}</div></div>
                                         <div class="text-break font-16">
-                                            Ищете возможность получить поддержку своих исследований или
-                                            защитить интеллектуальную собственность? Консультируем и оформляем все
-                                            необходимые документы.
+                                            {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                         </div>
                                     </div>
                                 </div>
@@ -26,11 +27,9 @@
                                     <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
                                         <div class="d-flex mb-4">
                                             <div><img src="{% static 'pages/images/icon_group.png' %}"></div>
-                                            <div class="ml-4 h3">Международные<br>конференции</div></div>
+                                            <div class="ml-4 h3">{% trans 'Международные' %}<br>{% trans 'конференции' %}</div></div>
                                         <div class="text-break font-16">
-                                            Ищете возможность получить поддержку своих исследований или
-                                            защитить интеллектуальную собственность? Консультируем и оформляем все
-                                            необходимые документы.
+                                            {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                         </div>
                                     </div>
                                 </div>
@@ -38,11 +37,9 @@
                                     <div class="py-lg-5 px-lg-5 py-2 px-3  bg-white shadow_me h-100">
                                         <div class="d-flex mb-4">
                                             <div><img src="{% static 'pages/images/icon_book.png' %}"></div>
-                                            <div class="ml-4 h3">Публикация работ</div></div>
+                                            <div class="ml-4 h3">{% trans 'Публикация работ' %}</div></div>
                                         <div class="text-break font-16">
-                                            Ищете возможность получить поддержку своих исследований или
-                                            защитить интеллектуальную собственность? Консультируем и оформляем все
-                                            необходимые документы.
+                                            {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                         </div>
                                     </div>
                                 </div>
@@ -50,11 +47,9 @@
                                     <div class="py-lg-5 px-lg-5 py-2 px-3 bg-white shadow_me h-100">
                                         <div class="d-flex mb-4">
                                             <div><img src="{% static 'pages/images/icon_head.png' %}"></div>
-                                            <div class="ml-4 h3">Консультация по <br>диссертациям</div></div>
+                                            <div class="ml-4 h3">{% trans 'Консультация по' %} <br>{% trans 'диссертациям' %}</div></div>
                                         <div class="text-break font-16">
-                                            Ищете возможность получить поддержку своих исследований или
-                                            защитить интеллектуальную собственность? Консультируем и оформляем все
-                                            необходимые документы.
+                                            {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                         </div>
                                     </div>
                                 </div>
@@ -65,15 +60,15 @@
                 <div class="row  mb-5">
                     <div class="offset-1 col-lg-5">
                             <div class="h2">
-                                Дополнительные <br>услуги
+                                {% trans 'Дополнительные' %} <br>{% trans 'услуги' %}
                             </div>
                     </div>
                     <div class="offset-1 col-lg-5">
                             <div class="text-decoration-none">
                                 <ul  style=" list-style: none">
-                                    <li class="my-3">Визуальное оформление статей</li>
-                                    <li class="my-3">Переводы материалов</li>
-                                    <li class="my-3">Распечатка публикаций</li>
+                                    <li class="my-3">{% trans 'Визуальное оформление статей' %}</li>
+                                    <li class="my-3">{% trans 'Переводы материалов' %}</li>
+                                    <li class="my-3">{% trans 'Распечатка публикаций' %}</li>
                                 </ul>
                             </div>
                     </div>

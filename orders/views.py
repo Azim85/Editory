@@ -40,7 +40,8 @@ class OrderCreateView(CreateAPIView):
             if obj.payment_type == 4:
                 url = Paymeuz.create_initialization(amount=obj.amount * 100,
                                                     order_id=str(obj.id),
-                                                    return_url='in-study.uz/success')
+                                                    return_url='http://editorypress.com/auth/dashboard/#asd')
+                print(url)
 
             return Response({'redirect_url': url}, status=status.HTTP_200_OK)
         else:

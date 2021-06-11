@@ -1,0 +1,1421 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-10 18:40+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/about_us.html:33
+msgid "служба академической корректуры"
+msgstr ""
+
+#: templates/about_us.html:35
+msgid ""
+"Editory - лидер в области аналитики и информации, созданный ведущими "
+"наукометристами страны с целью обеспечения прозрачности и гласности научных "
+"исследований и результатов исследований в Узбекистане."
+msgstr ""
+
+#: templates/about_us.html:51
+msgid "Наша команда"
+msgstr ""
+
+#: templates/about_us.html:52
+msgid ""
+"Руководители Editory — люди, имеющие непосредственное отношение к науке и "
+"болеющие душой за достижения учёных Узбекистана. Работа, которой мы "
+"занимаемся — в первую очередь, вклад в дело талантливых исследователей и "
+"борьба за достойное место в мировом научном сообществе для нашей Республики"
+msgstr ""
+
+#: templates/about_us.html:113
+msgid ""
+"Вы переводчик, корректор или редактор? Может быть, вы — профессионал в "
+"другой сфере, но хотите у нас работать и считаете, что ваши знания нам "
+"пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит"
+msgstr ""
+
+#: templates/about_us.html:120 templates/bak.html:93
+#: templates/conferences.html:66 templates/creat_conference.html:65
+#: templates/design.html:87 templates/grants.html:66 templates/home.html:429
+#: templates/language_editing.html:223 templates/patents.html:68
+#: templates/research_strategy.html:140 templates/scopus.html:85
+#: users/templates/users/dashboard.html:68
+#: users/templates/users/register.html:12
+msgid "Имя"
+msgstr ""
+
+#: templates/about_us.html:128 templates/bak.html:101
+#: templates/conferences.html:74 templates/creat_conference.html:73
+#: templates/design.html:95 templates/grants.html:74
+#: templates/language_editing.html:231 templates/patents.html:76
+#: templates/research_strategy.html:148 templates/scopus.html:93
+msgid "Фамилия"
+msgstr ""
+
+#: templates/about_us.html:138
+msgid "Профессия"
+msgstr ""
+
+#: templates/about_us.html:149
+msgid "Пара слов о себе"
+msgstr ""
+
+#: templates/about_us.html:159 templates/translation.html:141
+msgid "Резюме"
+msgstr ""
+
+#: templates/about_us.html:172 templates/bak.html:159
+#: templates/conferences.html:179 templates/creat_conference.html:140
+#: templates/design.html:153 templates/grants.html:141 templates/home.html:447
+#: templates/language_editing.html:265 templates/patents.html:133
+#: templates/peer_review.html:97 templates/proofreading.html:221
+#: templates/research_strategy.html:173 templates/scopus.html:160
+#: templates/translation.html:157
+msgid "Согласие с политикой конфиденциальности"
+msgstr ""
+
+#: templates/about_us.html:175 templates/translation.html:160
+msgid "Отправить резюме"
+msgstr ""
+
+#: templates/article.html:25
+msgid "Читайте также"
+msgstr ""
+
+#: templates/bak.html:27
+msgid "Публикация статьи в журналах ВАК"
+msgstr ""
+
+#: templates/bak.html:29
+msgid ""
+"Прогресс в научной работе невозможен без регулярного подтверждения своего "
+"уровня публикациями в проверенных изданиях. Стремитесь к новым горизонтам и "
+"степеням? Сосредоточьтесь на работе, а специалисты Editory познакомят "
+"научное сообщество с её результатами"
+msgstr ""
+
+#: templates/bak.html:44 templates/scopus.html:36
+msgid "Наши гарантии"
+msgstr ""
+
+#: templates/bak.html:54 templates/scopus.html:46
+msgid "Заключаем официальный договор с автором"
+msgstr ""
+
+#: templates/bak.html:58 templates/scopus.html:50
+msgid "Предоставляем справку"
+msgstr ""
+
+#: templates/bak.html:62 templates/scopus.html:54
+msgid "Регулярно проверяем обновления списков журналов, рекомендованных ВАК"
+msgstr ""
+
+#: templates/bak.html:70 templates/scopus.html:62
+msgid "Памятка для авторов"
+msgstr ""
+
+#: templates/bak.html:72 templates/scopus.html:64
+#, python-format
+msgid "Уровень оригинальности статьи — не менее 75%%"
+msgstr ""
+
+#: templates/bak.html:73 templates/scopus.html:65
+msgid "Материал нигде ранее ни полностью, ни частично не публиковался"
+msgstr ""
+
+#: templates/bak.html:74 templates/scopus.html:66
+msgid "Объём статьи — от 9000 до 20000 символов с пробелами"
+msgstr ""
+
+#: templates/bak.html:75 templates/scopus.html:67
+msgid "Список литературы — желательно, не более 15 позиций"
+msgstr ""
+
+#: templates/bak.html:76 templates/scopus.html:68
+msgid ""
+"Графические материалы должны быть представлены в разрешении не менее 300 dpi"
+msgstr ""
+
+#: templates/bak.html:77 templates/scopus.html:69
+msgid ""
+"Большая часть работ в списке литературы — зарубежные публикации за последние "
+"5 лет"
+msgstr ""
+
+#: templates/bak.html:86
+msgid ""
+"Хотите опубликовать свой материал в журналах ВАК? Оставьте заявку — и наши "
+"консультанты свяжутся с вами в течение часа!"
+msgstr ""
+
+#: templates/bak.html:109 templates/conferences.html:118
+#: templates/creat_conference.html:81 templates/design.html:103
+#: templates/grants.html:82 templates/home.html:437
+#: templates/language_editing.html:240 templates/patents.html:84
+#: templates/research_strategy.html:155 templates/scopus.html:101
+#: users/templates/users/register.html:22
+msgid "Номер телефона"
+msgstr ""
+
+#: templates/bak.html:117 templates/design.html:111 templates/grants.html:90
+#: templates/patents.html:92 templates/scopus.html:109
+msgid "Email"
+msgstr ""
+
+#: templates/bak.html:130 templates/creat_conference.html:106
+#: templates/design.html:124 templates/grants.html:112
+#: templates/patents.html:104 templates/peer_review.html:63
+#: templates/research_strategy.html:183 templates/scopus.html:131
+msgid "Организация"
+msgstr ""
+
+#: templates/bak.html:138 templates/creat_conference.html:114
+#: templates/design.html:132 templates/grants.html:120
+#: templates/patents.html:112 templates/research_strategy.html:191
+#: templates/scopus.html:139
+msgid "Контакты организации"
+msgstr ""
+
+#: templates/bak.html:146 templates/creat_conference.html:122
+#: templates/design.html:140 templates/grants.html:128
+#: templates/patents.html:120 templates/research_strategy.html:200
+#: templates/scopus.html:147
+msgid "Адрес организации"
+msgstr ""
+
+#: templates/bak.html:161 templates/design.html:30 templates/design.html:155
+#: templates/grants.html:36 templates/grants.html:143 templates/home.html:458
+#: templates/language_editing.html:267 templates/patents.html:37
+#: templates/patents.html:135 templates/research_strategy.html:209
+#: templates/scopus.html:21 templates/scopus.html:162
+#: templates/translation.html:40
+msgid "Заказать консультацию"
+msgstr ""
+
+#: templates/components/footer.html:14
+msgid "Карта сайта"
+msgstr ""
+
+#: templates/components/footer.html:15 templates/components/navbar.html:15
+msgid "О нас"
+msgstr ""
+
+#: templates/components/footer.html:16
+msgid "Новости"
+msgstr ""
+
+#: templates/components/footer.html:17
+msgid "Продукты и материалы"
+msgstr ""
+
+#: templates/components/footer.html:18
+msgid "Услуги"
+msgstr ""
+
+#: templates/components/footer.html:19
+msgid "Магазин"
+msgstr ""
+
+#: templates/components/footer.html:22
+msgid "Контакты"
+msgstr ""
+
+#: templates/components/footer.html:25 templates/contact.html:25
+msgid "г. Ташкент, Алмазарский район, Себзар 3"
+msgstr ""
+
+#: templates/components/footer.html:29
+msgid "Мы в соцсетях"
+msgstr ""
+
+#: templates/conferences.html:32
+msgid "Участие в международных конференциях"
+msgstr ""
+
+#: templates/conferences.html:33
+msgid ""
+"Исследовательские платформы - это успешный инструмент для междисциплинарных "
+"исследовательских проектов сотрудничества. Создание исследовательских "
+"платформ инициируется учеными и исследовательскими группами различных "
+"дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
+"заявок. Заявки оцениваются международными экспертами"
+msgstr ""
+
+#: templates/conferences.html:34 templates/creat_conference.html:33
+msgid "Оставить заявку"
+msgstr ""
+
+#: templates/conferences.html:55
+msgid "Заявка на участие"
+msgstr ""
+
+#: templates/conferences.html:55
+msgid "в конференции"
+msgstr ""
+
+#: templates/conferences.html:82
+msgid "Занятость"
+msgstr ""
+
+#: templates/conferences.html:88
+msgid "Студент"
+msgstr ""
+
+#: templates/conferences.html:92
+msgid "Работаю"
+msgstr ""
+
+#: templates/conferences.html:100
+msgid "Место работы"
+msgstr ""
+
+#: templates/conferences.html:108
+msgid "Ученая степень"
+msgstr ""
+
+#: templates/conferences.html:127 templates/contact.html:22
+#: templates/creat_conference.html:90 templates/language_editing.html:249
+#: users/templates/users/dashboard.html:88 users/templates/users/login.html:20
+#: users/templates/users/register.html:17
+msgid "Эл. почта"
+msgstr ""
+
+#: templates/conferences.html:135
+msgid "Название статьи"
+msgstr ""
+
+#: templates/conferences.html:143
+msgid "Конференция"
+msgstr ""
+
+#: templates/conferences.html:152
+msgid "Секция"
+msgstr ""
+
+#: templates/conferences.html:181 templates/creat_conference.html:142
+#: templates/peer_review.html:100 templates/proofreading.html:40
+#: templates/proofreading.html:58 templates/proofreading.html:81
+#: templates/proofreading.html:101 templates/proofreading.html:224
+msgid "Отправить работу"
+msgstr ""
+
+#: templates/contact.html:11
+msgid "Есть вопросы"
+msgstr ""
+
+#: templates/contact.html:11
+msgid "Свяжитесь с Editory"
+msgstr ""
+
+#: templates/contact.html:18
+msgid "Номера телефонов"
+msgstr ""
+
+#: templates/contact.html:24 users/templates/users/dashboard.html:82
+msgid "Адрес"
+msgstr ""
+
+#: templates/creat_conference.html:31
+msgid "Организация конференции в Узбекистане"
+msgstr ""
+
+#: templates/creat_conference.html:32
+msgid ""
+"Мечтаете собрать экспертов международного уровня именно здесь? Хотите, чтобы "
+"у коллег-узбекистанцев появилась возможность участвовать в действительно "
+"крупном и полезном мероприятии? Специалисты Editory готовы содействовать"
+msgstr ""
+
+#: templates/creat_conference.html:54
+msgid "Организация конференции"
+msgstr ""
+
+#: templates/creat_conference.html:54
+msgid "в Узбекистане"
+msgstr ""
+
+#: templates/design.html:29
+msgid "Графические материалы для ваших научных работ"
+msgstr ""
+
+#: templates/design.html:41
+msgid ""
+"Готовитесь к публикации? Убедитесь, что картинки, инфографики и иллюстрации "
+"в статье соответствуют требованиям изданий. Журналы с высоким рейтингом "
+"могут отклонить работу в том случае, если визуальная её часть не будет "
+"представлена достаточно наглядно и в высоком разрешении. Поручите работу над "
+"визуализацией профессионалам и будьте уверены в результате!"
+msgstr ""
+
+#: templates/design.html:54
+msgid "Научная иллюстрация"
+msgstr ""
+
+#: templates/design.html:55
+msgid ""
+"Сделайте материал предельно наглядным с помощью уникальных и "
+"высококачественных иллюстраций, которые будут точно соответствовать теме "
+"вашей работы"
+msgstr ""
+
+#: templates/design.html:63
+msgid "Инфографика"
+msgstr ""
+
+#: templates/design.html:64
+msgid ""
+"Представьте численные данные в наиболее простом и понятном виде, оформив их "
+"в виде инфографики. Editory разработает формат, который лучше всего подойдёт "
+"для вашего материала"
+msgstr ""
+
+#: templates/design.html:71
+msgid "Дизайн для издателей"
+msgstr ""
+
+#: templates/design.html:72
+msgid ""
+"Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — "
+"всё, чтобы читатели вашего издания оставались довольны не только его "
+"содержанием, но и внешним видом."
+msgstr ""
+
+#: templates/dissertation.html:17
+msgid "Корректура"
+msgstr ""
+
+#: templates/dissertation.html:18
+msgid "и редактирование"
+msgstr ""
+
+#: templates/dissertation.html:18
+msgid "диссертации"
+msgstr ""
+
+#: templates/dissertation.html:19
+msgid ""
+"Научная работа - это успешный инструмент для междисциплинарных "
+"исследовательских проектов сотрудничества. Создание исследовательских "
+"платформ инициируется учеными и исследовательскими группами различных "
+"дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
+"заявок."
+msgstr ""
+
+#: templates/dissertation.html:32
+msgid "Опытные профессионалы, сервис в котором вы нуждаетесь"
+msgstr ""
+
+#: templates/dissertation.html:33
+#, python-format
+msgid "100%% гарантия"
+msgstr ""
+
+#: templates/dissertation.html:34
+msgid "Безупречная репутация компании"
+msgstr ""
+
+#: templates/dissertation.html:35
+msgid "Мы предоставляем комплексные решения ваших проблем"
+msgstr ""
+
+#: templates/dissertation.html:38
+msgid ""
+"Научные конференции являются особенным видом взаимодействия между "
+"представителями исследовательского сообщества, в ходе которого они "
+"представляют свои работы в форме сборников материалов и обсуждают их с "
+"коллегами. Участия в конференциях международного уровня является очень "
+"важным этапом деятельности любого специалиста, однако добиться этого не так "
+"просто, ведь для этого нужно подготовить целый ряд материалов и соблюсти "
+"массу правил по их оформлению."
+msgstr ""
+
+#: templates/dissertation.html:40
+msgid ""
+"Если же вы желаете, чтобы ваши исследовательские работы приняли участие в "
+"той или иной научной конференции, то наша компания будет рада помочь вам в "
+"решении этого вопроса. Подобными вопросами мы профессионально занимаемся на "
+"протяжении многих лет, и прекрасно знаем требования, нормы и правила "
+"подготовки материалов для участия в конференциях различного плана и уровня."
+msgstr ""
+
+#: templates/grants.html:29
+msgid "Подача заявки на исследовательский грант"
+msgstr ""
+
+#: templates/grants.html:31
+msgid ""
+"Чтобы добиться результата, необходимо вложить средства. Специалисты Editory "
+"готовы подобрать для вас именно те фонды или организации, которые с "
+"наибольшей вероятностью проспонсируют запланированные вами исследовательские "
+"мероприятия."
+msgstr ""
+
+#: templates/grants.html:51
+msgid "Заявка на исследовательский грант"
+msgstr ""
+
+#: templates/home.html:31
+msgid "Полный"
+msgstr ""
+
+#: templates/home.html:32
+msgid "спектр научных консультаций"
+msgstr ""
+
+#: templates/home.html:34
+msgid ""
+"Разрабатываем стратегии для исследований, публикуем статьи в международных "
+"журналах, корректируем диссертации"
+msgstr ""
+
+#: templates/home.html:36
+msgid "Задать вопрос"
+msgstr ""
+
+#: templates/home.html:55
+msgid "лет опыта"
+msgstr ""
+
+#: templates/home.html:59
+msgid "статей в Scopus"
+msgstr ""
+
+#: templates/home.html:63
+msgid "университетов в рейтинге QS"
+msgstr ""
+
+#: templates/home.html:67
+msgid "статей в ВАК"
+msgstr ""
+
+#: templates/home.html:79
+msgid ""
+"научно-консалтинговая компания с опытом более 6 лет. Среди наших партнёров — "
+"крупные международные издательства. На нашем счету более 500 публикаций в "
+"Scopus и около 1000 — в журналах ВАК. Поможем сориентироваться в системе "
+"грантов и патентов."
+msgstr ""
+
+#: templates/home.html:92
+msgid "Наши услуги"
+msgstr ""
+
+#: templates/home.html:101 templates/services.html:20
+msgid "Патенты и"
+msgstr ""
+
+#: templates/home.html:101 templates/services.html:20
+msgid "финансирование"
+msgstr ""
+
+#: templates/home.html:103 templates/services.html:22
+#: templates/services.html:32 templates/services.html:42
+#: templates/services.html:52
+msgid ""
+"Ищете возможность получить поддержку своих исследований или защитить "
+"интеллектуальную собственность? Консультируем и оформляем все необходимые "
+"документы."
+msgstr ""
+
+#: templates/home.html:106
+msgid "Ислледовательский грант"
+msgstr ""
+
+#: templates/home.html:107 templates/patents.html:30
+msgid "Как получить патент?"
+msgstr ""
+
+#: templates/home.html:115 templates/services.html:30
+msgid "Международные"
+msgstr ""
+
+#: templates/home.html:115 templates/services.html:30
+msgid "конференции"
+msgstr ""
+
+#: templates/home.html:117
+msgid ""
+"Помогаем как с участием, так и с организацией. Хотите ускорить свой "
+"прогресс, выехав за рубеж, или собрать экспертов мирового уровня здесь? "
+"Обращайтесь к нам."
+msgstr ""
+
+#: templates/home.html:120
+msgid "Как организовать конференцию?"
+msgstr ""
+
+#: templates/home.html:121
+msgid "Участвовать в международных      конференциях"
+msgstr ""
+
+#: templates/home.html:131
+msgid ""
+"Оформляем научные материалы для журналов Scopus и ВАК. Берём на себя полные "
+"обязательства по доведению материала до публикации."
+msgstr ""
+
+#: templates/home.html:134
+msgid "Публикация в ВАК"
+msgstr ""
+
+#: templates/home.html:135
+msgid "Публикация в Scopus/ Web of Science"
+msgstr ""
+
+#: templates/home.html:143
+msgid "Консультация"
+msgstr ""
+
+#: templates/home.html:143
+msgid "по диссертациям"
+msgstr ""
+
+#: templates/home.html:145
+msgid ""
+"Научные конференции являются особенным видом взаимодействия между "
+"представителями исследовательского сообщества, в ходе которого они "
+"представляют свои работы в форме сборников"
+msgstr ""
+
+#: templates/home.html:157
+msgid "Визуальные решения"
+msgstr ""
+
+#: templates/home.html:159
+msgid ""
+"Международные издания очень требовательны к качеству графических материалов. "
+"Доверьтесь профессионалам и не беспокойтесь за судьбу своей публикации."
+msgstr ""
+
+#: templates/home.html:171 templates/services.html:70
+msgid "Переводы материалов"
+msgstr ""
+
+#: templates/home.html:173
+msgid ""
+"Знакомьте научное сообщество со своими разработками благодаря качественным "
+"переводам на международные языки — опытные специалисты Editory к вашим "
+"услугам."
+msgstr ""
+
+#: templates/home.html:193
+msgid "Наши принципы"
+msgstr ""
+
+#: templates/home.html:201
+msgid "Качество работы"
+msgstr ""
+
+#: templates/home.html:203
+msgid ""
+"Наука не прощает ошибок. Ответственность за работу на каждом этапе — вопрос "
+"репутации для нас."
+msgstr ""
+
+#: templates/home.html:212
+msgid "Оперативность"
+msgstr ""
+
+#: templates/home.html:214
+msgid ""
+"Собираем сведения, настраиваем коммуникации и выдаём результат в кратчайшие "
+"сроки"
+msgstr ""
+
+#: templates/home.html:225
+msgid "Доверие"
+msgstr ""
+
+#: templates/home.html:227
+msgid ""
+"Заботимся о репутации и персональных данных наших клиентах так же, как и о "
+"своих собственных"
+msgstr ""
+
+#: templates/home.html:238
+msgid "Управление рисками"
+msgstr ""
+
+#: templates/home.html:240
+msgid ""
+"Наш опыт взаимодействия с научным сообществом позволяет избежать большинства "
+"трудностей в работе"
+msgstr ""
+
+#: templates/home.html:252
+msgid "Мы вывели в рейтинг QS"
+msgstr ""
+
+#: templates/home.html:262
+msgid "Национальный университет Узбекистана им. Мирзо-Улугбека"
+msgstr ""
+
+#: templates/home.html:269
+msgid "Международная Исламская Академия Узбекистана"
+msgstr ""
+
+#: templates/home.html:276
+msgid "Ташкентский педиатрический медицинский институт"
+msgstr ""
+
+#: templates/home.html:283
+msgid "Ташкентская медицинская академия"
+msgstr ""
+
+#: templates/home.html:290
+msgid "Ташкентский государственный экономический университет"
+msgstr ""
+
+#: templates/home.html:325
+msgid "Ответы на вопросы"
+msgstr ""
+
+#: templates/home.html:336
+msgid "Сколько стоит публикация статьи в Scopus?"
+msgstr ""
+
+#: templates/home.html:343
+msgid ""
+"Стоимость публикации в журналах с открытым доступом варьируется от 500 до "
+"5000 долларов США. Публикации в журналах с закрытым доступом бесплатны."
+msgstr ""
+
+#: templates/home.html:356
+msgid "Предполагает ли публикация выплаты её автору?"
+msgstr ""
+
+#: templates/home.html:362
+msgid ""
+"Премирование за выход научных публикаций обычно осуществляется "
+"университетом, под эгидой которого они были выпущены."
+msgstr ""
+
+#: templates/home.html:374
+msgid "В чём разница между открытым и закрытым доступом к статье?"
+msgstr ""
+
+#: templates/home.html:380
+msgid ""
+"С публикацией, размещённой в журнале с открытым доступом, мировое научное "
+"сообщество может ознакомиться сразу. На публикации в журналах закрытым "
+"доступом в течение 12-36 месяцев действует эмбарго, и в это время её могут "
+"читать только подписчики конкретного издания."
+msgstr ""
+
+#: templates/home.html:394
+msgid "Что, если мне не понравится результат работы?"
+msgstr ""
+
+#: templates/home.html:400
+msgid ""
+"Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, "
+"если вы не будете удовлетворены."
+msgstr ""
+
+#: templates/home.html:422
+msgid "Заявка на"
+msgstr ""
+
+#: templates/home.html:422
+msgid "бесплатную"
+msgstr ""
+
+#: templates/home.html:422
+msgid "консультацию"
+msgstr ""
+
+#: templates/home.html:423
+msgid "Оставьте свои данные и наш консультант свяжется с вами в течение часа"
+msgstr ""
+
+#: templates/language_editing.html:29
+msgid "Корректура рукописей"
+msgstr ""
+
+#: templates/language_editing.html:31
+msgid ""
+"Грамотный текст — лицо автора, который работает со сложными темами. Ошибки "
+"существенно снизят уровень доверия как с самой работе, так и к вашей "
+"компетентности."
+msgstr ""
+
+#: templates/language_editing.html:34
+msgid ""
+"Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не "
+"содержит орфографических, синтаксических и стилистических огрехов."
+msgstr ""
+
+#: templates/language_editing.html:49
+msgid "Количество слов"
+msgstr ""
+
+#: templates/language_editing.html:60
+msgid "Стандарт"
+msgstr ""
+
+#: templates/language_editing.html:62 templates/language_editing.html:80
+#: templates/language_editing.html:98
+msgid "рабочих дней"
+msgstr ""
+
+#: templates/language_editing.html:63 templates/language_editing.html:81
+#: templates/language_editing.html:99
+msgid "сумов/слово"
+msgstr ""
+
+#: templates/language_editing.html:66
+msgid "Вычитка и оформление вашего материала перед заявкой на издание"
+msgstr ""
+
+#: templates/language_editing.html:67 templates/language_editing.html:85
+#: templates/language_editing.html:103
+msgid "сум"
+msgstr ""
+
+#: templates/language_editing.html:71 templates/language_editing.html:89
+#: templates/language_editing.html:107
+msgid "Выбрать"
+msgstr ""
+
+#: templates/language_editing.html:78
+msgid "Экспресс"
+msgstr ""
+
+#: templates/language_editing.html:84
+msgid "Тот же уровень качества, но гораздо быстрее"
+msgstr ""
+
+#: templates/language_editing.html:96
+msgid "Премиум"
+msgstr ""
+
+#: templates/language_editing.html:102
+msgid ""
+"Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая "
+"поддержка"
+msgstr ""
+
+#: templates/language_editing.html:116
+msgid "Что входит в тариф"
+msgstr ""
+
+#: templates/language_editing.html:118
+msgid "Участие кандидата наук из области, соответствующей теме работы"
+msgstr ""
+
+#: templates/language_editing.html:123
+msgid ""
+"Бесплатная повторная корректура при условии возврата работы из-за языковых "
+"ошибок"
+msgstr ""
+
+#: templates/language_editing.html:128
+msgid "Корректоры — носители языка"
+msgstr ""
+
+#: templates/language_editing.html:133
+msgid "Работа в кратчайшие сроки"
+msgstr ""
+
+#: templates/language_editing.html:139
+msgid "Бесплатная корректорская помощь в течение 365 дней"
+msgstr ""
+
+#: templates/language_editing.html:145
+msgid "Внимание к логике, структуре и цельности материала"
+msgstr ""
+
+#: templates/language_editing.html:151
+msgid "Форматирование согласно требованиям конкретного журнала"
+msgstr ""
+
+#: templates/language_editing.html:157
+msgid "Редактирование ссылок"
+msgstr ""
+
+#: templates/language_editing.html:163
+msgid "Проверка ссылок на соответствие, полноту и структуру"
+msgstr ""
+
+#: templates/language_editing.html:169
+msgid "Сопроводительное письмо для отправки в журнал"
+msgstr ""
+
+#: templates/language_editing.html:175
+msgid "Подробный разбор языковых и структурных особенностей материала"
+msgstr ""
+
+#: templates/language_editing.html:181
+#, python-format
+msgid "Сокращение количества слов (максимум на 20%%)"
+msgstr ""
+
+#: templates/language_editing.html:187
+msgid ""
+"Детальная языковая проверка: стилистика, словоупотребление и терминология"
+msgstr ""
+
+#: templates/language_editing.html:193
+msgid "Профессиональное оформление рукописи"
+msgstr ""
+
+#: templates/language_editing.html:199
+msgid "Сертификат о языковом редактировании"
+msgstr ""
+
+#: templates/language_editing.html:213
+msgid ""
+"Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием "
+"проконсультируют наши специалисты"
+msgstr ""
+
+#: templates/language_editing.html:337
+msgid "Заказать"
+msgstr ""
+
+#: templates/news.html:95
+msgid "На этой неделе"
+msgstr ""
+
+#: templates/patents.html:32
+msgid ""
+"Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь "
+"на главном — исследованиях и разработках. А Editory поможет со всем "
+"остальным."
+msgstr ""
+
+#: templates/patents.html:53
+msgid "Заявка на получение патента"
+msgstr ""
+
+#: templates/peer_review.html:13
+msgid "Заказ рецензии"
+msgstr ""
+
+#: templates/peer_review.html:13
+msgid "на диссертацию"
+msgstr ""
+
+#: templates/peer_review.html:21 templates/proofreading.html:142
+msgid "Имя автора"
+msgstr ""
+
+#: templates/peer_review.html:29 templates/proofreading.html:151
+msgid "Название материала"
+msgstr ""
+
+#: templates/peer_review.html:37 templates/proofreading.html:159
+#: templates/translation.html:98
+msgid "Область исследований"
+msgstr ""
+
+#: templates/peer_review.html:55
+msgid "Научная степень автора"
+msgstr ""
+
+#: templates/peer_review.html:71
+msgid "Научный руководитель"
+msgstr ""
+
+#: templates/peer_review.html:84 templates/proofreading.html:206
+#: templates/translation.html:131
+msgid "Комментарии/ особые пожелания"
+msgstr ""
+
+#: templates/proofreading.html:24
+msgid "Рецензирование"
+msgstr ""
+
+#: templates/proofreading.html:25 templates/proofreading.html:77
+msgid "Методология исследования"
+msgstr ""
+
+#: templates/proofreading.html:26 templates/proofreading.html:99
+msgid "Статистический анализ"
+msgstr ""
+
+#: templates/proofreading.html:27
+msgid "Корректура и редактирование"
+msgstr ""
+
+#: templates/proofreading.html:38
+msgid "Корректура и редактирование диссертации"
+msgstr ""
+
+#: templates/proofreading.html:39
+msgid ""
+"Как избежать ошибок в процессе исследования и получить объективные "
+"показатели? Специалисты Editory знают, как этого добиться. Языковая и "
+"фактологическая обработка вашей диссертации осуществляется подтверждёнными "
+"экспертами в соответствующей области"
+msgstr ""
+
+#: templates/proofreading.html:56
+msgid "Рецензирование диссертации"
+msgstr ""
+
+#: templates/proofreading.html:57
+msgid ""
+"Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя "
+"автору возможность подтвердить перед сообществом свою компетентность"
+msgstr ""
+
+#: templates/proofreading.html:78
+msgid ""
+"Как избежать ошибок в процессе исследования и получить объективные "
+"показатели? Специалисты Editory знают, как этого добиться"
+msgstr ""
+
+#: templates/proofreading.html:100
+msgid ""
+"Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь "
+"в работе на действительно достоверные данные и будьте уверены в результате"
+msgstr ""
+
+#: templates/proofreading.html:117 templates/translation.html:54
+msgid "Прикрепите документ в формате Word или PowerPoint"
+msgstr ""
+
+#: templates/proofreading.html:118 templates/translation.html:55
+msgid "В документе должен быть только один материал"
+msgstr ""
+
+#: templates/proofreading.html:119 templates/translation.html:56
+msgid "Убедитесь, что размер файла составляет менее Х Мб"
+msgstr ""
+
+#: templates/proofreading.html:120 templates/translation.html:57
+msgid ""
+"Проверьте название документа: в нём не должно быть пробелов или специальных "
+"символов"
+msgstr ""
+
+#: templates/proofreading.html:121
+msgid ""
+"Если вы столкнулись с проблемой при загрузке документа — пожалуйста, "
+"свяжитесь с нами"
+msgstr ""
+
+#: templates/proofreading.html:133
+msgid "Заявка на корректуру"
+msgstr ""
+
+#: templates/proofreading.html:133
+msgid "и редактирование диссертации"
+msgstr ""
+
+#: templates/proofreading.html:179 templates/translation.html:88
+msgid "Кол-во слов"
+msgstr ""
+
+#: templates/proofreading.html:187 templates/translation.html:108
+msgid "Язык редактирования"
+msgstr ""
+
+#: templates/proofreading.html:195
+msgid "Сертификат об использовании языкового редактирования"
+msgstr ""
+
+#: templates/research_intelligense.html:14 templates/research_strategy.html:40
+msgid "Стратегия исследования"
+msgstr ""
+
+#: templates/research_intelligense.html:15 templates/research_platform.html:18
+#: templates/research_strategy.html:41 templates/research_strategy.html:61
+#: templates/research_strategy.html:83 templates/research_strategy.html:105
+msgid ""
+"Исследовательские платформы - это успешный инструмент для междисциплинарных "
+"исследовательских проектов сотрудничества. Создание исследовательских "
+"платформ инициируется учеными и исследовательскими группами различных "
+"дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
+"заявок. Заявки оцениваются международными экспертами."
+msgstr ""
+
+#: templates/research_intelligense.html:19
+msgid "Для чего нужна стратегия исследования?"
+msgstr ""
+
+#: templates/research_intelligense.html:21
+#: templates/research_intelligense.html:30 templates/webinars.html:17
+msgid ""
+"Разнообразный и богатый опыт рамки и место обучения кадров позволяет "
+"выполнять важные задания по разработке позиций, занимаемых участниками в "
+"отношении поставленных задач. С другой стороны рамки и место обучения кадров "
+"представляет собой интересный эксперимент проверки направлений "
+"прогрессивного развития."
+msgstr ""
+
+#: templates/research_intelligense.html:23
+#: templates/research_intelligense.html:32
+msgid ""
+"Разнообразный и богатый опыт укрепление и развитие структуры играет важную "
+"роль в формировании системы обучения кадров, соответствует насущным "
+"потребностям. Идейные соображения высшего порядка, а также дальнейшее "
+"развитие различных форм деятельности влечет за собой процесс внедрения и "
+"модернизации форм развития. Значимость этих проблем настолько очевидна, что "
+"начало повседневной работы по формированию позиции играет важную роль в "
+"формировании направлений прогрессивного развития. Не следует, однако "
+"забывать, что рамки и место обучения кадров требуют определения и уточнения "
+"направлений прогрессивного развития."
+msgstr ""
+
+#: templates/research_intelligense.html:25 templates/research_platform.html:31
+msgid ""
+"Scopus уникальным образом сочетает в себе комплексную тщательно подобранную "
+"базу данных рефератов и цитирований с расширенными данными и связанным "
+"научным контентом."
+msgstr ""
+
+#: templates/research_intelligense.html:26
+msgid "Б.Махкамов"
+msgstr ""
+
+#: templates/research_platform.html:16
+msgid "Исследовательские платформы"
+msgstr ""
+
+#: templates/research_platform.html:33
+msgid ""
+"Быстро находите релевантные и надежные исследования, выбирайте экспертов и "
+"получайте доступ к надежным данным, показателям и аналитическим инструментам "
+"для принятия уверенных решений по стратегии исследования - все из одной базы "
+"данных и одной подписки."
+msgstr ""
+
+#: templates/research_platform.html:34 templates/research_platform.html:40
+#: templates/research_platform.html:47 templates/research_platform.html:55
+#: templates/research_platform.html:63 templates/research_platform.html:72
+#: templates/research_platform.html:78
+msgid "Смотреть презентацию"
+msgstr ""
+
+#: templates/research_platform.html:39
+msgid ""
+"SpringerLink - это самая полная в мире онлайн-коллекция научных, "
+"технологических и медицинских журналов, книг и справочников. SpringerLink "
+"предлагает электронную и печатную литературу от Springer-Verlag, выдающегося "
+"научного издателя с превосходной репутацией на протяжении более 150 лет. Он "
+"также предлагает работы растущего списка издателей, включая Urban и Vogel, "
+"Steinkopff и Birkhäuser."
+msgstr ""
+
+#: templates/research_platform.html:46
+msgid ""
+"ScienceDirect поддерживает преподавание, обучение, исследования и открытия. "
+"Получайте факты! Платформа основанная на широком спектре надежных, "
+"высококачественных, междисциплинарных исследований и научной литературы, "
+"помогает находить ответы на самые насущные вопросы мира. Независимо от того, "
+"являетесь ли вы преподавателем, студентом, библиотекарем или исследователем, "
+"ScienceDirect поможет вам создать прочную основу знаний, оставаться на "
+"вершине своей области и получить глубокое понимание актуальных тем, когда вы "
+"будете делать следующие шаги в открытии."
+msgstr ""
+
+#: templates/research_platform.html:53
+msgid ""
+"Wiley-Blackwell - это международная издательская компания John Wiley & Sons "
+"в области научных, технических, медицинских и научных публикаций, имеющая "
+"сильные стороны во всех основных академических и профессиональных областях и "
+"сотрудничающая со многими ведущими мировыми обществами. Wiley-Blackwell "
+"ежегодно издает около 1500 рецензируемых журналов и более 1500 новых книг в "
+"печатном виде и в Интернете, а также базы данных, основные справочные "
+"материалы и лабораторные протоколы."
+msgstr ""
+
+#: templates/research_platform.html:61
+msgid ""
+"Web of Science (сокращенно WOS) – это мультидисциплинарная платформа, "
+"помогающая быстро найти, проанализировать и обеспечить общий доступ к "
+"информации в области естественных, общественных и гуманитарных наук, а также "
+"искусства. Пользователь получает интегрированный доступ к высококачественной "
+"литературе с помощью унифицированной платформы, которая связывает вместе "
+"самое разнообразное содержимое и поисковые термины, создавая при этом один "
+"общий словарь и один комплексный поиск."
+msgstr ""
+
+#: templates/research_platform.html:68
+msgid ""
+"PubMed - это бесплатный ресурс, поддерживающий поиск и извлечение литературы "
+"по биомедицине и наукам о жизни с целью улучшения здоровья как на "
+"глобальном, так и на личном уровне."
+msgstr ""
+
+#: templates/research_platform.html:70
+msgid ""
+"База данных PubMed содержит более 32 миллионов ссылок и рефератов из "
+"биомедицинской литературы. Он не включает полнотекстовые журнальные статьи; "
+"однако ссылки на полный текст часто присутствуют, если они доступны из "
+"других источников, таких как веб-сайт издателя или PubMed Central (PMC)."
+msgstr ""
+
+#: templates/research_platform.html:77
+msgid ""
+"The Cochrane Library - это собрание баз данных, которые содержат различные "
+"типы высококачественных независимых данных для информирования при принятии "
+"решений в сфере здравоохранения. Данная библиотека принадлежит Cochrane и "
+"публикуется Wiley."
+msgstr ""
+
+#: templates/research_strategy.html:59
+msgid "Партнёрство и сотрудничество"
+msgstr ""
+
+#: templates/research_strategy.html:81
+msgid "Финансирование"
+msgstr ""
+
+#: templates/research_strategy.html:103
+msgid "Управление исследовательским процессом"
+msgstr ""
+
+#: templates/research_strategy.html:122
+msgid ""
+"Для масштабной работы часто бывает недостаточно идей и компетентности. Чтобы "
+"справиться с большим объёмом долгосрочных задач, необходимо организовать "
+"правильный подход с самого начала — тогда исследование будет завершено, "
+"получит надёжную основу и возможности для развития в будущем. У вас есть "
+"идеи, которые вы мечтаете реализовать? Специалисты Editory помогут "
+"разобраться в тонкостях процесса."
+msgstr ""
+
+#: templates/research_strategy.html:131
+msgid "Как организовать и провести"
+msgstr ""
+
+#: templates/research_strategy.html:131
+msgid "научное исследование"
+msgstr ""
+
+#: templates/research_strategy.html:132
+msgid "После заполнения формы наш консультант свяжется с вами в течение часа"
+msgstr ""
+
+#: templates/scientific_papers.html:17
+msgid "Научные издания"
+msgstr ""
+
+#: templates/scientific_papers.html:19
+msgid ""
+"Позвольте Editory стать вашим проводником в мир доступной информации. Здесь "
+"вы найдёте рейтинги исследовательских журналов Узбекистана и всего мира, "
+"тезисы и диссертации, а также монографии, с которыми обязательно следует "
+"ознакомиться, чтобы оставаться на одной волне с последними научными "
+"тенденциями. К вашим услугам — самые качественные материалы от признанных "
+"экспертов. Editory желает вам приятного чтения."
+msgstr ""
+
+#: templates/scientific_papers.html:37
+msgid "ТОП-5 международных научных изданий"
+msgstr ""
+
+#: templates/scientific_papers.html:38
+msgid ""
+"Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия "
+"международных журналов"
+msgstr ""
+
+#: templates/scientific_papers.html:46
+msgid "ТОП-5 изданий Узбекистана"
+msgstr ""
+
+#: templates/scientific_papers.html:47
+msgid ""
+"Будьте в курсе актуальных исследований и проблем научного сообщества нашей "
+"республики"
+msgstr ""
+
+#: templates/scientific_papers.html:54
+msgid "Тезисы/Диссертации"
+msgstr ""
+
+#: templates/scientific_papers.html:55
+msgid ""
+"Предлагаем к ознакомлению наиболее заметные и интересные научные работы за "
+"последнее время"
+msgstr ""
+
+#: templates/scientific_papers.html:61
+msgid "Протоколы и монографии"
+msgstr ""
+
+#: templates/scientific_papers.html:62
+msgid ""
+"Погрузитесь в изучение фундаментальных исследования, сделавшие значительный "
+"вклад в мировую науку"
+msgstr ""
+
+#: templates/scopus.html:15
+msgid "Публикация статьи в Scopus и Web of Science"
+msgstr ""
+
+#: templates/scopus.html:17
+msgid ""
+"Рейтинг учёного напрямую зависит от взаимодействия с мировой научной "
+"общественностью. Чем выше ваш индекс цитирования, тем больше внимания будет "
+"направлено на ваши работы, и тем больший авторитет вы приобретёте. "
+"Специалисты Editory помогут вам подобрать наиболее подходящее издание и шаг "
+"за шагом проведут ваш материал через все стадии подготовки к публикации."
+msgstr ""
+
+#: templates/scopus.html:78
+msgid ""
+"Готовы познакомить международное научное сообщество со своей работой? "
+"Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!"
+msgstr ""
+
+#: templates/services.html:40
+msgid "Публикация работ"
+msgstr ""
+
+#: templates/services.html:50
+msgid "Консультация по"
+msgstr ""
+
+#: templates/services.html:50
+msgid "диссертациям"
+msgstr ""
+
+#: templates/services.html:63
+msgid "Дополнительные"
+msgstr ""
+
+#: templates/services.html:63
+msgid "услуги"
+msgstr ""
+
+#: templates/services.html:69
+msgid "Визуальное оформление статей"
+msgstr ""
+
+#: templates/services.html:71
+msgid "Распечатка публикаций"
+msgstr ""
+
+#: templates/translation.html:30
+msgid "Переводы статей"
+msgstr ""
+
+#: templates/translation.html:32
+msgid ""
+"Качественный перевод откроет материалу дорогу к признанию международным "
+"сообществом, а его автору — путь к дальнейшему росту в науке. Доверьте свою "
+"работу тем, кто действительно владеет языком и соответствующей тематикой — "
+"тогда на статью будут ссылаться эксперты с мировыми именами, и ваша "
+"репутация будет неуклонно расти."
+msgstr ""
+
+#: templates/translation.html:35
+msgid ""
+"Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы "
+"смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод."
+msgstr ""
+
+#: templates/translation.html:58
+msgid ""
+"Если вы столкнулись с проблемой при загрузке документа — пожалуйста, "
+"свяжитесь с нами."
+msgstr ""
+
+#: templates/translation.html:67
+msgid "Заявка на перевод статьи"
+msgstr ""
+
+#: templates/webinars.html:14
+msgid "Вебинары и семинары"
+msgstr ""
+
+#: users/managers.py:15
+msgid "The Email must be set"
+msgstr ""
+
+#: users/managers.py:31
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: users/managers.py:33
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: users/models.py:10
+msgid "email address"
+msgstr ""
+
+#: users/templates/users/dashboard.html:38
+msgid "Редактировать профиль"
+msgstr ""
+
+#: users/templates/users/dashboard.html:52
+msgid "Сменить статус"
+msgstr ""
+
+#: users/templates/users/dashboard.html:75
+msgid "Телефон"
+msgstr ""
+
+#: users/templates/users/dashboard.html:104
+msgid "Сохранить изменения"
+msgstr ""
+
+#: users/templates/users/dashboard.html:113
+msgid "История"
+msgstr ""
+
+#: users/templates/users/dashboard.html:119
+msgid "Действие"
+msgstr ""
+
+#: users/templates/users/dashboard.html:120
+msgid "Дата"
+msgstr ""
+
+#: users/templates/users/dashboard.html:121
+msgid "способ оплаты"
+msgstr ""
+
+#: users/templates/users/dashboard.html:122
+msgid "Статус"
+msgstr ""
+
+#: users/templates/users/dashboard.html:123
+msgid "принимать"
+msgstr ""
+
+#: users/templates/users/login.html:18 users/templates/users/login.html:33
+msgid "Вход"
+msgstr ""
+
+#: users/templates/users/login.html:27 users/templates/users/register.html:28
+msgid "Пароль"
+msgstr ""
+
+#: users/templates/users/login.html:32 users/templates/users/register.html:10
+msgid "Регистрация"
+msgstr ""
+
+#: users/templates/users/login.html:34
+msgid "забыл пароль?"
+msgstr ""
+
+#: users/templates/users/register.html:33
+msgid "Подверждении пароля"
+msgstr ""
+
+#: users/templates/users/register.html:38
+msgid "Зарегистрироваться"
+msgstr ""

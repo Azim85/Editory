@@ -17,18 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+]
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
     path('auth/', include('users.urls')),
     path('', include('pages.urls')),
     path('request_to/', include('my_requests.urls')),
     path('paycom/', include('paymeuz.urls')),
     path('orders/', include('orders.urls')),
-]
-
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

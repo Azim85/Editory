@@ -5,8 +5,12 @@ font-style: normal;
 font-weight: normal;
 src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 }
-
-
+#collapseExample1:hover{
+    display: inline !important;
+}
+/*.nav-new{*/
+/*    right: 50px*/
+/*}*/
 *{
     padding: 0;
     margin: 0;
@@ -167,7 +171,7 @@ h1, h2, h3, h4, h5, h6{
     .navMe{
         position: absolute;
         top: 0px;
-        left: 298px !important;
+        right: 298px !important;
     }
 
 
@@ -209,6 +213,9 @@ h1, h2, h3, h4, h5, h6{
 
 
 @media screen and (max-width: 1440px){
+    .nav-new{
+        right: 50px
+    }
     .nav-font{
         font-size: 16px;
     }

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/proofreading.css' %}">
@@ -9,7 +10,7 @@
 
     <div class="container">
         <div class="mt-5">
-                    <div class="h1">Заказ рецензии <br>на диссертацию</div>
+                    <div class="h1">{% trans 'Заказ рецензии' %} <br>{% trans 'на диссертацию' %}</div>
 
                 </div>
             <form class="mt-5" method="post" action="{% url 'requests:peer_review' %}" enctype="multipart/form-data">
@@ -17,7 +18,7 @@
                 <div class="row text-secondary">
                     <div class="col-lg-6">
                         <div class="form-group row">
-                            <label for="" class="col-sm-4 col-form-label">Имя автора</label>
+                            <label for="" class="col-sm-4 col-form-label">{% trans 'Имя автора' %}</label>
                             <div class="col-sm-6 d-flex flex-column">
                                 {{form.author}}
                                 <small class="text-danger">{{form.author.errors}}</small>
@@ -25,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">Название материала</label>
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Название материала' %}</label>
                             <div class="col-sm-6">
                                     {{form.material_name}}
                                     <small class="text-danger">{{form.material_name.errors}}</small>
@@ -33,7 +34,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">Область исследований</label>
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Область исследований' %}</label>
                             <div class="col-sm-6 d-flex flex-column">
                                       {{form.research_area}}
                                 <small class="text-danger">{{form.research_area.errors}}</small>
@@ -51,7 +52,7 @@
                     <div class="col-lg-6">
 
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">Научная степень автора</label>
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Научная степень автора' %}</label>
                             <div class="col-sm-6 d-flex flex-column">
                                    {{form.academic_degree}}
                                 <small class="text-danger">{{form.academic_degree.errors}}</small>
@@ -59,7 +60,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">Организация </label>
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %} </label>
                             <div class="col-sm-6 d-flex flex-column">
                                    {{form.organization}}
                                 <small class="text-danger">{{form.organization.errors}}</small>
@@ -67,19 +68,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">Научный руководитель</label>
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Научный руководитель' %}</label>
                             <div class="col-sm-6 d-flex flex-column">
                                     {{form.scientific_adviser}}
                                 <small class="text-danger">{{form.scientific_adviser.errors}}</small>
                             </div>
                         </div>
-
-                        <!-- <div class="form-group row" style="margin-top: 60px">
-                            <div class="offset-4 col-sm-6">
-                                <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
-
-                            </div>
-                        </div> -->
 
 
                     </div>
@@ -87,7 +81,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-lg-2">Комментарии/ особые пожелания</div>
+                    <div class="col-lg-2">{% trans 'Комментарии/ особые пожелания' %}</div>
                     <div class="col-lg-9 mb-5">
                         {{form.comment}}
                     </div>
@@ -100,16 +94,16 @@
                 </div>
 
                 <div class="form-group row d-flex justify-content-lg-between" style="margin-top: 60px; margin-right:6vw">
-                    <div class="ml-5">{{form.is_agree}} <span class="ml-3">Согласие с политикой конфиденциальности</span></div>
+                    <div class="ml-5">{{form.is_agree}} <span class="ml-3">{% trans 'Согласие с политикой конфиденциальности' %}</span></div>
                     <small class="text-danger">{{form.is_agree.errors}}</small>
                     <div class=" col-lg-3">
-                        <button type="submit" class="btn btn-primary w-100">Отправить работу</button>
+                        <button type="submit" class="btn btn-primary w-100">{% trans 'Отправить работу' %}</button>
                     </div>
                 </div>
 
             </form>
         </div>
 
-    </div>
+
 
 {% endblock %}

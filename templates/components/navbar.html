@@ -1,4 +1,7 @@
 {% load static %}
+{% load i18n %}
+{% get_available_languages as LANGUAGE %}
+
 <div class="container py-1 nav-font" style="z-index: 10000;">
     <nav class="navbar navbar-expand-lg p-0 py-1">
         <a class="navbar-brand nav-logo k" href="{% url 'pages:home' %}"><img src="{% static 'pages/svg/Logo.svg' %}"></a>
@@ -99,25 +102,16 @@
                     </div>
 
                 </li>
-                {#                    todo discover and shop#}
-
-{#                <li class="nav-item dropdown geometria">#}
-{#                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                            #}
-{#                     </a>#}
-{##}
-{#                     <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">#}
-{##}
-{#                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2"  ><div class="">Графические материалы</div></a>#}
-{#                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="">Корректура и редактирование</div></a>#}
-{#                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'pages:language_editing' %}"><div class="">Переводы</div></a>#}
-{#                    </div>#}
-{#                </li>#}
                 <li class="nav-item ml-3">
                     <a class="nav-link k text-dark " href="{% url 'pages:contact' %}">Контакты</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
+{#                    {% for lan in LANGUAGE %}#}
+{#                    <li class="nav-item ml-3 text-center">#}
+{#                        <a class="nav-link k text-dark  consultation" href="/{{ lan.0 }}/">{{ lan.0 }}</a>#}
+{#                    </li>#}
+{#                    {% endfor %}#}
                     {% if user.is_authenticated %}
                     <li class="nav-item ml-3 text-center">
                         <a class="nav-link k text-dark  consultation" href="{% url 'users:dashboard' %}"><i class="bi bi-person" style="font-size: 24px;"></i></a>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/research.css' %}">
@@ -36,11 +37,9 @@
                     <div class="row py-5">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="">
-                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">Стратегия исследования</div>
-                                <div class="pb-4">Исследовательские платформы - это успешный инструмент для междисциплинарных
-                                    исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется
-                                    учеными и исследовательскими группами различных дисциплин и факультетов, которые могут
-                                    подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</div>
+                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">{% trans 'Стратегия исследования' %}</div>
+                                <div class="pb-4 font-22">{% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}
+                                </div>
                                 <!-- <button class="btn btn-primary">Бесплатная консультация</button> -->
                             </div>
                         </div>
@@ -57,11 +56,10 @@
                     <div class="row py-5">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="">
-                                <div class="h1 pb-4" style="font-weight: 600; line-height:106.3% ">Партнёрство и сотрудничество</div>
-                                <div class="pb-4">Исследовательские платформы - это успешный инструмент для междисциплинарных
-                                    исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется
-                                    учеными и исследовательскими группами различных дисциплин и факультетов, которые могут
-                                    подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</div>
+                                <div class="h1 pb-4" style="font-weight: 600; line-height:106.3% ">{% trans 'Партнёрство и сотрудничество' %}</div>
+                                <div class="pb-4 font-22">
+                                    {% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
@@ -80,11 +78,10 @@
                     <div class="row py-5">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="">
-                                <div class="h1 pb-4" style=" font-weight:600; line-height:106.3%">Финансирование</div>
-                                <div class="pb-4">Исследовательские платформы - это успешный инструмент для междисциплинарных
-                                    исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется
-                                    учеными и исследовательскими группами различных дисциплин и факультетов, которые могут
-                                    подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</div>
+                                <div class="h1 pb-4" style=" font-weight:600; line-height:106.3%">{% trans 'Финансирование' %}</div>
+                                <div class="pb-4 font-22">
+                                    {% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}
+                                </div>
                                 <!-- <button class="btn btn-primary">Бесплатная консультация</button> -->
                             </div>
                         </div>
@@ -103,11 +100,10 @@
                     <div class="row py-5">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="">
-                                <div class=" h1 pb-4" style=" font-weight:600; line-height:106.3%">Управление исследовательским процессом</div>
-                                <div class="pb-4">Исследовательские платформы - это успешный инструмент для междисциплинарных
-                                    исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется
-                                    учеными и исследовательскими группами различных дисциплин и факультетов, которые могут
-                                    подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.</div>
+                                <div class=" h1 pb-4" style=" font-weight:600; line-height:106.3%">{% trans 'Управление исследовательским процессом' %}</div>
+                                <div class="pb-4 font-22">
+                                    {% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}
+                                </div>
                                 <!-- <button class="btn btn-primary">Бесплатная консультация</button> -->
                             </div>
                         </div>
@@ -121,14 +117,19 @@
           </div>
     </div>
 
-
+    <div class="container">
+    <div class="row mt-100 mb-100">
+        <div class="col-lg-9 font-22">{% trans 'Для масштабной работы часто бывает недостаточно идей и компетентности. Чтобы справиться с большим объёмом долгосрочных задач, необходимо организовать правильный подход с самого начала — тогда исследование будет завершено, получит надёжную основу и возможности для развития в будущем. У вас есть идеи, которые вы мечтаете реализовать? Специалисты Editory помогут разобраться в тонкостях процесса.' %}
+</div>
+    </div>
+        </div>
 
 
 
     <div class="container mt-5 mb-200">
     <div class="">
-                <div class="h1">Как организовать и провести <br>научное исследование?</div>
-                После заполнения формы наш консультант свяжется с вами в течение часа
+                <div class="h1">{% trans 'Как организовать и провести' %} <br>{% trans 'научное исследование' %}?</div>
+                {% trans 'После заполнения формы наш консультант свяжется с вами в течение часа' %}
             </div>
         <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}">
             {% csrf_token %}
@@ -136,7 +137,7 @@
                 <div class="col-lg-6">
 
                     <div class="form-group row">
-                        <label for="" class="col-sm-4 col-form-label">Имя</label>
+                        <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{forms.first_name}}
                             <small class="text-danger">{{forms.first_name.errors}}</small>
@@ -144,14 +145,14 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                         <div class="col-sm-6">
                             {{forms.last_name}}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{forms.phone}}
                             <small class="text-danger">{{forms.phone.errors}}</small>
@@ -169,7 +170,7 @@
                     <div class="form-group row mt-5">
                         <div class="col-sm-6 d-flex flex-column">
                             <div class="d-flex align-items-center">
-                                {{forms.is_agree}} <small class="ml-4  chekbok" style="white-space: nowrap;">Согласие с политикой конфиденциальности</small>
+                                {{forms.is_agree}} <small class="ml-4  chekbok" style="white-space: nowrap;">{% trans 'Согласие с политикой конфиденциальности' %}</small>
                             </div> 
                             <small class="text-danger">{{forms.is_agree.errors}}</small>
                         </div>
@@ -179,7 +180,7 @@
                 <div class="col-lg-6">
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Организация</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{forms.organization}}
                             <small class="text-danger">{{forms.organization.errors}}</small>
@@ -187,7 +188,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Контакты организации </label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
                         <div class="col-sm-6 d-flex flex-column">
                             <!-- <input type="text" name="phone" class="form-control"> -->
                             {{forms.org_contacts}}
@@ -196,7 +197,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Адрес организации</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{forms.org_address}}
                             <small class="text-danger">{{forms.org_address.errors}}</small>
@@ -205,7 +206,7 @@
 
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="offset-4 col-sm-6">
-                            <button type="submit" class="btn btn-primary w-100">Заказать консультацию</button>
+                            <button type="submit" class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
 
                         </div>
                     </div>

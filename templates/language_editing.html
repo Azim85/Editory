@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'pages/css/language.css' %}">
@@ -25,15 +26,12 @@
         <div class="container pt-100 pb-100">
             <div class="row padding_me">
                 <div class="col-lg-6">
-                    <div class=" font-65  geometria pb-5  font-weight-bold" >Корректура рукописей</div>
+                    <div class=" font-65  geometria pb-5  font-weight-bold" >{% trans 'Корректура рукописей' %}</div>
                     <div style="font-size: 22px">
-                        Грамотный текст — лицо автора, который работает со сложными темами.
-                        Ошибки существенно снизят уровень доверия как с самой работе, так и
-                        к вашей компетентности.
+                        {% trans 'Грамотный текст — лицо автора, который работает со сложными темами. Ошибки существенно снизят уровень доверия как с самой работе, так и к вашей компетентности.' %}
                         <br>
                         <br>
-                        Специалисты Editory этого не допустят! Будьте уверены, что ваш
-                        материал не содержит орфографических, синтаксических и стилистических огрехов.
+                        {% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
 
                     </div>
                 </div>
@@ -48,7 +46,7 @@
     </div>
     <div class="container">
         <div class="padding_me d-flex ">
-            <div class="h2">Количество слов:</div>
+            <div class="h2">{% trans 'Количество слов' %}:</div>
             <input  type="number" id="label" value="" class="h2 border-0 text-center w-100 labell">
 
         </div>
@@ -59,55 +57,54 @@
             <div class="row mb-5">
                 <div class="col-lg-4 my-2">
                     <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">Стандарт</div>
+                        <div class="h3 mb-4">{% trans 'Стандарт' %}</div>
                         <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>7-10 рабочих дней</span>
-                            <span class="float-right" style="color: #62C7CB;">240 сумов/слово</span>
+                            <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>
+                            <span class="float-right" style="color: #62C7CB;">240 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">Вычитка и оформление вашего материала перед заявкой на издание</div>
-                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color">240</label> сум</span>
+                        <div class="my-4">{% trans 'Вычитка и оформление вашего материала перед заявкой на издание' %}</div>
+                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color">240</label> {% trans 'сум' %}</span>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 my-2">
                     <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">Экспресс</div>
+                        <div class="h3 mb-4">{% trans 'Экспресс' %}</div>
                         <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>1-4 рабочих дней</span>
-                            <span class="float-right" style="color: #62C7CB;">300 сумов/слово</span>
+                            <span class="text-secondary"><i class="bi-clock"></i>1-4 {% trans 'рабочих дней' %}</span>
+                            <span class="float-right" style="color: #62C7CB;">300 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">Тот же уровень качества, но гораздо быстрее</div>
-                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color">300</label> сум</div>
+                        <div class="my-4">{% trans 'Тот же уровень качества, но гораздо быстрее' %}</div>
+                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color">300</label> {% trans 'сум' %}</div>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma1" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 my-2">
                     <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">Премиум</div>
+                        <div class="h3 mb-4">{% trans 'Премиум' %}</div>
                         <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>2-10 рабочих дней</span>
-                            <span class="float-right" style="color: #62C7CB;">400 сумов/слово</span>
+                            <span class="text-secondary"><i class="bi-clock"></i>2-10 {% trans 'рабочих дней' %}</span>
+                            <span class="float-right" style="color: #62C7CB;">400 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">Глубокая редактура текста, улучшение структуры,
-                            стилистики и дальнейшая поддержка</div>
-                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color">400</label> сум</div>
+                        <div class="my-4">{% trans 'Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая поддержка' %}</div>
+                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color">400</label> {% trans 'сум' %}</div>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma2" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">Выбрать</a>
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
@@ -116,90 +113,90 @@
     </div>
 
     <div class="container mt-100">
-    <div class="h2">Что входит в тариф</div>
+    <div class="h2">{% trans 'Что входит в тариф' %}</div>
     <div class="row d-flex align-items-center">
-        <div class="col-5 my-3">Участие кандидата наук из области, соответствующей теме работы</div>
+        <div class="col-5 my-3">{% trans 'Участие кандидата наук из области, соответствующей теме работы' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок</div>
+        <div class="col-5 my-3">{% trans 'Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">Корректоры — носители языка</div>
+        <div class="col-5 my-3">{% trans 'Корректоры — носители языка' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">Работа в кратчайшие сроки</div>
+        <div class="col-5 my-3">{% trans 'Работа в кратчайшие сроки' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Бесплатная корректорская помощь в течение 365 дней</div>
+        <div class="col-5 my-3">{% trans 'Бесплатная корректорская помощь в течение 365 дней' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Внимание к логике, структуре и цельности материала</div>
+        <div class="col-5 my-3">{% trans 'Внимание к логике, структуре и цельности материала' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Форматирование согласно требованиям конкретного журнала</div>
+        <div class="col-5 my-3">{% trans 'Форматирование согласно требованиям конкретного журнала' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Редактирование ссылок</div>
+        <div class="col-5 my-3">{% trans 'Редактирование ссылок' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Проверка ссылок на соответствие, полноту и структуру</div>
+        <div class="col-5 my-3">{% trans 'Проверка ссылок на соответствие, полноту и структуру' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Сопроводительное письмо для отправки в журнал</div>
+        <div class="col-5 my-3">{% trans 'Сопроводительное письмо для отправки в журнал' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Подробный разбор языковых и структурных особенностей материала</div>
+        <div class="col-5 my-3">{% trans 'Подробный разбор языковых и структурных особенностей материала' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Сокращение количества слов (максимум на 20%)</div>
+        <div class="col-5 my-3">{% trans 'Сокращение количества слов (максимум на 20%)' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Детальная языковая проверка: стилистика, словоупотребление и терминология</div>
+        <div class="col-5 my-3">{% trans 'Детальная языковая проверка: стилистика, словоупотребление и терминология' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Профессиональное оформление рукописи</div>
+        <div class="col-5 my-3">{% trans 'Профессиональное оформление рукописи' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">Сертификат о языковом редактировании</div>
+        <div class="col-5 my-3">{% trans 'Сертификат о языковом редактировании' %}</div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
         <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
@@ -213,8 +210,7 @@
     <div class=" container   rounded-20">
         <div>
 
-            <h2 class=" mb-5">Не уверены, какой тариф вам подходит? Оставьте заявку,
-                и вас с удовольствием проконсультируют наши специалисты!</h2>
+            <h2 class=" mb-5">{% trans 'Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием проконсультируют наши специалисты' %}!</h2>
 
         </div>
     <div class="tab-content" id="nav-tabContent">
@@ -224,7 +220,7 @@
                         <div class="col-lg-6">
 
                             <div class="form-group row my-4">
-                                <label for="" class="col-sm-4 col-form-label">Имя</label>
+                                <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                     {{forms.first_name}}
                                     <small class="text-danger align-self-start">{{forms.first_name.errors}}</small>
@@ -232,7 +228,7 @@
                             </div>
 
                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Фамилия</label>
+                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                     {{forms.last_name}}
                                     <small class="text-danger align-self-start">{{forms.last_name.errors}}</small>
@@ -241,7 +237,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
+                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{forms.phone}}
                                     <small class="text-danger align-self-start">{{forms.phone.errors}}</small>
@@ -250,7 +246,7 @@
 
                              <div class="form-group row my-4">
 
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
+                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
                                 <div class="col-sm-6 d-flex flex-column">
                                    {{forms.email}}
                                     <small class="text-danger align-self-start">{{forms.email.errors}}</small>
@@ -266,9 +262,9 @@
     </div>               <div class="row mb-100">
                         <div class="col-lg-11 d-flex  justify-content-end">
                             <div class="mr-auto">
-                                {{forms.is_agree}}<span class="ml-4">Согласие с политикой конфиденциальности</span>
+                                {{forms.is_agree}}<span class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
                             </div>
-                            <button type="submit" class="btn btn-primary px-4 mr-4">Заказать консультацию</button>
+                            <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать консультацию' %}</button>
                         </div>
                         </div>
     </div>
@@ -338,7 +334,7 @@
                             <input type="hidden" name="payment_status" value="0" />
                             <input type="hidden" name="delivery_status" value="1" />
                             <div class="col-lg-11 d-flex  justify-content-end">
-                                <button type="submit" class="btn btn-primary px-4 mr-4">Заказать</button>
+                                <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать' %}</button>
                             </div>
                         </div>
                         

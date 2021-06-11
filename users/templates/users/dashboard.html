@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load tags %}
+{% load i18n %}
+
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/dashboard.css' %}">
 {% endblock %}
@@ -33,7 +35,7 @@
             </div>
 
             <div class="edit">
-                <a href="#" id="show_form"><i class="bi bi-pencil-fill"></i>Редактировать профиль</a>
+                <a href="#" id="show_form"><i class="bi bi-pencil-fill"></i>{% trans 'Редактировать профиль' %}</a>
             </div>
 
             <div class="choose d-flex border " style=" border-radius:8px; min-width:340px">
@@ -47,7 +49,7 @@
                 </form>
                 <span class="d-flex justify-content-center align-items-center" style="background-color:#00A1A8; border-top-right-radius:8px; border-bottom-right-radius:8px">
                     <div class="py-2 mx-3 text-white" >
-                        Сменить статус
+                        {% trans 'Сменить статус' %}
                     </div>
                 </span>
             </div>
@@ -63,28 +65,27 @@
                 {% csrf_token %}
                 <div class="d-lg-flex w-100 align-items-center mt-3">
                     <label for="id_first_name" class="mr-5 k"
-                        style="min-width: 135px; margin-right:34px!important;">Имя</label>
+                        style="min-width: 135px; margin-right:34px!important;">{% trans 'Имя' %}</label>
                     {{form.first_name}}
                 </div>
                 <small class="text-danger align-self-end">{{form.first_name.errors}}</small>
 
                 <div class="d-lg-flex w-100 align-items-center mt-3">
                     <label for="id_phone" class="mr-5 k"
-                        style="min-width: 135px; margin-right:34px!important;">Телефон</label>
+                        style="min-width: 135px; margin-right:34px!important;">{% trans 'Телефон' %}</label>
                     {{form.phone}}
                 </div>
                 <small class="text-danger align-self-end">{{form.phone.errors}}</small>
 
                 <div class="d-lg-flex w-100 align-items-center mt-3">
                     <label for="id_address" class="mr-5 k"
-                        style="min-width: 135px; margin-right:34px!important;">Адрес</label>
+                        style="min-width: 135px; margin-right:34px!important;">{% trans 'Адрес' %}</label>
                     {{form.address}}
                 </div>
                 <small class="text-danger align-self-end">{{form.address.errors}}</small>
 
                 <div class="d-lg-flex w-100 align-items-center mt-3">
-                    <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">Эл.
-                        почта</label>
+                    <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">{% trans 'Эл. почта' %}</label>
                     {{form.email}}
                 </div>
                 <small class="text-danger align-self-end">{{form.email.errors}}</small>
@@ -100,8 +101,8 @@
                 <small class="text-danger align-self-end">{{form.profile_image.errors}}</small>
 
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="submit" class="btn text-white" style="background-color: #62C7CB;">Сохранить
-                        изменения</button>
+                    <button type="submit" class="btn text-white" style="background-color: #62C7CB;">{% trans 'Сохранить изменения' %}
+                        </button>
                 </div>
             </form>
         </div>
@@ -109,17 +110,17 @@
 </div>
 
 <div class="container mt-100">
-    <h1>История</h1>
+    <h1>{% trans 'История' %}</h1>
 
     {% if request.user.is_staff %}
         <table class="table mt-5">
             <thead>
                 <tr>
-                    <th class="text-center">Действие</th>
-                    <th class="text-center">Дата</th>
-                    <th class="text-center">способ оплаты</th>
-                    <th class="text-center">Статус</th>
-                    <th class="text-center">принимать</th>
+                    <th class="text-center">{% trans 'Действие' %}</th>
+                    <th class="text-center">{% trans 'Дата' %}</th>
+                    <th class="text-center">{% trans 'способ оплаты' %}</th>
+                    <th class="text-center">{% trans 'Статус' %}</th>
+                    <th class="text-center">{% trans 'принимать' %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -162,7 +163,7 @@
                     {% elif order.payment_status == 1 %}
                         <td class="text-center">В ожидании</td>
                         {% if order.payment_type == 4 %}
-                        <td class="text-center"><a href="#"><img src="{% static 'pages/images/payme.png' %}" alt=""></a></td>
+                        <td class="text-center"><a href="http://editorypress.com"><img src="{% static 'pages/images/payme.png' %}" alt=""></a></td>
                         {% elif order.payment_type == 3 %}
                             <td class="text-center"><a href="#"><img src="{% static 'pages/images/apelsin.png' %}" alt=""></a></td>
                         {% endif %}

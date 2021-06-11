@@ -43,7 +43,7 @@
   background-position: top;
 }
 
-a.nav-link{
+a.asd{
     color: black !important;
 }
 
@@ -54,9 +54,9 @@ a.active{
     border-bottom: #2A819E solid 2px !important;
 }
 
-.main-font{
-    font-family: Geometria;
-}
+/*.main-font{*/
+/*    font-family: Geometria;*/
+/*}*/
 
 .link-color{
     color: #E6A151;

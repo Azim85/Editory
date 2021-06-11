@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
 {% if messages %}
@@ -14,24 +15,23 @@
             {{errors}}
             <form action="{% url 'users:login' %}" method="post" class="w-100 d-flex flex-column">
                 {% csrf_token %}
-                <h4 class="reg text-center pt-5">Вход</h4>
+                <h4 class="reg text-center pt-5">{% trans 'Вход' %}</h4>
                 <div class="d-lg-flex w-100 align-items-center mt-3">
-                    <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">Эл.
-                        почта</label>
+                    <label for="id_email" class="mr-5 k" style="min-width: 135px; margin-right:34px!important;">{% trans 'Эл. почта' %}</label>
                     {{form.email}}
                 </div>
                 <small class="text-danger align-self-end">{{form.email.errors}}</small>
     
                 <div class="d-lg-flex w-100 align-items-center mt-3">
                     <label for="id_password" class="mr-5 k"
-                        style="min-width: 135px; margin-right:34px!important;">Пароль</label>
+                        style="min-width: 135px; margin-right:34px!important;">{% trans 'Пароль' %}</label>
                     {{form.password}}
                 </div>
                 <small class="text-danger align-self-end">{{form.password.errors}}</small>
                 <div class="d-flex w-100 align-items-center mt-5 justify-content-between mb-5">
-                    <small><a href="{% url 'users:register' %}" class="k">Регистрация</a></small>
-                    <button type="submit" class="sign-up text-white font-weight-bold k">Вход</button>
-                    <small><a href="" class="k">забыл пароль?</a></small>
+                    <small><a href="{% url 'users:register' %}" class="k">{% trans 'Регистрация' %}</a></small>
+                    <button type="submit" class="sign-up text-white font-weight-bold k">{% trans 'Вход' %}</button>
+                    <small><a href="" class="k">{% trans 'забыл пароль?' %}</a></small>
                 </div>
             </form>
         </div>
