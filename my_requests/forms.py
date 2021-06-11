@@ -15,13 +15,12 @@ from .models import (   Consultation,
 class ConsultationForm(forms.ModelForm):
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'phone', 'email', 'is_agree')
+        fields = ('first_name', 'last_name', 'phone',  'is_agree')
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     

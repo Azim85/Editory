@@ -167,9 +167,11 @@ MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 PAYMEUZ_SETTINGS = {
-    'TEST_ENV': False,
-    'ID': '60af8d527852bd0ebce29f9f',
-    'KEY': 'RmFtSQ1Mc?1Im5j&X%vMcou0aq1P4XMof@d0',
+    'TEST_ENV': True,
+    'ID': '60b7cf520d44ad636479d80b',
+
+    'KEY': 'MF6DEPdA25JO9I6YZsoJfgcYjfPjArjwYD6d',
+
     'ACCOUNTS': {
         'KEY_1': 'order_id',
         'KEY_2': None

@@ -8,6 +8,10 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 #collapseExample1:hover{
     display: inline !important;
 }
+
+/*span.navbar-toggler-icon{*/
+/*    background-color: black !important;*/
+/*}*/
 /*.nav-new{*/
 /*    right: 50px*/
 /*}*/
