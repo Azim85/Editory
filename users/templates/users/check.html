@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="min-height:70vh" class="mt-5 mb-5">
+    <div class="text-center font-weight-bold">PaymeUz</div>
+    <p class="small text-center">Телефон службы поддержки: +998 78 150-22-45 </p>
+    <div class="text-center">--------------------------------------------------------</div>
+    <div class="ml-auto mr-auto d-flex flex-column" style="width:450px">
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Transaction ID: </b><span class="ml-2 small">{{tr_id}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Request ID: </b><span class="ml-2 small">{{transaction.request_id}}</span>
+      </div>
+      <div class="d-flex">
+         <b class=" small mb-0 font-weight-bold">Order ID: </b><span class="ml-2 small">{{transaction.order_id}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">CREATE TIME: </b><span class="ml-2 small">{{create_time}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">PERFORM TIME: </b><span class="ml-2 small">{{create_time}}</span>
+      </div>
+      <div class="text-center">-------------------------------------------------------</div>
+       <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Customer Email: </b><span class="ml-2 small">{{order.email}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Customer Phone: </b><span class="ml-2 small">{{order.phone}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Service: </b><span class="ml-2 small">{{order.product}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Sum: </b>
+        <span class="ml-2 small">.............................
+          ................................................................. = {{order.amount}}</span>
+      </div>
+      <div class="d-flex">
+        <b class=" small mb-0 font-weight-bold">Total: </b>
+        <span class="ml-2 small">.................................................
+        ........................................... ={{order.amount}}</span>
+      </div>
+      <div class="d-flex">
+        <a href="{% url 'users:dashboard' %}" class="btn btn-secondary align-self-start mt-4 mr-3">back to dashboard</a>
+        <button onclick="window.print()" class="btn btn-secondary align-self-end mt-4">print check</button>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock content %}

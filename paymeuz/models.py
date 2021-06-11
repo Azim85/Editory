@@ -12,6 +12,7 @@ class PaymeTransactionModel(models.Model):
     state = models.IntegerField(blank=True, null=True, verbose_name=_('state'))
     status = models.CharField(choices=PAYME_PAYMENT_STATUS, default='processing', max_length=55,
                               verbose_name=_('status'))
+    phone = models.CharField(max_length=20, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True, verbose_name=_('date'))
     create_time = models.BigIntegerField(verbose_name=_('create time'))
     perform_time = models.BigIntegerField(default=0, verbose_name=_('perform time'))

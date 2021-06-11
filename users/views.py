@@ -5,8 +5,12 @@ from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse_lazy
 from orders.models import OrderModel
+from paymeuz.models import PaymeTransactionModel
 from django.contrib import messages
+import datetime
 User = get_user_model()
+
+
 
 class UserRegisterView(View):
 
@@ -87,6 +91,16 @@ class ChangeStatusView(View):
         order.payment_status = 1
         order.save()
         return redirect('users:dashboard')
+
+def check_payment(request, pk):
+    order = OrderModel.objects.get( id=pk, user=request.user)
+    transaction = PaymeTransactionModel.objects.get(order_id=pk)
+    create_time = datetime.datetime.fromtimestamp(transaction.create_time/1000.0)
+    perform_time = datetime.datetime.fromtimestamp(transaction.perform_time/1000.0)
+
+    return render(request, 'users/check.html', {'order':order, 'transaction':transaction,
+                                                'tr_id':transaction._id, 'create_time':create_time, 'perform_time':perform_time})
+
         
         
 

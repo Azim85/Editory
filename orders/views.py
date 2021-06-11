@@ -40,7 +40,7 @@ class OrderCreateView(CreateAPIView):
             if obj.payment_type == 4:
                 url = Paymeuz.create_initialization(amount=obj.amount * 100,
                                                     order_id=str(obj.id),
-                                                    return_url='in-study.uz/success')
+                                                    return_url='https://01bd51aace4b.ngrok.io/success')
 
             return Response({'redirect_url': url}, status=status.HTTP_200_OK)
         else:
