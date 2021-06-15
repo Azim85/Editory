@@ -136,16 +136,12 @@ TIME_ZONE = 'Asia/Tashkent'
 LANGUAGE_CODE = 'ru'
 
 
-# MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 LANGUAGES = [
     ('ru', '🇷🇺  Русский'),
     ('en', '🇬🇧  English'),
     ('uz', '🇺🇿  O\'zbek'),
 ]
 
-
-MODELTRANSLATION_LANGUAGES = ('ru', 'uz', 'en')
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
