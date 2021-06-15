@@ -35,7 +35,7 @@
                     {% trans 'Долгий путь в мире науки невозможен без тщательного подбора кадров и грамотной организации процессов компании. Все наши специалисты обладают высокой экспертностью и по-настоящему живут своей профессией.' %}
 
                 </div>
-                <div class="btn btn-primary px-5 my-5"> Задать вопрос</div>
+                <div class="btn btn-primary px-5 my-5"> {% trans 'Задать вопрос' %}</div>
             </div>
             <div class="col-lg-5">
                 <div class="d-flex align-items-center">
@@ -50,7 +50,7 @@
 
     <div class="slideres container mt-100">
             <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
-        <div class=" h4 text-center px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
+        <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">
                  <div class="col-6 col-lg-3">
                      <div class="card rounded-25 shadow_me card-body p-0 bg-white">
@@ -133,7 +133,7 @@
 
     <div style="background-color:#CE935E ">
         <div class="container pt-100 pb-100">
-            <div class="text-white h2">Наша миссия</div>
+            <div class="text-white h2 mb-4">{% trans 'Наша миссия' %}</div>
             <div class="row">
                 <div class="col-lg-5">
                     <div class="h2">«The science of today is the technology of tomorrow»</div>
@@ -147,20 +147,22 @@
     
     <div class="container mt-100">
         <div class="row">
-            <div class="col-lg-4 img-fluid">
+            <div class="col-lg-4 img-fluid mb-5">
                 <img src="{% static 'pages/svg/Group 478.svg' %}">
             </div>
             <div class="offset-1 col-lg-7">
                 <div>
-                    <div class="h2 mt-5">Карьерные возможности</div>
-                    <div class="font-22 mt-3">Вы переводчик, корректор или редактор? Может быть,
-            вы — профессионал в другой сфере, но хотите у нас работать и считаете, что ваши знания нам пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит.</div>
-                    <div class="main-color font-22 mt-5">Открыть форму<img src="{% static 'pages/svg/Group 476.svg' %}"></div>
+                    <div class="h2 mt-5">{% trans 'Карьерные возможности' %}</div>
+                    <div class="font-22 mt-3">{% trans 'Вы переводчик, корректор или редактор? Может быть, вы — профессионал в другой сфере, но хотите у нас работать и считаете, что ваши знания нам пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит.' %}</div>
+                    <div class="mt-5">
+                    <a class="main-color font-22 " data-toggle="collapse" href="#collapseExample44" role="button" aria-expanded="false" aria-controls="collapseExample">{% trans 'Открыть форму' %}   <img src="{% static 'pages/svg/Group 476.svg' %}" height="30px"></a>
+                   </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="collapse" id="collapseExample44">
     <div class="container mt-100">
 
         <form method='post' enctype="multipart/form-data">
@@ -228,6 +230,7 @@
                     </div>
             </form>
 
+    </div>
     </div>
 
     {% if validated %}

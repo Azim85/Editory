@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-10 18:40+0500\n"
+"POT-Creation-Date: 2021-06-15 12:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,46 +19,76 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/about_us.html:33
-msgid "служба академической корректуры"
+msgid "секреты качества"
 msgstr ""
 
 #: templates/about_us.html:35
 msgid ""
-"Editory - лидер в области аналитики и информации, созданный ведущими "
-"наукометристами страны с целью обеспечения прозрачности и гласности научных "
-"исследований и результатов исследований в Узбекистане."
+"Долгий путь в мире науки невозможен без тщательного подбора кадров и "
+"грамотной организации процессов компании. Все наши специалисты обладают "
+"высокой экспертностью и по-настоящему живут своей профессией."
 msgstr ""
 
-#: templates/about_us.html:51
-msgid "Наша команда"
+#: templates/about_us.html:38 templates/home.html:36
+msgid "Задать вопрос"
 msgstr ""
 
 #: templates/about_us.html:52
-msgid ""
-"Руководители Editory — люди, имеющие непосредственное отношение к науке и "
-"болеющие душой за достижения учёных Узбекистана. Работа, которой мы "
-"занимаемся — в первую очередь, вклад в дело талантливых исследователей и "
-"борьба за достойное место в мировом научном сообществе для нашей Республики"
+msgid "Наша команда"
 msgstr ""
 
-#: templates/about_us.html:113
+#: templates/about_us.html:53
+msgid ""
+"Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество "
+"будет продуктивным"
+msgstr ""
+
+#: templates/about_us.html:128
+msgid ""
+"Руководители Editory — люди, имеющие непосредственное отношение к науке и "
+"болеющие душой за достижения республики. Нам известны боли современных "
+"исследователей, и мы готовы приложить все усилия, чтобы достойный вклад "
+"Узбекистана в мировую науку не остался  незамеченным."
+msgstr ""
+
+#: templates/about_us.html:136
+msgid "Наша миссия"
+msgstr ""
+
+#: templates/about_us.html:143
+msgid ""
+"Главная задача Editory — помочь учёным Узбекистана получить заслуженное "
+"внимание и признание мирового научного сообщества. Наш штат подобран таким "
+"образом, чтобы вы могли переложить все заботы о публикациях, конференциях и "
+"переводах на наши плечи и сосредоточиться на главном — исследованиях и "
+"разработках."
+msgstr ""
+
+#: templates/about_us.html:155
+msgid "Карьерные возможности"
+msgstr ""
+
+#: templates/about_us.html:156
 msgid ""
 "Вы переводчик, корректор или редактор? Может быть, вы — профессионал в "
 "другой сфере, но хотите у нас работать и считаете, что ваши знания нам "
-"пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит"
+"пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит."
 msgstr ""
 
-#: templates/about_us.html:120 templates/bak.html:93
+#: templates/about_us.html:157
+msgid "Открыть форму"
+msgstr ""
+
+#: templates/about_us.html:170 templates/bak.html:93
 #: templates/conferences.html:66 templates/creat_conference.html:65
-#: templates/design.html:87 templates/grants.html:66 templates/home.html:429
+#: templates/design.html:87 templates/grants.html:66 templates/home.html:439
 #: templates/language_editing.html:223 templates/patents.html:68
 #: templates/research_strategy.html:140 templates/scopus.html:85
-#: users/templates/users/dashboard.html:68
 #: users/templates/users/register.html:12
 msgid "Имя"
 msgstr ""
 
-#: templates/about_us.html:128 templates/bak.html:101
+#: templates/about_us.html:178 templates/bak.html:101
 #: templates/conferences.html:74 templates/creat_conference.html:73
 #: templates/design.html:95 templates/grants.html:74
 #: templates/language_editing.html:231 templates/patents.html:76
@@ -66,21 +96,21 @@ msgstr ""
 msgid "Фамилия"
 msgstr ""
 
-#: templates/about_us.html:138
+#: templates/about_us.html:188
 msgid "Профессия"
 msgstr ""
 
-#: templates/about_us.html:149
+#: templates/about_us.html:199
 msgid "Пара слов о себе"
 msgstr ""
 
-#: templates/about_us.html:159 templates/translation.html:141
+#: templates/about_us.html:209 templates/translation.html:141
 msgid "Резюме"
 msgstr ""
 
-#: templates/about_us.html:172 templates/bak.html:159
+#: templates/about_us.html:222 templates/bak.html:159
 #: templates/conferences.html:179 templates/creat_conference.html:140
-#: templates/design.html:153 templates/grants.html:141 templates/home.html:447
+#: templates/design.html:153 templates/grants.html:141 templates/home.html:457
 #: templates/language_editing.html:265 templates/patents.html:133
 #: templates/peer_review.html:97 templates/proofreading.html:221
 #: templates/research_strategy.html:173 templates/scopus.html:160
@@ -88,7 +118,7 @@ msgstr ""
 msgid "Согласие с политикой конфиденциальности"
 msgstr ""
 
-#: templates/about_us.html:175 templates/translation.html:160
+#: templates/about_us.html:225 templates/translation.html:160
 msgid "Отправить резюме"
 msgstr ""
 
@@ -164,7 +194,7 @@ msgstr ""
 
 #: templates/bak.html:109 templates/conferences.html:118
 #: templates/creat_conference.html:81 templates/design.html:103
-#: templates/grants.html:82 templates/home.html:437
+#: templates/grants.html:82 templates/home.html:447
 #: templates/language_editing.html:240 templates/patents.html:84
 #: templates/research_strategy.html:155 templates/scopus.html:101
 #: users/templates/users/register.html:22
@@ -198,7 +228,7 @@ msgid "Адрес организации"
 msgstr ""
 
 #: templates/bak.html:161 templates/design.html:30 templates/design.html:155
-#: templates/grants.html:36 templates/grants.html:143 templates/home.html:458
+#: templates/grants.html:36 templates/grants.html:143 templates/home.html:468
 #: templates/language_editing.html:267 templates/patents.html:37
 #: templates/patents.html:135 templates/research_strategy.html:209
 #: templates/scopus.html:21 templates/scopus.html:162
@@ -210,9 +240,9 @@ msgstr ""
 msgid "Карта сайта"
 msgstr ""
 
-#: templates/components/footer.html:15 templates/components/navbar.html:15
+#: templates/components/footer.html:15
 msgid "О нас"
-msgstr "About us"
+msgstr ""
 
 #: templates/components/footer.html:16
 msgid "Новости"
@@ -289,8 +319,7 @@ msgstr ""
 
 #: templates/conferences.html:127 templates/contact.html:22
 #: templates/creat_conference.html:90 templates/language_editing.html:249
-#: users/templates/users/dashboard.html:88 users/templates/users/login.html:20
-#: users/templates/users/register.html:17
+#: users/templates/users/login.html:20 users/templates/users/register.html:17
 msgid "Эл. почта"
 msgstr ""
 
@@ -325,7 +354,7 @@ msgstr ""
 msgid "Номера телефонов"
 msgstr ""
 
-#: templates/contact.html:24 users/templates/users/dashboard.html:82
+#: templates/contact.html:24
 msgid "Адрес"
 msgstr ""
 
@@ -480,10 +509,6 @@ msgstr ""
 msgid ""
 "Разрабатываем стратегии для исследований, публикуем статьи в международных "
 "журналах, корректируем диссертации"
-msgstr ""
-
-#: templates/home.html:36
-msgid "Задать вопрос"
 msgstr ""
 
 #: templates/home.html:55
@@ -680,35 +705,35 @@ msgstr ""
 msgid "Ташкентский государственный экономический университет"
 msgstr ""
 
-#: templates/home.html:325
+#: templates/home.html:330
 msgid "Ответы на вопросы"
 msgstr ""
 
-#: templates/home.html:336
+#: templates/home.html:341
 msgid "Сколько стоит публикация статьи в Scopus?"
 msgstr ""
 
-#: templates/home.html:343
+#: templates/home.html:348
 msgid ""
 "Стоимость публикации в журналах с открытым доступом варьируется от 500 до "
 "5000 долларов США. Публикации в журналах с закрытым доступом бесплатны."
 msgstr ""
 
-#: templates/home.html:356
+#: templates/home.html:361
 msgid "Предполагает ли публикация выплаты её автору?"
 msgstr ""
 
-#: templates/home.html:362
+#: templates/home.html:367
 msgid ""
 "Премирование за выход научных публикаций обычно осуществляется "
 "университетом, под эгидой которого они были выпущены."
 msgstr ""
 
-#: templates/home.html:374
+#: templates/home.html:384
 msgid "В чём разница между открытым и закрытым доступом к статье?"
 msgstr ""
 
-#: templates/home.html:380
+#: templates/home.html:390
 msgid ""
 "С публикацией, размещённой в журнале с открытым доступом, мировое научное "
 "сообщество может ознакомиться сразу. На публикации в журналах закрытым "
@@ -716,29 +741,29 @@ msgid ""
 "читать только подписчики конкретного издания."
 msgstr ""
 
-#: templates/home.html:394
+#: templates/home.html:404
 msgid "Что, если мне не понравится результат работы?"
 msgstr ""
 
-#: templates/home.html:400
+#: templates/home.html:410
 msgid ""
 "Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, "
 "если вы не будете удовлетворены."
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:432
 msgid "Заявка на"
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:432
 msgid "бесплатную"
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:432
 msgid "консультацию"
 msgstr ""
 
-#: templates/home.html:423
+#: templates/home.html:433
 msgid "Оставьте свои данные и наш консультант свяжется с вами в течение часа"
 msgstr ""
 
@@ -1354,44 +1379,69 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: users/templates/users/dashboard.html:38
+#: users/templates/users/dashboard.html:17
+msgid "оплата проведена успешно"
+msgstr ""
+
+#: users/templates/users/dashboard.html:49
 msgid "Редактировать профиль"
 msgstr ""
 
-#: users/templates/users/dashboard.html:52
+#: users/templates/users/dashboard.html:64
 msgid "Сменить статус"
 msgstr ""
 
-#: users/templates/users/dashboard.html:75
-msgid "Телефон"
-msgstr ""
-
-#: users/templates/users/dashboard.html:104
+#: users/templates/users/dashboard.html:119
 msgid "Сохранить изменения"
 msgstr ""
 
-#: users/templates/users/dashboard.html:113
+#: users/templates/users/dashboard.html:128
 msgid "История"
 msgstr ""
 
-#: users/templates/users/dashboard.html:119
-msgid "Действие"
+#: users/templates/users/dashboard.html:134
+#: users/templates/users/dashboard.html:169
+msgid "Услуга"
 msgstr ""
 
-#: users/templates/users/dashboard.html:120
+#: users/templates/users/dashboard.html:135
+#: users/templates/users/dashboard.html:170
 msgid "Дата"
 msgstr ""
 
-#: users/templates/users/dashboard.html:121
-msgid "способ оплаты"
+#: users/templates/users/dashboard.html:136
+#: users/templates/users/dashboard.html:171
+msgid "Способ оплаты"
 msgstr ""
 
-#: users/templates/users/dashboard.html:122
+#: users/templates/users/dashboard.html:137
 msgid "Статус"
 msgstr ""
 
-#: users/templates/users/dashboard.html:123
+#: users/templates/users/dashboard.html:138
+#: users/templates/users/dashboard.html:159
 msgid "принимать"
+msgstr ""
+
+#: users/templates/users/dashboard.html:152
+#: users/templates/users/dashboard.html:156
+msgid "не оплачен"
+msgstr ""
+
+#: users/templates/users/dashboard.html:154
+msgid "оплачен"
+msgstr ""
+
+#: users/templates/users/dashboard.html:172
+msgid "Статус оплаты"
+msgstr ""
+
+#: users/templates/users/dashboard.html:198
+msgid "Оплатить с помощью Payme"
+msgstr ""
+
+#: users/templates/users/dashboard.html:215
+msgid "Оплачен"
 msgstr ""
 
 #: users/templates/users/login.html:18 users/templates/users/login.html:33

@@ -114,7 +114,7 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6{
-    font-family: Geometria !important;
+    font-family: Geometria ;
 }
 
 .mt-200{
@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .main-font{
-    font-family: 'Exo 2', sans-seserif;
+    font-family: 'Exo 2', sans-seserif !important;
 }
 
 .geometria{
