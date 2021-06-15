@@ -1,35 +1,185 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% load static %}
+{% load i18n %}
+{% load helpers %}
+{% get_available_languages as LANGUAGE %}
+{% get_current_language as Lan %}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand logo-color font-weight-bold geometria" href="{% url 'pages:home' %}"
+       style=" color: #40545C;  font-size:25px;">editory</a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
+        <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+        <form class="form-inline my-2 my-lg-0">
+            <div class="d-flex">
+            <button class="btn border my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control my-2" type="search" placeholder="Поиск по сайту" aria-label="Search">
+            </div>
+        </form>
+        <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="">
+            {% for lll in LANGUAGE %}
+                          <div><a class="text-secondary h6 main-font" href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></div><hr class="my-1">
+                      {% endfor %}
+        </div>
+       <div class="text-secondary font-weight-bold my-2">
+           Новости
+       </div>
+        <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="text-secondary font-weight-bold my-2">
+           Продукты/материалы
+       </div>
+        <div class="my-2">
+           Исследовательские платформы
+       </div>
+        <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+    <div class="my-2 d-flex justify-content-between">
+        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Организация исследований</a><span class="dropdown-toggle text-right"></span>
+       </div>
+        <div class="collapse pl-4" id="collapseExample">
+          <div class="my-2">
+            Стратегия исследования
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Научное сотрудничество
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Научное финансирование
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+                Управление и ведение
+            </div>
+        </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="my-2">
+           Образование
+       </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+    <div class="text-secondary font-weight-bold my-2">
+           Услуги
+       </div>
+    <div class="my-2 d-flex justify-content-between">
+        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">Конференции</a><span class="dropdown-toggle text-right"></span>
+       </div>
+        <div class="collapse pl-4" id="collapseExample1">
+          <div class="my-2">
+            Участие в конференциях
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Организация конференций
+          </div>
+        </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+    <div class="my-2 d-flex justify-content-between">
+        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">Исследовательские проекты</a><span class="dropdown-toggle text-right"></span>
+       </div>
+        <div class="collapse pl-4" id="collapseExample2">
+          <div class="my-2">
+            Исследовательские гранты
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Исследовательские патенты
+          </div>
+        </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+    <div class="my-2 d-flex justify-content-between">
+        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">Публикация работ</a><span class="dropdown-toggle text-right"></span>
+       </div>
+        <div class="collapse pl-4" id="collapseExample3">
+          <div class="my-2">
+            Публикация в ВАК
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Публикация в Scopus/ Web of Science
+          </div>
+        </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+    <div class="my-2 d-flex justify-content-between">
+        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">Консультация по диссертациям</a><span class="dropdown-toggle text-right"></span>
+       </div>
+        <div class="collapse pl-4" id="collapseExample4">
+          <div class="my-2">
+            Корректура и редактирование
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Рецензирование диссертации
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Методология исследования
+          </div>
+            <div  class="d-flex w-100 justify-content-center">
+                <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+            </div>
+            <div class="my-2">
+            Статистический анализ
+          </div>
+        </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="my-2">
+           Графические материалы
+       </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="my-2">
+           Корректура и редактирование
+       </div>
+    <div  class="d-flex w-100 justify-content-center">
+            <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
+        </div>
+        <div class="my-2">
+           Переводы
+       </div>
+
+
+
+    </div>
 </nav>
