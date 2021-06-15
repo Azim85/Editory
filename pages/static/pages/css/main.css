@@ -286,13 +286,21 @@ h1, h2, h3, h4, h5, h6{
 
 
 .wur,
+.ireg,
 .elsavier,
+.springer,
+.greenm,
+.academ,
 .qswur {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
 .wur:hover,
+.ireg:hover,
 .elsavier:hover,
+.springer:hover,
+.greenm:hover,
+.academ:hover,
 .qswur:hover {
   -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
   filter: grayscale(0%);

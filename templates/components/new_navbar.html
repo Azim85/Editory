@@ -4,7 +4,7 @@
 {% get_available_languages as LANGUAGE %}
 {% get_current_language as Lan %}
 
-<nav class="navbar navbar-expand-lg py-0 bg-white no-gutters">
+<nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
 <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon text-dark border">
@@ -63,9 +63,9 @@
   </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg py-0 bg-white no-gutters">
+<nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
 <div class="container">
-  <a class="navbar-brand logo-color font-weight-bold geometria" href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;">editory</a>
+  <a class="navbar-brand logo-color font-weight-bold " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;">editory</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -75,8 +75,8 @@
           <li class="nav-item mx-lg-3">
             <a class="nav-link darken" href="{% url 'pages:news' %}">Новости</a>
           </li>
-              <li class="nav-item dropdown geometria">
-                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown ">
+                     <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Продукты/материалы
                      </a>
 
@@ -100,8 +100,8 @@
                          <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="">Образование</div></a>
                     </div>
                 </li>
-              <li class="nav-item dropdown geometria">
-                     <a class="nav-link pl-3 dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown ">
+                     <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Услуги
                      </a>
 

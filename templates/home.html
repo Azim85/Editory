@@ -308,10 +308,17 @@
      <div class="mb-200 mt-200">
         <div class="container py-5">
             <div class="row ">
-                <div class="col-lg-4 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
-                <div class="col-lg-4 d-flex justify-content-center qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="qswur"></a></div>
-            </div>
+                <div class="col-lg-3 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center ireg"><a><img src="{% static 'pages/svg/ireg.svg' %}" class="ireg"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center springer"><a href="https://www.elsevier.com/"><img src="{% static 'pages/svg/springer.svg' %}" class="springer"></a></div>
+                </div>
+            <div class="row d-flex  justify-content-center mt-5">
+                <div class="col-lg-3 d-flex justify-content-center greenm"><a href=""><img src="{% static 'pages/svg/greenm.svg' %}" height="140px" class="greenm"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center academ"><a><img src="{% static 'pages/svg/academ.svg' %}" height="180px" class="academ"></a></div>
+                <div class="col-lg-3 d-flex flex-column justify-content-center  qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="qswur"></a></div>
+
+               </div>
         </div>
     </div>
 
@@ -319,13 +326,11 @@
     <div class="section-4 d-flex flex-column justify-content-center pt-200 pb-100"
          style="background-image: url({% static 'pages/images/Rectangle 543.png' %})">
         <div class="container">
-            <div class="row text-white">
-                <div class="col-12 col-md-5">
-                    <h1 class="h-45p ">
+            <h1 class="h-45p ml-4 mb-5 text-white">
                         {% trans 'Ответы на вопросы' %}
                     </h1>
-                </div>
-                <div class="col-12 col-md-7 mt-4 mt-md-0">
+            <div class="row text-white">
+                <div class="col-12 col-md-6 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
                         <div class="card border-0">
                             <div class="card-header border-0 " id="headingOne">
@@ -363,9 +368,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div  class="d-flex w-100 justify-content-center">
-                        <hr class="" style="width: 93%; background-color: #fff;">
-                            </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-4 mt-md-0">
+                    <div class="accordion" id="accordionExample">
+
                         <div class="card border-0">
                             <div class="card-header border-0 " id="headingThree">
                                 <h2 class="mb-0">

@@ -32,7 +32,11 @@ div.slick-track{
 
 
 .slideres{
-   margin-left: 100px
+   /*margin-left: 100px*/
+}
+
+.rounded-25{
+    border-radius: 25px;
 }
 
 @media screen and (max-width: 568px){

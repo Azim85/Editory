@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
+
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                # 'django.template.context_processors.settings',
+                # 'django.template .context_processors.settings',
             ],
             'libraries': {
                 'tags': 'my_requests.templatetags.tags',
@@ -133,11 +135,17 @@ TIME_ZONE = 'Asia/Tashkent'
 
 LANGUAGE_CODE = 'ru'
 
+
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 LANGUAGES = [
-    ('en', '🇬🇧  English'),
     ('ru', '🇷🇺  Русский'),
+    ('en', '🇬🇧  English'),
     ('uz', '🇺🇿  O\'zbek'),
 ]
+
+
+MODELTRANSLATION_LANGUAGES = ('ru', 'uz', 'en')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',

@@ -20,7 +20,7 @@ class Topic(models.Model):
         return self.material_name
 
     def get_absolute_url(self):
-        return reverse_lazy('pages:article', kwargs = {'pk':self.pk})
+        return reverse_lazy('pages:article', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'News'
@@ -40,7 +40,7 @@ class TopResearches(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse_lazy('pages:paper', kwargs = {'pk':self.pk})
+        return reverse_lazy('pages:paper', kwargs={'pk': self.pk})
 
 
 class ResumeModel(models.Model):
