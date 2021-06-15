@@ -20,12 +20,10 @@
 
 <body class="main-font" style="font-size: 18px;">
 
-    <div id="destop" class="container-fluid nav-holder w-100">
+    <div id="mobile" class="container-fluid nav-holder w-100">
         {% include 'components/new_navbar.html' %}
     </div>
-{#    <div id="mobile" class="container-fluid nav-holder w-100">#}
-{#        {% include 'components/mobile_navbar.html' %}#}
-{#    </div>#}
+
 
 
     {% block content %}{% endblock content %}
@@ -46,9 +44,6 @@
 
   gtag('config', 'G-8BXGYGEMEL');
 
-   {#$(document).ready(function(){#}
-   {#  if#}
-   {#})#}
 </script>
     {% block js %}{% endblock %}
 </body>

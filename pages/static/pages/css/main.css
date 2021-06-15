@@ -171,7 +171,9 @@ h1, h2, h3, h4, h5, h6{
     border-radius: revert;
 }
 
+
 @media screen and (min-width: 568px) {
+
     .navMe{
         position: absolute;
         top: 0px;
