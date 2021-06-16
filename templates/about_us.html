@@ -52,17 +52,21 @@
             <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
         <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">
+                {% for staff in staffs %}
                  <div class="col-6 col-lg-3">
-                     <div class="card rounded-25 shadow_me card-body p-0 bg-white">
-                         <img src="{% static 'pages/images/sanat.png' %}">
-                         <div class="p-3">
-                             <div class="font-22">Шарипов Санат</div>
-                             <div class="mt-1" style="font-size: 15px">Специалист по международным отношениям</div>
-                             <div class="mt-2"><a href="#"><i class="bi-linkedin"></i>LinkedIn</a></div>
+                     <div class="card rounded-25 w-100 h-100 shadow_me card-body p-0 bg-white">
+                         <img class="img-fluid" style="border-top-right-radius: 25px;border-top-left-radius: 25px" src="{{ staff.photo.url }}">
+                         <div class="p-4 d-flex h-100 flex-column justify-content-between">
+                             <div>
+                                 <div class="font-22  my-2">{{ staff.fullname }}</div>
+                                 <div class="mt-2" style="font-size: 15px">{{ staff.profession }}</div>
+                             </div>
+                             <div class="mt-3 "><a href="{{ staff.linkedLn }}"><i class="bi-linkedin"></i>LinkedIn</a></div>
                          </div>
 
                      </div>
                  </div>
+                {% endfor %}
             </div>
 
 

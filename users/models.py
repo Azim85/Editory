@@ -21,3 +21,13 @@ class CustomUser(AbstractUser):
         return self.email
 
 
+class Colleague(models.Model):
+    fullname = models.CharField(max_length=100)
+    profession = models.CharField(max_length=255)
+    linkedLn = models.URLField()
+    photo = models.ImageField(upload_to='staff/')
+
+    def __str__(self):
+        return self.fullname
+
+
