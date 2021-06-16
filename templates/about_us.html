@@ -48,7 +48,7 @@
 
 
 
-    <div class="slideres container mt-100">
+    <div class=" container mt-100">
             <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
         <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">
@@ -135,7 +135,7 @@
         <div class="container pt-100 pb-100">
             <div class="text-white h2 mb-4">{% trans 'Наша миссия' %}</div>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 mb-3">
                     <div class="h2">«The science of today is the technology of tomorrow»</div>
                     <div class="text-right">Edward Teller</div>
                 </div>
@@ -145,7 +145,7 @@
         </div>
     </div>
     
-    <div class="container mt-100">
+    <div class="container mt-100 mb-5">
         <div class="row">
             <div class="col-lg-4 img-fluid mb-5">
                 <img src="{% static 'pages/svg/Group 478.svg' %}">
@@ -163,7 +163,7 @@
     </div>
 
     <div class="collapse" id="collapseExample44">
-    <div class="container mt-100">
+    <div class="container mt-100 mb-5">
 
         <form method='post' enctype="multipart/form-data">
             {% csrf_token %}
@@ -220,9 +220,9 @@
                         </div>
                     </div>
                     
-                    <div class="offset-2 my-5 mr-5 d-flex justify-content-between">
+                    <div class="container d-flex justify-content-between">
                         <div>
-                            <span class="mr-4">{{form.is_agree}}</span>{% trans 'Согласие с политикой конфиденциальности' %}
+                            <span class="">{{form.is_agree}}</span>   {% trans 'Согласие с политикой конфиденциальности' %}
                             </div>
                         <div class="">
                             <button type="submit" class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>

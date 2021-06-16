@@ -31,9 +31,9 @@ div.slick-track{
 }
 
 
-.slideres{
-   margin-left: 100px
-}
+/*.slideres{*/
+/*   margin-left: 100px*/
+/*}*/
 
 @media screen and (max-width: 568px){
     .slideres{
