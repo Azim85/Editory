@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
-                            <button type="submit" class="btn w-100 text-white self-align-left" style="background:#CE935E">{% trans 'Заказать консультацию' %}</button>
+                            <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left" style="background:#CE935E">{% trans 'Заказать консультацию' %}</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
 
 </div>
 
-<div class="container mt-100 pb-100">
+<div id="Forma" class="container mt-100 pb-100">
     <p style="max-width: 660px;">{% trans 'Готовы познакомить международное научное сообщество со своей работой? Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!' %}</p>
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:grants' %}">
         {% csrf_token %}
