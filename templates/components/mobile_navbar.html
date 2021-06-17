@@ -30,23 +30,23 @@
                           <div><a class="text-secondary h6 main-font" href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></div><hr class="my-1">
                       {% endfor %}
         </div>
-       <a class="text-decoration-none" href="{% url 'pages:news' %}"><div class="text-secondary font-weight-bold my-2">
+       <a class="text-decoration-none" href="{% url 'pages:news' %}"><div class="text-secondary font-weight-bold ">
            {% trans 'Новости' %}
        </div></a>
-        <div  class="d-flex w-100 justify-content-center">
+        <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <div class="text-secondary font-weight-bold my-2">
            {% trans 'Продукты/материалы' %}
        </div>
-        <a class="text-decoration-none text-dark" href="{% url 'requests:research' %}"><div class="my-2">
+        <a class="text-decoration-none text-dark" href="{% url 'requests:research' %}"><div class="">
            {% trans 'Исследовательские платформы' %}
         </div></a>
-        <div  class="d-flex w-100 justify-content-center">
+        <div  class="d-flex w-100 my-2 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <div class="mt-2 d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
         {% trans 'Организация исследований' %}<span class="dropdown-toggle text-right"></span>
     </div></a>
         <div class="collapse pl-4" id="collapseExample">
@@ -68,24 +68,24 @@
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
-            <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="my-2">
+            <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="mt-2">
                 {% trans 'Управление и ведение' %}
             </div></a>
         </div>
-    <div  class="d-flex mt-2 w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-        <a class="text-decoration-none text-dark" href="{% url 'requests:scientific-papers' %}"><div class="my-2">
+        <a class="text-decoration-none text-dark" href="{% url 'requests:scientific-papers' %}"><div class="">
            {% trans 'Образование' %}
         </div></a>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <div class="text-secondary font-weight-bold my-2">
            {% trans 'Услуги' %}
        </div>
     <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <div class="mt-2 d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
         {% trans 'Конференции' %}<span class="dropdown-toggle text-right"></span>
     </div></a>
         <div class="collapse pl-4" id="collapseExample1">
@@ -95,15 +95,15 @@
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
-            <a class="text-decoration-none text-dark" href="{% url 'requests:creat-conferences' %}"><div class="my-2">
+            <a class="text-decoration-none text-dark" href="{% url 'requests:creat-conferences' %}"><div class="mt-2">
             {% trans 'Организация конференций' %}
             </div></a>
         </div>
-    <div  class="d-flex mt-2 w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <div class="mt-2 d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
         {% trans 'Исследовательские проекты' %}<span class="dropdown-toggle text-right"></span>
     </div></a>
         <div class="collapse pl-4" id="collapseExample2">
@@ -113,15 +113,15 @@
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
-            <a class="text-decoration-none text-dark" href="{% url 'requests:patents' %}"><div class="my-2">
+            <a class="text-decoration-none text-dark" href="{% url 'requests:patents' %}"><div class="mt-2">
             {% trans 'Исследовательские патенты' %}
             </div></a>
         </div>
-    <div  class="d-flex mt-2 w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <div class="mt-2 d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
         {% trans 'Публикация работ' %}<span class="dropdown-toggle text-right"></span>
     </div></a>
         <div class="collapse pl-4" id="collapseExample3">
@@ -131,15 +131,15 @@
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
-            <a class="text-decoration-none text-dark" href="{% url 'requests:scopus' %}"><div class="my-2">
+            <a class="text-decoration-none text-dark" href="{% url 'requests:scopus' %}"><div class="mt-2">
             {% trans 'Публикация в Scopus/ Web of Science' %}
             </div></a>
         </div>
-    <div  class="d-flex mt-2 w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <div class="mt-2 d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
         {% trans 'Консультация по диссертациям' %}<span class="dropdown-toggle text-right"></span>
     </div></a>
         <div class="collapse pl-4" id="collapseExample4">
@@ -161,14 +161,14 @@
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
-            <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="my-2">
+            <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="mt-2">
             {% trans 'Статистический анализ' %}
             </div></a>
         </div>
-    <div  class="d-flex mt-2 w-100 justify-content-center">
+    <div  class="d-flex my-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-        <a class="text-decoration-none text-dark" href="{% url 'requests:design' %}"><div class="my-2">
+        <a class="text-decoration-none text-dark" href="{% url 'requests:design' %}"><div class="mb-2">
            {% trans 'Графические материалы' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
