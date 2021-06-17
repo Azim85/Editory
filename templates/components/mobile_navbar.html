@@ -31,164 +31,169 @@
                       {% endfor %}
         </div>
        <a class="text-decoration-none" href="{% url 'pages:news' %}"><div class="text-secondary font-weight-bold my-2">
-           Новости
+           {% trans 'Новости' %}
        </div></a>
         <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <div class="text-secondary font-weight-bold my-2">
-           Продукты/материалы
+           {% trans 'Продукты/материалы' %}
        </div>
         <a class="text-decoration-none text-dark" href="{% url 'requests:research' %}"><div class="my-2">
-           Исследовательские платформы
+           {% trans 'Исследовательские платформы' %}
         </div></a>
         <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-    <div class="my-2 d-flex justify-content-between">
-        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Организация исследований</a><span class="dropdown-toggle text-right"></span>
-       </div>
+    <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <div class="mt-2 d-flex justify-content-between">
+        {% trans 'Организация исследований' %}<span class="dropdown-toggle text-right"></span>
+    </div></a>
         <div class="collapse pl-4" id="collapseExample">
           <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="my-2">
-            Стратегия исследования
+            {% trans 'Стратегия исследования' %}
           </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="my-2">
-            Научное сотрудничество
+            {% trans 'Научное сотрудничество' %}
             </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="my-2">
-            Научное финансирование
+            {% trans 'Научное финансирование' %}
             </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'pages:research_strategy' %}"><div class="my-2">
-                Управление и ведение
+                {% trans 'Управление и ведение' %}
             </div></a>
         </div>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex mt-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'requests:scientific-papers' %}"><div class="my-2">
-           Образование
+           {% trans 'Образование' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
     <div class="text-secondary font-weight-bold my-2">
-           Услуги
+           {% trans 'Услуги' %}
        </div>
-    <div class="my-2 d-flex justify-content-between">
-        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">Конференции</a><span class="dropdown-toggle text-right"></span>
-       </div>
+    <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <div class="mt-2 d-flex justify-content-between">
+        {% trans 'Конференции' %}<span class="dropdown-toggle text-right"></span>
+    </div></a>
         <div class="collapse pl-4" id="collapseExample1">
           <a class="text-decoration-none text-dark" href="{% url 'requests:conferences' %}"><div class="my-2">
-            Участие в конференциях
+            {% trans 'Участие в конференциях' %}
           </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:creat-conferences' %}"><div class="my-2">
-            Организация конференций
+            {% trans 'Организация конференций' %}
             </div></a>
         </div>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex mt-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-    <div class="my-2 d-flex justify-content-between">
-        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">Исследовательские проекты</a><span class="dropdown-toggle text-right"></span>
-       </div>
+    <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <div class="mt-2 d-flex justify-content-between">
+        {% trans 'Исследовательские проекты' %}<span class="dropdown-toggle text-right"></span>
+    </div></a>
         <div class="collapse pl-4" id="collapseExample2">
           <a class="text-decoration-none text-dark" href="{% url 'requests:grants' %}"><div class="my-2">
-            Исследовательские гранты
+            {% trans 'Исследовательские гранты' %}
           </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:patents' %}"><div class="my-2">
-            Исследовательские патенты
+            {% trans 'Исследовательские патенты' %}
             </div></a>
         </div>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex mt-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-    <div class="my-2 d-flex justify-content-between">
-        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">Публикация работ</a><span class="dropdown-toggle text-right"></span>
-       </div>
+    <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <div class="mt-2 d-flex justify-content-between">
+        {% trans 'Публикация работ' %}<span class="dropdown-toggle text-right"></span>
+    </div></a>
         <div class="collapse pl-4" id="collapseExample3">
           <a class="text-decoration-none text-dark" href="{% url 'requests:bak' %}"><div class="my-2">
-            Публикация в ВАК
+            {% trans 'Публикация в ВАК' %}
           </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:scopus' %}"><div class="my-2">
-            Публикация в Scopus/ Web of Science
+            {% trans 'Публикация в Scopus/ Web of Science' %}
             </div></a>
         </div>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex mt-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
-    <div class="my-2 d-flex justify-content-between">
-        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">Консультация по диссертациям</a><span class="dropdown-toggle text-right"></span>
-       </div>
+    <a class="text-dark text-decoration-none" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <div class="mt-2 d-flex justify-content-between">
+        {% trans 'Консультация по диссертациям' %}<span class="dropdown-toggle text-right"></span>
+    </div></a>
         <div class="collapse pl-4" id="collapseExample4">
           <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="my-2">
-            Корректура и редактирование
+            {% trans 'Корректура и редактирование' %}
           </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="my-2">
-            Рецензирование диссертации
+            {% trans 'Рецензирование диссертации' %}
             </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="my-2">
-            Методология исследования
+            {% trans 'Методология исследования' %}
             </div></a>
             <div  class="d-flex w-100 justify-content-center">
                 <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
             </div>
             <a class="text-decoration-none text-dark" href="{% url 'requests:proofreading' %}"><div class="my-2">
-            Статистический анализ
+            {% trans 'Статистический анализ' %}
             </div></a>
         </div>
-    <div  class="d-flex w-100 justify-content-center">
+    <div  class="d-flex mt-2 w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'requests:design' %}"><div class="my-2">
-           Графические материалы
+           {% trans 'Графические материалы' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'pages:language_editing' %}"><div class="my-2">
-           Корректура и редактирование
+           {% trans 'Корректура и редактирование' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'requests:translation' %}"><div class="my-2">
-           Переводы
+           {% trans 'Переводы' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'pages:contact' %}"><div class="my-2">
-           Контакты
+           {% trans 'Контакты' %}
         </div></a>
     <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
         <a class="text-decoration-none text-dark" href="{% url 'pages:webinars' %}"><div class="my-2">
-           О нас
+           {% trans 'О нас' %}
         </div></a>
 
     </div>

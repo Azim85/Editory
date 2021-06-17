@@ -103,8 +103,8 @@
                                         {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                     </div>
                                     <div class="mt-4">
-                                        <div class=" text-decoration-none" href="#"><a class="me" href=""><span class="h5">&#8594;</span>  {% trans 'Ислледовательский грант' %} </a></div>
-                                        <div class="mt-3 text-decoration-none"href="#"><a class="me" href=""><span class="h5">&#8594;</span>    {% trans 'Как получить патент?' %}  </a></div>
+                                        <div class=" text-decoration-none"><a class="me" href="{% url 'requests:grants' %}"><span class="h5">&#8594;</span>  {% trans 'Ислледовательский грант' %} </a></div>
+                                        <div class="mt-3 text-decoration-none"><a class="me" href="{% url 'requests:patents' %}"><span class="h5">&#8594;</span>    {% trans 'Как получить патент?' %}  </a></div>
                                     </div>
                                 </div>
                             </div>
@@ -117,8 +117,8 @@
                                         {% trans 'Помогаем как с участием, так и с организацией. Хотите ускорить свой прогресс, выехав за рубеж, или собрать экспертов мирового уровня здесь? Обращайтесь к нам.' %}
                                     </div>
                                     <div class="mt-4">
-                                        <div class=" text-decoration-none" href="#"><a class="me" href=""><span class="h5">&#8594;</span>    {% trans 'Как организовать конференцию?' %}</a></div>
-                                        <div class="mt-3 text-decoration-none"href="#"><a class="me" href=""><span class="h5">&#8594;</span>    {% trans 'Участвовать в международных      конференциях' %}</a></div>
+                                        <div class="text-decoration-none" ><a class="me" href="{% url 'requests:creat-conferences' %}"><span class="h5">&#8594;</span>    {% trans 'Как организовать конференцию?' %}</a></div>
+                                        <div class="mt-3 text-decoration-none"><a class="me" href="{% url 'requests:conferences' %}"><span class="h5">&#8594;</span>    {% trans 'Участвовать в международных      конференциях' %}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +131,8 @@
                                         {% trans 'Оформляем научные материалы для журналов Scopus и ВАК. Берём на себя полные обязательства по доведению материала до публикации.' %}
                                     </div>
                                     <div class="mt-4">
-                                        <div class=" text-decoration-none" href="#"><a class="me" href=""><span class="h5">&#8594;</span>    {% trans 'Публикация в ВАК' %}</a></div>
-                                        <div class="mt-3 text-decoration-none"href="#"><a class="me" href=""><span class="h5">&#8594;</span>    {% trans 'Публикация в Scopus/ Web of Science' %}  </a></div>
+                                        <div class=" text-decoration-none"><a class="me" href="{% url 'requests:bak' %}"><span class="h5">&#8594;</span>    {% trans 'Публикация в ВАК' %}</a></div>
+                                        <div class="mt-3 text-decoration-none"><a class="me" href="{% url 'requests:scopus' %}"><span class="h5">&#8594;</span>    {% trans 'Публикация в Scopus/ Web of Science' %}  </a></div>
                                     </div>
                                 </div>
                             </div>

@@ -9,6 +9,9 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
     display: inline !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /*span.navbar-toggler-icon{*/
 /*    background-color: black !important;*/
 /*}*/
