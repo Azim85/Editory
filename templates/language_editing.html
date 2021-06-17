@@ -27,12 +27,15 @@
             <div class="row padding_me">
                 <div class="col-lg-6 mb-5">
                     <div class=" font-65  geometria pb-5  font-weight-bold">{% trans 'Корректура рукописей' %}</div>
-                    <div style="font-size: 22px">
+                    <div class="font-22">
                         {% trans 'Грамотный текст — лицо автора, который работает со сложными темами. Ошибки существенно снизят уровень доверия как с самой работе, так и к вашей компетентности.' %}
                         <br>
                         <br>
                         {% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
 
+                    </div>
+                    <div class="mt-5">
+                        <a href="#Forma" class="btn btn-primary  px-5">{% trans 'Заказать консультацию' %} </a>
                     </div>
                 </div>
                 <div class=" offset-1 col-lg-5">
@@ -210,7 +213,7 @@
         </div>
     </div>
 
-    <form class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}" enctype="multipart/form-data">
+    <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container mt-4">
             <div class=" container   rounded-20">

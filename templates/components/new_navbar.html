@@ -48,9 +48,9 @@
                 {% endif %}
 
           <li class="nav-item">
-                <a class="nav-link darken"  data-toggle="collapse" href="#collapseExample"  style="color: #ABBFC8; font-size: 20px;" href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %}   {{ Lan }}</a>
+                <a class="nav-link darken"  data-toggle="collapse" href="#collapseExamplelan"  style="color: #ABBFC8; font-size: 20px;" href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %}   {{ Lan }}</a>
 
-              <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border" id="collapseExample"
+              <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border" id="collapseExamplelan"
                    style="z-index: 100; width: 150px; ">
                   <ul class="" style="list-style-type: none">
                       {% for lll in LANGUAGE %}
@@ -146,9 +146,9 @@
                             <div id="navChild4"  class="hidebutton ">
                                 <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
                                     <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Корректура и редактирование</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Рецензирование диссертации <br>of Science</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Методология исследования <br>of Science</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Статистический анализ <br>of Science</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Рецензирование диссертации</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Методология исследования</div></a>
+                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">Статистический анализ</div></a>
                                 </div>
                          </div>
 

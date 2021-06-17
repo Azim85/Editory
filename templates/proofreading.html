@@ -29,33 +29,15 @@
         </nav>
     </div>
     <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="">
-                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">{% trans 'Корректура и редактирование диссертации' %}</div>
-                                <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться. Языковая и фактологическая обработка вашей диссертации осуществляется подтверждёнными экспертами в соответствующей области' %} </div>
-                              <button class="btn btn-primary">{% trans 'Отправить работу' %} </button>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center">
-                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">
-                        </div>
-                        </div>
-                    </div>
-              </div>
-
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div class="container mb-5">
                     <div class="row py-5">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="">
                                 <div class="h1 pb-4" style="font-weight: 600; line-height:106.3% ">{% trans 'Рецензирование диссертации' %}</div>
                                 <div class="pb-4">{% trans 'Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя автору возможность подтвердить перед сообществом свою компетентность' %}</div>
-                                <button class="btn btn-primary">{% trans 'Отправить работу' %} </button>
+                                <a href="#Forma" class="btn btn-primary px-5">{% trans 'Отправить работу' %} </a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
@@ -65,10 +47,7 @@
                     </div>
               </div>
 
-
-
-
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
               <div class="container mb-5">
                     <div class="row py-5">
@@ -78,7 +57,7 @@
                                 <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться' %}
 
                                 </div>
-                                <button class="btn btn-primary">{% trans 'Отправить работу' %} </button>
+                                <a href="#Forma" class="btn btn-primary px-5">{% trans 'Отправить работу' %} </a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
@@ -88,9 +67,7 @@
                     </div>
               </div>
 
-
-
-          <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
               <div class="container mb-5">
                     <div class="row py-5">
@@ -98,7 +75,7 @@
                             <div class="">
                                 <div class=" h1 pb-4" style=" font-weight:600; line-height:106.3%">{% trans 'Статистический анализ' %}</div>
                                 <div class="pb-4">{% trans 'Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь в работе на действительно достоверные данные и будьте уверены в результате' %}</div>
-                                 <button class="btn btn-primary">{% trans 'Отправить работу' %} </button>
+                                 <a href="#Forma" class="btn btn-primary px-5">{% trans 'Отправить работу' %} </a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center">
@@ -107,6 +84,28 @@
                         </div>
                     </div>
               </div>
+
+        <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
+
+              <div class="container mb-5">
+                    <div class="row py-5">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="">
+                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">{% trans 'Корректура и редактирование диссертации' %}</div>
+                                <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться. Языковая и фактологическая обработка вашей диссертации осуществляется подтверждёнными экспертами в соответствующей области' %} </div>
+                              <a href="#Forma" class="btn btn-primary px-5">{% trans 'Отправить работу' %} </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">
+                        </div>
+                        </div>
+                    </div>
+              </div>
+
+
+
+
 
           </div>
 
@@ -128,7 +127,7 @@
 
 
 
-    <div class="container mb-100">
+    <div id="Forma" class="container mb-100">
         <div class="mt-5">
                     <div class="h1">{% trans 'Заявка на корректуру' %} <br>{% trans 'и редактирование диссертации' %}</div>
 

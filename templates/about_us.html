@@ -35,7 +35,7 @@
                     {% trans 'Долгий путь в мире науки невозможен без тщательного подбора кадров и грамотной организации процессов компании. Все наши специалисты обладают высокой экспертностью и по-настоящему живут своей профессией.' %}
 
                 </div>
-                <div class="btn btn-primary px-5 my-5"> {% trans 'Задать вопрос' %}</div>
+                <a href="#Forma" class="btn btn-primary px-5 my-5"> {% trans 'Задать вопрос' %}</a>
             </div>
             <div class="col-lg-5">
                 <div class="d-flex align-items-center">
@@ -149,7 +149,7 @@
         </div>
     </div>
     
-    <div class="container mt-100 mb-5">
+    <div id="Forma" class="container mt-100 mb-5">
         <div class="row">
             <div class="col-lg-4 img-fluid mb-5">
                 <img src="{% static 'pages/svg/Group 478.svg' %}">
@@ -167,7 +167,7 @@
     </div>
 
     <div class="collapse" id="collapseExample44">
-    <div class="container mt-100 mb-5">
+    <div  class="container mt-100 mb-5">
 
         <form method='post' enctype="multipart/form-data">
             {% csrf_token %}

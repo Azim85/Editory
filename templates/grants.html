@@ -20,19 +20,19 @@
     {% endfor %}
 {% endif %}
 
-<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+<div class="wrapper" >
     <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rec-platinum.png' %}')">
         <div class="container">
             <div class="row padding_me">
                 <div class="col-lg-6">
-                    <div class="head-word geometria pb-5">{% trans 'Подача заявки на исследовательский грант' %}</div>
+                    <div class="head-word geometria pb-5" >{% trans 'Подача заявки на исследовательский грант' %}</div>
                     <div style=" color:#263236" class="text-left ">
                     {% trans 'Чтобы добиться результата, необходимо вложить средства. Специалисты Editory готовы подобрать для вас именно те фонды или организации, которые с наибольшей вероятностью проспонсируют запланированные вами исследовательские мероприятия.' %}
                     </div>
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
-                            <button type="submit" class="btn w-100 text-white self-align-left"
-                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</button>
+                            <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left"
+                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="row mx-0 mt-100">
+    <div id="Forma" class="row mx-0 mt-100">
         <div class="container">
             <div class="text-left" style="font-size: 36px; color:#263236;">{% trans 'Заявка на исследовательский грант' %}</div>
         </div>
@@ -54,7 +54,7 @@
 
 </div>
 
-<div class="container mt-100 pb-100">
+<div  class="container mt-100 pb-100">
    
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:grants' %}">
         {% csrf_token %}
