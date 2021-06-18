@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-10 18:40+0500\n"
+"POT-Creation-Date: 2021-06-17 13:58+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,76 +21,106 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: templates/about_us.html:33
-msgid "служба академической корректуры"
+msgid "секреты качества"
 msgstr ""
 
 #: templates/about_us.html:35
 msgid ""
-"Editory - лидер в области аналитики и информации, созданный ведущими "
-"наукометристами страны с целью обеспечения прозрачности и гласности научных "
-"исследований и результатов исследований в Узбекистане."
+"Долгий путь в мире науки невозможен без тщательного подбора кадров и "
+"грамотной организации процессов компании. Все наши специалисты обладают "
+"высокой экспертностью и по-настоящему живут своей профессией."
 msgstr ""
 
-#: templates/about_us.html:51
-msgid "Наша команда"
+#: templates/about_us.html:38 templates/home.html:36
+msgid "Задать вопрос"
 msgstr ""
 
 #: templates/about_us.html:52
-msgid ""
-"Руководители Editory — люди, имеющие непосредственное отношение к науке и "
-"болеющие душой за достижения учёных Узбекистана. Работа, которой мы "
-"занимаемся — в первую очередь, вклад в дело талантливых исследователей и "
-"борьба за достойное место в мировом научном сообществе для нашей Республики"
+msgid "Наша команда"
 msgstr ""
 
-#: templates/about_us.html:113
+#: templates/about_us.html:53
+msgid ""
+"Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество "
+"будет продуктивным"
+msgstr ""
+
+#: templates/about_us.html:132
+msgid ""
+"Руководители Editory — люди, имеющие непосредственное отношение к науке и "
+"болеющие душой за достижения республики. Нам известны боли современных "
+"исследователей, и мы готовы приложить все усилия, чтобы достойный вклад "
+"Узбекистана в мировую науку не остался  незамеченным."
+msgstr ""
+
+#: templates/about_us.html:140
+msgid "Наша миссия"
+msgstr ""
+
+#: templates/about_us.html:147
+msgid ""
+"Главная задача Editory — помочь учёным Узбекистана получить заслуженное "
+"внимание и признание мирового научного сообщества. Наш штат подобран таким "
+"образом, чтобы вы могли переложить все заботы о публикациях, конференциях и "
+"переводах на наши плечи и сосредоточиться на главном — исследованиях и "
+"разработках."
+msgstr ""
+
+#: templates/about_us.html:159
+msgid "Карьерные возможности"
+msgstr ""
+
+#: templates/about_us.html:160
 msgid ""
 "Вы переводчик, корректор или редактор? Может быть, вы — профессионал в "
 "другой сфере, но хотите у нас работать и считаете, что ваши знания нам "
-"пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит"
+"пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит."
 msgstr ""
 
-#: templates/about_us.html:120 templates/bak.html:93
+#: templates/about_us.html:162
+msgid "Открыть форму"
+msgstr ""
+
+#: templates/about_us.html:177 templates/bak.html:93
 #: templates/conferences.html:66 templates/creat_conference.html:65
-#: templates/design.html:87 templates/grants.html:66 templates/home.html:429
-#: templates/language_editing.html:223 templates/patents.html:68
-#: templates/research_strategy.html:140 templates/scopus.html:85
-#: users/templates/users/dashboard.html:68
+#: templates/design.html:87 templates/grants.html:65 templates/home.html:440
+#: templates/language_editing.html:232 templates/patents.html:68
+#: templates/research_strategy.html:147 templates/scopus.html:85
 #: users/templates/users/register.html:12
 msgid "Имя"
 msgstr ""
 
-#: templates/about_us.html:128 templates/bak.html:101
+#: templates/about_us.html:185 templates/bak.html:101
 #: templates/conferences.html:74 templates/creat_conference.html:73
-#: templates/design.html:95 templates/grants.html:74
-#: templates/language_editing.html:231 templates/patents.html:76
-#: templates/research_strategy.html:148 templates/scopus.html:93
+#: templates/design.html:95 templates/grants.html:73
+#: templates/language_editing.html:241 templates/patents.html:76
+#: templates/research_strategy.html:155 templates/scopus.html:93
 msgid "Фамилия"
 msgstr ""
 
-#: templates/about_us.html:138
+#: templates/about_us.html:195
 msgid "Профессия"
 msgstr ""
 
-#: templates/about_us.html:149
+#: templates/about_us.html:206
 msgid "Пара слов о себе"
 msgstr ""
 
-#: templates/about_us.html:159 templates/translation.html:141
+#: templates/about_us.html:216 templates/translation.html:136
 msgid "Резюме"
 msgstr ""
 
-#: templates/about_us.html:172 templates/bak.html:159
+#: templates/about_us.html:229 templates/bak.html:159
 #: templates/conferences.html:179 templates/creat_conference.html:140
-#: templates/design.html:153 templates/grants.html:141 templates/home.html:447
-#: templates/language_editing.html:265 templates/patents.html:133
-#: templates/peer_review.html:97 templates/proofreading.html:221
-#: templates/research_strategy.html:173 templates/scopus.html:160
-#: templates/translation.html:157
+#: templates/design.html:153 templates/grants.html:140 templates/home.html:458
+#: templates/language_editing.html:279 templates/patents.html:133
+#: templates/peer_review.html:97 templates/proofreading.html:220
+#: templates/research_strategy.html:180 templates/scopus.html:160
+#: templates/translation.html:152
 msgid "Согласие с политикой конфиденциальности"
 msgstr ""
 
-#: templates/about_us.html:175 templates/translation.html:160
+#: templates/about_us.html:232 templates/translation.html:155
 msgid "Отправить резюме"
 msgstr ""
 
@@ -166,45 +196,45 @@ msgstr ""
 
 #: templates/bak.html:109 templates/conferences.html:118
 #: templates/creat_conference.html:81 templates/design.html:103
-#: templates/grants.html:82 templates/home.html:437
-#: templates/language_editing.html:240 templates/patents.html:84
-#: templates/research_strategy.html:155 templates/scopus.html:101
+#: templates/grants.html:81 templates/home.html:448
+#: templates/language_editing.html:251 templates/patents.html:84
+#: templates/research_strategy.html:162 templates/scopus.html:101
 #: users/templates/users/register.html:22
 msgid "Номер телефона"
 msgstr ""
 
-#: templates/bak.html:117 templates/design.html:111 templates/grants.html:90
+#: templates/bak.html:117 templates/design.html:111 templates/grants.html:89
 #: templates/patents.html:92 templates/scopus.html:109
 msgid "Email"
 msgstr ""
 
 #: templates/bak.html:130 templates/creat_conference.html:106
-#: templates/design.html:124 templates/grants.html:112
+#: templates/design.html:124 templates/grants.html:111
 #: templates/patents.html:104 templates/peer_review.html:63
-#: templates/research_strategy.html:183 templates/scopus.html:131
+#: templates/research_strategy.html:190 templates/scopus.html:131
 msgid "Организация"
 msgstr ""
 
 #: templates/bak.html:138 templates/creat_conference.html:114
-#: templates/design.html:132 templates/grants.html:120
-#: templates/patents.html:112 templates/research_strategy.html:191
+#: templates/design.html:132 templates/grants.html:119
+#: templates/patents.html:112 templates/research_strategy.html:198
 #: templates/scopus.html:139
 msgid "Контакты организации"
 msgstr ""
 
 #: templates/bak.html:146 templates/creat_conference.html:122
-#: templates/design.html:140 templates/grants.html:128
-#: templates/patents.html:120 templates/research_strategy.html:200
+#: templates/design.html:140 templates/grants.html:127
+#: templates/patents.html:120 templates/research_strategy.html:207
 #: templates/scopus.html:147
 msgid "Адрес организации"
 msgstr ""
 
 #: templates/bak.html:161 templates/design.html:30 templates/design.html:155
-#: templates/grants.html:36 templates/grants.html:143 templates/home.html:458
-#: templates/language_editing.html:267 templates/patents.html:37
-#: templates/patents.html:135 templates/research_strategy.html:209
-#: templates/scopus.html:21 templates/scopus.html:162
-#: templates/translation.html:40
+#: templates/grants.html:35 templates/grants.html:142 templates/home.html:469
+#: templates/language_editing.html:38 templates/language_editing.html:281
+#: templates/patents.html:37 templates/patents.html:135
+#: templates/research_strategy.html:216 templates/scopus.html:21
+#: templates/scopus.html:162 templates/translation.html:40
 msgid "Заказать консультацию"
 msgstr ""
 
@@ -212,11 +242,15 @@ msgstr ""
 msgid "Карта сайта"
 msgstr ""
 
-#: templates/components/footer.html:15 templates/components/navbar.html:15
+#: templates/components/footer.html:15
+#: templates/components/mobile_navbar.html:196
+#: templates/components/new_navbar.html:19
 msgid "О нас"
 msgstr ""
 
 #: templates/components/footer.html:16
+#: templates/components/mobile_navbar.html:34
+#: templates/components/new_navbar.html:76
 msgid "Новости"
 msgstr ""
 
@@ -225,6 +259,8 @@ msgid "Продукты и материалы"
 msgstr ""
 
 #: templates/components/footer.html:18
+#: templates/components/mobile_navbar.html:85
+#: templates/components/new_navbar.html:105
 msgid "Услуги"
 msgstr ""
 
@@ -233,6 +269,8 @@ msgid "Магазин"
 msgstr ""
 
 #: templates/components/footer.html:22
+#: templates/components/mobile_navbar.html:190
+#: templates/components/new_navbar.html:22
 msgid "Контакты"
 msgstr ""
 
@@ -244,17 +282,148 @@ msgstr ""
 msgid "Мы в соцсетях"
 msgstr ""
 
+#: templates/components/mobile_navbar.html:40
+#: templates/components/new_navbar.html:80
+msgid "Продукты/материалы"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:43
+#: templates/components/new_navbar.html:85 templates/research_platform.html:16
+msgid "Исследовательские платформы"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:50
+#: templates/components/new_navbar.html:89
+msgid "Организация исследований"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:54
+#: templates/components/new_navbar.html:92
+#: templates/research_intelligense.html:14 templates/research_strategy.html:40
+msgid "Стратегия исследования"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:60
+#: templates/components/new_navbar.html:93
+msgid "Научное сотрудничество"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:66
+#: templates/components/new_navbar.html:94
+msgid "Научное финансирование"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:72
+#: templates/components/new_navbar.html:95
+msgid "Управление и ведение"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:79
+#: templates/components/new_navbar.html:100
+msgid "Образование"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:89
+#: templates/components/new_navbar.html:110
+msgid "Конференции"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:93
+#: templates/components/new_navbar.html:113
+msgid "Участие в конференциях"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:99
+#: templates/components/new_navbar.html:114
+msgid "Организация конференций"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:107
+#: templates/components/new_navbar.html:127
+msgid "Исследовательские проекты"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:111
+#: templates/components/new_navbar.html:130
+msgid "Исследовательские гранты"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:117
+#: templates/components/new_navbar.html:131
+msgid "Исследовательские патенты"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:125
+#: templates/components/new_navbar.html:136 templates/services.html:40
+msgid "Публикация работ"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:129
+#: templates/components/new_navbar.html:139 templates/home.html:134
+msgid "Публикация в ВАК"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:135 templates/home.html:135
+msgid "Публикация в Scopus/ Web of Science"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:143
+#: templates/components/new_navbar.html:145
+msgid "Консультация по диссертациям"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:147
+#: templates/components/mobile_navbar.html:178
+#: templates/components/new_navbar.html:148
+#: templates/components/new_navbar.html:157 templates/proofreading.html:27
+msgid "Корректура и редактирование"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:153
+#: templates/components/new_navbar.html:149 templates/proofreading.html:38
+msgid "Рецензирование диссертации"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:159
+#: templates/components/new_navbar.html:150 templates/proofreading.html:25
+#: templates/proofreading.html:56
+msgid "Методология исследования"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:165
+#: templates/components/new_navbar.html:151 templates/proofreading.html:26
+#: templates/proofreading.html:76
+msgid "Статистический анализ"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:172
+#: templates/components/new_navbar.html:156
+msgid "Графические материалы"
+msgstr ""
+
+#: templates/components/mobile_navbar.html:184
+#: templates/components/new_navbar.html:158
+msgid "Переводы"
+msgstr ""
+
+#: templates/components/new_navbar.html:25
+msgid "Партнерам"
+msgstr ""
+
+#: templates/components/new_navbar.html:140
+msgid "Публикация в Scopus/ Web"
+msgstr ""
+
 #: templates/conferences.html:32
 msgid "Участие в международных конференциях"
 msgstr ""
 
 #: templates/conferences.html:33
 msgid ""
-"Исследовательские платформы - это успешный инструмент для междисциплинарных "
-"исследовательских проектов сотрудничества. Создание исследовательских "
-"платформ инициируется учеными и исследовательскими группами различных "
-"дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
-"заявок. Заявки оцениваются международными экспертами"
+"Хотите привлечь внимание мировой общественности к своим разработкам? Один из "
+"самых простых способов это сделать — принять участие в тематической "
+"конференции. Там вы сможете собрать самые разносторонние взгляды на вашу "
+"задачу и установить контакты, необходимые для дальнейшего успеха"
 msgstr ""
 
 #: templates/conferences.html:34 templates/creat_conference.html:33
@@ -290,9 +459,8 @@ msgid "Ученая степень"
 msgstr ""
 
 #: templates/conferences.html:127 templates/contact.html:22
-#: templates/creat_conference.html:90 templates/language_editing.html:249
-#: users/templates/users/dashboard.html:88 users/templates/users/login.html:20
-#: users/templates/users/register.html:17
+#: templates/creat_conference.html:90 templates/language_editing.html:261
+#: users/templates/users/login.html:20 users/templates/users/register.html:17
 msgid "Эл. почта"
 msgstr ""
 
@@ -310,8 +478,8 @@ msgstr ""
 
 #: templates/conferences.html:181 templates/creat_conference.html:142
 #: templates/peer_review.html:100 templates/proofreading.html:40
-#: templates/proofreading.html:58 templates/proofreading.html:81
-#: templates/proofreading.html:101 templates/proofreading.html:224
+#: templates/proofreading.html:60 templates/proofreading.html:78
+#: templates/proofreading.html:96 templates/proofreading.html:223
 msgid "Отправить работу"
 msgstr ""
 
@@ -327,7 +495,7 @@ msgstr ""
 msgid "Номера телефонов"
 msgstr ""
 
-#: templates/contact.html:24 users/templates/users/dashboard.html:82
+#: templates/contact.html:24
 msgid "Адрес"
 msgstr ""
 
@@ -454,11 +622,11 @@ msgid ""
 "подготовки материалов для участия в конференциях различного плана и уровня."
 msgstr ""
 
-#: templates/grants.html:29
+#: templates/grants.html:28
 msgid "Подача заявки на исследовательский грант"
 msgstr ""
 
-#: templates/grants.html:31
+#: templates/grants.html:30
 msgid ""
 "Чтобы добиться результата, необходимо вложить средства. Специалисты Editory "
 "готовы подобрать для вас именно те фонды или организации, которые с "
@@ -466,7 +634,7 @@ msgid ""
 "мероприятия."
 msgstr ""
 
-#: templates/grants.html:51
+#: templates/grants.html:50
 msgid "Заявка на исследовательский грант"
 msgstr ""
 
@@ -482,10 +650,6 @@ msgstr ""
 msgid ""
 "Разрабатываем стратегии для исследований, публикуем статьи в международных "
 "журналах, корректируем диссертации"
-msgstr ""
-
-#: templates/home.html:36
-msgid "Задать вопрос"
 msgstr ""
 
 #: templates/home.html:55
@@ -570,14 +734,6 @@ msgid ""
 "обязательства по доведению материала до публикации."
 msgstr ""
 
-#: templates/home.html:134
-msgid "Публикация в ВАК"
-msgstr ""
-
-#: templates/home.html:135
-msgid "Публикация в Scopus/ Web of Science"
-msgstr ""
-
 #: templates/home.html:143
 msgid "Консультация"
 msgstr ""
@@ -638,79 +794,79 @@ msgid ""
 "сроки"
 msgstr ""
 
-#: templates/home.html:225
+#: templates/home.html:226
 msgid "Доверие"
 msgstr ""
 
-#: templates/home.html:227
+#: templates/home.html:228
 msgid ""
 "Заботимся о репутации и персональных данных наших клиентах так же, как и о "
 "своих собственных"
 msgstr ""
 
-#: templates/home.html:238
+#: templates/home.html:239
 msgid "Управление рисками"
 msgstr ""
 
-#: templates/home.html:240
+#: templates/home.html:241
 msgid ""
 "Наш опыт взаимодействия с научным сообществом позволяет избежать большинства "
 "трудностей в работе"
 msgstr ""
 
-#: templates/home.html:252
+#: templates/home.html:253
 msgid "Мы вывели в рейтинг QS"
 msgstr ""
 
-#: templates/home.html:262
+#: templates/home.html:263
 msgid "Национальный университет Узбекистана им. Мирзо-Улугбека"
 msgstr ""
 
-#: templates/home.html:269
+#: templates/home.html:270
 msgid "Международная Исламская Академия Узбекистана"
 msgstr ""
 
-#: templates/home.html:276
+#: templates/home.html:277
 msgid "Ташкентский педиатрический медицинский институт"
 msgstr ""
 
-#: templates/home.html:283
+#: templates/home.html:284
 msgid "Ташкентская медицинская академия"
 msgstr ""
 
-#: templates/home.html:290
+#: templates/home.html:291
 msgid "Ташкентский государственный экономический университет"
 msgstr ""
 
-#: templates/home.html:325
+#: templates/home.html:331
 msgid "Ответы на вопросы"
 msgstr ""
 
-#: templates/home.html:336
+#: templates/home.html:342
 msgid "Сколько стоит публикация статьи в Scopus?"
 msgstr ""
 
-#: templates/home.html:343
+#: templates/home.html:349
 msgid ""
 "Стоимость публикации в журналах с открытым доступом варьируется от 500 до "
 "5000 долларов США. Публикации в журналах с закрытым доступом бесплатны."
 msgstr ""
 
-#: templates/home.html:356
+#: templates/home.html:362
 msgid "Предполагает ли публикация выплаты её автору?"
 msgstr ""
 
-#: templates/home.html:362
+#: templates/home.html:368
 msgid ""
 "Премирование за выход научных публикаций обычно осуществляется "
 "университетом, под эгидой которого они были выпущены."
 msgstr ""
 
-#: templates/home.html:374
+#: templates/home.html:385
 msgid "В чём разница между открытым и закрытым доступом к статье?"
 msgstr ""
 
-#: templates/home.html:380
+#: templates/home.html:391
 msgid ""
 "С публикацией, размещённой в журнале с открытым доступом, мировое научное "
 "сообщество может ознакомиться сразу. На публикации в журналах закрытым "
@@ -718,29 +874,29 @@ msgid ""
 "читать только подписчики конкретного издания."
 msgstr ""
 
-#: templates/home.html:394
+#: templates/home.html:405
 msgid "Что, если мне не понравится результат работы?"
 msgstr ""
 
-#: templates/home.html:400
+#: templates/home.html:411
 msgid ""
 "Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, "
 "если вы не будете удовлетворены."
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:433
 msgid "Заявка на"
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:433
 msgid "бесплатную"
 msgstr ""
 
-#: templates/home.html:422
+#: templates/home.html:433
 msgid "консультацию"
 msgstr ""
 
-#: templates/home.html:423
+#: templates/home.html:434
 msgid "Оставьте свои данные и наш консультант свяжется с вами в течение часа"
 msgstr ""
 
@@ -761,131 +917,131 @@ msgid ""
 "содержит орфографических, синтаксических и стилистических огрехов."
 msgstr ""
 
-#: templates/language_editing.html:49
+#: templates/language_editing.html:53
 msgid "Количество слов"
 msgstr ""
 
-#: templates/language_editing.html:60
+#: templates/language_editing.html:64
 msgid "Стандарт"
 msgstr ""
 
-#: templates/language_editing.html:62 templates/language_editing.html:80
-#: templates/language_editing.html:98
+#: templates/language_editing.html:66 templates/language_editing.html:85
+#: templates/language_editing.html:105
 msgid "рабочих дней"
 msgstr ""
 
-#: templates/language_editing.html:63 templates/language_editing.html:81
-#: templates/language_editing.html:99
+#: templates/language_editing.html:67 templates/language_editing.html:86
+#: templates/language_editing.html:106
 msgid "сумов/слово"
 msgstr ""
 
-#: templates/language_editing.html:66
+#: templates/language_editing.html:70
 msgid "Вычитка и оформление вашего материала перед заявкой на издание"
 msgstr ""
 
-#: templates/language_editing.html:67 templates/language_editing.html:85
-#: templates/language_editing.html:103
+#: templates/language_editing.html:72 templates/language_editing.html:91
+#: templates/language_editing.html:111
 msgid "сум"
 msgstr ""
 
-#: templates/language_editing.html:71 templates/language_editing.html:89
-#: templates/language_editing.html:107
+#: templates/language_editing.html:76 templates/language_editing.html:96
+#: templates/language_editing.html:116
 msgid "Выбрать"
 msgstr ""
 
-#: templates/language_editing.html:78
+#: templates/language_editing.html:83
 msgid "Экспресс"
 msgstr ""
 
-#: templates/language_editing.html:84
+#: templates/language_editing.html:89
 msgid "Тот же уровень качества, но гораздо быстрее"
 msgstr ""
 
-#: templates/language_editing.html:96
+#: templates/language_editing.html:103
 msgid "Премиум"
 msgstr ""
 
-#: templates/language_editing.html:102
+#: templates/language_editing.html:109
 msgid ""
 "Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая "
 "поддержка"
 msgstr ""
 
-#: templates/language_editing.html:116
+#: templates/language_editing.html:125
 msgid "Что входит в тариф"
 msgstr ""
 
-#: templates/language_editing.html:118
+#: templates/language_editing.html:127
 msgid "Участие кандидата наук из области, соответствующей теме работы"
 msgstr ""
 
-#: templates/language_editing.html:123
+#: templates/language_editing.html:132
 msgid ""
 "Бесплатная повторная корректура при условии возврата работы из-за языковых "
 "ошибок"
 msgstr ""
 
-#: templates/language_editing.html:128
+#: templates/language_editing.html:137
 msgid "Корректоры — носители языка"
 msgstr ""
 
-#: templates/language_editing.html:133
+#: templates/language_editing.html:142
 msgid "Работа в кратчайшие сроки"
 msgstr ""
 
-#: templates/language_editing.html:139
+#: templates/language_editing.html:148
 msgid "Бесплатная корректорская помощь в течение 365 дней"
 msgstr ""
 
-#: templates/language_editing.html:145
+#: templates/language_editing.html:154
 msgid "Внимание к логике, структуре и цельности материала"
 msgstr ""
 
-#: templates/language_editing.html:151
+#: templates/language_editing.html:160
 msgid "Форматирование согласно требованиям конкретного журнала"
 msgstr ""
 
-#: templates/language_editing.html:157
+#: templates/language_editing.html:166
 msgid "Редактирование ссылок"
 msgstr ""
 
-#: templates/language_editing.html:163
+#: templates/language_editing.html:172
 msgid "Проверка ссылок на соответствие, полноту и структуру"
 msgstr ""
 
-#: templates/language_editing.html:169
+#: templates/language_editing.html:178
 msgid "Сопроводительное письмо для отправки в журнал"
 msgstr ""
 
-#: templates/language_editing.html:175
+#: templates/language_editing.html:184
 msgid "Подробный разбор языковых и структурных особенностей материала"
 msgstr ""
 
-#: templates/language_editing.html:181
+#: templates/language_editing.html:190
 #, python-format
 msgid "Сокращение количества слов (максимум на 20%%)"
 msgstr ""
 
-#: templates/language_editing.html:187
+#: templates/language_editing.html:196
 msgid ""
 "Детальная языковая проверка: стилистика, словоупотребление и терминология"
 msgstr ""
 
-#: templates/language_editing.html:193
+#: templates/language_editing.html:202
 msgid "Профессиональное оформление рукописи"
 msgstr ""
 
-#: templates/language_editing.html:199
+#: templates/language_editing.html:208
 msgid "Сертификат о языковом редактировании"
 msgstr ""
 
-#: templates/language_editing.html:213
+#: templates/language_editing.html:222
 msgid ""
 "Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием "
 "проконсультируют наши специалисты"
 msgstr ""
 
-#: templates/language_editing.html:337
+#: templates/language_editing.html:354
 msgid "Заказать"
 msgstr ""
 
@@ -912,16 +1068,16 @@ msgstr ""
 msgid "на диссертацию"
 msgstr ""
 
-#: templates/peer_review.html:21 templates/proofreading.html:142
+#: templates/peer_review.html:21 templates/proofreading.html:141
 msgid "Имя автора"
 msgstr ""
 
-#: templates/peer_review.html:29 templates/proofreading.html:151
+#: templates/peer_review.html:29 templates/proofreading.html:150
 msgid "Название материала"
 msgstr ""
 
-#: templates/peer_review.html:37 templates/proofreading.html:159
-#: templates/translation.html:98
+#: templates/peer_review.html:37 templates/proofreading.html:158
+#: templates/translation.html:93
 msgid "Область исследований"
 msgstr ""
 
@@ -933,8 +1089,8 @@ msgstr ""
 msgid "Научный руководитель"
 msgstr ""
 
-#: templates/peer_review.html:84 templates/proofreading.html:206
-#: templates/translation.html:131
+#: templates/peer_review.html:84 templates/proofreading.html:205
+#: templates/translation.html:126
 msgid "Комментарии/ особые пожелания"
 msgstr ""
 
@@ -942,23 +1098,29 @@ msgstr ""
 msgid "Рецензирование"
 msgstr ""
 
-#: templates/proofreading.html:25 templates/proofreading.html:77
-msgid "Методология исследования"
+#: templates/proofreading.html:39
+msgid ""
+"Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя "
+"автору возможность подтвердить перед сообществом свою компетентность"
 msgstr ""
 
-#: templates/proofreading.html:26 templates/proofreading.html:99
-msgid "Статистический анализ"
+#: templates/proofreading.html:57
+msgid ""
+"Как избежать ошибок в процессе исследования и получить объективные "
+"показатели? Специалисты Editory знают, как этого добиться"
 msgstr ""
 
-#: templates/proofreading.html:27
-msgid "Корректура и редактирование"
+#: templates/proofreading.html:77
+msgid ""
+"Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь "
+"в работе на действительно достоверные данные и будьте уверены в результате"
 msgstr ""
 
-#: templates/proofreading.html:38
+#: templates/proofreading.html:94
 msgid "Корректура и редактирование диссертации"
 msgstr ""
 
-#: templates/proofreading.html:39
+#: templates/proofreading.html:95
 msgid ""
 "Как избежать ошибок в процессе исследования и получить объективные "
 "показатели? Специалисты Editory знают, как этого добиться. Языковая и "
@@ -966,79 +1128,51 @@ msgid ""
 "экспертами в соответствующей области"
 msgstr ""
 
-#: templates/proofreading.html:56
-msgid "Рецензирование диссертации"
-msgstr ""
-
-#: templates/proofreading.html:57
-msgid ""
-"Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя "
-"автору возможность подтвердить перед сообществом свою компетентность"
-msgstr ""
-
-#: templates/proofreading.html:78
-msgid ""
-"Как избежать ошибок в процессе исследования и получить объективные "
-"показатели? Специалисты Editory знают, как этого добиться"
-msgstr ""
-
-#: templates/proofreading.html:100
-msgid ""
-"Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь "
-"в работе на действительно достоверные данные и будьте уверены в результате"
-msgstr ""
-
-#: templates/proofreading.html:117 templates/translation.html:54
+#: templates/proofreading.html:116 templates/translation.html:54
 msgid "Прикрепите документ в формате Word или PowerPoint"
 msgstr ""
 
-#: templates/proofreading.html:118 templates/translation.html:55
+#: templates/proofreading.html:117 templates/translation.html:55
 msgid "В документе должен быть только один материал"
 msgstr ""
 
-#: templates/proofreading.html:119 templates/translation.html:56
+#: templates/proofreading.html:118 templates/translation.html:56
 msgid "Убедитесь, что размер файла составляет менее Х Мб"
 msgstr ""
 
-#: templates/proofreading.html:120 templates/translation.html:57
+#: templates/proofreading.html:119 templates/translation.html:57
 msgid ""
 "Проверьте название документа: в нём не должно быть пробелов или специальных "
 "символов"
 msgstr ""
 
-#: templates/proofreading.html:121
+#: templates/proofreading.html:120
 msgid ""
 "Если вы столкнулись с проблемой при загрузке документа — пожалуйста, "
 "свяжитесь с нами"
 msgstr ""
 
-#: templates/proofreading.html:133
+#: templates/proofreading.html:132
 msgid "Заявка на корректуру"
 msgstr ""
 
-#: templates/proofreading.html:133
+#: templates/proofreading.html:132
 msgid "и редактирование диссертации"
 msgstr ""
 
-#: templates/proofreading.html:179 templates/translation.html:88
+#: templates/proofreading.html:178 templates/translation.html:83
 msgid "Кол-во слов"
 msgstr ""
 
-#: templates/proofreading.html:187 templates/translation.html:108
+#: templates/proofreading.html:186 templates/translation.html:103
 msgid "Язык редактирования"
 msgstr ""
 
-#: templates/proofreading.html:195
+#: templates/proofreading.html:194
 msgid "Сертификат об использовании языкового редактирования"
 msgstr ""
 
-#: templates/research_intelligense.html:14 templates/research_strategy.html:40
-msgid "Стратегия исследования"
-msgstr ""
-
 #: templates/research_intelligense.html:15 templates/research_platform.html:18
-#: templates/research_strategy.html:41 templates/research_strategy.html:61
-#: templates/research_strategy.html:83 templates/research_strategy.html:105
 msgid ""
 "Исследовательские платформы - это успешный инструмент для междисциплинарных "
 "исследовательских проектов сотрудничества. Создание исследовательских "
@@ -1084,10 +1218,6 @@ msgstr ""
 
 #: templates/research_intelligense.html:26
 msgid "Б.Махкамов"
-msgstr ""
-
-#: templates/research_platform.html:16
-msgid "Исследовательские платформы"
 msgstr ""
 
 #: templates/research_platform.html:33
@@ -1172,19 +1302,61 @@ msgid ""
 "публикуется Wiley."
 msgstr ""
 
-#: templates/research_strategy.html:59
+#: templates/research_strategy.html:41
+msgid ""
+"Современная наука движется вперёд с огромной скоростью, и исследователи не "
+"могут позволить себе подолгу путаться в цифрах и тестах. Корректно "
+"сформулированная стратегия поможет этого не допустить."
+msgstr ""
+
+#: templates/research_strategy.html:44
+msgid ""
+"Специалисты Editory определят ключевые цели исследования. Мы сформируем "
+"требования к сбору и анализу данных, чтобы подобрать наилучший подход."
+msgstr ""
+
+#: templates/research_strategy.html:62
 msgid "Партнёрство и сотрудничество"
 msgstr ""
 
-#: templates/research_strategy.html:81
+#: templates/research_strategy.html:64
+msgid ""
+"Обмен опытом и своевременная взаимопомощь — надёжные гарантии того, что "
+"исследование будет продуктивным и получит распространение. Контакты с "
+"признанными экспертами в области исследований и доступ к широкому кругу "
+"ресурсов обязательно пригодятся исследователю."
+msgstr ""
+
+#: templates/research_strategy.html:85
 msgid "Финансирование"
 msgstr ""
 
-#: templates/research_strategy.html:103
+#: templates/research_strategy.html:87
+msgid ""
+"Любая работа требует средств, и это один из важнейших вопросов при "
+"планировании исследований. Пусть необходимость поиска инвесторов вас не "
+"отпугивает: при правильном подходе найти необходимые вложения вполне реально."
+msgstr ""
+
+#: templates/research_strategy.html:90
+msgid ""
+"Доверьте Editory поиск и взаимодействие с вероятными инвесторами — и мы "
+"найдём тех, кто оценит ваши исследования по достоинству."
+msgstr ""
+
+#: templates/research_strategy.html:110
 msgid "Управление исследовательским процессом"
 msgstr ""
 
-#: templates/research_strategy.html:122
+#: templates/research_strategy.html:112
+msgid ""
+"Учёный высокого класса не обязан быть профессиональным менеджером, но "
+"правильная организация работы имеет первостепенное значение для её успеха. "
+"Делегируйте управление вашими исследованиями профессионалам и "
+"сосредоточьтесь на том, что у вас получается лучше всего."
+msgstr ""
+
+#: templates/research_strategy.html:129
 msgid ""
 "Для масштабной работы часто бывает недостаточно идей и компетентности. Чтобы "
 "справиться с большим объёмом долгосрочных задач, необходимо организовать "
@@ -1194,15 +1366,15 @@ msgid ""
 "разобраться в тонкостях процесса."
 msgstr ""
 
-#: templates/research_strategy.html:131
+#: templates/research_strategy.html:138
 msgid "Как организовать и провести"
 msgstr ""
 
-#: templates/research_strategy.html:131
+#: templates/research_strategy.html:138
 msgid "научное исследование"
 msgstr ""
 
-#: templates/research_strategy.html:132
+#: templates/research_strategy.html:139
 msgid "После заполнения формы наш консультант свяжется с вами в течение часа"
 msgstr ""
 
@@ -1279,10 +1451,6 @@ msgid ""
 "Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!"
 msgstr ""
 
-#: templates/services.html:40
-msgid "Публикация работ"
-msgstr ""
-
 #: templates/services.html:50
 msgid "Консультация по"
 msgstr ""
@@ -1356,44 +1524,69 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: users/templates/users/dashboard.html:38
+#: users/templates/users/dashboard.html:17
+msgid "оплата проведена успешно"
+msgstr ""
+
+#: users/templates/users/dashboard.html:49
 msgid "Редактировать профиль"
 msgstr ""
 
-#: users/templates/users/dashboard.html:52
+#: users/templates/users/dashboard.html:64
 msgid "Сменить статус"
 msgstr ""
 
-#: users/templates/users/dashboard.html:75
-msgid "Телефон"
-msgstr ""
-
-#: users/templates/users/dashboard.html:104
+#: users/templates/users/dashboard.html:119
 msgid "Сохранить изменения"
 msgstr ""
 
-#: users/templates/users/dashboard.html:113
+#: users/templates/users/dashboard.html:128
 msgid "История"
 msgstr ""
 
-#: users/templates/users/dashboard.html:119
-msgid "Действие"
+#: users/templates/users/dashboard.html:134
+#: users/templates/users/dashboard.html:169
+msgid "Услуга"
 msgstr ""
 
-#: users/templates/users/dashboard.html:120
+#: users/templates/users/dashboard.html:135
+#: users/templates/users/dashboard.html:170
 msgid "Дата"
 msgstr ""
 
-#: users/templates/users/dashboard.html:121
-msgid "способ оплаты"
+#: users/templates/users/dashboard.html:136
+#: users/templates/users/dashboard.html:171
+msgid "Способ оплаты"
 msgstr ""
 
-#: users/templates/users/dashboard.html:122
+#: users/templates/users/dashboard.html:137
 msgid "Статус"
 msgstr ""
 
-#: users/templates/users/dashboard.html:123
+#: users/templates/users/dashboard.html:138
+#: users/templates/users/dashboard.html:159
 msgid "принимать"
+msgstr ""
+
+#: users/templates/users/dashboard.html:152
+#: users/templates/users/dashboard.html:156
+msgid "не оплачен"
+msgstr ""
+
+#: users/templates/users/dashboard.html:154
+msgid "оплачен"
+msgstr ""
+
+#: users/templates/users/dashboard.html:172
+msgid "Статус оплаты"
+msgstr ""
+
+#: users/templates/users/dashboard.html:198
+msgid "Оплатить с помощью Payme"
+msgstr ""
+
+#: users/templates/users/dashboard.html:215
+msgid "Оплачен"
 msgstr ""
 
 #: users/templates/users/login.html:18 users/templates/users/login.html:33

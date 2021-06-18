@@ -54,7 +54,7 @@ DEGREE = (
 class FreeConsultationForm(forms.ModelForm):
     busyness = forms.ChoiceField(choices=BUSYNESS, widget=forms.RadioSelect())
     academic_degree = forms.ChoiceField(choices=DEGREE, widget=forms.Select(attrs={'class':'form-control'}))
-    upload_file = forms.ImageField()
+    upload_file = forms.FileField()
 
     class Meta:
         model = ApplicationForFreeConsultation
@@ -121,7 +121,7 @@ class OrganizeResearchForm(forms.ModelForm):
         raise forms.ValidationError('неправильный формат номера телефона')
 
 class ProofreadingForm(forms.ModelForm):
-    upload_file = forms.ImageField()
+    upload_file = forms.FileField()
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = Proofreading
@@ -139,7 +139,7 @@ class ProofreadingForm(forms.ModelForm):
         }
 
 class PeerReviewForm(forms.ModelForm):
-    upload_file = forms.ImageField()
+    upload_file = forms.FileField()
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = PeerReview

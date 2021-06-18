@@ -8,6 +8,7 @@ from .models import Topic, TopResearches
 from my_requests.forms import ConsultationForm, OrganizeResearchForm
 from .forms import ResumeForm
 from orders.forms import OrderForm
+from users.models import Colleague
 
 
 class HomeView(TemplateView):
@@ -57,8 +58,9 @@ class Articles(TemplateView):
 
 class AboutUs(View):
     def get(self, request):
+        staffs = Colleague.objects.all()
         form = ResumeForm()
-        return render(request, 'about_us.html', {'form':form})
+        return render(request, 'about_us.html', {'form': form, 'staffs': staffs})
     
     def post(self, request):
         form = ResumeForm(request.POST, request.FILES)

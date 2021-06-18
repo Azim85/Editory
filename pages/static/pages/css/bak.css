@@ -10,12 +10,22 @@
     font-size: 1.5vw;
     border: 1px solid red;
 }
-
+.head-word {
+    font-size: 65px;
+    color: #263236;
+    font-weight: bold;
+    line-height: 1
+}
 @media screen and (max-width:992px) {
     .pt-auto{
         display: none;
     }
-
+    .head-word{
+        font-size: 30px !important;
+        color: #263236;
+        font-weight: bold;
+        line-height: 1
+    }
     .content{
         font-size: 18px;
     }

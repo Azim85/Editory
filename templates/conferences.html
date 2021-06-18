@@ -30,8 +30,8 @@
             <div class="col-lg-6 d-flex align-items-center">
                 <div class="">
                     <div class="h1 pb-4 font-65 font-weight-bold">{% trans 'Участие в международных конференциях' %}</div>
-                    <div class="pb-4">{% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами' %}. </div>
-                    <button class="btn btn-primary">{% trans 'Оставить заявку' %}</button>
+                    <div class="pb-4">{% trans 'Хотите привлечь внимание мировой общественности к своим разработкам? Один из самых простых способов это сделать — принять участие в тематической конференции. Там вы сможете собрать самые разносторонние взгляды на вашу задачу и установить контакты, необходимые для дальнейшего успеха' %}. </div>
+                    <a href="#Forma" class="btn btn-primary">{% trans 'Оставить заявку' %}</a>
                 </div>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
@@ -46,7 +46,7 @@
 
 </div>
 {#todo yangilash#}
-<form class="mt-100" method="post" action="{% url 'requests:consultation' %}" enctype="multipart/form-data">
+<form id="Forma" class="mt-100" method="post" action="{% url 'requests:consultation' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container mt-4">
     <div class="container   rounded-20">

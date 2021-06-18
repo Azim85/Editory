@@ -3,57 +3,61 @@
 {% load i18n %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'pages/css/language.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/language.css' %}">
 {% endblock %}
 
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-{% if message.tags == 'success' %}
-<div class="alert alert-success text-center" id="alert_message">
-    {{message}}
-</div>
-{% else %}
-<div class="alert alert-danger text-center" id="alert_message">
-    {{message}}
-</div>
-{% endif %}
-{% endfor %}
-{% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 
     <div class="bg-me" style="background-image: url({% static 'pages/images/RectangleLang.png' %})">
         <div class="container pt-100 pb-100">
             <div class="row padding_me">
-                <div class="col-lg-6">
-                    <div class=" font-65  geometria pb-5  font-weight-bold" >{% trans 'Корректура рукописей' %}</div>
-                    <div style="font-size: 22px">
+                <div class="col-lg-6 mb-5">
+                    <div class=" font-65  geometria pb-5  font-weight-bold">{% trans 'Корректура рукописей' %}</div>
+                    <div class="font-22">
                         {% trans 'Грамотный текст — лицо автора, который работает со сложными темами. Ошибки существенно снизят уровень доверия как с самой работе, так и к вашей компетентности.' %}
                         <br>
                         <br>
                         {% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
 
                     </div>
+                    <div class="mt-5">
+                        <a href="#Forma" class="btn btn-primary  px-5">{% trans 'Заказать консультацию' %} </a>
+                    </div>
                 </div>
                 <div class=" offset-1 col-lg-5">
                     <div class="d-flex align-items-center">
-                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}" width="auto" >
+                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"
+                             width="auto">
                     </div>
                 </div>
-             </div>
+            </div>
 
         </div>
     </div>
     <div class="container">
         <div class="padding_me d-flex ">
             <div class="h2">{% trans 'Количество слов' %}:</div>
-            <input  type="number" id="label" value="" class="h2 border-0 text-center w-100 labell">
+            <input type="number" id="label" value="" class="h2 border-0 text-center w-100 labell">
 
         </div>
         <div class="text-center">
 
         </div>
-            <div>
+        <div>
             <div class="row mb-5">
                 <div class="col-lg-4 my-2">
                     <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
@@ -64,7 +68,8 @@
 
                         </div>
                         <div class="my-4">{% trans 'Вычитка и оформление вашего материала перед заявкой на издание' %}</div>
-                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color">240</label> {% trans 'сум' %}</span>
+                        <span class="h3 main-color my-5"><label id="cost"
+                                                                class="h3  main-color">240</label> {% trans 'сум' %}</span>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
@@ -82,7 +87,9 @@
 
                         </div>
                         <div class="my-4">{% trans 'Тот же уровень качества, но гораздо быстрее' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color">300</label> {% trans 'сум' %}</div>
+                        <div class="h3 main-color my-5"><label id="cost1"
+                                                               class="h3  main-color">300</label> {% trans 'сум' %}
+                        </div>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma1" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
@@ -100,7 +107,9 @@
 
                         </div>
                         <div class="my-4">{% trans 'Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая поддержка' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color">400</label> {% trans 'сум' %}</div>
+                        <div class="h3 main-color my-5"><label id="cost2"
+                                                               class="h3  main-color">400</label> {% trans 'сум' %}
+                        </div>
                         <div class="d-flex justify-content-center">
                             <a id="hideforma2" href="{% if request.user.is_authenticated %}#{% else %}
                             {% url 'users:login' %}{% endif %}"
@@ -113,210 +122,223 @@
     </div>
 
     <div class="container mt-100">
-    <div class="h2">{% trans 'Что входит в тариф' %}</div>
-    <div class="row d-flex align-items-center">
-        <div class="col-5 my-3">{% trans 'Участие кандидата наук из области, соответствующей теме работы' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+        <div class="h2">{% trans 'Что входит в тариф' %}</div>
+        <div class="row d-flex align-items-center">
+            <div class="col-5 my-3">{% trans 'Участие кандидата наук из области, соответствующей теме работы' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">{% trans 'Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">{% trans 'Корректоры — носители языка' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Корректоры — носители языка' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-        <div class="col-5 my-3">{% trans 'Работа в кратчайшие сроки' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-        <div class="col-5 my-3">{% trans 'Бесплатная корректорская помощь в течение 365 дней' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Работа в кратчайшие сроки' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Внимание к логике, структуре и цельности материала' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Бесплатная корректорская помощь в течение 365 дней' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Форматирование согласно требованиям конкретного журнала' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Внимание к логике, структуре и цельности материала' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Редактирование ссылок' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Форматирование согласно требованиям конкретного журнала' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Проверка ссылок на соответствие, полноту и структуру' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Редактирование ссылок' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Сопроводительное письмо для отправки в журнал' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Проверка ссылок на соответствие, полноту и структуру' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Подробный разбор языковых и структурных особенностей материала' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Сопроводительное письмо для отправки в журнал' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Сокращение количества слов (максимум на 20%)' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Подробный разбор языковых и структурных особенностей материала' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Детальная языковая проверка: стилистика, словоупотребление и терминология' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Сокращение количества слов (максимум на 20%)' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Профессиональное оформление рукописи' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Детальная языковая проверка: стилистика, словоупотребление и терминология' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-        <div class="col-5 my-3">{% trans 'Сертификат о языковом редактировании' %}</div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-        <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-5 my-3">{% trans 'Профессиональное оформление рукописи' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-    </div>
-    </div>
 
-    <form class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="container mt-4">
-    <div class=" container   rounded-20">
-        <div>
-
-            <h2 class=" mb-5">{% trans 'Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием проконсультируют наши специалисты' %}!</h2>
+            <div class="col-5 my-3">{% trans 'Сертификат о языковом редактировании' %}</div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
         </div>
-    <div class="tab-content" id="nav-tabContent">
-              <div class=" container " >
-
-                    <div class="row text-secondary">
-                        <div class="col-lg-6">
-
-                            <div class="form-group row my-4">
-                                <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{forms.first_name}}
-                                    <small class="text-danger align-self-start">{{forms.first_name.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{forms.last_name}}
-                                    <small class="text-danger align-self-start">{{forms.last_name.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{forms.phone}}
-                                    <small class="text-danger align-self-start">{{forms.phone.errors}}</small>
-                                </div>
-                            </div>
-
-                             <div class="form-group row my-4">
-
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{forms.email}}
-                                    <small class="text-danger align-self-start">{{forms.email.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    </div>
-
-
-          </div>
-    </div>               <div class="row mb-100">
-                        <div class="col-lg-11 d-flex  justify-content-end">
-                            <div class="mr-auto">
-                                {{forms.is_agree}}<span class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
-                            </div>
-                            <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать консультацию' %}</button>
-                        </div>
-                        </div>
     </div>
-</form>
+
+    <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container mt-4">
+            <div class=" container   rounded-20">
+                <div>
+
+                    <h2 class=" mb-5">{% trans 'Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием проконсультируют наши специалисты' %}!</h2>
+
+                </div>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class=" container ">
+
+                        <div class="row text-secondary">
+                            <div class="col-lg-6">
+
+                                <div class="form-group row my-4">
+                                    <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ forms.first_name }}
+                                        <small class="text-danger align-self-start">{{ forms.first_name.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ forms.last_name }}
+                                        <small class="text-danger align-self-start">{{ forms.last_name.errors }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ forms.phone }}
+                                        <small class="text-danger align-self-start">{{ forms.phone.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ forms.email }}
+                                        <small class="text-danger align-self-start">{{ forms.email.errors }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row  mb-100">
+                <div class="col-lg-11 d-flex container  justify-content-between">
+                    <div class="mr-auto">
+                        {{ forms.is_agree }}<span
+                            class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать консультацию' %}</button>
+                </div>
+            </div>
+        </div>
+    </form>
 
 
     <div id="formacha" style="display: none">
-        <form class="mt-100 mb-100 fixed-top " method="post" action="{% url 'orders:create-order' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="container bg-white shadow rounded-20 p-5">
-    <div class="    ">
-        <div class="d-flex justify-content-between">
+        <form class="mt-100 mb-100 fixed-top " method="post" action="{% url 'orders:create-order' %}"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container bg-white shadow rounded-20 p-5">
+                <div class="    ">
+                    <div class="d-flex justify-content-between">
 
-            <h2 class=" mb-4">Payment form</h2><i class="bi bi-x-circle "></i>
+                        <h2 class=" mb-4">Payment form</h2><i class="bi bi-x-circle "></i>
 
-        </div>
-    <div class="tab-content" id="nav-tabContent">
-              <div class=" container " >
+                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class=" container ">
 
-                    <div class="row text-secondary">
+                            <div class="row text-secondary">
 
-                        <div class="col-lg-6">
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Номер телефона</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.phone}}
-                                    <small class="text-danger align-self-start">{{form.phone.errors}}</small>
+                                <div class="col-lg-6">
+                                    <div class="form-group row my-4">
+                                        <label for="inputPassword" class="col-sm-4 col-form-label">Номер
+                                            телефона</label>
+                                        <div class="col-sm-6 d-flex flex-column">
+                                            {{ form.phone }}
+                                            <small class="text-danger align-self-start">{{ form.phone.errors }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row my-4">
+                                        <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
+                                        <div class="col-sm-6 d-flex flex-column">
+                                            {{ form.email }}
+                                            <small class="text-danger align-self-start">{{ form.email.errors }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-10">
+                                    <div class="form-group d-flex my-4">
+                                        <label for="inputPassword" class="col-form-label">File</label>
+                                        <div class="col-sm-6 d-flex flex-column ml-5">
+                                            {{ form.file }}
+                                            <small class="text-danger align-self-start">{{ form.email.errors }}</small>
+                                        </div>
+                                        <div>
+                                            <h4>Cost: <label id="formcost"></label> сум</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    {{ form.payment_type }}
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-lg-6">
-                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Эл. почта</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.email}}
-                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-10">
-                            <div class="form-group d-flex my-4">
-                                <label for="inputPassword" class="col-form-label">File</label>
-                                <div class="col-sm-6 d-flex flex-column ml-5">
-                                    {{form.file}}
-                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
-                                </div>
-                                <div>
-                                    <h4>Cost: <label id="formcost"></label> сум</h4>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-2">
                             <select name="payment_type" id="">
@@ -325,86 +347,81 @@
                                 <option value="3">Apelsin</option>
                                 <option value="4">Payme</option>
                             </select>
+
+
+
                         </div>
                     </div>
-
                 </div>
-          </div>
-    </div>               <div class="row ">
-                            <input type="hidden" name="product" value="editing" />
-                            <input type="hidden" class="amount" name="amount" value="" />
-                            <!-- <input type="hidden" name="phone" value="{{form.phone}}" />
+                <div class="row ">
+                    <input type="hidden" name="product" value="editing"/>
+                    <input type="hidden" class="amount" name="amount" value=""/>
+                    <!-- <input type="hidden" name="phone" value="{{form.phone}}" />
                             <input type="hidden" name="email" value="{{.email}}" /> -->
-                            <!-- <input type="hidden" name="payment_type" value="4" /> -->
-                            <input type="hidden" name="payment_status" value="0" />
-                            <input type="hidden" name="delivery_status" value="1" />
-                            <div class="col-lg-11 d-flex  justify-content-end">
-                                <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать' %}</button>
-                            </div>
-                        </div>
-                        
+                    <!-- <input type="hidden" name="payment_type" value="4" /> -->
+                    <input type="hidden" name="payment_status" value="0"/>
+                    <input type="hidden" name="delivery_status" value="1"/>
+                    <div class="col-lg-11 d-flex  justify-content-end">
+                        <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать' %}</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
     </div>
-</form>
-</div>
 {% endblock %}
 
 {% block js %}
     <script>
 
-    $("#hideforma").click(function () {
-        $("#formacha").css('display','inline')
-        a = $('#cost').html()
-        $('#formcost').html(a)
-        $('.amount').val(a)
-    })
-     $("#hideforma1").click(function () {
-        $("#formacha").css('display','inline')
-        a = $('#cost1').html()
-        $('#formcost').html(a)
-        $('.amount').val(a)
-    })
-     $("#hideforma2").click(function () {
-        $("#formacha").css('display','inline')
-        a = $('#cost2').html()
-        $('#formcost').html(a)
-        $('.amount').val(a)
-    })
+        $("#hideforma").click(function () {
+            $("#formacha").css('display', 'inline')
+            a = $('#cost').html()
+            $('#formcost').html(a)
+            $('.amount').val(a)
+        })
+        $("#hideforma1").click(function () {
+            $("#formacha").css('display', 'inline')
+            a = $('#cost1').html()
+            $('#formcost').html(a)
+            $('.amount').val(a)
+        })
+        $("#hideforma2").click(function () {
+            $("#formacha").css('display', 'inline')
+            a = $('#cost2').html()
+            $('#formcost').html(a)
+            $('.amount').val(a)
+        })
 
-    $('.bi-x-circle').click(function () {
-        $("#formacha").css('display','none')
-    })
-
-
-
-
-
-
+        $('.bi-x-circle').click(function () {
+            $("#formacha").css('display', 'none')
+        })
 
 
         $('#volume').val(1)
         $('#label').val(1)
 
 
-    $('#volume').on('click ',function (){
-        a = $(this).val()
-        cost = $(this).val() * 240
-        $('#label').val(a)
-        $('#cost').html(cost)
-        $('#cost1').html(cost)
-        $('#cost2').html(cost)
-    })
+        $('#volume').on('click ', function () {
+            a = $(this).val()
+            cost = $(this).val() * 240
+            $('#label').val(a)
+            $('#cost').html(cost)
+            $('#cost1').html(cost)
+            $('#cost2').html(cost)
+        })
 
-    $('#label').change(function (){
-        a = $(this).val()
-        $('#volume').val(a)
-        cost1 = $(this).val() * 240
-        cost2 = $(this).val() * 300
-        cost3 = $(this).val() * 400
-        $('#label').html(a)
-        $('#cost').html(cost1)
-        $('#cost1').html(cost2)
-        $('#cost2').html(cost3)
-    })
+        $('#label').change(function () {
+            a = $(this).val()
+            $('#volume').val(a)
+            cost1 = $(this).val() * 240
+            cost2 = $(this).val() * 300
+            cost3 = $(this).val() * 400
+            $('#label').html(a)
+            $('#cost').html(cost1)
+            $('#cost1').html(cost2)
+            $('#cost2').html(cost3)
+        })
 
     </script>
 

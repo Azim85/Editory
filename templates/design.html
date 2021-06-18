@@ -24,10 +24,10 @@
 
     <div class="container">
         <div class="row py-5">
-            <div class="col-lg-6 d-flex align-items-center">
+            <div class="col-lg-6 mb-5 d-flex align-items-center">
                 <div class="">
                     <div class="font-65 geometria font-weight-bold">{% trans 'Графические материалы для ваших научных работ' %}</div>
-                    <button class="btn btn-primary mt-5">{% trans 'Заказать консультацию' %}</button>
+                    <a href="#Forma" class="btn btn-primary px-5 mt-5">{% trans 'Заказать консультацию' %}</a>
                 </div>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
@@ -77,7 +77,7 @@
 </div>
 </div>
 
-<div class="container mt-100 pb-100">
+<div id="Forma" class="container mt-100 pb-100">
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}">
         {% csrf_token %}
         <div class="row text-secondary">
@@ -147,10 +147,10 @@
                 <input type="hidden" name="theme" value="design">
     
             </div>
-            <div class="form-group row w-100" style="margin-top: 60px">
+            <div class="form-group container row w-100" style="margin-top: 60px">
                 <div class="col-lg-11 d-flex justify-content-between">
                     <div class="mr-auto">
-                        {{form.is_agree}}<span class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        {{form.is_agree}}<span class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
                     </div>
                     <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
                 </div>

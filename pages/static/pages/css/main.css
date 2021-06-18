@@ -9,6 +9,9 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
     display: inline !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /*span.navbar-toggler-icon{*/
 /*    background-color: black !important;*/
 /*}*/
@@ -114,7 +117,7 @@ src: local('Geometria'), url('../fonts/Geometria.woff') format('woff');
 
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6{
-    font-family: Geometria !important;
+    font-family: Geometria ;
 }
 
 .mt-200{
@@ -143,11 +146,11 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .main-font{
-    font-family: 'Exo 2', sans-seserif;
+    font-family: 'Exo 2', sans-seserif !important;
 }
 
 .geometria{
-        font-family: Geometria;
+    font-family: Geometria;
 }
 
 #showChild:hover #navChild{
@@ -258,8 +261,16 @@ h1, h2, h3, h4, h5, h6{
 /*    top: 50px;*/
 /*    box-shadow: 0px 0px 250px 10px #000;*/
 /*}*/
-
+#mobile{
+        display: none;
+    }
 @media  (max-width: 992px){
+    #mobile{
+        display: inline;
+    }
+    #desktop{
+        display: none;
+    }
      .font-65{
     font-size: 40px;
     line-height: 106.3%;
