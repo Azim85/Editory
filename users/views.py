@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from orders.models import OrderModel
 from paymeuz.models import PaymeTransactionModel
 from django.contrib import messages
-from django.http import JsonResponse, response
+from django.http import JsonResponse
 import datetime
 User = get_user_model()
 
@@ -102,10 +102,7 @@ def check_payment(request, pk):
     return render(request, 'users/check.html', {'order':order, 'transaction':transaction,
                                                 'tr_id':transaction._id, 'create_time':create_time, 'perform_time':perform_time})
 
-def check_apelsin(request):
-    
-    data = {"status":"true"}
-    return JsonResponse(data)
+
     
 
 

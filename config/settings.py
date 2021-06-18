@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'orders',
     'my_requests',
     'paymeuz',
+    'apelsinuz',
 ]
 
 MIDDLEWARE = [
