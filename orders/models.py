@@ -60,6 +60,7 @@ class OrderModel(models.Model):
     def get_payme_amount(self):
         return self.amount * 100
 
+
     # def get_books_list(self):
     #     books_str = ', '.join([i.title for i in self.books.all()])
     #     return books_str

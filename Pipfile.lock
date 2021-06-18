@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2822c6d638c8f3661dad0339f67b9454d9cc5d31e9f98dee4fcfd817bfbe0414"
+            "sha256": "c92a5a43ac1aeaa1aa0922da173d328dc2839db1263f951b945f0907a196bab3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -29,6 +29,7 @@
                 "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee",
                 "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"
             ],
+            "index": "pypi",
             "version": "==2021.5.30"
         },
         "chardet": {
@@ -36,7 +37,7 @@
                 "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa",
                 "sha256:f864054d66fd9118f2e67044ac8981a54775ec5b67aed0441892edb553d21da5"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+            "index": "pypi",
             "version": "==4.0.0"
         },
         "django": {
@@ -70,6 +71,13 @@
             "index": "pypi",
             "version": "==1.2.2"
         },
+        "django-modeltranslation": {
+            "hashes": [
+                "sha256:4756dbcb68ed0e5ff09b4ba24d2617066ab5b96ae780786987845d5ae766b50d"
+            ],
+            "index": "pypi",
+            "version": "==0.17.2"
+        },
         "django-resized": {
             "hashes": [
                 "sha256:77490397e94f37744f9199b7f8a5922329662dd7fc21473952ffe0417d36a9da"
@@ -98,7 +106,7 @@
                 "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6",
                 "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "index": "pypi",
             "version": "==2.10"
         },
         "mysqlclient": {
@@ -197,7 +205,7 @@
                 "sha256:753a0374df26658f99d826cfe40394a686d05985786d946fbe4165b5148f5a7c",
                 "sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "index": "pypi",
             "version": "==1.26.5"
         }
     },

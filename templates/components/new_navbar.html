@@ -5,14 +5,8 @@
 {% get_current_language as Lan %}
 
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
-<div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon text-dark border">
-        <div class="border my-1"></div>
-        <div class="border my-1"></div>
-        <div class="border my-1"></div>
-    </span>
-  </button>
+<div class="container d-none d-lg-block">
+
   <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
       <ul class="navbar-nav " >
               <li class="nav-item">
@@ -66,9 +60,63 @@
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
 <div class="container">
   <a class="navbar-brand logo-color font-weight-bold " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;">editory</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <div class="d-lg-none w-100">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link darken small pl-0 mr-lg-2" style="color: #ABBFC8 " href="{% url 'pages:webinars' %}">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="{% url 'pages:contact' %}">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="#">Партнерам</a>
+          </li>
+      
+        </ul>
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link darken" href="#"><i class="bi-search" style="color: #ABBFC8; font-size: 24px;"></i></a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item ml-3 text-center">
+            <a class="nav-link k text-dark  consultation" href="{% url 'users:dashboard' %}"><i class="bi bi-person"
+                style="font-size: 24px;color: #ABBFC8;"></i></a>
+          </li>
+      
+          <li class="nav-item  d-flex align-items-center">
+            <a class="nav-link k text-dark " href="{% url 'users:logout' %}"><i class="bi bi-box-arrow-right"
+                style="font-size: 24px; color: #ABBFC8;"></i></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link darken" href="{% url 'users:login' %}"><img src="{% static 'pages/svg/Group 432.svg' %}"></a>
+          </li>
+          {% endif %}
+      
+          <li class="nav-item">
+            <a class="nav-link darken" data-toggle="collapse" href="#collapseExample" style="color: #ABBFC8; font-size: 20px;"
+              href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %} {{ Lan
+              }}</a>
+      
+            <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border" id="collapseExample"
+              style="z-index: 100; width: 150px; ">
+              <ul class="" style="list-style-type: none">
+                {% for lll in LANGUAGE %}
+                <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li>
+                <hr class="my-1">
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div>
+
   <div class="collapse navbar-collapse" id="navbarNav">
 
       <ul class="navbar-nav ml-auto">
