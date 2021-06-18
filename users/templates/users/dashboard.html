@@ -200,12 +200,13 @@
                         {% elif order.payment_type == 3 %}
                             <form action="https://oplata.kapitalbank.uz" action="GET">
                                 <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
-                                <input type="hidden" name="redirectUrl" value="https://editory.org/auth/dashboard/">
+                                <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                                 <input type="hidden" name="description" value="Payment for OOO Editory">
                                 <input type="hidden" name="amount" value="{{order.amount}}">
                                 <input type="hidden" name="transactionId" value="{{order.id}}">
                                 <button type="submit" class="btn btn-outline-warning">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt=""></button>
                             </form>
+
                             
                         {% endif %}
                     {% elif order.payment_status == 3 or order.payment_status == 0  %}

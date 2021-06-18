@@ -22,6 +22,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('apelsin_pay/', include('apelsinuz.urls')),
 ]
 
 urlpatterns += i18n_patterns(
