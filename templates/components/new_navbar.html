@@ -59,7 +59,7 @@
 </nav>
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
 <div class="container">
-  <a class="navbar-brand logo-color font-weight-bold " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;">editory</a>
+  <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;"><i>editory</i></a>
   <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -119,7 +119,7 @@
 
   <div class="collapse navbar-collapse" id="navbarNav">
 
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li class="nav-item mx-lg-3">
             <a class="nav-link darken" href="{% url 'pages:news' %}">{% trans 'Новости' %}</a>
           </li>
@@ -209,7 +209,7 @@
 
                 </li>
               <li class="nav-item ml-lg-3">
-            <a class="nav-link darken" href="#">Editory Press</a>
+            <a class="nav-link darken" href="#"><img class="img-fluid" src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
           </li>
     </ul>
   </div>

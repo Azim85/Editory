@@ -20,30 +20,38 @@
     {% endfor %}
 {% endif %}
 
-<div class="wrapper" >
-    <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rec-platinum.png' %}')">
-        <div class="container">
-            <div class="row padding_me">
-                <div class="col-lg-6">
-                    <div class="head-word geometria pb-5" >{% trans 'Подача заявки на исследовательский грант' %}</div>
-                    <div style=" color:#263236" class="text-left ">
-                    {% trans 'Чтобы добиться результата, необходимо вложить средства. Специалисты Editory готовы подобрать для вас именно те фонды или организации, которые с наибольшей вероятностью проспонсируют запланированные вами исследовательские мероприятия.' %}
-                    </div>
-                    <div class="form-group row" style="margin-top: 60px">
-                        <div class="col col-md-6">
-                            <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left"
-                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex align-items-center">
-                        <img class="pt-auto ml-auto" src="{% static 'pages/images/researchers.png' %}" style="width: 30vw;">
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image49.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+
+    <div class="container my-auto">
+        <div class="row py-5">
+            <div class="col-lg-9 d-flex align-items-center">
+                <div class="text-white row">
+                    <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold">{% trans 'Подача заявки на исследовательский грант' %}</div>
+                    <div class="col-lg-8 pb-4">{% trans 'Чтобы добиться результата, необходимо вложить средства. Специалисты Editory готовы подобрать для вас именно те фонды или организации, которые с наибольшей вероятностью проспонсируют запланированные вами исследовательские мероприятия.' %}
+                   <div class="col-lg-12 p-0 mt-4">
+                        <a href="#Forma" class="btn px-5 btn-light">{% trans 'Заказать консультацию' %}</a>
                     </div>
                 </div>
             </div>
+{#            <div class="col-lg-6 d-flex justify-content-center">#}
+{#                <img class="img-fluid " src="{% static 'pages/images/3987661 1.png' %}" width="100%">#}
+{#            </div>#}
         </div>
     </div>
+
+
+
+
+</div>
+</div>
+
+
+<div class="wrapper" >
+
 
     <div id="Forma" class="row mx-0 mt-100">
         <div class="container">

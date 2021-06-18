@@ -21,33 +21,42 @@
             {% endif %}
         {% endfor %}
     {% endif %}
-
-    <div class="bg-me" style="background-image: url({% static 'pages/images/RectangleLang.png' %})">
-        <div class="container pt-100 pb-100">
-            <div class="row padding_me">
-                <div class="col-lg-6 mb-5">
-                    <div class=" font-65  geometria pb-5  font-weight-bold">{% trans 'Корректура рукописей' %}</div>
-                    <div class="font-22">
+<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image57.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+    <div class="container my-auto">
+      <div class="row padding_me">
+                <div class="col-lg-12 row mb-5 text-white">
+                    <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold">{% trans 'Корректура рукописей' %}</div>
+                    <div class="col-lg-6 font-22">
                         {% trans 'Грамотный текст — лицо автора, который работает со сложными темами. Ошибки существенно снизят уровень доверия как с самой работе, так и к вашей компетентности.' %}
                         <br>
                         <br>
-                        {% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
-
+                        <i>{% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
+</i>
                     </div>
-                    <div class="mt-5">
-                        <a href="#Forma" class="btn btn-primary  px-5">{% trans 'Заказать консультацию' %} </a>
-                    </div>
-                </div>
-                <div class=" offset-1 col-lg-5">
-                    <div class="d-flex align-items-center">
-                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"
-                             width="auto">
+                    <div class="mt-5 col-lg-12">
+                        <a href="#Forma" class="btn btn-light  px-5">{% trans 'Заказать консультацию' %} </a>
                     </div>
                 </div>
+{#                <div class=" offset-1 col-lg-5">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"#}
+{#                             width="auto">#}
+{#                    </div>#}
+{#                </div>#}
             </div>
 
-        </div>
     </div>
+
+
+
+
+</div>
+</div>
+
     <div class="container">
         <div class="padding_me d-flex ">
             <div class="h2">{% trans 'Количество слов' %}:</div>

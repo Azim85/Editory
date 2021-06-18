@@ -22,27 +22,33 @@
 {% endfor %}
 {% endif %}
 
-<div class="bg-me" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image51.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
 
-    <div class="container pt-100 pb-100">
+    <div class="container my-auto">
         <div class="row py-5">
-            <div class="col-lg-6 d-flex align-items-center">
-                <div class="">
-                    <div class="h1 pb-4 font-65 font-weight-bold">{% trans 'Организация конференции в Узбекистане' %}</div>
-                    <div class="pb-4">{% trans 'Мечтаете собрать экспертов международного уровня именно здесь? Хотите, чтобы у коллег-узбекистанцев появилась возможность участвовать в действительно крупном и полезном мероприятии? Специалисты Editory готовы содействовать' %}!</div>
-                    <a href="#Forma" class="btn btn-primary">{% trans 'Оставить заявку' %}</a>
+            <div class="col-lg-9 d-flex align-items-center">
+                <div class="text-white row">
+                    <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold">{% trans 'Организация конференции в Узбекистане' %}</div>
+                    <div class="col-lg-8 pb-4">{% trans 'Мечтаете собрать экспертов международного уровня именно здесь? Хотите, чтобы у коллег-узбекистанцев появилась возможность участвовать в действительно крупном и полезном мероприятии? Специалисты Editory готовы содействовать' %}!</div>
+                    <div class="col-lg-12">
+                        <a href="#Forma" class="btn px-5 btn-light">{% trans 'Оставить заявку' %}</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center">
-                <img class="img-fluid " src="{% static 'pages/images/3987661 1.png' %}" width="100%">
-            </div>
+{#            <div class="col-lg-6 d-flex justify-content-center">#}
+{#                <img class="img-fluid " src="{% static 'pages/images/3987661 1.png' %}" width="100%">#}
+{#            </div>#}
         </div>
     </div>
 
 
 
 
-
+</div>
 </div>
 
 <form id="Forma" class="mt-100" method="post" action="{% url 'requests:creat-conferences' %}" enctype="multipart/form-data">
