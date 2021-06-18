@@ -44,14 +44,14 @@
 }
 
 a.asd{
-    color: black !important;
+    color: white !important;
 }
 
 
 a.active{
     background-color: transparent !important;
-    color:#2A819E !important;
-    border-bottom: #2A819E solid 2px !important;
+    color:#CE935E !important;
+    border-bottom: #CE935E solid 2px !important;
 }
 
 /*.main-font{*/
@@ -67,4 +67,11 @@ a.active{
 }
 .fix-img{
   height: 400px !important;
+}
+
+.section_2{
+    background: #CE935E;
+    padding: 70px 70px;
+    border-radius: 20px;
+    line-height: 40px;
 }
