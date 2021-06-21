@@ -32,6 +32,7 @@ urlpatterns += i18n_patterns(
     path('request_to/', include('my_requests.urls')),
     path('paycom/', include('paymeuz.urls')),
     path('orders/', include('orders.urls')),
+    path('editorypress/', include('editory_press.urls')),
 )
 
 if settings.DEBUG:

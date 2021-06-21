@@ -36,7 +36,7 @@ div.slick-track{
 }
 
 .rounded-25{
-    border-radius: 25px;
+    border-radius: 25px !important;
 }
 
 @media screen and (max-width: 568px){

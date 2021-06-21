@@ -59,7 +59,8 @@
 </nav>
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
 <div class="container">
-  <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;"><i>editory</i></a>
+  <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;"><img
+          src="{% static 'pages/svg/Logo.svg' %}" alt="logo"></a>
   <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -209,7 +210,7 @@
 
                 </li>
               <li class="nav-item ml-lg-3">
-            <a class="nav-link darken" href="#"><img class="img-fluid" src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
+            <a class="nav-link darken" href="{% url 'editorypress:main' %}"><img class="img-fluid" src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
           </li>
     </ul>
   </div>
