@@ -9,135 +9,160 @@
 {% block content %}
 
 
-{% if messages %}
-<div id="succes" style="opacity: 0;">success</div>
-{% for message in messages %}
-<div class="alert alert-{{message.tags}} text-center" id="alert_message">
-    {{message}}
-</div>
-{% endfor %}
-{% endif %}
+    {% if messages %}
+        <div id="succes" style="opacity: 0;">success</div>
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} text-center" id="alert_message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
-<div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 131.png' %})">
+    <div class="bg-me-home h-600"
+         style="background-image: url({% static 'pages/images/image41.png' %});
+                 background-size: cover;">
+        <div class="h-100" style="
+background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+            <div class="container pt-5">
+                <nav>
+                    <div class="nav nav-tabs border-0 " id="nav-tab" role="tablist">
+                        <a class="nav-link active pl-0 text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                           role="tab" aria-controls="nav-home" aria-selected="true">Стратегия исследования</a>
+                        <a class="nav-link text-white" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                           role="tab" aria-controls="nav-profile" aria-selected="false">Партнерство и сотрудничество</a>
+                        <a class="nav-link text-white" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                           role="tab" aria-controls="nav-contact" aria-selected="false">Финансирование</a>
+                        <a class="nav-link text-white" id="nav-fouth-tab" data-toggle="tab" href="#nav-fourth"
+                           role="tab" aria-controls="nav-fourth" aria-selected="false">Управление исследованиями</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-    <div class="container pt-5">
-        <nav>
-              <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                    <a class="nav-link active pl-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Стратегия исследования</a>
-                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Партнерство и сотрудничество</a>
-                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Финансирование</a>
-                    <a class="nav-link" id="nav-fouth-tab" data-toggle="tab" href="#nav-fourth" role="tab" aria-controls="nav-fourth" aria-selected="false">Управление исследованиями</a>
-              </div>
-        </nav>
-    </div>
-    <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="">
-                                <div class="h1 pb-4" style=" line-height:106.3%; font-weight:600">{% trans 'Стратегия исследования' %}</div>
-                                <div class="pb-4 font-22">{% trans 'Современная наука движется вперёд с огромной скоростью, и исследователи не могут позволить себе подолгу путаться в цифрах и тестах. Корректно сформулированная стратегия поможет этого не допустить.' %}
-                                            <br>
-                                            <br>
-                                    {% trans 'Специалисты Editory определят ключевые цели исследования. Мы сформируем требования к сбору и анализу данных, чтобы подобрать наилучший подход.' %}
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 geometria pb-4"
+                                         style=" line-height:106.3%; font-weight:600">{% trans 'Стратегия исследования' %}</div>
+                                    <div class="pb-4 font-22">{% trans 'Современная наука движется вперёд с огромной скоростью, и исследователи не могут позволить себе подолгу путаться в цифрах и тестах. Корректно сформулированная стратегия поможет этого не допустить.' %}
+                                    </div>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
-                                <a href="#Forma" class="btn btn-primary px-5 py-2">Заказать консультацию</a>
                             </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center">
-                            <img class="img-fluid fix-img" src="{% static 'pages/images/strategy yell 1.png' %}">
-                        </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/strategy yell 1.png' %}">#}
+                            {#                        </div>#}
                         </div>
                     </div>
-              </div>
+                </div>
 
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="">
-                                <div class="h1 pb-4" style="font-weight: 600; line-height:106.3% ">{% trans 'Партнёрство и сотрудничество' %}</div>
-                                <div class="pb-4 font-22">
-                                    {% trans 'Обмен опытом и своевременная взаимопомощь — надёжные гарантии того, что исследование будет продуктивным и получит распространение. Контакты с признанными экспертами в области исследований и доступ к широкому кругу ресурсов обязательно пригодятся исследователю.' %}
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 geometria pb-4"
+                                         style="font-weight: 600; line-height:106.3% ">{% trans 'Партнёрство и сотрудничество' %}</div>
+                                    <div class="pb-4 font-22">
+                                        {% trans 'Обмен опытом и своевременная взаимопомощь — надёжные гарантии того, что исследование будет продуктивным и получит распространение. Контакты с признанными экспертами в области исследований и доступ к широкому кругу ресурсов обязательно пригодятся исследователю.' %}
+                                    </div>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
-                                 <a href="#Forma" class="btn btn-primary px-5 py-2">Заказать консультацию</a>
                             </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center">
-                            <img class="img-fluid fix-img" src="{% static 'pages/images/collab 1.png' %}">
-                        </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/collab 1.png' %}">#}
+                            {#                        </div>#}
                         </div>
                     </div>
-              </div>
+                </div>
 
 
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
-
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="">
-                                <div class="h1 pb-4" style=" font-weight:600; line-height:106.3%">{% trans 'Финансирование' %}</div>
-                                <div class="pb-4 font-22">
-                                    {% trans 'Любая работа требует средств, и это один из важнейших вопросов при планировании исследований. Пусть необходимость поиска инвесторов вас не отпугивает: при правильном подходе найти необходимые вложения вполне реально.' %}
-                                    <br>
-                                    <br>
-                                    {% trans 'Доверьте Editory поиск и взаимодействие с вероятными инвесторами — и мы найдём тех, кто оценит ваши исследования по достоинству.' %}
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 geometria pb-4"
+                                         style=" font-weight:600; line-height:106.3%">{% trans 'Финансирование' %}</div>
+                                    <div class="pb-4 font-22">
+                                        {% trans 'Любая работа требует средств, и это один из важнейших вопросов при планировании исследований. Пусть необходимость поиска инвесторов вас не отпугивает: при правильном подходе найти необходимые вложения вполне реально.' %}
+                                        <br>
+                                        <br>
+                                        {% trans 'Доверьте Editory поиск и взаимодействие с вероятными инвесторами — и мы найдём тех, кто оценит ваши исследования по достоинству.' %}
+                                    </div>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
-                                 <a href="#Forma" class="btn btn-primary px-5 py-2">Заказать консультацию</a>
                             </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center">
-                            <img  class="img-fluid fix-img" src="{% static 'pages/images/funding 1.png' %}">
-                        </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img  class="img-fluid fix-img" src="{% static 'pages/images/funding 1.png' %}">#}
+                            {#                        </div>#}
                         </div>
                     </div>
-              </div>
+                </div>
 
 
+                <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
 
-          <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
-
-              <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="">
-                                <div class=" h1 pb-4" style=" font-weight:600; line-height:106.3%">{% trans 'Управление исследовательским процессом' %}</div>
-                                <div class="pb-4 font-22">
-                                    {% trans 'Учёный высокого класса не обязан быть профессиональным менеджером, но правильная организация работы имеет первостепенное значение для её успеха. Делегируйте управление вашими исследованиями профессионалам и сосредоточьтесь на том, что у вас получается лучше всего.' %}
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 geometria pb-4"
+                                         style=" font-weight:600; line-height:106.3%">{% trans 'Управление исследовательским процессом' %}</div>
+                                    <div class="pb-4 font-22">
+                                        {% trans 'Учёный высокого класса не обязан быть профессиональным менеджером, но правильная организация работы имеет первостепенное значение для её успеха. Делегируйте управление вашими исследованиями профессионалам и сосредоточьтесь на том, что у вас получается лучше всего.' %}
+                                    </div>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
-                                 <a href="#Forma" class="btn btn-primary px-5 py-2">Заказать консультацию</a>
                             </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center">
-                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 298.png' %}">
-                        </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 298.png' %}">#}
+                            {#                        </div>#}
                         </div>
                     </div>
-              </div>
+                </div>
 
-          </div>
+            </div>
+        </div>
     </div>
 
     <div class="container">
-    <div class="row mt-100 mb-100">
-        <div class="col-lg-9 font-22">{% trans 'Для масштабной работы часто бывает недостаточно идей и компетентности. Чтобы справиться с большим объёмом долгосрочных задач, необходимо организовать правильный подход с самого начала — тогда исследование будет завершено, получит надёжную основу и возможности для развития в будущем. У вас есть идеи, которые вы мечтаете реализовать? Специалисты Editory помогут разобраться в тонкостях процесса.' %}
-</div>
-    </div>
+        <div class="row mt-100 mb-100">
+            <div class="col-lg-9 font-22 center-text">
+                {% trans 'Специалисты Editory определят ключевые цели исследования. Мы сформируем требования к сбору и анализу данных, чтобы подобрать наилучший подход.' %}
+                <br><br><br><b>
+                {% trans 'Количественная стратегия' %}
+                </b> — {% trans 'наиболее объективистский вариант, который связан с тестированием и проверкой гипотез при помощи дедуктивного метода и работой с количественными базами. Эта стратегия опирается, в первую очередь, на статистический анализ.' %}
+                <br><br><b>{% trans 'Качественная стратегия' %}</b>
+                {% trans 'относится к конструктивистскому типу. Она опирается на индуктивный метод разработки теорий, исключая позитивистский подход. Эта стратегия исследований выявляет совокупности характеристик предмета изучения, описывая как сам предмет, так и его место в классе явлений того же типа.' %}
+                <br><br>
+                <b>{% trans 'Формализованная стратегия' %}</b>
+                {% trans 'фокусируется на логических связях и особенностях выражения исследуемой теории. Она также опирается на дедуктивный метод анализа, рассматривая предмет изучения как совокупность постулатов и взаимосвязей, формализуя их при помощи символических обозначений.' %}
+                <br><br>
+                <b>{% trans 'Содержательная стратегия' %}</b>
+                {% trans 'сконцентрирована на смысле и содержании изучаемого явления. Она выявляет отдельные составляющие теории и их значение в общей картине, а также их свойства и характеристики устанавливая взаимосвязи между ними внутри самой гипотезы.' %}<br><br><b>{% trans 'Историческая стратегия' %}</b>
+                {% trans 'изучает корни и истоки явления, выявляя все возможные факторы влияния на его развитие. Качественно проведённое исследование этого типа позволяет получить материал для дальнейших прогнозов относительно гипотезы, основываясь на уже реализованных моделях. Сущностная стратегия изучает самую основу явления, сосредотачиваясь на глубинных аспектах теории и их влиянии на общую картину.' %}
+                <br><br><br>{% trans 'Выбирайте то, что вам подходит — и обращайтесь к нам за деталями!' %}")
+      </div>
+            <div class="col-lg-9 font-22 center-text-second" style="display: none">
+                {% include 'test.html' %}
+            </div>
         </div>
+    </div>
 
 
 
     <div class="container mt-5 mb-200">
-    <div id="Forma" class="">
-                <div class="h1">{% trans 'Как организовать и провести' %} <br>{% trans 'научное исследование' %}?</div>
-                {% trans 'После заполнения формы наш консультант свяжется с вами в течение часа' %}
-            </div>
+        <div id="Forma" class="">
+            <div class="h1">{% trans 'Как организовать и провести' %} <br>{% trans 'научное исследование' %}?</div>
+            {% trans 'После заполнения формы наш консультант свяжется с вами в течение часа' %}
+        </div>
         <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}">
             {% csrf_token %}
             <div class="row text-secondary">
@@ -146,40 +171,41 @@
                     <div class="form-group row">
                         <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{forms.first_name}}
-                            <small class="text-danger">{{forms.first_name.errors}}</small>
+                            {{ forms.first_name }}
+                            <small class="text-danger">{{ forms.first_name.errors }}</small>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                         <div class="col-sm-6">
-                            {{forms.last_name}}
+                            {{ forms.last_name }}
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{forms.phone}}
-                            <small class="text-danger">{{forms.phone.errors}}</small>
+                            {{ forms.phone }}
+                            <small class="text-danger">{{ forms.phone.errors }}</small>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">State</label>
                         <div class="col-sm-6 d-flex flex-column">
-                                {{forms.select_topic}}
-                            <small class="text-danger">{{forms.select_topic.errors}}</small>
+                            {{ forms.select_topic }}
+                            <small class="text-danger">{{ forms.select_topic.errors }}</small>
                         </div>
-                    </div> 
+                    </div>
 
                     <div class="form-group row mt-5">
                         <div class="col-sm-6 d-flex flex-column">
                             <div class="d-flex align-items-center">
-                                {{forms.is_agree}} <small class="ml-4  chekbok" style="white-space: nowrap;">{% trans 'Согласие с политикой конфиденциальности' %}</small>
-                            </div> 
-                            <small class="text-danger">{{forms.is_agree.errors}}</small>
+                                {{ forms.is_agree }} <small class="ml-4  chekbok"
+                                                            style="white-space: nowrap;">{% trans 'Согласие с политикой конфиденциальности' %}</small>
+                            </div>
+                            <small class="text-danger">{{ forms.is_agree.errors }}</small>
                         </div>
                     </div>
 
@@ -189,31 +215,34 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{forms.organization}}
-                            <small class="text-danger">{{forms.organization.errors}}</small>
+                            {{ forms.organization }}
+                            <small class="text-danger">{{ forms.organization.errors }}</small>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
                         <div class="col-sm-6 d-flex flex-column">
                             <!-- <input type="text" name="phone" class="form-control"> -->
-                            {{forms.org_contacts}}
-                            <small class="text-danger">{{forms.org_contacts.errors}}</small>
+                            {{ forms.org_contacts }}
+                            <small class="text-danger">{{ forms.org_contacts.errors }}</small>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
                         <div class="col-sm-6 d-flex flex-column">
-                            {{forms.org_address}}
-                            <small class="text-danger">{{forms.org_address.errors}}</small>
+                            {{ forms.org_address }}
+                            <small class="text-danger">{{ forms.org_address.errors }}</small>
                         </div>
                     </div>
 
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="offset-4 col-sm-6">
-                            <button type="submit" class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
+                            <button type="submit"
+                                    class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
 
                         </div>
                     </div>
@@ -227,12 +256,12 @@
     </div>
 
 
-</div>
+    </div>
 
 
 
     {% if validated %}
-    <div id="flag" style="opacity: 1;">flag</div>
+        <div id="flag" style="opacity: 1;">flag</div>
     {% endif %}
 
 {% endblock %}
@@ -241,27 +270,41 @@
 
     <script>
 
-    
+        $('#nav-home-tab').on('click', function () {
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image41.png' %})')
+
+            $('.center-text').html("{% trans 'Специалисты Editory определят ключевые цели исследования. Мы сформируем требования к сбору и анализу данных, чтобы подобрать наилучший подход.' %}<br><br><br><b>{% trans 'Количественная стратегия' %}</b> — {% trans 'наиболее объективистский вариант, который связан с тестированием и проверкой гипотез при помощи дедуктивного метода и работой с количественными базами. Эта стратегия опирается, в первую очередь, на статистический анализ.' %}<br><br><b>{% trans 'Качественная стратегия' %}</b>  {% trans 'относится к конструктивистскому типу. Она опирается на индуктивный метод разработки теорий, исключая позитивистский подход. Эта стратегия исследований выявляет совокупности характеристик предмета изучения, описывая как сам предмет, так и его место в классе явлений того же типа.' %}<br><br><b>{% trans 'Формализованная стратегия' %}</b>  {% trans 'фокусируется на логических связях и особенностях выражения исследуемой теории. Она также опирается на дедуктивный метод анализа, рассматривая предмет изучения как совокупность постулатов и взаимосвязей, формализуя их при помощи символических обозначений.' %}<br><br><b>{% trans 'Содержательная стратегия' %}</b>   {% trans 'сконцентрирована на смысле и содержании изучаемого явления. Она выявляет отдельные составляющие теории и их значение в общей картине, а также их свойства и характеристики устанавливая взаимосвязи между ними внутри самой гипотезы.' %}<br><br><b>{% trans 'Историческая стратегия' %}</b>  {% trans 'изучает корни и истоки явления, выявляя все возможные факторы влияния на его развитие. Качественно проведённое исследование этого типа позволяет получить материал для дальнейших прогнозов относительно гипотезы, основываясь на уже реализованных моделях. Сущностная стратегия изучает самую основу явления, сосредотачиваясь на глубинных аспектах теории и их влиянии на общую картину.' %}<br><br><br>{% trans 'Выбирайте то, что вам подходит — и обращайтесь к нам за деталями!' %}")
+        })
+        $('#nav-profile-tab').on('click', function () {
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image46.png' %})')
+            $('.center-text').html("{% trans 'Editory готовы помочь вам с подбором институтов и специалистов, которые принесут пользу исследованиям и расширят ваши возможности.' %} <br> <br>{% trans 'Самостоятельный поиск партнёров — дело непростое. Вы можете зарегистрироваться на Publon — ресурсе, база которого включает в себя миллионы исследователей со всего мира — и искать учёных по их рейтингу и профилям, но переписка с каждым отнимет очень много времени. Чтобы не тратить драгоценную энергию на долгие переговоры, поручите их Editory! Наш опыт и налаженные контакты помогут привлечь к вашим разработкам наиболее подходящих учёных с соответствующим уровнем знаний и репутацией.' %} <br>{% trans 'Налаживайте связи с Editory! Оставляйте заявку — и готовьтесь работать в коллаборации.' %}")
+        })
+        $('#nav-contact-tab').on('click', function () {
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image45.png' %})')
+            $('.center-text').css('display', 'none')
+            $('.center-text-second').css('display', 'inline')
+
+
+        })
+        $('#nav-fouth-tab').on('click', function () {
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image38.png' %})')
+            $('.center-text').html("{% trans 'Опыт Editory позволяет нам решать эту задачу быстрее и эффективнее, чем учёному, на плечах которого лежит множество более важных забот. ' %} <br><br>{% trans 'Основной нюанс управления исследованиями — это планирование необходимых мероприятий, постановка сроков и чёткий контроль за их соблюдением. Кроме того, в любом исследовании ставится вопрос о планировании бюджета, что тоже относится к менеджменту. Составление календарных планов, смет, поиск поставщиков и управление исполнителями — то, на чём вряд ли хочется сосредотачиваться человеку, полностью погруженному в процесс познания. Занимайтесь главным, пока Editory:' %} <br><br><br> <ul class='ml-4'> <li>{% trans 'подбирает варианты методов для решения текущих задач' %};</li> <li>{% trans 'определяет сроки и стоимость работ' %};</li> <li>{% trans 'находит необходимые для исследования ресурсы' %};</li> <li>{% trans 'контролирует сотрудников' %};</li><li>{% trans 'определяет порядок взаимодействия с внешней средой' %};</li> </ul>")
+        })
+
 
         let validated = document.getElementById('flag')
-            let alert_message = document.getElementById('alert_message')
+        let alert_message = document.getElementById('alert_message')
 
 
-            if (alert_message) {
-                alert_message.classList.add('alert_message')
-            }
+        if (alert_message) {
+            alert_message.classList.add('alert_message')
+        }
 
 
-            if (validated) {
-                $('div.forma').css('display', 'inline')
-            }
-            {##}
-            {#$('#commit').click(function (){#}
-            {#    $('div.forma').css('display','inline')#}
-            {#});#}
-            {#$('#hideform').click(function (){#}
-            {#    $('div.forma').css('display','none')#}
-            {#});#}
+        if (validated) {
+            $('div.forma').css('display', 'inline')
+        }
+
     </script>
 
 {% endblock %}

@@ -20,46 +20,57 @@
 {% endif %}
 {% endfor %}
 {% endif %}
-
-<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
-    <div class=" pano mx-0 border" style="background-image: url('{% static 'pages/images/bg-gr.png' %}');" >
-        <div class="container">
-            <div class="row padding_me">
-                <div class="col-lg-6">
-                    <div class=" head-word geometria pb-5"
-                        style="font-size: 50px; color:#263236; font-weight:bold; line-height:1">{% trans 'Переводы статей' %}</div>
-                    <div style=" color:#263236" class="text-left ">
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image25.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+    <div class="container my-auto">
+      <div class="row padding_me">
+                <div class="col-lg-12 row mb-5 text-white">
+                    <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold">{% trans 'Переводы статей' %}</div>
+                    <div class="col-lg-7 font-22">
                         {% trans 'Качественный перевод откроет материалу дорогу к признанию международным сообществом, а его автору — путь к дальнейшему росту в науке. Доверьте свою работу тем, кто действительно владеет языком и соответствующей тематикой — тогда на статью будут ссылаться эксперты с мировыми именами, и ваша репутация будет неуклонно расти.' %}
+                  <br>
+                        <br>
+                        <i>  {% trans 'Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод.' %}
+                   </i>
                     </div>
-                    <div style=" color:#263236" class="text-left mt-4">
-                        {% trans 'Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод.' %}
-                    </div>
-                    <div class="form-group row" style="margin-top: 60px">
-                        <div class="col col-md-6">
-                            <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left"
-                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</a>
-                        </div>
+                    <div class="mt-3 col-lg-12">
+                        <a href="#Forma" class="btn btn-light  px-5">{% trans 'Отправить работу' %} </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="d-flex align-items-center">
-                        <img class="pt-auto img-fluid" src="{% static 'pages/images/open-book.png' %}" >
-                    </div>
+{#                <div class=" offset-1 col-lg-5">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"#}
+{#                             width="auto">#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+
+    </div>
+
+
+
+
+</div>
+</div>
+
+<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+     <div class="bg-me"
+             style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+            <div class="container pb-100 pt-100 text-white ">
+                <div class="font-22 section_2">
+                    <ul>
+                        <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
+                        <li>{% trans 'В документе должен быть только один материал' %};</li>
+                        <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
+                        <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
+                        <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div style="background-image: url('{% static 'pages/images/bottom-blue.png' %}'); " class="bot-blue">
-        <div class="container ml-2 pb-100 pt-200 text-white">
-            <ul>
-                <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
-                <li>{% trans 'В документе должен быть только один материал' %};</li>
-                <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
-                <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
-                <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами.' %}</li>
-            </ul>
-        </div>
-        </div>
-    </div>
     
 
     <div id="Forma" class="row mx-0 mt-100">

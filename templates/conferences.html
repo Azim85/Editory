@@ -23,27 +23,31 @@
     {% endfor %}
 {% endif %}
 
-<div class="bg-me" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
-
-    <div class="container pt-100 pb-100">
+<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image50.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+    <div class="container my-auto">
         <div class="row py-5">
             <div class="col-lg-6 d-flex align-items-center">
-                <div class="">
+                <div class="text-white">
                     <div class="h1 pb-4 font-65 font-weight-bold">{% trans 'Участие в международных конференциях' %}</div>
                     <div class="pb-4">{% trans 'Хотите привлечь внимание мировой общественности к своим разработкам? Один из самых простых способов это сделать — принять участие в тематической конференции. Там вы сможете собрать самые разносторонние взгляды на вашу задачу и установить контакты, необходимые для дальнейшего успеха' %}. </div>
-                    <a href="#Forma" class="btn btn-primary">{% trans 'Оставить заявку' %}</a>
+                    <a href="#Forma" class="btn btn-light">{% trans 'Оставить заявку' %}</a>
                 </div>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center">
-                <img class="img-fluid"  src="{% static 'pages/images/conf 1.png' %}" width="100%">
-            </div>
+{#            <div class="col-lg-6 d-flex justify-content-center">#}
+{#                <img class="img-fluid"  src="{% static 'pages/images/conf 1.png' %}" width="100%">#}
+{#            </div>#}
         </div>
+
     </div>
 
 
 
 
-
+</div>
 </div>
 {#todo yangilash#}
 <form id="Forma" class="mt-100" method="post" action="{% url 'requests:consultation' %}" enctype="multipart/form-data">

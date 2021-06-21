@@ -24,31 +24,45 @@
 
 {% endfor %}
 {% endif %}
-
-<div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
-    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">
-    <div class="container">
-         <div class="row padding_me">
-            <div class="col-lg-7">
-                <div class=" head-word geometria pb-5 text-white" ><span class="text-dark">Editory:</span> {% trans 'секреты качества' %}</div>
-                <div style="font-size: 22px">
+<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image64.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+    <div class="container my-auto">
+       <div class="row padding_me">
+            <div class="col-lg-7 text-white">
+                <div class=" head-word geometria pb-5 text-white" ><span class="">Editory:</span> {% trans 'секреты качества' %}</div>
+                <div class="font-22">
                     {% trans 'Долгий путь в мире науки невозможен без тщательного подбора кадров и грамотной организации процессов компании. Все наши специалисты обладают высокой экспертностью и по-настоящему живут своей профессией.' %}
 
                 </div>
-                <a href="#Forma" class="btn btn-primary px-5 my-5"> {% trans 'Задать вопрос' %}</a>
+                <a href="#Forma" class="btn btn-light px-5 my-5"> {% trans 'Задать вопрос' %}</a>
             </div>
-            <div class="col-lg-5">
-                <div class="d-flex align-items-center">
-                    <img class="pt-auto img-fluid" src="{% static 'pages/images/about us 1.png' %}" width="100%" >
-                </div>
-            </div>
+{#            <div class="col-lg-5">#}
+{#                <div class="d-flex align-items-center">#}
+{#                    <img class="pt-auto img-fluid" src="{% static 'pages/images/about us 1.png' %}" width="100%" >#}
+{#                </div>#}
+{#            </div>#}
          </div>
+
     </div>
-    </div>
 
 
 
-    <div class=" container mt-100">
+
+</div>
+</div>
+<div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
+{#    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">#}
+{#    <div class="container">#}
+{##}
+{#    </div>#}
+{#    </div>#}
+
+
+
+    <div class=" container pt-100">
             <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
         <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">

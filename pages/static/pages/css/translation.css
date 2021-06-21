@@ -33,3 +33,10 @@
   border-radius: 15px;
   /*background-color: red;*/
 }
+
+.section_2{
+    background: #ABBFC8;
+    padding: 70px 70px;
+    border-radius: 20px;
+    line-height: 40px;
+}

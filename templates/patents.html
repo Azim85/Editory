@@ -21,32 +21,39 @@
         {% endif %}
     {% endfor %}
 {% endif %}
-<div class="wrapper">
-    <div class="row pano mx-0" style="background-image: url('{% static 'pages/images/rectangle_grey.png' %}')">
-        <div class="container">
-            <div class="row padding_me">
+     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 48.png' %});
+        background-size: cover;">
+    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+    <div class="container h-100 d-flex align-items-center">
+        <div class="row padding_me">
                 <div class="col-lg-6">
                     <div class=" head-word geometria pb-5"
                         style="font-size: 50px; color:white; font-weight:bold; line-height:1">{% trans 'Как получить патент?' %}</div>
-                    <div style=" color:white" class="text-left ">
-                        {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным.' %}
+                    <div style=" color:white" class="text-left font-22">
+                        {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным. ' %}
                     </div>
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
-                            <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left"
-                                style="background:#2A819E">{% trans 'Заказать консультацию' %}</a>
+                            <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
+                               >{% trans 'Заказать консультацию' %}</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="d-flex align-items-center">
-                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"
-                            style="width: 30vw;">
-                    </div>
-                </div>
+{#                <div class="col-lg-6">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"#}
+{#                            style="width: 30vw;">#}
+{#                    </div>#}
+{#                </div>#}
             </div>
-        </div>
+
     </div>
+    </div>
+
+<div class="wrapper">
+
 
     <div id="Forma" class="row mx-0 mt-100">
         <div class="container">
