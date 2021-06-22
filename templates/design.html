@@ -19,24 +19,40 @@
 {% endif %}
 {% endfor %}
 {% endif %}
-
-<div class="bg-me">
-
-    <div class="container">
-        <div class="row py-5">
-            <div class="col-lg-6 mb-5 d-flex align-items-center">
-                <div class="">
-                    <div class="font-65 geometria font-weight-bold">{% trans 'Графические материалы для ваших научных работ' %}</div>
-                    <a href="#Forma" class="btn btn-primary px-5 mt-5">{% trans 'Заказать консультацию' %}</a>
+<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 58.png' %});
+            background-size: cover;">
+        <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+mix-blend-mode: luminosity;
+">
+            <div class="container h-100 d-flex align-items-center">
+                <div class="row padding_me">
+                    <div class="col-lg-6">
+                        <div class=" font-65 head-word geometria pb-5"
+                             style=" color:white; font-weight:bold; line-height:1">{% trans 'Графические материалы для ваших научных работ' %}</div>
+{#                        <div style=" color:white" class="text-left font-22">#}
+{#                            {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным. ' %}#}
+{#                        </div>#}
+                        <div class="form-group row" style="margin-top: 60px">
+                            <div class="col col-md-6">
+                                <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
+                                >{% trans 'Заказать консультацию' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {#                <div class="col-lg-6">#}
+                    {#                    <div class="d-flex align-items-center">#}
+                    {#                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"#}
+                    {#                            style="width: 30vw;">#}
+                    {#                    </div>#}
+                    {#                </div>#}
                 </div>
-            </div>
-            <div class="col-lg-6 d-flex justify-content-center">
-                <img class="img-fluid"  src="{% static 'pages/images/illustration 1.png' %}">
+
             </div>
         </div>
     </div>
+<div class="bg-me">
 
-   <div class="container mt-200 mb-200">
+   <div class="container pt-200 mb-200">
        <div class="row">
            <div class="offset-lg-1 col-lg-9 font-22">{% trans 'Готовитесь к публикации? Убедитесь, что картинки, инфографики и иллюстрации в статье соответствуют требованиям изданий. Журналы с высоким рейтингом могут отклонить работу в том случае, если визуальная её часть не будет представлена достаточно наглядно и в высоком разрешении. Поручите работу над визуализацией профессионалам и будьте уверены в результате!' %}
 </div>
@@ -46,38 +62,57 @@
 
 
 <div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
-    <div class="row container w-100 pb-5">
-        <div class="col-md-4 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">
-                    <img src="{% static 'pages/svg/relations 1.svg' %}" alt="" style="width: 66px; height:66px">
-                    <h4>{% trans 'Научная иллюстрация' %}</h4>
-                    <p>{% trans 'Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно соответствовать теме вашей работы' %}</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <a href="#" class="text-dark text-decoration-none">
-                    <img src="{% static 'pages/images/pie-chart 1.png' %}" alt="" style="width: 66px; height:66px">
-                    <h4>{% trans 'Инфографика' %}</h4>
-                    <p>{% trans 'Представьте численные данные в наиболее простом и понятном виде, оформив их в виде инфографики. Editory разработает формат, который лучше всего подойдёт для вашего материала' %}</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <img src="{% static 'pages/images/visualization 1.png' %}" alt="" style="width: 66px; height:66px">
-                <h4>{% trans 'Дизайн для издателей' %}</h4>
-                <p>{% trans 'Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — всё, чтобы читатели вашего издания оставались довольны не только его содержанием, но и внешним видом.' %}</p>
-            </div>
-        </div>
-
+    <div class="col-lg-4 pb-100"><img src="{% static 'pages/images/tovuq.png' %}"></div>
+    <div class="offset-lg-1 col-lg-6">
+        <div class="h3 mt-3">Научная иллюстрация</div>
+        <div class="font-22 mt-3">Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций,
+            которые будут точно соответствовать теме вашей работы</div>
     </div>
+    <div class="col-lg-4 pb-100"><img src="{% static 'pages/images/image 63.png' %}"></div>
+    <div class="offset-lg-1 col-lg-6">
+        <div class="h3 mt-3">Инфографика</div>
+        <div class="font-22 mt-3">Представьте численные данные в наиболее простом и понятном виде, оформив их в виде
+            инфографики. Editory разработает формат, который лучше всего подойдёт для вашего материала</div>
+    </div>
+    <div class="col-lg-4"><img src="{% static 'pages/images/image 60.png' %}"></div>
+    <div class="offset-lg-1 col-lg-6">
+        <div class="h3 mt-3">Дизайн для издателей</div>
+        <div class="font-22 mt-3">Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — всё,
+            чтобы читатели вашего издания оставались довольны не только его содержанием, но и внешним видом.</div>
+    </div>
+{#    <div class="row container w-100 pb-5">#}
+{#        <div class="col-md-4 mt-5 px-lg-4">#}
+{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
+{#                <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">#}
+{#                    <img src="{% static 'pages/svg/relations 1.svg' %}" alt="" style="width: 66px; height:66px">#}
+{#                    <h4>{% trans 'Научная иллюстрация' %}</h4>#}
+{#                    <p>{% trans 'Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно соответствовать теме вашей работы' %}</p>#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-md-4 mt-5 px-lg-4">#}
+{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
+{#                <a href="#" class="text-dark text-decoration-none">#}
+{#                    <img src="{% static 'pages/images/pie-chart 1.png' %}" alt="" style="width: 66px; height:66px">#}
+{#                    <h4>{% trans 'Инфографика' %}</h4>#}
+{#                    <p>{% trans 'Представьте численные данные в наиболее простом и понятном виде, оформив их в виде инфографики. Editory разработает формат, который лучше всего подойдёт для вашего материала' %}</p>#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-md-4 mt-5 px-lg-4">#}
+{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
+{#                <img src="{% static 'pages/images/visualization 1.png' %}" alt="" style="width: 66px; height:66px">#}
+{#                <h4>{% trans 'Дизайн для издателей' %}</h4>#}
+{#                <p>{% trans 'Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — всё, чтобы читатели вашего издания оставались довольны не только его содержанием, но и внешним видом.' %}</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
 </div>
 </div>
 
 <div id="Forma" class="container mt-100 pb-100">
+<h1>Форма заявки</h1>
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}">
         {% csrf_token %}
         <div class="row text-secondary">

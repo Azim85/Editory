@@ -7,69 +7,67 @@
     <link rel="stylesheet" href="{% static 'pages/css/scientific.css' %}">
 {% endblock %}
 {% block content %}
-<div class="bg-me h-600" style="background-image: url({% static 'pages/images/readbook.png' %});
-        background-size: cover;">
-    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/readbook.png' %});
+            background-size: cover;">
+        <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
 ">
 
-    <div class="container h-100 d-flex align-items-center">
-         <div class="row py-5 text-white">
-            <div class="col-lg-6 d-flex align-items-center">
-                <div class="">
-                    <div class="font-65 font-weight-bold">{% trans 'Научные издания' %}</div>
-                <div class="font-22 mt-3">
-                    {% trans 'Позвольте Editory стать вашим проводником в мир доступной информации. Здесь вы найдёте рейтинги исследовательских журналов Узбекистана и всего мира, тезисы и диссертации, а также монографии, с которыми обязательно следует ознакомиться, чтобы оставаться на одной волне с последними научными тенденциями. К вашим услугам — самые качественные материалы от признанных экспертов. Editory желает вам приятного чтения.' %}
+            <div class="container h-100 d-flex align-items-center">
+                <div class="row py-5 text-white">
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="">
+                            <div class="font-65 font-weight-bold">{% trans 'Научные издания' %}</div>
+                            <div class="font-22 mt-3">
+                                {% trans 'Позвольте Editory стать вашим проводником в мир доступной информации. Здесь вы найдёте рейтинги исследовательских журналов Узбекистана и всего мира, тезисы и диссертации, а также монографии, с которыми обязательно следует ознакомиться, чтобы оставаться на одной волне с последними научными тенденциями. К вашим услугам — самые качественные материалы от признанных экспертов. Editory желает вам приятного чтения.' %}
+                            </div>
+                        </div>
+                    </div>
+                    {#            <div class="col-lg-6 d-flex justify-content-center">#}
+                    {#                <img class="img-fluid"  src="{% static 'pages/images/scient book 1.png' %}">#}
+                    {#            </div>#}
                 </div>
-                </div>
-            </div>
-{#            <div class="col-lg-6 d-flex justify-content-center">#}
-{#                <img class="img-fluid"  src="{% static 'pages/images/scient book 1.png' %}">#}
-{#            </div>#}
-        </div>
-
-
-
-
-</div>
-</div>
-<div class=" pt-100">
-<div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
-    <div class="row container w-100 pb-5">
-        <div class="col-md-6 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">
-                    <img src="{% static 'pages/svg/Group 527.svg' %}" alt="" style="width: 66px; height:66px">
-                    <h4>{% trans 'ТОП-25 наиболее цитируемых статей' %}</h4>
-                    <p>{% trans 'Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия международных журналов' %}</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-6 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <a href="#" class="text-dark text-decoration-none">
-                    <img src="{% static 'pages/svg/Group 528.svg' %}" alt="" style="width: 66px; height:66px">
-                    <h4>{% trans 'ТОП-5 изданий Узбекистана' %}</h4>
-                    <p>{% trans 'Будьте в курсе актуальных исследований и проблем научного сообщества нашей республики' %}</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-6 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
-                <h4>{% trans 'ТОП-10 самых цитируемых статей учёных Узбекистана' %}</h4>
-                <p>{% trans 'Предлагаем к ознакомлению наиболее заметные и интересные научные работы за последнее время' %}</p>
-            </div>
-        </div>
-        <div class="col-md-6 mt-5 px-lg-4">
-            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
-                <h4>{% trans 'ТОП-10 диссертаций, изменивших науку' %}</h4>
-                <p>{% trans 'Погрузитесь в изучение фундаментальных исследования, сделавшие значительный вклад в мировую науку
-' %}</p>
             </div>
         </div>
     </div>
-</div>
-</div>
-{% endblock content %}
+        <div class=" pt-100">
+            <div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
+                <div class="row container w-100 pb-5">
+                    <div class="col-md-6 mt-5 px-lg-4">
+                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">
+                                <img src="{% static 'pages/svg/Group 527.svg' %}" alt=""
+                                     style="width: 66px; height:66px">
+                                <h4>{% trans 'ТОП-25 наиболее цитируемых статей' %}</h4>
+                                <p>{% trans 'Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия международных журналов' %}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 px-lg-4">
+                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <a href="#" class="text-dark text-decoration-none">
+                                <img src="{% static 'pages/svg/Group 528.svg' %}" alt=""
+                                     style="width: 66px; height:66px">
+                                <h4>{% trans 'ТОП-5 изданий Узбекистана' %}</h4>
+                                <p>{% trans 'Будьте в курсе актуальных исследований и проблем научного сообщества нашей республики' %}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 px-lg-4">
+                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
+                            <h4>{% trans 'ТОП-10 самых цитируемых статей учёных Узбекистана' %}</h4>
+                            <p>{% trans 'Предлагаем к ознакомлению наиболее заметные и интересные научные работы за последнее время' %}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 px-lg-4">
+                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
+                            <h4>{% trans 'ТОП-10 диссертаций, изменивших науку' %}</h4>
+                            <p>{% trans 'Погрузитесь в изучение фундаментальных исследования, сделавшие значительный вклад в мировую науку' %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

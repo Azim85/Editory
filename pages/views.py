@@ -73,9 +73,9 @@ class AboutUs(View):
                         return redirect('pages:webinars')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'about_us.html', {'form':form})    
+                    return render(request, 'about_us.html', {'form': form})
             else:
-                return render(request, 'about_us.html', {'form':form})
+                return render(request, 'about_us.html', {'form': form})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
