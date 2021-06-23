@@ -35,7 +35,7 @@ mix-blend-mode: luminosity;
                 <div class="row container w-100 pb-5">
                     <div class="col-md-6 mt-5 px-lg-4">
                         <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">
+                            <a href="{% url 'pages:top25' %}" class="text-dark text-decoration-none">
                                 <img src="{% static 'pages/svg/Group 527.svg' %}" alt=""
                                      style="width: 66px; height:66px">
                                 <h4>{% trans 'ТОП-25 наиболее цитируемых статей' %}</h4>
@@ -45,7 +45,7 @@ mix-blend-mode: luminosity;
                     </div>
                     <div class="col-md-6 mt-5 px-lg-4">
                         <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="#" class="text-dark text-decoration-none">
+                            <a href="{% url 'pages:top2uzb' %}" class="text-dark text-decoration-none">
                                 <img src="{% static 'pages/svg/Group 528.svg' %}" alt=""
                                      style="width: 66px; height:66px">
                                 <h4>{% trans 'ТОП-5 изданий Узбекистана' %}</h4>

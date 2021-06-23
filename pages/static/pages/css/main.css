@@ -210,6 +210,12 @@ h1, h2, h3, h4, h5, h6{
     line-height: 106.3%;
     font-family: Geometria !important;
 }
+.font-55{
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 117.3%;
+    font-family: Geometria !important;
+}
 
 .border-primary{
     border-color: #00A1A8 !important;

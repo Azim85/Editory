@@ -14,5 +14,7 @@ urlpatterns = [
     path('research_strategy/', Research_strategy.as_view(), name='research_strategy'),
     path('language_editing/', Language_editing.as_view(), name='language_editing'),
     path('contact/', Contact.as_view(), name='contact'),
+    path('top25/', top25.as_view(), name='top25'),
+    path('top2uzb/', top2uzb.as_view(), name='top2uzb'),
 
 ]

@@ -176,3 +176,11 @@ class Language_editing(View):
     def get_context_data(self, **kwargs):
         context = super(Language_editing, self).get_context_data(**kwargs)
         return context
+
+
+class top25(TemplateView):
+    template_name = 'scientific_paper/top25.html'
+
+
+class top2uzb(TemplateView):
+    template_name = 'scientific_paper/top2uzb.html'
