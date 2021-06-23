@@ -5,26 +5,30 @@
 {% get_current_language as Lan %}
 
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
-<div class="container d-none d-lg-block">
+    <div class="container d-none d-lg-block">
 
-  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-      <ul class="navbar-nav " >
-              <li class="nav-item">
-                <a class="nav-link darken small pl-0 mr-lg-2" style="color: #ABBFC8 " href="{% url 'pages:webinars' %}">{% trans 'О нас' %}</a>
-              </li>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav ">
                 <li class="nav-item">
-                <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="{% url 'pages:contact' %}">{% trans 'Контакты' %}</a>
-              </li>
-          <li class="nav-item">
-                <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="#">{% trans 'Партнерам' %}</a>
-              </li>
+                    <a class="nav-link darken small pl-0 mr-lg-2" style="color: #ABBFC8 "
+                       href="{% url 'pages:webinars' %}">{% trans 'О нас' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 "
+                       href="{% url 'pages:contact' %}">{% trans 'Контакты' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 "
+                       href="#">{% trans 'Партнерам' %}</a>
+                </li>
 
-        </ul>
-      <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link darken" href="#"><i class="bi-search" style="color: #ABBFC8; font-size: 24px;" ></i></a>
-              </li>
-          {% if user.is_authenticated %}
+            </ul>
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link darken" href="#"><i class="bi-search"
+                                                           style="color: #ABBFC8; font-size: 24px;"></i></a>
+                </li>
+                {% if user.is_authenticated %}
                     <li class="nav-item ml-3 text-center">
                         <a class="nav-link k text-dark  consultation"
                            href="{% url 'users:dashboard' %}"><i class="bi bi-person"
@@ -37,181 +41,291 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link darken" href="{% url 'users:login' %}"><img src="{% static 'pages/svg/Group 432.svg' %}"></a>
+                        <a class="nav-link darken" href="{% url 'users:login' %}"><img
+                                src="{% static 'pages/svg/Group 432.svg' %}"></a>
                     </li>
                 {% endif %}
 
-          <li class="nav-item">
-                <a class="nav-link darken"  data-toggle="collapse" href="#collapseExamplelan"  style="color: #ABBFC8; font-size: 20px;" href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %}   {{ Lan }}</a>
+                <li class="nav-item">
+                    <a class="nav-link darken" data-toggle="collapse" href="#collapseExamplelan"
+                       style="color: #ABBFC8; font-size: 20px;" href="#">{% if 'ru' in request.path %}
+                        🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %}   {{ Lan }}</a>
 
-              <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border" id="collapseExamplelan"
-                   style="z-index: 100; width: 150px; ">
-                  <ul class="" style="list-style-type: none">
-                      {% for lll in LANGUAGE %}
-                          <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li><hr class="my-1">
-                      {% endfor %}
-                  </ul>
-            </div>
-              </li>
-        </ul>
-  </div>
-  </div>
+                    <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border"
+                         id="collapseExamplelan"
+                         style="z-index: 100; width: 150px; ">
+                        <ul class="" style="list-style-type: none">
+                            {% for lll in LANGUAGE %}
+                                <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li>
+                                <hr class="my-1">
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
-<div class="container">
-  <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}" style=" color: #40545C;  font-size:42px;"><i>editory</i></a>
-  <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="container">
+        <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}"
+           style=" color: #40545C;  font-size:42px;"><img
+                src="{% static 'pages/svg/Logo.svg' %}" alt="logo"></a>
+        <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="d-lg-none w-100">
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link darken small pl-0 mr-lg-2" style="color: #ABBFC8 " href="{% url 'pages:webinars' %}">О нас</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="{% url 'pages:contact' %}">Контакты</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="#">Партнерам</a>
-          </li>
-      
-        </ul>
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link darken" href="#"><i class="bi-search" style="color: #ABBFC8; font-size: 24px;"></i></a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item ml-3 text-center">
-            <a class="nav-link k text-dark  consultation" href="{% url 'users:dashboard' %}"><i class="bi bi-person"
-                style="font-size: 24px;color: #ABBFC8;"></i></a>
-          </li>
-      
-          <li class="nav-item  d-flex align-items-center">
-            <a class="nav-link k text-dark " href="{% url 'users:logout' %}"><i class="bi bi-box-arrow-right"
-                style="font-size: 24px; color: #ABBFC8;"></i></a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link darken" href="{% url 'users:login' %}"><img src="{% static 'pages/svg/Group 432.svg' %}"></a>
-          </li>
-          {% endif %}
-      
-          <li class="nav-item">
-            <a class="nav-link darken" data-toggle="collapse" href="#collapseExample" style="color: #ABBFC8; font-size: 20px;"
-              href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %} {{ Lan
-              }}</a>
-      
-            <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border" id="collapseExample"
-              style="z-index: 100; width: 150px; ">
-              <ul class="" style="list-style-type: none">
-                {% for lll in LANGUAGE %}
-                <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li>
-                <hr class="my-1">
-                {% endfor %}
-              </ul>
+        <div class="d-lg-none w-100">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link darken small pl-0 mr-lg-2" style="color: #ABBFC8 "
+                           href="{% url 'pages:webinars' %}">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 "
+                           href="{% url 'pages:contact' %}">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 " href="#">Партнерам</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link darken" href="#"><i class="bi-search"
+                                                               style="color: #ABBFC8; font-size: 24px;"></i></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item ml-3 text-center">
+                            <a class="nav-link k text-dark  consultation" href="{% url 'users:dashboard' %}"><i
+                                    class="bi bi-person"
+                                    style="font-size: 24px;color: #ABBFC8;"></i></a>
+                        </li>
+
+                        <li class="nav-item  d-flex align-items-center">
+                            <a class="nav-link k text-dark " href="{% url 'users:logout' %}"><i
+                                    class="bi bi-box-arrow-right"
+                                    style="font-size: 24px; color: #ABBFC8;"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link darken" href="{% url 'users:login' %}"><img
+                                    src="{% static 'pages/svg/Group 432.svg' %}"></a>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link darken" data-toggle="collapse" href="#collapseExample"
+                           style="color: #ABBFC8; font-size: 20px;"
+                           href="#">{% if 'ru' in request.path %}🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}
+                            🇬🇧{% endif %} {{ Lan }}</a>
+
+                        <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border"
+                             id="collapseExample"
+                             style="z-index: 100; width: 150px; ">
+                            <ul class="" style="list-style-type: none">
+                                {% for lll in LANGUAGE %}
+                                    <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li>
+                                    <hr class="my-1">
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-        </ul>
-      </div>
-  </div>
+        </div>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-      <ul class="navbar-nav ml-auto d-flex align-items-center">
-          <li class="nav-item mx-lg-3">
-            <a class="nav-link darken" href="{% url 'pages:news' %}">{% trans 'Новости' %}</a>
-          </li>
-              <li class="nav-item dropdown ">
-                     <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {% trans 'Продукты/материалы' %}
-                     </a>
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item mx-lg-3">
+                    <a class="nav-link darken" href="{% url 'pages:news' %}">{% trans 'Новости' %}</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans 'Продукты/материалы' %}
+                    </a>
 
-                     <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0"
+                         aria-labelledby="navbarDropdown">
 
-                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2"  ><div class="">{% trans 'Исследовательские платформы' %}</div></a>
+                        <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2">
+                            <div class="">{% trans 'Исследовательские платформы' %}</div>
+                        </a>
 
 
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Организация исследований' %}</div>
+                        </a>
+                        <div id="navChild" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 250px; border-radius: 0">
+                                <a href="{% url 'pages:research_strategy' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Стратегия исследования' %}</div>
+                                </a>
+                                <a href="{% url 'pages:research_strategy' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
+                                    <div class="">{% trans 'Научное сотрудничество' %}</div>
+                                </a>
+                                <a href="{% url 'pages:research_strategy' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Научное финансирование' %}</div>
+                                </a>
+                                <a href="{% url 'pages:research_strategy' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Управление и ведение' %}</div>
+                                </a>
 
-                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">{% trans 'Организация исследований' %}</div></a>
-                            <div id="navChild"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Стратегия исследования' %}</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration"><div class="">{% trans 'Научное сотрудничество' %}</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Научное финансирование' %}</div></a>
-                                    <a href="{% url 'pages:research_strategy' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Управление и ведение' %}</div></a>
+                            </div>
+                        </div>
 
-                                </div>
-                         </div>
 
-                         <a class="dropdown-item font-weight-bold text-dark py-2" href="{% url 'requests:scientific-papers' %}"><div class="">{% trans 'Образование' %}</div></a>
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild007" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Образование' %}</div>
+                        </a>
+                        <div id="navChild007" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 250px;height: 162px; border-radius: 0">
+                                <a href="{% url 'requests:scientific-papers' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Научные работы' %}</div>
+                                </a>
+                                <a href="{% url 'requests:webinars' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
+                                    <div class="">{% trans 'Вебинары и семинары' %}</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </li>
-              <li class="nav-item dropdown ">
-                     <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {% trans 'Услуги' %}
-                     </a>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans 'Услуги' %}
+                    </a>
 
-                     <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0"
+                         aria-labelledby="navbarDropdown">
 
-                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">{% trans 'Конференции' %}</div></a>
-                            <div id="navChild1"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
-                                    <a href="{% url 'requests:conferences' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Участие в конференциях' %}</div></a>
-                                    <a href="{% url 'requests:creat-conferences' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Организация конференций' %}</div></a>
-                                </div>
-                         </div>
-{#                         <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" >#}
-{#                            Link with href#}
-{#                          </button>#}
-{#                         <div class="collapse" id="collapseExample1">#}
-{#                          <div class="card card-body">#}
-{#                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
-{#                          </div>#}
-{#                        </div>#}
-
-
-                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">{% trans 'Исследовательские проекты' %}</div></a>
-                            <div id="navChild2"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
-                                    <a href="{% url 'requests:grants' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Исследовательские гранты' %}</div></a>
-                                    <a href="{% url 'requests:patents' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Исследовательские патенты' %}</div></a>
-                                </div>
-                         </div>
-
-
-                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">{% trans 'Публикация работ' %}</div></a>
-                            <div id="navChild3"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
-                                    <a href="{% url 'requests:bak' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Публикация в ВАК' %}</div></a>
-                                    <a href="{% url 'requests:scopus' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Публикация в Scopus/ Web' %} <br>of Science</div></a>
-                                </div>
-                         </div>
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Конференции' %}</div>
+                        </a>
+                        <div id="navChild1" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 290px; height: 230px; border-radius: 0">
+                                <a href="{% url 'requests:conferences' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Участие в конференциях' %}</div>
+                                </a>
+                                <a href="{% url 'requests:creat-conferences' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Организация конференций' %}</div>
+                                </a>
+                            </div>
+                        </div>
+                        {#                         <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" >#}
+                        {#                            Link with href#}
+                        {#                          </button>#}
+                        {#                         <div class="collapse" id="collapseExample1">#}
+                        {#                          <div class="card card-body">#}
+                        {#                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
+                        {#                          </div>#}
+                        {#                        </div>#}
 
 
-                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div class="">{% trans 'Консультация по диссертациям' %}</div></a>
-                            <div id="navChild4"  class="hidebutton ">
-                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me" style="width: 290px; height: 230px; border-radius: 0">
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Корректура и редактирование' %}</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Рецензирование диссертации' %}</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Методология исследования' %}</div></a>
-                                    <a href="{% url 'requests:proofreading' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Статистический анализ' %}</div></a>
-                                </div>
-                         </div>
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild2" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Исследовательские проекты' %}</div>
+                        </a>
+                        <div id="navChild2" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 290px; height: 230px; border-radius: 0">
+                                <a href="{% url 'requests:grants' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Исследовательские гранты' %}</div>
+                                </a>
+                                <a href="{% url 'requests:patents' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Исследовательские патенты' %}</div>
+                                </a>
+                            </div>
+                        </div>
 
 
-                          <a href="{% url 'requests:design' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Графические материалы' %}</div></a>
-                                    <a href="{% url 'pages:language_editing' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Корректура и редактирование' %} </div></a>
-                                    <a href="{% url 'requests:translation' %}" class="dropdown-item font-weight-bold k text-dark text-size-15 py-2"><div class="">{% trans 'Переводы' %} </div></a>
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild3" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Публикация работ' %}</div>
+                        </a>
+                        <div id="navChild3" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 290px; height: 230px; border-radius: 0">
+                                <a href="{% url 'requests:bak' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Публикация в ВАК' %}</div>
+                                </a>
+                                <a href="{% url 'requests:scopus' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Публикация в Scopus/ Web' %} <br>of Science</div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild4" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="">{% trans 'Консультация по диссертациям' %}</div>
+                        </a>
+                        <div id="navChild4" class="hidebutton ">
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                                 style="width: 290px; height: 230px; border-radius: 0">
+                                <a href="{% url 'requests:proofreading' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Корректура и редактирование' %}</div>
+                                </a>
+                                <a href="{% url 'requests:proofreading' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Рецензирование диссертации' %}</div>
+                                </a>
+                                <a href="{% url 'requests:proofreading' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Методология исследования' %}</div>
+                                </a>
+                                <a href="{% url 'requests:proofreading' %}"
+                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                    <div class="">{% trans 'Статистический анализ' %}</div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <a href="{% url 'requests:design' %}"
+                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                            <div class="">{% trans 'Графические материалы' %}</div>
+                        </a>
+                        <a href="{% url 'pages:language_editing' %}"
+                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                            <div class="">{% trans 'Корректура и редактирование' %} </div>
+                        </a>
+                        <a href="{% url 'requests:translation' %}"
+                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                            <div class="">{% trans 'Переводы' %} </div>
+                        </a>
 
                     </div>
 
                 </li>
-              <li class="nav-item ml-lg-3">
-            <a class="nav-link darken" href="#"><img class="img-fluid" src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
-          </li>
-    </ul>
-  </div>
-  </div>
+                <li class="nav-item ml-lg-3">
+                    <a class="nav-link darken" href="{% url 'editorypress:main' %}"><img class="img-fluid"
+                                                                                         src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>

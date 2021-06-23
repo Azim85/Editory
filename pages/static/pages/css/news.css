@@ -139,12 +139,12 @@ section{
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7567401960784313) 26%);
 }
 
-.text-hover:hover{
-        border-radius: 10px;
-    transition:  height 0.5s;
-    color: white;
-    height: 100%;
-    width: 100%;
-background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7567401960784313) 26%);
-}
+/*.text-hover:hover{*/
+/*        border-radius: 10px;*/
+/*    transition:  height 0.5s;*/
+/*    color: white;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*background: rgb(0,0,0);*/
+/*background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7567401960784313) 26%);*/
+/*}*/

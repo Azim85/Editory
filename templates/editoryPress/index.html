@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="h-100" style="background-image: url({% static 'pages/press_images/background.png' %});
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+
+            text-align: center;">
+
+        <div class="py-5"><img class="img-fluid" src="{% static 'pages/press_images/logo-png 2.svg' %}"></div>
+        <div style="
+font-style: normal;
+font-weight: bold;
+font-size: 65px;
+line-height: 106.3%;
+color: #537470;
+
+text-align: center;" class="font-65 geometria">Скоро здесь будут<br>наши журналы!
+        </div>
+
+        <div class="font-22 mt-3" style="text-align: center; color: #537470">
+            А пока — ознакомьтесь с последними событиями<br> научного мира в разделе «Новости»
+        </div>
+
+        <div class="btn border text-white py-2 px-4 mt-5 mb-100" style="
+    text-align: center;
+    background-color:#537470;
+    border-radius: 25px !important;">Читать новости
+        </div>
+    </div>
+    <div style="position: absolute;
+width: 126px;
+height: 126px;
+left: 80%;
+top: 215px;
+"><img src="{% static 'pages/press_images/Group 538.svg' %}"></div>
+
+<div style="position: absolute;
+width: 95px;
+height: 95px;
+left: 15%;
+top: 591px;
+"><img src="{% static 'pages/press_images/Group 539.svg' %}"></div>
+{% endblock %}
