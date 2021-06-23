@@ -193,7 +193,7 @@
                             <!-- Поля Объекта Account -->
                             <input type="hidden" name="account[order_id]" value="{{order.id}}"/>
 
-                            <input type="hidden" name="callback" value="https://d56c706c97e3.ngrok.io/auth/dashboard/?success=success"/>
+                            <input type="hidden" name="callback" value="https://editory.org/en/auth/dashboard/?success=success"/>
 
                             <button type="submit" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img src="{% static 'pages/images/payme.png' %}" class="ml-3" alt=""></button>
                         </form>
@@ -223,7 +223,11 @@
 
                 </td>
 
-                <td class="text-center"><a href="{% url 'users:check' order.id %}">{{ order.get_payment_status_display }}</a></td>
+                {% if order.payment_type == 4 %}
+                    <td class="text-center"><a href="{% url 'users:check' order.id %}">{{ order.get_payment_status_display }}</a></td>
+                {% elif order.payment_type == 3 %}
+                    <td>{{order.get_payment_status_display}}</td>
+                {% endif %}
 
                 <td>
                     {% if request.GET.items %}
