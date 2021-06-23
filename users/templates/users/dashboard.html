@@ -195,7 +195,7 @@
 
                             <input type="hidden" name="callback" value="https://d56c706c97e3.ngrok.io/auth/dashboard/?success=success"/>
 
-                            <button type="button" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img src="{% static 'pages/images/payme.png' %}" class="ml-3" alt=""></button>
+                            <button type="submit" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img src="{% static 'pages/images/payme.png' %}" class="ml-3" alt=""></button>
                         </form>
                         {% elif order.payment_type == 3 %}
                             <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET" >
