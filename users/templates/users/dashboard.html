@@ -198,7 +198,7 @@
                             <button type="submit" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img src="{% static 'pages/images/payme.png' %}" class="ml-3" alt=""></button>
                         </form>
                         {% elif order.payment_type == 3 %}
-                            <form action="https://oplata.kapitalbank.uz" action="GET" name="apelsin_form">
+                            <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET" >
                                 <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
                                 <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                                 <input type="hidden" name="description" value="Payment for OOO Editory">
@@ -206,6 +206,8 @@
                                 <input type="hidden" name="transactionId" value="{{order.id}}" id=transactionid>
                                 <button type="submit" id="check_transaction" class="btn btn-outline-warning">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt=""></button>
                             </form>
+
+                            <a href="{% url 'apelsinuz:confirm' order.id %}" id="confirm_click"></a>
 
                             
                         {% endif %}
@@ -251,6 +253,13 @@
 {% block js %}
 
 <script>
+    
+    $('#check_transaction').click(function(){
+        apelsin_form.submit()
+        $('#confirm_click').click()
+
+    })
+
     const profile_form = document.getElementById('profile')
     const show_form = document.getElementById('show_form')
 
@@ -262,16 +271,6 @@
             profile_form.style.display = 'none'
         }
     })
-
-   
-   
-
-
-
-
-
-
-
 
 
 </script>
