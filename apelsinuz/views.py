@@ -12,17 +12,19 @@ logger = logging.getLogger(__name__)
 @csrf_exempt
 def check_apelsin(request):
     data = json.loads(request.body)
-    logger.warning(str(data))
     serializer = CallbackResponseSerializer(data=data)
     
     if serializer.is_valid():
-        logger.warning(str(serializer.validated_data))
-    else:
-        logger.warning(str(serializer.errors))
-
-    data = {"status": False}
-  
-    return JsonResponse(data)
+        data = serializer.validated_data
+        if data['order_id']:
+            order = OrderModel.objects.get(pk=data['order_id'])
+            if order.amount == data['amount']:
+                order.payment_status = 3
+                order.save()
+                order.refresh_from_db()
+                return JsonResponse({"status": True})
+        
+    return JsonResponse({"status": False})
 
 
 def confirm_apelsin(request, pk):
