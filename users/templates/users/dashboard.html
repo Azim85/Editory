@@ -203,9 +203,8 @@
                                 <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                                 <input type="hidden" name="description" value="Payment for OOO Editory">
                                 <input type="hidden" name="amount" value="{{order.get_payme_amount}}">
-                                <input type="hidden" name="transactionId" value="{{order.id}}" id=transactionid>
+                                <input type="hidden" name="order_id" value="{{order.id}}" id=transactionid>
                                 <button type="button" data-id="{{order.id}}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
-                                    <a href="{% url 'apelsinuz:confirm' order.id %}" data-id="{{order.id}}" class="apelsin_confirm">hello</a>
                                 </button>
                                 
                             </form>
