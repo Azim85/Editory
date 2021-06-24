@@ -18,10 +18,11 @@ def check_apelsin(request):
         data = serializer.validated_data
         if data['order_id']:
             order = OrderModel.objects.get(pk=data['order_id'])
+            logger.warning(data['amount'], data['order_id'])
+            logger.warning(order.amount, order.pk)
             if order.amount == data['amount']:
                 order.payment_status = 3
                 order.save()
-                order.refresh_from_db()
                 return JsonResponse({"status": True})
         
     return JsonResponse({"status": False})
