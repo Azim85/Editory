@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def check_apelsin(request):
-    data = json.load(request.body)
+    data = json.loads(request.body)
     serializer = CallbackResponseSerializer(data)
     
     if serializer.is_valid():
