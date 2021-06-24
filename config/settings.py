@@ -183,3 +183,27 @@ PAYMEUZ_SETTINGS = {
         'KEY_2': None
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'file': {
+            'format': '%(message)s'
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log'
+        }
+    },
+    'loggers': {
+        '': {
+            'level': 'WARNING',
+            'handlers': ['file']
+        }
+    }
+}

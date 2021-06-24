@@ -204,10 +204,13 @@
                                 <input type="hidden" name="description" value="Payment for OOO Editory">
                                 <input type="hidden" name="amount" value="{{order.get_payme_amount}}">
                                 <input type="hidden" name="transactionId" value="{{order.id}}" id=transactionid>
-                                <button type="submit" id="check_transaction" class="btn btn-outline-warning">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt=""></button>
+                                <button type="button" data-id="{{order.id}}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
+                                    <a href="{% url 'apelsinuz:confirm' order.id %}" data-id="{{order.id}}" class="apelsin_confirm">hello</a>
+                                </button>
+                                
                             </form>
 
-                            <a href="{% url 'apelsinuz:confirm' order.id %}" id="confirm_click"></a>
+                            
 
                             
                         {% endif %}
@@ -252,16 +255,31 @@
 
 {% endif %}
 
+<button type="button" id="hop">button</button>
+
 {% endblock content %}
 
 {% block js %}
 
 <script>
-    
-    $('#check_transaction').click(function(){
-        apelsin_form.submit()
-        $('#confirm_click').click()
+    $(document).ready(function(){
+         $('.check_transaction').on('click', function () {
+            let data_id = $(this).data("id") 
+            $(this).parent().submit() 
+            
+            const a = $(this).attr("data-id")
+            if($(this).find('.apelsin_confirm').attr('data-id') == data_id){
+                $(this).find('.apelsin_confirm').trigger('click')
+            }
+            
 
+        })
+    })
+    
+   
+
+    $('#confirm_click').click(function(){
+        alert('uspeshno')
     })
 
     const profile_form = document.getElementById('profile')
