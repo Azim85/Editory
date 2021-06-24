@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 def check_apelsin(request):
 
     logger.warning(str(request.POST))
+    logger.warning(str(request.GET))
     data = {"status":"true"}
   
     return JsonResponse(data)
