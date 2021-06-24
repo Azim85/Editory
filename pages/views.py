@@ -188,3 +188,10 @@ class top25(TemplateView):
 
 class top2uzb(TemplateView):
     template_name = 'scientific_paper/top2uzb.html'
+
+
+class top10(TemplateView):
+    template_name = 'scientific_paper/top10.html'
+
+class top10uz(TemplateView):
+    template_name = 'scientific_paper/top10uz.html'

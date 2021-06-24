@@ -55,16 +55,20 @@ mix-blend-mode: luminosity;
                     </div>
                     <div class="col-md-6 mt-5 px-lg-4">
                         <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <a href="{% url 'pages:top10' %}" class="text-dark text-decoration-none">
                             <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
                             <h4>{% trans 'ТОП-10 самых цитируемых статей учёных Узбекистана' %}</h4>
                             <p>{% trans 'Предлагаем к ознакомлению наиболее заметные и интересные научные работы за последнее время' %}</p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 mt-5 px-lg-4">
                         <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                            <a href="{% url 'pages:top10uz' %}" class="text-dark text-decoration-none">
                             <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
                             <h4>{% trans 'ТОП-10 диссертаций, изменивших науку' %}</h4>
                             <p>{% trans 'Погрузитесь в изучение фундаментальных исследования, сделавшие значительный вклад в мировую науку' %}</p>
+                            </a>
                         </div>
                     </div>
                 </div>
