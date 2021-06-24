@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def check_apelsin(request):
-
+    print(request.POST, request.GET)
     logger.warning(str(request.POST))
     logger.warning(str(request.GET))
     data = {"status":"true"}
