@@ -16,9 +16,9 @@ def check_apelsin(request):
     
     if serializer.is_valid():
         data = serializer.validated_data
+        logger.warning(data)
         if data['order_id']:
             order = OrderModel.objects.get(pk=data['order_id'])
-            logger.warning(data['amount'], data['order_id'])
             logger.warning(order.amount, order.pk)
             if order.amount == data['amount']:
                 order.payment_status = 3
