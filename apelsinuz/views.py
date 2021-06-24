@@ -1,16 +1,25 @@
+from apelsinuz.serializers import CallbackResponseSerializer
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from orders.models import OrderModel
 
-
+import json
 import logging
 
 logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def check_apelsin(request):
-    logger.warning(str(request.body))
+    data = json.loads(request.body)
+    logger.warning(str(data))
+    serializer = CallbackResponseSerializer(data=data)
+    
+    if serializer.is_valid():
+        logger.warning(str(serializer.validated_data))
+    else:
+        logger.warning(str(serializer.errors))
+
     data = {"status": False}
   
     return JsonResponse(data)
