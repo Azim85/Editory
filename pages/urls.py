@@ -16,5 +16,7 @@ urlpatterns = [
     path('contact/', Contact.as_view(), name='contact'),
     path('top25/', top25.as_view(), name='top25'),
     path('top2uzb/', top2uzb.as_view(), name='top2uzb'),
+    path('top10/', top10.as_view(), name='top10'),
+    path('top10uz/', top10uz.as_view(), name='top10uz'),
 
 ]
