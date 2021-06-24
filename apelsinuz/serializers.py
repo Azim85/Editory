@@ -6,4 +6,3 @@ class CallbackResponseSerializer(serializers.Serializer):
     transactionId = serializers.IntegerField()
     amount = serializers.IntegerField()
     transaction_type = serializers.CharField(max_length=30)
-
