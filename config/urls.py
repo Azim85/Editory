@@ -24,6 +24,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('apelsin_pay/', include('apelsinuz.urls')),
     path('paycom/', include('paymeuz.urls')),
+    path('editorypress/', include('editory_press.urls')),
 ]
 
 urlpatterns += i18n_patterns(
@@ -32,7 +33,7 @@ urlpatterns += i18n_patterns(
     path('', include('pages.urls')),
     path('request_to/', include('my_requests.urls')),
     path('orders/', include('orders.urls')),
-    path('editorypress/', include('editory_press.urls')),
+
 )
 
 if settings.DEBUG:
