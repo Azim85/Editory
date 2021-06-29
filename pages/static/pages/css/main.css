@@ -229,6 +229,10 @@ h1, h2, h3, h4, h5, h6{
 
 
 @media screen and (max-width: 1440px){
+        .footer-end{
+        -ms-flex-pack: end !important;
+        justify-content: flex-end !important;
+    }
     .nav-new{
         right: 50px
     }
@@ -272,6 +276,11 @@ h1, h2, h3, h4, h5, h6{
         display: none;
     }
 @media  (max-width: 992px){
+      .footer-end{
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+    }
+
     #mobile{
         display: inline;
     }
