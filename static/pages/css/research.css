@@ -13,20 +13,14 @@
 }
 
 
-a.nav-link{
-    color: black !important;
-}
 
 
 a.active{
     background-color: transparent !important;
-    color:#2A819E !important;
-    border-bottom: #2A819E solid 2px !important;
+    color:#fff !important;
+    border-bottom: #fff solid 2px !important;
 }
 
-.main-font{
-    font-family: Geometria;
-}
 
 .link-color{
     color: #E6A151;

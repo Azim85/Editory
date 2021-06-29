@@ -95,7 +95,7 @@ header {
 }
 
 .statistic{
-  bottom: 0 !important;
+  bottom: -50px;
   position: absolute !important;
 }
 
@@ -115,23 +115,32 @@ header {
   margin-left: 100px;
 }
 
+@media screen and (min-width: 1400px){
+    .statistic{
+  top: 72px !important;
+  position: absolute !important;
+}
+}
 @media screen and (max-width: 1400px) {
   .statistic{
-  bottom: -350px;
+  top: 72px !important;
   position: absolute !important;
 }
 }
 
 @media screen and (max-width: 568px) {
-
+  .heightme{
+  height: 465px !important;
+    width: 350px !important;
+}
   .header-me {
     background-image: none !important;
   }
-  .statistic{
-    bottom: 0 !important;
-    background-color:#F2F2F2;
-    position: relative !important;
-  }
+.statistic{
+ bottom: 0px;
+  background-color:#F2F2F2;
+  position: relative !important;
+}
   .my-text {
     font-style: normal;
     font-weight: bold;
@@ -263,9 +272,9 @@ a.me:hover{
   /*    height: 400px;*/
   /*}*/
 
-  .rounded-20 {
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.42);
-  }
+  /*.rounded-20 {*/
+  /*  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.42);*/
+  /*}*/
 }
 
 
@@ -336,9 +345,14 @@ a.me:hover{
 }
 
 @media (max-width: 992px) {
+  .text-adaptive{
+    margin-right: 50px !important;
+    margin-left: 50px !important;
+  width: 150px;
+  }
 
-  .buttoncss{
-    margin-bottom: 50px !important;
+  .mobile-center{
+    align-items: center;
   }
   .margin-b-100 {
     margin-bottom: 50px;

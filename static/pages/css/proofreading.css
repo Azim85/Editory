@@ -43,20 +43,20 @@
   background-position: top;
 }
 
-a.nav-link{
-    color: black !important;
+a.asd{
+    color: white !important;
 }
 
 
 a.active{
     background-color: transparent !important;
-    color:#2A819E !important;
-    border-bottom: #2A819E solid 2px !important;
+    color:#CE935E !important;
+    border-bottom: #CE935E solid 2px !important;
 }
 
-.main-font{
-    font-family: Geometria;
-}
+/*.main-font{*/
+/*    font-family: Geometria;*/
+/*}*/
 
 .link-color{
     color: #E6A151;
@@ -68,3 +68,11 @@ a.active{
 .fix-img{
   height: 400px !important;
 }
+
+.section_2{
+    background: #40545C;
+    padding: 70px 70px;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
