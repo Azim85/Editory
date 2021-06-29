@@ -129,6 +129,10 @@ header {
 }
 
 @media screen and (max-width: 568px) {
+  .heightme{
+  height: 465px !important;
+    width: 350px !important;
+}
   .header-me {
     background-image: none !important;
   }

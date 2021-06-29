@@ -95,7 +95,7 @@ header {
 }
 
 .statistic{
-  bottom: -10px;
+  bottom: 0 !important;
   position: absolute !important;
 }
 
@@ -123,14 +123,15 @@ header {
 }
 
 @media screen and (max-width: 568px) {
+
   .header-me {
     background-image: none !important;
   }
-.statistic{
- bottom: 0px;
-  background-color:#F2F2F2;
-  position: relative !important;
-}
+  .statistic{
+    bottom: 0 !important;
+    background-color:#F2F2F2;
+    position: relative !important;
+  }
   .my-text {
     font-style: normal;
     font-weight: bold;
@@ -335,6 +336,10 @@ a.me:hover{
 }
 
 @media (max-width: 992px) {
+
+  .buttoncss{
+    margin-bottom: 50px !important;
+  }
   .margin-b-100 {
     margin-bottom: 50px;
   }
