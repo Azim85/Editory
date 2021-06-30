@@ -275,8 +275,11 @@ h1, h2, h3, h4, h5, h6{
 #mobile{
         display: none;
     }
-@media  (max-width: 992px){
-      .footer-end{
+@media  screen and (max-width: 992px){
+    .h-600{
+        height: 700px !important;
+    }
+    .footer-end{
         -ms-flex-pack: start !important;
         justify-content: flex-start !important;
     }
@@ -288,7 +291,7 @@ h1, h2, h3, h4, h5, h6{
         display: none;
     }
      .font-65{
-    font-size: 40px;
+    font-size: 37px !important;
     line-height: 106.3%;
 }
     #navbarNav{
@@ -335,7 +338,7 @@ h1, h2, h3, h4, h5, h6{
   filter: grayscale(0%);
 }
 
-.h-600{
-    height: 600px !important;
-}
+/*.h-600{*/
+/*    height: 600px ;*/
+/*}*/
 
