@@ -8,340 +8,352 @@
 
 {% block content %}
 
-{% if messages %}
-    {% for message in messages %}
-        {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-        {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-        {% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% endif %}
 
-    {% endfor %}
-{% endif %}
+        {% endfor %}
+    {% endif %}
 
-<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image50.png' %});
-        background-size: cover;">
-    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image50.png' %});
+            background-size: cover;">
+        <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
 ">
-    <div class="container d-flex align-items-center">
-        <div class="row padding_me">
-            <div class="col-lg-6 d-flex ">
-                <div class="text-white">
-                    <div class="h1 pb-4 font-65 font-weight-bold">{% trans 'Участие в международных конференциях' %}</div>
-                    <div class="pb-4">{% trans 'Хотите привлечь внимание мировой общественности к своим разработкам? Один из самых простых способов это сделать — принять участие в тематической конференции. Там вы сможете собрать самые разносторонние взгляды на вашу задачу и установить контакты, необходимые для дальнейшего успеха' %}. </div>
-                    <a href="#Forma" class="btn btn-light">{% trans 'Оставить заявку' %}</a>
+            <div class="container d-flex align-items-center">
+                <div class="row padding_me">
+                    <div class="col-lg-6 d-flex pr-0">
+                        <div class="text-white">
+                            <div class="h1 pb-4 font-65 font-weight-bold">{% trans 'Участие в международных конференциях' %}</div>
+                            <div class="pb-4">{% trans 'Хотите привлечь внимание мировой общественности к своим разработкам? Один из самых простых способов это сделать — принять участие в тематической конференции. Там вы сможете собрать самые разносторонние взгляды на вашу задачу и установить контакты, необходимые для дальнейшего успеха' %}.</div>
+                            <a href="#Forma" class="btn btn-light">{% trans 'Оставить заявку' %}</a>
+                        </div>
+                    </div>
+                    {#            <div class="col-lg-6 d-flex justify-content-center">#}
+                    {#                <img class="img-fluid"  src="{% static 'pages/images/conf 1.png' %}" width="100%">#}
+                    {#            </div>#}
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    {#todo yangilash#}
+    <form id="Forma" class="mt-100" method="post" action="{% url 'requests:consultation' %}"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container mt-4">
+            <div class="container   rounded-20">
+                <div>
+
+                    <h2 class=" mb-5">{% trans 'Заявка на участие' %} <br>{% trans 'в конференции' %}</h2>
+
+                </div>
+                <div class="tab-content" id="nav-tabContent">
+                    {#          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">#}
+                    <div class=" container ">
+
+                        <div class="row text-secondary">
+                            <div class="col-lg-6">
+
+                                <div class="form-group row my-4">
+                                    <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.first_name }}
+                                        <small class="text-danger align-self-start">{{ form.first_name.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.last_name }}
+                                        <small class="text-danger align-self-start">{{ form.last_name.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Занятость' %}</label>
+                                    <div class="col-sm-6 check">
+                                        <div style="display:none">{{ form.busyness }}</div>
+                                        <div class="row ">
+
+                                            <div class="form_radio_btn col-6 pr-0">
+                                                <label class="form-control w-100 text-center" for="radio-1"
+                                                       id="hey">{% trans 'Студент' %}</label>
+                                            </div>
+
+                                            <div class="form_radio_btn col-6 pl-0">
+                                                <label class="form-control text-center " for="radio-2"
+                                                       id="vey">{% trans 'Работаю' %}</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Место работы' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.place_of_work }}
+                                        <small class="text-danger align-self-start">{{ form.place_of_work.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Ученая степень' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.academic_degree }}
+                                        <small class="text-danger align-self-start">{{ form.academic_degree.errors }}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.phone }}
+                                        <small class="text-danger align-self-start">{{ form.phone.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.email }}
+                                        <small class="text-danger align-self-start">{{ form.email.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="" class="col-sm-4 col-form-label">{% trans 'Название статьи' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.application_name }}
+                                        <small class="text-danger align-self-start">{{ form.application_name.errors }}</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Конференция' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.conference }}
+                                        <small class="text-danger align-self-start">{{ form.conference.errors }}</small>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row my-4">
+                                    <label for="inputPassword"
+                                           class="col-sm-4 col-form-label">{% trans 'Секция' %}</label>
+                                    <div class="col-sm-6 d-flex flex-column">
+                                        {{ form.section }}
+                                        <small class="text-danger align-self-start">{{ form.section.errors }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-5">
+                            <div class=" col-lg-11 d-flex align-items-center ">
+                                <label for="file" class="input-preview w-100 h-50 form-input">
+
+                                    {{ form.upload_file }}
+
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
                 </div>
             </div>
-{#            <div class="col-lg-6 d-flex justify-content-center">#}
-{#                <img class="img-fluid"  src="{% static 'pages/images/conf 1.png' %}" width="100%">#}
-{#            </div>#}
-        </div>
-
-    </div>
-
-
-
-
-</div>
-</div>
-{#todo yangilash#}
-<form id="Forma" class="mt-100" method="post" action="{% url 'requests:consultation' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="container mt-4">
-    <div class="container   rounded-20">
-        <div>
-
-            <h2 class=" mb-5">{% trans 'Заявка на участие' %} <br>{% trans 'в конференции' %}</h2>
-
-        </div>
-    <div class="tab-content" id="nav-tabContent">
-{#          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">#}
-              <div class=" container " >
-
-                    <div class="row text-secondary">
-                        <div class="col-lg-6">
-
-                            <div class="form-group row my-4">
-                                <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.first_name}}
-                                    <small class="text-danger align-self-start">{{form.first_name.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.last_name}}
-                                    <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Занятость' %}</label>
-                                <div class="col-sm-6 check">
-                                    <div style="display:none">{{form.busyness}}</div>
-                                      <div class="row ">
-
-                                        <div class="form_radio_btn col-6 pr-0">
-                                          <label class="form-control w-100 text-center" for="radio-1" id="hey">{% trans 'Студент' %}</label>
-                                        </div>
-
-                                        <div class="form_radio_btn col-6 pl-0">
-                                          <label class="form-control text-center " for="radio-2" id="vey">{% trans 'Работаю' %}</label>
-                                        </div>
-                                        
-                                      </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Место работы' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.place_of_work}}
-                                    <small class="text-danger align-self-start">{{form.place_of_work.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Ученая степень' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.academic_degree}}
-                                    <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.phone}}
-                                    <small class="text-danger align-self-start">{{form.phone.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.email}}
-                                    <small class="text-danger align-self-start">{{form.email.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="" class="col-sm-4 col-form-label">{% trans 'Название статьи' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.application_name}}
-                                    <small class="text-danger align-self-start">{{form.application_name.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Конференция' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                   {{form.conference}}
-                                    <small class="text-danger align-self-start">{{form.conference.errors}}</small>
-                                </div>
-                            </div>
-
-
-                             <div class="form-group row my-4">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Секция' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.section}}
-                                    <small class="text-danger align-self-start">{{form.section.errors}}</small>
-                                </div>
-                            </div>
-                        </div>
+            <div class="container">
+            <div class="row mb-100 ">
+                <div class="col-lg-11 d-flex  justify-content-between">
+                    <div class="mr-auto">
+                        {{ form.is_agree }}<span
+                            class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
                     </div>
+                    <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
+                </div>
+            </div>
+                </div>
+        </div>
+    </form>
 
-                  <div class="row my-5">
-                        <div class=" col-lg-11 d-flex align-items-center ">
-                            <label for="file" class="input-preview w-100 h-50 form-input">
-
-                                {{form.upload_file}}
-
-                            </label>
-                        </div>
-                  </div>
-
-
-                    </div>
-
-
-          </div>
-    </div>               <div class="row mb-100">
-                        <div class="col-lg-11 d-flex  justify-content-end">
-                            <div class="mr-auto">
-                                {{form.is_agree}}<span class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
-                            </div>
-                            <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
-                        </div>
-                        </div>
-    </div>
-</form>
-
-{% if validated %}
-<div id="flag" style="opacity: 0;">flag</div>
-{% endif %}
+    {% if validated %}
+        <div id="flag" style="opacity: 0;">flag</div>
+    {% endif %}
 {% endblock %}
 
 
 {% block js %}
     <script>
-    $(document).ready(function(){
-        let validated = document.getElementById('flag')
-        let alert_message = document.getElementById('alert_message')
+        $(document).ready(function () {
+            let validated = document.getElementById('flag')
+            let alert_message = document.getElementById('alert_message')
 
 
-        if (alert_message) {
-            alert_message.classList.add('alert_message')
-        }
-
-        if (validated) {
-            $('div.forma').css('display', 'inline')
-        }
-
-        $('#commit2').click(function () {
-            $('div.forma').css('display', 'inline')
-            
-        });
-
-        $('#hideform2').click(function () {
-            $('div.forma').css('display', 'none')
-        });
-
-     
-        let hey = document.getElementById('hey')
-        let vey = document.getElementById('vey')
-        let student = document.getElementById('id_busyness_0')
-        let work = document.getElementById('id_busyness_1')
-        hey.style.backgroundColor = '#00A1A8'
-        hey.style.color = 'white'
-        $(student).attr('checked', 'checked')
-
-       
-        hey.addEventListener('click', function () {
-            student.click()
-            this.style.backgroundColor = '#00A1A8'
-            this.style.color = 'white'
-            vey.style.backgroundColor = 'white'
-            vey.style.color = 'black'
-        })
-
-        vey.addEventListener('click', function () {
-            work.click()
-            this.style.backgroundColor = '#00A1A8'
-            this.style.color = 'white'
-            hey.style.backgroundColor = 'white'
-            hey.style.color = 'black'
-        })
-
-        let btn = document.querySelector('.next_btn')
-        let first_name = document.getElementById('id_first_name')
-        let last_name = document.getElementById('id_last_name')
-        let work_place = document.getElementById('id_place_of_work')
-
-        $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-
-        $(first_name).change(function(){
-            if($(this).val() && $(last_name).val() && $(work_place).val()){
-                $(btn).css({ 'background': '#00A1A8', 'pointer-events':'auto' })
-            }else{
-                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            if (alert_message) {
+                alert_message.classList.add('alert_message')
             }
-        })
 
-        $(last_name).change(function () {
-            if ($(this).val() && $(first_name).val() && $(work_place).val()) {
-                $(btn).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            if (validated) {
+                $('div.forma').css('display', 'inline')
             }
+
+            $('#commit2').click(function () {
+                $('div.forma').css('display', 'inline')
+
+            });
+
+            $('#hideform2').click(function () {
+                $('div.forma').css('display', 'none')
+            });
+
+
+            let hey = document.getElementById('hey')
+            let vey = document.getElementById('vey')
+            let student = document.getElementById('id_busyness_0')
+            let work = document.getElementById('id_busyness_1')
+            hey.style.backgroundColor = '#00A1A8'
+            hey.style.color = 'white'
+            $(student).attr('checked', 'checked')
+
+
+            hey.addEventListener('click', function () {
+                student.click()
+                this.style.backgroundColor = '#00A1A8'
+                this.style.color = 'white'
+                vey.style.backgroundColor = 'white'
+                vey.style.color = 'black'
+            })
+
+            vey.addEventListener('click', function () {
+                work.click()
+                this.style.backgroundColor = '#00A1A8'
+                this.style.color = 'white'
+                hey.style.backgroundColor = 'white'
+                hey.style.color = 'black'
+            })
+
+            let btn = document.querySelector('.next_btn')
+            let first_name = document.getElementById('id_first_name')
+            let last_name = document.getElementById('id_last_name')
+            let work_place = document.getElementById('id_place_of_work')
+
+            $(btn).css({'background': 'lightgrey', 'pointer-events': 'none'})
+
+            $(first_name).change(function () {
+                if ($(this).val() && $(last_name).val() && $(work_place).val()) {
+                    $(btn).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(last_name).change(function () {
+                if ($(this).val() && $(first_name).val() && $(work_place).val()) {
+                    $(btn).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(work_place).change(function () {
+                if ($(this).val() && $(last_name).val() && $(first_name).val()) {
+                    $(btn).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            let btn2 = document.querySelector('.next_btn2')
+            let application_name = document.getElementById('id_application_name')
+            let conference = document.getElementById('id_conference')
+            let section = document.getElementById('id_section')
+            let phone = document.getElementById('id_phone')
+            let email = document.getElementById('id_email')
+
+            $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+
+            $(application_name).change(function () {
+                if ($(this).val() && $(conference).val() && $(section).val() && $(phone).val() && $(email).val()) {
+                    $(btn2).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(conference).change(function () {
+                if ($(this).val() && $(application_name).val() && $(section).val() && $(phone).val() && $(email).val()) {
+                    $(btn2).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(section).change(function () {
+                if ($(this).val() && $(application_name).val() && $(conference).val() && $(phone).val() && $(email).val()) {
+                    $(btn2).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(phone).change(function () {
+                if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(email).val()) {
+                    $(btn2).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+            $(email).change(function () {
+                if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(phone).val()) {
+                    $(btn2).css({'background': '#00A1A8', 'pointer-events': 'auto'})
+                } else {
+                    $(btn2).css({'background': 'lightgrey', 'pointer-events': 'none'})
+                }
+            })
+
+
         })
 
-        $(work_place).change(function () {
-           if ($(this).val() && $(last_name).val() && $(first_name).val()) {
-                $(btn).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
+        const fileImage = document.querySelector('.input-preview__src');
+        const filePreview = document.querySelector('.input-preview');
 
-        let btn2 = document.querySelector('.next_btn2')
-        let application_name = document.getElementById('id_application_name')
-        let conference = document.getElementById('id_conference')
-        let section = document.getElementById('id_section')
-        let phone = document.getElementById('id_phone')
-        let email = document.getElementById('id_email')
+        fileImage.onchange = function () {
+            const reader = new FileReader();
 
-        $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
+            reader.onload = function (e) {
+                // get loaded data and render thumbnail.
+                filePreview.style.backgroundImage = "url(" + e.target.result + ")";
+                filePreview.classList.add("has-file");
+            };
 
-        $(application_name).change(function () {
-            if ($(this).val() && $(conference).val() && $(section).val() && $(phone).val() && $(email).val()) {
-                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
-
-        $(conference).change(function () {
-            if ($(this).val() && $(application_name).val() && $(section).val() && $(phone).val() && $(email).val()) {
-                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
-
-        $(section).change(function () {
-            if ($(this).val() && $(application_name).val() && $(conference).val() && $(phone).val() && $(email).val()) {
-                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
-
-        $(phone).change(function () {
-            if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(email).val()) {
-                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
-
-        $(email).change(function () {
-            if ($(this).val() && $(application_name).val() && $(conference).val() && $(section).val() && $(phone).val()) {
-                $(btn2).css({ 'background': '#00A1A8', 'pointer-events': 'auto' })
-            } else {
-                $(btn2).css({ 'background': 'lightgrey', 'pointer-events': 'none' })
-            }
-        })
-
-
-
-    })
-
-    const fileImage = document.querySelector('.input-preview__src');
-    const filePreview = document.querySelector('.input-preview');
-
-    fileImage.onchange = function () {
-        const reader = new FileReader();
-
-    reader.onload = function (e) {
-        // get loaded data and render thumbnail.
-        filePreview.style.backgroundImage  = "url("+e.target.result+")";
-        filePreview.classList.add("has-file");
-    };
-
-    // read the image file as a data URL.
-    reader.readAsDataURL(this.files[0]);
-};
-</script>
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        };
+    </script>
 {% endblock js %}

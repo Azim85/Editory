@@ -113,3 +113,7 @@ $(document).ready(function (){
     }
 
 })
+
+// if (screen.width > 922) {
+//     $('div#fotercha').addClass('justify-content-end')
+// }

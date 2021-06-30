@@ -49,14 +49,27 @@
                 <li class="nav-item">
                     <a class="nav-link darken" data-toggle="collapse" href="#collapseExamplelan"
                        style="color: #ABBFC8; font-size: 20px;" href="#">{% if 'ru' in request.path %}
-                        🇷🇺{% elif 'uz' in request.path %}🇺🇿{% else %}🇬🇧{% endif %}   {{ Lan }}</a>
+                        <img src="https://img.icons8.com/color/30/000000/russian-federation-circular.png"/>
+                    {% elif 'uz' in request.path %}
+                        <img src="https://img.icons8.com/color/30/000000/uzbekistan-circular.png"/>
+                    {% else %}
+                        <img src="https://img.icons8.com/color/30/000000/great-britain-circular.png"/>
+                    {% endif %}   {{ Lan }}</a>
 
                     <div class="collapse position-absolute bg-white p-4 nav-new rounded-20 border"
                          id="collapseExamplelan"
-                         style="z-index: 100; width: 150px; ">
+                         style="z-index: 100; width: 180px; ">
                         <ul class="" style="list-style-type: none">
                             {% for lll in LANGUAGE %}
-                                <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">{{ lll.1 }}</a></li>
+                                <li><a href="/{{ lll.0 }}/{{ request.path|lancut }}">
+                                    {% if 'Русский' in lll.1 %}
+                                        <img src="https://img.icons8.com/color/25/000000/russian-federation-circular.png"/>
+                                    {% elif "zbek" in lll.1 %}
+                                        <img src="https://img.icons8.com/color/25/000000/uzbekistan-circular.png"/>
+                                    {% else %}
+                                        <img src="https://img.icons8.com/color/25/000000/great-britain-circular.png"/>
+                                    {% endif %}
+                                    {{ lll.1 }}</a></li>
                                 <hr class="my-1">
                             {% endfor %}
                         </ul>
@@ -69,7 +82,7 @@
 <nav class="navbar navbar-expand-lg py-0 bg-white no-gutters main-font">
     <div class="container">
         <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}">
-            <img src="{% static 'pages/svg/Logo.svg' %}" height="65px" width="120px" alt="logo"></a>
+            <img src="{% static 'pages/svg/Logo.svg' %}" height="70px" alt="logo"></a>
         <button class="navbar-toggler " style="background-color: #40545C;" type="button" data-toggle="collapse"
                 data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -184,7 +197,8 @@
                         </div>
 
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild007" role="button"
+                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild007"
+                           role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="">{% trans 'Образование' %}</div>
                         </a>
@@ -321,8 +335,10 @@
 
                 </li>
                 <li class="nav-item ml-lg-3">
-                    <a class="nav-link darken" href="{% url 'editorypress:main' %}"><img class="img-fluid"
-                                                                                         src="{% static 'pages/svg/logo-png 1.svg' %}"></a>
+                    <a class="nav-link darken p-0" href="https://editorypress.com/">
+                        <img class="img-fluid"
+                             src="{% static 'pages/svg/logo-png 1.svg' %}"
+                             width="130px"></a>
                 </li>
             </ul>
         </div>

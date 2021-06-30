@@ -30,7 +30,7 @@
 
 
         {% endif %}
-        <div class="main-box d-flex justify-content-around align-items-center flex-wrap">
+        <div class="main-box d-flex justify-content-around align-items-center h-100 flex-wrap">
 
             <div class="profile d-flex align-items-center justify-content-center">
                 {% if request.user.profile_image %}
@@ -45,26 +45,26 @@
                 </div>
             </div>
 
-            <div class="edit">
+            <div class="edit py-5">
                 <a href="#" id="show_form"><i class="bi bi-pencil-fill"></i>{% trans 'Редактировать профиль' %}</a>
             </div>
 
-            <div class="choose d-flex border " style=" border-radius:8px; min-width:340px">
-                <form action="#" class="w-50">
-                    <div class="bg-white p-2" style="border-top-left-radius:8px; border-bottom-left-radius:8px">
-                        <select name="" id="" class="border-0 bg-transparent form-control">
-                            <option value="Author" class="border-0">Author</option>
-                            <option value="Librarian">Librarian</option>
-                        </select>
-                    </div>
-                </form>
-                <span class="d-flex justify-content-center align-items-center"
-                      style="background-color:#00A1A8; border-top-right-radius:8px; border-bottom-right-radius:8px">
-                    <div class="py-2 mx-3 text-white">
-                        {% trans 'Сменить статус' %}
-                    </div>
-                </span>
-            </div>
+{#            <div class="choose d-flex border " style=" border-radius:8px; min-width:340px">#}
+{#                <form action="#" class="w-50">#}
+{#                    <div class="bg-white p-2" style="border-top-left-radius:8px; border-bottom-left-radius:8px">#}
+{#                        <select name="" id="" class="border-0 bg-transparent form-control">#}
+{#                            <option value="Author" class="border-0">Author</option>#}
+{#                            <option value="Librarian">Librarian</option>#}
+{#                        </select>#}
+{#                    </div>#}
+{#                </form>#}
+{#                <span class="d-flex justify-content-center align-items-center"#}
+{#                      style="background-color:#00A1A8; border-top-right-radius:8px; border-bottom-right-radius:8px">#}
+{#                    <div class="py-2 mx-3 text-white">#}
+{#                        {% trans 'Сменить статус' %}#}
+{#                    </div>#}
+{#                </span>#}
+{#            </div>#}
 
         </div>
     </div>
@@ -124,7 +124,7 @@
         </div>
     </div>
 
-    <div class="container mt-100">
+    <div class="container mt-100 overflow-auto">
         <h1>{% trans 'История' %}</h1>
 
         {% if request.user.is_staff %}
@@ -256,6 +256,7 @@
 
 {% endif %}
 
+<<<<<<< HEAD
 <!-- PAGINATION -->
 {% if request.user.is_staff %}
 {% if page_obj.has_other_pages %}
@@ -295,6 +296,8 @@
 {% endif %}
 
 <!-- END PAGINATION -->
+=======
+>>>>>>> 626626d6d2ac1d75aff3e27a7ead4b17eb0d7145
 
 {% endblock content %}
 

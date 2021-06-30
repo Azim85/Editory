@@ -139,9 +139,9 @@ LANGUAGE_CODE = 'ru'
 
 
 LANGUAGES = [
-    ('ru', '🇷🇺  Русский'),
-    ('en', '🇬🇧  English'),
-    ('uz', '🇺🇿  O\'zbek'),
+    ('ru', 'Русский'),
+    ('en', 'English'),
+    ('uz', 'O\'zbek'),
 ]
 
 

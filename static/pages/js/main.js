@@ -63,6 +63,23 @@ $(document).ready(function (){
     }
 
 })
+
+
+$(document).ready(function (){
+    if($(window).width() > 991) {
+        $('#showChild007,#navChild007').mouseenter(  function(){
+             $('#navChild007').css({ 'display': 'block'})
+         }).mouseleave( function(){
+             $('#navChild007').css({ 'display': 'none' })
+         })
+    }
+    if($(window).width() < 991) {
+        $('#showChild007,#navChild007').click(  function(){
+
+            $('#navChild007').toggleClass('hidebutton')
+        })
+    }
+})
 $(document).ready(function (){
     if($(window).width() > 991) {
         $('#showChild4,#navChild4').mouseenter(  function(){
@@ -96,3 +113,7 @@ $(document).ready(function (){
     }
 
 })
+
+// if (screen.width > 922) {
+//     $('div#fotercha').addClass('justify-content-end')
+// }

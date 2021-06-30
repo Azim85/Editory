@@ -31,8 +31,8 @@
                     <div class="my-text geometria"><span class="main-color">{% trans 'Полный' %}</span>
                         {% trans 'спектр научных консультаций' %}
                     </div>
-                    <div class="my-5" style="font-size: 22px">{% trans 'Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации' %}</div>
-                    <a href="#Forma" class="btn btn-color rounded py-3 font-weight-light">
+                    <div class="my-5 font-22">{% trans 'Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации' %}</div>
+                    <a href="#Forma" class="btn btn-color rounded py-3 mb-5 buttoncss text-center font-weight-light">
                                  {% trans 'Задать вопрос' %}
                             </a>
                 </div>
@@ -48,7 +48,7 @@
     <div class="position-relative">
         <div class="row m-0">
             <div class=" offset-lg-4 col-lg-8 d-flex flex-column justify-content-end  statistic">
-                <div class=" row bg-white geometria shadow-new  main-color border py-4" style="border-bottom-left-radius: 20px;
+                <div class="row bg-white geometria shadow-new  main-color border py-4" style="border-bottom-left-radius: 20px;
                                                                           border-top-left-radius: 20px">
                     <div class="col-lg-3 text-center">
                         <div class="font-65 font-weight-bold">6</div>
@@ -197,6 +197,14 @@
                     <div class="img-icon mr-md-4 my-4 my-md-0">
                         <img src="{% static 'pages/svg/medal 1.svg' %}" height="100px">
                     </div>
+                    <style>
+                        @media screen and (max-width: 568px) {
+                        .text-content{
+                            text-align: center !important;
+                        }
+                        }
+
+                    </style>
                     <div class="text-content">
                         <h2>{% trans 'Качество работы' %}</h2>
                         <p class="text-break text-light">
@@ -256,38 +264,38 @@
                     <div class="wrapper w-100 inline-block">
                         <div class="slick2 slider p-0">
 
-                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto w-100">
+                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto">
 
-                                    <img id="rasm" src="{% static "pages/images/milliy_univ.png" %}"  class="m-0 mt-0 mx-auto"/>
-                                    <p class="  text-small text-center px-3">
+                                    <img id="rasm" src="{% static "pages/images/milliy_univ.png" %}" height="170px" class="mb-md-4 mb-3 mx-auto"/>
+                                    <p class="text-small text-center px-3 text-adaptive">
                                         {% trans 'Национальный университет Узбекистана им. Мирзо-Улугбека' %}
                                     </p>
 
                             </div>
-                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto w-100">
-                                    <img src="{% static "pages/images/islam_univ.png" %}"  class="mb-md-4 mb-3 mx-auto"/>
-                                    <p class="  text-small text-center px-3">
+                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto">
+                                    <img src="{% static "pages/images/islam_univ.png" %}" height="170px" class="mb-md-4 mb-3 mx-auto"/>
+                                    <p class="text-small text-center px-3 text-adaptive">
                                         {% trans 'Международная Исламская Академия Узбекистана' %}
                                     </p>
 
                             </div>
-                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto w-100">
-                                     <img src="{% static "pages/images/med_univ.png" %}"  class="mb-md-4 mb-3 mx-auto"/>
-                                    <p class="  text-small text-center px-3">
+                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto">
+                                     <img src="{% static "pages/images/med_univ.png" %}" height="170px" class="mb-md-4 mb-3 mx-auto"/>
+                                    <p class="text-small text-center px-3 text-adaptive">
                                         {% trans 'Ташкентский педиатрический медицинский институт' %}
                                     </p>
 
                             </div>
-                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto w-100">
-                                     <img src="{% static "pages/images/medA_univ.png" %}"  class="mb-md-4 mb-3 mx-auto"/>
-                                    <p class="  text-small text-center px-3">
+                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto">
+                                     <img src="{% static "pages/images/medA_univ.png" %}" height="170px" class="mb-md-4 mb-3 mx-auto"/>
+                                    <p class="text-small text-center px-3 text-adaptive">
                                         {% trans 'Ташкентская медицинская академия' %}
                                     </p>
 
                             </div>
-                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto w-100">
-                                    <img src="{% static "pages/images/tdiu_univ1.png" %}"   class="mb-md-4 mb-3 mx-auto"/>
-                                    <p class="  text-small text-center px-3">
+                            <div class="content-slider p-0 m-0 shadow-slider d-flex flex-column justify-content-center text-center mx-auto">
+                                    <img src="{% static "pages/images/tdiu_univ1.png" %}"  height="170px" class="mb-md-4 mb-3 mx-auto"/>
+                                    <p class="text-small text-center px-3 text-adaptive">
                                         {% trans 'Ташкентский государственный экономический университет' %}
                                     </p>
 
@@ -309,15 +317,15 @@
      <div class="mb-200 mt-200">
         <div class="container py-5">
             <div class="row ">
-                <div class="col-lg-3 d-flex justify-content-center wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
-                <div class="col-lg-3 d-flex justify-content-center ireg"><a><img src="{% static 'pages/svg/ireg.svg' %}" class="ireg"></a></div>
-                <div class="col-lg-3 d-flex justify-content-center elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
-                <div class="col-lg-3 d-flex justify-content-center springer"><a href="https://www.elsevier.com/"><img src="{% static 'pages/svg/springer.svg' %}" class="springer"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 wur"><a href="https://www.timeshighereducation.com/world-university-rankings"><img src="{% static 'pages/images/the world.png' %}" class="wur"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 ireg"><a><img src="{% static 'pages/svg/ireg.svg' %}" class="ireg"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 elsavier"><a href="https://www.elsevier.com/"><img src="{% static 'pages/images/elsavierr.png' %}" class="elsavier"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 springer"><a href="https://www.elsevier.com/"><img src="{% static 'pages/svg/springer.svg' %}" class="springer"></a></div>
                 </div>
             <div class="row d-flex  justify-content-center mt-5">
-                <div class="col-lg-3 d-flex justify-content-center greenm"><a href=""><img src="{% static 'pages/svg/greenm.svg' %}" height="140px" class="greenm"></a></div>
-                <div class="col-lg-3 d-flex justify-content-center academ"><a><img src="{% static 'pages/svg/academ.svg' %}" height="180px" class="academ"></a></div>
-                <div class="col-lg-3 d-flex flex-column justify-content-center  qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="img-fluid qswur"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 greenm"><a href=""><img src="{% static 'pages/svg/greenm.svg' %}" height="140px" class="greenm"></a></div>
+                <div class="col-lg-3 d-flex justify-content-center mt-5 academ"><a><img src="{% static 'pages/svg/academ.svg' %}" height="180px" class="academ"></a></div>
+                <div class="col-lg-3 d-flex flex-column justify-content-center mt-5  qswur"><a href="https://www.topuniversities.com/"><img src="{% static 'pages/images/wurankings.png' %}" class="img-fluid qswur"></a></div>
 
                </div>
         </div>
@@ -528,7 +536,14 @@
                                {
                     breakpoint: 568,
                     settings: {
+
+                         dots: true,
+                           autoplay: false,
+                           infinite: true,
+                           speed: 2000,
                            slidesToShow: 1,
+                           startMode: true,
+                           variableWidth: true
                     }},
                             {
                     breakpoint: 1370,
@@ -549,7 +564,7 @@
   speed: 2000,
             autoPlayClear:true,
             autoplay: true,
-            autoplaySpeed: 500 ,
+            autoplaySpeed: 500,
   slidesToShow: 4,
   startMode: false,
   variableWidth: false,
@@ -565,7 +580,7 @@
                            dots: true,
                            autoplay: false,
                            infinite: true,
-                           speed: 300,
+                           speed: 2000,
                            slidesToShow: 1,
                            startMode: true,
                            variableWidth: true

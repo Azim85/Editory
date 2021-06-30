@@ -10,144 +10,144 @@
 
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-{% if message.tags == 'success' %}
-<div class="alert alert-success text-center" id="alert_message">
-    {{message}}
-</div>
-{% else %}
-<div class="alert alert-danger text-center" id="alert_message">
-    {{message}}
-</div>
-{% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% endif %}
 
-{% endfor %}
-{% endif %}
-<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image64.png' %});
-        background-size: cover;">
-    <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
+        {% endfor %}
+    {% endif %}
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image64.png' %});
+            background-size: cover;">
+        <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
 ">
-    <div class="container my-auto">
-       <div class="row padding_me">
-            <div class="col-lg-7 text-white">
-                <div class=" head-word geometria pb-5 text-white" ><span class="">Editory:</span> {% trans 'секреты качества' %}</div>
-                <div class="font-22">
-                    {% trans 'Долгий путь в мире науки невозможен без тщательного подбора кадров и грамотной организации процессов компании. Все наши специалисты обладают высокой экспертностью и по-настоящему живут своей профессией.' %}
+            <div class="container my-auto">
+                <div class="row padding_me">
+                    <div class="col-lg-7 text-white">
+                        <div class=" head-word geometria pb-5 text-white"><span
+                                class="">Editory:</span> {% trans 'секреты качества' %}</div>
+                        <div class="font-22">
+                            {% trans 'Долгий путь в мире науки невозможен без тщательного подбора кадров и грамотной организации процессов компании. Все наши специалисты обладают высокой экспертностью и по-настоящему живут своей профессией.' %}
 
+                        </div>
+                        <a href="#Forma" class="btn btn-light px-5 my-5"> {% trans 'Задать вопрос' %}</a>
+                    </div>
+                    {#            <div class="col-lg-5">#}
+                    {#                <div class="d-flex align-items-center">#}
+                    {#                    <img class="pt-auto img-fluid" src="{% static 'pages/images/about us 1.png' %}" width="100%" >#}
+                    {#                </div>#}
+                    {#            </div>#}
                 </div>
-                <a href="#Forma" class="btn btn-light px-5 my-5"> {% trans 'Задать вопрос' %}</a>
+
             </div>
-{#            <div class="col-lg-5">#}
-{#                <div class="d-flex align-items-center">#}
-{#                    <img class="pt-auto img-fluid" src="{% static 'pages/images/about us 1.png' %}" width="100%" >#}
-{#                </div>#}
-{#            </div>#}
-         </div>
 
+
+        </div>
     </div>
+    <div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
+        {#    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">#}
+        {#    <div class="container">#}
+        {##}
+        {#    </div>#}
+        {#    </div>#}
 
 
-
-
-</div>
-</div>
-<div style="background: linear-gradient(148.89deg, #FFFFFF 2.93%, #E9F3F4 98.45%);">
-{#    <div class="bg-me" style="background-image: url({% static 'pages/images/Rectangle 526.png' %})">#}
-{#    <div class="container">#}
-{##}
-{#    </div>#}
-{#    </div>#}
-
-
-
-    <div class=" container pt-100">
+        <div class=" container pt-100">
             <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
-        <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
+            <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">
                 {% for staff in staffs %}
-                 <div class="col-6 col-lg-3">
-                     <div class="card rounded-25 w-100 h-100 shadow_me card-body p-0 bg-white">
-                         <img class="img-fluid" style="border-top-right-radius: 25px;border-top-left-radius: 25px" src="{{ staff.photo.url }}">
-                         <div class="p-4 d-flex h-100 flex-column justify-content-between">
-                             <div>
-                                 <div class="font-22  my-2">{{ staff.fullname }}</div>
-                                 <div class="mt-2" style="font-size: 15px">{{ staff.profession }}</div>
-                             </div>
-                             <div class="mt-3 "><a href="{{ staff.linkedLn }}"><i class="bi-linkedin"></i>LinkedIn</a></div>
-                         </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="card rounded-25 w-100 h-100 shadow_me card-body p-0 bg-white">
+                            <img class="img-fluid" style="border-top-right-radius: 25px;border-top-left-radius: 25px"
+                                 src="{{ staff.photo.url }}">
+                            <div class="p-4 d-flex h-100 flex-column justify-content-between">
+                                <div>
+                                    <div class="font-22  my-2">{{ staff.fullname }}</div>
+                                    <div class="mt-2" style="font-size: 15px">{{ staff.profession }}</div>
+                                </div>
+                                <div class="mt-3 "><a href="{{ staff.linkedLn }}"><i
+                                        class="bi-linkedin"></i>LinkedIn</a></div>
+                            </div>
 
-                     </div>
-                 </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
 
 
-{#            <div class="row  mr-0">#}
-{#                <div class="col-12 px-0">#}
-{#                    <div class="wrapper w-100 inline-block">#}
-{#                        <div class="slick1 slider p-0">#}
-{##}
-{#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
-{##}
-{#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
-{#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
-{#                                    <p class="text-break  text-small">#}
-{#                                        Копирайтер, редактор#}
-{#                                    </p>#}
-{##}
-{#                            </div>#}
-{#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
-{##}
-{#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
-{#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
-{#                                    <p class="text-break  text-small">#}
-{#                                        Копирайтер, редактор#}
-{#                                    </p>#}
-{##}
-{#                            </div>#}
-{#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
-{##}
-{#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
-{#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
-{#                                    <p class="text-break  text-small">#}
-{#                                        Копирайтер, редактор#}
-{#                                    </p>#}
-{##}
-{#                            </div>#}
-{#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
-{##}
-{#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
-{#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
-{#                                    <p class="text-break  text-small">#}
-{#                                        Копирайтер, редактор#}
-{#                                    </p>#}
-{##}
-{#                            </div>#}
-{#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
-{##}
-{#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
-{#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
-{#                                    <p class="text-break  text-small">#}
-{#                                        Копирайтер, редактор#}
-{#                                    </p>#}
-{##}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-    </div>
+            {#            <div class="row  mr-0">#}
+            {#                <div class="col-12 px-0">#}
+            {#                    <div class="wrapper w-100 inline-block">#}
+            {#                        <div class="slick1 slider p-0">#}
+            {##}
+            {#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
+            {##}
+            {#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
+            {#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
+            {#                                    <p class="text-break  text-small">#}
+            {#                                        Копирайтер, редактор#}
+            {#                                    </p>#}
+            {##}
+            {#                            </div>#}
+            {#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
+            {##}
+            {#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
+            {#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
+            {#                                    <p class="text-break  text-small">#}
+            {#                                        Копирайтер, редактор#}
+            {#                                    </p>#}
+            {##}
+            {#                            </div>#}
+            {#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
+            {##}
+            {#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
+            {#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
+            {#                                    <p class="text-break  text-small">#}
+            {#                                        Копирайтер, редактор#}
+            {#                                    </p>#}
+            {##}
+            {#                            </div>#}
+            {#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
+            {##}
+            {#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
+            {#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
+            {#                                    <p class="text-break  text-small">#}
+            {#                                        Копирайтер, редактор#}
+            {#                                    </p>#}
+            {##}
+            {#                            </div>#}
+            {#                            <div class="content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center text-center">#}
+            {##}
+            {#                                    <img id="rasm" src="{% static "pages/images/staff.png" %}" class="mb-md-4 mb-3 mx-0"/>#}
+            {#                                    <h3 class="mb-2 mb-md-3">Равшан Муминов</h3>#}
+            {#                                    <p class="text-break  text-small">#}
+            {#                                        Копирайтер, редактор#}
+            {#                                    </p>#}
+            {##}
+            {#                            </div>#}
+            {##}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+        </div>
 
-    <div class="mt-200 pb-5 container">
-        <div class="row">
-            <div class="offset-2 col-lg-8 font-22  text-center">{% trans 'Руководители Editory — люди, имеющие непосредственное отношение к науке и болеющие душой за достижения республики. Нам известны боли современных исследователей, и мы готовы приложить все усилия, чтобы достойный вклад Узбекистана в мировую науку не остался  незамеченным.' %}</div>
+        <div class="mt-200 pb-5 container">
+            <div class="row">
+                <div class="offset-lg-2 col-lg-8 font-22  text-center">{% trans 'Руководители Editory — люди, имеющие непосредственное отношение к науке и болеющие душой за достижения республики. Нам известны боли современных исследователей, и мы готовы приложить все усилия, чтобы достойный вклад Узбекистана в мировую науку не остался  незамеченным.' %}</div>
 
+            </div>
         </div>
     </div>
-</div>
 
     <div style="background-color:#CE935E ">
         <div class="container pt-100 pb-100">
@@ -162,7 +162,7 @@ mix-blend-mode: luminosity;
             </div>
         </div>
     </div>
-    
+
     <div id="Forma" class="container mt-100 mb-5">
         <div class="row">
             <div class="col-lg-4 img-fluid mb-5">
@@ -173,86 +173,89 @@ mix-blend-mode: luminosity;
                     <div class="h2 mt-5">{% trans 'Карьерные возможности' %}</div>
                     <div class="font-22 mt-3">{% trans 'Вы переводчик, корректор или редактор? Может быть, вы — профессионал в другой сфере, но хотите у нас работать и считаете, что ваши знания нам пригодятся? Заполните форму ниже — и HR-специалист обязательно ответит.' %}</div>
                     <div class="mt-5">
-                    <a class="main-color font-22 " data-toggle="collapse" href="#collapseExample44" role="button" aria-expanded="false" aria-controls="collapseExample">{% trans 'Открыть форму' %}   <img src="{% static 'pages/svg/Group 476.svg' %}" height="30px"></a>
-                   </div>
+                        <a class="main-color font-22 " data-toggle="collapse" href="#collapseExample44" role="button"
+                           aria-expanded="false" aria-controls="collapseExample">{% trans 'Открыть форму' %} <img
+                                src="{% static 'pages/svg/Group 476.svg' %}" height="30px"></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="collapse" id="collapseExample44">
-    <div  class="container mt-100 mb-5">
+        <div class="container mt-100 mb-5">
 
-        <form method='post' enctype="multipart/form-data">
-            {% csrf_token %}
-                    <div class="row text-secondary mt-5">
-                        <div class="col-lg-6">
-                            <div class="form-group row my-5">
-                                <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.first_name}}
-                                    <small class="text-danger align-self-start">{{form.first_name.errors}}</small>
-                                </div>
-                            </div>
-
-                            <div class="form-group row my-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.last_name}}
-                                    <small class="text-danger align-self-start">{{form.last_name.errors}}</small>
-                                </div>
+            <form method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row text-secondary mt-5">
+                    <div class="col-lg-6">
+                        <div class="form-group row my-5">
+                            <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                            <div class="col-sm-6 d-flex flex-column">
+                                {{ form.first_name }}
+                                <small class="text-danger align-self-start">{{ form.first_name.errors }}</small>
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <div class="form-group row w-100 my-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Профессия' %}</label>
-                                <div class="col-sm-6 d-flex flex-column">
-                                    {{form.profession}}
-                                    <small class="text-danger align-self-start">{{form.academic_degree.errors}}</small>
-                                </div>
+                        <div class="form-group row my-5">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                            <div class="col-sm-6 d-flex flex-column">
+                                {{ form.last_name }}
+                                <small class="text-danger align-self-start">{{ form.last_name.errors }}</small>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group row  my-5">
-                        <div class="col-lg-2">
-                            <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Пара слов о себе' %}</label>
-                        </div>
-                        <div class="col-lg-9 d-flex flex-column">
-                                {{form.about_me}}
-                            <small class="text-danger align-self-start">{{form.about_me.errors}}</small>
+                    <div class="col-lg-6">
+                        <div class="form-group row w-100 my-5">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Профессия' %}</label>
+                            <div class="col-sm-6 d-flex flex-column">
+                                {{ form.profession }}
+                                <small class="text-danger align-self-start">{{ form.academic_degree.errors }}</small>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="form-group row  mt-5">
-                        <div class="col-lg-2">
-                            <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Резюме' %}</label>
-                        </div>
-                        <div class="col-lg-9 row w-100">
+                <div class="form-group row  my-5">
+                    <div class="col-lg-2">
+                        <label for="inputPassword"
+                               class="text-secondary col-form-label">{% trans 'Пара слов о себе' %}</label>
+                    </div>
+                    <div class="col-lg-9 d-flex flex-column">
+                        {{ form.about_me }}
+                        <small class="text-danger align-self-start">{{ form.about_me.errors }}</small>
+                    </div>
+                </div>
+
+                <div class="form-group row  mt-5">
+                    <div class="col-lg-2">
+                        <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Резюме' %}</label>
+                    </div>
+                    <div class="col-lg-9 row w-100">
                         <div class="col-lg-12 d-flex ml-3 p-0 flex-column">
                             <label for="file" class="input-preview  form-input">
-                               {{form.resume}}
+                                {{ form.resume }}
                             </label>
                         </div>
-                        </div>
                     </div>
-                    
-                    <div class="container d-flex justify-content-between">
-                        <div>
-                            <span class="">{{form.is_agree}}</span>   {% trans 'Согласие с политикой конфиденциальности' %}
-                            </div>
-                        <div class="">
-                            <button type="submit" class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
+                </div>
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class=" mb-3">
+                            <span class="mr-auto">{{ form.is_agree }}</span> {% trans 'Согласие с политикой конфиденциальности' %}
                         </div>
+                        <button type="submit" class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
+
                     </div>
+                </div>
             </form>
 
-    </div>
+        </div>
     </div>
 
     {% if validated %}
-    <div id="flag" style="opacity: 1;">flag</div>
+        <div id="flag" style="opacity: 1;">flag</div>
     {% endif %}
 {% endblock %}
 
@@ -260,25 +263,25 @@ mix-blend-mode: luminosity;
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-    $(document).ready(function(){
-        let validated = document.getElementById('flag')
-        let alert_message = document.getElementById('alert_message')
+        $(document).ready(function () {
+            let validated = document.getElementById('flag')
+            let alert_message = document.getElementById('alert_message')
 
 
-        if(alert_message){
-            alert_message.classList.add('alert_message')
-        }
+            if (alert_message) {
+                alert_message.classList.add('alert_message')
+            }
 
 
-        if (validated) {
-            $('div.forma').css('display', 'inline')
-        }
+            if (validated) {
+                $('div.forma').css('display', 'inline')
+            }
 
 
-        $('.btn-toggle').click(function () {
-            $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
-        });
-    })
+            $('.btn-toggle').click(function () {
+                $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
+            });
+        })
 
 
         $('.btn-toggle').click(function () {
@@ -288,79 +291,80 @@ mix-blend-mode: luminosity;
 
         $('.slick1').slick({
 
-             dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  startMode: true,
-  variableWidth: true
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            startMode: true,
+            variableWidth: true
 
-});
+        });
 
         $('.slick2').slick({
 
-  dots: true,
-  infinite: true,
-  speed: 2000,
-            autoPlayClear:true,
+            dots: true,
+            infinite: true,
+            speed: 2000,
+            autoPlayClear: true,
             autoplay: true,
-            autoplaySpeed: 500 ,
-  slidesToShow: 4,
-  startMode: false,
-  variableWidth: false,
-               responsive: [
+            autoplaySpeed: 500,
+            slidesToShow: 4,
+            startMode: false,
+            variableWidth: false,
+            responsive: [
                 {
                     breakpoint: 1370,
                     settings: {
-                           slidesToShow: 4,
-                    }},
-                   {
-                       breakpoint: 768,
-                       settings: {
-                           dots: true,
-                           autoplay: false,
-                           infinite: true,
-                           speed: 300,
-                           slidesToShow: 1,
-                           startMode: true,
-                           variableWidth: true
-                       }
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        dots: true,
+                        autoplay: false,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 1,
+                        startMode: true,
+                        variableWidth: true
+                    }
 
                 }
             ]
-});
+        });
 
 
-         $('.wur').hover(function(){
+        $('.wur').hover(function () {
             $("img.wur").on({
-             "mouseover" : function() {
-                this.src = "{% static 'pages/images/the world.png' %}";
-              },
-              "mouseout" : function() {
-                this.src="{% static 'pages/images/WUR.png' %}";
-              }
+                "mouseover": function () {
+                    this.src = "{% static 'pages/images/the world.png' %}";
+                },
+                "mouseout": function () {
+                    this.src = "{% static 'pages/images/WUR.png' %}";
+                }
             });
         });
 
-        $('.elsavier').hover(function(){
+        $('.elsavier').hover(function () {
             $("img.elsavier").on({
-             "mouseover" : function() {
-                this.src = "{% static 'pages/images/elsavierr.png' %}";
-              },
-              "mouseout" : function() {
-                this.src="{% static 'pages/images/elsavier.png' %}";
-              }
+                "mouseover": function () {
+                    this.src = "{% static 'pages/images/elsavierr.png' %}";
+                },
+                "mouseout": function () {
+                    this.src = "{% static 'pages/images/elsavier.png' %}";
+                }
             });
         });
 
-        $('.qswur').hover(function(){
+        $('.qswur').hover(function () {
             $("img.qswur").on({
-             "mouseover" : function() {
-                this.src = "{% static 'pages/images/wurankings.png' %}";
-              },
-              "mouseout" : function() {
-                this.src="{% static 'pages/images/WUR2.png' %}";
-              }
+                "mouseover": function () {
+                    this.src = "{% static 'pages/images/wurankings.png' %}";
+                },
+                "mouseout": function () {
+                    this.src = "{% static 'pages/images/WUR2.png' %}";
+                }
             });
         });
     </script>
