@@ -133,6 +133,7 @@
             <tr>
                 <th class="text-center">{% trans 'Услуга' %}</th>
                 <th class="text-center">{% trans 'Дата' %}</th>
+                <th class="text-center">{% trans 'Сумма' %}</th>
                 <th class="text-center">{% trans 'Способ оплаты' %}</th>
                 <th class="text-center">{% trans 'Статус' %}</th>
                 <th class="text-center">{% trans 'принимать' %}</th>
@@ -143,6 +144,7 @@
             <tr>
                 <td class="text-center">{{order.product}}</td>
                 <td class="text-center">{{order.created_at|date:'m.d.Y'}}</td>
+                <td class="text-center">{{order.amount}}</td>
                 {% if order.payment_type == 4 %}
                 <td class="text-center">Payme</td>
                 {% elif order.payment_type == 3 %}
@@ -254,32 +256,52 @@
 
 {% endif %}
 
-<button type="button" id="hop">button</button>
+<!-- PAGINATION -->
+{% if request.user.is_staff %}
+{% if page_obj.has_other_pages %}
+
+<nav aria-label="..." class="mt-3 d-flex justify-content-center">
+    <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link text-dark" href="?page={{page_obj.previous_page_number}}">Pervious</a>
+        </li>
+        {% endif %}
+
+        {% for p in page_obj.paginator.page_range %}
+        {% if p == page_obj.number %}
+        <li class="page-item ">
+            <span class="activate">
+                <a class="page-link activate text-white" href="?page={{p}}">{{p}}</a>
+            </span>
+        </li>
+        {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3%} <li class="page-item">
+            <a class="page-link text-dark" href="?page={{p}}">{{p}}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link text-dark" href="?page={{page_obj.next_page_number}}">Next</a>
+            </li>
+            {% endif %}
+
+    </ul>
+</nav>
+
+{% endif %}
+{% endif %}
+
+<!-- END PAGINATION -->
 
 {% endblock content %}
 
 {% block js %}
 
 <script>
-    $(document).ready(function(){
-         $('.check_transaction').on('click', function () {
-            let data_id = $(this).data("id") 
-            $(this).parent().submit() 
-            
-            const a = $(this).attr("data-id")
-            if($(this).find('.apelsin_confirm').attr('data-id') == data_id){
-                $(this).find('.apelsin_confirm').trigger('click')
-            }
-            
 
-        })
-    })
-    
-   
-
-    $('#confirm_click').click(function(){
-        alert('uspeshno')
-    })
 
     const profile_form = document.getElementById('profile')
     const show_form = document.getElementById('show_form')
