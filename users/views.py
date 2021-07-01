@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View, UpdateView
+from django.views.generic import View, UpdateView, ListView
 from .forms import RegisterForm, LoginForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
@@ -55,7 +55,7 @@ class UserLoginView(View):
                 login(request, user)
                 return redirect('pages:home')
             else:
-                messages.error(request, ' Invalid Email or Passwor')
+                messages.error(request, 'Email or Password is invalid')
                 context = {'form':form}
                 return render(request, 'users/login.html', context)
 
@@ -66,17 +66,28 @@ class UserLogoutView(View):
         return render(request, 'home.html')
 
 
-class DasboardView(View):
+class DasboardView(ListView):
+    template_name = 'users/dashboard.html'
+    context_object_name = 'orders'
+    model = OrderModel
+    paginate_by = 6
+    ordering = ('-id',)
 
-    def get(self, request):
-        if request.user.is_authenticated:
-            orders = OrderModel.objects.all()
-            user_order = OrderModel.objects.filter(user=request.user)
-            form = ProfileForm(instance=request.user)
-            context = {'form': form, 'orders':orders, 'user_order':user_order}
-            return render(request, 'users/dashboard.html', context)
-        else:
-            return redirect('users:login')
+    def get_context_data(self, *args, **kwargs):
+        context = super(DasboardView, self).get_context_data(**kwargs)
+        context['form'] = ProfileForm(instance=self.request.user)
+        return context
+
+
+    # def get(self, request):
+    #     if request.user.is_authenticated:
+    #         orders = OrderModel.objects.order_by('-id')[:6]
+    #         user_order = OrderModel.objects.filter(user=request.user)
+    #         form = ProfileForm(instance=request.user)
+    #         context = {'form': form, 'orders':orders, 'user_order':user_order}
+    #         return render(request, 'users/dashboard.html', context)
+    #     else:
+    #         return redirect('users:login')
 
 
 class ProfileChange(UpdateView):
