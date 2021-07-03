@@ -324,6 +324,7 @@ h1, h2, h3, h4, h5, h6{
 .ireg,
 .elsavier,
 .springer,
+.crossref,
 .greenm,
 .academ,
 .qswur {
@@ -334,6 +335,7 @@ h1, h2, h3, h4, h5, h6{
 .ireg:hover,
 .elsavier:hover,
 .springer:hover,
+.crossref:hover,
 .greenm:hover,
 .academ:hover,
 .qswur:hover {
