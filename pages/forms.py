@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from .models import ResumeModel
+from .models import ResumeModel, Topic
 
 class ResumeForm(forms.ModelForm):
 
@@ -15,4 +15,19 @@ class ResumeForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class':'form-control'}),
             'profession': forms.TextInput(attrs={'class':'form-control'}),
             'about_me': forms.Textarea(attrs={'class':'form-control', 'rows':5}),
+        }
+
+class TopicForm(forms.ModelForm):
+    description = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'rows':6}))
+    others = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'rows':6}))
+    class Meta:
+        model = Topic
+        fields = ['main_image', 'material_name', 'title', 'description', 'others', ]
+
+        widgets = {
+            'material_name': forms.TextInput(attrs={'class':'form-control'}),
+            'title': forms.TextInput(attrs={'class':'form-control'}),
+            # 'description': forms.Textarea(attrs={'class':'form-control', 'rows':6}),
+            # 'others': forms.Textarea(attrs={'class':'form-control', 'rows':6}),
+
         }

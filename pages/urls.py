@@ -19,4 +19,9 @@ urlpatterns = [
     path('top10/', top10.as_view(), name='top10'),
     path('top10uz/', top10uz.as_view(), name='top10uz'),
 
+    path('change_image', change_image, name="image-change"),
+    path('change_material', change_material, name="material-change"),
+    path('change_title', change_title, name="title-change"),
+    path('change_description', change_description, name="description-change"),
+    path('change_others', change_others, name="others-change"),
 ]

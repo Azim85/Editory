@@ -205,8 +205,8 @@
                                 <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                                 <input type="hidden" name="description" value="Payment for OOO Editory">
                                 <input type="hidden" name="amount" value="{{order.get_payme_amount}}">
-                                <input type="hidden" name="order_id" value="{{order.id}}" id=transactionid>
-                                <button type="button" data-id="{{order.id}}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
+                                <input type="hidden" name="order_id" value="{{order.id}}">
+                                <button type="submit" data-id="{{order.id}}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить с помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
                                 </button>
                                 
                             </form>
@@ -256,7 +256,7 @@
 
 {% endif %}
 
-<<<<<<< HEAD
+
 <!-- PAGINATION -->
 {% if request.user.is_staff %}
 {% if page_obj.has_other_pages %}
@@ -296,8 +296,6 @@
 {% endif %}
 
 <!-- END PAGINATION -->
-=======
->>>>>>> 626626d6d2ac1d75aff3e27a7ead4b17eb0d7145
 
 {% endblock content %}
 

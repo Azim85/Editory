@@ -26,11 +26,5 @@ def check_apelsin(request):
     return JsonResponse({"status": False})
 
 
-def confirm_apelsin(request, pk):
-    print(pk)
-    order = OrderModel.objects.get(pk=pk)
-    order.payment_status = 3
-    order.save()
-    order.refresh_from_db()
-    return redirect('users:dashboard')
+
 

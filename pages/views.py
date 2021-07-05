@@ -4,11 +4,15 @@ import random
 import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
-from .models import Topic, TopResearches
+from .models import Topic, TopResearches, CostModel
 from my_requests.forms import ConsultationForm, OrganizeResearchForm
-from .forms import ResumeForm
+from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
 from users.models import Colleague
+from django.http import JsonResponse
+import sys, glob, os
+from django.core.files import File
+from django.conf import settings
 
 import logging
 
@@ -29,10 +33,13 @@ class Article(DetailView):
     model = Topic
     context_object_name = 'topic'
 
+
     def get_context_data(self, **kwargs):
+        topic = Topic.objects.get(pk=self.kwargs['pk'])
         context = super(Article, self).get_context_data(**kwargs)
         context['get_by_theme'] = Topic.objects.filter(
             material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
+        context['form'] = TopicForm(instance=topic)
         return context
 
 
@@ -156,7 +163,8 @@ class Language_editing(View):
     def get(self, request):
         form = OrderForm()
         forms = ConsultationForm()
-        return render(request, 'language_editing.html', {'form':form, 'forms':forms} )
+        cost = CostModel.objects.first()
+        return render(request, 'language_editing.html', {'form':form, 'forms':forms, 'cost':cost} )
 
     def post(self, request):
         forms = ConsultationForm(request.POST)
@@ -195,3 +203,70 @@ class top10(TemplateView):
 
 class top10uz(TemplateView):
     template_name = 'scientific_paper/top10uz.html'
+
+
+
+
+def change_image(request):
+    topic_id = request.POST.get('topic_id')
+    image = request.FILES.get('main_image') 
+    
+    if not image:
+        return redirect('pages:article', pk=topic_id)
+   
+    topic = Topic.objects.get(pk=topic_id)
+    topic.main_image = image
+    topic.save()
+    return redirect('pages:article', pk=topic_id)
+
+
+def change_material(request):
+    topic_id = request.POST.get('topic_id')
+    material = request.POST.get('material_name') 
+    
+    if not material:
+        return redirect('pages:article', pk=topic_id)
+   
+    topic = Topic.objects.get(pk=topic_id)
+    topic.material_name = material
+    topic.save()
+    return redirect('pages:article', pk=topic_id)
+
+
+def change_title(request):
+    topic_id = request.POST.get('topic_id')
+    title = request.POST.get('title') 
+    
+    if not title:
+        return redirect('pages:article', pk=topic_id)
+   
+    topic = Topic.objects.get(pk=topic_id)
+    topic.title = title
+    topic.save()
+    return redirect('pages:article', pk=topic_id)
+
+
+def change_description(request):
+    topic_id = request.POST.get('topic_id')
+    description = request.POST.get('description') 
+    
+    if not description:
+        return redirect('pages:article', pk=topic_id)
+   
+    topic = Topic.objects.get(pk=topic_id)
+    topic.description = description
+    topic.save()
+    return redirect('pages:article', pk=topic_id)
+
+
+def change_others(request):
+    topic_id = request.POST.get('topic_id')
+    others = request.POST.get('others') 
+    
+    if not others:
+        return redirect('pages:article', pk=topic_id)
+   
+    topic = Topic.objects.get(pk=topic_id)
+    topic.others = others
+    topic.save()
+    return redirect('pages:article', pk=topic_id)
