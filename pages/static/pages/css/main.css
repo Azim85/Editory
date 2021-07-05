@@ -276,6 +276,12 @@ h1, h2, h3, h4, h5, h6{
         display: none;
     }
 @media  (max-width: 992px){
+    .font-55{
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 117.3%;
+    font-family: Geometria !important;
+}
       .footer-end{
         -ms-flex-pack: start !important;
         justify-content: flex-start !important;
@@ -318,6 +324,7 @@ h1, h2, h3, h4, h5, h6{
 .ireg,
 .elsavier,
 .springer,
+.crossref,
 .greenm,
 .academ,
 .qswur {
@@ -328,6 +335,7 @@ h1, h2, h3, h4, h5, h6{
 .ireg:hover,
 .elsavier:hover,
 .springer:hover,
+.crossref:hover,
 .greenm:hover,
 .academ:hover,
 .qswur:hover {

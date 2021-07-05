@@ -129,6 +129,10 @@ header {
 }
 
 @media screen and (max-width: 568px) {
+  .statistic{
+  top: 0 !important;
+  position: absolute !important;
+}
   .heightme{
   height: 465px !important;
     width: 350px !important;
