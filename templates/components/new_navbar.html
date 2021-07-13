@@ -152,184 +152,198 @@
                     <a class="nav-link darken" href="{% url 'pages:news' %}">{% trans 'Новости' %}</a>
                 </li>
                 <li class="nav-item dropdown ">
-                    <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {% trans 'Продукты/материалы' %}
-                    </a>
-
-                    <div class="dropdown-menu shadow_me_two" style="width: 300px;border-radius: 0"
-                         aria-labelledby="navbarDropdown">
-
-                        <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2">
-                            <div class="">{% trans 'Исследовательские платформы' %}</div>
-                        </a>
-
-
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild" role="button"
+                    <div class="filter-dropdown">
+                        <a class="nav-link pl-3 dropdown-toggle1 text-dark " href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Организация исследований' %}</div>
+                            {% trans 'Продукты/материалы' %}
                         </a>
-                        <div id="navChild" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 250px; border-radius: 0">
-                                <a href="{% url 'pages:research_strategy' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Стратегия исследования' %}</div>
-                                </a>
-                                <a href="{% url 'pages:research_strategy' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
-                                    <div class="">{% trans 'Научное сотрудничество' %}</div>
-                                </a>
-                                <a href="{% url 'pages:research_strategy' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Научное финансирование' %}</div>
-                                </a>
-                                <a href="{% url 'pages:research_strategy' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Управление и ведение' %}</div>
-                                </a>
 
+
+                        <div class="dropdown-menu shadow_me_two" style="width: 300px;border-radius: 0"
+                             aria-labelledby="navbarDropdown">
+
+                            <a href="{% url 'requests:research' %}"
+                               class="dropdown-item font-weight-bold text-dark   py-2">
+                                <div class="">{% trans 'Исследовательские платформы' %}</div>
+                            </a>
+
+
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Организация исследований' %}</div>
+                            </a>
+                            <div id="navChild" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 250px; border-radius: 0">
+                                    <a href="{% url 'pages:research_strategy' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Стратегия исследования' %}</div>
+                                    </a>
+                                    <a href="{% url 'pages:research_strategy' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
+                                        <div class="">{% trans 'Научное сотрудничество' %}</div>
+                                    </a>
+                                    <a href="{% url 'pages:research_strategy' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Научное финансирование' %}</div>
+                                    </a>
+                                    <a href="{% url 'pages:research_strategy' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Управление и ведение' %}</div>
+                                    </a>
+
+                                </div>
                             </div>
-                        </div>
 
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild007"
-                           role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Образование' %}</div>
-                        </a>
-                        <div id="navChild007" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 250px;height: 162px; border-radius: 0">
-                                <a href="{% url 'requests:scientific-papers' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Научные работы' %}</div>
-                                </a>
-                                <a href="{% url 'requests:webinars' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
-                                    <div class="">{% trans 'Вебинары и семинары' %}</div>
-                                </a>
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild007"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Образование' %}</div>
+                            </a>
+                            <div id="navChild007" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 250px;height: 162px; border-radius: 0">
+                                    <a href="{% url 'requests:scientific-papers' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Научные работы' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:webinars' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
+                                        <div class="">{% trans 'Вебинары и семинары' %}</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item1 dropdown">
-{#                    <div class="filter-dropdown">#}
-                    <a class="nav-link pl-3  text-dark "  id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {% trans 'Услуги' %}
-                    </a>
-{#                        </div>#}
+                    {#                    <div class="filter-dropdown">#}
+                    <div class="filter-dropdown">
 
-                    <div class="dropdown-menu shadow_me_two" style="width: 300px;border-radius: 0"
-                         aria-labelledby="navbarDropdown">
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1" role="button"
+                        <a class="nav-link pl-3 dropdown-toggle1  text-dark " id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Конференции' %}</div>
+                            {% trans 'Услуги' %}
                         </a>
-                        <div id="navChild1" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 290px; height: 230px; border-radius: 0">
-                                <a href="{% url 'requests:conferences' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Участие в конференциях' %}</div>
-                                </a>
-                                <a href="{% url 'requests:creat-conferences' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Организация конференций' %}</div>
-                                </a>
-                            </div>
-                        </div>
-                        {#                         <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" >#}
-                        {#                            Link with href#}
-                        {#                          </button>#}
-                        {#                         <div class="collapse" id="collapseExample1">#}
-                        {#                          <div class="card card-body">#}
-                        {#                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
-                        {#                          </div>#}
                         {#                        </div>#}
 
+                        <div class="dropdown-menu  shadow_me_two" style="width: 300px;border-radius: 0"
+                             aria-labelledby="navbarDropdown">
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild2" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Исследовательские проекты' %}</div>
-                        </a>
-                        <div id="navChild2" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 290px; height: 230px; border-radius: 0">
-                                <a href="{% url 'requests:grants' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Исследовательские гранты' %}</div>
-                                </a>
-                                <a href="{% url 'requests:patents' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Исследовательские патенты' %}</div>
-                                </a>
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Конференции' %}</div>
+                            </a>
+                            <div id="navChild1" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:conferences' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Участие в конференциях' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:creat-conferences' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Организация конференций' %}</div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                            {#                         <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" >#}
+                            {#                            Link with href#}
+                            {#                          </button>#}
+                            {#                         <div class="collapse" id="collapseExample1">#}
+                            {#                          <div class="card card-body">#}
+                            {#                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
+                            {#                          </div>#}
+                            {#                        </div>#}
 
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild3" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Публикация работ' %}</div>
-                        </a>
-                        <div id="navChild3" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 290px; height: 230px; border-radius: 0">
-                                <a href="{% url 'requests:bak' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Публикация в ВАК' %}</div>
-                                </a>
-                                <a href="{% url 'requests:scopus' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Публикация в Scopus/ Web' %} <br>of Science</div>
-                                </a>
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild2"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Исследовательские проекты' %}</div>
+                            </a>
+                            <div id="navChild2" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:grants' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Исследовательские гранты' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:patents' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Исследовательские патенты' %}</div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
 
 
-                        <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild4" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="">{% trans 'Консультация по диссертациям' %}</div>
-                        </a>
-                        <div id="navChild4" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
-                                 style="width: 290px; height: 230px; border-radius: 0">
-                                <a href="{% url 'requests:proofreading' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Корректура и редактирование' %}</div>
-                                </a>
-                                <a href="{% url 'requests:proofreading' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Рецензирование диссертации' %}</div>
-                                </a>
-                                <a href="{% url 'requests:proofreading' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Методология исследования' %}</div>
-                                </a>
-                                <a href="{% url 'requests:proofreading' %}"
-                                   class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                    <div class="">{% trans 'Статистический анализ' %}</div>
-                                </a>
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild3"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Публикация работ' %}</div>
+                            </a>
+                            <div id="navChild3" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:bak' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Публикация в ВАК' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:scopus' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Публикация в Scopus/ Web' %} <br>of Science</div>
+                                    </a>
+                                </div>
                             </div>
+
+
+                            <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild4"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="">{% trans 'Консультация по диссертациям' %}</div>
+                            </a>
+                            <div id="navChild4" class="hidebutton ">
+                                <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
+                                     style="width: 290px; height: 230px; border-radius: 0">
+                                    <a href="{% url 'requests:proofreading' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Корректура и редактирование' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:proofreading' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Рецензирование диссертации' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:proofreading' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Методология исследования' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:proofreading' %}"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Статистический анализ' %}</div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <a href="{% url 'requests:design' %}"
+                               class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                <div class="">{% trans 'Графические материалы' %}</div>
+                            </a>
+                            <a href="{% url 'pages:language_editing' %}"
+                               class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                <div class="">{% trans 'Корректура и редактирование' %} </div>
+                            </a>
+                            <a href="{% url 'requests:translation' %}"
+                               class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                <div class="">{% trans 'Переводы' %} </div>
+                            </a>
+
                         </div>
-
-
-                        <a href="{% url 'requests:design' %}"
-                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                            <div class="">{% trans 'Графические материалы' %}</div>
-                        </a>
-                        <a href="{% url 'pages:language_editing' %}"
-                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                            <div class="">{% trans 'Корректура и редактирование' %} </div>
-                        </a>
-                        <a href="{% url 'requests:translation' %}"
-                           class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                            <div class="">{% trans 'Переводы' %} </div>
-                        </a>
-
                     </div>
+
 
                 </li>
                 <li class="nav-item ml-lg-3">

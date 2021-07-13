@@ -24,6 +24,7 @@
     <div id="mobile" class="container-fluid nav-holder w-100">
         {% include 'components/mobile_navbar.html' %}
     </div>
+
     <div id="desktop" class="container-fluid nav-holder w-100">
         {% include 'components/new_navbar.html' %}
     </div>
@@ -42,19 +43,26 @@
     <script src="{% static 'pages/js/main.js' %}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    $(document).ready(function (){
 
-  gtag('config', 'G-8BXGYGEMEL');
-
-
-  $(".filter-dropdown").on("click", ".dropdown-toggle", function (e) {
+        $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
                 e.preventDefault();
                 $(this).parent().addClass("show");
                 $(this).attr("aria-expanded", "true");
                 $(this).next().addClass("show");
             });
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8BXGYGEMEL');
+
+
+    })
+
+
+
 </script>
     {% block js %}{% endblock %}
 </body>
