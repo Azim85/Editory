@@ -99,9 +99,16 @@ class ProfileChange(UpdateView):
 
 
 class ChangeStatusView(View):
-    def get(self, status, id):
+    def get(self, request, id):
         order = OrderModel.objects.get(id=id)
         order.payment_status = 1
+        order.save()
+        return redirect('users:dashboard')
+
+class ChangeStatusCashView(View):
+    def get(self, request, id):
+        order = OrderModel.objects.get(id=id)
+        order.payment_status = 3
         order.save()
         return redirect('users:dashboard')
 

@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="{% static 'pages/css/about_us.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick-theme.css' %}"/>
+
+    <style>
+        .text-input:focus{
+            outline: none;
+        }
+
+        .text-input{
+            border: none;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
@@ -61,7 +71,11 @@ mix-blend-mode: luminosity;
 
 
         <div class=" container pt-100">
-            <h1 class="h-40p my-5 text-center">{% trans 'Наша команда' %}</h1>
+
+            <h1 class=" our-staff h-40p my-5 text-center">{% trans 'Наша команда'%}</h1> 
+            
+            
+            
             <div class="h4 mb-100 text-center main-font px-5">{% trans 'Дружный коллектив Editory рад знакомству! Надеемся, наше сотрудничество будет продуктивным' %}.</div>
             <div class="row">
                 {% for staff in staffs %}
@@ -262,6 +276,7 @@ mix-blend-mode: luminosity;
 {% block js %}
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static 'pages/js/about.js' %}"></script>
     <script>
         $(document).ready(function () {
             let validated = document.getElementById('flag')
@@ -287,6 +302,13 @@ mix-blend-mode: luminosity;
         $('.btn-toggle').click(function () {
             $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
         });
+
+        let ourStaff = document.querySelector('.our_staff')
+        let ourStaffInput = document.querySelector('[name="our_staff"]')
+        let staffForm = document.querySelector('.our_staff_form')
+
+      
+        
 
 
         $('.slick1').slick({

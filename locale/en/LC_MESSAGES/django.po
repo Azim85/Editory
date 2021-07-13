@@ -35,7 +35,7 @@ msgstr ""
 
 #: templates/about_us.html:52
 msgid "Наша команда"
-msgstr ""
+msgstr "our Command"
 
 #: templates/about_us.html:53
 msgid ""

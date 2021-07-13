@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import random
@@ -265,3 +266,10 @@ def change_others(request):
     topic.others = others
     topic.save()
     return redirect('pages:article', pk=topic_id)
+
+
+
+
+   
+
+

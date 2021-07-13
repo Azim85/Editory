@@ -147,6 +147,8 @@
                 <td class="text-center">{{order.amount}}</td>
                 {% if order.payment_type == 4 %}
                 <td class="text-center">Payme</td>
+                {% elif order.payment_type == 1 %}
+                <td class="text-center">Наличные</td>
                 {% elif order.payment_type == 3 %}
                 <td class="text-center">Apelsin</td>
                 {% endif %}
@@ -157,9 +159,17 @@
                 {% elif order.payment_status == 1 %}
                     <td class="text-center">{% trans 'не оплачен' %} </td>
                 {% endif %}
+               
+                {% if order.payment_type == 1 %}
+                    <td class="text-center"><a href="{% url 'users:change_status_cash' order.id %}"
+                            class="btn {% if order.payment_status == 3  %} disabled btn-secondary {% else %} btn-primary{% endif %}">{% trans 'принимать как оплачено' %}</a>
+                    </td>
+                {% else %}
                 <td class="text-center"><a href="{% url 'users:change_status' order.id %}"
-                                           class="btn {% if order.payment_status == 1 or order.payment_status == 3  %} disabled btn-secondary {% else %} btn-primary{% endif %}">{% trans 'принимать' %}</a>
+                        class="btn {% if order.payment_status == 1 or order.payment_status == 3  %} disabled btn-secondary {% else %} btn-primary{% endif %}">{% trans 'принимать' %}</a>
                 </td>
+                {% endif %}
+
             </tr>
             {% endfor %}
             </tbody>
@@ -210,8 +220,8 @@
                                 </button>
                                 
                             </form>
-
-                            
+                        {% elif order.payment_type == 1 %}
+                            <p>Наличные</p>
 
                             
                         {% endif %}
@@ -222,14 +232,25 @@
                         {% if order.payment_type == 3 %}
                             <img src="{% static 'pages/images/apelsin.png' %}" alt="">
                         {% endif %}
+                        {% if order.payment_type == 1 %}
+                            <p>Наличные</p>
+                        {% endif %}
                         
                     {% endif %}
 
                 </td>
 
                 {% if order.payment_type == 4 %}
-                    <td class="text-center"><a href="{% url 'users:check' order.id %}">{{ order.get_payment_status_display }}</a></td>
+                    <td class="">
+                        {% if order.payment_status == 3 %}    
+                        <a href="{% url 'users:check' order.id %}">{{ order.get_payment_status_display }}</a>
+                        {% else %}
+                        {{ order.get_payment_status_display }}
+                        {% endif %}
+                    </td>
                 {% elif order.payment_type == 3 %}
+                    <td>{{order.get_payment_status_display}}</td>
+                {% elif order.payment_type == 1 %}
                     <td>{{order.get_payment_status_display}}</td>
                 {% endif %}
 

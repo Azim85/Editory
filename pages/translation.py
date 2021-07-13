@@ -2,6 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import Topic, TopResearches
 
 
+
 class TopicTranslation(TranslationOptions):
     fields = ('material_name', 'title', 'description', 'others')
 
@@ -12,3 +13,4 @@ class TopResearchTranslation(TranslationOptions):
 
 translator.register(Topic, TopicTranslation)
 translator.register(TopResearches, TopResearchTranslation)
+

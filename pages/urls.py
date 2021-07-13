@@ -24,4 +24,7 @@ urlpatterns = [
     path('change_title', change_title, name="title-change"),
     path('change_description', change_description, name="description-change"),
     path('change_others', change_others, name="others-change"),
+
+
+    
 ]
