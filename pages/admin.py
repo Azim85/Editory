@@ -6,8 +6,8 @@ from modeltranslation.admin import TabbedTranslationAdmin
 from .models import (
     Topic,
     TopResearches,
-    ResumeModel,
-    CostModel,)
+    ResumeModel
+    )
 
 
 # class Topictrans(TabbedTranslationAdmin):
@@ -45,9 +45,6 @@ class ResumeModelAdmin(admin.ModelAdmin):
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdminForm)
 admin.site.register(ResumeModel, ResumeModelAdmin)
-<<<<<<< HEAD
-admin.site.register(CostModel)
 
-=======
->>>>>>> c96a535f99b1dc7cb40eda72c1b9320a967a613e
+
 
