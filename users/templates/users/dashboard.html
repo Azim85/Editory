@@ -127,7 +127,7 @@
     <div class="container mt-100 overflow-auto">
         <h1>{% trans 'История' %}</h1>
 
-        {% if request.user.is_staff %}
+        {% if request.user.is_superuser %}
         <table class="table mt-5">
             <thead>
             <tr>
@@ -279,7 +279,7 @@
 
 
 <!-- PAGINATION -->
-{% if request.user.is_staff %}
+{% if request.user.is_superuser %}
 {% if page_obj.has_other_pages %}
 
 <nav aria-label="..." class="mt-3 d-flex justify-content-center">

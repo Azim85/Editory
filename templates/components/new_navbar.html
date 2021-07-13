@@ -17,10 +17,6 @@
                     <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 "
                        href="{% url 'pages:contact' %}">{% trans 'Контакты' %}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link darken small mx-lg-2" style="color: #ABBFC8 "
-                       href="#">{% trans 'Партнерам' %}</a>
-                </li>
 
             </ul>
             <ul class="navbar-nav ">
@@ -161,7 +157,7 @@
                         {% trans 'Продукты/материалы' %}
                     </a>
 
-                    <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0"
+                    <div class="dropdown-menu shadow_me_two" style="width: 300px;border-radius: 0"
                          aria-labelledby="navbarDropdown">
 
                         <a href="{% url 'requests:research' %}" class="dropdown-item font-weight-bold text-dark   py-2">
@@ -174,7 +170,7 @@
                             <div class="">{% trans 'Организация исследований' %}</div>
                         </a>
                         <div id="navChild" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 250px; border-radius: 0">
                                 <a href="{% url 'pages:research_strategy' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
@@ -203,7 +199,7 @@
                             <div class="">{% trans 'Образование' %}</div>
                         </a>
                         <div id="navChild007" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 250px;height: 162px; border-radius: 0">
                                 <a href="{% url 'requests:scientific-papers' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
@@ -217,13 +213,15 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link pl-3  text-dark " href="#" id="navbarDropdown" role="button"
+                <li class="nav-item1 dropdown">
+{#                    <div class="filter-dropdown">#}
+                    <a class="nav-link pl-3  text-dark "  id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% trans 'Услуги' %}
                     </a>
+{#                        </div>#}
 
-                    <div class="dropdown-menu shadow_me" style="width: 300px;border-radius: 0"
+                    <div class="dropdown-menu shadow_me_two" style="width: 300px;border-radius: 0"
                          aria-labelledby="navbarDropdown">
 
                         <a class="dropdown-item font-weight-bold text-dark dropright py-2" id="showChild1" role="button"
@@ -231,7 +229,7 @@
                             <div class="">{% trans 'Конференции' %}</div>
                         </a>
                         <div id="navChild1" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 290px; height: 230px; border-radius: 0">
                                 <a href="{% url 'requests:conferences' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
@@ -258,7 +256,7 @@
                             <div class="">{% trans 'Исследовательские проекты' %}</div>
                         </a>
                         <div id="navChild2" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 290px; height: 230px; border-radius: 0">
                                 <a href="{% url 'requests:grants' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
@@ -277,7 +275,7 @@
                             <div class="">{% trans 'Публикация работ' %}</div>
                         </a>
                         <div id="navChild3" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 290px; height: 230px; border-radius: 0">
                                 <a href="{% url 'requests:bak' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
@@ -296,7 +294,7 @@
                             <div class="">{% trans 'Консультация по диссертациям' %}</div>
                         </a>
                         <div id="navChild4" class="hidebutton ">
-                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me"
+                            <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                  style="width: 290px; height: 230px; border-radius: 0">
                                 <a href="{% url 'requests:proofreading' %}"
                                    class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">

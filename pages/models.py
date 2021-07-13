@@ -15,7 +15,7 @@ class Topic(models.Model):
     description = RichTextUploadingField()
     others = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.material_name
@@ -65,6 +65,7 @@ class ResumeModel(models.Model):
         verbose_name_plural = 'Resumes'
 
 
+
 class CostModel(models.Model):
     standart = models.IntegerField(default=240)
     express = models.IntegerField(default=300)
@@ -73,6 +74,7 @@ class CostModel(models.Model):
     class Meta:
         verbose_name = 'Cost Model'
         verbose_name_plural = 'Cost Model'
+
 
 
 

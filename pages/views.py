@@ -5,7 +5,7 @@ import random
 import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView
-from .models import Topic, TopResearches, CostModel
+from .models import Topic, TopResearches
 from my_requests.forms import ConsultationForm, OrganizeResearchForm
 from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
@@ -19,12 +19,13 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class HomeView(TemplateView):
     template_name = 'home.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        
+
         context['form'] = ConsultationForm()
         return context
 
@@ -33,7 +34,6 @@ class Article(DetailView):
     template_name = 'article.html'
     model = Topic
     context_object_name = 'topic'
-
 
     def get_context_data(self, **kwargs):
         topic = Topic.objects.get(pk=self.kwargs['pk'])
@@ -73,7 +73,7 @@ class AboutUs(View):
         staffs = Colleague.objects.all()
         form = ResumeForm()
         return render(request, 'about_us.html', {'form': form, 'staffs': staffs})
-    
+
     def post(self, request):
         form = ResumeForm(request.POST, request.FILES)
         if request.user.is_authenticated:
@@ -92,12 +92,10 @@ class AboutUs(View):
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
 
-
     def get_context_data(self, **kwargs):
         context = super(AboutUs, self).get_context_data(**kwargs)
         return context
 
-        
 
 class Contact(TemplateView):
     template_name = 'contact.html'
@@ -134,9 +132,9 @@ class Dissertation(TemplateView):
 
 
 class Research_strategy(View):
-    
+
     def get(self, request):
-       
+
         context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm()}
         return render(request, 'research_strategy.html', context)
 
@@ -151,21 +149,20 @@ class Research_strategy(View):
                         return redirect('pages:research_strategy')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
-                    return render(request, 'research_strategy.html', {'forms':forms, 'validated':'validated'})    
+                    return render(request, 'research_strategy.html', {'forms': forms, 'validated': 'validated'})
             else:
-                return render(request, 'research_strategy.html', {'forms':forms})
+                return render(request, 'research_strategy.html', {'forms': forms})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
-
 
 
 class Language_editing(View):
     def get(self, request):
         form = OrderForm()
         forms = ConsultationForm()
-        cost = CostModel.objects.first()
-        return render(request, 'language_editing.html', {'form':form, 'forms':forms, 'cost':cost} )
+
+        return render(request, 'language_editing.html', {'form': form, 'forms': forms})
 
     def post(self, request):
         forms = ConsultationForm(request.POST)
@@ -178,13 +175,12 @@ class Language_editing(View):
                         return redirect('pages:language_editing')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
-                    return render(request, 'language_editing.html', {'forms':forms, 'validated':'validated'})    
+                    return render(request, 'language_editing.html', {'forms': forms, 'validated': 'validated'})
             else:
-                return render(request, 'language_editing.html', {'forms':forms})
+                return render(request, 'language_editing.html', {'forms': forms})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
-
 
     def get_context_data(self, **kwargs):
         context = super(Language_editing, self).get_context_data(**kwargs)
@@ -202,19 +198,18 @@ class top2uzb(TemplateView):
 class top10(TemplateView):
     template_name = 'scientific_paper/top10.html'
 
+
 class top10uz(TemplateView):
     template_name = 'scientific_paper/top10uz.html'
 
 
-
-
 def change_image(request):
     topic_id = request.POST.get('topic_id')
-    image = request.FILES.get('main_image') 
-    
+    image = request.FILES.get('main_image')
+
     if not image:
         return redirect('pages:article', pk=topic_id)
-   
+
     topic = Topic.objects.get(pk=topic_id)
     topic.main_image = image
     topic.save()
@@ -223,11 +218,11 @@ def change_image(request):
 
 def change_material(request):
     topic_id = request.POST.get('topic_id')
-    material = request.POST.get('material_name') 
-    
+    material = request.POST.get('material_name')
+
     if not material:
         return redirect('pages:article', pk=topic_id)
-   
+
     topic = Topic.objects.get(pk=topic_id)
     topic.material_name = material
     topic.save()
@@ -236,11 +231,11 @@ def change_material(request):
 
 def change_title(request):
     topic_id = request.POST.get('topic_id')
-    title = request.POST.get('title') 
-    
+    title = request.POST.get('title')
+
     if not title:
         return redirect('pages:article', pk=topic_id)
-   
+
     topic = Topic.objects.get(pk=topic_id)
     topic.title = title
     topic.save()
@@ -249,11 +244,11 @@ def change_title(request):
 
 def change_description(request):
     topic_id = request.POST.get('topic_id')
-    description = request.POST.get('description') 
-    
+    description = request.POST.get('description')
+
     if not description:
         return redirect('pages:article', pk=topic_id)
-   
+
     topic = Topic.objects.get(pk=topic_id)
     topic.description = description
     topic.save()
@@ -262,11 +257,11 @@ def change_description(request):
 
 def change_others(request):
     topic_id = request.POST.get('topic_id')
-    others = request.POST.get('others') 
-    
+    others = request.POST.get('others')
+
     if not others:
         return redirect('pages:article', pk=topic_id)
-   
+
     topic = Topic.objects.get(pk=topic_id)
     topic.others = others
     topic.save()
@@ -277,4 +272,4 @@ def change_others(request):
 
    
 
-    
+
