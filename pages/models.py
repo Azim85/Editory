@@ -74,3 +74,6 @@ class CostModel(models.Model):
         verbose_name = 'Cost Model'
         verbose_name_plural = 'Cost Model'
 
+
+
+

@@ -7,7 +7,7 @@ from .models import (
     Topic,
     TopResearches,
     ResumeModel,
-    CostModel
+    CostModel,
 )
 
 # class Topictrans(TabbedTranslationAdmin):
@@ -46,3 +46,5 @@ admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdminForm)
 admin.site.register(ResumeModel, ResumeModelAdmin)
 admin.site.register(CostModel)
+
+
