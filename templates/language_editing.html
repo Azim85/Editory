@@ -81,8 +81,8 @@ mix-blend-mode: luminosity;
                                                                 class="h3  main-color">239</label> {% trans 'сум' %}</span>
 
                         <div class="d-flex justify-content-center">
-                            <button id="hideforma" type="button"  data-toggle="modal" data-target="#exampleModal" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
+                            <button id="hideforma" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                            {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
                                class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
@@ -103,8 +103,9 @@ mix-blend-mode: luminosity;
 
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button id="hideforma1" type="button"  data-toggle="modal" data-target="#exampleModal" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
+                            <button id="hideforma1" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                                    {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+
                                class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
@@ -124,8 +125,8 @@ mix-blend-mode: luminosity;
                                                                class="h3  main-color">399</label> {% trans 'сум' %}
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button  id="hideforma2" type="button" data-toggle="modal" data-target="#exampleModal" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
+                            <button  id="hideforma2" type="button" {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                                     {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
                                class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
@@ -478,6 +479,26 @@ mix-blend-mode: luminosity;
 
         </form>
     </div>
+
+    <div class="modal fade" id="alertme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">внимание</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        зарегистрируйтесь чтобы выполнить запрос
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <a href="{% url 'users:login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block js %}

@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from orders.models import OrderModel
 from paymeuz.models import PaymeTransactionModel
 from django.contrib import messages
+from django.contrib.auth.models import Group
 from django.http import JsonResponse
 import datetime
 User = get_user_model()
@@ -77,6 +78,7 @@ class DasboardView(ListView):
         context = super(DasboardView, self).get_context_data(**kwargs)
         context['form'] = ProfileForm(instance=self.request.user)
         context['user_order'] = OrderModel.objects.filter(user=self.request.user)
+        context['groups'] = Group.objects.all()
         return context
 
 
