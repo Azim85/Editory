@@ -66,10 +66,13 @@ class ResumeModel(models.Model):
 
 
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> 272e848da231d4105f241cfd569654ef48a99b26
 

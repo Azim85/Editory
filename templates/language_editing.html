@@ -72,17 +72,18 @@ mix-blend-mode: luminosity;
                         <div class="small">
                             <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>
 
-                            
+
                             <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
 
                         </div>
                         <div class="my-4">{% trans 'Вычитка и оформление вашего материала перед заявкой на издание' %}</div>
-                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color">239</label> {% trans 'сум' %}</span>
+                        <span class="h3 main-color my-5"><label id="cost"
+                                                                class="h3  main-color">239</label> {% trans 'сум' %}</span>
 
                         <div class="d-flex justify-content-center">
-                            <a id="hideforma" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
+                            <button id="hideforma" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                            {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
                 </div>
@@ -97,13 +98,15 @@ mix-blend-mode: luminosity;
 
                         </div>
                         <div class="my-4">{% trans 'Тот же уровень качества, но гораздо быстрее' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color">299</label> {% trans 'сум' %}
+                        <div class="h3 main-color my-5"><label id="cost1"
+                                                               class="h3  main-color">299</label> {% trans 'сум' %}
 
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a id="hideforma1" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
+                            <button id="hideforma1" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                                    {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
                 </div>
@@ -118,12 +121,13 @@ mix-blend-mode: luminosity;
 
                         </div>
                         <div class="my-4">{% trans 'Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая поддержка' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color">399</label> {% trans 'сум' %}
+                        <div class="h3 main-color my-5"><label id="cost2"
+                                                               class="h3  main-color">399</label> {% trans 'сум' %}
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a id="hideforma2" href="{% if request.user.is_authenticated %}#{% else %}
-                            {% url 'users:login' %}{% endif %}"
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
+                            <button  id="hideforma2" type="button" {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                                     {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
                         </div>
                     </div>
                 </div>
@@ -296,8 +300,112 @@ mix-blend-mode: luminosity;
     </form>
 
 
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="background: transparent !important;">
+        <div class="modal-dialog m-0" style="width: 0 !important;">
+            <div class="modal-content m-0" style="width: 0 !important;">
+                <div class="modal-body" style="width: 0 !important;">
+                    <form class="h-100 w-100 mobile-form " method="post"
+                          style="width: 100vw !important;"
+                          action="{% url 'orders:create-order' %}"
+
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="container bg-white shadow rounded-20 p-5">
+                            <div class="    ">
+                                <div class="d-flex justify-content-between">
+
+                                    <h2 class=" mb-4">Payment form</h2><i class="bi bi-x-circle close " data-dismiss="modal" aria-label="Close" type="button"></i>
+
+                                </div>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class=" container ">
+
+                                        <div class="row text-secondary">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row my-4">
+                                                    <label for="inputPassword" class="col-sm-4 col-form-label">Номер
+                                                        телефона</label>
+                                                    <div class="col-sm-6 d-flex flex-column">
+                                                        {{ form.phone }}
+                                                        <small class="text-danger align-self-start">{{ form.phone.errors }}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row my-4">
+                                                    <label for="inputPassword" class="col-sm-4 col-form-label">Эл.
+                                                        почта</label>
+                                                    <div class="col-sm-6 d-flex flex-column">
+                                                        {{ form.email }}
+                                                        <small class="text-danger align-self-start">{{ form.email.errors }}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-10">
+                                                <div class="form-group d-flex my-4">
+                                                    <label for="inputPassword" class="col-form-label">File</label>
+                                                    <div class="col-sm-6 d-flex flex-column ml-5">
+                                                        {{ form.file }}
+                                                        <small class="text-danger align-self-start">{{ form.email.errors }}</small>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <h4>Cost: <label id="formcost"></label> сум</h4>
+                                            </div>
+                                            <div class="col-6 col-lg-2 overflow-auto">
+                                                {{ form.payment_type }}
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row ">
+                                <input type="hidden" name="product" value="editing"/>
+                                <input type="hidden" class="amount" name="amount" value=""/>
+
+                                <input type="hidden" name="payment_status" value="0"/>
+                                <input type="hidden" name="delivery_status" value="1"/>
+                                <div class="col-lg-11 d-flex  justify-content-end">
+                                    <button type="submit"
+                                            class="btn btn-primary px-4 mr-4">{% trans 'Заказать' %}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="" id="formacha" style="display: none">
-        <form class="mt-100 mb-100 fixed-top mobile-form" method="post" action="{% url 'orders:create-order' %}"
+        <form class="h-100 w-100 mobile-form position-fixed fixed" method="post"
+              action="{% url 'orders:create-order' %}"
+              style="
+
+              height: 100vh;
+              padding-top: 10%;
+              padding-bottom: 10%;
+              background-color: black;
+              opacity: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%)"
               enctype="multipart/form-data">
             {% csrf_token %}
             <div class="container bg-white shadow rounded-20 p-5">
@@ -352,7 +460,7 @@ mix-blend-mode: luminosity;
                             </div>
 
                         </div>
-                    
+
 
                     </div>
                 </div>
@@ -360,9 +468,7 @@ mix-blend-mode: luminosity;
                 <div class="row ">
                     <input type="hidden" name="product" value="editing"/>
                     <input type="hidden" class="amount" name="amount" value=""/>
-                    <!-- <input type="hidden" name="phone" value="{{form.phone}}" />
-                            <input type="hidden" name="email" value="{{.email}}" /> -->
-                    <!-- <input type="hidden" name="payment_type" value="4" /> -->
+
                     <input type="hidden" name="payment_status" value="0"/>
                     <input type="hidden" name="delivery_status" value="1"/>
                     <div class="col-lg-11 d-flex  justify-content-end">
@@ -373,25 +479,46 @@ mix-blend-mode: luminosity;
 
         </form>
     </div>
+
+    <div class="modal fade" id="alertme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">внимание</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        зарегистрируйтесь чтобы выполнить запрос
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <a href="{% url 'users:login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block js %}
     <script>
 
         $("#hideforma").click(function () {
-            $("#formacha").css('display', 'inline')
+            {#$("#exampleModal").addClass('show')#}
             a = $('#cost').html()
             $('#formcost').html(a)
             $('.amount').val(a)
+
         })
         $("#hideforma1").click(function () {
-            $("#formacha").css('display', 'inline')
+            {#$("#exampleModal").css('display', 'inline')#}
             a = $('#cost1').html()
             $('#formcost').html(a)
             $('.amount').val(a)
         })
         $("#hideforma2").click(function () {
-            $("#formacha").css('display', 'inline')
+            {#$("#exampleModal").css('display', 'inline')#}
             a = $('#cost2').html()
             $('#formcost').html(a)
             $('.amount').val(a)

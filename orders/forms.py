@@ -5,7 +5,7 @@ from .models import OrderModel
 
 PAYMENT_TYPES = (
     (1, _('Наличные')),
-    (2, _('Пластиковая карта')),
+    # (2, _('Пластиковая карта')),
     (3, _('Apelsin')),
     (4, _('Payme')),
 )

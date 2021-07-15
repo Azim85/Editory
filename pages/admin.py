@@ -45,4 +45,9 @@ class ResumeModelAdmin(admin.ModelAdmin):
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdminForm)
 admin.site.register(ResumeModel, ResumeModelAdmin)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 272e848da231d4105f241cfd569654ef48a99b26
 

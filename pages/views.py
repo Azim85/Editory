@@ -9,7 +9,7 @@ from .models import Topic, TopResearches
 from my_requests.forms import ConsultationForm, OrganizeResearchForm
 from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
-from users.models import Colleague
+from users.models import Colleague, CustomUser
 from django.http import JsonResponse
 import sys, glob, os
 from django.core.files import File
@@ -268,6 +268,8 @@ def change_others(request):
     return redirect('pages:article', pk=topic_id)
 
 
+class allNews(TemplateView):
+    template_name = 'all_news_page.html'
 
 
    

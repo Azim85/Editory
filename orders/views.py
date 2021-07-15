@@ -1,7 +1,7 @@
 from datetime import datetime
 from .forms import OrderForm
 from django.views.generic import View
-
+from django.contrib import messages
 from django.shortcuts import redirect, render
 
 # from clickuz import ClickUz
@@ -144,7 +144,9 @@ class CreateOrderView(View):
         file = request.FILES.get('file')
         print(request.POST.get('product'))
 
-        OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type, payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
-            
+        done = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type, payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
+        if done:
+            messages.success(request, 'Успешно')
+
 
         return redirect('pages:language_editing')

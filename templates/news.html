@@ -9,6 +9,7 @@
 {% block content %}
   
     <section class="container news-card mt-5 pt-2 " style="margin-top: 100px">
+    <div class="text-right text-primary mb-2"><a href="{% url 'pages:all_news' %}">chitat dalshe >>></a></div>
     <div class="row">
       {% if random_topic %}
         <div class="col-lg-8 pb-4 mb-2 bognews">
@@ -237,7 +238,7 @@
               </div>
               <!-- <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset=""> -->
               <div class="card-text-absolute text-hover">
-                <p style="color: #fff;">{{top_8.7.title}}</p>
+                <p style="color: #15C0C7;">{{top_8.7.material_name}}</p>
                 <h2>{{top_8.7.title}}</h2>
               </div>
             </a>
