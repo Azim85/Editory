@@ -6,20 +6,20 @@
 {% endblock %}
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-{% if message.tags == 'success' %}
-<div class="alert alert-success text-center" id="alert_message">
-    {{message}}
-</div>
-{% else %}
-<div class="alert alert-danger text-center" id="alert_message">
-    {{message}}
-</div>
-{% endif %}
-{% endfor %}
-{% endif %}
-<div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 58.jpg' %});
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 58.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
@@ -29,9 +29,9 @@ mix-blend-mode: luminosity;
                     <div class="col-lg-6">
                         <div class=" font-65 head-word geometria pb-5"
                              style=" color:white; font-weight:bold; line-height:1">{% trans 'Графические материалы для ваших научных работ' %}</div>
-{#                        <div style=" color:white" class="text-left font-22">#}
-{#                            {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным. ' %}#}
-{#                        </div>#}
+                        {#                        <div style=" color:white" class="text-left font-22">#}
+                        {#                            {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным. ' %}#}
+                        {#                        </div>#}
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
                                 <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
@@ -50,148 +50,144 @@ mix-blend-mode: luminosity;
             </div>
         </div>
     </div>
-<div class="bg-me">
+    <div class="bg-me">
 
-   <div class="container pt-200 mb-200">
-       <div class="row">
-           <div class="offset-lg-1 col-lg-9 font-22">{% trans 'Готовитесь к публикации? Убедитесь, что картинки, инфографики и иллюстрации в статье соответствуют требованиям изданий. Журналы с высоким рейтингом могут отклонить работу в том случае, если визуальная её часть не будет представлена достаточно наглядно и в высоком разрешении. Поручите работу над визуализацией профессионалам и будьте уверены в результате!' %}
-</div>
-       </div>
-   </div>
-
-
-
-<div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
-    <div class="col-lg-4 my-5 "><img class="img-fluid" src="{% static 'pages/images/tovuq.png' %}"></div>
-    <div class="offset-lg-1 col-lg-6 pb-100">
-        <div class="h3 mt-3">Научная иллюстрация</div>
-        <div class="font-22 mt-3">Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций,
-            которые будут точно соответствовать теме вашей работы</div>
-    </div>
-    <div class="col-lg-4 my-5"><img class="img-fluid" src="{% static 'pages/images/image 63.png' %}"></div>
-    <div class="offset-lg-1 col-lg-6 pb-100">
-        <div class="h3 mt-3">Инфографика</div>
-        <div class="font-22 mt-3">Представьте численные данные в наиболее простом и понятном виде, оформив их в виде
-            инфографики. Editory разработает формат, который лучше всего подойдёт для вашего материала</div>
-    </div>
-    <div class="col-lg-4 my-5"><img class="img-fluid" src="{% static 'pages/images/image 60.png' %}"></div>
-    <div class="offset-lg-1 col-lg-6">
-        <div class="h3 mt-3">Дизайн для издателей</div>
-        <div class="font-22 mt-3">Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — всё,
-            чтобы читатели вашего издания оставались довольны не только его содержанием, но и внешним видом.</div>
-    </div>
-{#    <div class="row container w-100 pb-5">#}
-{#        <div class="col-md-4 mt-5 px-lg-4">#}
-{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
-{#                <a href="{% url 'requests:top-researches' %}" class="text-dark text-decoration-none">#}
-{#                    <img src="{% static 'pages/svg/relations 1.svg' %}" alt="" style="width: 66px; height:66px">#}
-{#                    <h4>{% trans 'Научная иллюстрация' %}</h4>#}
-{#                    <p>{% trans 'Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно соответствовать теме вашей работы' %}</p>#}
-{#                </a>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="col-md-4 mt-5 px-lg-4">#}
-{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
-{#                <a href="#" class="text-dark text-decoration-none">#}
-{#                    <img src="{% static 'pages/images/pie-chart 1.png' %}" alt="" style="width: 66px; height:66px">#}
-{#                    <h4>{% trans 'Инфографика' %}</h4>#}
-{#                    <p>{% trans 'Представьте численные данные в наиболее простом и понятном виде, оформив их в виде инфографики. Editory разработает формат, который лучше всего подойдёт для вашего материала' %}</p>#}
-{#                </a>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="col-md-4 mt-5 px-lg-4">#}
-{#            <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">#}
-{#                <img src="{% static 'pages/images/visualization 1.png' %}" alt="" style="width: 66px; height:66px">#}
-{#                <h4>{% trans 'Дизайн для издателей' %}</h4>#}
-{#                <p>{% trans 'Обложки журналов, внутренняя вёрстка и единообразное оформление материалов — всё, чтобы читатели вашего издания оставались довольны не только его содержанием, но и внешним видом.' %}</p>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#    </div>#}
-</div>
-</div>
-
-<div id="Forma" class="container mt-100 pb-100">
-<h1>Форма заявки</h1>
-    <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}">
-        {% csrf_token %}
-        <div class="row text-secondary">
-            <div class="col-lg-6">
-    
-                <div class="form-group row">
-                    <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.first_name}}
-                        <small class="text-danger">{{form.first_name.errors}}</small>
-                    </div>
-                </div>
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
-                    <div class="col-sm-6">
-                        {{form.last_name}}
-                        <small class="text-danger">{{form.last_name.errors}}</small>
-                    </div>
-                </div>
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.phone}}
-                        <small class="text-danger">{{form.phone.errors}}</small>
-                    </div>
-                </div>
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Email' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.email}}
-                        <small class="text-danger">{{form.email.errors}}</small>
-                    </div>
-                </div>
-    
-               
-    
-            </div>
-            <div class="col-lg-6">
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.organization}}
-                        <small class="text-danger">{{form.organization.errors}}</small>
-                    </div>
-                </div>
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.org_contacts}}
-                        <small class="text-danger">{{form.org_contacts.errors}}</small>
-                    </div>
-                </div>
-    
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.org_address}}
-                        <small class="text-danger">{{form.org_address.errors}}</small>
-                    </div>
-                </div>
-    
-                <input type="hidden" name="theme" value="design">
-    
-            </div>
-            <div class="form-group container row w-100" style="margin-top: 60px">
-                <div class="col-lg-11 d-flex justify-content-between">
-                    <div class="mr-auto">
-                        {{form.is_agree}}<span class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+        <div class="container pt-200 mb-200">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-9 font-22">{% trans 'Готовитесь к публикации? Убедитесь, что картинки, инфографики и иллюстрации в статье соответствуют требованиям изданий. Журналы с высоким рейтингом могут отклонить работу в том случае, если визуальная её часть не будет представлена достаточно наглядно и в высоком разрешении. Поручите работу над визуализацией профессионалам и будьте уверены в результате!' %}
                 </div>
             </div>
         </div>
-    
-    </form>
+
+        <div class="container">
+            <div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
+
+                <div class="col-lg-6 row my-5 ">
+                    <div class="col-lg-8">
+                        <img class="img-fluid" src="{% static 'pages/images/tovuq.png' %}">
+                        <div class="pb-100">
+                            <div class="h3 mt-3">Научная иллюстрация</div>
+                            <div class="font-22 mt-3">Сделайте материал предельно наглядным с помощью уникальных и
+                                высококачественных иллюстраций,
+                                которые будут точно соответствовать теме вашей работы
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-2 col-lg-8 mt-100">
+                        <img class="img-fluid" src="{% static 'pages/images/image 60.png' %}">
+                        <div class="">
+                            <div class="h3 mt-3">Дизайн для издателей</div>
+                            <div class="font-22 mt-3">Обложки журналов, внутренняя вёрстка и единообразное оформление
+                                материалов
+                                — всё,
+                                чтобы читатели вашего издания оставались довольны не только его содержанием, но и
+                                внешним
+                                видом.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 row my-5">
+                    <div class="offset-2 col-lg-8 mt-200">
+                        <img class="img-fluid" src="{% static 'pages/images/image 63.png' %}">
+                        <div class="pb-100">
+                            <div class="h3 mt-3">Инфографика</div>
+                            <div class="font-22 mt-3">Представьте численные данные в наиболее простом и понятном виде,
+                                оформив
+                                их в виде
+                                инфографики. Editory разработает формат, который лучше всего подойдёт для вашего
+                                материала
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Forma" class="container mt-100 pb-100">
+        <h1>Форма заявки</h1>
+        <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}">
+            {% csrf_token %}
+            <div class="row text-secondary">
+                <div class="col-lg-6">
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.first_name }}
+                            <small class="text-danger">{{ form.first_name.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                        <div class="col-sm-6">
+                            {{ form.last_name }}
+                            <small class="text-danger">{{ form.last_name.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.phone }}
+                            <small class="text-danger">{{ form.phone.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Email' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.email }}
+                            <small class="text-danger">{{ form.email.errors }}</small>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.organization }}
+                            <small class="text-danger">{{ form.organization.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.org_contacts }}
+                            <small class="text-danger">{{ form.org_contacts.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.org_address }}
+                            <small class="text-danger">{{ form.org_address.errors }}</small>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="theme" value="design">
+
+                </div>
+                <div class="form-group container row w-100" style="margin-top: 60px">
+                    <div class="col-lg-11 d-flex justify-content-between">
+                        <div class="mr-auto">
+                            {{ form.is_agree }}<span
+                                class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </div>
 {% endblock content %}
