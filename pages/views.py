@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import random
 import datetime
 from django.contrib import messages
-from django.views.generic import TemplateView, View, DetailView
+from django.views.generic import TemplateView, View, DetailView, ListView
 from .models import Topic, TopResearches
 from my_requests.forms import ConsultationForm, OrganizeResearchForm
 from .forms import ResumeForm, TopicForm
@@ -268,8 +268,12 @@ def change_others(request):
     return redirect('pages:article', pk=topic_id)
 
 
-class allNews(TemplateView):
+class allNews(ListView):
     template_name = 'all_news_page.html'
+    model = Topic
+    context_object_name = 'topics'
+    paginate_by = 10
+    
 
 
    
