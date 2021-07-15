@@ -268,6 +268,8 @@ def change_others(request):
     return redirect('pages:article', pk=topic_id)
 
 
+class allNews(TemplateView):
+    template_name = 'all_news_page.html'
 
 
    
