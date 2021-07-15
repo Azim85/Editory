@@ -66,14 +66,8 @@ class ResumeModel(models.Model):
 
 
 
-class CostModel(models.Model):
-    standart = models.IntegerField(default=240)
-    express = models.IntegerField(default=300)
-    premium = models.IntegerField(default=400)
 
-    class Meta:
-        verbose_name = 'Cost Model'
-        verbose_name_plural = 'Cost Model'
+
 
 
 

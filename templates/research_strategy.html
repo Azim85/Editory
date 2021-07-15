@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-
+{{request.GET.data}}
 
     {% if messages %}
         <div id="succes" style="opacity: 0;">success</div>
@@ -17,6 +17,8 @@
             </div>
         {% endfor %}
     {% endif %}
+
+    
 
     <div class="bg-me-home h-600"
          style="background-image: url({% static 'pages/images/image 41.png' %});
@@ -28,9 +30,9 @@ mix-blend-mode: luminosity;
             <div class="container pt-5">
                 <nav>
                     <div class="nav nav-tabs border-0 " id="nav-tab" role="tablist">
-                        <a class="nav-link active  text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                        <a class=" active nav-link text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home"
                            role="tab" aria-controls="nav-home" aria-selected="true">Стратегия исследования</a>
-                        <a class="nav-link text-white" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                        <a class=" nav-link text-white" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                            role="tab" aria-controls="nav-profile" aria-selected="false">Партнерство и сотрудничество</a>
                         <a class="nav-link text-white" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
                            role="tab" aria-controls="nav-contact" aria-selected="false">Финансирование</a>
@@ -39,8 +41,11 @@ mix-blend-mode: luminosity;
                     </div>
                 </nav>
             </div>
+
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                
+                <div class=" active tab-pane fade"
+                 id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
                     <div class="container mb-5">
                         <div class="row py-5">
@@ -53,14 +58,12 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/strategy yell 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="tab-pane fade"
+                 id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
                     <div class="container mb-5">
                         <div class="row py-5">
@@ -74,15 +77,13 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/collab 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
 
 
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="tab-pane fade"
+                 id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
                     <div class="container mb-5">
                         <div class="row py-5">
@@ -99,15 +100,13 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img  class="img-fluid fix-img" src="{% static 'pages/images/funding 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
 
 
-                <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
+                <div class="tab-pane fade" 
+                id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
 
                     <div class="container mb-5">
                         <div class="row py-5">
@@ -121,9 +120,6 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 298.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
@@ -255,7 +251,10 @@ mix-blend-mode: luminosity;
 
     </div>
 
+$('#research').on('click', function () {
+$('.bg-me-home').css('background-image', 'url({% static 'pages / images / image 41.png' %})')
 
+})
     </div>
 
 
@@ -269,6 +268,8 @@ mix-blend-mode: luminosity;
 {% block js %}
 
     <script>
+         
+        
 
         $('#nav-home-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image 41.png' %})')
