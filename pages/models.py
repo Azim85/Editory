@@ -15,7 +15,7 @@ class Topic(models.Model):
     description = RichTextUploadingField()
     others = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.material_name

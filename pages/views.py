@@ -72,7 +72,9 @@ class AboutUs(View):
     def get(self, request):
         staffs = Colleague.objects.all()
         form = ResumeForm()
-        return render(request, 'about_us.html', {'form': form, 'staffs': staffs})
+
+        context = { 'form': form, 'staffs': staffs}
+        return render(request, 'about_us.html', context)
 
     def post(self, request):
         form = ResumeForm(request.POST, request.FILES)
@@ -276,6 +278,9 @@ class allNews(ListView):
     
 
 
+
+def hello(request):
    
+    return redirect('pages:webinars', context)
 
 

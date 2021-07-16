@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 
+
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/about_us.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick.css' %}"/>
@@ -19,6 +20,8 @@
 {% endblock %}
 
 {% block content %}
+
+
 
     {% if messages %}
         {% for message in messages %}
@@ -281,6 +284,7 @@ mix-blend-mode: luminosity;
         $(document).ready(function () {
             let validated = document.getElementById('flag')
             let alert_message = document.getElementById('alert_message')
+
 
 
             if (alert_message) {

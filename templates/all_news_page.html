@@ -10,48 +10,57 @@
 
 <div class="container mt-5 pt-5">
     {% for topic in topics %}
-    <div class="row mb-3 d-flex align-items-center">
-        <div class="col-lg-2">
-            <img src="{{topic.main_image.url}}" width="100" alt="">
+    
+        <div class="row mb-3 d-flex align-items-center text-black">
+            
+            <div class="col-lg-2">
+                <a href="{{topic.get_absolute_url}}" class="text-decoration-none">
+                <img src="{{topic.main_image.url}}" width="100" alt="">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <h4 style="color: black;">{{topic.material_name}}</h4>
+            </div>
+            <div class="col-lg-8">
+                <p style="color: black;" class="text-dark">{{topic.description|safe|truncatewords:50}}</p>
+            </div>
         </div>
-        <div class="col-lg-2">
-            <h4>{{topic.material_name}}</h4>
-        </div>
-        <div class="col-lg-8">
-            <p>{{topic.description|safe|truncatewords:50}}</p>
-        </div>
-    </div>
+    
+    
     {% endfor %}
 </div>
 
-
-<ul class="pagination">
-
-    {% if page_obj.has_previous %}
-    <li class="page-item">
-        <a class="page-link" href="?page={{page_obj.previous_page_number}}">Pervious</a>
-    </li>
-    {% endif %}
-
-    {% for p in page_obj.paginator.page_range %}
-    {% if p == page_obj.number %}
-    <li class="page-item active">
-        <span class="">
-            <a class="page-link" href="?page={{p}}">{{p}}</a>
-        </span>
-    </li>
-    {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3%} <li class="page-item">
-        <a class="page-link" href="?page={{p}}">{{p}}</a>
-        </li>
-        {% endif %}
-        {% endfor %}
-
-        {% if page_obj.has_next %}
+{% if page_obj.has_other_pages %}
+<div class="d-flex justify-content-center">
+    <ul class="pagination">
+    
+        {% if page_obj.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+            <a class="page-link" href="?page={{page_obj.previous_page_number}}">Pervious</a>
         </li>
         {% endif %}
+    
+        {% for p in page_obj.paginator.page_range %}
+        {% if p == page_obj.number %}
+        <li class="page-item active">
+            <span class="">
+                <a class="page-link" href="?page={{p}}">{{p}}</a>
+            </span>
+        </li>
+        {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3%} <li class="page-item">
+            <a class="page-link" href="?page={{p}}">{{p}}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+    
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+            </li>
+            {% endif %}
+    
+    </ul>
+</div>
 
-</ul>
-
+{% endif %}
 {% endblock %}
