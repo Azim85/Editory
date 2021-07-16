@@ -19,123 +19,132 @@
     <div class="bg-me-home h-600"
          style="background-image: url({% static 'pages/images/image52.jpg' %});
                  background-size: cover;">
-    <div class="h-100" style="
+        <div class="h-100" style="
 background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
 ">
 
-        <div class="container pt-5 text-white " style="z-index: 100000; clear: both">
-            <nav>
-                <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                    <a class="nav-link asd active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                       aria-controls="nav-home" aria-selected="true">{% trans 'Рецензирование' %}</a>
-                    <a class="nav-link asd" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                       aria-controls="nav-profile" aria-selected="false">{% trans 'Методология исследования' %}</a>
-                    <a class="nav-link asd" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-                       aria-controls="nav-contact" aria-selected="false">{% trans 'Статистический анализ' %}</a>
-                    <a class="nav-link asd" id="nav-fouth-tab" data-toggle="tab" href="#nav-fourth" role="tab"
-                       aria-controls="nav-fourth" aria-selected="false">{% trans 'Корректура и редактирование' %}</a>
-                </div>
-            </nav>
-        </div>
-        <div class="tab-content" id="nav-tabContent">
-
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="container mb-5 ">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="text-white">
-                                <div class="font-65 pb-4"
-                                     style="font-weight: 600; line-height:106.3% ">{% trans 'Рецензирование диссертации' %}</div>
-                                <div class="pb-4">{% trans 'Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя автору возможность подтвердить перед сообществом свою компетентность' %}</div>
-                                <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
-                            </div>
-                        </div>
-{#                        <div class="col-lg-6 d-flex justify-content-center">#}
-{#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 450.png' %}">#}
-{#                        </div>#}
+            <div class="container pt-5 text-white " style="z-index: 100000; clear: both">
+                <nav>
+                    <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                        <a class="nav-link asd {% if raqam == '1' %}active{% endif %} " id="nav-home-tab"
+                           data-toggle="tab" href="#nav-home" role="tab"
+                           aria-controls="nav-home" aria-selected="true">{% trans 'Рецензирование' %}</a>
+                        <a class="nav-link asd {% if raqam == '2' %}active{% endif %} " id="nav-profile-tab"
+                           data-toggle="tab" href="#nav-profile" role="tab"
+                           aria-controls="nav-profile" aria-selected="false">{% trans 'Методология исследования' %}</a>
+                        <a class="nav-link asd {% if raqam == '3' %}active{% endif %} " id="nav-contact-tab"
+                           data-toggle="tab" href="#nav-contact" role="tab"
+                           aria-controls="nav-contact" aria-selected="false">{% trans 'Статистический анализ' %}</a>
+                        <a class="nav-link asd {% if raqam == '4' %}active{% endif %} " id="nav-fouth-tab"
+                           data-toggle="tab" href="#nav-fourth" role="tab"
+                           aria-controls="nav-fourth"
+                           aria-selected="false">{% trans 'Корректура и редактирование' %}</a>
                     </div>
-                </div>
+                </nav>
             </div>
+            <div class="tab-content" id="nav-tabContent">
 
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-                <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="text-white">
-                                <div class="font-65 pb-4"
-                                     style=" font-weight:600; line-height:106.3%">{% trans 'Методология исследования' %}</div>
-                                <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться' %}
-
+                <div class="tab-pane fade {% if raqam == '1' %}active show{% endif %}" id="nav-home" role="tabpanel"
+                     aria-labelledby="nav-home-tab">
+                    <div class="container mb-5 ">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 pb-4"
+                                         style="font-weight: 600; line-height:106.3% ">{% trans 'Рецензирование диссертации' %}</div>
+                                    <div class="pb-4">{% trans 'Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя автору возможность подтвердить перед сообществом свою компетентность' %}</div>
+                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
-                                <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                             </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 450.png' %}">#}
+                            {#                        </div>#}
                         </div>
-{#                        <div class="col-lg-6 d-flex justify-content-center">#}
-{#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 451.png' %}">#}
-{#                        </div>#}
                     </div>
                 </div>
-            </div>
 
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="tab-pane fade {% if raqam == '2' %}active show{% endif %}" id="nav-profile" role="tabpanel"
+                     aria-labelledby="nav-profile-tab">
 
-                <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="text-white">
-                                <div class="font-65 pb-4"
-                                     style=" font-weight:600; line-height:106.3%">{% trans 'Статистический анализ' %}</div>
-                                <div class="pb-4">{% trans 'Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь в работе на действительно достоверные данные и будьте уверены в результате' %}</div>
-                                <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 pb-4"
+                                         style=" font-weight:600; line-height:106.3%">{% trans 'Методология исследования' %}</div>
+                                    <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться' %}
+
+                                    </div>
+                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                                </div>
                             </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 451.png' %}">#}
+                            {#                        </div>#}
                         </div>
-{#                        <div class="col-lg-6 d-flex justify-content-center">#}
-{#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 452.png' %}">#}
-{#                        </div>#}
                     </div>
                 </div>
-            </div>
 
-            <div class="tab-pane fade" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
+                <div class="tab-pane fade {% if raqam == '3' %}active show{% endif %}" id="nav-contact" role="tabpanel"
+                     aria-labelledby="nav-contact-tab">
 
-                <div class="container mb-5">
-                    <div class="row py-5">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <div class="text-white">
-                                <div class="font-65 pb-4"
-                                     style=" line-height:106.3%; font-weight:600">{% trans 'Корректура и редактирование диссертации' %}</div>
-                                <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться. Языковая и фактологическая обработка вашей диссертации осуществляется подтверждёнными экспертами в соответствующей области' %} </div>
-                                <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 pb-4"
+                                         style=" font-weight:600; line-height:106.3%">{% trans 'Статистический анализ' %}</div>
+                                    <div class="pb-4">{% trans 'Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь в работе на действительно достоверные данные и будьте уверены в результате' %}</div>
+                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                                </div>
                             </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 452.png' %}">#}
+                            {#                        </div>#}
                         </div>
-{#                        <div class="col-lg-6 d-flex justify-content-center">#}
-{#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">#}
-{#                        </div>#}
                     </div>
                 </div>
+
+                <div class="tab-pane fade {% if raqam == '4' %}active show{% endif %}" id="nav-fourth" role="tabpanel"
+                     aria-labelledby="nav-fourth-tab">
+
+                    <div class="container mb-5">
+                        <div class="row py-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="text-white">
+                                    <div class="font-65 pb-4"
+                                         style=" line-height:106.3%; font-weight:600">{% trans 'Корректура и редактирование диссертации' %}</div>
+                                    <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться. Языковая и фактологическая обработка вашей диссертации осуществляется подтверждёнными экспертами в соответствующей области' %} </div>
+                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                                </div>
+                            </div>
+                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
+                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">#}
+                            {#                        </div>#}
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
     </div>
-    </div>
 
-        <div class="bg-me"
-             style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
-            <div class="container pb-100 pt-100 text-white ">
-                <div class="font-22 section_2">
-                    <ul>
-                        <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
-                        <li>{% trans 'В документе должен быть только один материал' %};</li>
-                        <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
-                        <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
-                        <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.</li>
-                    </ul>
-                </div>
+    <div class="bg-me"
+         style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+        <div class="container pb-100 pt-100 text-white ">
+            <div class="font-22 section_2">
+                <ul>
+                    <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
+                    <li>{% trans 'В документе должен быть только один материал' %};</li>
+                    <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
+                    <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
+                    <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.</li>
+                </ul>
             </div>
         </div>
+    </div>
 
 
 
@@ -257,6 +266,36 @@ mix-blend-mode: luminosity;
         document.addEventListener('DOMContentLoaded', () => {
             if (alert_message) {
                 alert_message.classList.add('alert_message')
+            }
+        })
+
+        $(document).ready(function () {
+            if ({{ raqam }} == 1
+        )
+            {
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.jpg' %})')
+                $('.section_2').css('background', '#40545C')
+            }
+        else
+            if ({{ raqam }} == 2
+        )
+            {
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.jpg' %})')
+                $('.section_2').css('background', '#2A819E')
+            }
+        else
+            if ({{ raqam }} == 3
+        )
+            {
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.jpg' %})')
+                $('.section_2').css('background', '#CE935E')
+            }
+        else
+            if ({{ raqam }} == 3
+        )
+            {
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
+                $('.section_2').css('background', '#CE935E')
             }
         })
 

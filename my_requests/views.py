@@ -150,7 +150,8 @@ class ConsultationView(View):
 
 class Proofreading(View):
     def get(self, request):
-        context = {'form': ProofreadingForm()}
+        data = request.GET.get('data')
+        context = {'form': ProofreadingForm(), 'raqam': data}
         return render(request, 'proofreading.html', context)
 
     def post(self, request):
