@@ -26,6 +26,7 @@ class Topic(models.Model):
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'
+        ordering = '-id',
 
 
 

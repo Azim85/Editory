@@ -7,9 +7,6 @@
 {% endblock %}
 
 {% block content %}
-    {{ raqam }}
-
-
     {% if messages %}
         <div id="succes" style="opacity: 0;">success</div>
         {% for message in messages %}
@@ -18,6 +15,8 @@
             </div>
         {% endfor %}
     {% endif %}
+
+    
 
     <div class="bg-me-home h-600"
          style="
@@ -46,10 +45,10 @@ mix-blend-mode: luminosity;
                     </div>
                 </nav>
             </div>
+
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade {% if raqam == '1' %}active show{% endif %}" id="nav-home" role="tabpanel"
                      aria-labelledby="nav-home-tab">
-
                     <div class="container mb-5">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
@@ -61,16 +60,12 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/strategy yell 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
 
                 <div class="tab-pane fade {% if raqam == '2' %}active show{% endif %}" id="nav-profile" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
-
                     <div class="container mb-5">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
@@ -83,9 +78,6 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/collab 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
@@ -93,6 +85,7 @@ mix-blend-mode: luminosity;
 
                 <div class="tab-pane fade {% if raqam == '3' %}active show{% endif %}" id="nav-contact" role="tabpanel"
                      aria-labelledby="nav-contact-tab">
+
 
                     <div class="container mb-5">
                         <div class="row py-5">
@@ -109,17 +102,12 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img  class="img-fluid fix-img" src="{% static 'pages/images/funding 1.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
 
-
                 <div class="tab-pane fade {% if raqam == '4' %}active show{% endif %}" id="nav-fourth" role="tabpanel"
                      aria-labelledby="nav-fourth-tab">
-
                     <div class="container mb-5">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
@@ -132,9 +120,6 @@ mix-blend-mode: luminosity;
                                     <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 298.png' %}">#}
-                            {#                        </div>#}
                         </div>
                     </div>
                 </div>
@@ -267,7 +252,10 @@ mix-blend-mode: luminosity;
 
     </div>
 
+$('#research').on('click', function () {
+$('.bg-me-home').css('background-image', 'url({% static 'pages / images / image 41.png' %})')
 
+})
     </div>
 
 
@@ -281,6 +269,8 @@ mix-blend-mode: luminosity;
 {% block js %}
 
     <script>
+         
+        
 
         $(document).ready(function () {
             if ({{ raqam }} == 1
