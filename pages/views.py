@@ -134,8 +134,11 @@ class Dissertation(TemplateView):
 class Research_strategy(View):
 
     def get(self, request):
-
-        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm()}
+        data = request.GET.get('data')
+        # print(pk)
+        # message = request.GET.get('pk')
+        # kwargs = pk
+        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm(), 'raqam': data}
         return render(request, 'research_strategy.html', context)
 
     def post(self, request):

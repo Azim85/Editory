@@ -176,19 +176,19 @@
                             <div id="navChild" class="hidebutton ">
                                 <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                      style="width: 250px; border-radius: 0">
-                                    <a href="{% url 'pages:research_strategy' %}"
+                                    <a id="testt" href="{% url 'pages:research_strategy' %}?data=1"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Стратегия исследования' %}</div>
                                     </a>
-                                    <a href="{% url 'pages:research_strategy' %}"
+                                    <a  href="{% url 'pages:research_strategy' %}?data=2"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2 collabration">
                                         <div class="">{% trans 'Научное сотрудничество' %}</div>
                                     </a>
-                                    <a href="{% url 'pages:research_strategy' %}"
+                                    <a href="{% url 'pages:research_strategy' %}?data=3"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Научное финансирование' %}</div>
                                     </a>
-                                    <a href="{% url 'pages:research_strategy' %}"
+                                    <a href="{% url 'pages:research_strategy' %}?data=4"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Управление и ведение' %}</div>
                                     </a>
@@ -308,21 +308,21 @@
                             <div id="navChild4" class="hidebutton ">
                                 <div class="navMe  border bg-white d-flex py-1 flex-column bordd shadow_me_two"
                                      style="width: 290px; height: 230px; border-radius: 0">
-                                    <a href="{% url 'requests:proofreading' %}"
-                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
-                                        <div class="">{% trans 'Корректура и редактирование' %}</div>
-                                    </a>
-                                    <a href="{% url 'requests:proofreading' %}"
+                                    <a href="{% url 'requests:proofreading' %}?data=1"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Рецензирование диссертации' %}</div>
                                     </a>
-                                    <a href="{% url 'requests:proofreading' %}"
+                                    <a href="{% url 'requests:proofreading' %}?data=2"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Методология исследования' %}</div>
                                     </a>
-                                    <a href="{% url 'requests:proofreading' %}"
+                                    <a href="{% url 'requests:proofreading' %}?data=3"
                                        class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
                                         <div class="">{% trans 'Статистический анализ' %}</div>
+                                    </a>
+                                    <a href="{% url 'requests:proofreading' %}?data=4"
+                                       class="dropdown-item font-weight-bold k text-dark text-size-15 py-2">
+                                        <div class="">{% trans 'Корректура и редактирование' %}</div>
                                     </a>
                                 </div>
                             </div>

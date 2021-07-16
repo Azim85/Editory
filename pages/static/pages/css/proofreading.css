@@ -12,6 +12,10 @@
   position: relative;
   transition: ease-in-out 750ms;
 }
+a.active{
+    color: white !important;
+    background-color: white !important;
+}
 
 .form-input input {
   margin: 0 auto;
