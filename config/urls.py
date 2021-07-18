@@ -33,6 +33,7 @@ urlpatterns += i18n_patterns(
     path('', include('pages.urls')),
     path('request_to/', include('my_requests.urls')),
     path('orders/', include('orders.urls')),
+    path('editable/', include('setpage.urls')),
 
 )
 

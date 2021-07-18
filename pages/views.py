@@ -14,6 +14,8 @@ from django.http import JsonResponse
 import sys, glob, os
 from django.core.files import File
 from django.conf import settings
+from setpage.models import AboutUsModel
+from setpage.forms import AboutUSForm
 
 import logging
 
@@ -70,10 +72,12 @@ class Articles(TemplateView):
 
 class AboutUs(View):
     def get(self, request):
+        text = AboutUsModel.objects.first()
+        about = AboutUSForm(instance=text)
         staffs = Colleague.objects.all()
         form = ResumeForm()
 
-        context = { 'form': form, 'staffs': staffs}
+        context = { 'form': form, 'staffs': staffs, 'text':text, 'about':about}
         return render(request, 'about_us.html', context)
 
     def post(self, request):

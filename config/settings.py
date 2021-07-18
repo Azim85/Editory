@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'paymeuz',
     'apelsinuz',
     'editory_press',
+    'setpage'
 ]
 
 MIDDLEWARE = [

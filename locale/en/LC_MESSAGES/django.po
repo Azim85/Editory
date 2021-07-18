@@ -31,7 +31,7 @@ msgstr ""
 
 #: templates/about_us.html:38 templates/home.html:36
 msgid "Задать вопрос"
-msgstr ""
+msgstr "Ask a Question"
 
 #: templates/about_us.html:52
 msgid "Наша команда"
@@ -86,7 +86,7 @@ msgstr ""
 #: templates/research_strategy.html:147 templates/scopus.html:85
 #: users/templates/users/register.html:12
 msgid "Имя"
-msgstr ""
+msgstr "First name"
 
 #: templates/about_us.html:185 templates/bak.html:101
 #: templates/conferences.html:74 templates/creat_conference.html:73
@@ -94,19 +94,19 @@ msgstr ""
 #: templates/language_editing.html:241 templates/patents.html:76
 #: templates/research_strategy.html:155 templates/scopus.html:93
 msgid "Фамилия"
-msgstr ""
+msgstr "Last name"
 
 #: templates/about_us.html:195
 msgid "Профессия"
-msgstr ""
+msgstr "Profession"
 
 #: templates/about_us.html:206
 msgid "Пара слов о себе"
-msgstr ""
+msgstr "A little about me"
 
 #: templates/about_us.html:216 templates/translation.html:136
 msgid "Резюме"
-msgstr ""
+msgstr "Resume"
 
 #: templates/about_us.html:229 templates/bak.html:159
 #: templates/conferences.html:179 templates/creat_conference.html:140
@@ -116,15 +116,15 @@ msgstr ""
 #: templates/research_strategy.html:180 templates/scopus.html:160
 #: templates/translation.html:152
 msgid "Согласие с политикой конфиденциальности"
-msgstr ""
+msgstr "Consent to privacy policy"
 
 #: templates/about_us.html:232 templates/translation.html:155
 msgid "Отправить резюме"
-msgstr ""
+msgstr "Send Resume"
 
 #: templates/article.html:25
 msgid "Читайте также"
-msgstr ""
+msgstr "Read also"
 
 #: templates/bak.html:27
 msgid "Публикация статьи в журналах ВАК"
