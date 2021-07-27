@@ -216,39 +216,30 @@
                                         {% if order.payment_type == 4 %}
                                             <form method="POST" action="https://checkout.paycom.uz">
                                                 <!-- Идентификатор WEB Кассы -->
-                                                <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b"/>
-
+                                                <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b" />
+                                            
                                                 <!-- Сумма платежа в тийинах -->
-                                                <input type="hidden" name="amount"
-                                                       value="{{ order.get_payme_amount }}"/>
-
+                                                <input type="hidden" name="amount" value="{{ order.get_payme_amount }}" />
+                                            
                                                 <!-- Поля Объекта Account -->
-                                                <input type="hidden" name="account[order_id]" value="{{ order.id }}"/>
-
-                                                <input type="hidden" name="callback"
-                                                       value="https://editory.org/en/auth/dashboard/?success=success"/>
-
-                                                <button type="submit" class="btn btn-outline-success"
-                                                        style="width: 300px;">{% trans 'Оплатить с помощью' %}<img
+                                                <input type="hidden" name="account[order_id]" value="{{ order.id }}" />
+                                            
+                                                <input type="hidden" name="callback" value="https://editory.org/en/auth/dashboard/?success=success" />
+                                            
+                                                <button type="submit" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img
                                                         src="{% static 'pages/images/payme.png' %}" class="ml-3" alt="">
                                                 </button>
                                             </form>
-                                        {% elif order.payment_type == 3 %}
-                                            <form name="apelsin_form" action="https://oplata.kapitalbank.uz"
-                                                  action="GET">
-                                                <input type="hidden" name="cash"
-                                                       value="8cd10d4c64bc4a64a32cd9efe53e591f">
-                                                <input type="hidden" name="redirectUrl"
-                                                       value="https://editory.org/en/auth/dashboard/">
+                                            {% elif order.payment_type == 3 %}
+                                            <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET">
+                                                <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
+                                                <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                                                 <input type="hidden" name="description" value="Payment for OOO Editory">
                                                 <input type="hidden" name="amount" value="{{ order.get_payme_amount }}">
                                                 <input type="hidden" name="order_id" value="{{ order.id }}">
-                                                <button type="submit" data-id="{{ order.id }}"
-                                                        class="btn btn-outline-warning check_transaction">{% trans 'Оплатить с помощью' %}<img
-                                                        src="https://oplata.kapitalbank.uz/images/apelsin-v1.png"
-                                                        class="ml-3" width="100" alt="">
+                                                <button type="submit" data-id="{{ order.id }}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатитьс помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
                                                 </button>
-
+                                            
                                             </form>
                                         {% elif order.payment_type == 1 %}
                                             <p>Наличные</p>

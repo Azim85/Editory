@@ -21,6 +21,7 @@
             {% endif %}
         {% endfor %}
     {% endif %}
+
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image57.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -29,24 +30,65 @@ mix-blend-mode: luminosity;
             <div class="container my-auto">
                 <div class="row padding_me">
                     <div class="col-lg-12 row mb-5 text-white">
-                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold">{% trans 'Корректура рукописей' %}</div>
+                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text25-text">{{text.text25}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text25-btn">Edit</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="text25-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{lang.text25_en}}</span>
+                                <span>ru:{{lang.text25_ru}}</span>
+                                <span>uz:{{lang.text25_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
                         <div class="col-lg-6 font-22">
-                            {% trans 'Грамотный текст — лицо автора, который работает со сложными темами. Ошибки существенно снизят уровень доверия как с самой работе, так и к вашей компетентности.' %}
+                            <div class="text1-text">{{text.text1}}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                                {% endif %}
+                            </div>
+
+                            <div class="text1-form" style="display: none;">
+                                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{lang.text1_en}}</span>
+                                    <span>ru:{{lang.text1_ru}}</span>
+                                    <span>uz:{{lang.text1_uz}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+
                             <br>
                             <br>
-                            <i>{% trans 'Специалисты Editory этого не допустят! Будьте уверены, что ваш материал не содержит орфографических, синтаксических и стилистических огрехов.' %}
+
+                           
+                            <i class="text2-text">{{text.text2}}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                                {% endif %}
                             </i>
+
+                            <div class="text2-form" style="display: none;">
+                                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{lang.text2_en}}</span>
+                                    <span>ru:{{lang.text2_ru}}</span>
+                                    <span>uz:{{lang.text2_uz}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                            
                         </div>
                         <div class="mt-5 col-lg-12">
                             <a href="#Forma" class="btn btn-light  px-5">{% trans 'Заказать консультацию' %} </a>
                         </div>
                     </div>
-                    {#                <div class=" offset-1 col-lg-5">#}
-                    {#                    <div class="d-flex align-items-center">#}
-                    {#                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"#}
-                    {#                             width="auto">#}
-                    {#                    </div>#}
-                    {#                </div>#}
+                 
                 </div>
 
             </div>
@@ -76,9 +118,36 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">{% trans 'Вычитка и оформление вашего материала перед заявкой на издание' %}</div>
-                        <span class="h3 main-color my-5"><label id="cost"
-                                                                class="h3  main-color">239</label> {% trans 'сум' %}</span>
+                        <div class="my-4 text3-text">{{text.text3}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="text3-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{lang.text3_en}}</span>
+                                <span>ru:{{lang.text3_ru}}</span>
+                                <span>uz:{{lang.text3_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
+                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color text4-text">{{text.text4}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                            {% endif %}
+                            </label> {% trans 'сум' %}</span>
+
+                            <div class="text4-form" style="display: none;">
+                                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>summa:{{lang.text4}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+
 
                         <div class="d-flex justify-content-center">
                             <button id="hideforma" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
@@ -97,11 +166,37 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">{% trans 'Тот же уровень качества, но гораздо быстрее' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost1"
-                                                               class="h3  main-color">299</label> {% trans 'сум' %}
-
+                        <div class="my-4 text5-text">{{text.text5}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                            {% endif %}
                         </div>
+
+                        <div class="text5-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{lang.text5_en}}</span>
+                                <span>ru:{{lang.text5_ru}}</span>
+                                <span>uz:{{lang.text5_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
+                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color text6-text">{{text.text6}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text6-btn">Edit</button>
+                            {% endif %}
+                        </label> {% trans 'сум' %}
+                        </div>
+
+                        <div class="text6-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>summa:{{lang.text6}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
                         <div class="d-flex justify-content-center">
                             <button id="hideforma1" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
                                     {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
@@ -120,10 +215,37 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4">{% trans 'Глубокая редактура текста, улучшение структуры, стилистики и дальнейшая поддержка' %}</div>
-                        <div class="h3 main-color my-5"><label id="cost2"
-                                                               class="h3  main-color">399</label> {% trans 'сум' %}
+                        <div class="my-4 text7-text">{{text.text7}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text7-btn">Edit</button>
+                            {% endif %}
                         </div>
+
+                        <div class="text7-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{lang.text7_en}}</span>
+                                <span>ru:{{lang.text7_ru}}</span>
+                                <span>uz:{{lang.text7_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
+                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color text8-text">{{text.text8}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text8-btn">Edit</button>
+                            {% endif %}
+                        </label> {% trans 'сум' %}
+                        </div>
+
+                        <div class="text8-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>summa:{{lang.text8}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
                         <div class="d-flex justify-content-center">
                             <button  id="hideforma2" type="button" {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
                                      {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
@@ -136,90 +258,330 @@ mix-blend-mode: luminosity;
     </div>
 
     <div class="container mt-100">
-        <div class="h2">{% trans 'Что входит в тариф' %}</div>
+        <div class="h2 text9-text">{{text.text9}}
+            {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text9-btn">Edit</button>
+            {% endif %}
+        </div>
+
+        <div class="text9-form" style="display: none;">
+            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                {% csrf_token %}
+                <span>en:{{lang.text9_en}}</span>
+                <span>ru:{{lang.text9_ru}}</span>
+                <span>uz:{{lang.text9_uz}}</span>
+                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+            </form>
+        </div>
+
         <div class="row d-flex align-items-center">
-            <div class="col-5 my-3">{% trans 'Участие кандидата наук из области, соответствующей теме работы' %}</div>
+            <div class="col-5 my-3 text10-text">{{text.text10}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text10-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text10-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text10_en}}</span>
+                    <span>ru:{{lang.text10_ru}}</span>
+                    <span>uz:{{lang.text10_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3">{% trans 'Бесплатная повторная корректура при условии возврата работы из-за языковых ошибок' %}</div>
+            <div class="col-5 my-3 text11-text">{{text.text11}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text11-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text11-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text11_en}}</span>
+                    <span>ru:{{lang.text11_ru}}</span>
+                    <span>uz:{{lang.text11_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3">{% trans 'Корректоры — носители языка' %}</div>
+            <div class="col-5 my-3 text12-text">{{text.text12}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text12-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text12-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text12_en}}</span>
+                    <span>ru:{{lang.text12_ru}}</span>
+                    <span>uz:{{lang.text12_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3">{% trans 'Работа в кратчайшие сроки' %}</div>
+            <div class="col-5 my-3 text13-text">{{text.text13}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text13-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text13-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text13_en}}</span>
+                    <span>ru:{{lang.text13_ru}}</span>
+                    <span>uz:{{lang.text13_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
+          
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Бесплатная корректорская помощь в течение 365 дней' %}</div>
+            <div class="col-5 my-3 text14-text">{{text.text14}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text14-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text14-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text14_en}}</span>
+                    <span>ru:{{lang.text14_ru}}</span>
+                    <span>uz:{{lang.text14_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Внимание к логике, структуре и цельности материала' %}</div>
+            <div class="col-5 my-3 text15-text">{{text.text15}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text15-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text15-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text15_en}}</span>
+                    <span>ru:{{lang.text15_ru}}</span>
+                    <span>uz:{{lang.text15_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Форматирование согласно требованиям конкретного журнала' %}</div>
+            <div class="col-5 my-3 text16-text">{{text.text16}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text16-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text16-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text16_en}}</span>
+                    <span>ru:{{lang.text16_ru}}</span>
+                    <span>uz:{{lang.text16_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Редактирование ссылок' %}</div>
+            <div class="col-5 my-3 text17-text">{{text.text17}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text17-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text17-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text17_en}}</span>
+                    <span>ru:{{lang.text17_ru}}</span>
+                    <span>uz:{{lang.text17_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Проверка ссылок на соответствие, полноту и структуру' %}</div>
+            <div class="col-5 my-3 text18-text">{{text.text18}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text18-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text18-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text18_en}}</span>
+                    <span>ru:{{lang.text18_ru}}</span>
+                    <span>uz:{{lang.text18_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Сопроводительное письмо для отправки в журнал' %}</div>
+            <div class="col-5 my-3 text19-text">{{text.text19}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text19-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text19-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text19_en}}</span>
+                    <span>ru:{{lang.text19_ru}}</span>
+                    <span>uz:{{lang.text19_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Подробный разбор языковых и структурных особенностей материала' %}</div>
+            <div class="col-5 my-3 text20-text">{{text.text20}}
+                {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text20-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text20-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text20_en}}</span>
+                    <span>ru:{{lang.text20_ru}}</span>
+                    <span>uz:{{lang.text20_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Сокращение количества слов (максимум на 20%)' %}</div>
+            <div class="col-5 my-3 text21-text">{{text.text21}}
+                {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text21-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text21-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text21_en}}</span>
+                    <span>ru:{{lang.text21_ru}}</span>
+                    <span>uz:{{lang.text21_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Детальная языковая проверка: стилистика, словоупотребление и терминология' %}</div>
+            <div class="col-5 my-3 text22-text">{{text.text22}}
+                {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text22-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text22-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text22_en}}</span>
+                    <span>ru:{{lang.text22_ru}}</span>
+                    <span>uz:{{lang.text22_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Профессиональное оформление рукописи' %}</div>
+            <div class="col-5 my-3 text23-text">{{text.text23}}
+                {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text23-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text23-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text23_en}}</span>
+                    <span>ru:{{lang.text23_ru}}</span>
+                    <span>uz:{{lang.text23_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3">{% trans 'Сертификат о языковом редактировании' %}</div>
+            <div class="col-5 my-3 text24-text">{{text.text24}}
+                {% if request.user.is_superuser %}
+                <button type="button" class="btn btn-secondary text24-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text24-form" style="display: none;">
+                <form action="{% url 'setpage:lang-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{lang.text24_en}}</span>
+                    <span>ru:{{lang.text24_ru}}</span>
+                    <span>uz:{{lang.text24_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
@@ -502,6 +864,7 @@ mix-blend-mode: luminosity;
 {% endblock %}
 
 {% block js %}
+<script src="{% static  'pages/js/lang.js'%}"></script>
     <script>
 
         $("#hideforma").click(function () {
@@ -545,9 +908,9 @@ mix-blend-mode: luminosity;
         $('#label').change(function () {
             a = $(this).val()
             $('#volume').val(a)
-            cost1 = $(this).val() * 239
-            cost2 = $(this).val() * 299
-            cost3 = $(this).val() * 399
+            cost1 = $(this).val() * Number({{ text.text4 }})
+            cost2 = $(this).val() * Number({{ text.text6 }})
+            cost3 = $(this).val() * Number({{ text.text8 }})
             $('#label').html(a)
             $('#cost').html(cost1)
             $('#cost1').html(cost2)

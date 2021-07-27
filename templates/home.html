@@ -23,9 +23,20 @@
    
     {% endfor %}
 {% endif %}
-
+<!-- <div class="row">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </div>
+</div> -->
     <div style="background-color: #F2F2F2">
         <div class="container">
+            
             <div class="row py-me-5 pt-100 pb-200 header-me">
                 <div class="col-lg-6 pl-lg-5 pl-2">
                     <div class="my-text geometria"><span class="main-color">{% trans 'Полный' %}</span>
@@ -341,13 +352,13 @@
             <div class="row text-white">
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
-                        <div class="card border-0">
+                        <div class="card border-0" style="background:transparent ">
                             <div class="card-header border-0 " id="headingOne">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left btn-toggle justify-content-between
                                     d-flex button-main" type="button"
                                             data-toggle="collapse" data-target="#collapseOne">
-                                        <div class="card-header-color">{% trans 'Сколько стоит публикация статьи в Scopus?' %}</div> <i
+                                        <div class="card-header-color " style="white-space:normal" >  {% trans 'Сколько стоит публикация статьи в Scopus?' %}</div> <i
                                             class=" text-white bi bi-chevron-down"></i>
                                     </div>
                                 </h2>
@@ -362,12 +373,12 @@
                         <div  class="d-flex w-100 justify-content-center">
                         <hr class="" style="width: 93%; background-color: #fff;">
                             </div>
-                        <div class="card border-0">
+                        <div class="card border-0" style="background:transparent ">
                             <div class="card-header border-0 " id="headingTwo">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex" type="button"
                                             data-toggle="collapse" data-target="#collapseTwo">
-                                        <div class="card-header-color">{% trans 'Предполагает ли публикация выплаты её автору?' %}</div> <i class="bi text-white bi-chevron-down"></i>
+                                        <div class="card-header-color" style="white-space:normal" >{% trans 'Предполагает ли публикация выплаты её автору?' %}</div> <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
@@ -385,12 +396,12 @@
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
 
-                        <div class="card border-0">
+                        <div class="card border-0" style="background:transparent ">
                             <div class="card-header border-0 " id="headingThree">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex" type="button"
                                             data-toggle="collapse" data-target="#collapseThree">
-                                        <div class="card-header-color">{% trans 'В чём разница между открытым и закрытым доступом к статье?' %}</div> <i class="bi text-white bi-chevron-down"></i>
+                                        <div class="card-header-color" style="white-space:normal" >{% trans 'В чём разница между открытым и закрытым доступом к статье?' %}</div> <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
@@ -405,12 +416,12 @@
                         <div  class="d-flex w-100 justify-content-center">
                         <hr class="" style="width: 93%; background-color: #fff;">
                             </div>
-                        <div class="card border-0">
+                        <div class="card border-0" style="background:transparent ">
                             <div class="card-header border-0 " id="headingFour">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex" type="button"
                                             data-toggle="collapse" data-target="#collapseFour">
-                                        <div class="card-header-color">{% trans 'Что, если мне не понравится результат работы?' %}</div> <i class="bi text-white bi-chevron-down"></i>
+                                        <div class="card-header-color  " style="white-space:normal;  " >{% trans 'Что, если мне не понравится результат работы?' %}</div> <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
@@ -495,6 +506,7 @@
     <script>
 
     $(document).ready(function(){
+      
         let validated = document.getElementById('flag')
         let alert_message = document.getElementById('alert_message')
 

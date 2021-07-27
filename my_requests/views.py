@@ -7,6 +7,10 @@ from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm)
 from .models import Translation
 
+from setpage.models import (BakModel, ConferencesModel, CreateConferenceModel, DesignModel, GrantsModel,
+                            PatentModel, ScopusModel, ProofModel)
+from setpage.forms import BakForm, ConferencesForm, CreateConferenceForm, DesignForm, GrantForm, PatentForm, ScopusForm, ProofForm
+
 
 class Research(TemplateView):
     template_name = 'research_platform.html'
@@ -51,7 +55,9 @@ class WebinarsView(TemplateView):
 # todo yangilash
 class Conferences(View):
     def get(self, request):
-        context = {'form': FreeConsultationForm()}
+        text = ConferencesModel.objects.first()
+        con = ConferencesForm(instance=text)
+        context = {'form': FreeConsultationForm(), 'con':con, 'text':text}
         return render(request, 'conferences.html', context)
 
     def post(self, request):
@@ -60,7 +66,9 @@ class Conferences(View):
 
 class CreateConferences(View):
     def get(self, request):
-        context = {'form': OrganizeConferencesForm()}
+        text = CreateConferenceModel.objects.first()
+        con = CreateConferenceForm(instance=text)
+        context = {'form': OrganizeConferencesForm(), 'text':text, 'con':con}
         return render(request, 'creat_conference.html', context)
 
     def post(self, request):
@@ -85,7 +93,9 @@ class CreateConferences(View):
 
 class Design(View):
     def get(self, request):
-        context = {'form': GrantsForm()}
+        obj = DesignModel.objects.first()
+        design = DesignForm(instance=obj)
+        context = {'form': GrantsForm(), 'text':obj, 'design':design}
         return render(request, 'design.html', context)
 
     def post(self, request):
@@ -151,7 +161,9 @@ class ConsultationView(View):
 class Proofreading(View):
     def get(self, request):
         data = request.GET.get('data')
-        context = {'form': ProofreadingForm(), 'raqam': data}
+        obj = ProofModel.objects.first()
+        proof = ProofForm(instance=obj)
+        context = {'form': ProofreadingForm(), 'raqam': data, 'text':obj, 'proof':proof }
         return render(request, 'proofreading.html', context)
 
     def post(self, request):
@@ -191,8 +203,10 @@ class Peer_review(View):
 
 class BAKView(View):
     def get(self, request):
+        obj = BakModel.objects.first()
+        bak = BakForm(instance=obj)
         form = GrantsForm()
-        return render(request, 'bak.html', {'form':form})
+        return render(request, 'bak.html', {'form':form, 'bak':bak, 'text':obj})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -220,7 +234,9 @@ class BAKView(View):
 class ScopusView(View):
     def get(self, request):
         form = GrantsForm()
-        return render(request, 'scopus.html', {'form':form})
+        obj = ScopusModel.objects.first()
+        scopus = ScopusForm(instance=obj)
+        return render(request, 'scopus.html', {'form':form, 'text':obj, 'scopus':scopus})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -244,8 +260,10 @@ class ScopusView(View):
 
 class GrantsView(View):
     def get(self, request):
+        obj = GrantsModel.objects.first()
+        grant = GrantForm(instance=obj)
         form = GrantsForm()
-        return render(request, 'grants.html', {'form':form})
+        return render(request, 'grants.html', {'form':form, 'text':obj, 'grant':grant})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -270,7 +288,9 @@ class GrantsView(View):
 class PatentsView(View):
     def get(self, request):
         form = GrantsForm()
-        return render(request, 'patents.html', {'form':form})
+        obj = PatentModel.objects.first()
+        patent = PatentForm(instance=obj)
+        return render(request, 'patents.html', {'form':form, 'text':obj, 'patent':patent})
 
     def post(self, request):
         form = GrantsForm(request.POST)

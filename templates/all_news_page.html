@@ -8,7 +8,15 @@
 
 {% block content %}
 
-<div class="container mt-5 pt-5">
+<div class="container mt-1 pt-5">
+    <div class="row mb-3 mb-4">
+        <div class="col-lg-8">
+            <form action="{% url 'pages:search' %}" method="get" class="d-flex w-100">
+                <input type="text" name='q' placeholder="Search....." class="form-control mr-2">
+                <button type="submit" class="btn btn-success">Search</button>
+            </form>
+        </div>
+    </div>
     {% for topic in topics %}
     
         <div class="row mb-3 d-flex align-items-center text-black">

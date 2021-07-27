@@ -21,7 +21,6 @@
             {% endif %}
         {% endfor %}
     {% endif %}
-
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image51.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -32,8 +31,39 @@ mix-blend-mode: luminosity;
                 <div class="row padding_me">
                     <div class="col-lg-9">
                         <div class="text-white row">
-                            <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold">{% trans 'Организация конференции в Узбекистане' %}</div>
-                            <div class="col-lg-8 pb-4">{% trans 'Мечтаете собрать экспертов международного уровня именно здесь? Хотите, чтобы у коллег-узбекистанцев появилась возможность участвовать в действительно крупном и полезном мероприятии? Специалисты Editory готовы содействовать' %}!</div>
+                            <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold text1-text">{{text.text1}}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                                {% endif %}
+                            </div>
+
+                            <div class="text1-form" style="display: none;">
+                                <form action="{% url 'setpage:conference-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{con.text1_en}}</span>
+                                    <span>ru:{{con.text1_ru}}</span>
+                                    <span>uz:{{con.text1_uz}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+
+                            <div class="col-lg-8 pb-4 text2-text">{{text.text2}}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                                {% endif %}
+                            </div>
+
+                            <div class="text2-form" style="display: none;">
+                                <form action="{% url 'setpage:conference-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{con.text2_en}}</span>
+                                    <span>ru:{{con.text2_ru}}</span>
+                                    <span>uz:{{con.text2_uz}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+
+
                             <div class="col-lg-12">
                                 <a href="#Forma" class="btn px-5 btn-light">{% trans 'Оставить заявку' %}</a>
                             </div>
@@ -164,6 +194,7 @@ mix-blend-mode: luminosity;
 
 
 {% block js %}
+<script src="{% static 'pages/js/create_conference.js' %}"></script>
     <script>
         $(document).ready(function () {
             let validated = document.getElementById('flag')

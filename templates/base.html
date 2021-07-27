@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Editory{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'pages/bootstrap-icons/bootstrap-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'pages/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'pages/fonts/stylesheet.css' %}">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -39,12 +39,24 @@
     </div>
 
     <script src="{% static 'pages/jquery-3.6.0.js' %}"></script>
-    <script src="{% static 'pages/bootstrap/js/bootstrap.bundle.js' %}"></script>
-    <script src="{% static 'pages/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'pages/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'pages/js/main.js' %}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
     $(document).ready(function (){
+
+        $('.darken').mouseover(function () {
+            $(this).css({
+                'font-weight': 'bold',
+                'color':'black'
+            })
+        })
+        $('.darken').mouseleave(function () {
+            $(this).css({
+                'font-weight': 'normal'
+            })
+        })
 
         $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
                 e.preventDefault();
