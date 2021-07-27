@@ -8,35 +8,69 @@
 {% endblock %}
 {% block content %}
 
- <div class="container ">
-       <div class="row my-5">
-        <div class="col-lg-5 col-sm-12 mb-4">
-            <h1 class="font-weight-bold font-65 mb-3" >{% trans 'Вебинары и семинары' %}</h1>
+    <div class="container ">
+        <div class="row my-5">
+            <div class="col-lg-5 col-sm-12 mb-4">
+                <h1 class="font-weight-bold font-65 mb-3 text1-text">
+                    {% trans 'Вебинары и семинары' %}{% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-info text1-btn">Edit</button>
+                    {% endif %}</h1>
+                <div class="text1-form mb-3" style="display: none;">
+                    <form action="{% url 'setpage:webinar-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{ webinar.text1_en }}</span>
+                        <span>ru:{{ webinar.text1_ru }}</span>
+                        <span>uz:{{ webinar.text1_uz }}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
 
-            <p  class=" mb-0">
-                {% trans 'Как написать научную статью? Как взаимодействовать с исследовательскими платформами и быстро находить нужную информацию? Правильный подход — ключ к успеху. Не бойтесь реализовать свои идеи! Вебинары Editory помогут вам понять, как именно следует действовать. Наш опыт достаточно разнообразен, чтобы вы нашли в наших материалах ответы на любые вопросы.' %}
-            </p>
-        </div>
+                <p class=" mb-0 text2-text">
+                    {% trans 'Как написать научную статью? Как взаимодействовать с исследовательскими платформами и быстро находить нужную информацию? Правильный подход — ключ к успеху. Не бойтесь реализовать свои идеи! Вебинары Editory помогут вам понять, как именно следует действовать. Наш опыт достаточно разнообразен, чтобы вы нашли в наших материалах ответы на любые вопросы.' %}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-info text2-btn">Edit</button>
+                    {% endif %}
+                </p>
 
-        <div class="col-lg-7 col-sm-12 p-0 m-0"> <img src="{% static 'pages/images/Rectangle 123 (1).png' %}" class="img-fluid"></div>
-       </div>
-
-       <div class="row next ">
-           <div class="col-md-5  my-2">
-               <div class="elem"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/1xJzA26XZbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-           </div>
-            <div class="col-md-5 my-2">
-                <div class="elem"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/yePqrhRrR2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="text2-form" style="display: none;">
+                    <form action="{% url 'setpage:webinar-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{ webinar.text2_en }}</span>
+                        <span>ru:{{ webinar.text2_ru }}</span>
+                        <span>uz:{{ webinar.text2_uz }}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
                 </div>
             </div>
-           <div class="col-md-2 ">
-               <div class="num">
+
+            <div class="col-lg-7 col-sm-12 p-0 m-0"><img src="{% static 'pages/images/Rectangle 123 (1).png' %}"
+                                                         class="img-fluid"></div>
+        </div>
+
+        <div class="row next ">
+            <div class="col-md-5  my-2">
+                <div class="elem">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1xJzA26XZbU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-5 my-2">
+                <div class="elem">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yePqrhRrR2s"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <div class="num">
                     <h1>5</h1>
                     <p>video</p>
-               </div>
-           </div>
-       </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row next ">
             <div class="col-md-2">
@@ -46,13 +80,27 @@
                 </div>
             </div>
             <div class="col-md-5 my-2">
-                <div class="elem"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/FhhdfihD0_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="elem">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FhhdfihD0_k"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
             </div>
             <div class="col-md-5 my-2">
-                <div class="elem"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/DLl4jYXSUB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="elem">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DLl4jYXSUB0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
             </div>
         </div>
         <div class="mt-5"></div>
-   </div>
+    </div>
 
 {% endblock content %}
+
+{% block js %}
+    <script src="{% static 'pages/js/webinars.js' %}"></script>
+{% endblock %}

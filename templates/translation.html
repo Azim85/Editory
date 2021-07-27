@@ -3,179 +3,270 @@
 {% load i18n %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'pages/css/translation.css' %}">{% endblock %}
+    <link rel="stylesheet" href="{% static 'pages/css/translation.css' %}">{% endblock %}
 
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-{% if message.tags == 'success' %}
-<div class="alert alert-success text-center" id="alert_message">
-    {{message}}
-</div>
-{% else %}
-<div class="alert alert-danger text-center" id="alert_message">
-    {{message}}
-</div>
-{% endif %}
-{% endfor %}
-{% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center" id="alert_message">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image25.jpg' %});
-        background-size: cover;">
-    <div class="h-100" style="background: linear-gradient(98.82deg, #033952 10.84%, rgba(0, 88, 118, 0.85) 42.76%, rgba(11, 29, 35, 0.36) 71.84%, rgba(255, 255, 255, 0.47) 97.97%);;
+            background-size: cover;">
+        <div class="h-100" style="background: linear-gradient(98.82deg, #033952 10.84%, rgba(0, 88, 118, 0.85) 42.76%, rgba(11, 29, 35, 0.36) 71.84%, rgba(255, 255, 255, 0.47) 97.97%);;
 mix-blend-mode: luminosity;
 ">
-    <div class="container my-auto">
-      <div class="row padding_me">
-                <div class="col-lg-12 row mb-5 text-white">
-                    <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold">{% trans 'Переводы статей' %}</div>
-                    <div class="col-lg-7 font-22">
-                        {% trans 'Качественный перевод откроет материалу дорогу к признанию международным сообществом, а его автору — путь к дальнейшему росту в науке. Доверьте свою работу тем, кто действительно владеет языком и соответствующей тематикой — тогда на статью будут ссылаться эксперты с мировыми именами, и ваша репутация будет неуклонно расти.' %}
-                  <br>
-                        <br>
-                        <i>  {% trans 'Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод.' %}
-                   </i>
-                    </div>
-                    <div class="mt-3 col-lg-12">
-                        <a href="#Forma" class="btn btn-light  px-5">{% trans 'Отправить работу' %} </a>
+            <div class="container my-auto">
+                <div class="row padding_me">
+                    <div class="col-lg-12 row mb-5 text-white">
+                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text1-text">
+                            {% trans 'Переводы статей' %}{% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text1-btn">Edit</button>
+                            {% endif %}
+                        </div>
+                        <div class="text1-form mb-3" style="display: none;">
+                            <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{ translations.text1_en }}</span>
+                                <span>ru:{{ translations.text1_ru }}</span>
+                                <span>uz:{{ translations.text1_uz }}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-7 font-22">
+                            <div class="text2-text">
+                                {% trans 'Качественный перевод откроет материалу дорогу к признанию международным сообществом, а его автору — путь к дальнейшему росту в науке. Доверьте свою работу тем, кто действительно владеет языком и соответствующей тематикой — тогда на статью будут ссылаться эксперты с мировыми именами, и ваша репутация будет неуклонно расти.' %}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-info text2-btn">Edit</button>
+                                {% endif %}
+                            </div>
+                            <div class="text2-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text2_en }}</span>
+                                    <span>ru:{{ translations.text2_ru }}</span>
+                                    <span>uz:{{ translations.text2_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                            <br>
+                            <br>
+                            <i class="text3-text">  {% trans 'Многолетний опыт переводчиков Editory не даст статье утратить ни крупицы смысла. Отправьте нам свой материал — и вскоре вы получите готовый перевод.' %}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-info text3-btn">Edit</button>
+                                {% endif %}
+                            </i>
+                            <div class="text3-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text3_en }}</span>
+                                    <span>ru:{{ translations.text3_ru }}</span>
+                                    <span>uz:{{ translations.text3_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="mt-3 col-lg-12">
+                            <a href="#Forma" class="btn btn-light  px-5">{% trans 'Отправить работу' %} </a>
+                        </div>
                     </div>
                 </div>
-{#                <div class=" offset-1 col-lg-5">#}
-{#                    <div class="d-flex align-items-center">#}
-{#                        <img class="pt-auto img-fluid img-fluid" src="{% static 'pages/svg/correction 1.svg' %}"#}
-{#                             width="auto">#}
-{#                    </div>#}
-{#                </div>#}
+
             </div>
 
+
+        </div>
     </div>
 
-
-
-
-</div>
-</div>
-
-<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
-     <div class="bg-me"
+    <div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+        <div class="bg-me"
              style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
             <div class="container pb-100 pt-100 text-white ">
                 <div class="font-22 section_2">
                     <ul>
-                        <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
-                        <li>{% trans 'В документе должен быть только один материал' %};</li>
-                        <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
-                        <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
-                        <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.</li>
+                        <li class="text4-text">{% trans 'Прикрепите документ в формате Word или PowerPoint' %};
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text4-btn">Edit</button>
+                            {% endif %}</li>
+                    <div class="text4-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text4_en }}</span>
+                                    <span>ru:{{ translations.text4_ru }}</span>
+                                    <span>uz:{{ translations.text4_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                        <li class="text5-text">{% trans 'В документе должен быть только один материал' %};
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text5-btn">Edit</button>
+                            {% endif %}</li>
+                    <div class="text5-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text5_en }}</span>
+                                    <span>ru:{{ translations.text5_ru }}</span>
+                                    <span>uz:{{ translations.text5_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                        <li class="text6-text">{% trans 'Убедитесь, что размер файла составляет менее 5 Мб' %};
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text6-btn">Edit</button>
+                            {% endif %}</li>
+                    <div class="text6-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text6_en }}</span>
+                                    <span>ru:{{ translations.text6_ru }}</span>
+                                    <span>uz:{{ translations.text6_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                        <li class="text7-text">{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text7-btn">Edit</button>
+                            {% endif %}</li>
+                    <div class="text7-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text7_en }}</span>
+                                    <span>ru:{{ translations.text7_ru }}</span>
+                                    <span>uz:{{ translations.text7_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+                        <li class="text8-text">{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-info text8-btn">Edit</button>
+                            {% endif %}</li>
+                    <div class="text8-form mb-3" style="display: none;">
+                                <form action="{% url 'setpage:translations-change' %}" method="POST">
+                                    {% csrf_token %}
+                                    <span>en:{{ translations.text8_en }}</span>
+                                    <span>ru:{{ translations.text8_ru }}</span>
+                                    <span>uz:{{ translations.text8_uz }}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
                     </ul>
                 </div>
             </div>
         </div>
-    
 
-    <div id="Forma" class="row mx-0 mt-100">
-        <div class="container">
-            <div class="text-left" style="font-size: 36px; color:#263236;">{% trans 'Заявка на перевод статьи' %}</div>
+
+        <div id="Forma" class="row mx-0 mt-100">
+            <div class="container">
+                <div class="text-left"
+                     style="font-size: 36px; color:#263236;">{% trans 'Заявка на перевод статьи' %}</div>
+            </div>
+        </div>
+
+        <div class="container mt-100">
+        </div>
+
+
+        <div class="container mt-100">
+
+            <form action="{% url 'requests:translation' %}" method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row row row-cols-1 row-cols-md-2">
+
+                    <div class="col">
+                        <div class="form-group row my-3 ">
+                            <label for="" class="col-sm-4 col-form-label">{% trans 'Кол-во слов' %}</label>
+                            <div class="col-sm-6 ">
+                                {{ form.word_amount }}
+                                <small class="text-danger align-self-start">{{ form.word_amount.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group row  my-3  ">
+                            <label for="inputPassword" class="col-sm-4 ">{% trans 'Область исследований' %}</label>
+                            <div class="col-sm-6">
+                                {{ form.research_area }}
+                                <small class="text-danger align-self-start">{{ form.research_area.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group row my-3">
+                            <label for="inputPassword"
+                                   class="col-sm-4 col-form-label">{% trans 'Язык редактирования' %}</label>
+                            <div class="col-sm-6 d-flex flex-column">
+                                {{ form.language }}
+                                <small class="text-danger align-self-start">{{ form.language.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group row my-3">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">
+                            </label>
+                            <div class="col-sm-6 d-flex flex-column">
+                                {{ form.extra }}
+                                <small class="text-danger align-self-start">{{ form.extra.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="form-group row  my-5">
+                    <div class="col-lg-2">
+                        <label for="inputPassword"
+                               class="text-secondary col-form-label">{% trans 'Комментарии/ особые пожелания' %}</label>
+                    </div>
+                    <div class="col-lg-9 d-flex flex-column">
+                        {{ form.comment }}
+                        <small class="text-danger align-self-start">{{ form.comment.errors }}</small>
+                    </div>
+                </div>
+
+                <div class="form-group row  mt-5">
+                    <div class="col-lg-2">
+                        <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Резюме' %}</label>
+                    </div>
+                    <div class="col-lg-9 row w-100">
+                        <div class=" col-lg-12  d-flex align-items-center">
+                            <label for="file" class="input-preview h-100 w-100 form-input">
+
+                                {{ form.file }}
+
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class=" py-5 mr-5 d-flex justify-content-between flex-wrap">
+                    <div class="mb-3">
+                        <span class="mr-4">{{ form.is_agree }}</span>
+                        {% trans 'Согласие с политикой конфиденциальности' %}
+                    </div>
+                    <div class="">
+                        <button class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
 
-    <div class="container mt-100">
-    </div>
-
-
-    <div  class="container mt-100">
-
-        <form action="{% url 'requests:translation' %}" method='post' enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-row row row-cols-1 row-cols-md-2">
-
-                <div class="col">
-                    <div class="form-group row my-3 ">
-                        <label for="" class="col-sm-4 col-form-label">{% trans 'Кол-во слов' %}</label>
-                        <div class="col-sm-6 ">
-                            {{form.word_amount}}
-                            <small class="text-danger align-self-start">{{form.word_amount.errors}}</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group row  my-3  ">
-                        <label for="inputPassword" class="col-sm-4 ">{% trans 'Область исследований' %}</label>
-                        <div class="col-sm-6">
-                            {{form.research_area}}
-                            <small class="text-danger align-self-start">{{form.research_area.errors}}</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="form-group row my-3">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Язык редактирования' %}</label>
-                        <div class="col-sm-6 d-flex flex-column">
-                            {{form.language}}
-                            <small class="text-danger align-self-start">{{form.language.errors}}</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group row my-3">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">
-                            </label>
-                        <div class="col-sm-6 d-flex flex-column">
-                            {{form.extra}}
-                            <small class="text-danger align-self-start">{{form.extra.errors}}</small>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="form-group row  my-5">
-                <div class="col-lg-2">
-                    <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Комментарии/ особые пожелания' %}</label>
-                </div>
-                <div class="col-lg-9 d-flex flex-column">
-                        {{form.comment}}
-                    <small class="text-danger align-self-start">{{form.comment.errors}}</small>
-                </div>
-            </div>
-            
-            <div class="form-group row  mt-5">
-                <div class="col-lg-2">
-                    <label for="inputPassword" class="text-secondary col-form-label">{% trans 'Резюме' %}</label>
-                </div>
-                <div class="col-lg-9 row w-100">
-                    <div class=" col-lg-12  d-flex align-items-center">
-                        <label for="file" class="input-preview h-100 w-100 form-input">
-            
-                            {{form.file}}
-                            
-                        </label>
-                    </div>
-            
-                </div>
-            </div>
-            <div class=" my-5 mr-5 d-flex justify-content-between flex-wrap">
-                <div class="mb-3">
-                    <span class="mr-4">{{form.is_agree}}</span>
-                    {% trans 'Согласие с политикой конфиденциальности' %}
-                </div>
-                <div class="">
-                    <button class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
-                </div>
-            </div>
-        </form>
-
-    </div>
-
-
-
-   
-
-
-
-
-
 {% endblock content %}
+
+{% block js %}
+    <script src="{% static 'pages/js/translations.js' %}"></script>
+{% endblock %}

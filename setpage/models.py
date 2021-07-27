@@ -1,8 +1,6 @@
 from django.db import models
 
 
-
-
 class AboutUsModel(models.Model):
     text1 = models.CharField(max_length=255, blank=True, null=True)
     text2 = models.TextField(blank=True)
@@ -15,3 +13,20 @@ class AboutUsModel(models.Model):
     text9 = models.TextField(blank=True)
     text10 = models.CharField(max_length=255, blank=True, null=True)
     text11 = models.TextField(blank=True)
+
+
+class WebinarsModel(models.Model):
+    text1 = models.CharField(max_length=255, blank=True, null=True)
+    text2 = models.TextField(blank=True)
+    image1 = models.ImageField(upload_to='changes/', blank=True)
+
+
+class TranslationModel(models.Model):
+    text1 = models.CharField(max_length=255, blank=True, null=True)
+    text2 = models.TextField(blank=True)
+    text3 = models.TextField(blank=True)
+    text4 = models.CharField(max_length=255, blank=True, null=True)
+    text5 = models.CharField(max_length=255, blank=True, null=True)
+    text6 = models.CharField(max_length=255, blank=True, null=True)
+    text7 = models.CharField(max_length=255, blank=True, null=True)
+    text8 = models.CharField(max_length=255, blank=True, null=True)

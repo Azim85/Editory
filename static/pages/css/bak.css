@@ -29,5 +29,15 @@
     .content{
         font-size: 18px;
     }
+
+    .padding_bak{
+      padding-left: 40px !important;
+    padding-right: 40px !important;
+}
 }
 
+.padding_bak{
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
