@@ -12,11 +12,39 @@
     <div class="container d-flex align-items-center">
         <div class="row padding_me">
                 <div class="col-lg-7">
-                    <div class=" head-word geometria pb-5"
-                        style="font-size: 50px; color:white; font-weight:bold; line-height:1">{% trans 'Публикация статьи в Scopus и Web of Science' %}</div>
-                    <div style=" color:white" class="text-left ">
-                    {% trans 'Рейтинг учёного напрямую зависит от взаимодействия с мировой научной общественностью. Чем выше ваш индекс цитирования, тем больше внимания будет направлено на ваши работы, и тем больший авторитет вы приобретёте. Специалисты Editory помогут вам подобрать наиболее подходящее издание и шаг за шагом проведут ваш материал через все стадии подготовки к публикации.' %}
+                    <div class=" head-word geometria pb-5 text1-text"
+                        style="font-size: 50px; color:white; font-weight:bold; line-height:1">{{text.text1}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                        {% endif %}
                     </div>
+
+                    <div class="text1-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text1_en}}</span>
+                            <span>ru:{{scopus.text1_ru}}</span>
+                            <span>uz:{{scopus.text1_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <div style=" color:white" class="text-left text2-text">{{text.text2}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                        {% endif %}
+                    </div>
+
+                    <div class="text2-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text2_en}}</span>
+                            <span>ru:{{scopus.text2_ru}}</span>
+                            <span>uz:{{scopus.text2_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
                             <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left" style="background:#CE935E">{% trans 'Заказать консультацию' %}</a>
@@ -25,7 +53,21 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="d-flex align-items-center">
-                        <img class="img-fluid" src="{% static 'pages/images/Group 544.png' %}">
+                        <div class="text3-text">
+                            <img class="img-fluid" src="{{text.text3.url}}">
+                            {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="text3-form" style="display: none;">
+                            <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <span>{{scopus.text3}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -43,31 +85,216 @@
     <div class="container pb-100">
         <div class="row row-cols-md-3 row-cols-1 pt-100 ">
             <div class="col text-center">
-                <img src="{% static 'pages/images/contract.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px">{% trans 'Заключаем официальный договор с автором' %}</p>
-            </div>
-            <div class="col text-center">
-                <img src="{% static 'pages/images/work.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px">{% trans 'Предоставляем справку' %}</p>
-            </div>
-            <div class="col text-center">
-                <img src="{% static 'pages/images/exchange.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px">{% trans 'Регулярно проверяем обновления списков журналов, рекомендованных ВАК' %}
+                <div class="text4-text">
+                    <img src="{{text.text4.url}}" alt="">
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text4-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{scopus.text4}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+                
+                <p class="mx-auto pt-5 text5-text" style="max-width:200px">{{text.text5}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                    {% endif %}
                 </p>
+
+                <div class="text5-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{scopus.text5_en}}</span>
+                        <span>ru:{{scopus.text5_ru}}</span>
+                        <span>uz:{{scopus.text5_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col text-center">
+                <div class="text6-text">
+                    <img src="{{text.text6.url}}" alt="">
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text6-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text6-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{scopus.text6}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+                <p class="mx-auto pt-5 text7-text" style="max-width:200px">{{text.text7}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text7-btn">Edit</button>
+                    {% endif %}
+                </p>
+
+                <div class="text7-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{scopus.text7_en}}</span>
+                        <span>ru:{{scopus.text7_ru}}</span>
+                        <span>uz:{{scopus.text7_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col text-center">
+
+                <div class="text8-text">
+                    <img src="{{text.text8.url}}" alt="">
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text8-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{scopus.text8}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+                <p class="mx-auto pt-5 text9-text" style="max-width:200px">{{text.text9}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text9-btn">Edit</button>
+                    {% endif %}
+                </p>
+
+                <div class="text9-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{scopus.text9_en}}</span>
+                        <span>ru:{{scopus.text9_ru}}</span>
+                        <span>uz:{{scopus.text9_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
             </div>
         </div>
 
 
         <div class="container bg-white py-5 mt-5 padding_bak" style="border: 2px solid #2A819E; border-radius:15px; ">
             <div>
-                <p style="font-size: 35px;">{% trans 'Памятка для авторов' %}</p>
+                <p style="font-size: 35px;" class="text10-text">{{text.text10}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text10-btn">Edit</button>
+                    {% endif %}
+                </p>
+
+                <div class="text10-form" style="display: none;">
+                    <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{scopus.text10_en}}</span>
+                        <span>ru:{{scopus.text10_ru}}</span>
+                        <span>uz:{{scopus.text10_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
                 <ul>
-                    <li>{% trans 'Уровень оригинальности статьи — не менее 75%' %}</li>
-                    <li>{% trans 'Материал нигде ранее ни полностью, ни частично не публиковался' %}</li>
-                    <li>{% trans 'Объём статьи — от 9000 до 20000 символов с пробелами' %}</li>
-                    <li>{% trans 'Список литературы — желательно, не более 15 позиций' %}</li>
-                    <li>{% trans 'Графические материалы должны быть представлены в разрешении не менее 300 dpi' %}</li>
-                    <li>{% trans 'Большая часть работ в списке литературы — зарубежные публикации за последние 5 лет' %}</li>
+                    <li class="text11-text">{{text.text11}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text11-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text11_en}}</span>
+                            <span>ru:{{scopus.text11_ru}}</span>
+                            <span>uz:{{scopus.text11_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text12-text">{{text.text12}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text12-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text12-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text12_en}}</span>
+                            <span>ru:{{scopus.text12_ru}}</span>
+                            <span>uz:{{scopus.text12_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text13-text">{{text.text13}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text13-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text13-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text13_en}}</span>
+                            <span>ru:{{scopus.text13_ru}}</span>
+                            <span>uz:{{scopus.text13_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text14-text">{{text.text14}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text14-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text14-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text14_en}}</span>
+                            <span>ru:{{scopus.text14_ru}}</span>
+                            <span>uz:{{scopus.text14_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text15-text">{{text.text15}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text15-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text15-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text15_en}}</span>
+                            <span>ru:{{scopus.text15_ru}}</span>
+                            <span>uz:{{scopus.text15_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text16-text">{{text.text16}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text16-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text16-form" style="display: none;">
+                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{scopus.text16_en}}</span>
+                            <span>ru:{{scopus.text16_ru}}</span>
+                            <span>uz:{{scopus.text16_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -173,3 +400,7 @@
 
 
 {% endblock content %}
+
+{% block js %}
+    <script src="{% static 'pages/js/scopus.js' %}"></script>
+{% endblock js %}

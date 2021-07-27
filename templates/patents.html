@@ -21,6 +21,7 @@
             {% endif %}
         {% endfor %}
     {% endif %}
+    
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 48.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -29,11 +30,43 @@ mix-blend-mode: luminosity;
             <div class="container h-100 d-flex align-items-center">
                 <div class="row padding_me">
                     <div class="col-lg-6">
-                        <div class=" font-65 head-word geometria pb-5"
-                             style=" color:white; font-weight:bold; line-height:1">{% trans 'Как получить патент?' %}</div>
-                        <div style=" color:white" class="text-left font-22">
-                            {% trans 'Хотите надёжно защитить свою интеллектуальную собственность? Сосредоточьтесь на главном — исследованиях и разработках. А Editory поможет со всем остальным. ' %}
+
+                        <div class=" font-65 head-word geometria pb-5 text1-text"
+                             style=" color:white; font-weight:bold; line-height:1">{{text.text1}}
+                                {% if request.user.is_superuser %}
+                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                                {% endif %}
+                            </div>
+
+                            <div class="text1-form col-8" style="display: none;">
+                                <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                                    {% csrf_token %}
+                                    <span>en:{{patent.text1_en}}</span>
+                                    <span>ru:{{patent.text1_ru}}</span>
+                                    <span>uz:{{patent.text1_uz}}</span>
+                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                </form>
+                            </div>
+
+
+
+                        <div style=" color:white" class="text-left font-22 text2-text">{{text.text2}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                            {% endif %}
                         </div>
+
+                        <div class="text2-form col-8" style="display: none;">
+                            <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                                {% csrf_token %}
+                                <span>en:{{patent.text2_en}}</span>
+                                <span>ru:{{patent.text2_ru}}</span>
+                                <span>uz:{{patent.text2_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
+
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
                                 <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
@@ -41,12 +74,7 @@ mix-blend-mode: luminosity;
                             </div>
                         </div>
                     </div>
-                    {#                <div class="col-lg-6">#}
-                    {#                    <div class="d-flex align-items-center">#}
-                    {#                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"#}
-                    {#                            style="width: 30vw;">#}
-                    {#                    </div>#}
-                    {#                </div>#}
+                   
                 </div>
 
             </div>
@@ -56,24 +84,162 @@ mix-blend-mode: luminosity;
     <div class="container">
         <div class="row my-5">
             <div class="col-lg-9">
-                Задумываясь о получении патента, прежде всего ответьте себе на вопрос: в каких странах он должен действовать? От этого будут зависеть ваши дальнейшие действия.
+                <div class="text3-text">{{text.text3}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text3-form col-8" style="display: none;">
+                    <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                        {% csrf_token %}
+                        <span>en:{{patent.text3_en}}</span>
+                        <span>ru:{{patent.text3_ru}}</span>
+                        <span>uz:{{patent.text3_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+               
 <br><br>
-В любом случае, следующий необходимый этап — это патентный поиск. Выдача патента гарантирована только в том случае, если ваша разработка действительно не имеет аналогов на выбранной территории. Это можно сделать самостоятельно, воспользовавшись открытыми базами, но лучше доверить это Editory — мы осуществим поиск в разы быстрее, пользуясь отлаженной процедурой.
-<br><br>
-Следующий шаг — заявка. Её форма зависит от выбранного патентного бюро, и она должна быть заполнена корректно — малейшая ошибка является поводом для отказа в рассмотрении. Заполнив заявку, вам необходимо будет составить реферат с кратким описанием патентуемого изобретения. Он должен включать:
-<br><br>
+
+                <div class="text4-text">{{text.text4}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                    {% endif %}
+                </div>
+                
+                <div class="text4-form col-8" style="display: none;">
+                    <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                        {% csrf_token %}
+                        <span>en:{{patent.text4_en}}</span>
+                        <span>ru:{{patent.text4_ru}}</span>
+                        <span>uz:{{patent.text4_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+        <br><br>
+
+                <div class="text5-text">{{text.text5}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                    {% endif %}
+                </div>
+                
+                <div class="text5-form col-8" style="display: none;">
+                    <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                        {% csrf_token %}
+                        <span>en:{{patent.text5_en}}</span>
+                        <span>ru:{{patent.text5_ru}}</span>
+                        <span>uz:{{patent.text5_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+        <br><br>
                 <ul class="ml-5">
-                    <li>название изобретения;</li>
-                    <li>область применения;</li>
-                    <li>сущность;</li>
-                    <li>технический результат.</li>
+                    <li class="text6-text">{{text.text6}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text6-btn">Edit</button>
+                        {% endif %}
+                    </li>
+
+                    <div class="text6-form col-8" style="display: none;">
+                        <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                            {% csrf_token %}
+                            <span>en:{{patent.text6_en}}</span>
+                            <span>ru:{{patent.text6_ru}}</span>
+                            <span>uz:{{patent.text6_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text7-text">{{text.text7}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text7-btn">Edit</button>
+                        {% endif %}
+                    </li>
+
+                    <div class="text7-form col-8" style="display: none;">
+                        <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                            {% csrf_token %}
+                            <span>en:{{patent.text7_en}}</span>
+                            <span>ru:{{patent.text7_ru}}</span>
+                            <span>uz:{{patent.text7_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text8-text">{{text.text8}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
+                        {% endif %}
+                    </li>
+
+                    <div class="text8-form col-8" style="display: none;">
+                        <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                            {% csrf_token %}
+                            <span>en:{{patent.text8_en}}</span>
+                            <span>ru:{{patent.text8_ru}}</span>
+                            <span>uz:{{patent.text8_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text9-text">{{text.text9}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text9-btn">Edit</button>
+                        {% endif %}
+                    </li>
+
+                    <div class="text9-form col-8" style="display: none;">
+                        <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                            {% csrf_token %}
+                            <span>en:{{patent.text9_en}}</span>
+                            <span>ru:{{patent.text9_ru}}</span>
+                            <span>uz:{{patent.text9_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
                 </ul>
 
 
-<br><br>
-Приложив к этим документам все необходимые формулы, чертежи и промышленные образцы, вы сможете подать заявку. Помните, что любая неточность снижает ваши шансы на получение патента.
-<br><br>
-Составление и проверка займёт массу времени — поручите это Editory! Заполните следующую форму — и наш консультант свяжется с вами в течение часа.
+        <br><br>
+
+                <div class="text10-text">{{text.text10}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text10-btn">Edit</button>
+                    {% endif %}
+                </div>
+                
+                <div class="text10-form col-8" style="display: none;">
+                    <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                        {% csrf_token %}
+                        <span>en:{{patent.text10_en}}</span>
+                        <span>ru:{{patent.text10_ru}}</span>
+                        <span>uz:{{patent.text10_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+        <br><br>
+
+                <div class="text11-text">{{text.text11}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text11-btn">Edit</button>
+                    {% endif %}
+                </div>
+                
+                <div class="text11-form col-8" style="display: none;">
+                    <form action="{% url 'setpage:patent-change' %}" method="POST" class="w-100">
+                        {% csrf_token %}
+                        <span>en:{{patent.text11_en}}</span>
+                        <span>ru:{{patent.text11_ru}}</span>
+                        <span>uz:{{patent.text11_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
 
             </div>
         </div>
@@ -182,3 +348,7 @@ mix-blend-mode: luminosity;
 
 
 {% endblock content %}
+
+{% block js %}
+        <script src="{% static 'pages/js/patent.js' %}"></script>
+{% endblock js %}

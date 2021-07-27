@@ -8,8 +8,19 @@
 
 {% block content %}
   
-    <section class="container news-card mt-5 pt-2 " style="margin-top: 100px">
-    <div class="text-right text-primary mb-2"><a href="{% url 'pages:allnews' %}">ВСЕ НОВОСТИ >>></a></div>
+    <section class="container news-card mt-2 pt-2 " style="margin-top: 100px">
+      <div class="row mb-3">
+        <div class="col-lg-8">
+          <form action="{% url 'pages:search' %}" method="get" class="d-flex w-100">
+            <input type="text" name='q' placeholder="Search....." class="form-control">
+            <button type="submit" class="btn btn-success ml-2">Search</button>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <a href="{% url 'pages:allnews' %}">ВСЕ НОВОСТИ >>></a>
+        </div>
+      </div>
+  
     <div class="row">
       {% if random_topic %}
         <div class="col-lg-8 pb-4 mb-2 bognews">

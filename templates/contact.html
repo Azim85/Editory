@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="container mt-100 mb-200">
     <h2 class="mb-4">{% trans 'Есть вопросы' %}? <br>{% trans 'Свяжитесь с Editory' %}</h2>
     <div class="row">
@@ -14,18 +15,91 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.915967326045!2d69.249667!3d41.331527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE5JzUzLjUiTiA2OcKwMTQnNTguOCJF!5e0!3m2!1sru!2s!4v1622012450708!5m2!1sru!2s"
                      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
+
         <div class="offset-lg-1 col-lg-5 d-flex flex-column justify-content-end">
             <div class="small text-secondary">{% trans 'Номера телефонов' %}:</div>
-            <div><a href="tel:+998 90 013 19 23" class="text-dark text-decoration-none">+998 90 013 19 23</a></div>
-            <div><a href="tel:+998 99 115 01 77" class="text-dark text-decoration-none">+998 99 115 01 77</a></div>
-            <div><a href="tel:+998 99 115 02 77" class="text-dark text-decoration-none">+998 99 115 02 77</a></div>
+
+            <div class="text1-text"><a href="tel:+998 90 013 19 23" class="text-dark text-decoration-none">{{text.text1}}</a>
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text1-form" style="display: none;">
+                <form action="{% url 'setpage:contact-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>tel:{{form.text1}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
+            <div class="text2-text"><a href="tel:+998 99 115 01 77" class="text-dark text-decoration-none">{{text.text2}}</a>
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text2-form" style="display: none;">
+                <form action="{% url 'setpage:contact-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>tel:{{form.text2}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
+            <div class="text3-text"><a href="tel:+998 99 115 02 77" class="text-dark text-decoration-none">{{text.text3}}</a>
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text3-form" style="display: none;">
+                <form action="{% url 'setpage:contact-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>tel:{{form.text3}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="small text-secondary mt-5">{% trans 'Эл. почта' %}</div>
-            <div><a href="" class="text-dark text-decoration-none">oooeditory@gmail.com</a></div>
+            <div class="text4-text"><a href="" class="text-dark text-decoration-none">{{text.text4}}</a>
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text4-form" style="display: none;">
+                <form action="{% url 'setpage:contact-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>{{form.text4}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
             <div class="small text-secondary mt-5">{% trans 'Адрес' %}:</div>
-            <div>{% trans 'г. Ташкент, Алмазарский район, Себзар 3' %}</div>
+
+            <div class="text5-text">{{text.text5}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text5-form" style="display: none;">
+                <form action="{% url 'setpage:contact-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{form.text5_en}}</span>
+                    <span>ru:{{form.text5_ru}}</span>
+                    <span>uz:{{form.text5_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
 
         </div>
     </div>
     </div>
 
 {% endblock %}
+
+{% block js %}
+    <script src="{% static 'pages/js/contact.js' %}" ></script>
+{% endblock js %}

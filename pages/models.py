@@ -18,7 +18,7 @@ class Topic(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.material_name
+        return str(self.created_at)
 
     def get_absolute_url(self):
         return reverse_lazy('pages:article', kwargs={'pk': self.pk})

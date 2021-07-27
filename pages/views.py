@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.db.models import  Q
 import random
 import datetime
 from django.contrib import messages
@@ -14,8 +15,8 @@ from django.http import JsonResponse
 import sys, glob, os
 from django.core.files import File
 from django.conf import settings
-from setpage.models import AboutUsModel
-from setpage.forms import AboutUSForm
+from setpage.models import AboutUsModel, ContactModel, LangEditModel
+from setpage.forms import AboutUSForm, ContactForm, LangForm
 
 import logging
 
@@ -103,12 +104,13 @@ class AboutUs(View):
         return context
 
 
-class Contact(TemplateView):
-    template_name = 'contact.html'
+class Contact(View):
+    def get(self, request):
+        text = ContactModel.objects.first()
+        form = ContactForm(instance=text)
+        return render(request, 'contact.html', {'text':text, 'form':form})
 
-    def get_context_data(self, **kwargs):
-        context = super(Contact, self).get_context_data(**kwargs)
-        return context
+
 
 
 class Paper(DetailView):
@@ -129,12 +131,13 @@ class Services(TemplateView):
         return context
 
 
-class Dissertation(TemplateView):
-    template_name = 'dissertation.html'
+class Dissertation(View):
 
-    def get_context_data(self, **kwargs):
-        context = super(Dissertation, self).get_context_data(**kwargs)
-        return context
+    def get(self, request):
+        return render(request, 'dissertation.html')
+    
+
+    
 
 
 class Research_strategy(View):
@@ -170,8 +173,9 @@ class Language_editing(View):
     def get(self, request):
         form = OrderForm()
         forms = ConsultationForm()
-
-        return render(request, 'language_editing.html', {'form': form, 'forms': forms})
+        obj = LangEditModel.objects.first()
+        lang = LangForm(instance=obj)
+        return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text':obj, 'lang':lang})
 
     def post(self, request):
         forms = ConsultationForm(request.POST)
@@ -289,5 +293,12 @@ class allNews(ListView):
 def hello(request):
    
     return redirect('pages:webinars', context)
+
+
+class SearchView(View):
+    def get(self, request):
+        q = request.GET.get('q')
+        news = Topic.objects.filter(Q(material_name__icontains=q) | Q(title__icontains=q) | Q(description__icontains=q)).distinct()
+        return render(request, 'search.html', {'news':news, 'query':q})
 
 

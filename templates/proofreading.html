@@ -51,15 +51,42 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4"
-                                         style="font-weight: 600; line-height:106.3% ">{% trans 'Рецензирование диссертации' %}</div>
-                                    <div class="pb-4">{% trans 'Рецензия закрепляет успех диссертации, выявляя её достоинства и предоставляя автору возможность подтвердить перед сообществом свою компетентность' %}</div>
+                                    <div class="font-65 pb-4 text1-text" style="font-weight: 600; line-height:106.3% ">{{text.text1}}
+                                        {% if request.user.is_superuser %}
+                                            <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="text1-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text1_en}}</span>
+                                            <span>ru:{{proof.text1_ru}}</span>
+                                            <span>uz:{{proof.text1_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="pb-4 text2-text">{{text.text2}}
+                                        {% if request.user.is_superuser %}
+                                            <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="text2-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text2_en}}</span>
+                                            <span>ru:{{proof.text2_ru}}</span>
+                                            <span>uz:{{proof.text2_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
+
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 450.png' %}">#}
-                            {#                        </div>#}
+                            
                         </div>
                     </div>
                 </div>
@@ -71,17 +98,41 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4"
-                                         style=" font-weight:600; line-height:106.3%">{% trans 'Методология исследования' %}</div>
-                                    <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться' %}
-
+                                    <div class="font-65 pb-4 text3-text" style="font-weight: 600; line-height:106.3% ">{{text.text3}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text3-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text3_en}}</span>
+                                            <span>ru:{{proof.text3_ru}}</span>
+                                            <span>uz:{{proof.text3_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="pb-4 text4-text">{{text.text4}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text4-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text4_en}}</span>
+                                            <span>ru:{{proof.text4_ru}}</span>
+                                            <span>uz:{{proof.text4_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
                                     </div>
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 451.png' %}">#}
-                            {#                        </div>#}
+                            
                         </div>
                     </div>
                 </div>
@@ -93,15 +144,41 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4"
-                                         style=" font-weight:600; line-height:106.3%">{% trans 'Статистический анализ' %}</div>
-                                    <div class="pb-4">{% trans 'Собираем и обрабатываем конкретные цифры для вашегоисследования. Опирайтесь в работе на действительно достоверные данные и будьте уверены в результате' %}</div>
+                                    <div class="font-65 pb-4 text5-text" style="font-weight: 600; line-height:106.3% ">{{text.text5}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text5-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text5_en}}</span>
+                                            <span>ru:{{proof.text5_ru}}</span>
+                                            <span>uz:{{proof.text5_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="pb-4 text6-text">{{text.text6}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text6-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text6-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text6_en}}</span>
+                                            <span>ru:{{proof.text6_ru}}</span>
+                                            <span>uz:{{proof.text6_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 452.png' %}">#}
-                            {#                        </div>#}
+                            
                         </div>
                     </div>
                 </div>
@@ -113,15 +190,41 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4"
-                                         style=" line-height:106.3%; font-weight:600">{% trans 'Корректура и редактирование диссертации' %}</div>
-                                    <div class="pb-4">{% trans 'Как избежать ошибок в процессе исследования и получить объективные показатели? Специалисты Editory знают, как этого добиться. Языковая и фактологическая обработка вашей диссертации осуществляется подтверждёнными экспертами в соответствующей области' %} </div>
+                                    <div class="font-65 pb-4 text7-text" style="font-weight: 600; line-height:106.3% ">{{text.text7}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text7-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text7-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text7_en}}</span>
+                                            <span>ru:{{proof.text7_ru}}</span>
+                                            <span>uz:{{proof.text7_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="pb-4 text8-text">{{text.text8}}
+                                        {% if request.user.is_superuser %}
+                                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="text8-form" style="display: none;">
+                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                                            {% csrf_token %}
+                                            <span>en:{{proof.text8_en}}</span>
+                                            <span>ru:{{proof.text8_ru}}</span>
+                                            <span>uz:{{proof.text8_uz}}</span>
+                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                                        </form>
+                                    </div>
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            {#                        <div class="col-lg-6 d-flex justify-content-center">#}
-                            {#                            <img class="img-fluid fix-img" src="{% static 'pages/images/Group 455.png' %}">#}
-                            {#                        </div>#}
+                            
                         </div>
                     </div>
                 </div>
@@ -136,11 +239,80 @@ mix-blend-mode: luminosity;
         <div class="container pb-100 pt-100 text-white ">
             <div class="font-22 section_2">
                 <ul>
-                    <li>{% trans 'Прикрепите документ в формате Word или PowerPoint' %};</li>
-                    <li>{% trans 'В документе должен быть только один материал' %};</li>
-                    <li>{% trans 'Убедитесь, что размер файла составляет менее Х Мб' %};</li>
-                    <li>{% trans 'Проверьте название документа: в нём не должно быть пробелов или специальных символов' %};</li>
-                    <li>{% trans 'Если вы столкнулись с проблемой при загрузке документа — пожалуйста, свяжитесь с нами' %}.</li>
+                    <li class="text9-text">{{text.text9}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text9-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text9-form" style="display: none;">
+                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{proof.text9_en}}</span>
+                            <span>ru:{{proof.text9_ru}}</span>
+                            <span>uz:{{proof.text9_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text10-text">{{text.text10}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text10-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text10-form" style="display: none;">
+                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{proof.text10_en}}</span>
+                            <span>ru:{{proof.text10_ru}}</span>
+                            <span>uz:{{proof.text10_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text11-text">{{text.text11}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text11-form" style="display: none;">
+                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{proof.text11_en}}</span>
+                            <span>ru:{{proof.text11_ru}}</span>
+                            <span>uz:{{proof.text11_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text12-text">{{text.text12}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text12-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text12-form" style="display: none;">
+                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{proof.text12_en}}</span>
+                            <span>ru:{{proof.text12_ru}}</span>
+                            <span>uz:{{proof.text12_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text13-text">{{text.text13}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text13-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    <div class="text13-form" style="display: none;">
+                        <form action="{% url 'setpage:proof-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{proof.text13_en}}</span>
+                            <span>ru:{{proof.text13_ru}}</span>
+                            <span>uz:{{proof.text13_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -262,6 +434,7 @@ mix-blend-mode: luminosity;
 {% endblock %}
 
 {% block js %}
+    <script src="{% static 'pages/js/proofreading.js' %}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (alert_message) {

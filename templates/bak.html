@@ -18,6 +18,8 @@
 {% endif %}
 {% endfor %}
 {% endif %}
+
+
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 55.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -26,12 +28,38 @@ mix-blend-mode: luminosity;
             <div class="container h-100 d-flex align-items-center">
                 <div class="row padding_me">
                     <div class="col-lg-7">
-                        <div class=" font-65 head-word geometria pb-5"
-                             style=" color:white; font-weight:bold; line-height:1">{% trans 'Публикация статьи в журналах ВАК' %}</div>
-                        <div style=" color:white" class="text-left font-22">
-                            {% trans 'Прогресс в научной работе невозможен без регулярного подтверждения своего уровня публикациями в проверенных изданиях. Стремитесь к новым горизонтам и степеням? Сосредоточьтесь на работе, а специалисты Editory познакомят научное сообщество с её результатами' %}
-
+                        <div class=" font-65 head-word geometria pb-5 text1-text" style=" color:white; font-weight:bold; line-height:1">{{text.text1}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                            {% endif %}
                         </div>
+
+                        <div class="text1-form" style="display: none;">
+                            <form action="{% url 'setpage:bak-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{bak.text1_en}}</span>
+                                <span>ru:{{bak.text1_ru}}</span>
+                                <span>uz:{{bak.text1_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
+                        <div style=" color:white" class="text-left font-22 text2-text">{{text.text2}}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text2-btn">Edit</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="text2-form" style="display: none;">
+                            <form action="{% url 'setpage:bak-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>en:{{bak.text2_en}}</span>
+                                <span>ru:{{bak.text2_ru}}</span>
+                                <span>uz:{{bak.text2_uz}}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
                                 <a href="#Forma" type="submit" class="btn w-100  self-align-left" style="background-color: #CE935E"
@@ -55,40 +83,245 @@ mix-blend-mode: luminosity;
     
     <div class="row mx-0 pt-100">
         <div class="container">
-            <div class="text-left" style="font-size: 36px; color:#263236;">{% trans 'Наши гарантии' %}</div>
+            <div class="text-left text3-text" style="font-size: 36px; color:#263236;">{{text.text3}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text3-btn">Edit</button>
+                {% endif %}
+            </div>
+
+            <div class="text3-form" style="display: none;">
+                <form action="{% url 'setpage:bak-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{bak.text3_en}}</span>
+                    <span>ru:{{bak.text3_ru}}</span>
+                    <span>uz:{{bak.text3_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
         </div>
     </div>
-    
     
 
     <div class="container">
         <div class="row row-cols-md-3 row-cols-1 mt-100 ">
             <div class="col text-center">
-                <img src="{% static 'pages/images/contract.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >{% trans 'Заключаем официальный договор с автором' %}</p>
-            </div>
-            <div class="col text-center">
-                <img src="{% static 'pages/images/work.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >{% trans 'Предоставляем справку' %}</p>
-            </div>
-            <div class="col text-center">
-                <img src="{% static 'pages/images/exchange.png' %}" alt="">
-                <p class="mx-auto pt-5" style="max-width:200px" >{% trans 'Регулярно проверяем обновления списков журналов, рекомендованных ВАК' %}
+                <div class="text4-text">
+                    <img src="{{text.text4.url}}" width="100" height="100" alt="" class="">
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text4-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{bak.text4}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+
+                <p class="mx-auto pt-5 text5-text" style="max-width:200px">{{text.text5}}
+                    {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text5-btn">Edit</button>
+                    {% endif %}
                 </p>
+
+                <div class="text5-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{bak.text5_en}}</span>
+                        <span>ru:{{bak.text5_ru}}</span>
+                        <span>uz:{{bak.text5_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+               
+            </div>
+            <div class="col text-center">
+                <div class="text6-text">
+                    <img src="{{text.text6.url}}" width="100" height="100" alt="" class="">
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text6-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text6-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{bak.text6}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+
+                <p class="mx-auto pt-5 text7-text" style="max-width:200px">{{text.text7}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text7-btn">Edit</button>
+                    {% endif %}
+                </p>
+                
+                <div class="text7-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{bak.text7_en}}</span>
+                        <span>ru:{{bak.text7_ru}}</span>
+                        <span>uz:{{bak.text7_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col text-center">
+                <div class="text8-text">
+                    <img src="{{text.text8.url}}" width="100" height="100" alt="" class="">
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text8-btn">Edit</button>
+                    {% endif %}
+                </div>
+
+                <div class="text8-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <span>{{bak.text8}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
+
+                <p class="mx-auto pt-5 text9-text" style="max-width:200px">{{text.text9}}
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text9-btn">Edit</button>
+                    {% endif %}
+                </p>
+                
+                <div class="text9-form" style="display: none;">
+                    <form action="{% url 'setpage:bak-change' %}" method="POST">
+                        {% csrf_token %}
+                        <span>en:{{bak.text9_en}}</span>
+                        <span>ru:{{bak.text9_ru}}</span>
+                        <span>uz:{{bak.text9_uz}}</span>
+                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                    </form>
+                </div>
             </div>
         </div>
     
 
     <div class="container padding_bak py-5   mt-5" style="border: 2px solid #2A819E; border-radius:15px;" >
         <div>
-            <p style="font-size: 35px;">{% trans 'Памятка для авторов' %}</p>
+            <p style="font-size: 35px;" class="text10-text">{{text.text10}}
+                {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-secondary text10-btn">Edit</button>
+                {% endif %}
+            </p>
+
+            <div class="text10-form" style="display: none;">
+                <form action="{% url 'setpage:bak-change' %}" method="POST">
+                    {% csrf_token %}
+                    <span>en:{{bak.text10_en}}</span>
+                    <span>ru:{{bak.text10_ru}}</span>
+                    <span>uz:{{bak.text10_uz}}</span>
+                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                </form>
+            </div>
+
                 <ul>
-                    <li>{% trans 'Уровень оригинальности статьи — не менее 75%' %}</li>
-                    <li>{% trans 'Материал нигде ранее ни полностью, ни частично не публиковался' %}</li>
-                    <li>{% trans 'Объём статьи — от 9000 до 20000 символов с пробелами' %}</li>
-                    <li>{% trans 'Список литературы — желательно, не более 15 позиций' %}</li>
-                    <li>{% trans 'Графические материалы должны быть представлены в разрешении не менее 300 dpi' %}</li>
-                    <li>{% trans 'Большая часть работ в списке литературы — зарубежные публикации за последние 5 лет' %}</li>
+                    <li class="text11-text">{{text.text11}}
+                        {% if request.user.is_superuser %}
+                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
+                        {% endif %}
+                    </li>
+
+                    <div class="text11-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text11_en}}</span>
+                            <span>ru:{{bak.text11_ru}}</span>
+                            <span>uz:{{bak.text11_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+                    
+                    <li class="text12-text">{{text.text12}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text12-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    
+                    <div class="text12-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text12_en}}</span>
+                            <span>ru:{{bak.text12_ru}}</span>
+                            <span>uz:{{bak.text12_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+                    
+                    <li class="text13-text">{{text.text13}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text13-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    
+                    <div class="text13-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text13_en}}</span>
+                            <span>ru:{{bak.text13_ru}}</span>
+                            <span>uz:{{bak.text13_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+                    
+                    <li class="text14-text">{{text.text14}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text14-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    
+                    <div class="text14-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text14_en}}</span>
+                            <span>ru:{{bak.text14_ru}}</span>
+                            <span>uz:{{bak.text14_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+
+                    <li class="text15-text">{{text.text15}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text15-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    
+                    <div class="text15-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text15_en}}</span>
+                            <span>ru:{{bak.text15_ru}}</span>
+                            <span>uz:{{bak.text15_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
+                    
+                    <li class="text16-text">{{text.text16}}
+                        {% if request.user.is_superuser %}
+                        <button type="button" class="btn btn-secondary text16-btn">Edit</button>
+                        {% endif %}
+                    </li>
+                    
+                    <div class="text16-form" style="display: none;">
+                        <form action="{% url 'setpage:bak-change' %}" method="POST">
+                            {% csrf_token %}
+                            <span>en:{{bak.text16_en}}</span>
+                            <span>ru:{{bak.text16_ru}}</span>
+                            <span>uz:{{bak.text16_uz}}</span>
+                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                        </form>
+                    </div>
                 </ul>
         </div>
     </div>
@@ -185,3 +418,6 @@ mix-blend-mode: luminosity;
     
    
 {% endblock content %}
+{% block js %}
+    <script src="{% static 'pages/js/bak.js' %}"></script>
+{% endblock js %}

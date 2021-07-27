@@ -27,6 +27,6 @@ urlpatterns = [
     path('change_others', change_others, name='others-change'),
     path('change_description', change_description, name="description-change"),
 
-
+    path('search/', SearchView.as_view(), name='search')
 
 ]
