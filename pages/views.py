@@ -39,8 +39,10 @@ class Article(DetailView):
     context_object_name = 'topic'
 
     def get_context_data(self, **kwargs):
+
         topic = Topic.objects.get(pk=self.kwargs['pk'])
         context = super(Article, self).get_context_data(**kwargs)
+        self.request.breadcrumb = topic.material_name
         context['get_by_theme'] = Topic.objects.filter(
             material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
         context['form'] = TopicForm(instance=topic)
