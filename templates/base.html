@@ -16,6 +16,23 @@
     <link rel="stylesheet" href="{% static 'pages/fonts/stylesheet.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .alert_message {
+            opacity: 0;
+            animation-name: message;
+            animation-duration: 7s;
+            animation-timing-function: cubic-bezier(.075, .82, .165, 1)
+        }
+
+        @keyframes message {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+    </style>
     {% block css %}{% endblock %}
 </head>
 
@@ -27,10 +44,9 @@
     {% include 'components/mobile_navbar.html' %}
 </div>
 
-<div id="desktop" class="container-fluid nav-holder w-100 fixed-top">
+<div id="desktop" class="container-fluid nav-holder w-100 fixed-top" style="z-index: 10000">
     {% include 'components/new_navbar.html' %}
 </div>
-
 
 
 <div class="wrapper-content" style="margin-top: 137px">
@@ -89,6 +105,13 @@
     //Get the button
     var mybutton = document.getElementById("myBtn");
 
+    let alert_message = document.getElementById('alert_message')
+
+
+    if (alert_message) {
+        alert_message.classList.add('alert_message')
+    }
+
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
@@ -109,6 +132,7 @@
     }
 </script>
 {% block js %}{% endblock %}
+
 </body>
 
 </html>

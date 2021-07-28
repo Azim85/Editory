@@ -6,19 +6,23 @@
 {% endblock %}
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
+
+    <div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 58.jpg' %});
             background-size: cover;">
@@ -251,7 +255,7 @@ mix-blend-mode: luminosity;
 
     <div id="Forma" class="container mt-100 pb-100">
         <h1>Форма заявки</h1>
-        <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}">
+        <form class="mt-5" method="post" name="consultation" action="{% url 'requests:design' %}#Forma">
             {% csrf_token %}
             <div class="row text-secondary">
                 <div class="col-lg-6">

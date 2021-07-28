@@ -7,7 +7,7 @@ import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView, ListView
 from .models import Topic, TopResearches
-from my_requests.forms import ConsultationForm, OrganizeResearchForm
+from my_requests.forms import ConsultationForm, OrganizeResearchForm, LanguageForm
 from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
 from users.models import Colleague, CustomUser
@@ -94,9 +94,9 @@ class AboutUs(View):
                         return redirect('pages:webinars')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'about_us.html', {'form': form})
+                    return render(request, 'about_us.html', {'form': form, "ss":"ss"})
             else:
-                return render(request, 'about_us.html', {'form': form})
+                return render(request, 'about_us.html', {'form': form, "ss":"ss"})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
@@ -174,13 +174,13 @@ class Research_strategy(View):
 class Language_editing(View):
     def get(self, request):
         form = OrderForm()
-        forms = ConsultationForm()
+        forms = LanguageForm()
         obj = LangEditModel.objects.first()
         lang = LangForm(instance=obj)
         return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text':obj, 'lang':lang})
 
     def post(self, request):
-        forms = ConsultationForm(request.POST)
+        forms = LanguageForm(request.POST)
         if request.user.is_authenticated:
             if forms.is_valid():
                 if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':

@@ -8,19 +8,22 @@
 
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
+<div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image57.jpg' %});
             background-size: cover;">
@@ -589,7 +592,7 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}"
+    <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}#Forma"
           enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container mt-4">
@@ -665,7 +668,7 @@ mix-blend-mode: luminosity;
     <!-- Button trigger modal -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 200px" aria-labelledby="exampleModalLabel" aria-hidden="true"
          style="background: transparent !important;">
         <div class="modal-dialog m-0" style="width: 0 !important;">
             <div class="modal-content m-0" style="width: 0 !important;">
@@ -755,7 +758,7 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <div class="" id="formacha" style="display: none">
+    <div class="" id="formacha" style="display: none; margin-top: 200px">
         <form class="h-100 w-100 mobile-form position-fixed fixed" method="post"
               action="{% url 'orders:create-order' %}"
               style="
@@ -842,7 +845,7 @@ mix-blend-mode: luminosity;
         </form>
     </div>
 
-    <div class="modal fade" id="alertme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="alertme" tabindex="-1" style="margin-top: 200px" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -869,20 +872,20 @@ mix-blend-mode: luminosity;
 
         $("#hideforma").click(function () {
             {#$("#exampleModal").addClass('show')#}
-            a = $('#cost').html()
+            a = parseInt($('#cost').html())
             $('#formcost').html(a)
             $('.amount').val(a)
 
         })
         $("#hideforma1").click(function () {
             {#$("#exampleModal").css('display', 'inline')#}
-            a = $('#cost1').html()
+            a = parseInt($('#cost1').html())
             $('#formcost').html(a)
             $('.amount').val(a)
         })
         $("#hideforma2").click(function () {
             {#$("#exampleModal").css('display', 'inline')#}
-            a = $('#cost2').html()
+            a = parseInt($('#cost2').html())
             $('#formcost').html(a)
             $('.amount').val(a)
         })
