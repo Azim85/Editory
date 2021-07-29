@@ -36,11 +36,11 @@
     {% block css %}{% endblock %}
 </head>
 
-<body class="main-font" style="font-size: 18px;">
+<body class="main-font" style="font-size: 18px;  ">
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
-<div id="mobile" class="container-fluid nav-holder w-100">
+<div id="mobile" class="container-fluid nav-holder fixed-top w-100" style="overflow-y: scroll !important;">
     {% include 'components/mobile_navbar.html' %}
 </div>
 
@@ -130,6 +130,14 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+</script>
+
+<script>
+
+    $('#h100').click(function (){
+        $('#vh100').toggleClass( "vh100" )
+    })
+
 </script>
 {% block js %}{% endblock %}
 

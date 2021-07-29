@@ -4,15 +4,15 @@
 {% get_available_languages as LANGUAGE %}
 {% get_current_language as Lan %}
 
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light  " id="vh100" style=" overflow-y: scroll !important;">
     <a class="navbar-brand logo-color font-weight-bold geometria" href="{% url 'pages:home' %}"
        style=" color: #40545C;  font-size:25px;"><img src="{% static 'pages/svg/Logo.svg' %}"></a>
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler border-0" type="button" id="h100" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon "></span>
     </button>
 
-    <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent" >
         <div  class="d-flex w-100 justify-content-center">
             <hr class="m-0" style="width: 100%; height: 2px; background-color: #fff;">
         </div>
@@ -198,3 +198,5 @@
 
     </div>
 </nav>
+
+
