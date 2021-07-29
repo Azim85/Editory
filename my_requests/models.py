@@ -224,16 +224,17 @@ class Translation(models.Model):
 
     
 DEGREE = (
-    ('кандидат наук', 'кандидат наук '),
-    ('доктор наук', 'доктор  наук'),
-    ('доктор философии', 'доктор философии PhD'),
-    ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
+    ('Кандидат наук', 'Кандидат наук '),
+    ('Доктор наук', 'Доктор  наук'),
+    ('Доктор философии', 'Доктор философии PhD'),
+    ('Хабилитированный доктор', 'Хабилитированный доктор (Dr. habil.)'),
 )
+
 class ApplicationForFreeConsultation(models.Model):
 
     """
     url:conferences/   name:conferences
-    page: conferences.html  method:get
+    page: conferences.html  
     """
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

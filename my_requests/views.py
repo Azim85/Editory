@@ -68,7 +68,24 @@ class Conferences(View):
         return render(request, 'conferences.html', context)
 
     def post(self, request):
-        print(request.POST)
+        form = FreeConsultationForm(request.POST, request.FILES)
+        
+        if request.user.is_authenticated:
+            if form.is_valid():
+                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
+                    done = form.save()
+                    if done:
+                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                        return redirect('requests:conferences')
+                else:
+                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
+                    return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
+            else:
+                return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
+        else:
+            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
+            return redirect('users:login')
+        
 
 
 class CreateConferences(View):
@@ -127,19 +144,19 @@ class Design(View):
 
 class ConsultationView(View):
     def post(self, request):
-        form = ConsultationForm(request.POST)
+        form = FreeConsultationForm(request.POST)
         if request.user.is_authenticated:
             if form.is_valid():
                 if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
                     done = form.save()
                     if done:
                         messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('pages:home')
+                        return redirect('requests:consultation')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'home.html', {'validated': 'validated', 'form': form})
+                    return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
             else:
-                return render(request, 'home.html', {'validated': 'validated', 'form': form})
+                return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
