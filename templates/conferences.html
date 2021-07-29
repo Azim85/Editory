@@ -8,20 +8,22 @@
 
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-
-        {% endfor %}
+  <div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
     
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image50.jpg' %});
@@ -338,6 +340,7 @@ mix-blend-mode: luminosity;
                             <span>en:{{con.text17_en}}</span>
                             <span>ru:{{con.text17_ru}}</span>
                             <span>uz:{{con.text17_uz}}</span>
+
                             <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                         </form>
                     </div>
@@ -352,9 +355,10 @@ mix-blend-mode: luminosity;
 
 
 
-
     {#todo yangilash#}
-    <form id="Forma" class="mt-100 " method="post" action="{% url 'requests:conferences' %}"
+
+    <form id="Forma" class="mt-100 " method="post" action="{% url 'requests:conferences' %}?#Forma"
+
           enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container mt-4">

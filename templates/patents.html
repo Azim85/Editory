@@ -8,19 +8,22 @@
 
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
+<div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
     
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 48.jpg' %});
             background-size: cover;">
@@ -258,7 +261,7 @@ mix-blend-mode: luminosity;
 
         <div class="container mt-100 pb-100">
 
-            <form class="mt-5" method="post" name="consultation" action="{% url 'requests:grants' %}">
+            <form class="mt-5" method="post" name="consultation" action="{% url 'requests:patents' %}?#Forma">
                 {% csrf_token %}
                 <div class="row text-secondary">
                     <div class="col-lg-6">

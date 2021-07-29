@@ -9,6 +9,7 @@
 {% endblock %}
 {% block content %}
 
+<div class="fixed-top" style="top:137px; z-index: 1000" >
 {% if messages %}
     {% for message in messages %}
     {% if message.tags == 'success' %}
@@ -20,9 +21,10 @@
             {{message}}
         </div>
     {% endif %}
-   
+
     {% endfor %}
 {% endif %}
+</div>
 <!-- <div class="row">
     <div class="container">
         <nav aria-label="breadcrumb">
@@ -444,7 +446,7 @@
 
 
 
-        <form method="post" action="{% url 'requests:consultation' %}">
+        <form method="post"  action="{% url 'requests:consultation' %}#Forma">
             {% csrf_token %}
             <div class="row ">
                 <div class="col-lg-6">

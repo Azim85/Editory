@@ -1,4 +1,3 @@
-
 from pages.models import Topic
 from django.db import models
 from users.models import CustomUser
@@ -111,8 +110,8 @@ TOPICS = (
     ('Управление и ведение', 'Управление и ведение'),
 )
 
-class OrganizeResearches(models.Model):
 
+class OrganizeResearches(models.Model):
     """
     url: research_strategy name:research_strategy
     page: research_strategy.html
@@ -154,7 +153,6 @@ class OrganizeConferences(models.Model):
     def __str__(self):
         return self.first_name
 
-
     class Meta:
         verbose_name = 'Create Conference'
         verbose_name_plural = 'Crete Conferences'
@@ -179,7 +177,6 @@ class Grants(models.Model):
     def __str__(self):
         return self.first_name
 
-
     class Meta:
         verbose_name = 'Grant'
         verbose_name_plural = 'Grants'
@@ -189,17 +186,34 @@ class Consultation(models.Model):
     first_name = models.CharField(max_length=100, null=True)
     last_name = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=15, null=True)
-    is_agree = models.BooleanField(default=False )
+    is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.first_name
 
 
+class Language(models.Model):
+    first_name = models.CharField(max_length=100, null=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=15, null=True)
+    email = models.CharField(max_length=100, null=True)
+    is_agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        verbose_name = "language_editing"
+        verbose_name_plural = "language_editing"
+
+
 RESEARCH_AREA = (
     ('TEXT', 'TEXT'),
     ('TEXT', 'TEXT'),
 )
+
 
 class Translation(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -219,10 +233,6 @@ class Translation(models.Model):
         verbose_name_plural = 'Translations'
 
 
-
-
-
-    
 DEGREE = (
     ('Кандидат наук', 'Кандидат наук '),
     ('Доктор наук', 'Доктор  наук'),
@@ -230,8 +240,12 @@ DEGREE = (
     ('Хабилитированный доктор', 'Хабилитированный доктор (Dr. habil.)'),
 )
 
-class ApplicationForFreeConsultation(models.Model):
 
+
+
+
+
+class ApplicationForFreeConsultation(models.Model):
     """
     url:conferences/   name:conferences
     page: conferences.html  
@@ -258,8 +272,6 @@ class ApplicationForFreeConsultation(models.Model):
         verbose_name_plural = 'Participation in Conference'
 
 
-
-
 class Proofreading(models.Model):
     author = models.CharField(max_length=100)
     material_name = models.CharField(max_length=255)
@@ -268,9 +280,9 @@ class Proofreading(models.Model):
     word_count = models.CharField(max_length=100)
     language_editing = models.CharField(max_length=50)
     certificate = models.TextField()
-    comment =models.TextField(blank=True)
+    comment = models.TextField(blank=True)
     upload_file = models.FileField(upload_to='files/')
-    is_agree =models.BooleanField(default=False)
+    is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -279,6 +291,7 @@ class Proofreading(models.Model):
     # class Meta:
     #     verbose_name = 'Заявка на корректуру'
     #     verbose_name_plural = 'Заявки на корректуру'
+
 
 class PeerReview(models.Model):
     author = models.CharField(max_length=100)
@@ -290,7 +303,7 @@ class PeerReview(models.Model):
     scientific_adviser = models.CharField(max_length=50)
     comment = models.TextField(blank=True)
     upload_file = models.FileField(upload_to='files/')
-    is_agree =models.BooleanField(default=False)
+    is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

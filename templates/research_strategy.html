@@ -7,15 +7,24 @@
 {% endblock %}
 
 {% block content %}
-    {% if messages %}
-        <div id="succes" style="opacity: 0;">success</div>
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} text-center" id="alert_message">
-                {{ message }}
-            </div>
-        {% endfor %}
+
+
+  <div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
 
+    {% endfor %}
+{% endif %}
+</div>
     
 
     <div class="bg-me-home h-600"
@@ -160,7 +169,7 @@ mix-blend-mode: luminosity;
             <div class="h1">{% trans 'Как организовать и провести' %} <br>{% trans 'научное исследование' %}?</div>
             {% trans 'После заполнения формы наш консультант свяжется с вами в течение часа' %}
         </div>
-        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}">
+        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?#Forma">
             {% csrf_token %}
             <div class="row text-secondary">
                 <div class="col-lg-6">

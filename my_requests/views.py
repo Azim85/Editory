@@ -11,7 +11,8 @@ from setpage.models import WebinarsModel, TranslationModel
 
 from setpage.models import (BakModel, ConferencesModel, CreateConferenceModel, DesignModel, GrantsModel,
                             PatentModel, ScopusModel, ProofModel)
-from setpage.forms import BakForm, ConferencesForm, CreateConferenceForm, DesignForm, GrantForm, PatentForm, ScopusForm, ProofForm
+from setpage.forms import BakForm, ConferencesForm, CreateConferenceForm, DesignForm, GrantForm, PatentForm, ScopusForm, \
+    ProofForm
 
 
 class Research(TemplateView):
@@ -64,12 +65,12 @@ class Conferences(View):
     def get(self, request):
         text = ConferencesModel.objects.first()
         con = ConferencesForm(instance=text)
-        context = {'form': FreeConsultationForm(), 'con':con, 'text':text}
+        context = {'form': FreeConsultationForm(), 'con': con, 'text': text}
         return render(request, 'conferences.html', context)
 
     def post(self, request):
         form = FreeConsultationForm(request.POST, request.FILES)
-        
+
         if request.user.is_authenticated:
             if form.is_valid():
                 if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
@@ -85,14 +86,14 @@ class Conferences(View):
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
-        
+
 
 
 class CreateConferences(View):
     def get(self, request):
         text = CreateConferenceModel.objects.first()
         con = CreateConferenceForm(instance=text)
-        context = {'form': OrganizeConferencesForm(), 'text':text, 'con':con}
+        context = {'form': OrganizeConferencesForm(), 'text': text, 'con': con}
         return render(request, 'creat_conference.html', context)
 
     def post(self, request):
@@ -103,12 +104,12 @@ class CreateConferences(View):
                     done = form.save()
                     if done:
                         messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('pages:home')
+                        return redirect('requests:creat-conferences')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'home.html', {'validated': 'validated', 'form': form})
+                    return render(request, 'creat_conference.html', {'validated': 'validated', 'form': form})
             else:
-                return render(request, 'home.html', {'validated': 'validated', 'form': form})
+                return render(request, 'creat_conference.html', {'validated': 'validated', 'form': form})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
@@ -118,7 +119,7 @@ class Design(View):
     def get(self, request):
         obj = DesignModel.objects.first()
         design = DesignForm(instance=obj)
-        context = {'form': GrantsForm(), 'text':obj, 'design':design}
+        context = {'form': GrantsForm(), 'text': obj, 'design': design}
         return render(request, 'design.html', context)
 
     def post(self, request):
@@ -143,6 +144,10 @@ class Design(View):
 
 
 class ConsultationView(View):
+    def get(self, request):
+        form = FreeConsultationForm()
+        return render(request, 'conferences.html', {'form': form})
+
     def post(self, request):
         form = FreeConsultationForm(request.POST)
         if request.user.is_authenticated:
@@ -187,7 +192,7 @@ class Proofreading(View):
         data = request.GET.get('data')
         obj = ProofModel.objects.first()
         proof = ProofForm(instance=obj)
-        context = {'form': ProofreadingForm(), 'raqam': data, 'text':obj, 'proof':proof }
+        context = {'form': ProofreadingForm(), 'raqam': data, 'text': obj, 'proof': proof}
         return render(request, 'proofreading.html', context)
 
     def post(self, request):
@@ -231,9 +236,7 @@ class BAKView(View):
         bak = BakForm(instance=obj)
         form = GrantsForm()
 
-
-        return render(request, 'bak.html', {'form':form, 'bak':bak, 'text':obj})
-
+        return render(request, 'bak.html', {'form': form, 'bak': bak, 'text': obj})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -262,8 +265,7 @@ class ScopusView(View):
 
         obj = ScopusModel.objects.first()
         scopus = ScopusForm(instance=obj)
-        return render(request, 'scopus.html', {'form':form, 'text':obj, 'scopus':scopus})
-
+        return render(request, 'scopus.html', {'form': form, 'text': obj, 'scopus': scopus})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -292,7 +294,7 @@ class GrantsView(View):
         grant = GrantForm(instance=obj)
         form = GrantsForm()
 
-        return render(request, 'grants.html', {'form':form, 'text':obj, 'grant':grant})
+        return render(request, 'grants.html', {'form': form, 'text': obj, 'grant': grant})
 
     def post(self, request):
         form = GrantsForm(request.POST)
@@ -321,8 +323,7 @@ class PatentsView(View):
 
         obj = PatentModel.objects.first()
         patent = PatentForm(instance=obj)
-        return render(request, 'patents.html', {'form':form, 'text':obj, 'patent':patent})
-
+        return render(request, 'patents.html', {'form': form, 'text': obj, 'patent': patent})
 
     def post(self, request):
         form = GrantsForm(request.POST)
