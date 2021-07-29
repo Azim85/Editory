@@ -5,19 +5,22 @@
 
 {% block content %}
 
+<div class="fixed-top" style="top:137px; z-index: 1000" >
 {% if messages %}
-{% for message in messages %}
-{% if message.tags == 'success' %}
-<div class="alert alert-success text-center" id="alert_message">
-    {{message}}
-</div>
-{% else %}
-<div class="alert alert-danger text-center" id="alert_message">
-    {{message}}
-</div>
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% endif %}
+
+    {% endfor %}
 {% endif %}
-{% endfor %}
-{% endif %}
+</div>
 
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 55.jpg' %});
@@ -329,9 +332,9 @@ mix-blend-mode: luminosity;
 
 </div>
 
-<div class="container mt-100 pb-100">
+<div class="container mt-100 pb-100" id="Forma">
     <p style="max-width: 635px;">{% trans 'Хотите опубликовать свой материал в журналах ВАК? Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!' %}</p>
-    <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}">
+    <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}#Forma">
         {% csrf_token %}
         <div class="row text-secondary">
             <div class="col-lg-6">

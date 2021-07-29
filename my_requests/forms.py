@@ -8,6 +8,7 @@ from .models import (Consultation,
                      PeerReview,
                      OrganizeConferences,
                      Grants,
+                     Language,
                      Translation
                      )
 
@@ -38,15 +39,42 @@ class ConsultationForm(forms.ModelForm):
         return email
 
 
+class LanguageForm(forms.ModelForm):
+    class Meta:
+        model = Language
+        fields = ('first_name', 'last_name', 'phone', "email", 'is_agree')
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+    def clean_phone(self):
+        phone_len = [12, 13]
+        phone = self.cleaned_data.get('phone')
+        if '+998' or '998' in phone:
+            if len(phone) in phone_len:
+                return phone
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email
+
+
 BUSYNESS = (
     ('student', 'student'),
     ('busy', 'busy')
 )
 DEGREE = (
-    ('Кандидат наук', 'Кандидат наук '),
-    ('Доктор наук', 'Доктор  наук'),
-    ('Доктор философии', 'Доктор философии PhD'),
-    ('Хабилитированный доктор', 'Хабилитированный доктор (Dr. habil.)'),
+    ('кандидат наук', 'кандидат наук '),
+    ('доктор наук', 'доктор  наук'),
+    ('доктор философии', 'доктор философии PhD'),
+    ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
 )
 
 

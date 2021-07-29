@@ -8,19 +8,24 @@
 
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
+   <div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
+
+
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image51.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -79,7 +84,7 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <form id="Forma" class="mt-100" method="post" action="{% url 'requests:creat-conferences' %}"
+    <form id="Forma" class="mt-100" method="post" action="{% url 'requests:creat-conferences' %}?#Forma"
           enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container mt-4">
@@ -142,7 +147,7 @@ mix-blend-mode: luminosity;
                                     <label for="" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.organization }}
-                                        <small class="text-danger align-self-start">{{ form.application_name.errors }}</small>
+                                        <small class="text-danger align-self-start">{{ form.organization.errors }}</small>
                                     </div>
                                 </div>
 
@@ -151,7 +156,7 @@ mix-blend-mode: luminosity;
                                            class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.org_contacts }}
-                                        <small class="text-danger align-self-start">{{ form.application_name.errors }}</small>
+                                        <small class="text-danger align-self-start">{{ form.org_contacts.errors }}</small>
                                     </div>
                                 </div>
 
@@ -160,7 +165,7 @@ mix-blend-mode: luminosity;
                                            class="col-sm-4 col-form-label">{% trans 'Адрес организации' %} </label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.org_address }}
-                                        <small class="text-danger align-self-start">{{ form.application_name.errors }}</small>
+                                        <small class="text-danger align-self-start">{{ form.org_address.errors }}</small>
                                     </div>
                                 </div>
 
@@ -187,9 +192,7 @@ mix-blend-mode: luminosity;
         </div>
     </form>
 
-    {% if validated %}
-        <div id="flag" style="opacity: 1;">flag</div>
-    {% endif %}
+
 {% endblock %}
 
 

@@ -356,6 +356,20 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>
+{% if request.breadcrumb %}
+    <div class="container " >
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'pages:news' %}">Новости</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ request.breadcrumb }}</li>
+            </ol>
+        </nav>
+    </div>
+{% endif %}
+
+
 

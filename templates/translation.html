@@ -7,19 +7,27 @@
 
 {% block content %}
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success' %}
-                <div class="alert alert-success text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% else %}
-                <div class="alert alert-danger text-center" id="alert_message">
-                    {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
+
+
+    <div class="fixed-top" style="top:137px; z-index: 1000" >
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center" id="alert_message">
+            {{message}}
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center" id="alert_message">
+            {{message}}
+        </div>
     {% endif %}
+
+    {% endfor %}
+{% endif %}
+</div>
+
+
+
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image25.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(98.82deg, #033952 10.84%, rgba(0, 88, 118, 0.85) 42.76%, rgba(11, 29, 35, 0.36) 71.84%, rgba(255, 255, 255, 0.47) 97.97%);;
@@ -177,7 +185,7 @@ mix-blend-mode: luminosity;
 
         <div class="container mt-100">
 
-            <form action="{% url 'requests:translation' %}" method='post' enctype="multipart/form-data">
+            <form action="{% url 'requests:translation' %}#Forma" method='post' enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-row row row-cols-1 row-cols-md-2">
 
