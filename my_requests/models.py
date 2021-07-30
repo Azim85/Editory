@@ -25,9 +25,8 @@ class ResearchGrant(models.Model):
         verbose_name = 'Research Grant'
         verbose_name_plural = 'Research Grants'
 
-
+# updated
 class GetPatent(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=255, null=True)
     first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
@@ -35,12 +34,12 @@ class GetPatent(models.Model):
     organization = models.CharField(max_length=255)
     org_contacts = models.CharField(max_length=255)
     org_address = models.CharField(max_length=255)
-    application_upload = models.FileField(upload_to='app_requests/')
+    application_upload = models.FileField(upload_to='app_requests/', blank=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.fullname
+        return f"{self.last_name} {self.first_name}"
 
     class Meta:
         verbose_name = 'Patent'
