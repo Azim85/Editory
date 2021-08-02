@@ -255,12 +255,13 @@ class Consultation(models.Model):
     def __str__(self):
         return self.first_name
 
-
+#todo tugadi
 class Language(models.Model):
     first_name = models.CharField(max_length=100, null=True)
     last_name = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=15, null=True)
     email = models.CharField(max_length=100, null=True)
+    file = models.FileField(upload_to='files/', null=True, blank=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

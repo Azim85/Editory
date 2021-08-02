@@ -13,6 +13,14 @@ div.slick-track {
     animation-timing-function: cubic-bezier(.075, .82, .165, 1)
 }
 
+.news{
+    box-shadow: 0 10px 25px 0 #0000001A;
+    border-radius: 10px;
+    border: 1px solid silver;
+}
+
+
+
 @keyframes message {
     from {
         opacity: 0
@@ -36,9 +44,6 @@ div.slick-track {
     font-weight: 700
 }
 
-.rounded-25 {
-    border-radius: 25px !important
-}
 
 @media screen and (max-width: 568px) {
     .slideres {

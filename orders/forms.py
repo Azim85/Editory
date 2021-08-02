@@ -16,3 +16,9 @@ class OrderForm(forms.ModelForm):
         model = OrderModel
         fields = ['phone', 'email', 'file', 'payment_type']
 
+        widgets = {
+            'file': forms.FileInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'})
+        }
+

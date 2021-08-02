@@ -255,13 +255,23 @@ html {
 #mobile {
     display: none
 }
+.rounded-25 {
+    border-radius: 25px !important;
+    box-shadow: 0 0 5px 0 #0000001A
+}
 
 @media (max-width: 992px) {
+    .nav-mob{
+       padding-top: 40px;
+    }
     .font-55 {
         font-weight: 700;
         font-size: 35px;
         line-height: 117.3%;
         font-family: Geometria !important
+    }
+    .wrapper-content{
+        margin-top: 80px !important;
     }
 
     .footer-end {
@@ -313,4 +323,8 @@ html {
 .academ:hover, .crossref:hover, .elsavier:hover, .greenm:hover, .ireg:hover, .qswur:hover, .springer:hover, .wur:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0)
+}
+
+.vh100{
+    height: 100vh !important;
 }

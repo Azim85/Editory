@@ -46,9 +46,10 @@ class ConsultationForm(forms.ModelForm):
 
 
 class LanguageForm(forms.ModelForm):
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = Language
-        fields = ('first_name', 'last_name', 'phone', "email", 'is_agree')
+        fields = ('first_name','file' , 'last_name', 'phone', "email", 'is_agree')
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),

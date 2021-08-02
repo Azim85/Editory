@@ -3,49 +3,51 @@
 <div class="container pt-5">
 
     <div class="row pb-4 h-100 w-100">
-        <div class="col-lg-2 d-flex flex-column justify-content-between">
-             <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}">
-            <img src="{% static 'pages/svg/Logo.svg' %}" height="65px" width="120px" alt="logo"></a>
-            <div class=" ">
-                <img src="{% static 'pages/images/payme.png' %}">
-                <img class="my-3" src="{% static 'pages/images/apelsin.png' %}">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-4 w-100">
+            <div class="col">
+                <a class="navbar-brand logo-color font-weight-bold geometria " style="margin-top: -30px"
+                   href="{% url 'pages:home' %}">
+                    <img src="{% static 'pages/svg/Logo.svg' %}" height="65px" width="120px" alt="logo"></a>
+                <div class="d-flex flex-column">
+                    <a href="https://payme.uz/home/main"><img src="{% static 'pages/images/payme.png' %}"></a>
+                    <a href="https://apelsin.uz/"><img class="my-3" src="{% static 'pages/images/apelsin.png' %}"></a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pb-2 font-weight-bold">{% trans 'Карта сайта' %}</div>
+                <div class="my-2"><a href="{% url 'pages:webinars' %}"
+                                     class="text-dark text-decoration-none"> {% trans 'О нас' %}</a></div>
+                <div class="my-2"><a href="{% url 'pages:news' %}"
+                                     class="text-dark text-decoration-none ">{% trans 'Новости' %}</a></div>
+                <div class="my-2"><a href="{% url 'requests:research' %}"
+                                     class="text-dark text-decoration-none ">{% trans 'Продукты и материалы' %}</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pb-2 font-weight-bold">{% trans 'Контакты' %}</div>
+                <div class="my-2"><a href="tel:90 013 19 23" class="text-dark">+998 90 013 19 23</a></div>
+                <div class="my-2"><a class="text-dark" href="mailto:info@editory.org">info@editory.org</a></div>
+                <div class="my-2 pr-5">{% trans 'г. Ташкент, Алмазарский район, Себзар 3' %}</div>
+            </div>
+            <div class="col d-flex flex-column justify-content-between">
+                <div>
+                    <div class="pb-2 font-weight-bold">{% trans 'Мы в соцсетях' %}:</div>
+                <div class="mt-3">
+                    {#                <a href="#" class="text-dark"><i class="bi-whatsapp h4 px-1"></i></a>#}
+                    <a href="https://www.facebook.com/editory.uz" target="_blank" class="main-color"><i
+                            class="bi-facebook h4 px-1 "></i></a>
+                    <a href="https://www.instagram.com/editory_uzb/" target="_blank" class="main-color"><i
+                            class="bi-instagram h4 px-1 "></i></a>
+                    <a href="https://t.me/editory_uz" target="_blank" class="main-color"><i
+                            class="bi-telegram h4 px-1"></i></a>
+                    <a href="https://www.linkedin.com/company/editory-uz/" target="_blank" class="main-color"><i
+                            class="bi-linkedin h4 px-1"></i></a>
+                </div>
+                </div>
+                <div class="small text-secondary ">OOO EDITORY 2021 ©</div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="pb-2 font-weight-bold">{% trans 'Карта сайта' %}</div>
-            <div class="my-2"><a href="{% url 'pages:webinars' %}"
-                                 class="text-dark text-decoration-none"> {% trans 'О нас' %}</a></div>
-            <div class="my-2"><a href="{% url 'pages:news' %}"
-                                 class="text-dark text-decoration-none ">{% trans 'Новости' %}</a></div>
-            <div class="my-2"><a href="{% url 'requests:research' %}" class="text-dark text-decoration-none ">{% trans 'Продукты и материалы' %}</a>
-            </div>
-{#            <div class="my-2"><a href="#" class="text-dark text-decoration-none ">{% trans 'Услуги' %}</a></div>#}
-        </div>
-        <div class="col-lg-3">
-            <div class="pb-2 font-weight-bold">{% trans 'Контакты' %}</div>
-            <div class="my-2"><a href="tel:90 013 19 23" class="text-dark">+998 90 013 19 23</a></div>
-            <div class="my-2"><a class="text-dark" href="mailto:info@editory.org">info@editory.org</a></div>
-            <div class="my-2 pr-5">{% trans 'г. Ташкент, Алмазарский район, Себзар 3' %}</div>
-        </div>
-        <div class="col-lg-2 ">
 
-            <div class="pb-2 font-weight-bold">{% trans 'Мы в соцсетях' %}:</div>
-            <div class="mt-3">
-                {#                <a href="#" class="text-dark"><i class="bi-whatsapp h4 px-1"></i></a>#}
-                <a href="https://www.facebook.com/editory.uz" target="_blank" class="main-color"><i class="bi-facebook h4 px-1 "></i></a>
-                <a href="https://www.instagram.com/editory_uzb/" target="_blank" class="main-color"><i class="bi-instagram h4 px-1 "></i></a>
-                <a href="https://t.me/editory_uz" target="_blank" class="main-color"><i class="bi-telegram h4 px-1"></i></a>
-                <a href="https://www.linkedin.com/company/editory-uz/" target="_blank" class="main-color"><i class="bi-linkedin h4 px-1"></i></a>
-            </div>
-
-        </div>
-        <div class="col-lg-2 d-flex flex-column justify-content-end">
-{#                <div id="footercha" class=" d-flex footer-end">#}
-{#                <a href="https://www.crossref.org/community/"><img class="img-fluid" src="{% static 'pages/images/footer_picture.png' %}"></a>#}
-{#            </div>#}
-            <div class="small text-secondary d-flex justify-content-end">OOO EDITORY 2021 ©</div>
-
-        </div>
     </div>
 
 </div>
