@@ -15,7 +15,7 @@ from django.http import JsonResponse
 import sys, glob, os
 from django.core.files import File
 from django.conf import settings
-from setpage.models import AboutUsModel, ContactModel, LangEditModel
+from setpage.models import AboutUsModel, ContactModel, LangEditModel, ResearchStrategyModel
 from setpage.forms import AboutUSForm, ContactForm, LangForm
 
 import logging
@@ -144,7 +144,8 @@ class Research_strategy(View):
         # print(pk)
         # message = request.GET.get('pk')
         # kwargs = pk
-        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm(), 'raqam': data}
+        text = ResearchStrategyModel.objects.first()
+        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm(), 'raqam': data, 'text': text}
         return render(request, 'research_strategy.html', context)
 
     def post(self, request):
