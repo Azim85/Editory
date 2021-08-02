@@ -3,7 +3,8 @@ from django.contrib import admin
 from .models import WebinarsModel, TranslationModel
 
 from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
-                     DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel)
+                     DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
+                     ResearchStrategyModel)
 
 from modeltranslation.admin import TabbedTranslationAdmin
 
@@ -59,6 +60,9 @@ class WebinarsAdmin(TabbedTranslationAdmin):
 class TranslationsAdmin(TabbedTranslationAdmin):
     list_display = ['text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8']
 
+class ResearchStrategyAdmin(TabbedTranslationAdmin):
+    list_display = ['text1']
+
 
 admin.site.register(AboutUsModel, AboutUsAdmin)
 
@@ -75,3 +79,4 @@ admin.site.register(PatentModel, PatentAdmin)
 admin.site.register(ScopusModel, ScopusAdmin)
 admin.site.register(ProofModel, ProofAdmin)
 admin.site.register(LangEditModel, LangAdmin)
+admin.site.register(ResearchStrategyModel, ResearchStrategyAdmin)

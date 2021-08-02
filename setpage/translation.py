@@ -2,7 +2,8 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import WebinarsModel, TranslationModel
 
 from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
-                     DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel)
+                     DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
+                     ResearchStrategyModel)
 
 
 class AboutUsTranslation(TranslationOptions):
@@ -60,6 +61,10 @@ class WebinarTranslations(TranslationOptions):
     fields = ('text1', 'text2')
 
 
+class ResearchStrategyTranslations(TranslationOptions):
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9')
+
+
 translator.register(AboutUsModel, AboutUsTranslation)
 translator.register(BakModel, BakTranslation)
 translator.register(ConferencesModel, ConferencesTranslation)
@@ -71,6 +76,7 @@ translator.register(PatentModel, PatentTranslation)
 translator.register(ScopusModel, ScopusTranslation)
 translator.register(ProofModel, ProofTranslation)
 translator.register(LangEditModel, LangTranslation)
+translator.register(ResearchStrategyModel, ResearchStrategyTranslations)
 
 
 class TramslationsTranslations(TranslationOptions):

@@ -63,6 +63,7 @@
 <script src="{% static 'pages/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
+{% block js %}{% endblock %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
     $(document).ready(function () {
@@ -131,7 +132,7 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-{% block js %}{% endblock %}
+
 
 </body>
 
