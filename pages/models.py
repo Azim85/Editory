@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from setpage.models import AboutUsModel
 
 from django_resized import ResizedImageField
 
@@ -66,5 +67,9 @@ class ResumeModel(models.Model):
         verbose_name_plural = 'Resumes'
 
 
-
+class About_us_news(models.Model):
+    image = models.ImageField(upload_to = 'about_news/', null=True, blank=True)
+    material_name = models.CharField(max_length=100, null=True, blank=True)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    url = models.CharField(max_length=255, null=True, blank=True)
 

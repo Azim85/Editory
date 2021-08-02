@@ -6,7 +6,7 @@ import random
 import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView, ListView
-from .models import Topic, TopResearches
+from .models import Topic, TopResearches, About_us_news
 from my_requests.forms import ConsultationForm, OrganizeResearchForm, LanguageForm
 from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
@@ -78,8 +78,9 @@ class AboutUs(View):
         about = AboutUSForm(instance=text)
         staffs = Colleague.objects.all()
         form = ResumeForm()
+        slick = About_us_news.objects.all()
 
-        context = {'form': form, 'staffs': staffs, 'text': text, 'about': about}
+        context = {'form': form, 'staffs': staffs, 'text': text, 'about': about, "slick": slick}
         return render(request, 'about_us.html', context)
 
     def post(self, request):
