@@ -36,9 +36,6 @@ div.slick-track {
     font-weight: 700
 }
 
-.rounded-25 {
-    border-radius: 25px !important
-}
 
 @media screen and (max-width: 568px) {
     .slideres {

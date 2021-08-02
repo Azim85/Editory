@@ -3,12 +3,13 @@
 <div class="container pt-5">
 
     <div class="row pb-4 h-100 w-100">
-        <div class="col-lg-2 d-flex flex-column justify-content-between">
-             <a class="navbar-brand logo-color font-weight-bold geometria " href="{% url 'pages:home' %}">
+        <div class="col-lg-2 d-flex flex-column justify-content-end">
+             <a class="navbar-brand logo-color font-weight-bold geometria position-absolute" href="{% url 'pages:home' %}"
+             style="top: -30px">
             <img src="{% static 'pages/svg/Logo.svg' %}" height="65px" width="120px" alt="logo"></a>
-            <div class=" ">
-                <img src="{% static 'pages/images/payme.png' %}">
-                <img class="my-3" src="{% static 'pages/images/apelsin.png' %}">
+            <div class="nav-mob">
+                <a href="https://payme.uz/home/main"><img src="{% static 'pages/images/payme.png' %}"></a>
+                <a href="https://apelsin.uz/"><img class="my-3" src="{% static 'pages/images/apelsin.png' %}"></a>
             </div>
         </div>
         <div class="col-lg-3">

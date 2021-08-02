@@ -1,7 +1,7 @@
 import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.db.models import  Q
+from django.db.models import Q
 import random
 import datetime
 from django.contrib import messages
@@ -39,7 +39,6 @@ class Article(DetailView):
     context_object_name = 'topic'
 
     def get_context_data(self, **kwargs):
-
         topic = Topic.objects.get(pk=self.kwargs['pk'])
         context = super(Article, self).get_context_data(**kwargs)
         self.request.breadcrumb = topic.material_name
@@ -80,7 +79,7 @@ class AboutUs(View):
         staffs = Colleague.objects.all()
         form = ResumeForm()
 
-        context = { 'form': form, 'staffs': staffs, 'text':text, 'about':about}
+        context = {'form': form, 'staffs': staffs, 'text': text, 'about': about}
         return render(request, 'about_us.html', context)
 
     def post(self, request):
@@ -94,9 +93,9 @@ class AboutUs(View):
                         return redirect('pages:webinars')
                 else:
                     messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'about_us.html', {'form': form, "ss":"ss"})
+                    return render(request, 'about_us.html', {'form': form, "ss": "ss"})
             else:
-                return render(request, 'about_us.html', {'form': form, "ss":"ss"})
+                return render(request, 'about_us.html', {'form': form, "ss": "ss"})
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
@@ -110,9 +109,7 @@ class Contact(View):
     def get(self, request):
         text = ContactModel.objects.first()
         form = ContactForm(instance=text)
-        return render(request, 'contact.html', {'text':text, 'form':form})
-
-
+        return render(request, 'contact.html', {'text': text, 'form': form})
 
 
 class Paper(DetailView):
@@ -137,9 +134,6 @@ class Dissertation(View):
 
     def get(self, request):
         return render(request, 'dissertation.html')
-    
-
-    
 
 
 class Research_strategy(View):
@@ -177,29 +171,25 @@ class Language_editing(View):
         forms = LanguageForm()
         obj = LangEditModel.objects.first()
         lang = LangForm(instance=obj)
-        return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text':obj, 'lang':lang})
+        return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text': obj, 'lang': lang})
 
     def post(self, request):
-        forms = LanguageForm(request.POST)
-        if request.user.is_authenticated:
-            if forms.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = forms.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('pages:language_editing')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
-                    return render(request, 'language_editing.html', {'forms': forms, 'validated': 'validated'})
-            else:
-                return render(request, 'language_editing.html', {'forms': forms})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+        forms = LanguageForm(request.POST, request.FILES)
 
-    def get_context_data(self, **kwargs):
-        context = super(Language_editing, self).get_context_data(**kwargs)
-        return context
+        if forms.is_valid():
+
+            done = forms.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('pages:language_editing')
+
+
+        return render(request, 'language_editing.html', {'forms': forms})
+
+
+def get_context_data(self, **kwargs):
+    context = super(Language_editing, self).get_context_data(**kwargs)
+    return context
 
 
 class top25(TemplateView):
@@ -288,19 +278,15 @@ class allNews(ListView):
     model = Topic
     context_object_name = 'topics'
     paginate_by = 10
-    
-
 
 
 def hello(request):
-   
     return redirect('pages:webinars', context)
 
 
 class SearchView(View):
     def get(self, request):
         q = request.GET.get('q')
-        news = Topic.objects.filter(Q(material_name__icontains=q) | Q(title__icontains=q) | Q(description__icontains=q)).distinct()
-        return render(request, 'search.html', {'news':news, 'query':q})
-
-
+        news = Topic.objects.filter(
+            Q(material_name__icontains=q) | Q(title__icontains=q) | Q(description__icontains=q)).distinct()
+        return render(request, 'search.html', {'news': news, 'query': q})
