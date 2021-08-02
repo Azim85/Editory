@@ -173,6 +173,12 @@ MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+CKEDITOR_CONFIGS = {
+'default': {
+'toolbar': 'full',
+},
+}
+
 PAYMEUZ_SETTINGS = {
     'TEST_ENV': True,
     'ID': '60b7cf520d44ad636479d80b',
@@ -208,4 +214,7 @@ LOGGING = {
         }
     }
 }
+
+
+
 

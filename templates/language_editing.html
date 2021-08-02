@@ -8,22 +8,22 @@
 
 {% block content %}
 
-<div class="fixed-top" style="top:137px; z-index: 1000" >
-{% if messages %}
-    {% for message in messages %}
-    {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endif %}
+    <div class="fixed-top" style="top:137px; z-index: 1000">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% endif %}
 
-    {% endfor %}
-{% endif %}
-</div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image57.jpg' %});
             background-size: cover;">
@@ -33,7 +33,7 @@ mix-blend-mode: luminosity;
             <div class="container my-auto">
                 <div class="row padding_me">
                     <div class="col-lg-12 row mb-5 text-white">
-                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text25-text">{{text.text25}}
+                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text25-text">{{ text.text25 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text25-btn">Edit</button>
                             {% endif %}
@@ -42,15 +42,15 @@ mix-blend-mode: luminosity;
                         <div class="text25-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>en:{{lang.text25_en}}</span>
-                                <span>ru:{{lang.text25_ru}}</span>
-                                <span>uz:{{lang.text25_uz}}</span>
+                                <span>en:{{ lang.text25_en }}</span>
+                                <span>ru:{{ lang.text25_ru }}</span>
+                                <span>uz:{{ lang.text25_uz }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
                         <div class="col-lg-6 font-22">
-                            <div class="text1-text">{{text.text1}}
+                            <div class="text1-text">{{ text.text1 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text1-btn">Edit</button>
                                 {% endif %}
@@ -59,9 +59,9 @@ mix-blend-mode: luminosity;
                             <div class="text1-form" style="display: none;">
                                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                                     {% csrf_token %}
-                                    <span>en:{{lang.text1_en}}</span>
-                                    <span>ru:{{lang.text1_ru}}</span>
-                                    <span>uz:{{lang.text1_uz}}</span>
+                                    <span>en:{{ lang.text1_en }}</span>
+                                    <span>ru:{{ lang.text1_ru }}</span>
+                                    <span>uz:{{ lang.text1_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
@@ -69,8 +69,8 @@ mix-blend-mode: luminosity;
                             <br>
                             <br>
 
-                           
-                            <i class="text2-text">{{text.text2}}
+
+                            <i class="text2-text">{{ text.text2 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text2-btn">Edit</button>
                                 {% endif %}
@@ -79,19 +79,19 @@ mix-blend-mode: luminosity;
                             <div class="text2-form" style="display: none;">
                                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                                     {% csrf_token %}
-                                    <span>en:{{lang.text2_en}}</span>
-                                    <span>ru:{{lang.text2_ru}}</span>
-                                    <span>uz:{{lang.text2_uz}}</span>
+                                    <span>en:{{ lang.text2_en }}</span>
+                                    <span>ru:{{ lang.text2_ru }}</span>
+                                    <span>uz:{{ lang.text2_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
-                            
+
                         </div>
                         <div class="mt-5 col-lg-12">
                             <a href="#Forma" class="btn btn-light  px-5">{% trans 'Заказать консультацию' %} </a>
                         </div>
                     </div>
-                 
+
                 </div>
 
             </div>
@@ -121,7 +121,7 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4 text3-text">{{text.text3}}
+                        <div class="my-4 text3-text">{{ text.text3 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text3-btn">Edit</button>
                             {% endif %}
@@ -130,32 +130,37 @@ mix-blend-mode: luminosity;
                         <div class="text3-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>en:{{lang.text3_en}}</span>
-                                <span>ru:{{lang.text3_ru}}</span>
-                                <span>uz:{{lang.text3_uz}}</span>
+                                <span>en:{{ lang.text3_en }}</span>
+                                <span>ru:{{ lang.text3_ru }}</span>
+                                <span>uz:{{ lang.text3_uz }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
-                        <span class="h3 main-color my-5"><label id="cost" class="h3  main-color text4-text">{{text.text4}}
+                        <span class="h3 main-color my-5"><label id="cost"
+                                                                class="h3  main-color text4-text">{{ text.text4 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text4-btn">Edit</button>
                             {% endif %}
                             </label> {% trans 'сум' %}</span>
 
-                            <div class="text4-form" style="display: none;">
-                                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                    {% csrf_token %}
-                                    <span>summa:{{lang.text4}}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
+                        <div class="text4-form" style="display: none;">
+                            <form action="{% url 'setpage:lang-change' %}" method="POST">
+                                {% csrf_token %}
+                                <span>summa:{{ lang.text4 }}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
 
 
                         <div class="d-flex justify-content-center">
-                            <button id="hideforma" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
-                            {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
+asdasd
+                        <script>$('#hideforma').scrollTo('[name="anchor"]')</script>
+                            <a id="hideforma" type="button"
+                                    {% if request.user.is_authenticated %} data-target="#collapseForm"
+                                   data-toggle="collapse" href="#collapseForm" aria-expanded="true" aria-controls="collapseForm"
+                                    {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+                                    class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +174,7 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4 text5-text">{{text.text5}}
+                        <div class="my-4 text5-text">{{ text.text5 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text5-btn">Edit</button>
                             {% endif %}
@@ -178,14 +183,15 @@ mix-blend-mode: luminosity;
                         <div class="text5-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>en:{{lang.text5_en}}</span>
-                                <span>ru:{{lang.text5_ru}}</span>
-                                <span>uz:{{lang.text5_uz}}</span>
+                                <span>en:{{ lang.text5_en }}</span>
+                                <span>ru:{{ lang.text5_ru }}</span>
+                                <span>uz:{{ lang.text5_uz }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
-                        <div class="h3 main-color my-5"><label id="cost1" class="h3  main-color text6-text">{{text.text6}}
+                        <div class="h3 main-color my-5"><label id="cost1"
+                                                               class="h3  main-color text6-text">{{ text.text6 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text6-btn">Edit</button>
                             {% endif %}
@@ -195,16 +201,18 @@ mix-blend-mode: luminosity;
                         <div class="text6-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>summa:{{lang.text6}}</span>
+                                <span>summa:{{ lang.text6 }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <button id="hideforma1" type="button"  {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
+                            <a id="hideforma1" type="button"
+                                    {% if request.user.is_authenticated %}
+                               data-toggle="collapse" href="#collapseForm" aria-expanded="false" aria-controls="collapseExample"
                                     {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
 
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
+                                    class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +226,7 @@ mix-blend-mode: luminosity;
                             <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>
 
                         </div>
-                        <div class="my-4 text7-text">{{text.text7}}
+                        <div class="my-4 text7-text">{{ text.text7 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text7-btn">Edit</button>
                             {% endif %}
@@ -227,14 +235,15 @@ mix-blend-mode: luminosity;
                         <div class="text7-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>en:{{lang.text7_en}}</span>
-                                <span>ru:{{lang.text7_ru}}</span>
-                                <span>uz:{{lang.text7_uz}}</span>
+                                <span>en:{{ lang.text7_en }}</span>
+                                <span>ru:{{ lang.text7_ru }}</span>
+                                <span>uz:{{ lang.text7_uz }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
-                        <div class="h3 main-color my-5"><label id="cost2" class="h3  main-color text8-text">{{text.text8}}
+                        <div class="h3 main-color my-5"><label id="cost2"
+                                                               class="h3  main-color text8-text">{{ text.text8 }}
                             {% if request.user.is_superuser %}
                                 <button type="button" class="btn btn-secondary text8-btn">Edit</button>
                             {% endif %}
@@ -244,15 +253,17 @@ mix-blend-mode: luminosity;
                         <div class="text8-form" style="display: none;">
                             <form action="{% url 'setpage:lang-change' %}" method="POST">
                                 {% csrf_token %}
-                                <span>summa:{{lang.text8}}</span>
+                                <span>summa:{{ lang.text8 }}</span>
                                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                             </form>
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <button  id="hideforma2" type="button" {% if request.user.is_authenticated %}data-toggle="modal" data-target="#exampleModal"
-                                     {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
-                               class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</button>
+                            <a id="hideforma2" type="button"
+                                    {% if request.user.is_authenticated %}
+                                     data-toggle="collapse" href="#collapseForm" aria-expanded="false" aria-controls="collapseExample"
+                                    {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
+                                    class="btn border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                         </div>
                     </div>
                 </div>
@@ -261,7 +272,7 @@ mix-blend-mode: luminosity;
     </div>
 
     <div class="container mt-100">
-        <div class="h2 text9-text">{{text.text9}}
+        <div class="h2 text9-text">{{ text.text9 }}
             {% if request.user.is_superuser %}
                 <button type="button" class="btn btn-secondary text9-btn">Edit</button>
             {% endif %}
@@ -270,15 +281,15 @@ mix-blend-mode: luminosity;
         <div class="text9-form" style="display: none;">
             <form action="{% url 'setpage:lang-change' %}" method="POST">
                 {% csrf_token %}
-                <span>en:{{lang.text9_en}}</span>
-                <span>ru:{{lang.text9_ru}}</span>
-                <span>uz:{{lang.text9_uz}}</span>
+                <span>en:{{ lang.text9_en }}</span>
+                <span>ru:{{ lang.text9_ru }}</span>
+                <span>uz:{{ lang.text9_uz }}</span>
                 <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
             </form>
         </div>
 
         <div class="row d-flex align-items-center">
-            <div class="col-5 my-3 text10-text">{{text.text10}}
+            <div class="col-5 my-3 text10-text">{{ text.text10 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text10-btn">Edit</button>
                 {% endif %}
@@ -287,9 +298,9 @@ mix-blend-mode: luminosity;
             <div class="text10-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text10_en}}</span>
-                    <span>ru:{{lang.text10_ru}}</span>
-                    <span>uz:{{lang.text10_uz}}</span>
+                    <span>en:{{ lang.text10_en }}</span>
+                    <span>ru:{{ lang.text10_ru }}</span>
+                    <span>uz:{{ lang.text10_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -297,7 +308,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3 text11-text">{{text.text11}}
+            <div class="col-5 my-3 text11-text">{{ text.text11 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text11-btn">Edit</button>
                 {% endif %}
@@ -306,9 +317,9 @@ mix-blend-mode: luminosity;
             <div class="text11-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text11_en}}</span>
-                    <span>ru:{{lang.text11_ru}}</span>
-                    <span>uz:{{lang.text11_uz}}</span>
+                    <span>en:{{ lang.text11_en }}</span>
+                    <span>ru:{{ lang.text11_ru }}</span>
+                    <span>uz:{{ lang.text11_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -316,7 +327,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3 text12-text">{{text.text12}}
+            <div class="col-5 my-3 text12-text">{{ text.text12 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text12-btn">Edit</button>
                 {% endif %}
@@ -325,9 +336,9 @@ mix-blend-mode: luminosity;
             <div class="text12-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text12_en}}</span>
-                    <span>ru:{{lang.text12_ru}}</span>
-                    <span>uz:{{lang.text12_uz}}</span>
+                    <span>en:{{ lang.text12_en }}</span>
+                    <span>ru:{{ lang.text12_ru }}</span>
+                    <span>uz:{{ lang.text12_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -336,7 +347,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
-            <div class="col-5 my-3 text13-text">{{text.text13}}
+            <div class="col-5 my-3 text13-text">{{ text.text13 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text13-btn">Edit</button>
                 {% endif %}
@@ -345,21 +356,20 @@ mix-blend-mode: luminosity;
             <div class="text13-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text13_en}}</span>
-                    <span>ru:{{lang.text13_ru}}</span>
-                    <span>uz:{{lang.text13_uz}}</span>
+                    <span>en:{{ lang.text13_en }}</span>
+                    <span>ru:{{ lang.text13_ru }}</span>
+                    <span>uz:{{ lang.text13_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
 
-          
 
             <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text14-text">{{text.text14}}
+            <div class="col-5 my-3 text14-text">{{ text.text14 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text14-btn">Edit</button>
                 {% endif %}
@@ -368,9 +378,9 @@ mix-blend-mode: luminosity;
             <div class="text14-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text14_en}}</span>
-                    <span>ru:{{lang.text14_ru}}</span>
-                    <span>uz:{{lang.text14_uz}}</span>
+                    <span>en:{{ lang.text14_en }}</span>
+                    <span>ru:{{ lang.text14_ru }}</span>
+                    <span>uz:{{ lang.text14_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -380,7 +390,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text15-text">{{text.text15}}
+            <div class="col-5 my-3 text15-text">{{ text.text15 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text15-btn">Edit</button>
                 {% endif %}
@@ -389,9 +399,9 @@ mix-blend-mode: luminosity;
             <div class="text15-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text15_en}}</span>
-                    <span>ru:{{lang.text15_ru}}</span>
-                    <span>uz:{{lang.text15_uz}}</span>
+                    <span>en:{{ lang.text15_en }}</span>
+                    <span>ru:{{ lang.text15_ru }}</span>
+                    <span>uz:{{ lang.text15_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -401,7 +411,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text16-text">{{text.text16}}
+            <div class="col-5 my-3 text16-text">{{ text.text16 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text16-btn">Edit</button>
                 {% endif %}
@@ -410,9 +420,9 @@ mix-blend-mode: luminosity;
             <div class="text16-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text16_en}}</span>
-                    <span>ru:{{lang.text16_ru}}</span>
-                    <span>uz:{{lang.text16_uz}}</span>
+                    <span>en:{{ lang.text16_en }}</span>
+                    <span>ru:{{ lang.text16_ru }}</span>
+                    <span>uz:{{ lang.text16_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -422,7 +432,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text17-text">{{text.text17}}
+            <div class="col-5 my-3 text17-text">{{ text.text17 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text17-btn">Edit</button>
                 {% endif %}
@@ -431,9 +441,9 @@ mix-blend-mode: luminosity;
             <div class="text17-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text17_en}}</span>
-                    <span>ru:{{lang.text17_ru}}</span>
-                    <span>uz:{{lang.text17_uz}}</span>
+                    <span>en:{{ lang.text17_en }}</span>
+                    <span>ru:{{ lang.text17_ru }}</span>
+                    <span>uz:{{ lang.text17_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -443,7 +453,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text18-text">{{text.text18}}
+            <div class="col-5 my-3 text18-text">{{ text.text18 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text18-btn">Edit</button>
                 {% endif %}
@@ -452,9 +462,9 @@ mix-blend-mode: luminosity;
             <div class="text18-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text18_en}}</span>
-                    <span>ru:{{lang.text18_ru}}</span>
-                    <span>uz:{{lang.text18_uz}}</span>
+                    <span>en:{{ lang.text18_en }}</span>
+                    <span>ru:{{ lang.text18_ru }}</span>
+                    <span>uz:{{ lang.text18_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -464,7 +474,7 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text19-text">{{text.text19}}
+            <div class="col-5 my-3 text19-text">{{ text.text19 }}
                 {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text19-btn">Edit</button>
                 {% endif %}
@@ -473,9 +483,9 @@ mix-blend-mode: luminosity;
             <div class="text19-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text19_en}}</span>
-                    <span>ru:{{lang.text19_ru}}</span>
-                    <span>uz:{{lang.text19_uz}}</span>
+                    <span>en:{{ lang.text19_en }}</span>
+                    <span>ru:{{ lang.text19_ru }}</span>
+                    <span>uz:{{ lang.text19_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -485,18 +495,18 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text20-text">{{text.text20}}
+            <div class="col-5 my-3 text20-text">{{ text.text20 }}
                 {% if request.user.is_superuser %}
-                <button type="button" class="btn btn-secondary text20-btn">Edit</button>
+                    <button type="button" class="btn btn-secondary text20-btn">Edit</button>
                 {% endif %}
             </div>
 
             <div class="text20-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text20_en}}</span>
-                    <span>ru:{{lang.text20_ru}}</span>
-                    <span>uz:{{lang.text20_uz}}</span>
+                    <span>en:{{ lang.text20_en }}</span>
+                    <span>ru:{{ lang.text20_ru }}</span>
+                    <span>uz:{{ lang.text20_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -506,18 +516,18 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text21-text">{{text.text21}}
+            <div class="col-5 my-3 text21-text">{{ text.text21 }}
                 {% if request.user.is_superuser %}
-                <button type="button" class="btn btn-secondary text21-btn">Edit</button>
+                    <button type="button" class="btn btn-secondary text21-btn">Edit</button>
                 {% endif %}
             </div>
 
             <div class="text21-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text21_en}}</span>
-                    <span>ru:{{lang.text21_ru}}</span>
-                    <span>uz:{{lang.text21_uz}}</span>
+                    <span>en:{{ lang.text21_en }}</span>
+                    <span>ru:{{ lang.text21_ru }}</span>
+                    <span>uz:{{ lang.text21_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -527,18 +537,18 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text22-text">{{text.text22}}
+            <div class="col-5 my-3 text22-text">{{ text.text22 }}
                 {% if request.user.is_superuser %}
-                <button type="button" class="btn btn-secondary text22-btn">Edit</button>
+                    <button type="button" class="btn btn-secondary text22-btn">Edit</button>
                 {% endif %}
             </div>
 
             <div class="text22-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text22_en}}</span>
-                    <span>ru:{{lang.text22_ru}}</span>
-                    <span>uz:{{lang.text22_uz}}</span>
+                    <span>en:{{ lang.text22_en }}</span>
+                    <span>ru:{{ lang.text22_ru }}</span>
+                    <span>uz:{{ lang.text22_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -548,18 +558,18 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text23-text">{{text.text23}}
+            <div class="col-5 my-3 text23-text">{{ text.text23 }}
                 {% if request.user.is_superuser %}
-                <button type="button" class="btn btn-secondary text23-btn">Edit</button>
+                    <button type="button" class="btn btn-secondary text23-btn">Edit</button>
                 {% endif %}
             </div>
 
             <div class="text23-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text23_en}}</span>
-                    <span>ru:{{lang.text23_ru}}</span>
-                    <span>uz:{{lang.text23_uz}}</span>
+                    <span>en:{{ lang.text23_en }}</span>
+                    <span>ru:{{ lang.text23_ru }}</span>
+                    <span>uz:{{ lang.text23_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -569,18 +579,18 @@ mix-blend-mode: luminosity;
             <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
 
 
-            <div class="col-5 my-3 text24-text">{{text.text24}}
+            <div class="col-5 my-3 text24-text">{{ text.text24 }}
                 {% if request.user.is_superuser %}
-                <button type="button" class="btn btn-secondary text24-btn">Edit</button>
+                    <button type="button" class="btn btn-secondary text24-btn">Edit</button>
                 {% endif %}
             </div>
 
             <div class="text24-form" style="display: none;">
                 <form action="{% url 'setpage:lang-change' %}" method="POST">
                     {% csrf_token %}
-                    <span>en:{{lang.text24_en}}</span>
-                    <span>ru:{{lang.text24_ru}}</span>
-                    <span>uz:{{lang.text24_uz}}</span>
+                    <span>en:{{ lang.text24_en }}</span>
+                    <span>ru:{{ lang.text24_ru }}</span>
+                    <span>uz:{{ lang.text24_uz }}</span>
                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                 </form>
             </div>
@@ -591,6 +601,96 @@ mix-blend-mode: luminosity;
 
         </div>
     </div>
+
+
+
+    {#    todo payment form#}
+    <div id="111" name="anchor"></div>
+    <div class="container border p-4 rounded-25 collapse mt-100" id="collapseForm">
+        <form class="" method="post"
+              action="{% url 'orders:create-order' %}"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            {#            <div class="container bg-white shadow rounded-20 p-5">#}
+            <div class="">
+                <div class="d-flex">
+                    <h2 class=" mb-4">Payment form</h2>
+                </div>
+                 <div class="text-secondary row" id="nav-tabContent">
+                    <div class="col-lg-6">
+                        <div class="row my-4 px-5 d-flex justify-content-between">
+                            <label for="inputPassword" class="">Номер
+                                телефона  </label>
+                            <div class="">
+                                {{ form.phone }}
+                                <small class="text-danger ">{{ form.phone.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row my-4 px-5 d-flex justify-content-between">
+                            <label for="inputPassword" class="">Эл.
+                                почта  </label>
+                            <div class="">
+                                {{ form.email }}
+                                <small class="text-danger ">{{ form.email.errors }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row my-4 px-5 d-flex justify-content-between">
+                            <label for="inputPassword" class="">File</label>
+                            <div class="">
+                                {{ form.file }}
+                                <small class="text-danger">{{ form.email.errors }}</small>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="form-group row my-4 px-5 d-flex justify-content-between">
+                        <h4>Cost: <label id="formcost"></label> сум</h4>
+                            <div class="overflow-auto">
+                        {{ form.payment_type }}
+                    </div>
+                            </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="row ">
+                <input type="hidden" name="product" value="editing"/>
+                <input type="hidden" class="amount" name="amount" value=""/>
+
+                <input type="hidden" name="payment_status" value="0"/>
+                <input type="hidden" name="delivery_status" value="1"/>
+                <div class="text-right ml-5">
+                    <button type="submit"
+                            class="btn btn-primary">{% trans 'Заказать' %}</button>
+                </div>
+            </div>
+            {#            </div>#}
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
     <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}#Forma"
           enctype="multipart/form-data">
@@ -645,6 +745,30 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-lg-12 row px-4">
+                                <div class="col-lg-6  row my-4">
+                                    <div class="">
+                                        {{ forms.file }}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-12 row px-4">
+                                <div class="col-lg-6  row my-4">
+                                    <div class="">
+                                        <span
+                                                class="">{{ forms.is_agree }} {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                                    </div>
+                                    <label class="text-danger">{{ forms.is_agree.errors }}</label>
+                                </div>
+
+                                <div class="col-lg-6  row my-4 d-flex justify-content-end">
+                                    <button type="submit"
+                                            class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -652,114 +776,22 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
-            <div class="row  mb-100">
-                <div class="col-lg-11 d-flex container  justify-content-between">
-                    <div class="mr-auto">
-                        {{ forms.is_agree }}<span
-                            class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
-                    </div>
-                    <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Заказать консультацию' %}</button>
-                </div>
-            </div>
+            {#            <div class="row  mb-100">#}
+            {#                <div class="col-lg-11 d-flex container  justify-content-between">#}
+            {#                    <div class="mr-auto">#}
+            {#                        {{ forms.is_agree }}<span#}
+            {#                            class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>#}
+            {#                    </div>#}
+            {#                    #}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </form>
 
 
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 200px" aria-labelledby="exampleModalLabel" aria-hidden="true"
-         style="background: transparent !important;">
-        <div class="modal-dialog m-0" style="width: 0 !important;">
-            <div class="modal-content m-0" style="width: 0 !important;">
-                <div class="modal-body" style="width: 0 !important;">
-                    <form class="h-100 w-100 mobile-form " method="post"
-                          style="width: 100vw !important;"
-                          action="{% url 'orders:create-order' %}"
-
-                          enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="container bg-white shadow rounded-20 p-5">
-                            <div class="    ">
-                                <div class="d-flex justify-content-between">
-
-                                    <h2 class=" mb-4">Payment form</h2><i class="bi bi-x-circle close " data-dismiss="modal" aria-label="Close" type="button"></i>
-
-                                </div>
-                                <div class="tab-content" id="nav-tabContent">
-                                    <div class=" container ">
-
-                                        <div class="row text-secondary">
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group row my-4">
-                                                    <label for="inputPassword" class="col-sm-4 col-form-label">Номер
-                                                        телефона</label>
-                                                    <div class="col-sm-6 d-flex flex-column">
-                                                        {{ form.phone }}
-                                                        <small class="text-danger align-self-start">{{ form.phone.errors }}</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group row my-4">
-                                                    <label for="inputPassword" class="col-sm-4 col-form-label">Эл.
-                                                        почта</label>
-                                                    <div class="col-sm-6 d-flex flex-column">
-                                                        {{ form.email }}
-                                                        <small class="text-danger align-self-start">{{ form.email.errors }}</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-10">
-                                                <div class="form-group d-flex my-4">
-                                                    <label for="inputPassword" class="col-form-label">File</label>
-                                                    <div class="col-sm-6 d-flex flex-column ml-5">
-                                                        {{ form.file }}
-                                                        <small class="text-danger align-self-start">{{ form.email.errors }}</small>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-6 ">
-                                                <h4>Cost: <label id="formcost"></label> сум</h4>
-                                            </div>
-                                            <div class="col-6 col-lg-2 overflow-auto">
-                                                {{ form.payment_type }}
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div class="row ">
-                                <input type="hidden" name="product" value="editing"/>
-                                <input type="hidden" class="amount" name="amount" value=""/>
-
-                                <input type="hidden" name="payment_status" value="0"/>
-                                <input type="hidden" name="delivery_status" value="1"/>
-                                <div class="col-lg-11 d-flex  justify-content-end">
-                                    <button type="submit"
-                                            class="btn btn-primary px-4 mr-4">{% trans 'Заказать' %}</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <div class="" id="formacha" style="display: none; margin-top: 200px">
-        <form class="h-100 w-100 mobile-form position-fixed fixed" method="post"
+        <form class="h-100 w-100 mobile-form" method="post"
               action="{% url 'orders:create-order' %}"
               style="
 
@@ -845,29 +877,37 @@ mix-blend-mode: luminosity;
         </form>
     </div>
 
-    <div class="modal fade" id="alertme" tabindex="-1" style="margin-top: 200px" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">внимание</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        зарегистрируйтесь чтобы выполнить запрос
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <a href="{% url 'users:login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
-      </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+
+
+
+    <div class="modal fade" id="alertme" tabindex="-1" style="margin-top: 200px" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">внимание</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    зарегистрируйтесь чтобы выполнить запрос
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <a href="{% url 'users:login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 {% endblock %}
 
 {% block js %}
-<script src="{% static  'pages/js/lang.js'%}"></script>
+    <script src="{% static  'pages/js/lang.js' %}"></script>
     <script>
 
         $("#hideforma").click(function () {
@@ -919,6 +959,15 @@ mix-blend-mode: luminosity;
             $('#cost1').html(cost2)
             $('#cost2').html(cost3)
         })
+
+    </script>
+    <script type="text/javascript">
+        var sidebar = new StickySidebar('#sidebar', {
+            containerSelector: '#main-content',
+            innerWrapperSelector: '.sidebar__inner',
+            topSpacing: 20,
+            bottomSpacing: 20
+        });
 
     </script>
 

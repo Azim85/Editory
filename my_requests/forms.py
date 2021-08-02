@@ -9,7 +9,8 @@ from .models import (Consultation,
                      OrganizeConferences,
                      Grants,
                      Language,
-                     Translation
+                     Translation,
+                     GetPatent
                      )
 
 
@@ -40,9 +41,10 @@ class ConsultationForm(forms.ModelForm):
 
 
 class LanguageForm(forms.ModelForm):
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = Language
-        fields = ('first_name', 'last_name', 'phone', "email", 'is_agree')
+        fields = ('first_name','file' , 'last_name', 'phone', "email", 'is_agree')
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -287,3 +289,46 @@ class TranslationForm(forms.ModelForm):
             if amount.isdigit():
                 return amount
             raise forms.ValidationError('not digit')
+
+
+
+class PatentsForm(forms.ModelForm):
+    application_upload = forms.FileField(required=False)
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+
+    class Meta:
+        model = GetPatent
+        fields = '__all__'
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'organization': forms.TextInput(attrs={'class': 'form-control'}),
+            'org_contacts': forms.TextInput(attrs={'class': 'form-control'}),
+            'org_address': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'application_upload' : forms.FileField(attrs={'required':'false'})
+        }
+
+    def clean_phone(self):
+        phone_len = [12, 13]
+        phone = self.cleaned_data.get('phone')
+        if '+998' or '998' in phone:
+            if len(phone) in phone_len:
+                return phone
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_org_contacts(self):
+        phone_len = [12, 13]
+        org_contacts = self.cleaned_data.get('org_contacts')
+        if '+998' or '998' in org_contacts:
+            if len(org_contacts) in phone_len:
+                return org_contacts
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email

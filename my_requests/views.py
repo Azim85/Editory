@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
-                    PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm)
+                    PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm)
 from .models import Translation
 from setpage.forms import WebinarsForm, TranslationsForm
 from setpage.models import WebinarsModel, TranslationModel
@@ -70,6 +70,7 @@ class Conferences(View):
 
     def post(self, request):
         form = FreeConsultationForm(request.POST, request.FILES)
+
         if request.user.is_authenticated:
             if form.is_valid():
                 if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
@@ -85,6 +86,7 @@ class Conferences(View):
         else:
             messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
             return redirect('users:login')
+
 
 
 class CreateConferences(View):
@@ -317,31 +319,23 @@ class GrantsView(View):
 
 class PatentsView(View):
     def get(self, request):
-        form = GrantsForm()
+        form = PatentsForm()
 
         obj = PatentModel.objects.first()
         patent = PatentForm(instance=obj)
         return render(request, 'patents.html', {'form': form, 'text': obj, 'patent': patent})
 
     def post(self, request):
-        form = GrantsForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save(commit=False)
-                    done.theme = request.POST.get('theme')
-                    done.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:patents')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'patents.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'patents.html', {'validated': 'validated', 'form': form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+        form = PatentsForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            done = form.save(commit=False)
+            done.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:patents')
+        return render(request, 'patents.html', {'validated': 'validated', 'form': form})
+    
 
 
 class TranslationView(View):

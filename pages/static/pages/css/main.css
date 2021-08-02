@@ -255,8 +255,15 @@ html {
 #mobile {
     display: none
 }
+.rounded-25 {
+    border-radius: 25px !important;
+    box-shadow: 0 0 5px 0 #0000001A
+}
 
 @media (max-width: 992px) {
+    .nav-mob{
+       padding-top: 40px;
+    }
     .font-55 {
         font-weight: 700;
         font-size: 35px;
