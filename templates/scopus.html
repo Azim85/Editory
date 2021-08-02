@@ -390,16 +390,27 @@
                         </div>
                     </div>
 
-                    <input type="hidden" name="theme" value="scopus">
+                   
 
                 </div>
+
+                <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
+                <div class="col-lg-9 d-flex ">
+                    {{form.comment}}
+                    <small class="text-danger">{{form.comment.errors}}</small>
+                </div>
+
                 <div class="form-group container row w-100" style="margin-top: 60px">
                     <div class="col-lg-11 d-flex justify-content-between">
-                        <div class="mr-auto">
-                            {{ form.is_agree }}<span
-                                class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        <div class='mr-auto'>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </div>

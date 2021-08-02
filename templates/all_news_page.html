@@ -9,33 +9,51 @@
 {% block content %}
 
 <div class="container mt-1 pt-5">
-    <div class="row mb-3 mb-4">
+    <!-- <div class="row mb-3 mb-4">
         <div class="col-lg-8">
             <form action="{% url 'pages:search' %}" method="get" class="d-flex w-100">
                 <input type="text" name='q' placeholder="Search....." class="form-control mr-2">
                 <button type="submit" class="btn btn-success">Search</button>
             </form>
         </div>
-    </div>
-    {% for topic in topics %}
+    </div> -->
+
+    <div class="row">
+        
     
-        <div class="row mb-3 d-flex align-items-center text-black">
+        <div class="col-9">
+            <div class="row">
+                {% for topic in topics %}
+                <div class="col-lg-6 mb-5" style="line-height: 1;">
+                    <h4 style="color: black;">{{topic.title}}</h4>
+                    <p style="color: black; line-height:0.5" class="text-dark">{{topic.description|safe|truncatewords:50}}</p>
+                    <span style="line-height: 1;">Published {{topic.created_at|date:'d F Y'}}</span>
+                    <hr>
+                </div>
+                {% endfor %}
+            </div>
             
-            <div class="col-lg-2">
-                <a href="{{topic.get_absolute_url}}" class="text-decoration-none">
-                <img src="{{topic.main_image.url}}" width="100" alt="">
-                </a>
-            </div>
-            <div class="col-lg-2">
-                <h4 style="color: black;">{{topic.material_name}}</h4>
-            </div>
-            <div class="col-lg-8">
-                <p style="color: black;" class="text-dark">{{topic.description|safe|truncatewords:50}}</p>
-            </div>
         </div>
-    
-    
-    {% endfor %}
+
+
+        <div class="col-lg-3 d-flex flex-column align-items-center">
+            <a href="{% url 'pages:allnews' %}" class="btn btn-secondary">All news</a>
+            {% for year, months in years.items %}
+                <h3 class="mt-2 border-bottom w-50 text-center">{{ year }}</h3>
+                <div class="d-flex flex-column align-items-center w-100">
+                    <div>
+                        {% for month in months %}
+                        <p class="mb-0">
+                            <a href="{% url 'pages:allnews' %}?year={{ year }}&month={{ month.0 }}" class="text-secondary">{{ month.1 }}</a>
+                        </p>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 
 {% if page_obj.has_other_pages %}
