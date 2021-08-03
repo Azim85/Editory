@@ -2,9 +2,9 @@
 {% load i18n %}
 <div class="container pt-5">
 
-    <div class="row pb-4 h-100 w-100">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-4 w-100">
-            <div class="col">
+    <div class=" pb-4 h-100 w-100">
+        <div class="row  w-100">
+            <div class="col  col-sm-6 col-md-3 mb-4 mb-md-0">
                 <a class="navbar-brand logo-color font-weight-bold geometria " style="margin-top: -30px"
                    href="{% url 'pages:home' %}">
                     <img src="{% static 'pages/svg/Logo.svg' %}" height="65px" width="120px" alt="logo"></a>
@@ -13,7 +13,7 @@
                     <a href="https://apelsin.uz/"><img class="my-3" src="{% static 'pages/images/apelsin.png' %}"></a>
                 </div>
             </div>
-            <div class="col">
+            <div class="col col-sm-6 col-md-3 mb-4 mb-md-0">
                 <div class="pb-2 font-weight-bold">{% trans 'Карта сайта' %}</div>
                 <div class="my-2"><a href="{% url 'pages:webinars' %}"
                                      class="text-dark text-decoration-none"> {% trans 'О нас' %}</a></div>
@@ -23,13 +23,13 @@
                                      class="text-dark text-decoration-none ">{% trans 'Продукты и материалы' %}</a>
                 </div>
             </div>
-            <div class="col">
+            <div class="col col-sm-6 col-md-3 mb-4 mb-md-0">
                 <div class="pb-2 font-weight-bold">{% trans 'Контакты' %}</div>
                 <div class="my-2"><a href="tel:90 013 19 23" class="text-dark">+998 90 013 19 23</a></div>
                 <div class="my-2"><a class="text-dark" href="mailto:info@editory.org">info@editory.org</a></div>
                 <div class="my-2 pr-5">{% trans 'г. Ташкент, Алмазарский район, Себзар 3' %}</div>
             </div>
-            <div class="col d-flex flex-column justify-content-between">
+            <div class="col col-sm-6 col-md-3 mb-4 mb-md-0 d-flex flex-column justify-content-between">
                 <div>
                     <div class="pb-2 font-weight-bold">{% trans 'Мы в соцсетях' %}:</div>
                 <div class="mt-3">
