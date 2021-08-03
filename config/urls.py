@@ -30,11 +30,10 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('auth/', include('users.urls')),
-    path('', include('pages.urls')),
     path('request_to/', include('my_requests.urls')),
     path('orders/', include('orders.urls')),
     path('editable/', include('setpage.urls')),
-
+    path('', include('pages.urls')),
 )
 
 if settings.DEBUG:

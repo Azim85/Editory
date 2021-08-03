@@ -100,7 +100,7 @@ mix-blend-mode: luminosity;
 
     <div class="container mt-100 pb-100">
 
-        <form class="mt-5" method="post" name="consultation" action="{% url 'requests:grants' %}?#Forma">
+        <form class="mt-5" method="post" name="consultation" action="{% url 'requests:grants' %}?#Forma" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row text-secondary">
                 <div class="col-lg-6">
@@ -165,16 +165,28 @@ mix-blend-mode: luminosity;
                         </div>
                     </div>
 
-                    <input type="hidden" name="theme" value="grant">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label"></label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.application_upload }}
+                            <small class="text-danger">{{ form.application_upload.errors }}</small>
+                        </div>
+                    </div>
+
+                    
 
                 </div>
                 <div class="form-group container row w-100" style="margin-top: 60px">
                     <div class="col-lg-11 d-flex justify-content-between">
-                        <div class="mr-auto">
-                            {{ form.is_agree }}<span
-                                class="">    {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        <div class='mr-auto'>
+                            <label for="id_is_agree">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </div>

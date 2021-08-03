@@ -70,12 +70,7 @@ mix-blend-mode: luminosity;
                             </div>
                         </div>
                     </div>
-                    {#                <div class="col-lg-6">#}
-                    {#                    <div class="d-flex align-items-center">#}
-                    {#                        <img class="pt-auto ml-auto" src="{% static 'pages/images/patent.png' %}"#}
-                    {#                            style="width: 30vw;">#}
-                    {#                    </div>#}
-                    {#                </div>#}
+                
                 </div>
 
             </div>
@@ -337,6 +332,7 @@ mix-blend-mode: luminosity;
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}#Forma">
         {% csrf_token %}
         <div class="row text-secondary">
+
             <div class="col-lg-6">
     
                 <div class="form-group row">
@@ -370,10 +366,8 @@ mix-blend-mode: luminosity;
                         <small class="text-danger">{{form.email.errors}}</small>
                     </div>
                 </div>
-    
-                
-    
             </div>
+
             <div class="col-lg-6">
     
                 <div class="form-group row">
@@ -399,18 +393,33 @@ mix-blend-mode: luminosity;
                         <small class="text-danger">{{form.org_address.errors}}</small>
                     </div>
                 </div>
+
+               
     
-                <input type="hidden" name="theme" value="vak">
     
             </div>
+            <!-- <div class="form-group row  d-flex" style="width: 100vw;"> -->
+                <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
+                <div class="col-lg-9 d-flex ">
+                    {{form.comment}}
+                    <small class="text-danger">{{form.comment.errors}}</small>
+                </div>
+            <!-- </div> -->
             <div class="form-group container row w-100" style="margin-top: 60px">
                 <div class="col-lg-11 d-flex justify-content-between">
-                    <div class="mr-auto">
-                        {{form.is_agree}}<span class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                    <div class='mr-auto'>
+                        <label for="id_is_agree" style="cursor: pointer;">
+                            {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
                 </div>
+                <div class="col-12">
+                    <small class="text-danger">{{ form.is_agree.errors }}</small>
+                </div>
             </div>
+
+           
         </div>
     
     </form>

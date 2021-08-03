@@ -18,6 +18,8 @@ from django.conf import settings
 from setpage.models import AboutUsModel, ContactModel, LangEditModel, ResearchStrategyModel
 from setpage.forms import AboutUSForm, ContactForm, LangForm
 
+from dateutil.rrule import rrule, MONTHLY
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -41,7 +43,7 @@ class Article(DetailView):
     def get_context_data(self, **kwargs):
         topic = Topic.objects.get(pk=self.kwargs['pk'])
         context = super(Article, self).get_context_data(**kwargs)
-        self.request.breadcrumb = topic.material_name
+        self.request.breadcrumb = topic.title
         context['get_by_theme'] = Topic.objects.filter(
             material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
         context['form'] = TopicForm(instance=topic)
@@ -277,9 +279,73 @@ def change_others(request):
 
 class allNews(ListView):
     template_name = 'all_news_page.html'
-    model = Topic
+    # model = Topic
+    paginate_by = 6
     context_object_name = 'topics'
-    paginate_by = 10
+
+
+    def get_queryset(self):
+        year = self.request.GET.get('year')
+        month = self.request.GET.get('month')
+
+        qs = Topic.objects.all()
+
+        if year and month:
+            qs = qs.filter(created_at__year=year, created_at__month=month)
+
+        return qs
+    
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        now = datetime.datetime.now()
+        
+        end_date, start_date = datetime.datetime(now.year, 12, 1), datetime.date(now.year - 1, 1, 1)
+
+        years = {
+            end_date.year: [],
+            start_date.year: [],
+        }
+        for d in rrule(MONTHLY, dtstart=start_date, until=end_date):
+            years[d.year].append([d.month, d.strftime('%B')])
+            
+        context['years'] = years
+
+        return context
+
+        # nows = datetime.datetime.now()
+        # old = datetime.datetime(2020, 12, 31 )
+        # monthes = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        # lst = [ [] for i in monthes ]
+
+        # lst_years = []
+        
+
+        # for i in range(old.year, nows.year+1):
+        #     lst_years.append(i)
+        # k = reversed(lst_years)
+
+        # years = {}
+
+        # for i in range(1, 365):
+        #     d = old + datetime.timedelta(days=i)
+        #     if d.day == nows.day+1 and d.month == nows.month and d.year == nows.year:
+        #         break
+
+        #     for j in monthes:
+        #         if monthes.index(j)+1 == d.month: 
+        #             lst[monthes.index(j)].append(d)
+        #             years[j] = lst[monthes.index(j)]
+
+        # context['years'] = k
+        # context['monthes'] = monthes
+        # return context
+
+        
+
+    
+
 
 
 def hello(request):
