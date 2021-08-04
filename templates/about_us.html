@@ -201,54 +201,11 @@ mix-blend-mode: luminosity;
 
             <div class="row">
                 <div class="col-lg-5 mb-3">
-
-                    <div class="h2 text7-text">«{{ text.text7 }}»
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text7-btn">Edit</button>
-                        {% endif %}
-                    </div>
-
-                    <div class="text7-form" style="display: none;">
-                        <form action="{% url 'setpage:about-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ about.text7_en }}</span>
-                            <span>ru:{{ about.text7_ru }}</span>
-                            <span>uz:{{ about.text7_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <div class="text-right text8-text">{{ text.text8 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text8-btn">Edit</button>
-                        {% endif %}
-                    </div>
-
-                    <div class="text8-form" style="display: none;">
-                        <form action="{% url 'setpage:about-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ about.text8_en }}</span>
-                            <span>ru:{{ about.text8_ru }}</span>
-                            <span>uz:{{ about.text8_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
+                    {{ text.text7 }}
                 </div>
-                <div class="col-lg-7 font-22 text-white text9-text">{{ text.text9 }}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text9-btn">Edit</button>
-                    {% endif %}
-                </div>
+                <div class="col-lg-7 font-22 text-white text9-text">
+                    {{ text.text8 }}
 
-                <div class="text9-form" style="display: none;">
-                    <form action="{% url 'setpage:about-change' %}" method="POST">
-                        {% csrf_token %}
-                        <span>en:{{ about.text9_en }}</span>
-                        <span>ru:{{ about.text9_ru }}</span>
-                        <span>uz:{{ about.text9_uz }}</span>
-                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                    </form>
                 </div>
 
             </div>
@@ -323,39 +280,7 @@ mix-blend-mode: luminosity;
             </div>
             <div class="offset-1 col-lg-7">
                 <div>
-
-                    <div class="h2 mt-5 text10-text">{{ text.text10 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text10-btn">Edit</button>
-                        {% endif %}
-                    </div>
-
-                    <div class="text10-form" style="display: none;">
-                        <form action="{% url 'setpage:about-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ about.text10_en }}</span>
-                            <span>ru:{{ about.text10_ru }}</span>
-                            <span>uz:{{ about.text10_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <div class="font-22 mt-3 text11-text">{{ text.text11 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
-                        {% endif %}
-                    </div>
-
-                    <div class="text11-form" style="display: none;">
-                        <form action="{% url 'setpage:about-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ about.text11_en }}</span>
-                            <span>ru:{{ about.text11_ru }}</span>
-                            <span>uz:{{ about.text11_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
+                    {{ text.text9 }}
                     <div class="mt-5">
                         <a class="main-color font-22 " id="Formaa" data-toggle="collapse" href="#collapseExample44"
                            role="button"

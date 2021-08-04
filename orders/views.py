@@ -146,9 +146,27 @@ class CreateOrderView(View):
 
         done = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type, payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
         if done:
-            messages.success(request, 'Успешно')
-
-
-
+            return redirect('orders:choose-type')
 
         return redirect('pages:language_editing')
+
+class ChooseTypeView(View):
+    def get(self, request):
+        order = OrderModel.objects.first()
+        return render(request, 'payment_type.html', {'order':order})
+
+class TransPaymentView(View):
+    def get(self, request):
+        order = OrderModel.objects.first()
+        return render(request, 'translation_payment.html', {'order':order})
+
+class ChangePaymentTypeView(View):
+    def post(self, request):
+        order = OrderModel.objects.first()
+        order.payment_type = request.POST.get('payment-type')
+        order.save()
+        order.refresh_from_db()
+        return redirect('orders:translation-payment')
+            # return render(request, 'translation_payment.html', {'order':order})
+        # return render(request, 'translation_payment.html', {'order':order})
+    

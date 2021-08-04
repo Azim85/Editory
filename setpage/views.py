@@ -509,22 +509,7 @@ class ProofChangeView(View):
             obj.text9_en = request.POST.get('text9_en')
             obj.text9_ru = request.POST.get('text9_ru')
             obj.text9_uz = request.POST.get('text9_uz')
-        if request.POST.get('text10_en') and request.POST.get('text10_ru') and request.POST.get('text10_uz'):
-            obj.text10_en = request.POST.get('text10_en')
-            obj.text10_ru = request.POST.get('text10_ru')
-            obj.text10_uz = request.POST.get('text10_uz')
-        if request.POST.get('text11_en') and request.POST.get('text11_ru') and request.POST.get('text11_uz'):
-            obj.text11_en = request.POST.get('text11_en')
-            obj.text11_ru = request.POST.get('text11_ru')
-            obj.text11_uz = request.POST.get('text11_uz')
-        if request.POST.get('text12_en') and request.POST.get('text12_ru') and request.POST.get('text12_uz'):
-            obj.text12_en = request.POST.get('text12_en')
-            obj.text12_ru = request.POST.get('text12_ru')
-            obj.text12_uz = request.POST.get('text12_uz')
-        if request.POST.get('text13_en') and request.POST.get('text13_ru') and request.POST.get('text13_uz'):
-            obj.text13_en = request.POST.get('text13_en')
-            obj.text13_ru = request.POST.get('text13_ru')
-            obj.text13_uz = request.POST.get('text13_uz')
+
 
         obj.save()
         return redirect('requests:proofreading')

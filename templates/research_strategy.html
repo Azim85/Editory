@@ -29,7 +29,7 @@
 
     <div class="bg-me-home h-600"
          style="
-                 {#background-image: url({% static 'pages/images/image 41.png' %});#}
+                 background-image: url({% static 'pages/images/image 41.png' %});
                  background-size: cover;">
         <div class="h-100 bg-color-me-home" style="
         background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -136,7 +136,13 @@
                 {{ text.text5|safe }}
             </div>
             <div class="col-lg-9 font-22 text-break center-text-second" style="display: none">
+                {{ text.text6|safe }}
+            </div>
+            <div class="col-lg-9 font-22 text-break center-text-third" style="display: none">
                 {{ text.text7|safe }}
+            </div>
+            <div class="col-lg-9 font-22 text-break center-text-fourth" style="display: none">
+                {{ text.text8|safe }}
             </div>
         </div>
     </div>
@@ -145,8 +151,7 @@
 
     <div class="container mt-5 mb-200">
         <div id="Forma" class="">
-            <div class="h1">{% trans 'Как организовать и провести' %} <br>{% trans 'научное исследование' %}?</div>
-            {% trans 'После заполнения формы наш консультант свяжется с вами в течение часа' %}
+            {{ text.text9|safe }}
         </div>
         <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?#Forma">
             {% csrf_token %}
@@ -176,11 +181,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row" style="display: none">
                         <label for="inputPassword" class="col-sm-4 col-form-label">State</label>
                         <div class="col-sm-6 d-flex flex-column">
                             {{ forms.select_topic }}
-                            <small class="text-danger">{{ forms.select_topic.errors }}</small>
+                            {#                            <small class="text-danger">{{ forms.select_topic.errors }}</small>#}
                         </div>
                     </div>
 
@@ -256,43 +261,58 @@
 
 
         $(document).ready(function () {
-            if ({{ raqam }} === 1
+            if ({{ raqam }} ===
+            1
         )
             {
                 $('.center-text').css('display', 'inline')
                 $('.center-text-second').css('display', 'none')
+                $('.center-text-third').css('display', 'none')
+                $('.center-text-fourth').css('display', 'none')
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image 41.png' %})')
-                $('.center-text').html('{{ text.text5|safe }}')
+                $('#id_select_topic').val('Стратегия исследования')
+                {#$('.center-text').html('{{ text.text5|safe }}')#}
             }
         else
-            if ({{ raqam }} === 2
+            if ({{ raqam }} ===
+            2
         )
             {
-                $('.center-text').css('display', 'inline')
-                $('.center-text-second').css('display', 'none')
-
+                $('.center-text').css('display', 'none')
+                $('.center-text-second').css('display', 'inline')
+                $('.center-text-third').css('display', 'none')
+                $('.center-text-fourth').css('display', 'none')
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image46.jpg' %})')
-                $('.center-text').html("{{ text.text6|safe }}")
+                $('#id_select_topic').val('Партнерство и сотрудничество')
+                {#$('.center-text').html("{{ text.text6|safe }}")#}
 
             }
         else
-            if ({{ raqam }} === 3
+            if ({{ raqam }} ===
+            3
         )
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image45.jpg' %})')
-                $('.center-text').css('display', 'none')
-                $('.center-text-second').css('display', 'inline')
 
+                $('.center-text').css('display', 'none')
+                $('.center-text-second').css('display', 'none')
+                $('.center-text-third').css('display', 'inline')
+                $('.center-text-fourth').css('display', 'none')
+                $('#id_select_topic').val('Научное финансирование')
             }
         else
-            if ({{ raqam }} === 4
+            if ({{ raqam }} ===
+            4
         )
             {
-                $('.center-text').css('display', 'inline')
+                $('.center-text').css('display', 'none')
                 $('.center-text-second').css('display', 'none')
+                $('.center-text-third').css('display', 'none')
+                $('.center-text-fourth').css('display', 'inline')
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image38.jpg' %})')
                 $('.bg-color-me-home').css('background', 'linear-gradient(103.8deg, #004465 7.15%, rgba(3, 30, 39, 0.76) 39.59%, rgba(4, 34, 45, 0.38) 68.6%, rgba(255, 255, 255, 0.35) 101.53%)')
-                $('.center-text').html("{{ text.text8|safe }}")
+                {#$('.center-text').html("{{ text.text8|safe }}")#}
+                $('#id_select_topic').val('Управление и ведение')
 
             }
 
@@ -301,33 +321,41 @@
         $('#nav-home-tab').on('click', function () {
             $('.center-text').css('display', 'inline')
             $('.center-text-second').css('display', 'none')
-
-            {#$(this).addClass('active')#}
-            {#$('#nav-home').addClass('active show')#}
+            $('.center-text-third').css('display', 'none')
+            $('.center-text-fourth').css('display', 'none')
+$('#id_select_topic').val('Стратегия исследования')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image 41.png' %})')
 
-            $('.center-text').html("{{ text.text5|safe }}")
+            {#$('.center-text').html("{{ text.text5|safe }}")#}
         })
         $('#nav-profile-tab').on('click', function () {
-            $('.center-text').css('display', 'inline')
-            $('.center-text-second').css('display', 'none')
-
+            $('.center-text').css('display', 'none')
+            $('.center-text-second').css('display', 'inline')
+            $('.center-text-third').css('display', 'none')
+            $('.center-text-fourth').css('display', 'none')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image46.jpg' %})')
-            $('.center-text').html("{{ text.text6|safe }}")
+            {#$('.center-text').html("{{ text.text6|safe }}")#}
+             $('#id_select_topic').val('Партнерство и сотрудничество')
         })
         $('#nav-contact-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image45.jpg' %})')
             $('.center-text').css('display', 'none')
-            $('.center-text-second').css('display', 'inline')
+            $('.center-text-second').css('display', 'none')
+            $('.center-text-third').css('display', 'inline')
+            $('.center-text-fourth').css('display', 'none')
+              $('#id_select_topic').val('Научное финансирование')
 
 
         })
         $('#nav-fouth-tab').on('click', function () {
-            $('.center-text').css('display', 'inline')
+            $('.center-text').css('display', 'none')
             $('.center-text-second').css('display', 'none')
+            $('.center-text-third').css('display', 'none')
+            $('.center-text-fourth').css('display', 'inline')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image38.jpg' %})')
             $('.bg-color-me-home').css('background', 'linear-gradient(103.8deg, #004465 7.15%, rgba(3, 30, 39, 0.76) 39.59%, rgba(4, 34, 45, 0.38) 68.6%, rgba(255, 255, 255, 0.35) 101.53%)')
-            $('.center-text').html("{{ text.text8|safe  }}")
+            {#$('.center-text').html("{{ text.text8|safe  }}")#}
+             $('#id_select_topic').val('Управление и ведение')
         })
 
 

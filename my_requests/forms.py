@@ -78,10 +78,10 @@ BUSYNESS = (
     ('busy', 'busy')
 )
 DEGREE = (
-    ('кандидат наук', 'кандидат наук '),
-    ('доктор наук', 'доктор  наук'),
-    ('доктор философии', 'доктор философии PhD'),
-    ('хабилитированный доктор', 'хабилитированный доктор (Dr. habil.)'),
+    ('Кандидат наук', 'Кандидат наук '),
+    ('Доктор наук', 'Доктор  наук'),
+    ('Доктор философии', 'Доктор философии PhD'),
+    ('Хабилитированный доктор', 'Хабилитированный доктор (Dr. habil.)'),
 )
 
 
@@ -131,7 +131,7 @@ class OrganizeResearchForm(forms.ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'select_topic': forms.Select(attrs={'class': 'form-control'}),
+            'select_topic': forms.TextInput(attrs={'class': 'form-control'}),
             'organization': forms.TextInput(attrs={'class': 'form-control'}),
             'org_contacts': forms.TextInput(attrs={'class': 'form-control'}),
             'org_address': forms.TextInput(attrs={'class': 'form-control'}),
@@ -166,9 +166,9 @@ class ProofreadingForm(forms.ModelForm):
             'author': forms.TextInput(attrs={'class': 'form-control'}),
             'material_name': forms.TextInput(attrs={'class': 'form-control'}),
             'research_area': forms.TextInput(attrs={'class': 'form-control'}),
-            'choose': forms.Select(attrs={'class': 'form-control'}),
+            'choose': forms.TextInput(attrs={'class': 'form-control'}),
             'word_count': forms.NumberInput(attrs={'min': '0', 'class': 'form-control'}),
-            'language_editing': forms.TextInput(attrs={'class': 'form-control'}),
+            'language_editing': forms.Select(attrs={'class': 'form-control'}),
             'certificate': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
             'comment': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
         }
@@ -241,7 +241,7 @@ class OrganizeConferencesForm(forms.ModelForm):
 
 
 
-
+# updated
 class TranslationForm(forms.ModelForm):
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
 
@@ -251,17 +251,20 @@ class TranslationForm(forms.ModelForm):
 
         widgets = {
             'word_amount': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
-            'language': forms.TextInput(attrs={'class': 'form-control'}),
+            'language': forms.Select(attrs={'class': 'form-control'}),
             'research_area': forms.Select(attrs={'class': 'form-control'}),
-            'extra': forms.Select(attrs={'class': 'form-control'}),
             'comment': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
         }
 
-        def clean_word_amount(self):
-            amount = self.cleaned_data.get('word_amount')
-            if amount.isdigit():
-                return amount
-            raise forms.ValidationError('not digit')
+    def __init__(self, *args, **kwargs):
+        super(TranslationForm, self).__init__(*args, **kwargs)
+        self.fields['comment'].required = False
+
+    
+
+
+
+        
 
 
 # updated
