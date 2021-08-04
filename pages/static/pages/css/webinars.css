@@ -52,3 +52,30 @@
         width: 100%;
 }
 }
+
+.iframe1{
+    padding: 0 65px 0 15px;
+    height: 280px;
+}
+
+.iframe2{
+    padding: 0 15px 0 65px;
+    height: 280px;
+}
+
+.slick-next:before, .slick-prev:before{
+content: "" !important;
+    padding: 0 !important;
+}
+.slick-next, .slick-prev{
+    display: none !important;
+}
+
+.next1, .prev1{
+    border: none;
+    background: transparent;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+

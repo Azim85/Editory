@@ -46,6 +46,7 @@ class TopResearches(models.Model):
         return reverse_lazy('pages:paper', kwargs={'pk': self.pk})
 
 
+
 class ResumeModel(models.Model):
     """
     url:about/us, name:webinars
@@ -73,3 +74,16 @@ class About_us_news(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     url = models.CharField(max_length=255, null=True, blank=True)
 
+
+
+class WebinarsUrl1(models.Model):
+    url = models.CharField(max_length=225)
+
+    def __str__(self):
+        return self.url
+
+class WebinarsUrl2(models.Model):
+    url = models.CharField(max_length=225)
+
+    def __str__(self):
+        return self.url
