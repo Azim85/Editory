@@ -46,6 +46,68 @@ class GetPatent(models.Model):
         verbose_name = 'Patent'
         verbose_name_plural = 'Patents'
 
+# updated
+class GetGrant(models.Model):
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
+    org_contacts = models.CharField(max_length=255)
+    org_address = models.CharField(max_length=255)
+    application_upload = models.FileField(upload_to='app_requests/', blank=True)
+    is_agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
+
+    class Meta:
+        verbose_name = 'Grant'
+        verbose_name_plural = 'Grants'
+
+
+# updated
+class Baks(models.Model):
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
+    org_contacts = models.CharField(max_length=255)
+    org_address = models.CharField(max_length=255)
+    comment = models.TextField(blank=True, null=True)
+    is_agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
+
+    class Meta:
+        verbose_name = 'BAK'
+        verbose_name_plural = 'BAKs'
+
+
+# updated
+class Scopus(models.Model):
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
+    org_contacts = models.CharField(max_length=255)
+    org_address = models.CharField(max_length=255)
+    comment = models.TextField(blank=True, null=True)
+    is_agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
+
+    class Meta:
+        verbose_name = 'Scopus'
+        verbose_name_plural = 'Scopus requests'
+
 
 class PublicationToScopus(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -135,6 +197,7 @@ class OrganizeResearches(models.Model):
     #     verbose_name_plural = 'Стратегия исследования'
 
 
+# updated
 class OrganizeConferences(models.Model):
     """
     url:creat_conferences  name: 'creat_conferences'
@@ -147,6 +210,7 @@ class OrganizeConferences(models.Model):
     organization = models.CharField(max_length=255)
     org_contacts = models.CharField(max_length=255)
     org_address = models.CharField(max_length=255)
+    comment = models.TextField(blank=True, null=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

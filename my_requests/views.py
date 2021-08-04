@@ -4,8 +4,10 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View
 from pages.models import TopResearches
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
+
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm)
 from .models import Translation, ResearchPlatformsContext
+
 from setpage.forms import WebinarsForm, TranslationsForm
 from setpage.models import WebinarsModel, TranslationModel
 
@@ -99,22 +101,13 @@ class CreateConferences(View):
 
     def post(self, request):
         form = OrganizeConferencesForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:creat-conferences')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'creat_conference.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'creat_conference.html', {'validated': 'validated', 'form': form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
-
+        if form.is_valid():  
+            done = form.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:creat-conferences')
+        return render(request, 'creat_conference.html', {'validated': 'validated', 'form': form})
+      
 
 class Design(View):
     def get(self, request):
@@ -235,59 +228,42 @@ class BAKView(View):
     def get(self, request):
         obj = BakModel.objects.first()
         bak = BakForm(instance=obj)
-        form = GrantsForm()
+        form = BaksForm()
 
         return render(request, 'bak.html', {'form': form, 'bak': bak, 'text': obj})
 
     def post(self, request):
-        form = GrantsForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save(commit=False)
-                    done.theme = request.POST.get('theme')
-                    done.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:bak')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'bak.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'bak.html', {'validated': 'validated', 'form': form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+        form = BaksForm(request.POST)
+        
+        if form.is_valid():
+            done = form.save(commit=False)
+            done.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:bak')
+        return render(request, 'bak.html', {'validated': 'validated', 'form': form})
+       
 
-
+# updated
 class ScopusView(View):
     def get(self, request):
-        form = GrantsForm()
+        form = ScopusesForm()
 
         obj = ScopusModel.objects.first()
         scopus = ScopusForm(instance=obj)
         return render(request, 'scopus.html', {'form': form, 'text': obj, 'scopus': scopus})
 
     def post(self, request):
-        form = GrantsForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save(commit=False)
-                    done.theme = request.POST.get('theme')
-                    done.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:scopus')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'scopus.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'scopus.html', {'validated': 'validated', 'form': form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
-
+        form = ScopusesForm(request.POST)
+        if form.is_valid():
+            done = form.save(commit=False)
+            done.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:scopus')
+                
+        return render(request, 'scopus.html', {'validated': 'validated', 'form': form})
+       
 
 class GrantsView(View):
     def get(self, request):
@@ -298,25 +274,17 @@ class GrantsView(View):
         return render(request, 'grants.html', {'form': form, 'text': obj, 'grant': grant})
 
     def post(self, request):
-        form = GrantsForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save(commit=False)
-                    done.theme = request.POST.get('theme')
-                    done.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:grants')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'grants.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'grants.html', {'validated': 'validated', 'form': form})
-        else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
-
+        form = GrantsForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            done = form.save(commit=False)
+            done.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:grants')
+            
+        return render(request, 'grants.html', {'validated': 'validated', 'form': form})
+    
 
 class PatentsView(View):
     def get(self, request):

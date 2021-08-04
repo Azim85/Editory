@@ -177,8 +177,12 @@ mix-blend-mode: luminosity;
                                         <small class="text-danger align-self-start">{{ form.org_address.errors }}</small>
                                     </div>
                                 </div>
+                            </div>
 
-
+                            <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
+                            <div class="col-lg-9 d-flex pb-3">
+                                {{ form.comment }}
+                                <small class="text-danger">{{ form.comment.errors }}</small>
                             </div>
                         </div>
 
@@ -190,15 +194,20 @@ mix-blend-mode: luminosity;
             <div class="container">
                 <div class="row mb-100">
                     <div class="col-lg-11 d-flex  justify-content-between">
-                        <div class="mr-auto">
-                            {{ form.is_agree }}<span
-                                class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        <div class='mr-auto'>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
+
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 
 

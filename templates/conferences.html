@@ -231,7 +231,7 @@ mix-blend-mode: luminosity;
 
                         <div class="row my-5">
                             <div class=" col-lg-11 d-flex align-items-center ">
-                                <label for="file" class="input-preview w-100 h-50 form-input">
+                                <label for="file" class="input-preview w-100 h-25 form-input">
 
                                     {{ form.upload_file }}
 
@@ -248,11 +248,15 @@ mix-blend-mode: luminosity;
             <div class="container">
                 <div class="row mb-100 ">
                     <div class="col-lg-11 d-flex  justify-content-between">
-                        <div class="mr-auto">
-                            {{ form.is_agree }}<span
-                                class="ml-4">{% trans 'Согласие с политикой конфиденциальности' %}</span>
+                        <div class='mr-auto'>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных'%}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </div>

@@ -212,6 +212,67 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
+    <section class="section-slick container" style="margin-top: 100px">
+        <h3 class="pb-3">Новости </h3>
+
+        <div class="slick slick-news position-relative row">
+
+            {% for news in slick %}
+                <div class=" col h-100 " style="height: 445px !important;">
+
+                    <a class="  text-dark text-decoration-none h-100 w-100 " style="text-decoration: none"
+                       href="{{ news.url }}">
+                        <div class="news h-100">
+                            <div class="w-100"
+                                 style="height: 245px; background-image: url('{{ news.image.url }}'); background-position: center; background-size: cover; border-radius:  5px 5px 0 0 !important;">
+                            </div>
+                            <div class="mt-4 px-4">
+                                <div class="main-color  mb-2"
+                                     style="font-size: smaller">{{ news.material_name }}</div>
+                                <div class=""
+                                     style="font-size: 25px; line-height: 31px;">{{ news.title }}</div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+    </section>
+
+    {% if get_by_theme %}
+        <div class="font-weight-bold h4 mt-5">{% trans 'Читайте также' %}:</div>
+        <div class="row mb-5">
+            {% for topic in get_by_theme %}
+                <div class="col-lg-4 my-2">
+                    <div class="border h-100 rounded-bottom geometria">
+                        <a href="{{ topic.get_absolute_url }}"
+                           class="text-dark text-decoration-none h-100 w-100">
+                            <div class="w-100" style="height: 245px">
+
+                            </div>
+                            <img class="img-fluid rounded-top" src="{{ topic.main_image.url }}" alt=""
+                                 width="100%"
+                                 height="100%">
+                            <div class="mt-4 mb-5 px-4 h-100">
+                                <div class="main-color  mb-2"
+                                     style="font-size: smaller">{{ topic.material_name }}</div>
+                                <div class=""
+                                     style="font-size: 25px; line-height: 31px;">{{ topic.title }}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+
     <div id="Forma" class="container mt-100 mb-5">
         <div class="row">
             <div class="col-lg-4 img-fluid mb-5">
@@ -338,6 +399,44 @@ mix-blend-mode: luminosity;
 
             $('.btn-toggle').click(function () {
                 $(this).find("i").toggleClass("bi-chevron-down bi-chevron-up")
+            });
+
+            $('.slick-news').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
             });
         })
 

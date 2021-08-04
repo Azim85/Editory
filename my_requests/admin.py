@@ -3,7 +3,7 @@ from .models import (
     ResearchGrant,
     PublicationToScopus,
     OrderReviewForDissertation,
-    GetPatent,
+    
     OrganizeResearches,
     PublicationToMagazines,
     Consultation,
@@ -14,12 +14,16 @@ from .models import (
     Grants,
     Language,
     Translation,
-    ResearchPlatformsContext
+    ResearchPlatformsContext,
+    GetPatent,
+    GetGrant,
+    Baks,
+    Scopus
 )
 
 
 class GrantsAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'theme']
+    list_display = ['first_name']
 
 
 class TranslationAdmin(admin.ModelAdmin):
@@ -41,11 +45,16 @@ admin.site.register(PublicationToScopus)
 admin.site.register(OrderReviewForDissertation)
 admin.site.register(GetPatent)
 admin.site.register(OrganizeResearches, OrganizeResearchesAdmin)
+
 admin.site.register(PublicationToMagazines)
 admin.site.register(Consultation)
 admin.site.register(ApplicationForFreeConsultation)
 admin.site.register(Proofreading, ProofreadingAdmin)
 admin.site.register(PeerReview)
 admin.site.register(OrganizeConferences)
-admin.site.register(Grants, GrantsAdmin)
 admin.site.register(Translation, TranslationAdmin)
+
+
+admin.site.register(GetGrant, GrantsAdmin)
+admin.site.register(Baks)
+admin.site.register(Scopus)

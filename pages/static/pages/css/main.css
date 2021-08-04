@@ -270,6 +270,9 @@ html {
         line-height: 117.3%;
         font-family: Geometria !important
     }
+    .wrapper-content{
+        margin-top: 80px !important;
+    }
 
     .footer-end {
         -ms-flex-pack: start !important;
@@ -320,4 +323,8 @@ html {
 .academ:hover, .crossref:hover, .elsavier:hover, .greenm:hover, .ireg:hover, .qswur:hover, .springer:hover, .wur:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0)
+}
+
+.vh100{
+    height: 100vh !important;
 }
