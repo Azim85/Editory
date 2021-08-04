@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
-from pages.models import TopResearches
+from pages.models import TopResearches, WebinarsUrl1, WebinarsUrl2
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
                     PeerReviewForm, OrganizeConferencesForm, BaksForm, TranslationForm, PatentsForm, GrantsForm,  ScopusesForm)
 from .models import Translation
@@ -51,12 +51,14 @@ class TopResearchess(TemplateView):
 class WebinarsView(TemplateView):
     template_name = 'webinars.html'
 
+
     def get_context_data(self, **kwargs):
         context = super(WebinarsView, self).get_context_data(**kwargs)
         text = WebinarsModel.objects.first()
         context['webinar'] = WebinarsForm(instance=text)
         context['text'] = text
-
+        context['url1'] = WebinarsUrl1.objects.all()
+        context['url2'] = WebinarsUrl2.objects.all()
         return context
 
 
