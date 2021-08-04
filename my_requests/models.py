@@ -278,15 +278,21 @@ RESEARCH_AREA = (
     ('TEXT', 'TEXT'),
 )
 
+LANG = (
+    ('English', 'English'),
+    ('Russian', 'Russian'),
+    ('Uzbek', 'Uzbek')
+)
 
+# updated
 class Translation(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     word_amount = models.IntegerField()
-    language = models.CharField(max_length=100)
+    language = models.CharField(max_length=100, choices=LANG)
     research_area = models.CharField(max_length=100, choices=RESEARCH_AREA)
-    extra = models.CharField(max_length=100, choices=RESEARCH_AREA)
-    comment = models.TextField()
+    comment = models.TextField(blank=True)
     file = models.FileField(upload_to='files/')
+    char_amount = models.IntegerField(default=0)
     is_agree = models.BooleanField(default=False)
 
     def __str__(self):
@@ -303,10 +309,6 @@ DEGREE = (
     ('Доктор философии', 'Доктор философии PhD'),
     ('Хабилитированный доктор', 'Хабилитированный доктор (Dr. habil.)'),
 )
-
-
-
-
 
 
 class ApplicationForFreeConsultation(models.Model):
@@ -376,3 +378,7 @@ class PeerReview(models.Model):
     # class Meta:
     #     verbose_name = 'Заказ рецензии на диссертацию'
     #     verbose_name_plural = 'Заказ рецензии на диссертацию'
+
+
+class TranslationCostModel(models.Model):
+    cost = models.DecimalField(max_digits=10, decimal_places=2, default=0)

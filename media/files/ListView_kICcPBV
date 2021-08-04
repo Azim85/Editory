@@ -1,0 +1,47 @@
+ListView 
+
+urls.py
+
+from .views import NewsByCategory 
+
+path('', NewsHome.as_view(), name='home'),
+path('category/<int:category_id>/', NewsByCategory.as_view(), name='by_category'),
+
+
+views.py
+
+from .models import News, Category
+from django.views.generic import ListView
+
+
+class NewsHome(ListView):
+    model = News
+    context_object_name = 'news' #default returns object_list  👉️object_list = News.objects.all()
+
+    def get_context_data(self, **kwargs):                  # using extra context
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'News'
+        return context
+
+    def get_queryset(self): #filtering object list
+        return News.objects.filter(category=1)
+        
+        
+class NewsByCategory(ListView):
+    model = News
+    context_object_name = 'news'
+    allow_empty = False  #if not such category returns 404
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = Category.objects.get(id = self.kwargs['category_id'])
+        return context
+
+    def get_queryset(self):
+        return News.objects.filter(category_id = self.kwargs['category_id'])
+        
+
+
+
+in default searches for template (<app_name>/<model_name>_list.html)        
+

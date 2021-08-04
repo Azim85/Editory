@@ -230,7 +230,7 @@ mix-blend-mode: luminosity;
                                             <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                         </form>
                                     </div>
-                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
+                                    <!-- <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a> -->
                                 </div>
                             </div>
                             
@@ -431,8 +431,8 @@ mix-blend-mode: luminosity;
                                 {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных.' %}</span>
                         </label></div>
                 <small class="text-danger ml-5">{{ form.is_agree.errors }}</small>
-                <div class=" col-lg-3">
-                    <button type="submit" class="btn btn-primary w-100">{% trans 'Отправить работу' %}</button>
+                <div class=" col-lg-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary ">{% trans 'Отправить работу' %}</button>
                 </div>
                 
             </div>
