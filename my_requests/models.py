@@ -25,6 +25,7 @@ class ResearchGrant(models.Model):
         verbose_name = 'Research Grant'
         verbose_name_plural = 'Research Grants'
 
+
 # updated
 class GetPatent(models.Model):
     last_name = models.CharField(max_length=255, null=True)
@@ -255,7 +256,8 @@ class Consultation(models.Model):
     def __str__(self):
         return self.first_name
 
-#todo tugadi
+
+# todo tugadi
 class Language(models.Model):
     first_name = models.CharField(max_length=100, null=True)
     last_name = models.CharField(max_length=100, blank=True)
@@ -338,13 +340,20 @@ class ApplicationForFreeConsultation(models.Model):
         verbose_name_plural = 'Participation in Conference'
 
 
+LANGUAGE = (
+    ('English', 'English'),
+    ('Русский', 'Русский'),
+    ("O'zbekcha", "O'zbekcha"),
+)
+
+
 class Proofreading(models.Model):
     author = models.CharField(max_length=100)
     material_name = models.CharField(max_length=255)
     research_area = models.CharField(max_length=255)
-    choose = models.CharField(max_length=100, choices=TOPICS)
+    choose = models.CharField(max_length=100)
     word_count = models.CharField(max_length=100)
-    language_editing = models.CharField(max_length=50)
+    language_editing = models.CharField(max_length=50, choices=LANGUAGE)
     certificate = models.TextField()
     comment = models.TextField(blank=True)
     upload_file = models.FileField(upload_to='files/')
@@ -380,5 +389,12 @@ class PeerReview(models.Model):
     #     verbose_name_plural = 'Заказ рецензии на диссертацию'
 
 
+
 class TranslationCostModel(models.Model):
     cost = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+class ResearchPlatformsContext(models.Model):
+    name = models.CharField(max_length=100)
+    context = models.TextField()
+    link = models.CharField(max_length=255)
+

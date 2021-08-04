@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('setpage', '0009_createconferencemodel'),
+        ('setpage', '0008_translationmodel'),
     ]
 
     operations = [

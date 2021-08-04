@@ -8,22 +8,22 @@
 
 {% block content %}
 
-   <div class="fixed-top" style="top:137px; z-index: 1000" >
-{% if messages %}
-    {% for message in messages %}
-    {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endif %}
+    <div class="fixed-top" style="top:137px; z-index: 1000">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% endif %}
 
-    {% endfor %}
-{% endif %}
-</div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image51.jpg' %});
@@ -36,7 +36,7 @@ mix-blend-mode: luminosity;
                 <div class="row padding_me">
                     <div class="col-lg-9">
                         <div class="text-white row">
-                            <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold text1-text">{{text.text1}}
+                            <div class="col-lg-12 h1 pb-4 font-65 font-weight-bold text1-text">{{ text.text1 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text1-btn">Edit</button>
                                 {% endif %}
@@ -45,14 +45,14 @@ mix-blend-mode: luminosity;
                             <div class="text1-form" style="display: none;">
                                 <form action="{% url 'setpage:conference-change' %}" method="POST">
                                     {% csrf_token %}
-                                    <span>en:{{con.text1_en}}</span>
-                                    <span>ru:{{con.text1_ru}}</span>
-                                    <span>uz:{{con.text1_uz}}</span>
+                                    <span>en:{{ con.text1_en }}</span>
+                                    <span>ru:{{ con.text1_ru }}</span>
+                                    <span>uz:{{ con.text1_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
 
-                            <div class="col-lg-8 pb-4 text2-text">{{text.text2}}
+                            <div class="col-lg-8 pb-4 text2-text">{{ text.text2 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text2-btn">Edit</button>
                                 {% endif %}
@@ -61,9 +61,9 @@ mix-blend-mode: luminosity;
                             <div class="text2-form" style="display: none;">
                                 <form action="{% url 'setpage:conference-change' %}" method="POST">
                                     {% csrf_token %}
-                                    <span>en:{{con.text2_en}}</span>
-                                    <span>ru:{{con.text2_ru}}</span>
-                                    <span>uz:{{con.text2_uz}}</span>
+                                    <span>en:{{ con.text2_en }}</span>
+                                    <span>ru:{{ con.text2_ru }}</span>
+                                    <span>uz:{{ con.text2_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
@@ -84,6 +84,15 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
+    <div class="container">
+        <div class="row mt-100 mb-100">
+            <div class="col-lg-9">
+                {{ text.text3|safe }}
+            </div>
+        </div>
+    </div>
+
+
     <form id="Forma" class="mt-100" method="post" action="{% url 'requests:creat-conferences' %}?#Forma"
           enctype="multipart/form-data">
         {% csrf_token %}
@@ -91,7 +100,7 @@ mix-blend-mode: luminosity;
             <div class=" container   rounded-20">
                 <div>
 
-                    <h2 class=" mb-5">{% trans 'Организация конференции' %} <br>{% trans 'в Узбекистане' %}</h2>
+                    <h2 class=" mb-5">{{ text.text4 }}</h2>
 
                 </div>
                 <div class="tab-content" id="nav-tabContent">
@@ -172,8 +181,8 @@ mix-blend-mode: luminosity;
 
                             <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
                             <div class="col-lg-9 d-flex pb-3">
-                                {{form.comment}}
-                                <small class="text-danger">{{form.comment.errors}}</small>
+                                {{ form.comment }}
+                                <small class="text-danger">{{ form.comment.errors }}</small>
                             </div>
                         </div>
 
@@ -183,21 +192,22 @@ mix-blend-mode: luminosity;
                 </div>
             </div>
             <div class="container">
-            <div class="row mb-100">
-                <div class="col-lg-11 d-flex  justify-content-between">
-                <div class='mr-auto'>
-                    <label for="id_is_agree" style="cursor: pointer;">
-                        {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                    </label>
-                </div>
-                    <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
-                </div>
-                <div class="col-12">
-                    <small class="text-danger">{{ form.is_agree.errors }}</small>
+                <div class="row mb-100">
+                    <div class="col-lg-11 d-flex  justify-content-between">
+                        <div class='mr-auto'>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
+
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
+                    </div>
                 </div>
             </div>
-                </div>
-        </div>
     </form>
 
 
@@ -205,7 +215,7 @@ mix-blend-mode: luminosity;
 
 
 {% block js %}
-<script src="{% static 'pages/js/create_conference.js' %}"></script>
+    <script src="{% static 'pages/js/create_conference.js' %}"></script>
     <script>
         $(document).ready(function () {
             let validated = document.getElementById('flag')

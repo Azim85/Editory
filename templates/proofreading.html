@@ -247,82 +247,7 @@ mix-blend-mode: luminosity;
          style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
         <div class="container pb-100 pt-100 text-white ">
             <div class="font-22 section_2">
-                <ul>
-                    <li class="text9-text">{{text.text9}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text9-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    <div class="text9-form" style="display: none;">
-                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{proof.text9_en}}</span>
-                            <span>ru:{{proof.text9_ru}}</span>
-                            <span>uz:{{proof.text9_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <li class="text10-text">{{text.text10}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text10-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    <div class="text10-form" style="display: none;">
-                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{proof.text10_en}}</span>
-                            <span>ru:{{proof.text10_ru}}</span>
-                            <span>uz:{{proof.text10_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <li class="text11-text">{{text.text11}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    <div class="text11-form" style="display: none;">
-                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{proof.text11_en}}</span>
-                            <span>ru:{{proof.text11_ru}}</span>
-                            <span>uz:{{proof.text11_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <li class="text12-text">{{text.text12}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text12-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    <div class="text12-form" style="display: none;">
-                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{proof.text12_en}}</span>
-                            <span>ru:{{proof.text12_ru}}</span>
-                            <span>uz:{{proof.text12_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <li class="text13-text">{{text.text13}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text13-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    <div class="text13-form" style="display: none;">
-                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{proof.text13_en}}</span>
-                            <span>ru:{{proof.text13_ru}}</span>
-                            <span>uz:{{proof.text13_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                </ul>
+            {{text.text9|safe }}
             </div>
         </div>
     </div>
@@ -369,7 +294,7 @@ mix-blend-mode: luminosity;
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row" style="display: none">
                         <div class="offset-lg-4 col-sm-6 d-flex flex-column">
                             {{ form.choose }}
                             <small class="text-danger">{{ form.phone.errors }}</small>
@@ -460,6 +385,7 @@ mix-blend-mode: luminosity;
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.jpg' %})')
                 $('.section_2').css('background', '#40545C')
+                $('#id_choose').val('Рецензирование')
             }
         else
             if ({{ raqam }} == 2
@@ -467,6 +393,7 @@ mix-blend-mode: luminosity;
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.jpg' %})')
                 $('.section_2').css('background', '#2A819E')
+                $('#id_choose').val('Методология исследования')
             }
         else
             if ({{ raqam }} == 3
@@ -474,6 +401,7 @@ mix-blend-mode: luminosity;
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.jpg' %})')
                 $('.section_2').css('background', '#CE935E')
+                $('#id_choose').val('Статистический анализ')
             }
         else
             if ({{ raqam }} == 3
@@ -481,6 +409,7 @@ mix-blend-mode: luminosity;
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
                 $('.section_2').css('background', '#CE935E')
+                $('#id_choose').val('Корректура и редактирование')
             }
         })
 
@@ -488,18 +417,22 @@ mix-blend-mode: luminosity;
         $('#nav-home-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.jpg' %})')
             $('.section_2').css('background', '#40545C')
+            $('#id_choose').val('Рецензирование')
         })
         $('#nav-profile-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.jpg' %})')
             $('.section_2').css('background', '#2A819E')
+            $('#id_choose').val('Методология исследования')
         })
         $('#nav-contact-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.jpg' %})')
             $('.section_2').css('background', '#CE935E')
+            $('#id_choose').val('Статистический анализ')
         })
         $('#nav-fouth-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
             $('.section_2').css('background', '#CE935E')
+            $('#id_choose').val('Корректура и редактирование')
         })
     </script>
 

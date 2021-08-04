@@ -8,23 +8,23 @@
 
 {% block content %}
 
-  <div class="fixed-top" style="top:137px; z-index: 1000" >
-{% if messages %}
-    {% for message in messages %}
-    {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endif %}
+    <div class="fixed-top" style="top:137px; z-index: 1000">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% endif %}
 
-    {% endfor %}
-{% endif %}
-</div>
-    
+            {% endfor %}
+        {% endif %}
+    </div>
+
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image50.jpg' %});
             background-size: cover;">
@@ -36,7 +36,7 @@ mix-blend-mode: luminosity;
                     <div class="col-lg-6 pr-0 w-100">
                         <div class="text-white">
 
-                            <div class="h1 pb-4 font-65 font-weight-bold text1-text">{{text.text1}}
+                            <div class="h1 pb-4 font-65 font-weight-bold text1-text">{{ text.text1 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text1-btn">Edit</button>
                                 {% endif %}
@@ -44,15 +44,15 @@ mix-blend-mode: luminosity;
 
                             <div class="text1-form w-100" style="display: none;">
                                 <form action="{% url 'setpage:con-change' %}" method="POST">
-                                    {% csrf_token %}                 
-                                    <span>en:{{con.text1_en}}</span>
-                                    <span>ru:{{con.text1_ru}}</span>
-                                    <span>uz:{{con.text1_uz}}</span>
+                                    {% csrf_token %}
+                                    <span>en:{{ con.text1_en }}</span>
+                                    <span>ru:{{ con.text1_ru }}</span>
+                                    <span>uz:{{ con.text1_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
 
-                            <div class="pb-4 text2-text">{{text.text2}}
+                            <div class="pb-4 text2-text">{{ text.text2 }}
                                 {% if request.user.is_superuser %}
                                     <button type="button" class="btn btn-secondary text2-btn">Edit</button>
                                 {% endif %}
@@ -61,9 +61,9 @@ mix-blend-mode: luminosity;
                             <div class="text2-form" style="display: none;">
                                 <form action="{% url 'setpage:con-change' %}" method="POST">
                                     {% csrf_token %}
-                                    <span>en:{{con.text2_en}}</span>
-                                    <span>ru:{{con.text2_ru}}</span>
-                                    <span>uz:{{con.text2_uz}}</span>
+                                    <span>en:{{ con.text2_en }}</span>
+                                    <span>ru:{{ con.text2_ru }}</span>
+                                    <span>uz:{{ con.text2_uz }}</span>
                                     <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                                 </form>
                             </div>
@@ -81,275 +81,23 @@ mix-blend-mode: luminosity;
 
         </div>
     </div>
-    
+
 
     <div class="container mt-100 mb-100 w-100">
         <div class="row font-22 mb-5 w-100">
             <div class="col-lg-9 ">
-
-                <p class="text3-text">{{text.text3}}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text3-btn">Edit</button>
-                    {% endif %}
-                </p>
-
-                <div class="text3-form" style="display: none;">
-                    <form action="{% url 'setpage:con-change' %}" method="POST">
-                        {% csrf_token %}
-                        <span>en:{{con.text3_en}}</span>
-                        <span>ru:{{con.text3_ru}}</span>
-                        <span>uz:{{con.text3_uz}}</span>
-                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                    </form>
-                </div>
-
-                <div class="pb-3">
-                    <a href="{{text.text4_link}}" target="_blank" rel="noopener" class="text4-text">{{text.text4}}</a>
-                   
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
-                    {% endif %}
-
-                    <div class="text4-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text4}}</span>
-                            <span>url:{{con.text4_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <span class="text5-text">{{text.text5}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text5-btn">Edit</button>
-                        {% endif %}
-                    </span>
-
-                    <div class="text5-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text5_en}}</span>
-                            <span>ru:{{con.text5_ru}}</span>
-                            <span>uz:{{con.text5_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>    
-
-                <div class="pb-3">
-                    <a href="{{text.text6_link}}" target="_blank" rel="noopener" class="text6-text">{{text.text6}}</a>
-                
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text6-btn">Edit</button>
-                    {% endif %}
-                
-                    <div class="text6-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text6}}</span>
-                            <span>url:{{con.text6_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                
-                    <span class="text7-text">{{text.text7}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text7-btn">Edit</button>
-                        {% endif %}
-                    </span>
-                
-                    <div class="text7-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text7_en}}</span>
-                            <span>ru:{{con.text7_ru}}</span>
-                            <span>uz:{{con.text7_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>
-
-                <div class="pb-3">
-                    <a href="{{text.text8_link}}" target="_blank" rel="noopener" class="text8-text">{{text.text8}}</a>
-                
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
-                    {% endif %}
-                
-                    <div class="text8-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text8}}</span>
-                            <span>url:{{con.text8_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                
-                    <span class="text9-text">{{text.text9}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text9-btn">Edit</button>
-                        {% endif %}
-                    </span>
-                
-                    <div class="text9-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text9_en}}</span>
-                            <span>ru:{{con.text9_ru}}</span>
-                            <span>uz:{{con.text9_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>
-
-                <div class="pb-3">
-                    <a href="{{text.text10_link}}" target="_blank" rel="noopener" class="text10-text">{{text.text10}}</a>
-                
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text10-btn">Edit</button>
-                    {% endif %}
-                
-                    <div class="text10-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text10}}</span>
-                            <span>url:{{con.text10_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                
-                    <span class="text11-text">{{text.text11}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text11-btn">Edit</button>
-                        {% endif %}
-                    </span>
-                
-                    <div class="text11-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text11_en}}</span>
-                            <span>ru:{{con.text11_ru}}</span>
-                            <span>uz:{{con.text11_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>
-
-                <div class="pb-3">
-                    <a href="{{text.text12_link}}" target="_blank" rel="noopener" class="text12-text">{{text.text12}}</a>
-                
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text12-btn">Edit</button>
-                    {% endif %}
-                
-                    <div class="text12-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text12}}</span>
-                            <span>url:{{con.text12_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                
-                    <span class="text13-text">{{text.text13}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text13-btn">Edit</button>
-                        {% endif %}
-                    </span>
-                
-                    <div class="text13-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text13_en}}</span>
-                            <span>ru:{{con.text13_ru}}</span>
-                            <span>uz:{{con.text13_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>
-
-                <div class="pb-3">
-                    <a href="{{text.text14_link}}" target="_blank" rel="noopener" class="text14-text">{{text.text14}}</a>
-                
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text14-btn">Edit</button>
-                    {% endif %}
-                
-                    <div class="text14-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>link_name:{{con.text14}}</span>
-                            <span>url:{{con.text14_link}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                
-                    <span class="text15-text">{{text.text15}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text15-btn">Edit</button>
-                        {% endif %}
-                    </span>
-                
-                    <div class="text15-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text15_en}}</span>
-                            <span>ru:{{con.text15_ru}}</span>
-                            <span>uz:{{con.text15_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                <div>
-            
-                
-
-                <p>Помимо этих, в мире ежегодно проходит огромное множество конференций в онлайн- и оффлайн-форматах.
-                    Editory готовы организовать ваше участие в любых мероприятиях независимо от места и цели.</p>
-                <p>Уже знаете, где хотите участвовать? Заполните, пожалуйста, следующую анкету:</p>
+                {{ text.text3|safe }}
 
 
             </div>
-            </div></div></div></div></div></div></div></div></div></div></div></div></div> <div class="row  ">
-            
-                <div class="p-5 rounded-20" style="background-color: #DDE5E9; padding-right: 200px;">
-                    <p class="text16-text">{{text.text16}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text16-btn">Edit</button>
-                        {% endif %}
-                    </p>
-            
-                    <div class="text16-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text16_en}}</span>
-                            <span>ru:{{con.text16_ru}}</span>
-                            <span>uz:{{con.text16_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-            
-                    <p class="font-weight-bold text17-text">{{text.text17}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text17-btn">Edit</button>
-                        {% endif %}
-                    </p>
-            
-                    <div class="text17-form" style="display: none;">
-                        <form action="{% url 'setpage:con-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{con.text17_en}}</span>
-                            <span>ru:{{con.text17_ru}}</span>
-                            <span>uz:{{con.text17_uz}}</span>
 
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-            
-                </div>
-            </div>
- </div>
+
+
+
         </div>
-
+    <div class="p-5 rounded-25" style="background-color: #DDE5E9; padding-right: 200px;">
+                {{ text.text4|safe }}
+            </div>
     </div>
 
 
@@ -365,7 +113,7 @@ mix-blend-mode: luminosity;
             <div class="container   rounded-20">
                 <div>
 
-                    <h2 class=" mb-5">{% trans 'Заявка на участие' %} <br>{% trans 'в конференции' %}</h2>
+                    <h2 class=" mb-5">{{ text.text5|safe }}</h2>
 
                 </div>
                 <div class="tab-content" id="nav-tabContent">
@@ -522,7 +270,7 @@ mix-blend-mode: luminosity;
 
 
 {% block js %}
-    <script src="{% static 'pages/js/conferences.js' %}" ></script>
+    <script src="{% static 'pages/js/conferences.js' %}"></script>
     <script>
         $(document).ready(function () {
             let validated = document.getElementById('flag')
