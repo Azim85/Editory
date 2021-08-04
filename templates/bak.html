@@ -65,7 +65,7 @@ mix-blend-mode: luminosity;
 
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
-                                <a href="#Forma" type="submit" class="btn w-100  self-align-left" style="background-color: #CE935E"
+                                <a href="#Forma" type="submit" class="btn   self-align-left" style="background-color: #CE935E"
                                 >{% trans 'Заказать консультацию' %}</a>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ mix-blend-mode: luminosity;
             </div>
         </div>
     </div>
-<div class="wrapper" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
+<div class="wrapper pb-100" style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
 
     
     <div class="row mx-0 pt-100">
@@ -110,7 +110,7 @@ mix-blend-mode: luminosity;
         <div class="row row-cols-md-3 row-cols-1 mt-100 ">
             <div class="col text-center">
                 <div class="text4-text">
-                    <img src="{{text.text4.url}}" width="100" height="100" alt="" class="">
+                    <img class="img-fluid" src="{{text.text4.url}}" width="100" height="100" alt="" class="">
                     {% if request.user.is_superuser %}
                         <button type="button" class="btn btn-secondary text4-btn">Edit</button>
                     {% endif %}
@@ -144,7 +144,7 @@ mix-blend-mode: luminosity;
             </div>
             <div class="col text-center">
                 <div class="text6-text">
-                    <img src="{{text.text6.url}}" width="100" height="100" alt="" class="">
+                    <img class="img-fluid" src="{{text.text6.url}}" width="100" height="100" alt="" class="">
                     {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text6-btn">Edit</button>
                     {% endif %}
@@ -178,7 +178,7 @@ mix-blend-mode: luminosity;
             </div>
             <div class="col text-center">
                 <div class="text8-text">
-                    <img src="{{text.text8.url}}" width="100" height="100" alt="" class="">
+                    <img class="img-fluid" src="{{text.text8.url}}" width="100" height="100" alt="" class="">
                     {% if request.user.is_superuser %}
                     <button type="button" class="btn btn-secondary text8-btn">Edit</button>
                     {% endif %}
@@ -213,119 +213,7 @@ mix-blend-mode: luminosity;
 
     <div class="container padding_bak py-5   mt-5" style="border: 2px solid #2A819E; border-radius:15px;" >
         <div>
-            <p style="font-size: 35px;" class="text10-text">{{text.text10}}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text10-btn">Edit</button>
-                {% endif %}
-            </p>
-
-            <div class="text10-form" style="display: none;">
-                <form action="{% url 'setpage:bak-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{bak.text10_en}}</span>
-                    <span>ru:{{bak.text10_ru}}</span>
-                    <span>uz:{{bak.text10_uz}}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-                <ul>
-                    <li class="text11-text">{{text.text11}}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text11-btn">Edit</button>
-                        {% endif %}
-                    </li>
-
-                    <div class="text11-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text11_en}}</span>
-                            <span>ru:{{bak.text11_ru}}</span>
-                            <span>uz:{{bak.text11_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                    
-                    <li class="text12-text">{{text.text12}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text12-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    
-                    <div class="text12-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text12_en}}</span>
-                            <span>ru:{{bak.text12_ru}}</span>
-                            <span>uz:{{bak.text12_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                    
-                    <li class="text13-text">{{text.text13}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text13-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    
-                    <div class="text13-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text13_en}}</span>
-                            <span>ru:{{bak.text13_ru}}</span>
-                            <span>uz:{{bak.text13_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                    
-                    <li class="text14-text">{{text.text14}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text14-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    
-                    <div class="text14-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text14_en}}</span>
-                            <span>ru:{{bak.text14_ru}}</span>
-                            <span>uz:{{bak.text14_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
-                    <li class="text15-text">{{text.text15}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text15-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    
-                    <div class="text15-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text15_en}}</span>
-                            <span>ru:{{bak.text15_ru}}</span>
-                            <span>uz:{{bak.text15_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                    
-                    <li class="text16-text">{{text.text16}}
-                        {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text16-btn">Edit</button>
-                        {% endif %}
-                    </li>
-                    
-                    <div class="text16-form" style="display: none;">
-                        <form action="{% url 'setpage:bak-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{bak.text16_en}}</span>
-                            <span>ru:{{bak.text16_ru}}</span>
-                            <span>uz:{{bak.text16_uz}}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-                </ul>
+            {{ text.text10 }}
         </div>
     </div>
 </div>
@@ -333,7 +221,7 @@ mix-blend-mode: luminosity;
 </div>
 
 <div class="container mt-100 pb-100" id="Forma">
-    <p style="max-width: 635px;">{% trans 'Хотите опубликовать свой материал в журналах ВАК? Оставьте заявку — и наши консультанты свяжутся с вами в течение часа!' %}</p>
+    <p style="max-width: 635px;">{{ text.text10 }}</p>
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}#Forma">
         {% csrf_token %}
         <div class="row text-secondary">

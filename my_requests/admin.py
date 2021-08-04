@@ -13,7 +13,8 @@ from .models import (
     OrganizeConferences,
     Grants,
     Language,
-    Translation
+    Translation,
+    ResearchPlatformsContext
 )
 
 
@@ -25,16 +26,25 @@ class TranslationAdmin(admin.ModelAdmin):
     list_display = ['user', 'language']
 
 
+class OrganizeResearchesAdmin(admin.ModelAdmin):
+    list_display = ['last_name', 'first_name', 'select_topic']
+
+
+class ProofreadingAdmin(admin.ModelAdmin):
+    list_display = ['author', 'material_name', 'choose']
+
+
 admin.site.register(ResearchGrant)
+admin.site.register(ResearchPlatformsContext)
 admin.site.register(Language)
 admin.site.register(PublicationToScopus)
 admin.site.register(OrderReviewForDissertation)
 admin.site.register(GetPatent)
-admin.site.register(OrganizeResearches)
+admin.site.register(OrganizeResearches, OrganizeResearchesAdmin)
 admin.site.register(PublicationToMagazines)
 admin.site.register(Consultation)
 admin.site.register(ApplicationForFreeConsultation)
-admin.site.register(Proofreading)
+admin.site.register(Proofreading, ProofreadingAdmin)
 admin.site.register(PeerReview)
 admin.site.register(OrganizeConferences)
 admin.site.register(Grants, GrantsAdmin)

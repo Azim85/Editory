@@ -7,17 +7,16 @@ from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, Cre
 
 
 class AboutUsTranslation(TranslationOptions):
-    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9', 'text10', 'text11')
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9')
 
 
 class BakTranslation(TranslationOptions):
     fields = (
-    'text1', 'text2', 'text3', 'text5', 'text7', 'text9', 'text10', 'text11', 'text12', 'text13', 'text14', 'text15',
-    'text16',)
+    'text1', 'text2', 'text3', 'text5', 'text7', 'text9', 'text10', 'text11')
 
 
 class ConferencesTranslation(TranslationOptions):
-    fields = ('text1', 'text2', 'text3', 'text5', 'text7', 'text9', 'text11', 'text13', 'text15', 'text16', 'text17')
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5')
 
 
 class ContactTranslation(TranslationOptions):
@@ -25,7 +24,7 @@ class ContactTranslation(TranslationOptions):
 
 
 class CreateConferenceTranslation(TranslationOptions):
-    fields = ('text1', 'text2')
+    fields = ('text1', 'text2', 'text3', 'text4')
 
 
 class DesignTranslation(TranslationOptions):
@@ -33,22 +32,20 @@ class DesignTranslation(TranslationOptions):
 
 
 class GrantsTranslation(TranslationOptions):
-    fields = ('text1', 'text2')
+    fields = ('text1', 'text2', 'text3', 'text4')
 
 
 class PatentTranslation(TranslationOptions):
-    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9', 'text10', 'text11',)
+    fields = ('text1', 'text2', 'text3', 'text4')
 
 
 class ScopusTranslation(TranslationOptions):
     fields = (
-    'text1', 'text2', 'text5', 'text7', 'text9', 'text10', 'text11', 'text12', 'text13', 'text14', 'text15', 'text16',)
+    'text1', 'text2', 'text5', 'text7', 'text9', 'text10', 'text11')
 
 
 class ProofTranslation(TranslationOptions):
-    fields = (
-    'text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9', 'text10', 'text11', 'text12',
-    'text13')
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9')
 
 
 class LangTranslation(TranslationOptions):
@@ -80,7 +77,7 @@ translator.register(ResearchStrategyModel, ResearchStrategyTranslations)
 
 
 class TramslationsTranslations(TranslationOptions):
-    fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8')
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5')
 
 
 # translator.register(AboutUsModel, AboutUsTranslation)

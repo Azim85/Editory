@@ -5,7 +5,7 @@ from django.views.generic import TemplateView, View
 from pages.models import TopResearches
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm)
-from .models import Translation
+from .models import Translation, ResearchPlatformsContext
 from setpage.forms import WebinarsForm, TranslationsForm
 from setpage.models import WebinarsModel, TranslationModel
 
@@ -20,6 +20,7 @@ class Research(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Research, self).get_context_data(**kwargs)
+        context['text'] = ResearchPlatformsContext.objects.all()
         return context
 
 

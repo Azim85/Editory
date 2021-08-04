@@ -457,10 +457,7 @@ class ProofForm(forms.ModelForm):
             'text7_en': forms.TextInput(attrs={'class': 'form-control'}),
             'text8_en': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
             'text9_en': forms.TextInput(attrs={'class': 'form-control'}),
-            'text10_en': forms.TextInput(attrs={'class': 'form-control'}),
-            'text11_en': forms.TextInput(attrs={'class': 'form-control'}),
-            'text12_en': forms.TextInput(attrs={'class': 'form-control'}),
-            'text13_en': forms.TextInput(attrs={'class': 'form-control'}),
+
 
             'text1_ru': forms.TextInput(attrs={'class': 'form-control'}),
             'text2_ru': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
@@ -471,10 +468,7 @@ class ProofForm(forms.ModelForm):
             'text7_ru': forms.TextInput(attrs={'class': 'form-control'}),
             'text8_ru': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
             'text9_ru': forms.TextInput(attrs={'class': 'form-control'}),
-            'text10_ru': forms.TextInput(attrs={'class': 'form-control'}),
-            'text11_ru': forms.TextInput(attrs={'class': 'form-control'}),
-            'text12_ru': forms.TextInput(attrs={'class': 'form-control'}),
-            'text13_ru': forms.TextInput(attrs={'class': 'form-control'}),
+
 
             'text1_uz': forms.TextInput(attrs={'class': 'form-control'}),
             'text2_uz': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
@@ -485,10 +479,7 @@ class ProofForm(forms.ModelForm):
             'text7_uz': forms.TextInput(attrs={'class': 'form-control'}),
             'text8_uz': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
             'text9_uz': forms.TextInput(attrs={'class': 'form-control'}),
-            'text10_uz': forms.TextInput(attrs={'class': 'form-control'}),
-            'text11_uz': forms.TextInput(attrs={'class': 'form-control'}),
-            'text12_uz': forms.TextInput(attrs={'class': 'form-control'}),
-            'text13_uz': forms.TextInput(attrs={'class': 'form-control'}),
+
         }
 
 
