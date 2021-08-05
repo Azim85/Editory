@@ -18,7 +18,8 @@ from .models import (
     GetPatent,
     GetGrant,
     Baks,
-    Scopus
+    Scopus,
+    TranslationCostModel
 )
 
 
@@ -58,3 +59,4 @@ admin.site.register(Translation, TranslationAdmin)
 admin.site.register(GetGrant, GrantsAdmin)
 admin.site.register(Baks)
 admin.site.register(Scopus)
+admin.site.register(TranslationCostModel)

@@ -23,7 +23,7 @@
     {% endif %}
 
     {% if request.user.is_authenticated %}
-        <div class="w-100 h-100 mx-0 px-0 mt-5" style="min-height: 100vh;">
+        <div class="w-100 h-100 mx-0 px-0 mt-5 pt-5" style="min-height: 100vh;">
             <div class="container">
                 {% if request.user.is_staff %}
                     <div class="text-right"><a class="btn btn-info mb-3 " href="/admin/">Admin</a></div>
@@ -155,7 +155,7 @@
                             <th class="text-center">{% trans 'Сумма' %}</th>
                             <th class="text-center">{% trans 'Способ оплаты' %}</th>
                             <th class="text-center">{% trans 'Статус' %}</th>
-                            <th class="text-center">{% trans 'принимать' %}</th>
+                            <!-- <th class="text-center">{% trans 'принимать' %}</th> -->
                         </tr>
                         </thead>
                         <tbody>
@@ -180,13 +180,13 @@
                                 {% endif %}
 
                                 {% if order.payment_type == 1 %}
-                                    <td class="text-center"><a href="{% url 'users:change_status_cash' order.id %}"
+                                    <!-- <td class="text-center"><a href="{% url 'users:change_status_cash' order.id %}"
                                                                class="btn {% if order.payment_status == 3 %} disabled btn-secondary {% else %} btn-primary{% endif %}">{% trans 'принимать как оплачено' %}</a>
-                                    </td>
+                                    </td> -->
                                 {% else %}
-                                    <td class="text-center"><a href="{% url 'users:change_status' order.id %}"
+                                    <!-- <td class="text-center"><a href="{% url 'users:change_status' order.id %}"
                                                                class="btn {% if order.payment_status == 1 or order.payment_status == 3 %} disabled btn-secondary {% else %} btn-primary{% endif %}">{% trans 'принимать' %}</a>
-                                    </td>
+                                    </td> -->
                                 {% endif %}
 
                             </tr>
@@ -213,38 +213,8 @@
 
                                 <td class="text-center">
                                     {% if order.payment_status == 1 %}
-                                        {% if order.payment_type == 4 %}
-                                            <form method="POST" action="https://checkout.paycom.uz">
-                                                <!-- Идентификатор WEB Кассы -->
-                                                <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b" />
-                                            
-                                                <!-- Сумма платежа в тийинах -->
-                                                <input type="hidden" name="amount" value="{{ order.get_payme_amount }}" />
-                                            
-                                                <!-- Поля Объекта Account -->
-                                                <input type="hidden" name="account[order_id]" value="{{ order.id }}" />
-                                            
-                                                <input type="hidden" name="callback" value="https://editory.org/en/auth/dashboard/?success=success" />
-                                            
-                                                <button type="submit" class="btn btn-outline-success" style="width: 300px;">{% trans 'Оплатить с помощью' %}<img
-                                                        src="{% static 'pages/images/payme.png' %}" class="ml-3" alt="">
-                                                </button>
-                                            </form>
-                                            {% elif order.payment_type == 3 %}
-                                            <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET">
-                                                <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
-                                                <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
-                                                <input type="hidden" name="description" value="Payment for OOO Editory">
-                                                <input type="hidden" name="amount" value="{{ order.get_payme_amount }}">
-                                                <input type="hidden" name="order_id" value="{{ order.id }}">
-                                                <button type="submit" data-id="{{ order.id }}" class="btn btn-outline-warning check_transaction">{% trans 'Оплатитьс помощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
-                                                </button>
-                                            
-                                            </form>
-                                        {% elif order.payment_type == 1 %}
+                                        {% if order.payment_type == 1 %}
                                             <p>Наличные</p>
-
-
                                         {% endif %}
                                     {% elif order.payment_status == 3 or order.payment_status == 0 %}
                                         {% if order.payment_type == 4 %}

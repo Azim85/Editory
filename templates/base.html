@@ -23,6 +23,12 @@
             animation-duration: 7s;
             animation-timing-function: cubic-bezier(.075, .82, .165, 1)
         }
+        a{
+            cursor: pointer;
+        }
+        a:hover{
+            cursor: pointer;
+        }
 
         @keyframes message {
             from {
@@ -49,7 +55,7 @@
 </div>
 
 
-<div class="wrapper-content" style="margin-top: 137px">
+<div class="wrapper-content" style="margin-top: 137px; ">
     {% block content %}
 
     {% endblock content %}
@@ -63,7 +69,7 @@
 <script src="{% static 'pages/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
-{% block js %}{% endblock %}
+{% block js %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
     $(document).ready(function () {
@@ -103,8 +109,8 @@
     })
 
 
-</script>
-<script>
+
+
     //Get the button
     var mybutton = document.getElementById("myBtn");
 
@@ -133,7 +139,6 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-</script>
 
 
 <script>
@@ -143,9 +148,8 @@
     })
 
 </script>
-{#{% block js %}{% endblock %}#}
-{#=======#}
-{#>>>>>>> 4ada3b3ebc34de37a41fafa5f22c23a97f8c9801#}
+{% endblock %}
+
 
 </body>
 

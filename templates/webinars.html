@@ -5,6 +5,8 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/webinars.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick-theme.css' %}"/>
 {% endblock %}
 {% block content %}
 
@@ -47,60 +49,129 @@
                                                          class="img-fluid"></div>
         </div>
 
-        <div class="row next ">
-            <div class="col-md-5  my-2">
-                <div class="elem">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1xJzA26XZbU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+        <div class="px-3 section row next">
+
+            <div class="col-md-10 ">
+                <div class="slick slick-slide1 row" dir="rtl">
+                    {% for src in url1 %}
+                        <div class="iframe1">
+                            <iframe width="100%" height="100%" src="{{ src }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    {% endfor %}
                 </div>
+
             </div>
-            <div class="col-md-5 my-2">
-                <div class="elem">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yePqrhRrR2s"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-md-2 ">
-                <div class="num">
-                    <h1>5</h1>
-                    <p>video</p>
-                </div>
+
+            <div class="col-md-2 d-none  d-md-flex   align-item-center">
+                <a class="next1" aria-label="Previous">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
             </div>
         </div>
 
-        <div class="row next ">
-            <div class="col-md-2">
-                <div class="num">
-                    <h1>8</h1>
-                    <p>video</p>
-                </div>
+
+        <div class="px-3 px-md-0 section row next mb-5">
+
+            <div class="col-md-2 d-none  d-md-flex align-item-center">
+                <a class="prev1" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
             </div>
-            <div class="col-md-5 my-2">
-                <div class="elem">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FhhdfihD0_k"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+
+            <div class="col-md-10 ">
+                <div class="slick slick-slide2 row">
+
+                    {% for src in url2 %}
+                        <div class="iframe2">
+                            <iframe width="100%" height="100%" src="{{ src }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    {% endfor %}
                 </div>
+
             </div>
-            <div class="col-md-5 my-2">
-                <div class="elem">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DLl4jYXSUB0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
+
+
         </div>
-        <div class="mt-5"></div>
+
     </div>
+
 
 {% endblock content %}
 
 {% block js %}
+    <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/cb3bbb09f5.js" crossorigin="anonymous"></script>
     <script src="{% static 'pages/js/webinars.js' %}"></script>
+
+    <script>
+
+        $(".next1").click(function () {
+            $(".slick-slide1 .slick-next").click()
+        })
+
+        $(".prev1").click(function () {
+            $(".slick-slide2 .slick-next").click()
+        })
+
+        $('.slick-slide1').slick({
+            infinite: true,
+            speed: 300,
+            rtl: true,
+            arrows: true,
+            startMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1.2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1.1,
+                        slidesToScroll: 1
+                    }
+                },
+            ]
+        });
+
+        $('.slick-slide2').slick({
+            infinite: true,
+            speed: 300,
+            arrows: true,
+            startMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            centerPadding: '40px',
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1.2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1.1,
+                        slidesToScroll: 1
+                    }
+                },
+            ]
+        });
+    </script>
+
 {% endblock %}

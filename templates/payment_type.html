@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load helpers %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+   <div class="container pt-5" style="min-height: 60vh;">
+       <div class="row ">
+           <h1 class="text-center w-100 border-bottom">Payment</h1>
+           <div class="col-lg-6">
+               <div class="row">
+                   <div class="col-6">
+                        <p class="mb-0">client:</p>
+                   </div>
+                   <div class="col-6">
+                        <p class="mb-0">{{order.user.first_name}}</p>
+                   </div>
+               </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-0">Phone number:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-0">{{order.user.phone}}</p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-0">Payment type:</p>
+                    </div>
+                    <div class="col-6">
+                        {% if order.payment_type == 3 %}
+                            <p class="mb-0">Appelsin</p>
+                        {% endif %}
+                        {% if order.payment_type == 4 %}
+                            <p class="mb-0">Payme</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-0">Service:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-0">{{order.product}}</p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-0">Summa:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-0">{{order.amount}} sum</p>
+                    </div>
+                </div>
+                <hr>
+
+                <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary">Cancel</a>
+
+           </div>
+           <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                {% if order.payment_type == 4%}
+                    <form method="POST" action="https://checkout.paycom.uz">
+                        <!-- Идентификатор WEB Кассы -->
+                        <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b" />
+                    
+                        <!-- Сумма платежа в тийинах -->
+                        <input type="hidden" name="amount" value="{{ order.get_payme_amount }}" />
+                    
+                        <!-- Поля Объекта Account -->
+                        <input type="hidden" name="account[order_id]" value="{{ order.id }}" />
+                    
+                        <input type="hidden" name="callback" value="https://editory.org/en/auth/dashboard/?success=success" />
+                    
+                        <button type="submit" class="btn btn-outline-success" style="width: 300px; height:200px ">{% trans 'Оплатить с помощью' %}<img
+                                src="{% static 'pages/images/payme.png' %}" class="ml-3" alt="">
+                        </button>
+                    </form>
+                {% endif %}
+                {% if order.payment_type == 3%}
+                    <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET">
+                        <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
+                        <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
+                        <input type="hidden" name="description" value="Payment for OOO Editory">
+                        <input type="hidden" name="amount" value="{{ order.get_payme_amount|get_number }}">
+                        <input type="hidden" name="order_id" value="{{ order.id }}">
+                        <button type="submit" data-id="{{ order.id }}" style="height:200px" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить спомощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
+                        </button>
+                    
+                    </form>
+                {% endif %}
+           </div>
+       </div>
+   </div>
+{% endblock content %}

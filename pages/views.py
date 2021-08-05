@@ -30,8 +30,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-
         context['form'] = ConsultationForm()
+        # self.request.session['logged'] = 'pages:home'
         return context
 
 
@@ -171,7 +171,11 @@ class Research_strategy(View):
 
 class Language_editing(View):
     def get(self, request):
+
         tariffs = Tariffs.objects.all()
+
+        # request.session['logged'] = 'pages:language_editing' 
+
         form = OrderForm()
         forms = LanguageForm()
         obj = LangEditModel.objects.first()

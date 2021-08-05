@@ -9,7 +9,7 @@
 
 
 
-    <div class="fixed-top" style="top:137px; z-index: 1000" >
+<div class="fixed-top" style="top:137px; z-index: 1000" >
 {% if messages %}
     {% for message in messages %}
     {% if message.tags == 'success' %}
@@ -143,16 +143,7 @@ mix-blend-mode: luminosity;
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="form-group row my-3">
-                            <label for="inputPassword" class="col-sm-4 col-form-label">
-                            </label>
-                            <div class="col-sm-6 d-flex flex-column">
-                                {{ form.extra }}
-                                <small class="text-danger align-self-start">{{ form.extra.errors }}</small>
-                            </div>
-                        </div>
-                    </div>
+                    
 
 
                 </div>
@@ -184,11 +175,16 @@ mix-blend-mode: luminosity;
                 </div>
                 <div class=" py-5 mr-5 d-flex justify-content-between flex-wrap">
                     <div class="mb-3">
-                        <span class="mr-4">{{ form.is_agree }}</span>
-                        {% trans 'Согласие с политикой конфиденциальности' %}
+                        <label class="mr-4">{{ form.is_agree }}
+                            <span class="ml-3">{% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                        </label>
+                        
                     </div>
                     <div class="">
                         <button class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </form>
@@ -196,8 +192,20 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
+   
+
 {% endblock content %}
 
 {% block js %}
     <script src="{% static 'pages/js/translations.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            
+            let alert_message = document.getElementById('alert_message')
+
+            if (alert_message) {
+                alert_message.classList.add('alert_message')
+            }
+        })
+    </script>
 {% endblock %}

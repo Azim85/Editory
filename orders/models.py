@@ -38,7 +38,7 @@ class OrderModel(models.Model):
     user = models.ForeignKey(CustomUser, related_name='orders', verbose_name=_('user'), on_delete=models.CASCADE,
                              null=True, blank=True)
     amount = models.FloatField(verbose_name=_('amount'), null=True)
-    phone = models.CharField(max_length=13, verbose_name=_('phone'))
+    phone = models.CharField(max_length=20, verbose_name=_('phone'))
     # fio = models.CharField(max_length=255, verbose_name=_('fio'))
     email = models.EmailField(verbose_name=_('email'))
     file = models.FileField(upload_to='files', null=True, blank=True)
@@ -72,6 +72,7 @@ class OrderModel(models.Model):
     class Meta:
         verbose_name = _('order')
         verbose_name_plural = _('orders')
+        ordering = '-id',
 
 
 # def order_name_pre_save(sender, instance, signal, *args, **kwargs):

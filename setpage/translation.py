@@ -49,9 +49,7 @@ class ProofTranslation(TranslationOptions):
 
 
 class LangTranslation(TranslationOptions):
-    fields = ('text1', 'text2', 'text3', 'text5', 'text7', 'text9', 'text10', 'text11', 'text12', 'text13',
-              'text14', 'text15', 'text16', 'text17', 'text18', 'text19', 'text20', 'text21', 'text22', 'text23',
-              'text24', 'text25')
+    fields = ('text1', 'text2', 'text3', 'text4', 'text5',  'text9')
 
 
 class WebinarTranslations(TranslationOptions):
