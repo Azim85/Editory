@@ -73,3 +73,9 @@ class About_us_news(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     url = models.CharField(max_length=255, null=True, blank=True)
 
+
+class Tariffs(models.Model):
+    text = RichTextUploadingField()
+    stendart = models.BooleanField()
+    express = models.BooleanField()
+    premium = models.BooleanField()

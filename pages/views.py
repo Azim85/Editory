@@ -6,7 +6,7 @@ import random
 import datetime
 from django.contrib import messages
 from django.views.generic import TemplateView, View, DetailView, ListView
-from .models import Topic, TopResearches, About_us_news
+from .models import Topic, TopResearches, About_us_news, Tariffs
 from my_requests.forms import ConsultationForm, OrganizeResearchForm, LanguageForm
 from .forms import ResumeForm, TopicForm
 from orders.forms import OrderForm
@@ -171,11 +171,13 @@ class Research_strategy(View):
 
 class Language_editing(View):
     def get(self, request):
+        tariffs = Tariffs.objects.all()
         form = OrderForm()
         forms = LanguageForm()
         obj = LangEditModel.objects.first()
         lang = LangForm(instance=obj)
-        return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text': obj, 'lang': lang})
+        return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text': obj,
+                                                         'lang': lang, 'tariffs': tariffs})
 
     def post(self, request):
         forms = LanguageForm(request.POST, request.FILES)
@@ -347,9 +349,6 @@ class allNews(ListView):
     
 
 
-
-def hello(request):
-    return redirect('pages:webinars', context)
 
 
 class SearchView(View):

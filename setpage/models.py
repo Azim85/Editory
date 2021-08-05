@@ -14,7 +14,6 @@ class AboutUsModel(models.Model):
     text9 = RichTextUploadingField(blank=True)
 
 
-
 class WebinarsModel(models.Model):
     text1 = models.CharField(max_length=255, blank=True, null=True)
     text2 = models.TextField(blank=True)
@@ -27,7 +26,6 @@ class TranslationModel(models.Model):
     text3 = RichTextUploadingField()
     text4 = RichTextUploadingField()
     text5 = models.CharField(max_length=255, blank=True, null=True)
-
 
     def __str__(self):
         return self.text1
@@ -115,7 +113,6 @@ class PatentModel(models.Model):
     text3 = RichTextUploadingField(blank=True)
     text4 = models.CharField(max_length=255, blank=True)
 
-
     def __str__(self):
         return self.text1
 
@@ -131,7 +128,6 @@ class ScopusModel(models.Model):
     text9 = models.TextField(blank=True)
     text10 = RichTextUploadingField()
     text11 = models.CharField(max_length=255, blank=True)
-
 
     def __str__(self):
         return self.text1
