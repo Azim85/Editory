@@ -100,14 +100,14 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <div class="container" >
+    <!-- <div class="container" >
         <div class="padding_me d-flex ">
             <div class="h2">{% trans 'Количество слов' %}:</div>
             <input type="number" id="label" value="" class="h2 input-border text-center w-100 labell">
 
         </div>
 
-    <div class="container">
+    <div class="container"> -->
     
         <div class="text-center">
 
@@ -729,10 +729,10 @@ mix-blend-mode: luminosity;
 
 
 
-    <form id="Forma" class="mt-200 mb-100" method="post" action="{% url 'pages:language_editing' %}#Forma"
+    <form id="Forma" class="mt-100 mb-100" method="post" action="{% url 'pages:language_editing' %}#Forma"
           enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="container mt-4">
+        <div class="container">
             <div class=" container   rounded-20">
                 <div>
 
@@ -794,17 +794,16 @@ mix-blend-mode: luminosity;
 
                             <div class="col-lg-12 row px-4">
                                 <div class="col-lg-6  row my-4">
-                                    <div class="">
-                                        <span
-                                                class="">{{ forms.is_agree }} {% trans 'Согласие с политикой конфиденциальности' %}</span>
-                                    </div>
-                                    <label class="text-danger">{{ forms.is_agree.errors }}</label>
+                                    <label for="id_is_agree" style="cursor: pointer;">
+                                        {{ forms.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                                    </label>
+                                    <small class="text-danger">{{ forms.is_agree.errors }}</small>
                                 </div>
 
                                 <div class="col-lg-6  row my-4 d-flex justify-content-end">
-                                    <button type="submit"
-                                            class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
+                                    <button type="submit" class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
                                 </div>
+                                
                             </div>
                         </div>
 
@@ -813,15 +812,7 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
-            {#            <div class="row  mb-100">#}
-            {#                <div class="col-lg-11 d-flex container  justify-content-between">#}
-            {#                    <div class="mr-auto">#}
-            {#                        {{ forms.is_agree }}<span#}
-            {#                            class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>#}
-            {#                    </div>#}
-            {#                    #}
-            {#                </div>#}
-            {#            </div>#}
+            
         </div>
     </form>
 
@@ -936,7 +927,7 @@ mix-blend-mode: luminosity;
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                    <a href="{% url 'users:login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
+                    <a href="{% url 'requests:after-login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
                 </div>
             </div>
         </div>
@@ -949,20 +940,20 @@ mix-blend-mode: luminosity;
 
 
         $("#hideforma").click(function () {
-            {#$("#exampleModal").addClass('show')#}
+          
             a = parseInt($('#cost').html())
             $('#formcost').html(a)
             $('.amount').val(a)
 
         })
         $("#hideforma1").click(function () {
-            {#$("#exampleModal").css('display', 'inline')#}
+         
             a = parseInt($('#cost1').html())
             $('#formcost').html(a)
             $('.amount').val(a)
         })
         $("#hideforma2").click(function () {
-            {#$("#exampleModal").css('display', 'inline')#}
+      
             a = parseInt($('#cost2').html())
             $('#formcost').html(a)
             $('.amount').val(a)

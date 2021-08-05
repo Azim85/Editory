@@ -66,6 +66,25 @@ class GetGrant(models.Model):
         verbose_name = 'Grant'
         verbose_name_plural = 'Grants'
 
+#updated
+class GetDesign(models.Model):
+    last_name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
+    org_contacts = models.CharField(max_length=255)
+    org_address = models.CharField(max_length=255)
+    is_agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
+
+    class Meta:
+        verbose_name = 'Design'
+        verbose_name_plural = 'Designs'
+
 
 # updated
 class Baks(models.Model):
@@ -182,7 +201,6 @@ class OrganizeResearches(models.Model):
     first_name = models.CharField(max_length=255, null=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField(blank=True)
-    select_topic = models.CharField(max_length=100, choices=TOPICS)
     organization = models.CharField(max_length=255)
     org_contacts = models.CharField(max_length=255)
     org_address = models.CharField(max_length=255)
@@ -289,7 +307,6 @@ LANG = (
 # updated
 class Translation(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    word_amount = models.IntegerField()
     language = models.CharField(max_length=100, choices=LANG)
     research_area = models.CharField(max_length=100, choices=RESEARCH_AREA)
     comment = models.TextField(blank=True)

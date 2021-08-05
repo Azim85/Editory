@@ -328,10 +328,14 @@ mix-blend-mode: luminosity;
                 <div class="form-group container row w-100" style="margin-top: 60px">
                     <div class="col-lg-11 d-flex justify-content-between">
                         <div class="mr-auto">
-                            {{ form.is_agree }}<span
-                                class="">   {% trans 'Согласие с политикой конфиденциальности' %}</span>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </div>

@@ -2,22 +2,18 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
-<<<<<<< HEAD
+
 from pages.models import TopResearches, WebinarsUrl1, WebinarsUrl2
-=======
-from pages.models import TopResearches
 from my_requests.models import TranslationCostModel
 from orders.models import OrderModel
->>>>>>> 0c95ae851a011713fa6337be01056b613f105b2d
-from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
 
-                    PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm)
-from .models import Translation, ResearchPlatformsContext
+from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm, BaksForm, ScopusesForm,
+                    PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm, DesignsForm)
+from .models import Translation, ResearchPlatformsContext, GetDesign
 
 from setpage.forms import WebinarsForm, TranslationsForm
-from setpage.models import WebinarsModel, TranslationModel
 
-from setpage.models import (BakModel, ConferencesModel, CreateConferenceModel, DesignModel, GrantsModel,
+from setpage.models import ( WebinarsModel, TranslationModel, BakModel, ConferencesModel, CreateConferenceModel, DesignModel, GrantsModel,
                             PatentModel, ScopusModel, ProofModel)
 from setpage.forms import BakForm, ConferencesForm, CreateConferenceForm, DesignForm, GrantForm, PatentForm, ScopusForm, \
     ProofForm
@@ -121,28 +117,20 @@ class Design(View):
     def get(self, request):
         obj = DesignModel.objects.first()
         design = DesignForm(instance=obj)
-        context = {'form': GrantsForm(), 'text': obj, 'design': design}
+        context = {'form': DesignsForm(), 'text': obj, 'design': design}
         return render(request, 'design.html', context)
 
     def post(self, request):
-        form = GrantsForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save(commit=False)
-                    done.theme = request.POST.get('theme')
-                    done.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:design')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'design.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'design.html', {'validated': 'validated', 'form': form})
+        form = DesignsForm(request.POST)
+        
+        if form.is_valid():
+            done = form.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('requests:design')
         else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+            return render(request, 'design.html', {'validated': 'validated', 'form': form})
+       
 
 
 class ConsultationView(View):
@@ -323,11 +311,14 @@ import codecs
 
 class TranslationView(View):
     def get(self, request):
-        text = TranslationModel.objects.first()
-        translations = TranslationsForm(instance=text)
+        if request.user.is_authenticated:
+            text = TranslationModel.objects.first()
+            translations = TranslationsForm(instance=text)
 
-        form = TranslationForm()
-        return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations})
+            form = TranslationForm()
+            return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations})
+        request.session['back-trans'] = 'requests:translation'    
+        return redirect('users:login')
 
     def post(self, request):
         cost = TranslationCostModel.objects.first()
@@ -340,22 +331,49 @@ class TranslationView(View):
         comment = request.POST.get('comment')
         file = request.FILES.get('file')
         char_amount = 0
-        
 
-        done = Translation.objects.create(user=user, word_amount=word_amount, language=language,
+        valid_ext = ['docx', 'pptx', 'txt']
+        files = str(file).split('.')
+        if files[1] in valid_ext:
+            done = Translation.objects.create(user=user, word_amount=word_amount, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
-        if done:
-            text = textract.process(f'media/files/{file}')
-            text2 = codecs.escape_decode(str(text))[0].decode()[2:-1]
-            t = (',').join(text2.split('\n'))
-            k = ''
-            for i in t:
-                if i != ',':
-                    k += i
-            print(k)
-            char_amount = len(k)
+        
+            if done:
+                text = textract.process(f'media/files/{file}')
+                text2 = codecs.escape_decode(str(text))[0].decode()[2:-1]
+                t = (',').join(text2.split('\n'))
+                k = ''
+                for i in t:
+                    if i != ',':
+                        k += i
+                print(k)
+                char_amount = len(k)
+
+            done.char_amount = char_amount
+            done.save()
+            done.refresh_from_db()    
+
+            product = 'Translation'
+            amount = char_amount * cost.cost
+            payment_type = 3
+            payment_status = 0
+            delivery_status = 0
+            email = user.email
+            phone = user.phone
+            file = f'files/{file}'
+
+            created = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type,
+            payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
+            if created:
+                request.session['charcount'] = char_amount
+                return redirect('orders:translation-payment')
             
+
+        else:
+            messages.warning(request, 'Убедитесь, что загруженый файл в формате docx или pptx.')
+            return redirect('requests:translation')
+
         
         # valid_ext = ['docx', 'pptx', 'txt']
         
@@ -416,21 +434,26 @@ class TranslationView(View):
         #         messages.warning(request, 'bad file format file extention should .pptx, docx or txt')
         #         return redirect('requests:translation')
 
-        product = 'Translation'
-        amount = char_amount * cost.cost
-        payment_type = 3
-        payment_status = 0
-        delivery_status = 0
-        email = user.email
-        phone = user.phone
-        file = f'files/{file}'
+        # product = 'Translation'
+        # amount = char_amount * cost.cost
+        # payment_type = 3
+        # payment_status = 0
+        # delivery_status = 0
+        # email = user.email
+        # phone = user.phone
+        # file = f'files/{file}'
 
-        created = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type,
-        payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
-        if created:
-            request.session['charcount'] = char_amount
-            return redirect('orders:translation-payment')
+        # created = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type,
+        # payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
+        # if created:
+        #     request.session['charcount'] = char_amount
+        #     return redirect('orders:translation-payment')
         
         return render(request, 'translation.html', {'validated': 'validated', 'form': form})
+
+
+def after_login(request):
+    request.session['after-login'] = 'pages:language_editing'
+    return redirect('users:login')
 
     

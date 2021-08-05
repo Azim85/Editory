@@ -354,10 +354,15 @@ mix-blend-mode: luminosity;
                 <div class="container">
                     <div class="row d-flex justify-content-between">
                         <div class=" mb-3">
-                            <span class="mr-auto">{{ form.is_agree }}</span> {% trans 'Согласие с политикой конфиденциальности' %}
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
 
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
                 </div>
             </form>

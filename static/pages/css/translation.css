@@ -1,0 +1,42 @@
+.bot-blue{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 505px;
+}
+
+.pano{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.input-preview {
+  border: 1px dashed #00a1a8;
+  border-radius: 15px;
+  /*width: 90vw;*/
+  /*height: 200px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  transition: ease-in-out 750ms;
+}
+
+.form-input input {
+  margin: 0 auto;
+  padding: 4vw;
+  /*height: 100%;*/
+  border-radius: 15px;
+  /*background-color: red;*/
+}
+
+.section_2{
+    background: #ABBFC8;
+    padding: 70px 70px;
+    border-radius: 20px;
+    line-height: 40px;
+}
