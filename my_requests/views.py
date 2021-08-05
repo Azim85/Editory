@@ -4,8 +4,11 @@ from django.contrib import messages
 from django.views.generic import TemplateView, View
 
 from pages.models import TopResearches, WebinarsUrl1, WebinarsUrl2
+
+
 from my_requests.models import TranslationCostModel
 from orders.models import OrderModel
+
 
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm, BaksForm, ScopusesForm,
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm, DesignsForm)

@@ -7,6 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
+
         ('pages', '0003_about_us_news'),
     ]
 
