@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('setpage', '0020_merge_0008_translationmodel_0019_auto_20210723_1605'),
+
         ('pages', '0003_about_us_news'),
     ]
 

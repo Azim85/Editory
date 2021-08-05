@@ -2,13 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
-<<<<<<< HEAD
+
 from pages.models import TopResearches, WebinarsUrl1, WebinarsUrl2
-=======
-from pages.models import TopResearches
+
 from my_requests.models import TranslationCostModel
 from orders.models import OrderModel
->>>>>>> 0c95ae851a011713fa6337be01056b613f105b2d
+
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm,
 
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm)

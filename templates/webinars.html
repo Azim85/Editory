@@ -49,13 +49,13 @@
                                                          class="img-fluid"></div>
         </div>
 
-        <div class="section row next">
+        <div class="px-3 section row next">
 
             <div class="col-md-10 ">
                 <div class="slick slick-slide1 row" dir="rtl">
                     {% for src in url1 %}
                         <div class="iframe1">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ src }}"
+                            <iframe width="100%" height="100%" src="{{ src }}"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
@@ -65,19 +65,19 @@
 
             </div>
 
-            <div class="col-md-2  d-flex align-item-center">
+            <div class="col-md-2 d-none  d-md-flex   align-item-center">
                 <a class="next1" aria-label="Previous">
-                    assd
+                    <i class="fas fa-chevron-right"></i>
                 </a>
             </div>
         </div>
 
 
-        <div class="section row next mb-5">
+        <div class="px-3 px-md-0 section row next mb-5">
 
-            <div class="col-md-2  d-flex align-item-center">
+            <div class="col-md-2 d-none  d-md-flex align-item-center">
                 <a class="prev1" aria-label="Previous">
-                    <
+                    <i class="fas fa-chevron-left"></i>
                 </a>
             </div>
 
@@ -85,8 +85,8 @@
                 <div class="slick slick-slide2 row">
 
                     {% for src in url2 %}
-                        <div class="iframe2" >
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ src }}"
+                        <div class="iframe2">
+                            <iframe width="100%" height="100%" src="{{ src }}"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
@@ -99,12 +99,15 @@
 
         </div>
 
+    </div>
+
 
 {% endblock content %}
 
 {% block js %}
     <script type="text/javascript" src="{% static "pages/js/slick.js" %}"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/cb3bbb09f5.js" crossorigin="anonymous"></script>
     <script src="{% static 'pages/js/webinars.js' %}"></script>
 
     <script>
@@ -122,18 +125,24 @@
             speed: 300,
             rtl: true,
             arrows: true,
+            startMode: true,
             slidesToShow: 2,
             slidesToScroll: 1,
-            centerPadding: '40px',
-            autoplaySpeed: 3000,
             responsive: [
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 1.2,
                         slidesToScroll: 1
                     }
-                }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1.1,
+                        slidesToScroll: 1
+                    }
+                },
             ]
         });
 
@@ -141,6 +150,7 @@
             infinite: true,
             speed: 300,
             arrows: true,
+            startMode: true,
             slidesToShow: 2,
             slidesToScroll: 1,
             centerPadding: '40px',
@@ -149,10 +159,17 @@
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 1.2,
                         slidesToScroll: 1
                     }
-                }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1.1,
+                        slidesToScroll: 1
+                    }
+                },
             ]
         });
     </script>
