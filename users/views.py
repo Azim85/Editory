@@ -54,9 +54,11 @@ class UserLoginView(View):
             user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password'], backend='django.contrib.auth.backends.ModelBackend')
             if user is not None:
                 login(request, user)
-                # if request.session['logged']:
-                #     return redirect(request.session['logged'])
-                # else:
+                if 'after-login' in request.session.keys():
+                    return redirect(request.session['after-login'])
+                if 'back-trans' in request.session.keys():
+                    return redirect(request.session['back-trans'])
+                
                 return redirect('pages:home')
             else:
                 messages.error(request, 'Email or Password is invalid')

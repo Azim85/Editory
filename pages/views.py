@@ -20,6 +20,8 @@ from setpage.forms import AboutUSForm, ContactForm, LangForm
 
 from dateutil.rrule import rrule, MONTHLY
 
+from django.utils.translation import gettext as _
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -87,21 +89,15 @@ class AboutUs(View):
 
     def post(self, request):
         form = ResumeForm(request.POST, request.FILES)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('pages:webinars')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'about_us.html', {'form': form, "ss": "ss"})
-            else:
-                return render(request, 'about_us.html', {'form': form, "ss": "ss"})
+        
+        if form.is_valid():
+            done = form.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('pages:webinars')
         else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+            return render(request, 'about_us.html', {'form': form, "ss": "ss"})
+    
 
     def get_context_data(self, **kwargs):
         context = super(AboutUs, self).get_context_data(**kwargs)
@@ -152,30 +148,19 @@ class Research_strategy(View):
 
     def post(self, request):
         forms = OrganizeResearchForm(request.POST)
-        if request.user.is_authenticated:
-            if forms.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = forms.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('pages:research_strategy')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму')
-                    return render(request, 'research_strategy.html', {'forms': forms, 'validated': 'validated'})
-            else:
-                return render(request, 'research_strategy.html', {'forms': forms})
+        
+        if forms.is_valid():
+            done = forms.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('pages:research_strategy')
         else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
-
+            return render(request, 'research_strategy.html', {'forms': forms})
+        
 
 class Language_editing(View):
     def get(self, request):
-
         tariffs = Tariffs.objects.all()
-
-        # request.session['logged'] = 'pages:language_editing' 
-
         form = OrderForm()
         forms = LanguageForm()
         obj = LangEditModel.objects.first()
@@ -285,7 +270,6 @@ def change_others(request):
 
 class allNews(ListView):
     template_name = 'all_news_page.html'
-    # model = Topic
     paginate_by = 6
     context_object_name = 'topics'
 
@@ -313,45 +297,13 @@ class allNews(ListView):
             end_date.year: [],
             start_date.year: [],
         }
+
         for d in rrule(MONTHLY, dtstart=start_date, until=end_date):
-            years[d.year].append([d.month, d.strftime('%B')])
+            years[d.year].append([d.month, _(d.strftime('%B'))])
             
         context['years'] = years
 
         return context
-
-        # nows = datetime.datetime.now()
-        # old = datetime.datetime(2020, 12, 31 )
-        # monthes = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-        # lst = [ [] for i in monthes ]
-
-        # lst_years = []
-        
-
-        # for i in range(old.year, nows.year+1):
-        #     lst_years.append(i)
-        # k = reversed(lst_years)
-
-        # years = {}
-
-        # for i in range(1, 365):
-        #     d = old + datetime.timedelta(days=i)
-        #     if d.day == nows.day+1 and d.month == nows.month and d.year == nows.year:
-        #         break
-
-        #     for j in monthes:
-        #         if monthes.index(j)+1 == d.month: 
-        #             lst[monthes.index(j)].append(d)
-        #             years[j] = lst[monthes.index(j)]
-
-        # context['years'] = k
-        # context['monthes'] = monthes
-        # return context
-
-        
-
-    
-
 
 
 

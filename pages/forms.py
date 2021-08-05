@@ -5,6 +5,7 @@ from .models import ResumeModel, Topic
 class ResumeForm(forms.ModelForm):
 
     """Resume form for ResumeModel"""
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
 
     class Meta:
         model = ResumeModel

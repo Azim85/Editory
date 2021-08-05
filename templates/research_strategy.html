@@ -181,22 +181,17 @@
                         </div>
                     </div>
 
-                    <div class="form-group row" style="display: none">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">State</label>
-                        <div class="col-sm-6 d-flex flex-column">
-                            {{ forms.select_topic }}
-                            {#                            <small class="text-danger">{{ forms.select_topic.errors }}</small>#}
-                        </div>
-                    </div>
+                   
 
                     <div class="form-group row mt-5">
-                        <div class="col-sm-6 d-flex flex-column">
+                        <!-- <div class="col-sm-6 d-flex flex-column"> -->
                             <div class="d-flex align-items-center">
-                                {{ forms.is_agree }} <small class="ml-4  chekbok"
-                                                            style="white-space: nowrap;">{% trans 'Согласие с политикой конфиденциальности' %}</small>
+                                <label for="id_is_agree" style="cursor: pointer;">
+                                    {{ forms.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                                </label>
                             </div>
                             <small class="text-danger">{{ forms.is_agree.errors }}</small>
-                        </div>
+                        <!-- </div> -->
                     </div>
 
                 </div>
@@ -231,8 +226,7 @@
 
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="offset-4 col-sm-6">
-                            <button type="submit"
-                                    class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
+                            <button type="submit" class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
 
                         </div>
                     </div>

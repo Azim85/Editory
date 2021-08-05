@@ -1,0 +1,72 @@
+.banner{
+    height: 420px;
+}
+
+.bg-me{
+      background: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.fix-img{
+  height: 400px !important;
+}
+
+
+
+
+a.active{
+    background-color: transparent !important;
+    color:#fff !important;
+    border-bottom: #fff solid 2px !important;
+}
+
+
+.link-color{
+    color: #E6A151;
+}
+
+.link-color:hover{
+    color: #E6A151;
+}
+
+@media only screen and (max-width: 600px) {
+    .h1{
+        font-size: 30px;
+    }
+    .chekbok{
+        margin-left: 0 !important;
+    }
+  .adaptive{
+      width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+.alert_message {
+  opacity: 0;
+  animation-name: message;
+  animation-duration: 7s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+.font-size-me{
+    font-size: 55px !important;
+    line-height: 65px;
+}

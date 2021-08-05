@@ -16,6 +16,7 @@ from .models import (Consultation,
                      Baks,
                      Scopus,
                      OrganizeConferences,
+                     GetDesign
                      )
 
 
@@ -250,7 +251,6 @@ class TranslationForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'word_amount': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
             'language': forms.Select(attrs={'class': 'form-control'}),
             'research_area': forms.Select(attrs={'class': 'form-control'}),
             'comment': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
@@ -328,6 +328,47 @@ class GrantsForm(forms.ModelForm):
             'org_contacts': forms.TextInput(attrs={'class': 'form-control'}),
             'org_address': forms.TextInput(attrs={'class': 'form-control'}),
             # 'application_upload' : forms.FileField(attrs={'required':'false'})
+        }
+
+    def clean_phone(self):
+        phone_len = [12, 13]
+        phone = self.cleaned_data.get('phone')
+        if '+998' or '998' in phone:
+            if len(phone) in phone_len:
+                return phone
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_org_contacts(self):
+        phone_len = [12, 13]
+        org_contacts = self.cleaned_data.get('org_contacts')
+        if '+998' or '998' in org_contacts:
+            if len(org_contacts) in phone_len:
+                return org_contacts
+        raise forms.ValidationError('неправильный формат номера телефона')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not '@' in email:
+            raise forms.ValidationError('электронная почта недействительна')
+        return email
+
+
+# updated
+class DesignsForm(forms.ModelForm):
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+
+    class Meta:
+        model = GetDesign
+        fields = '__all__'
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'organization': forms.TextInput(attrs={'class': 'form-control'}),
+            'org_contacts': forms.TextInput(attrs={'class': 'form-control'}),
+            'org_address': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     def clean_phone(self):

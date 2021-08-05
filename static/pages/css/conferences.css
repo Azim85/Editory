@@ -1,0 +1,64 @@
+.borderMe {
+    border: 2px solid #62c7cb;
+    border-radius: 10px
+}
+
+.form_radio_btn input[type=radio]:checked + label {
+    background: #62c7cb
+}
+
+.form_radio_btn label {
+    cursor: pointer;
+    line-height: 34px;
+    user-select: none
+}
+
+.form-control, label {
+    height: 48px;
+    align-content: center
+}
+
+.check ul {
+    list-style-type: none
+}
+
+.input-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: ease-in-out 750ms
+}
+
+@media (max-width: 992px) {
+    .h2 {
+        font-size: 10px
+    }
+}
+
+.form-input input {
+    margin: 0 auto;
+    padding: 7vw;
+    width: 100%;
+    border: 1px dashed #2a819e;
+    border-radius: 15px
+}
+
+.alert_message {
+    opacity: 0;
+    animation-name: message;
+    animation-duration: 7s;
+    animation-timing-function: cubic-bezier(.075, .82, .165, 1)
+}
+
+@keyframes message {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}

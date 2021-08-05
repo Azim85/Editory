@@ -17,6 +17,7 @@ from .models import (
     ResearchPlatformsContext,
     GetPatent,
     GetGrant,
+    GetDesign,
     Baks,
     Scopus,
     TranslationCostModel
@@ -32,7 +33,7 @@ class TranslationAdmin(admin.ModelAdmin):
 
 
 class OrganizeResearchesAdmin(admin.ModelAdmin):
-    list_display = ['last_name', 'first_name', 'select_topic']
+    list_display = ['last_name', 'first_name']
 
 
 class ProofreadingAdmin(admin.ModelAdmin):
@@ -59,4 +60,5 @@ admin.site.register(Translation, TranslationAdmin)
 admin.site.register(GetGrant, GrantsAdmin)
 admin.site.register(Baks)
 admin.site.register(Scopus)
+admin.site.register(GetDesign)
 admin.site.register(TranslationCostModel)

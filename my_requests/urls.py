@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (Research, ResearchIntelligense, Scientific, Peer_review,
                     ConsultationView, Proofreading, CreateConferences,
                     TopResearchess, WebinarsView, Conferences, Design,
-                    BAKView, ScopusView, GrantsView, PatentsView, TranslationView)
+                    BAKView, ScopusView, GrantsView, PatentsView, TranslationView, after_login)
 
                      
 app_name = 'requests'
@@ -25,7 +25,9 @@ urlpatterns = [
     path('grants/', GrantsView.as_view(), name='grants'),
     path('patents/', PatentsView.as_view(), name='patents'),
     path('translation/', TranslationView.as_view(), name='translation'),
-    path('design/', Design.as_view(), name='design')
+    path('design/', Design.as_view(), name='design'),
+
+    path('after_login/', after_login, name='after-login')
 
 
 ]
