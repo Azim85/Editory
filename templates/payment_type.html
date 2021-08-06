@@ -5,9 +5,10 @@
 {% load static %}
 
 {% block content %}
-   <div class="container pt-5" style="min-height: 60vh;">
+   <div class="container py-5">
        <div class="row ">
            <h1 class="text-center w-100 border-bottom">Payment</h1>
+           
            <div class="col-lg-6">
                <div class="row">
                    <div class="col-6">
@@ -20,10 +21,10 @@
                 <hr>
 
                 <div class="row">
-                    <div class="col-6">
-                        <p class="mb-0">Phone number:</p>
+                    <div class="col-lg-5 col-6">
+                        <p class="mb-0">Phone:</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-7 col-6">
                         <p class="mb-0">{{order.user.phone}}</p>
                     </div>
                 </div>
@@ -64,10 +65,11 @@
                 </div>
                 <hr>
 
-                <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary">Cancel</a>
+                <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary ">Cancel</a>
 
            </div>
-           <div class="col-lg-6 d-flex justify-content-center align-items-center">
+
+           <div class="col-lg-6 d-flex justify-content-center align-items-center my-5 my-lg-0">
                 {% if order.payment_type == 4%}
                     <form method="POST" action="https://checkout.paycom.uz">
                         <!-- Идентификатор WEB Кассы -->

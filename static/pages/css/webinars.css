@@ -1,15 +1,15 @@
-.bingo{
+.bingo {
     margin-top: 71px;
 }
 
-.content1 h4{
+.content1 h4 {
     font-weight: bold;
     font-size: 45px;
 
     color: #000000;
 }
 
-.content1 p{
+.content1 p {
 
     font-size: 18px;
     line-height: 23px;
@@ -18,28 +18,28 @@
     width: 400px;
 }
 
-.content2{
+.content2 {
     background: #C4C4C4
 }
 
-.next{
-    margin-top:100px
+.next {
+    margin-top: 100px
 }
 
-.elem{
+.elem {
     height: 290px;
     width: 90%;
     /*background: #C4C4C4;*/
 }
 
-.num h1{
+.num h1 {
 
     font-size: 70px;
     line-height: 88px;
     color: #00A1A8;
 }
 
-.num p{
+.num p {
 
 
     font-size: 40px;
@@ -47,35 +47,68 @@
     color: #00A1A8;
 }
 
-@media screen and (max-width: 678px){
-    .elem{
+@media screen and (max-width: 678px) {
+    .elem {
         width: 100%;
-}
+    }
 }
 
-.iframe1{
-    padding: 0 65px 0 15px;
+.iframe1 {
+    padding: 0 55px 0 25px;
     height: 280px;
 }
 
-.iframe2{
-    padding: 0 15px 0 65px;
+.iframe2 {
+    padding: 0 25px 0 55px;
     height: 280px;
 }
 
-.slick-next:before, .slick-prev:before{
-content: "" !important;
+.slick-next:before, .slick-prev:before {
+    content: "" !important;
     padding: 0 !important;
 }
-.slick-next, .slick-prev{
+
+.slick-next, .slick-prev {
     display: none !important;
 }
 
-.next1, .prev1{
+.next1, .prev1 {
     border: none;
     background: transparent;
     font-size: 80px;
     font-weight: bold;
 }
 
+.next1 i, .prev1 i {
+    font-size: 100px !important;
+    color: #2a819e;
+}
+
+.next1, .prev1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 992px) {
+
+    .iframe1, .iframe2 {
+        padding: 0 50px;
+    }
+
+    .next1 i, .prev1 i{
+    font-size: 60px;
+}
+
+}
+
+@media screen and (max-width: 992px) {
+    .iframe1, .iframe2 {
+        padding: 0 30px;
+        height: 200px;
+    }
+
+}
 

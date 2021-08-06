@@ -54,8 +54,7 @@
     {% include 'components/new_navbar.html' %}
 </div>
 
-
-<div class="wrapper-content" style="margin-top: 137px; ">
+<div class="wrapper-content" style="margin-top: 137px; overflow-x: auto ; ">
     {% block content %}
 
     {% endblock content %}
@@ -145,9 +144,7 @@
 
 
 
-    $('#h100').click(function (){
-        $('#vh100').toggleClass( "vh100" )
-    })
+    
 
 </script>
 {% endblock %}
