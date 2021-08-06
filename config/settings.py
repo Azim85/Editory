@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'my_requests',
     'paymeuz',
     'apelsinuz',
-    'editory_press',
     'setpage'
 ]
 
