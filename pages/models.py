@@ -76,6 +76,13 @@ class About_us_news(models.Model):
 
 
 
+class Tariffs(models.Model):
+    text = RichTextUploadingField()
+    stendart = models.BooleanField()
+    express = models.BooleanField()
+    premium = models.BooleanField()
+
+
 class WebinarsUrl1(models.Model):
     url = models.CharField(max_length=225)
 
@@ -87,3 +94,4 @@ class WebinarsUrl2(models.Model):
 
     def __str__(self):
         return self.url
+

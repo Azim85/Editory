@@ -33,58 +33,14 @@ mix-blend-mode: luminosity;
             <div class="container my-auto">
                 <div class="row padding_me">
                     <div class="col-lg-12 row mb-5 text-white">
-                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text25-text">{{ text.text25 }}
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text25-btn">Edit</button>
-                            {% endif %}
+                        <div class="col-lg-12 font-65  geometria pb-5  font-weight-bold text25-text">{{ text.text1 }}
+
                         </div>
 
-                        <div class="text25-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>en:{{ lang.text25_en }}</span>
-                                <span>ru:{{ lang.text25_ru }}</span>
-                                <span>uz:{{ lang.text25_uz }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
 
                         <div class="col-lg-6 font-22">
-                            <div class="text1-text">{{ text.text1 }}
-                                {% if request.user.is_superuser %}
-                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                                {% endif %}
-                            </div>
+                            {{ text.text2 }}
 
-                            <div class="text1-form" style="display: none;">
-                                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                    {% csrf_token %}
-                                    <span>en:{{ lang.text1_en }}</span>
-                                    <span>ru:{{ lang.text1_ru }}</span>
-                                    <span>uz:{{ lang.text1_uz }}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
-
-                            <br>
-                            <br>
-
-
-                            <i class="text2-text">{{ text.text2 }}
-                                {% if request.user.is_superuser %}
-                                    <button type="button" class="btn btn-secondary text2-btn">Edit</button>
-                                {% endif %}
-                            </i>
-
-                            <div class="text2-form" style="display: none;">
-                                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                    {% csrf_token %}
-                                    <span>en:{{ lang.text2_en }}</span>
-                                    <span>ru:{{ lang.text2_ru }}</span>
-                                    <span>uz:{{ lang.text2_uz }}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
 
                         </div>
                         <div class="mt-5 col-lg-12">
@@ -100,482 +56,206 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <!-- <div class="container" >
-        <div class="padding_me d-flex ">
-            <div class="h2">{% trans 'Количество слов' %}:</div>
-            <input type="number" id="label" value="" class="h2 input-border text-center w-100 labell">
-
-        </div>
-
-    <div class="container"> -->
-    
-        <div class="text-center">
-
-        </div>
-    </div>
-
-    <div class="container ">
-
-        <div>
-            <div class="row mb-5 mt-5">
-                <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">{% trans 'Стандарт' %}</div>
-                        <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>
-
-
-                            <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
-
-                        </div>
-                        <div class="my-4 text3-text">{{ text.text3 }}
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text3-btn">Edit</button>
-                            {% endif %}
-                        </div>
-
-                        <div class="text3-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>en:{{ lang.text3_en }}</span>
-                                <span>ru:{{ lang.text3_ru }}</span>
-                                <span>uz:{{ lang.text3_uz }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
 
 
 
-                        <div class="text4-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>summa:{{ lang.text4 }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
 
+    <div class="container mt-100">
+        <div class="row mb-5">
+            <div class="col-lg-4 my-2">
+                <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="h3 mb-4">{% trans 'Стандарт' %}</div>
+                    <div class="small">
+                        <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>
+    <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
 
 
                     </div>
+                    <div class="my-4 text3-text">{{ text.text3 }}
+
+                    </div>
+
+
                 </div>
+            </div>
 
-                <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">{% trans 'Экспресс' %}</div>
-                        <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>1-4 {% trans 'рабочих дней' %}</span>
+            <div class="col-lg-4 my-2">
+                <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="h3 mb-4">{% trans 'Экспресс' %}</div>
+                    <div class="small">
+                        <span class="text-secondary"><i class="bi-clock"></i>1-4 {% trans 'рабочих дней' %}</span>
 
-                            <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>
+                        <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>
 
-                        </div>
-                        <div class="my-4 text5-text">{{ text.text5 }}
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text5-btn">Edit</button>
-                            {% endif %}
-                        </div>
-
-                        <div class="text5-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>en:{{ lang.text5_en }}</span>
-                                <span>ru:{{ lang.text5_ru }}</span>
-                                <span>uz:{{ lang.text5_uz }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
-
-
-
-                        <div class="text6-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>summa:{{ lang.text6 }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
 
                     </div>
+                    <div class="my-4 text5-text">{{ text.text4 }}
+
+                    </div>
+
+
                 </div>
+            </div>
+            <div class="col-lg-4 my-2">
+                <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="h3 mb-4">{% trans 'Премиум' %}</div>
+                    <div class="small">
+                        <span class="text-secondary"><i class="bi-clock"></i>2-10 {% trans 'рабочих дней' %}</span>
 
-                <div class="col-lg-4 my-2">
-                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">
-                        <div class="h3 mb-4">{% trans 'Премиум' %}</div>
-                        <div class="small">
-                            <span class="text-secondary"><i class="bi-clock"></i>2-10 {% trans 'рабочих дней' %}</span>
+                        <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>
+                    </div>
+                    <div class="my-4 text7-text">{{ text.text5 }}
 
-                            <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>
-
-                        </div>
-                        <div class="my-4 text7-text">{{ text.text7 }}
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text7-btn">Edit</button>
-                            {% endif %}
-                        </div>
-
-                        <div class="text7-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>en:{{ lang.text7_en }}</span>
-                                <span>ru:{{ lang.text7_ru }}</span>
-                                <span>uz:{{ lang.text7_uz }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
-
-
-                        <div class="text8-form" style="display: none;">
-                            <form action="{% url 'setpage:lang-change' %}" method="POST">
-                                {% csrf_token %}
-                                <span>summa:{{ lang.text8 }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
-
-
+        {##}
+        {#        <div>#}
+        {#            <div class="row mb-5">#}
+        {#                <div class="col-lg-4 my-2">#}
+        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
+        {#                        <div class="h3 mb-4">{% trans 'Стандарт' %}</div>#}
+        {#                        <div class="small">#}
+        {#                            <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>#}
+        {##}
+        {##}
+        {#                            <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>#}
+        {##}
+        {#                        </div>#}
+        {#                        <div class="my-4 text3-text">{{ text.text3 }}#}
+        {##}
+        {#                        </div>#}
+        {##}
+        {##}
+        {##}
+        {##}
+        {##}
+        {#                        <div class="text4-form" style="display: none;">#}
+        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
+        {#                                {% csrf_token %}#}
+        {#                                <span>summa:{{ lang.text4 }}</span>#}
+        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
+        {#                            </form>#}
+        {#                        </div>#}
+        {##}
+        {##}
+        {##}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#                <div class="col-lg-4 my-2">#}
+        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
+        {#                        <div class="h3 mb-4">{% trans 'Экспресс' %}</div>#}
+        {#                        <div class="small">#}
+        {#                            <span class="text-secondary"><i class="bi-clock"></i>1-4 {% trans 'рабочих дней' %}</span>#}
+        {##}
+        {#                            <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>#}
+        {##}
+        {#                        </div>#}
+        {#                        <div class="my-4 text5-text">{{ text.text4 }}#}
+        {##}
+        {#                        </div>#}
+        {##}
+        {##}
+        {##}
+        {##}
+        {##}
+        {#                        <div class="text6-form" style="display: none;">#}
+        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
+        {#                                {% csrf_token %}#}
+        {#                                <span>summa:{{ lang.text6 }}</span>#}
+        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
+        {#                            </form>#}
+        {#                        </div>#}
+        {##}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#                <div class="col-lg-4 my-2">#}
+        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
+        {#                        <div class="h3 mb-4">{% trans 'Премиум' %}</div>#}
+        {#                        <div class="small">#}
+        {#                            <span class="text-secondary"><i class="bi-clock"></i>2-10 {% trans 'рабочих дней' %}</span>#}
+        {##}
+        {#                            <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>#}
+        {##}
+        {#                        </div>#}
+        {#                        <div class="my-4 text7-text">{{ text.text7 }}#}
+        {#                            {% if request.user.is_superuser %}#}
+        {#                                <button type="button" class="btn btn-secondary text7-btn">Edit</button>#}
+        {#                            {% endif %}#}
+        {#                        </div>#}
+        {##}
+        {#                        <div class="text7-form" style="display: none;">#}
+        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
+        {#                                {% csrf_token %}#}
+        {#                                <span>en:{{ lang.text7_en }}</span>#}
+        {#                                <span>ru:{{ lang.text7_ru }}</span>#}
+        {#                                <span>uz:{{ lang.text7_uz }}</span>#}
+        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
+        {#                            </form>#}
+        {#                        </div>#}
+        {##}
+        {##}
+        {#                        <div class="text8-form" style="display: none;">#}
+        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
+        {#                                {% csrf_token %}#}
+        {#                                <span>summa:{{ lang.text8 }}</span>#}
+        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
+        {#                            </form>#}
+        {#                        </div>#}
+        {##}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
+        {##}
+        {##}
         <div class="row d-flex align-items-center qqq">
-            <div class="col-md-5 col-12 col-sm-6 my-3 text10-text">{{ text.text9 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text9-btn">Edit</button>
-                {% endif %}
-            </div>
+            <div class="col-md-5 col-12 col-sm-6 my-3 text10-text">Что входит в тариф
 
-            <div class="text9-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text9_en }}</span>
-                    <span>ru:{{ lang.text9_ru }}</span>
-                    <span>uz:{{ lang.text9_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
             </div>
 
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Стандарт</div>
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Экспресс</div>
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Премиум</div>
 
-            <div class="col-md-5 col-6 my-3 text10-text">{{ text.text10 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text10-btn">Edit</button>
-                {% endif %}
-            </div>
 
-            <div class="text10-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text10_en }}</span>
-                    <span>ru:{{ lang.text10_ru }}</span>
-                    <span>uz:{{ lang.text10_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
+            {% for tar in tariffs %}
+                <div class="col-5 my-3 text11-text">{{ tar.text|safe }}</div>
+                <div class="col-2">
+                    {% if tar.stendart %}
+                        <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
+                    {% else %}
+                        <img src="{% static 'pages/svg/Group 191.svg' %}" height="30px">
+                    {% endif %}
+                </div>
+                <div class="col-2">
+                    {% if tar.express %}
+                        <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
+                    {% else %}
+                        <img src="{% static 'pages/svg/Group 191.svg' %}" height="30px">
+                    {% endif %}
+                </div>
 
-            <div class="col-md-5 col-6 my-3 text11-text">{{ text.text11 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text11-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text11-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text11_en }}</span>
-                    <span>ru:{{ lang.text11_ru }}</span>
-                    <span>uz:{{ lang.text11_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-            <div class="col-md-5 col-6 my-3 text12-text">{{ text.text12 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text12-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text12-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text12_en }}</span>
-                    <span>ru:{{ lang.text12_ru }}</span>
-                    <span>uz:{{ lang.text12_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-            <div class="col-md-5 col-6 my-3 text13-text">{{ text.text13 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text13-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text13-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text13_en }}</span>
-                    <span>ru:{{ lang.text13_ru }}</span>
-                    <span>uz:{{ lang.text13_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text14-text">{{ text.text14 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text14-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text14-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text14_en }}</span>
-                    <span>ru:{{ lang.text14_ru }}</span>
-                    <span>uz:{{ lang.text14_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text15-text">{{ text.text15 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text15-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text15-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text15_en }}</span>
-                    <span>ru:{{ lang.text15_ru }}</span>
-                    <span>uz:{{ lang.text15_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text16-text">{{ text.text16 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text16-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text16-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text16_en }}</span>
-                    <span>ru:{{ lang.text16_ru }}</span>
-                    <span>uz:{{ lang.text16_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text17-text">{{ text.text17 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text17-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text17-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text17_en }}</span>
-                    <span>ru:{{ lang.text17_ru }}</span>
-                    <span>uz:{{ lang.text17_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text18-text">{{ text.text18 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text18-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text18-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text18_en }}</span>
-                    <span>ru:{{ lang.text18_ru }}</span>
-                    <span>uz:{{ lang.text18_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text19-text">{{ text.text19 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text19-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text19-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text19_en }}</span>
-                    <span>ru:{{ lang.text19_ru }}</span>
-                    <span>uz:{{ lang.text19_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text20-text">{{ text.text20 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text20-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text20-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text20_en }}</span>
-                    <span>ru:{{ lang.text20_ru }}</span>
-                    <span>uz:{{ lang.text20_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text21-text">{{ text.text21 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text21-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text21-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text21_en }}</span>
-                    <span>ru:{{ lang.text21_ru }}</span>
-                    <span>uz:{{ lang.text21_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Group 191.svg' %}" height="30px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text22-text">{{ text.text22 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text22-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text22-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text22_en }}</span>
-                    <span>ru:{{ lang.text22_ru }}</span>
-                    <span>uz:{{ lang.text22_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text23-text">{{ text.text23 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text23-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text23-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text23_en }}</span>
-                    <span>ru:{{ lang.text23_ru }}</span>
-                    <span>uz:{{ lang.text23_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
-            <div class="col-md-5 col-6 my-3 text24-text">{{ text.text24 }}
-                {% if request.user.is_superuser %}
-                    <button type="button" class="btn btn-secondary text24-btn">Edit</button>
-                {% endif %}
-            </div>
-
-            <div class="text24-form" style="display: none;">
-                <form action="{% url 'setpage:lang-change' %}" method="POST">
-                    {% csrf_token %}
-                    <span>en:{{ lang.text24_en }}</span>
-                    <span>ru:{{ lang.text24_ru }}</span>
-                    <span>uz:{{ lang.text24_uz }}</span>
-                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                </form>
-            </div>
-
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-            <div class="col-2"><img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px"></div>
-
-
+                <div class="col-2">
+                    {% if tar.premium %}
+                        <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
+                    {% else %}
+                        <img src="{% static 'pages/svg/Group 191.svg' %}" height="30px">
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
 
-        <div class="row d-flex align-items-center">
+
+        <div class="row d-flex align-items-center mt-5">
             <div class="col-md-5 col-12 my-3 text24-text">
                 <div class="h2">{% trans 'Количество слов' %}:</div>
-                <input type="number" id="label" value="" class="h2 py-3 my-5 input-border text-center w-100 labell">
-
+                <input type="number" id="labelcom" value="" class="h2 py-3 my-5 input-border text-center w-100 labell">
             </div>
 
 
@@ -591,11 +271,9 @@ mix-blend-mode: luminosity;
                        class="btn border-primary www w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                 </div>
 
-                <div class="h3 main-color my-md-5"><label id="cost"
-                                                          class="h3  main-color text4-text">{{ text.text4 }}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
-                    {% endif %}
+                <div class="h3 main-color my-md-5">
+                    <label id="cost" class="h3  main-color text4-text">{{ text.text6 }}
+
                 </label> {% trans 'сум' %}</div>
             </div>
 
@@ -608,11 +286,9 @@ mix-blend-mode: luminosity;
                        {% else %}data-toggle="modal" data-target="#alertme"{% endif %}
                        class="btn border-primary www w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                 </div>
-                <div class="h3 main-color my-md-5"><label id="cost1"
-                                                          class="h3  main-color text6-text">{{ text.text6 }}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text6-btn">Edit</button>
-                    {% endif %}
+                <div class="h3 main-color my-md-5">
+                    <label id="cost1" class="h3  main-color text6-text">{{ text.text7 }}
+
                 </label> {% trans 'сум' %}
                 </div>
 
@@ -628,11 +304,9 @@ mix-blend-mode: luminosity;
                        class="btn www border-primary w-100 mx-2 py-3">{% trans 'Выбрать' %}</a>
                 </div>
 
-                <div class="h3 main-color my-md-5"><label id="cost2"
-                                                          class="h3  main-color text8-text">{{ text.text8 }}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
-                    {% endif %}
+                <div class="h3 main-color my-md-5">
+                    <label id="cost2" class="h3  main-color text8-text">{{ text.text8 }}
+
                 </label> {% trans 'сум' %}
                 </div>
             </div>
@@ -736,7 +410,7 @@ mix-blend-mode: luminosity;
             <div class=" container   rounded-20">
                 <div>
 
-                    <h2 class="h5  mb-5">{% trans 'Не уверены, какой тариф вам подходит? Оставьте заявку, и вас с удовольствием проконсультируют наши специалисты' %}!</h2>
+                    <h2 class="h5  mb-5">{{ text.text9 }}</h2>
 
                 </div>
                 <div class="tab-content" id="nav-tabContent">
@@ -935,8 +609,21 @@ mix-blend-mode: luminosity;
 {% endblock %}
 
 {% block js %}
-    <script src="{% static  'pages/js/lang.js' %}"></script>
+
     <script>
+
+        $('#labelcom').change(function () {
+
+            a = $(this).val()
+            $('#volume').val(a)
+            cost1 = $(this).val() * Number({{ text.text6 }})
+            cost2 = $(this).val() * Number({{ text.text7 }})
+            cost3 = $(this).val() * Number({{ text.text8 }})
+            $('#labelcom').html(a)
+            $('#cost').html(cost1)
+            $('#cost1').html(cost2)
+            $('#cost2').html(cost3)
+        })
 
 
         $("#hideforma").click(function () {
@@ -964,7 +651,7 @@ mix-blend-mode: luminosity;
         })
 
 
-        $('#volume').val(1)
+
         $('#label').val(1)
 
 
@@ -977,27 +664,15 @@ mix-blend-mode: luminosity;
             $('#cost2').html(cost)
         })
 
-        $('#label').change(function () {
-            a = $(this).val()
-            $('#volume').val(a)
-            cost1 = $(this).val() * Number({{ text.text4 }})
-            cost2 = $(this).val() * Number({{ text.text6 }})
-            cost3 = $(this).val() * Number({{ text.text8 }})
-            $('#label').html(a)
-            $('#cost').html(cost1)
-            $('#cost1').html(cost2)
-            $('#cost2').html(cost3)
-        })
-
     </script>
-    <script type="text/javascript">
-        var sidebar = new StickySidebar('#sidebar', {
-            containerSelector: '#main-content',
-            innerWrapperSelector: '.sidebar__inner',
-            topSpacing: 20,
-            bottomSpacing: 20
-        });
-
-    </script>
-
+{#    <script type="text/javascript">#}
+{#        var sidebar = new StickySidebar('#sidebar', {#}
+{#            containerSelector: '#main-content',#}
+{#            innerWrapperSelector: '.sidebar__inner',#}
+{#            topSpacing: 20,#}
+{#            bottomSpacing: 20#}
+{#        });#}
+{##}
+{#    </script>#}
+ <script src="{% static  'pages/js/lang.js' %}"></script>
 {% endblock %}

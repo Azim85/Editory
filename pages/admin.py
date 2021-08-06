@@ -8,8 +8,12 @@ from .models import (
     TopResearches,
     ResumeModel,
     About_us_news,
+
+    Tariffs,
+
     WebinarsUrl1,
     WebinarsUrl2
+
 )
 
 
@@ -45,6 +49,9 @@ class TopResearchesAdminForm(TabbedTranslationAdmin):
 class ResumeModelAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'profession', 'about_me']
 
+class TariffsModelAdmin(admin.ModelAdmin):
+    list_display = ['text']
+
 
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdminForm)
@@ -52,3 +59,4 @@ admin.site.register(ResumeModel, ResumeModelAdmin)
 admin.site.register(About_us_news)
 admin.site.register(WebinarsUrl1)
 admin.site.register(WebinarsUrl2)
+

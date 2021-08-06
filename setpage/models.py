@@ -14,7 +14,6 @@ class AboutUsModel(models.Model):
     text9 = RichTextUploadingField(blank=True)
 
 
-
 class WebinarsModel(models.Model):
     text1 = models.CharField(max_length=255, blank=True, null=True)
     text2 = models.TextField(blank=True)
@@ -27,7 +26,6 @@ class TranslationModel(models.Model):
     text3 = RichTextUploadingField()
     text4 = RichTextUploadingField()
     text5 = models.CharField(max_length=255, blank=True, null=True)
-
 
     def __str__(self):
         return self.text1
@@ -115,7 +113,6 @@ class PatentModel(models.Model):
     text3 = RichTextUploadingField(blank=True)
     text4 = models.CharField(max_length=255, blank=True)
 
-
     def __str__(self):
         return self.text1
 
@@ -131,7 +128,6 @@ class ScopusModel(models.Model):
     text9 = models.TextField(blank=True)
     text10 = RichTextUploadingField()
     text11 = models.CharField(max_length=255, blank=True)
-
 
     def __str__(self):
         return self.text1
@@ -153,8 +149,8 @@ class ProofModel(models.Model):
 
 
 class LangEditModel(models.Model):
-    text1 = models.TextField(blank=True)
-    text2 = models.TextField(blank=True)
+    text1 = models.CharField(max_length=100, blank=True)
+    text2 = models.TextField()
     text3 = models.CharField(max_length=100, blank=True)
     text4 = models.CharField(max_length=100, blank=True)
     text5 = models.CharField(max_length=100, blank=True)
@@ -162,22 +158,6 @@ class LangEditModel(models.Model):
     text7 = models.CharField(max_length=100, blank=True)
     text8 = models.CharField(max_length=100, blank=True)
     text9 = models.CharField(max_length=100, blank=True)
-    text10 = models.CharField(max_length=100, blank=True)
-    text11 = models.CharField(max_length=100, blank=True)
-    text12 = models.CharField(max_length=100, blank=True)
-    text13 = models.CharField(max_length=100, blank=True)
-    text14 = models.CharField(max_length=100, blank=True)
-    text15 = models.CharField(max_length=100, blank=True)
-    text16 = models.CharField(max_length=100, blank=True)
-    text17 = models.CharField(max_length=100, blank=True)
-    text18 = models.CharField(max_length=100, blank=True)
-    text19 = models.CharField(max_length=100, blank=True)
-    text20 = models.CharField(max_length=100, blank=True)
-    text21 = models.CharField(max_length=100, blank=True)
-    text22 = models.CharField(max_length=100, blank=True)
-    text23 = models.CharField(max_length=100, blank=True)
-    text24 = models.CharField(max_length=100, blank=True)
-    text25 = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.text1
