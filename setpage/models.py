@@ -82,7 +82,7 @@ class CreateConferenceModel(models.Model):
 
 class DesignModel(models.Model):
     text1 = models.CharField(max_length=255, blank=True)
-    text2 = models.TextField(blank=True)
+    text2 = RichTextUploadingField()
     text3 = models.ImageField(upload_to='design/', blank=True)
     text4 = models.CharField(max_length=255, blank=True)
     text5 = models.TextField(blank=True)

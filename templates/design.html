@@ -7,22 +7,22 @@
 {% block content %}
 
 
-    <div class="fixed-top" style="top:137px; z-index: 1000" >
-{% if messages %}
-    {% for message in messages %}
-    {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endif %}
+    <div class="fixed-top" style="top:137px; z-index: 1000">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% endif %}
 
-    {% endfor %}
-{% endif %}
-</div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
     <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image 58.jpg' %});
             background-size: cover;">
@@ -33,22 +33,22 @@ mix-blend-mode: luminosity;
                 <div class="row col-6 padding_me">
                     <div class="col-lg-12">
                         <div class=" font-65 head-word geometria pb-5 text1-text"
-                             style=" color:white; font-weight:bold; line-height:1">{{text.text1}}
-                                {% if request.user.is_superuser %}
-                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                                {% endif %}
-                            </div>
-                            
-                            <div class="text1-form" style="display: none;">
-                                <form action="{% url 'setpage:design-change' %}" method="POST" class="w-100">
-                                    {% csrf_token %}
-                                    <span>en:{{design.text1_en}}</span>
-                                    <span>ru:{{design.text1_ru}}</span>
-                                    <span>uz:{{design.text1_uz}}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
-                       
+                             style=" color:white; font-weight:bold; line-height:1">{{ text.text1 }}
+                            {% if request.user.is_superuser %}
+                                <button type="button" class="btn btn-secondary text1-btn">Edit</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="text1-form" style="display: none;">
+                            <form action="{% url 'setpage:design-change' %}" method="POST" class="w-100">
+                                {% csrf_token %}
+                                <span>en:{{ design.text1_en }}</span>
+                                <span>ru:{{ design.text1_ru }}</span>
+                                <span>uz:{{ design.text1_uz }}</span>
+                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
+                            </form>
+                        </div>
+
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
                                 <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
@@ -56,7 +56,7 @@ mix-blend-mode: luminosity;
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
 
             </div>
@@ -64,23 +64,12 @@ mix-blend-mode: luminosity;
     </div>
     <div class="bg-me">
 
-        <div class="container  mb-200">
+        <div class="container  mb-100 mt-100">
             <div class="row">
-                <div class="offset-lg-1 col-lg-9 font-22 text2-text">{{text.text2}}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-secondary text2-btn">Edit</button>
-                    {% endif %}
+                <div class="offset-lg-1 col-lg-9 font-22 text2-text">{{ text.text2|safe }}
                 </div>
 
-                <div class="text2-form" style="display: none;">
-                    <form action="{% url 'setpage:design-change' %}" method="POST" class="w-100">
-                        {% csrf_token %}
-                        <span>en:{{design.text2_en}}</span>
-                        <span>ru:{{design.text2_ru}}</span>
-                        <span>uz:{{design.text2_uz}}</span>
-                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                    </form>
-                </div>
+
 
             </div>
         </div>
@@ -88,33 +77,30 @@ mix-blend-mode: luminosity;
         <div class="container py-5">
             <div class="row ">
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
-                    <div class="img-src" style="background-image: url('{{ text.text9.url }}');"></div>
+                    <div class="img-src" style="background-image: url('{{ text.text3.url }}');"></div>
                     <h3 class="h3-text mt-3 ">
-Научная иллюстрация
+                        {{ text.text4 }}
                     </h3>
                     <p class="simple-text">
-                        Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно
-                        соответствовать теме вашей работы
+                        {{ text.text5 }}
                     </p>
 
                 </div>
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
                     <div class="img-src d-lg-none d-block" style="background-image: url('{{ text.text6.url }}');"></div>
-                    <h3 class="h3-text mt-3 mt-lg-0 ">Научная иллюстрация</h3>
+                    <h3 class="h3-text mt-3 mt-lg-0 ">{{ text.text7 }}</h3>
                     <p class="simple-text">
-                        Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно
-                        соответствовать теме вашей работы
+                        {{ text.text8 }}
                     </p>
                     <div class="img-src d-none d-lg-block" style="background-image: url('{{ text.text6.url }}');"></div>
 
 
                 </div>
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
-                    <div class="img-src" style="background-image: url('{{ text.text3.url }}');"></div>
-                    <h3 class="h3-text mt-3 ">Научная иллюстрация</h3>
+                    <div class="img-src" style="background-image: url('{{ text.text9.url }}');"></div>
+                    <h3 class="h3-text mt-3 ">{{ text.text10 }}</h3>
                     <p class="simple-text">
-                        Сделайте материал предельно наглядным с помощью уникальных и высококачественных иллюстраций, которые будут точно
-                        соответствовать теме вашей работы
+                        {{ text.text11 }}
                     </p>
 
                 </div>
@@ -198,7 +184,8 @@ mix-blend-mode: luminosity;
                     <div class="col-lg-11 d-flex justify-content-between">
                         <div class="mr-auto">
                             <label for="id_is_agree" style="cursor: pointer;">
-                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
