@@ -23,10 +23,12 @@
             animation-duration: 7s;
             animation-timing-function: cubic-bezier(.075, .82, .165, 1)
         }
-        a{
+
+        a {
             cursor: pointer;
         }
-        a:hover{
+
+        a:hover {
             cursor: pointer;
         }
 
@@ -69,84 +71,76 @@
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
 {% block js %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
-<script>
-    $(document).ready(function () {
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
+    <script>
+        $(document).ready(function () {
 
-        $('.darken').mouseover(function () {
-            $(this).css({
-                'font-weight': 'bold',
-                'color': 'black',
-                'font-size': '21px'
+            $('.darken').mouseover(function () {
+                $(this).css({
+                    'font-weight': 'bold',
+                    'color': 'black',
+                    'font-size': '21px'
+                })
             })
-        })
-        $('.darken').mouseleave(function () {
-            $(this).css({
-                'font-weight': 'normal',
-                'font-size': '18px'
+            $('.darken').mouseleave(function () {
+                $(this).css({
+                    'font-weight': 'normal',
+                    'font-size': '18px'
+                })
             })
+
+            $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
+                e.preventDefault();
+                $(this).parent().addClass("show");
+                $(this).attr("aria-expanded", "true");
+                $(this).next().addClass("show");
+            });
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-8BXGYGEMEL');
+
+
         })
 
-        $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
-            e.preventDefault();
-            $(this).parent().addClass("show");
-            $(this).attr("aria-expanded", "true");
-            $(this).next().addClass("show");
-        });
 
-        window.dataLayer = window.dataLayer || [];
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
 
-        function gtag() {
-            dataLayer.push(arguments);
+        let alert_message = document.getElementById('alert_message')
+
+
+        if (alert_message) {
+            alert_message.classList.add('alert_message')
         }
 
-        gtag('js', new Date());
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
-        gtag('config', 'G-8BXGYGEMEL');
-
-
-    })
-
-
-
-
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-
-    let alert_message = document.getElementById('alert_message')
-
-
-    if (alert_message) {
-        alert_message.classList.add('alert_message')
-    }
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 
 
-
-
-
-    
-
-</script>
+    </script>
 {% endblock %}
 
 

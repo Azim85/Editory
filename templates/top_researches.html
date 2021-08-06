@@ -4,25 +4,25 @@
     <link rel="stylesheet" href="{% static 'pages/css/researches.css' %}">
 {% endblock %}
 {% block content %}
-<div class="container">
-    
-       <div class="row px-0 mx-0">
-           <div class="col">
-            <h1 class="title">Top researchers</h1>
-           </div>
-       </div>
+    <div class="container">
 
-       {% for research in top_researches %}
-       <div class="row description mt-5">
-           <div class="col-lg-2 ">
-               <img src="{{research.image.url}}" alt="" style="width: 100%;">
-           </div>
-           <div class="col-lg-8 pl-lg-5">
-               <a href="{{research.get_absolute_url}}"><h3 class="">{{research.title}}</h3></a>
-               <small>{{research.author}}</small>
-               <p>{{research.description|truncatewords:29}}</p>
-           </div>
-       </div>
-       {% endfor %}
+        <div class="row px-0 mx-0">
+            <div class="col">
+                <h1 class="title">Top researchers</h1>
+            </div>
+        </div>
+
+        {% for research in top_researches %}
+            <div class="row description mt-5">
+                <div class="col-lg-2 ">
+                    <img src="{{ research.image.url }}" alt="" style="width: 100%;">
+                </div>
+                <div class="col-lg-8 pl-lg-5">
+                    <a href="{{ research.get_absolute_url }}"><h3 class="">{{ research.title }}</h3></a>
+                    <small>{{ research.author }}</small>
+                    <p>{{ research.description|truncatewords:29 }}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock content %}

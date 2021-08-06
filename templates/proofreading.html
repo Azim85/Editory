@@ -8,22 +8,22 @@
 
 {% block content %}
 
-<div class="fixed-top" style="top:137px; z-index: 1000" >
-{% if messages %}
-    {% for message in messages %}
-    {% if message.tags == 'success' %}
-        <div class="alert alert-success text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% else %}
-        <div class="alert alert-danger text-center" id="alert_message">
-            {{message}}
-        </div>
-    {% endif %}
+    <div class="fixed-top" style="top:137px; z-index: 1000">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger text-center" id="alert_message">
+                        {{ message }}
+                    </div>
+                {% endif %}
 
-    {% endfor %}
-{% endif %}
-</div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
     <div class="bg-me-home h-600"
          style="background-image: url({% static 'pages/images/image52.jpg' %});
@@ -60,42 +60,15 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4 text1-text" style="font-weight: 600; line-height:106.3% ">{{text.text1}}
-                                        {% if request.user.is_superuser %}
-                                            <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                                        {% endif %}
+                                    <div class="font-65 pb-4 text1-text"
+                                         style="font-weight: 600; line-height:106.3% ">{{ text.text1 }}
                                     </div>
-
-                                    <div class="text1-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text1_en}}</span>
-                                            <span>ru:{{proof.text1_ru}}</span>
-                                            <span>uz:{{proof.text1_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
+                                    <div class="pb-4 text2-text">{{ text.text2 }}
                                     </div>
-
-                                    <div class="pb-4 text2-text">{{text.text2}}
-                                        {% if request.user.is_superuser %}
-                                            <button type="button" class="btn btn-secondary text2-btn">Edit</button>
-                                        {% endif %}
-                                    </div>
-
-                                    <div class="text2-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text2_en}}</span>
-                                            <span>ru:{{proof.text2_ru}}</span>
-                                            <span>uz:{{proof.text2_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
-                                    </div>
-
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -107,41 +80,15 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4 text3-text" style="font-weight: 600; line-height:106.3% ">{{text.text3}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text3-btn">Edit</button>
-                                        {% endif %}
+                                    <div class="font-65 pb-4 text3-text"
+                                         style="font-weight: 600; line-height:106.3% ">{{ text.text3 }}
                                     </div>
-                                    
-                                    <div class="text3-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text3_en}}</span>
-                                            <span>ru:{{proof.text3_ru}}</span>
-                                            <span>uz:{{proof.text3_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
-                                    </div>
-                                    
-                                    <div class="pb-4 text4-text">{{text.text4}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text4-btn">Edit</button>
-                                        {% endif %}
-                                    </div>
-                                    
-                                    <div class="text4-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text4_en}}</span>
-                                            <span>ru:{{proof.text4_ru}}</span>
-                                            <span>uz:{{proof.text4_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
+                                    <div class="pb-4 text4-text">{{ text.text4 }}
                                     </div>
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -153,87 +100,32 @@ mix-blend-mode: luminosity;
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4 text5-text" style="font-weight: 600; line-height:106.3% ">{{text.text5}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text5-btn">Edit</button>
-                                        {% endif %}
+                                    <div class="font-65 pb-4 text5-text"
+                                         style="font-weight: 600; line-height:106.3% ">{{ text.text5 }}
                                     </div>
-                                    
-                                    <div class="text5-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text5_en}}</span>
-                                            <span>ru:{{proof.text5_ru}}</span>
-                                            <span>uz:{{proof.text5_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
-                                    </div>
-                                    
-                                    <div class="pb-4 text6-text">{{text.text6}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text6-btn">Edit</button>
-                                        {% endif %}
-                                    </div>
-                                    
-                                    <div class="text6-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text6_en}}</span>
-                                            <span>ru:{{proof.text6_ru}}</span>
-                                            <span>uz:{{proof.text6_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
+                                    <div class="pb-4 text6-text">{{ text.text6 }}
                                     </div>
                                     <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
-
                 <div class="tab-pane fade {% if raqam == '4' %}active show{% endif %}" id="nav-fourth" role="tabpanel"
                      aria-labelledby="nav-fourth-tab">
-
                     <div class="container mb-5">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
-                                    <div class="font-65 pb-4 text7-text" style="font-weight: 600; line-height:106.3% ">{{text.text7}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text7-btn">Edit</button>
-                                        {% endif %}
+                                    <div class="font-65 pb-4 text7-text"
+                                         style="font-weight: 600; line-height:106.3% ">{{ text.text7 }}
                                     </div>
-                                    
-                                    <div class="text7-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text7_en}}</span>
-                                            <span>ru:{{proof.text7_ru}}</span>
-                                            <span>uz:{{proof.text7_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
+                                    <div class="pb-4 text8-text">{{ text.text8 }}
                                     </div>
-                                    
-                                    <div class="pb-4 text8-text">{{text.text8}}
-                                        {% if request.user.is_superuser %}
-                                        <button type="button" class="btn btn-secondary text8-btn">Edit</button>
-                                        {% endif %}
-                                    </div>
-                                    
-                                    <div class="text8-form" style="display: none;">
-                                        <form action="{% url 'setpage:proof-change' %}" method="POST">
-                                            {% csrf_token %}
-                                            <span>en:{{proof.text8_en}}</span>
-                                            <span>ru:{{proof.text8_ru}}</span>
-                                            <span>uz:{{proof.text8_uz}}</span>
-                                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                        </form>
-                                    </div>
-                                    <!-- <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a> -->
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -247,7 +139,7 @@ mix-blend-mode: luminosity;
          style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
         <div class="container pb-100 pt-100 text-white ">
             <div class="font-22 section_2">
-            {{text.text9|safe }}
+                {{ text.text9|safe }}
             </div>
         </div>
     </div>
@@ -352,14 +244,15 @@ mix-blend-mode: luminosity;
 
             <div class="form-group row d-flex justify-content-lg-between" style="margin-top: 60px; margin-right:6vw">
                 <div class="ml-5">
-                        <label for="id_is_agree">
-                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных.' %}</span>
-                        </label></div>
+                    <label for="id_is_agree">
+                        {{ form.is_agree }}<span
+                            class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных.' %}</span>
+                    </label></div>
                 <small class="text-danger ml-5">{{ form.is_agree.errors }}</small>
                 <div class=" col-lg-12 d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary ">{% trans 'Отправить работу' %}</button>
                 </div>
-                
+
             </div>
 
 

@@ -9,274 +9,218 @@
 {% block content %}
 
     <section class="container news-card mt-2 pt-2 " style="margin-top: 100px">
-      <div class="row mb-3">
-        <div class="col-lg-8">
-          <form action="{% url 'pages:search' %}" method="get" class="d-flex w-100">
-            <input type="text" name='q' placeholder="Search....." class="form-control">
-            <button type="submit" class="btn btn-success ml-2">Search</button>
-          </form>
-        </div>
-        <div class="col-lg-4">
-          <a href="{% url 'pages:allnews' %}">ВСЕ НОВОСТИ >>></a>
-        </div>
-      </div>
-  
-    <div class="row">
-      {% if random_topic %}
-        <div class="col-lg-8 pb-4 mb-2 bognews">
-            <div class="position-relative" style="width: 100%; height:100%; border-radius:10px; ">
-              <a href="{{random_topic.get_absolute_url}}" class="text-dark text-decoration-none">
-                <div class="" style=" width:100%; height:100%; background-image: url({{random_topic.main_image.url}}); 
-                                    background-repeat:no-repeat;
-                                    background-position:center;
-                                    background-size:cover;
-                                    border-radius:10px;
-                                    z-index:100">
-                </div>
-                <div class="card-text-absolute text-hover">
-                  <p style="" class="main-color">{{ random_topic.title }}</p>
-                  <h2 class="font-weight-bold">{{ random_topic.title }}</h2>
-                </div>
-              </a>
+        <div class="row mb-3">
+            <div class="col-lg-8">
+                <form action="{% url 'pages:search' %}" method="get" class="d-flex w-100">
+                    <input type="text" name='q' placeholder="Search....." class="form-control">
+                    <button type="submit" class="btn btn-success ml-2">Search</button>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <a href="{% url 'pages:allnews' %}">ВСЕ НОВОСТИ >>></a>
             </div>
         </div>
-          {% else %}
-        {% endif %}
-      
-      {% if top_4 %}
-        {% for topic in top_4 %}
-      <div class="col-lg-4 col-sm-6 pb-4 mb-2">
-          <div style="width: 100%; height:100%; border-radius:10px">
-            <a href="{{topic.get_absolute_url}}" style="text-decoration: none;" class="text-dark text-decoration-none">
-              <div style=" width:100%; height:240px; background-image: url({{topic.main_image.url}});
-                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
-              </div>
-            <div class="card-text p-4 m-1">
-              <p style="font-size: 13px; color: #15C0C7;">
-                {{ topic.material_name }}
-              </p>
-              <h4 class="font-weight-bold">{{ topic.title|truncatewords:6 }}</h4>
-            </div>
-            </a>
-          </div>
-      </div>
-        {% endfor %}
 
-    {% else %}
-    {% endif %}
+        <div class="row">
+            {% if random_topic %}
+                <div class="col-lg-8 pb-4 mb-2 bognews">
+                    <div class="position-relative" style="width: 100%; height:100%; border-radius:10px; ">
+                        <a href="{{ random_topic.get_absolute_url }}" class="text-dark text-decoration-none">
+                            <div class=""
+                                 style=" width:100%; height:100%; background-image: url({{ random_topic.main_image.url }});
+                                         background-repeat:no-repeat;
+                                         background-position:center;
+                                         background-size:cover;
+                                         border-radius:10px;
+                                         z-index:100">
+                            </div>
+                            <div class="card-text-absolute text-hover">
+                                <p style="" class="main-color">{{ random_topic.title }}</p>
+                                <h2 class="font-weight-bold">{{ random_topic.title }}</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+            {% endif %}
 
-{#      <div class="col-lg-4 col-sm-6 pb-4 mb-2">#}
-{#        <div>#}
-{#          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">#}
-{#          <div class="card-text p-4 m-1">#}
-{#            <p style="font-size: 13px; color: #15C0C7;">#}
-{#              БИОЛОГИЯ#}
-{#            </p>#}
-{#            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>#}
-{#          </div>#}
-{#        </div>#}
-{#      </div>#}
-{#      <div class="col-lg-4 col-sm-6 pb-4 mb-2">#}
-{#        <div>#}
-{#          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %} " alt="" srcset="">#}
-{#          <div class="card-text p-4 m-1">#}
-{#            <p style="font-size: 13px; color: #15C0C7;">#}
-{#              БИОЛОГИЯ#}
-{#            </p>#}
-{#            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>#}
-{#          </div>#}
-{#        </div>#}
-{#      </div>#}
-{#      <div class="col-lg-4 col-sm-6 pb-4 mb-2">#}
-{#        <div>#}
-{#          <img class="img-fluid" src="{% static 'pages/images/news-62.png' %}" alt="" srcset="">#}
-{#          <div class="card-text p-4 m-1">#}
-{#            <p style="font-size: 13px; color: #15C0C7;">#}
-{#              БИОЛОГИЯ#}
-{#            </p>#}
-{#            <h4 class="font-weight-bold">Ученый получил вторую Нобелевскую за диссертацию</h4>#}
-{#          </div>#}
-{#        </div>#}
-{#      </div>#}
+            {% if top_4 %}
+                {% for topic in top_4 %}
+                    <div class="col-lg-4 col-sm-6 pb-4 mb-2">
+                        <div style="width: 100%; height:100%; border-radius:10px">
+                            <a href="{{ topic.get_absolute_url }}" style="text-decoration: none;"
+                               class="text-dark text-decoration-none">
+                                <div style=" width:100%; height:240px; background-image: url({{ topic.main_image.url }});
+                                        background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
+                                </div>
+                                <div class="card-text p-4 m-1">
+                                    <p style="font-size: 13px; color: #15C0C7;">
+                                        {{ topic.material_name }}
+                                    </p>
+                                    <h4 class="font-weight-bold">{{ topic.title|truncatewords:6 }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
 
+            {% else %}
+            {% endif %}
+        </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section class=" container">
-     <h1 class="font-weight-bold">{% trans 'На этой неделе' %}</h1>
+    <section class=" container">
+        <h1 class="font-weight-bold">{% trans 'На этой неделе' %}</h1>
         <div class="row my-5">
 
-        {% if last_week %}
-          {% for topic in last_week %}
-            <div class="col-lg-4 mb-3 ">
-                <a href="{{topic.get_absolute_url}}" class="text-dark text-decoration-none"><p class="font-weight-bold">{{topic.title}}</p></a>
-                <div class="small text-secondary">{{topic.created_at|date:'d M'}}</div>
-            </div>
-          {% endfor %}
+            {% if last_week %}
+                {% for topic in last_week %}
+                    <div class="col-lg-4 mb-3 ">
+                        <a href="{{ topic.get_absolute_url }}" class="text-dark text-decoration-none"><p
+                                class="font-weight-bold">{{ topic.title }}</p></a>
+                        <div class="small text-secondary">{{ topic.created_at|date:'d M' }}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
 
+    </section>
+
+
+    <section class="duble-card container">
+        {% if top_8 %}
+            <div class="row">
+                {% if top_8.0 %}
+                    <div class="col-lg-6">
+                        <div class="position-relative " style="width: 100%; height:380px; border-radius:10px">
+                            <a href="{{ top_8.0.get_absolute_url }}" class="text-dark text-decoration-none">
+                                <div style=" width:100%; height:100%; background-image: url({{ top_8.0.main_image.url }});
+                                        background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+                                </div>
+                                <div class="card-text-absolute-min text-hover">
+                                    <p style="color: #fff;">{{ top_8.0.material_name }}</p>
+                                    <h2>{{ top_8.0.title }}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if top_8.1 %}
+                    <div class="col-lg-6">
+                        <div class="position-relative" style="width: 100%; height:380px; border-radius:10px">
+                            <a href="{{ top_8.1.get_absolute_url }}" class="text-dark text-decoration-none">
+                                <div style=" width:100%; height:100%; background-image: url({{ top_8.1.main_image.url }});
+                                        background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+                                </div>
+                                <!-- <img src="{{top_8.1.main_image.url}}" alt="" style="width: 100%; height:360px"> -->
+                                <div class="card-text-absolute-min text-hover">
+                                    <p style="color: #fff;">{{ top_8.1.material_name }}</p>
+                                    <h2>{{ top_8.1.title }}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+            </section>
+
+            <section class="section4 container">
+                <div class="row">
+
+                    {% if top_8.2 %}
+                        <div class="col-lg-6 d-flex flex-column justify-content-between mb-4 pb-2">
+                            <a href="{{ top_8.2.get_absolute_url }}" class="text-dark text-decoration-none">
+                                <h2>{{ top_8.2.title }}</h2>
+                                <div>{{ top_8.2.created_at|date:'d M' }}</div>
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <div class="col-lg-6 ">
+                        <div class="row">
+
+                            {% if top_8.3 %}
+                                <div class="col-sm-6 mb-4 pb-2">
+                                    <a href="{{ top_8.3.get_absolute_url }}" class="text-dark text-decoration-none">
+                                        <h4>{{ top_8.3.title }}</h4>
+                                        <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{ top_8.3.created_at|date:'d M' }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if top_8.4 %}
+                                <div class="col-sm-6 mb-4 pb-2">
+                                    <a href="{{ top_8.4.get_absolute_url }}" class="text-dark text-decoration-none">
+                                        <h4>{{ top_8.4.title }}</h4>
+                                        <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{ top_8.3.created_at|date:'d M' }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if top_8.5 %}
+                                <div class="col-sm-6 mb-4 pb-2">
+                                    <a href="{{ top_8.5.get_absolute_url }}" class="text-dark text-decoration-none">
+                                        <h4>{{ top_8.5.title }}</h4>
+                                        <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{ top_8.5.created_at|date:'d M' }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if top_8.6 %}
+                                <div class="col-sm-6 mb-4 pb-2">
+                                    <a href="{{ top_8.6.get_absolute_url }}" class="text-dark text-decoration-none">
+                                        <h4>{{ top_8.6.title }}</h4>
+                                        <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{ top_8.6.created_at|date:'d M' }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="last-section container">
+            <div class="row news-card">
+                {% if top_8.7 %}
+                    <div class="col-lg-8 pb-4 mb-2">
+                        <div class="position-relative" style=" height:100%;  border-radius:10px">
+                            <a href="{{ top_8.7.get_absolute_url }}" class="text-dark text-decoration-none h-100">
+                                <div style=" width:100%; height:424px; background-image: url({{ top_8.7.main_image.url }});
+                                        background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
+                                </div>
+                                <!-- <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset=""> -->
+                                <div class="card-text-absolute text-hover">
+                                    <p style="color: #15C0C7;">{{ top_8.7.material_name }}</p>
+                                    <h2>{{ top_8.7.title }}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if top_8.8 %}
+                    <div class="col-lg-4 col-md-6 pb-4 mb-2">
+                        <div style="width: 100%; height:100%; border-radius:10px">
+                            <a href="{{ top_8.8.get_absolute_url }}" class="text-dark text-decoration-none">
+                                <div style=" width:100%; height:240px; background-image: url({{ top_8.8.main_image.url }});
+                                        background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
+                                </div>
+                                <!-- <img src="{{ top_8.8.main_image.url }}" alt="" width="100%" height="200px"> -->
+                                <div class="card-text p-4 m-1">
+                                    <p style="font-size: 13px; color: #15C0C7;">
+                                        {{ top_8.8.material_name }}
+                                    </p>
+                                    <h4 class="">{{ top_8.8.title }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
         {% endif %}
-
-            <!-- <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div>
-            <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div> -->
-        </div>
-    <!-- <div class="row my-5">
-            <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div>
-            <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div>
-            <div class="col-lg-4">
-                <p class="font-weight-bold">Ученый получил Нобелевскую за диссертацию</p>
-                <div class="small text-secondary">22 сентября</div>
-            </div>
-        </div> -->
-  </section>
-  
-  
-  <section class="duble-card container">
-    {% if top_8 %}
-    <div class="row">
-    {% if top_8.0 %}
-      <div class="col-lg-6">
-          <div class="position-relative " style="width: 100%; height:380px; border-radius:10px">
-            <a href="{{top_8.0.get_absolute_url}}" class="text-dark text-decoration-none">
-              <div style=" width:100%; height:100%; background-image: url({{top_8.0.main_image.url}}); 
-                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
-              </div>
-              <div class="card-text-absolute-min text-hover">
-                <p style="color: #fff;">{{top_8.0.material_name}}</p>
-                <h2>{{top_8.0.title}}</h2>
-              </div>
-            </a>
-          </div>
-      </div>
-    {% endif %}  
-
-    {% if top_8.1 %}
-      <div class="col-lg-6">
-          <div class="position-relative" style="width: 100%; height:380px; border-radius:10px">
-            <a href="{{top_8.1.get_absolute_url}}" class="text-dark text-decoration-none">
-              <div style=" width:100%; height:100%; background-image: url({{top_8.1.main_image.url}}); 
-                                background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
-              </div>
-              <!-- <img src="{{top_8.1.main_image.url}}" alt="" style="width: 100%; height:360px"> -->
-              <div class="card-text-absolute-min text-hover">
-                <p style="color: #fff;">{{top_8.1.material_name}}</p>
-                <h2>{{top_8.1.title}}</h2>
-              </div>
-            </a>
-          </div>
-      </div>
-    {% endif %}  
-
-    </div>
-  </section>
-
-  <section class="section4 container">
-    <div class="row">
-      
-      {% if top_8.2 %}
-      <div class="col-lg-6 d-flex flex-column justify-content-between mb-4 pb-2">
-        <a href="{{top_8.2.get_absolute_url}}" class="text-dark text-decoration-none">
-          <h2>{{top_8.2.title}}</h2>
-          <div>{{top_8.2.created_at|date:'d M'}}</div>
-        </a>
-      </div>
-      {% endif %}
-
-      <div class="col-lg-6 ">
-        <div class="row">
-
-          {% if top_8.3 %}
-          <div class="col-sm-6 mb-4 pb-2">
-            <a href="{{top_8.3.get_absolute_url}}" class="text-dark text-decoration-none">
-              <h4>{{top_8.3.title}}</h4>
-              <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.3.created_at|date:'d M'}}</h5>
-            </a>
-          </div>
-          {% endif %}
-
-          {% if top_8.4 %}
-          <div class="col-sm-6 mb-4 pb-2">
-            <a href="{{top_8.4.get_absolute_url}}" class="text-dark text-decoration-none">
-              <h4>{{top_8.4.title}}</h4>
-              <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.3.created_at|date:'d M'}}</h5>
-            </a>
-          </div>
-          {% endif %}
-
-          {% if top_8.5 %}
-          <div class="col-sm-6 mb-4 pb-2">
-            <a href="{{top_8.5.get_absolute_url}}" class="text-dark text-decoration-none">
-              <h4>{{top_8.5.title}}</h4>
-              <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.5.created_at|date:'d M'}}</h5>
-            </a>
-          </div>
-          {% endif %}
-
-          {% if top_8.6 %}
-          <div class="col-sm-6 mb-4 pb-2">
-            <a href="{{top_8.6.get_absolute_url}}" class="text-dark text-decoration-none">
-              <h4>{{top_8.6.title}}</h4>
-              <h5 style="color: #AAAAAA;margin: 18px 0 0 0;">{{top_8.6.created_at|date:'d M'}}</h5>
-            </a>
-          </div>
-          {% endif %}
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="last-section container">
-    <div class="row news-card">
-      {% if top_8.7 %}
-      <div class="col-lg-8 pb-4 mb-2">
-          <div class="position-relative" style=" height:100%;  border-radius:10px">
-            <a href="{{top_8.7.get_absolute_url}}" class="text-dark text-decoration-none h-100">
-              <div style=" width:100%; height:424px; background-image: url({{top_8.7.main_image.url}});
-                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px">
-              </div>
-              <!-- <img class="img-fluid" src="{{top_8.7.main_image.url}}" alt="" srcset=""> -->
-              <div class="card-text-absolute text-hover">
-                <p style="color: #15C0C7;">{{top_8.7.material_name}}</p>
-                <h2>{{top_8.7.title}}</h2>
-              </div>
-            </a>
-          </div>
-      </div>
-      {% endif %}
-
-      {% if top_8.8 %}
-      <div class="col-lg-4 col-md-6 pb-4 mb-2">
-          <div style="width: 100%; height:100%; border-radius:10px">
-            <a href="{{top_8.8.get_absolute_url}}" class="text-dark text-decoration-none">
-              <div style=" width:100%; height:240px; background-image: url({{top_8.8.main_image.url}}); 
-                  background-repeat:no-repeat; background-position:center; background-size:cover; border-radius:10px 10px 0 0">
-              </div>
-              <!-- <img src="{{ top_8.8.main_image.url }}" alt="" width="100%" height="200px"> -->
-              <div class="card-text p-4 m-1">
-                <p style="font-size: 13px; color: #15C0C7;">
-                  {{top_8.8.material_name}}
-                </p>
-                <h4 class="">{{top_8.8.title}}</h4>
-              </div>
-            </a>
-          </div>
-      </div>
-      {% endif %}
-    </div>
-{% endif %}
-  </section>
+        </section>
 
 {% endblock %}

@@ -67,7 +67,7 @@ mix-blend-mode: luminosity;
                     <div class="h3 mb-4">{% trans 'Стандарт' %}</div>
                     <div class="small">
                         <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>
-    <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
+                        <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>
 
 
                     </div>
@@ -112,117 +112,12 @@ mix-blend-mode: luminosity;
                 </div>
             </div>
         </div>
-        {##}
-        {#        <div>#}
-        {#            <div class="row mb-5">#}
-        {#                <div class="col-lg-4 my-2">#}
-        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
-        {#                        <div class="h3 mb-4">{% trans 'Стандарт' %}</div>#}
-        {#                        <div class="small">#}
-        {#                            <span class="text-secondary"><i class="bi-clock"></i>7-10 {% trans 'рабочих дней' %}</span>#}
-        {##}
-        {##}
-        {#                            <span class="float-right" style="color: #62C7CB;">239 {% trans 'сумов/слово' %}</span>#}
-        {##}
-        {#                        </div>#}
-        {#                        <div class="my-4 text3-text">{{ text.text3 }}#}
-        {##}
-        {#                        </div>#}
-        {##}
-        {##}
-        {##}
-        {##}
-        {##}
-        {#                        <div class="text4-form" style="display: none;">#}
-        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
-        {#                                {% csrf_token %}#}
-        {#                                <span>summa:{{ lang.text4 }}</span>#}
-        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
-        {#                            </form>#}
-        {#                        </div>#}
-        {##}
-        {##}
-        {##}
-        {#                    </div>#}
-        {#                </div>#}
-        {##}
-        {#                <div class="col-lg-4 my-2">#}
-        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
-        {#                        <div class="h3 mb-4">{% trans 'Экспресс' %}</div>#}
-        {#                        <div class="small">#}
-        {#                            <span class="text-secondary"><i class="bi-clock"></i>1-4 {% trans 'рабочих дней' %}</span>#}
-        {##}
-        {#                            <span class="float-right" style="color: #62C7CB;">299 {% trans 'сумов/слово' %}</span>#}
-        {##}
-        {#                        </div>#}
-        {#                        <div class="my-4 text5-text">{{ text.text4 }}#}
-        {##}
-        {#                        </div>#}
-        {##}
-        {##}
-        {##}
-        {##}
-        {##}
-        {#                        <div class="text6-form" style="display: none;">#}
-        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
-        {#                                {% csrf_token %}#}
-        {#                                <span>summa:{{ lang.text6 }}</span>#}
-        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
-        {#                            </form>#}
-        {#                        </div>#}
-        {##}
-        {#                    </div>#}
-        {#                </div>#}
-        {##}
-        {#                <div class="col-lg-4 my-2">#}
-        {#                    <div class="border rounded-20 shadow py-5 px-4 h-100 d-flex flex-column justify-content-between">#}
-        {#                        <div class="h3 mb-4">{% trans 'Премиум' %}</div>#}
-        {#                        <div class="small">#}
-        {#                            <span class="text-secondary"><i class="bi-clock"></i>2-10 {% trans 'рабочих дней' %}</span>#}
-        {##}
-        {#                            <span class="float-right" style="color: #62C7CB;">399 {% trans 'сумов/слово' %}</span>#}
-        {##}
-        {#                        </div>#}
-        {#                        <div class="my-4 text7-text">{{ text.text7 }}#}
-        {#                            {% if request.user.is_superuser %}#}
-        {#                                <button type="button" class="btn btn-secondary text7-btn">Edit</button>#}
-        {#                            {% endif %}#}
-        {#                        </div>#}
-        {##}
-        {#                        <div class="text7-form" style="display: none;">#}
-        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
-        {#                                {% csrf_token %}#}
-        {#                                <span>en:{{ lang.text7_en }}</span>#}
-        {#                                <span>ru:{{ lang.text7_ru }}</span>#}
-        {#                                <span>uz:{{ lang.text7_uz }}</span>#}
-        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
-        {#                            </form>#}
-        {#                        </div>#}
-        {##}
-        {##}
-        {#                        <div class="text8-form" style="display: none;">#}
-        {#                            <form action="{% url 'setpage:lang-change' %}" method="POST">#}
-        {#                                {% csrf_token %}#}
-        {#                                <span>summa:{{ lang.text8 }}</span>#}
-        {#                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>#}
-        {#                            </form>#}
-        {#                        </div>#}
-        {##}
-        {#                    </div>#}
-        {#                </div>#}
-        {#            </div>#}
-        {#        </div>#}
-        {##}
-        {##}
         <div class="row d-flex align-items-center qqq">
             <div class="col-md-5 col-12 col-sm-6 my-3 text10-text">Что входит в тариф
-
             </div>
-
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Стандарт</div>
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Экспресс</div>
             <div class="col-2 sticky-top d-none d-sm-block bg-white py-2" style="top: 135px ; ">Премиум</div>
-
 
             {% for tar in tariffs %}
                 <div class="col-5 my-3 text11-text">{{ tar.text|safe }}</div>
@@ -251,7 +146,6 @@ mix-blend-mode: luminosity;
             {% endfor %}
         </div>
 
-
         <div class="row d-flex align-items-center mt-5">
             <div class="col-md-5 col-12 my-3 text24-text">
                 <div class="h2">{% trans 'Количество слов' %}:</div>
@@ -274,7 +168,7 @@ mix-blend-mode: luminosity;
                 <div class="h3 main-color my-md-5">
                     <label id="cost" class="h3  main-color text4-text">{{ text.text6 }}
 
-                </label> {% trans 'сум' %}</div>
+                    </label> {% trans 'сум' %}</div>
             </div>
 
             <div class="col-md-2 d-flex mb-3 mb-md-0  d-md-block justify-content-between align-item-center">
@@ -289,7 +183,7 @@ mix-blend-mode: luminosity;
                 <div class="h3 main-color my-md-5">
                     <label id="cost1" class="h3  main-color text6-text">{{ text.text7 }}
 
-                </label> {% trans 'сум' %}
+                    </label> {% trans 'сум' %}
                 </div>
 
             </div>
@@ -307,7 +201,7 @@ mix-blend-mode: luminosity;
                 <div class="h3 main-color my-md-5">
                     <label id="cost2" class="h3  main-color text8-text">{{ text.text8 }}
 
-                </label> {% trans 'сум' %}
+                    </label> {% trans 'сум' %}
                 </div>
             </div>
         </div>
@@ -392,17 +286,6 @@ mix-blend-mode: luminosity;
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <form id="Forma" class="mt-100 mb-100" method="post" action="{% url 'pages:language_editing' %}#Forma"
           enctype="multipart/form-data">
         {% csrf_token %}
@@ -469,15 +352,17 @@ mix-blend-mode: luminosity;
                             <div class="col-lg-12 row px-4">
                                 <div class="col-lg-6  row my-4">
                                     <label for="id_is_agree" style="cursor: pointer;">
-                                        {{ forms.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                                        {{ forms.is_agree }}<span
+                                            class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                                     </label>
                                     <small class="text-danger">{{ forms.is_agree.errors }}</small>
                                 </div>
 
                                 <div class="col-lg-6  row my-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
+                                    <button type="submit"
+                                            class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -486,7 +371,7 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
-            
+
         </div>
     </form>
 
@@ -601,7 +486,8 @@ mix-blend-mode: luminosity;
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                    <a href="{% url 'requests:after-login' %}" type="button" class="btn btn-primary">Зарегистрироваться</a>
+                    <a href="{% url 'requests:after-login' %}" type="button"
+                       class="btn btn-primary">Зарегистрироваться</a>
                 </div>
             </div>
         </div>
@@ -627,20 +513,20 @@ mix-blend-mode: luminosity;
 
 
         $("#hideforma").click(function () {
-          
+
             a = parseInt($('#cost').html())
             $('#formcost').html(a)
             $('.amount').val(a)
 
         })
         $("#hideforma1").click(function () {
-         
+
             a = parseInt($('#cost1').html())
             $('#formcost').html(a)
             $('.amount').val(a)
         })
         $("#hideforma2").click(function () {
-      
+
             a = parseInt($('#cost2').html())
             $('#formcost').html(a)
             $('.amount').val(a)
@@ -649,7 +535,6 @@ mix-blend-mode: luminosity;
         $('.bi-x-circle').click(function () {
             $("#formacha").css('display', 'none')
         })
-
 
 
         $('#label').val(1)
@@ -665,14 +550,14 @@ mix-blend-mode: luminosity;
         })
 
     </script>
-{#    <script type="text/javascript">#}
-{#        var sidebar = new StickySidebar('#sidebar', {#}
-{#            containerSelector: '#main-content',#}
-{#            innerWrapperSelector: '.sidebar__inner',#}
-{#            topSpacing: 20,#}
-{#            bottomSpacing: 20#}
-{#        });#}
-{##}
-{#    </script>#}
- <script src="{% static  'pages/js/lang.js' %}"></script>
+    {#    <script type="text/javascript">#}
+    {#        var sidebar = new StickySidebar('#sidebar', {#}
+    {#            containerSelector: '#main-content',#}
+    {#            innerWrapperSelector: '.sidebar__inner',#}
+    {#            topSpacing: 20,#}
+    {#            bottomSpacing: 20#}
+    {#        });#}
+    {##}
+    {#    </script>#}
+    <script src="{% static  'pages/js/lang.js' %}"></script>
 {% endblock %}
