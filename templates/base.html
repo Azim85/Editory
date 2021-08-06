@@ -46,7 +46,7 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
-<div id="mobile" class="container-fluid nav-holder fixed-top w-100" style="overflow-y: scroll !important;">
+<div id="mobile" class="container-fluid nav-holder fixed-top w-100" >
     {% include 'components/mobile_navbar.html' %}
 </div>
 
@@ -69,6 +69,8 @@
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
 {% block js %}
+{% endblock %}
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
     $(document).ready(function () {
@@ -139,6 +141,10 @@
         document.documentElement.scrollTop = 0;
     }
 
+    $('#mobile').click(function(){
+        $('#mobile').toggleClass( "vh100" )
+    })
+
 
 
 
@@ -147,7 +153,6 @@
     
 
 </script>
-{% endblock %}
 
 
 </body>

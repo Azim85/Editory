@@ -344,4 +344,5 @@ html {
 
 .vh100 {
     height: 100vh !important;
+    overflow-y: scroll !important;
 }
