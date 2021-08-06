@@ -181,16 +181,16 @@
                         </div>
                     </div>
 
-                   
 
                     <div class="form-group row mt-5">
                         <!-- <div class="col-sm-6 d-flex flex-column"> -->
-                            <div class="d-flex align-items-center">
-                                <label for="id_is_agree" style="cursor: pointer;">
-                                    {{ forms.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                                </label>
-                            </div>
-                            <small class="text-danger">{{ forms.is_agree.errors }}</small>
+                        <div class="d-flex align-items-center">
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ forms.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
+                        </div>
+                        <small class="text-danger">{{ forms.is_agree.errors }}</small>
                         <!-- </div> -->
                     </div>
 
@@ -226,7 +226,8 @@
 
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="offset-4 col-sm-6">
-                            <button type="submit" class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
+                            <button type="submit"
+                                    class="btn btn-primary w-100">{% trans 'Заказать консультацию' %}</button>
 
                         </div>
                     </div>
@@ -317,7 +318,7 @@
             $('.center-text-second').css('display', 'none')
             $('.center-text-third').css('display', 'none')
             $('.center-text-fourth').css('display', 'none')
-$('#id_select_topic').val('Стратегия исследования')
+            $('#id_select_topic').val('Стратегия исследования')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image 41.png' %})')
 
             {#$('.center-text').html("{{ text.text5|safe }}")#}
@@ -329,7 +330,7 @@ $('#id_select_topic').val('Стратегия исследования')
             $('.center-text-fourth').css('display', 'none')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image46.jpg' %})')
             {#$('.center-text').html("{{ text.text6|safe }}")#}
-             $('#id_select_topic').val('Партнерство и сотрудничество')
+            $('#id_select_topic').val('Партнерство и сотрудничество')
         })
         $('#nav-contact-tab').on('click', function () {
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image45.jpg' %})')
@@ -337,7 +338,7 @@ $('#id_select_topic').val('Стратегия исследования')
             $('.center-text-second').css('display', 'none')
             $('.center-text-third').css('display', 'inline')
             $('.center-text-fourth').css('display', 'none')
-              $('#id_select_topic').val('Научное финансирование')
+            $('#id_select_topic').val('Научное финансирование')
 
 
         })
@@ -349,7 +350,7 @@ $('#id_select_topic').val('Стратегия исследования')
             $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image38.jpg' %})')
             $('.bg-color-me-home').css('background', 'linear-gradient(103.8deg, #004465 7.15%, rgba(3, 30, 39, 0.76) 39.59%, rgba(4, 34, 45, 0.38) 68.6%, rgba(255, 255, 255, 0.35) 101.53%)')
             {#$('.center-text').html("{{ text.text8|safe  }}")#}
-             $('#id_select_topic').val('Управление и ведение')
+            $('#id_select_topic').val('Управление и ведение')
         })
 
 

@@ -5,19 +5,19 @@
 {% load static %}
 
 {% block content %}
-   <div class="container py-5">
-       <div class="row ">
-           <h1 class="text-center w-100 border-bottom">Payment</h1>
-           
-           <div class="col-lg-6">
-               <div class="row">
-                   <div class="col-6">
+    <div class="container py-5">
+        <div class="row ">
+            <h1 class="text-center w-100 border-bottom">Payment</h1>
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
                         <p class="mb-0">client:</p>
-                   </div>
-                   <div class="col-6">
-                        <p class="mb-0">{{order.user.first_name}}</p>
-                   </div>
-               </div>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-0">{{ order.user.first_name }}</p>
+                    </div>
+                </div>
                 <hr>
 
                 <div class="row">
@@ -25,7 +25,7 @@
                         <p class="mb-0">Phone:</p>
                     </div>
                     <div class="col-lg-7 col-6">
-                        <p class="mb-0">{{order.user.phone}}</p>
+                        <p class="mb-0">{{ order.user.phone }}</p>
                     </div>
                 </div>
                 <hr>
@@ -50,7 +50,7 @@
                         <p class="mb-0">Service:</p>
                     </div>
                     <div class="col-6">
-                        <p class="mb-0">{{order.product}}</p>
+                        <p class="mb-0">{{ order.product }}</p>
                     </div>
                 </div>
                 <hr>
@@ -60,47 +60,52 @@
                         <p class="mb-0">Summa:</p>
                     </div>
                     <div class="col-6">
-                        <p class="mb-0">{{order.amount}} sum</p>
+                        <p class="mb-0">{{ order.amount }} sum</p>
                     </div>
                 </div>
                 <hr>
 
                 <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary ">Cancel</a>
 
-           </div>
+            </div>
 
-           <div class="col-lg-6 d-flex justify-content-center align-items-center my-5 my-lg-0">
-                {% if order.payment_type == 4%}
+            <div class="col-lg-6 d-flex justify-content-center align-items-center my-5 my-lg-0">
+                {% if order.payment_type == 4 %}
                     <form method="POST" action="https://checkout.paycom.uz">
                         <!-- Идентификатор WEB Кассы -->
-                        <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b" />
-                    
+                        <input type="hidden" name="merchant" value="60b7cf520d44ad636479d80b"/>
+
                         <!-- Сумма платежа в тийинах -->
-                        <input type="hidden" name="amount" value="{{ order.get_payme_amount }}" />
-                    
+                        <input type="hidden" name="amount" value="{{ order.get_payme_amount }}"/>
+
                         <!-- Поля Объекта Account -->
-                        <input type="hidden" name="account[order_id]" value="{{ order.id }}" />
-                    
-                        <input type="hidden" name="callback" value="https://editory.org/en/auth/dashboard/?success=success" />
-                    
-                        <button type="submit" class="btn btn-outline-success" style="width: 300px; height:200px ">{% trans 'Оплатить с помощью' %}<img
+                        <input type="hidden" name="account[order_id]" value="{{ order.id }}"/>
+
+                        <input type="hidden" name="callback"
+                               value="https://editory.org/en/auth/dashboard/?success=success"/>
+
+                        <button type="submit" class="btn btn-outline-success"
+                                style="width: 300px; height:200px ">{% trans 'Оплатить с помощью' %}<img
                                 src="{% static 'pages/images/payme.png' %}" class="ml-3" alt="">
                         </button>
                     </form>
                 {% endif %}
-                {% if order.payment_type == 3%}
+                {% if order.payment_type == 3 %}
                     <form name="apelsin_form" action="https://oplata.kapitalbank.uz" action="GET">
                         <input type="hidden" name="cash" value="8cd10d4c64bc4a64a32cd9efe53e591f">
                         <input type="hidden" name="redirectUrl" value="https://editory.org/en/auth/dashboard/">
                         <input type="hidden" name="description" value="Payment for OOO Editory">
                         <input type="hidden" name="amount" value="{{ order.get_payme_amount|get_number }}">
                         <input type="hidden" name="order_id" value="{{ order.id }}">
-                        <button type="submit" data-id="{{ order.id }}" style="height:200px" class="btn btn-outline-warning check_transaction">{% trans 'Оплатить спомощью' %}<img src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100" alt="">
+                        <button type="submit" data-id="{{ order.id }}" style="height:200px"
+                                class="btn btn-outline-warning check_transaction">{% trans 'Оплатить спомощью' %}<img
+                                src="https://oplata.kapitalbank.uz/images/apelsin-v1.png" class="ml-3" width="100"
+                                alt="">
                         </button>
-                    
+
                     </form>
                 {% endif %}
-           </div>
-       </div>
-   </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

@@ -23,55 +23,52 @@ mix-blend-mode: luminosity;
                             </div>
                         </div>
                     </div>
-                    {#            <div class="col-lg-6 d-flex justify-content-center">#}
-                    {#                <img class="img-fluid"  src="{% static 'pages/images/scient book 1.png' %}">#}
-                    {#            </div>#}
                 </div>
             </div>
         </div>
     </div>
-        <div class=" pt-100">
-            <div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
-                <div class="row container w-100 pb-5">
-                    <div class="col-md-6 mt-5 px-lg-4">
-                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="{% url 'pages:top25' %}" class="text-dark text-decoration-none">
-                                <img src="{% static 'pages/svg/Group 527.svg' %}" alt=""
-                                     style="width: 66px; height:66px">
-                                <h4>{% trans 'ТОП-25 наиболее цитируемых статей' %}</h4>
-                                <p>{% trans 'Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия международных журналов' %}</p>
-                            </a>
-                        </div>
+    <div class=" pt-100">
+        <div class="row top w-100 justify-content-center px-0 mx-0 pb-200">
+            <div class="row container w-100 pb-5">
+                <div class="col-md-6 mt-5 px-lg-4">
+                    <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                        <a href="{% url 'pages:top25' %}" class="text-dark text-decoration-none">
+                            <img src="{% static 'pages/svg/Group 527.svg' %}" alt=""
+                                 style="width: 66px; height:66px">
+                            <h4>{% trans 'ТОП-25 наиболее цитируемых статей' %}</h4>
+                            <p>{% trans 'Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия международных журналов' %}</p>
+                        </a>
                     </div>
-                    <div class="col-md-6 mt-5 px-lg-4">
-                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="{% url 'pages:top2uzb' %}" class="text-dark text-decoration-none">
-                                <img src="{% static 'pages/svg/Group 528.svg' %}" alt=""
-                                     style="width: 66px; height:66px">
-                                <h4>{% trans 'ТОП-5 изданий Узбекистана' %}</h4>
-                                <p>{% trans 'Будьте в курсе актуальных исследований и проблем научного сообщества нашей республики' %}</p>
-                            </a>
-                        </div>
+                </div>
+                <div class="col-md-6 mt-5 px-lg-4">
+                    <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                        <a href="{% url 'pages:top2uzb' %}" class="text-dark text-decoration-none">
+                            <img src="{% static 'pages/svg/Group 528.svg' %}" alt=""
+                                 style="width: 66px; height:66px">
+                            <h4>{% trans 'ТОП-5 изданий Узбекистана' %}</h4>
+                            <p>{% trans 'Будьте в курсе актуальных исследований и проблем научного сообщества нашей республики' %}</p>
+                        </a>
                     </div>
-                    <div class="col-md-6 mt-5 px-lg-4">
-                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="{% url 'pages:top10' %}" class="text-dark text-decoration-none">
+                </div>
+                <div class="col-md-6 mt-5 px-lg-4">
+                    <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                        <a href="{% url 'pages:top10' %}" class="text-dark text-decoration-none">
                             <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
                             <h4>{% trans 'ТОП-10 самых цитируемых статей учёных Узбекистана' %}</h4>
                             <p>{% trans 'Предлагаем к ознакомлению наиболее заметные и интересные научные работы за последнее время' %}</p>
-                            </a>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-md-6 mt-5 px-lg-4">
-                        <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
-                            <a href="{% url 'pages:top10uz' %}" class="text-dark text-decoration-none">
+                </div>
+                <div class="col-md-6 mt-5 px-lg-4">
+                    <div class="d-flex flex-column bg-white p-5 h-100 w-100 card">
+                        <a href="{% url 'pages:top10uz' %}" class="text-dark text-decoration-none">
                             <img src="{% static 'pages/svg/Group 526.svg' %}" alt="" style="width: 66px; height:66px">
                             <h4>{% trans 'ТОП-10 диссертаций, изменивших науку' %}</h4>
                             <p>{% trans 'Погрузитесь в изучение фундаментальных исследования, сделавшие значительный вклад в мировую науку' %}</p>
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 {% endblock %}

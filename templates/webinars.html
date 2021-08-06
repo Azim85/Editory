@@ -9,40 +9,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'pages/css/slick-theme.css' %}"/>
 {% endblock %}
 {% block content %}
-
     <div class="container ">
         <div class="row my-5">
             <div class="col-lg-5 col-sm-12 mb-4">
                 <h1 class="font-weight-bold font-65 mb-3 text1-text">
-                    {% trans 'Вебинары и семинары' %}{% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-info text1-btn">Edit</button>
-                    {% endif %}</h1>
-                <div class="text1-form mb-3" style="display: none;">
-                    <form action="{% url 'setpage:webinar-change' %}" method="POST">
-                        {% csrf_token %}
-                        <span>en:{{ webinar.text1_en }}</span>
-                        <span>ru:{{ webinar.text1_ru }}</span>
-                        <span>uz:{{ webinar.text1_uz }}</span>
-                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                    </form>
-                </div>
-
+                    {% trans 'Вебинары и семинары' %}
+                </h1>
                 <p class=" mb-0 text2-text">
                     {% trans 'Как написать научную статью? Как взаимодействовать с исследовательскими платформами и быстро находить нужную информацию? Правильный подход — ключ к успеху. Не бойтесь реализовать свои идеи! Вебинары Editory помогут вам понять, как именно следует действовать. Наш опыт достаточно разнообразен, чтобы вы нашли в наших материалах ответы на любые вопросы.' %}
-                    {% if request.user.is_superuser %}
-                        <button type="button" class="btn btn-info text2-btn">Edit</button>
-                    {% endif %}
                 </p>
-
-                <div class="text2-form" style="display: none;">
-                    <form action="{% url 'setpage:webinar-change' %}" method="POST">
-                        {% csrf_token %}
-                        <span>en:{{ webinar.text2_en }}</span>
-                        <span>ru:{{ webinar.text2_ru }}</span>
-                        <span>uz:{{ webinar.text2_uz }}</span>
-                        <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                    </form>
-                </div>
             </div>
 
             <div class="col-lg-7 col-sm-12 p-0 m-0"><img src="{% static 'pages/images/Rectangle 123 (1).png' %}"

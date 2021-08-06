@@ -35,39 +35,10 @@ mix-blend-mode: luminosity;
                 <div class="row padding_me">
                     <div class="col-lg-6 pr-0 w-100">
                         <div class="text-white">
-
                             <div class="h1 pb-4 font-65 font-weight-bold text1-text">{{ text.text1 }}
-                                {% if request.user.is_superuser %}
-                                    <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                                {% endif %}
                             </div>
-
-                            <div class="text1-form w-100" style="display: none;">
-                                <form action="{% url 'setpage:con-change' %}" method="POST">
-                                    {% csrf_token %}
-                                    <span>en:{{ con.text1_en }}</span>
-                                    <span>ru:{{ con.text1_ru }}</span>
-                                    <span>uz:{{ con.text1_uz }}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
-
                             <div class="pb-4 text2-text">{{ text.text2 }}
-                                {% if request.user.is_superuser %}
-                                    <button type="button" class="btn btn-secondary text2-btn">Edit</button>
-                                {% endif %}
                             </div>
-
-                            <div class="text2-form" style="display: none;">
-                                <form action="{% url 'setpage:con-change' %}" method="POST">
-                                    {% csrf_token %}
-                                    <span>en:{{ con.text2_en }}</span>
-                                    <span>ru:{{ con.text2_ru }}</span>
-                                    <span>uz:{{ con.text2_uz }}</span>
-                                    <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                                </form>
-                            </div>
-
                             <a href="#Forma" class="btn btn-light">{% trans 'Оставить заявку' %}</a>
                         </div>
                     </div>
@@ -92,12 +63,10 @@ mix-blend-mode: luminosity;
             </div>
 
 
-
-
         </div>
-    <div class="p-5 rounded-25" style="background-color: #DDE5E9; padding-right: 200px;">
-                {{ text.text4|safe }}
-            </div>
+        <div class="p-5 rounded-25" style="background-color: #DDE5E9; padding-right: 200px;">
+            {{ text.text4|safe }}
+        </div>
     </div>
 
 
@@ -250,7 +219,8 @@ mix-blend-mode: luminosity;
                     <div class="col-lg-11 d-flex  justify-content-between">
                         <div class='mr-auto'>
                             <label for="id_is_agree" style="cursor: pointer;">
-                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных'%}</span>
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>

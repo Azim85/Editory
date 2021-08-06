@@ -34,37 +34,9 @@
                 <div class="col-lg-7">
                     <div class=" head-word geometria pb-5 text1-text"
                          style="font-size: 50px; color:white; font-weight:bold; line-height:1">{{ text.text1 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                        {% endif %}
                     </div>
-
-                    <div class="text1-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ scopus.text1_en }}</span>
-                            <span>ru:{{ scopus.text1_ru }}</span>
-                            <span>uz:{{ scopus.text1_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
                     <div style=" color:white" class="text-left text2-text">{{ text.text2 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text2-btn">Edit</button>
-                        {% endif %}
                     </div>
-
-                    <div class="text2-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ scopus.text2_en }}</span>
-                            <span>ru:{{ scopus.text2_ru }}</span>
-                            <span>uz:{{ scopus.text2_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
                     <div class="form-group row" style="margin-top: 60px">
                         <div class="col col-md-6">
                             <a href="#Forma" type="submit" class="btn w-100 text-white self-align-left"
@@ -118,23 +90,8 @@
                             <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                         </form>
                     </div>
-
                     <p class="mx-auto pt-5 text5-text" style="max-width:200px">{{ text.text5 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text5-btn">Edit</button>
-                        {% endif %}
                     </p>
-
-                    <div class="text5-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ scopus.text5_en }}</span>
-                            <span>ru:{{ scopus.text5_ru }}</span>
-                            <span>uz:{{ scopus.text5_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
                 </div>
                 <div class="col text-center">
                     <div class="text6-text">
@@ -151,23 +108,8 @@
                             <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                         </form>
                     </div>
-
                     <p class="mx-auto pt-5 text7-text" style="max-width:200px">{{ text.text7 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text7-btn">Edit</button>
-                        {% endif %}
                     </p>
-
-                    <div class="text7-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ scopus.text7_en }}</span>
-                            <span>ru:{{ scopus.text7_ru }}</span>
-                            <span>uz:{{ scopus.text7_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
                 </div>
                 <div class="col text-center">
 
@@ -185,23 +127,8 @@
                             <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
                         </form>
                     </div>
-
                     <p class="mx-auto pt-5 text9-text" style="max-width:200px">{{ text.text9 }}
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text9-btn">Edit</button>
-                        {% endif %}
                     </p>
-
-                    <div class="text9-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST">
-                            {% csrf_token %}
-                            <span>en:{{ scopus.text9_en }}</span>
-                            <span>ru:{{ scopus.text9_ru }}</span>
-                            <span>uz:{{ scopus.text9_uz }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
-
                 </div>
             </div>
 
@@ -284,21 +211,21 @@
                         </div>
                     </div>
 
-                   
 
                 </div>
 
                 <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
                 <div class="col-lg-9 d-flex ">
-                    {{form.comment}}
-                    <small class="text-danger">{{form.comment.errors}}</small>
+                    {{ form.comment }}
+                    <small class="text-danger">{{ form.comment.errors }}</small>
                 </div>
 
                 <div class="form-group container row w-100" style="margin-top: 60px">
                     <div class="col-lg-11 d-flex justify-content-between">
                         <div class='mr-auto'>
                             <label for="id_is_agree" style="cursor: pointer;">
-                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>

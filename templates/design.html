@@ -34,21 +34,7 @@ mix-blend-mode: luminosity;
                     <div class="col-lg-12">
                         <div class=" font-65 head-word geometria pb-5 text1-text"
                              style=" color:white; font-weight:bold; line-height:1">{{ text.text1 }}
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text1-btn">Edit</button>
-                            {% endif %}
                         </div>
-
-                        <div class="text1-form" style="display: none;">
-                            <form action="{% url 'setpage:design-change' %}" method="POST" class="w-100">
-                                {% csrf_token %}
-                                <span>en:{{ design.text1_en }}</span>
-                                <span>ru:{{ design.text1_ru }}</span>
-                                <span>uz:{{ design.text1_uz }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
-
                         <div class="form-group row" style="margin-top: 60px">
                             <div class="col col-md-6">
                                 <a href="#Forma" type="submit" class="btn btn-light w-100  self-align-left"
@@ -68,7 +54,6 @@ mix-blend-mode: luminosity;
             <div class="row">
                 <div class="offset-lg-1 col-lg-9 font-22 text2-text">{{ text.text2|safe }}
                 </div>
-
 
 
             </div>
