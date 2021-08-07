@@ -173,3 +173,29 @@ class ResearchStrategyModel(models.Model):
     text7 = RichTextUploadingField()
     text8 = RichTextUploadingField()
     text9 = RichTextUploadingField()
+
+
+class top10Uz(models.Model):
+    name = models.TextField()
+    link = models.CharField(max_length=255)
+    description = RichTextUploadingField()
+    number = models.CharField(max_length=10)
+
+
+class top25(models.Model):
+    name = models.TextField()
+    link = models.CharField(max_length=255)
+    description = RichTextUploadingField()
+    number = models.CharField(max_length=10)
+
+
+class top5Uz(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    description = models.TextField()
+
+
+class top10(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    description = models.TextField()

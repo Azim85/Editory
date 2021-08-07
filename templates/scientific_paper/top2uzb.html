@@ -22,7 +22,13 @@
             событий и смотрите в будущее с улыбкой! А Editory подберёт для вас самое важное, нужное и интересное.</p>
         <p class="mb-100">Перед вами &mdash; наша выборка журналов с публикациями, заслуживающими внимания.</p>
         <div class="row">
-            <div class="col-lg-5 h2"><a href="https://uzjournals.edu.uz/tma/" style="color: #2A819E">Central Asian
+
+            {% for t in text %}
+            <div class="col-lg-5 h2"><a href="{{ t.link }}" style="color: #2A819E">{{ t.name }}</a></div>
+            <div class="col-lg-7 mb-5 mt-2">{{ t.description }}</div>
+            {% endfor %}
+
+        <div class="col-lg-5 h2"><a href="https://uzjournals.edu.uz/tma/" style="color: #2A819E">Central Asian
                 Journal of Medicine</a></div>
             <div class="col-lg-7 mb-5 mt-2">Рецензируемый журнал, в котором публикуются оригинальные научные статьи. Серия была основана в
                 Ташкентской медицинской академии в 2011 году. Основная цель &mdash; содействие образовательной и
