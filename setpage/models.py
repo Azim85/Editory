@@ -9,8 +9,8 @@ class AboutUsModel(models.Model):
     text4 = models.CharField(max_length=255, blank=True, null=True)
     text5 = models.TextField(blank=True)
     text6 = models.CharField(max_length=255, blank=True, null=True)
-    text7 = models.CharField(max_length=255, blank=True, null=True)
-    text8 = models.CharField(max_length=255, blank=True, null=True)
+    text7 = RichTextUploadingField(null=True, blank=True)
+    text8 = RichTextUploadingField(null=True, blank=True)
     text9 = RichTextUploadingField(blank=True)
 
 
