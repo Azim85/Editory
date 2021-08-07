@@ -71,17 +71,20 @@
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
 {% block js %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
-    <script>
-        $(document).ready(function () {
+{% endblock %}
 
-            $('.darken').mouseover(function () {
-                $(this).css({
-                    'font-weight': 'bold',
-                    'color': 'black',
-                    'font-size': '21px'
-                })
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
+<script>
+    $(document).ready(function () {
+
+        $('.darken').mouseover(function () {
+            $(this).css({
+                'font-weight': 'bold',
+                'color': 'black',
+                'font-size': '21px'
             })
+        })
+            
             $('.darken').mouseleave(function () {
                 $(this).css({
                     'font-weight': 'normal',
@@ -107,7 +110,7 @@
             gtag('config', 'G-8BXGYGEMEL');
 
 
-        })
+        
 
 
         //Get the button
@@ -138,6 +141,8 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+
+    })
 
 
 </script>

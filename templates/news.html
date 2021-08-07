@@ -17,7 +17,7 @@
                 </form>
             </div>
             <div class="col-lg-4">
-                <a href="{% url 'pages:allnews' %}">ВСЕ НОВОСТИ >>></a>
+                <a href="{% url 'pages:allnews' %}">{% trans 'ВСЕ НОВОСТИ' %} >>></a>
             </div>
         </div>
 
@@ -70,10 +70,11 @@
     </section>
 
     <section class=" container">
+        {% if last_week %}
         <h1 class="font-weight-bold">{% trans 'На этой неделе' %}</h1>
         <div class="row my-5">
 
-            {% if last_week %}
+            
                 {% for topic in last_week %}
                     <div class="col-lg-4 mb-3 ">
                         <a href="{{ topic.get_absolute_url }}" class="text-dark text-decoration-none"><p
@@ -81,9 +82,11 @@
                         <div class="small text-secondary">{{ topic.created_at|date:'d M' }}</div>
                     </div>
                 {% endfor %}
-            {% endif %}
+            
         </div>
-
+        {% else %}
+            <h1 class="font-weight-bold">{% trans 'Новостей на этой неделю не найдено' %}</h1>
+        {% endif %}
     </section>
 
 
