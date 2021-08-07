@@ -150,14 +150,14 @@ class ProofModel(models.Model):
 
 class LangEditModel(models.Model):
     text1 = models.CharField(max_length=100, blank=True)
-    text2 = models.TextField()
+    text2 = RichTextUploadingField()
     text3 = models.CharField(max_length=100, blank=True)
     text4 = models.CharField(max_length=100, blank=True)
     text5 = models.CharField(max_length=100, blank=True)
     text6 = models.CharField(max_length=100, blank=True)
     text7 = models.CharField(max_length=100, blank=True)
     text8 = models.CharField(max_length=100, blank=True)
-    text9 = models.CharField(max_length=100, blank=True)
+    text9 = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.text1
