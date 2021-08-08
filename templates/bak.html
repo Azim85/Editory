@@ -90,7 +90,7 @@ mix-blend-mode: luminosity;
 
     <div class="container padding_bak py-5   mt-5" style="border: 2px solid #2A819E; border-radius:15px;" >
         <div>
-            {{ text.text10 }}
+            {{ text.text10|safe }}
         </div>
     </div>
 </div>
@@ -98,7 +98,7 @@ mix-blend-mode: luminosity;
 </div>
 
 <div class="container mt-100 pb-100" id="Forma">
-    <p style="max-width: 635px;">{{ text.text10 }}</p>
+    <!-- <p style="max-width: 635px;">{{ text.text10 }}</p> -->
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}#Forma">
         {% csrf_token %}
         <div class="row text-secondary">
