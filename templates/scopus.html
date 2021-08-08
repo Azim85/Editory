@@ -103,7 +103,7 @@
             <div class="container bg-white py-5 mt-5 padding_bak"
                  style="border: 2px solid #2A819E; border-radius:15px; ">
                 <div>
-                    {{ text.text10 }}
+                    {{ text.text10|safe }}
                 </div>
             </div>
         </div>
@@ -112,6 +112,7 @@
 
     <div id="Forma" class="container mt-100 pb-100">
         <p style="max-width: 660px;">{{ text.text11 }}</p>
+        <h2 class="mb-3 mt-2">{% trans 'Форма заявки' %}</h2>
         <form class="mt-5" method="post" name="consultation" action="{% url 'requests:scopus' %}#Forma">
             {% csrf_token %}
             <div class="row text-secondary">
