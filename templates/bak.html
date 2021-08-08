@@ -102,6 +102,7 @@ mix-blend-mode: luminosity;
     <form class="mt-5" method="post" name="consultation" action="{% url 'requests:bak' %}#Forma">
         {% csrf_token %}
         <div class="row text-secondary">
+            <h2>{% trans 'Форма заявки'%}</h2>
 
             <div class="col-lg-6">
     
