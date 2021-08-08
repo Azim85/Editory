@@ -41,7 +41,7 @@ mix-blend-mode: luminosity;
                         </div>
                         <div class="col-lg-7 font-22">
                             <div class="text2-text">
-                                {{ text.text2 }}
+                                {{ text.text2|safe }}
                             </div>
                         </div>
                         <div class="mt-3 col-lg-12">
@@ -55,7 +55,7 @@ mix-blend-mode: luminosity;
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
-                {{ text.text3 }}
+                {{ text.text3|safe }}
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@ mix-blend-mode: luminosity;
              style="background: linear-gradient(98.46deg, #EFF9FA -2.78%, rgba(236, 243, 243, 0) 86.58%);">
             <div class="container pb-100 pt-100 text-white ">
                 <div class="font-22 section_2">
-                    {{ text.text4 }}
+                    {{ text.text4|safe }}
                 </div>
             </div>
         </div>

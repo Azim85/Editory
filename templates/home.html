@@ -27,14 +27,17 @@
 
          
     <div style="background-color: #F2F2F2; overflow-x: hidden;">
-        <div class="container">
-
+        <div class="container" itemscope itemtype="https://schema.org/ProfessionalService https://schema.org/Organization">
+            <meta itemprop="legalName" content="Editory">
+            <meta itemprop="name" content="Editory">
+            <meta itemprop="address" content="г. Ташкент, Алмазарский район, Себзар 3">
+            <meta itemprop="telephone" content="+998 90 013 19 23">
             <div class="row py-me-5 pt-100 pb-200 header-me">
-                <div class="col-lg-6 pl-lg-5 pl-2">
-                    <div class="my-text geometria"><span class="main-color">{% trans 'Полный' %}</span>
+                <div class="col-lg-6 pl-lg-5 pl-2" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+                    <div class="my-text geometria" itemprop="itemOffered"><span class="main-color">{% trans 'Полный' %}</span>
                         {% trans 'спектр научных консультаций' %}
                     </div>
-                    <div class="my-5 font-22">{% trans 'Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации' %}</div>
+                    <div class="my-5 font-22" itemprop="description">{% trans 'Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации' %}</div>
                     <a href="#Forma" class="btn btn-color rounded py-3 mb-5 buttoncss text-center font-weight-light">
                         {% trans 'Задать вопрос' %}
                     </a>
@@ -79,9 +82,14 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-12">
-                        <p class="font-size-6 text-white">
-                            <b>Editory</b>
+                        <p class="font-size-6 text-white" itemscope itemtype="https://schema.org/Organization">
+                            <b itemprop="legalName">Editory</b>
+                            <meta itemprop="name" content="Editory">
+                            <meta itemprop="address" content="г. Ташкент, Алмазарский район, Себзар 3">
+                            <meta itemprop="telephone" content="+998 90 013 19 23">
+                            <span itemprop="description">
                             — {% trans 'научно-консалтинговая компания с опытом более 6 лет. Среди наших партнёров — крупные международные издательства. На нашем счету более 500 публикаций в Scopus и около 1000 — в журналах ВАК. Поможем сориентироваться в системе грантов и патентов.' %}
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -95,16 +103,20 @@
                 <h1 class="h-40p mb-5 text-dark">{% trans 'Наши услуги' %}</h1>
                 <div class="row  mr-0">
                     <div class="col-12 px-0">
-                        <div class="wrapper w-100 inline-block">
+                        <div class="wrapper w-100 inline-block" itemscope itemtype="https://schema.org/Organization https://schema.org/ProfessionalService">
+                            <meta itemprop="legalName" content="Editory">
+                            <meta itemprop="name" content="Editory">
+                            <meta itemprop="address" content="г. Ташкент, Алмазарский район, Себзар 3">
+                            <meta itemprop="telephone" content="+998 90 013 19 23">
                             <div class="slick1 slider p-0">
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center ">
-                                    <div class="py-lg-5 px-lg-5 w-100-me   bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5 w-100-me   bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_rename.png' %}"></div>
-                                            <div class="ml-4 h3 ">{% trans 'Патенты и' %}<br>{% trans 'финансирование' %}
+                                            <div><img src="{% static 'pages/images/icon_rename.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3 " itemprop="itemOffered">{% trans 'Патенты и' %}<br>{% trans 'финансирование' %}
                                             </div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Ищете возможность получить поддержку своих исследований или защитить интеллектуальную собственность? Консультируем и оформляем все необходимые документы.' %}
                                         </div>
                                         <div class="mt-4">
@@ -120,13 +132,13 @@
                                     </div>
                                 </div>
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center ">
-                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_group.png' %}"></div>
-                                            <div class="ml-4 h3 ">{% trans 'Международные' %}
+                                            <div><img src="{% static 'pages/images/icon_group.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3 " itemprop="itemOffered">{% trans 'Международные' %}
                                                 <br>{% trans 'конференции' %}</div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Помогаем как с участием, так и с организацией. Хотите ускорить свой прогресс, выехав за рубеж, или собрать экспертов мирового уровня здесь? Обращайтесь к нам.' %}
                                         </div>
                                         <div class="mt-4">
@@ -142,12 +154,12 @@
                                     </div>
                                 </div>
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center">
-                                    <div class="py-lg-5 px-lg-5  w-100-me bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5  w-100-me bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_book.png' %}"></div>
-                                            <div class="ml-4 h3 ">Публикация работ</div>
+                                            <div><img src="{% static 'pages/images/icon_book.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3" itemprop="itemOffered">Публикация работ</div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Оформляем научные материалы для журналов Scopus и ВАК. Берём на себя полные обязательства по доведению материала до публикации.' %}
                                         </div>
                                         <div class="mt-4">
@@ -162,13 +174,13 @@
                                     </div>
                                 </div>
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center">
-                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_head.png' %}"></div>
-                                            <div class="ml-4 h3 ">{% trans 'Консультация' %}
+                                            <div><img src="{% static 'pages/images/icon_head.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3 " itemprop="itemOffered">{% trans 'Консультация' %}
                                                 <br>{% trans 'по диссертациям' %}</div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Научные конференции являются особенным видом взаимодействия между представителями исследовательского сообщества, в ходе которого они представляют свои работы в форме сборников' %}
                                         </div>
                                         {#                                    <div class="mt-4">#}
@@ -178,12 +190,12 @@
                                     </div>
                                 </div>
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center">
-                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_visual.png' %}"></div>
-                                            <div class="ml-4 h3 ">{% trans 'Визуальные решения' %}</div>
+                                            <div><img src="{% static 'pages/images/icon_visual.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3 " itemprop="itemOffered">{% trans 'Визуальные решения' %}</div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Международные издания очень требовательны к качеству графических материалов. Доверьтесь профессионалам и не беспокойтесь за судьбу своей публикации.' %}
                                         </div>
                                         {#                                    <div class="mt-4">#}
@@ -193,12 +205,12 @@
                                     </div>
                                 </div>
                                 <div class="heightme content-slider py-3 pt-md-4 px-3 px-md-5 shadow-slider d-flex flex-column justify-content-center">
-                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me">
+                                    <div class="py-lg-5 px-lg-5 w-100-me  bg-white shadow_me" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
                                         <div class="d-flex mb-4">
-                                            <div><img src="{% static 'pages/images/icon_translate.png' %}"></div>
-                                            <div class="ml-4 h3 ">{% trans 'Переводы материалов' %}</div>
+                                            <div><img src="{% static 'pages/images/icon_translate.png' %}" itemprop="image"></div>
+                                            <div class="ml-4 h3 " itemprop="itemOffered">{% trans 'Переводы материалов' %}</div>
                                         </div>
-                                        <div class=" font-16">
+                                        <div class=" font-16" itemprop="description">
                                             {% trans 'Знакомьте научное сообщество со своими разработками благодаря качественным переводам на международные языки — опытные специалисты Editory к вашим услугам.' %}
                                         </div>
                                         {#                                    <div class="mt-4">#}
@@ -388,14 +400,14 @@
             <div class="row text-white">
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
-                        <div class="card border-0" style="background:transparent ">
+                        <div class="card border-0" style="background:transparent " itemscope itemtype="https://schema.org/Question">
                             <div class="card-header border-0 " id="headingOne">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left btn-toggle justify-content-between
                                     d-flex button-main" type="button"
                                          data-toggle="collapse" data-target="#collapseOne">
                                         <div class="card-header-color "
-                                             style="white-space:normal">  {% trans 'Сколько стоит публикация статьи в Scopus?' %}</div>
+                                             style="white-space:normal" itemprop="name">  {% trans 'Сколько стоит публикация статьи в Scopus?' %}</div>
                                         <i
                                                 class=" text-white bi bi-chevron-down"></i>
                                     </div>
@@ -403,7 +415,7 @@
                             </div>
                             <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p class="pl-3">{% trans 'Стоимость публикации в журналах с открытым доступом варьируется от 500 до 5000 долларов США. Публикации в журналах с закрытым доступом бесплатны.' %}
+                                    <p class="pl-3" itemprop="suggestedAnswer">{% trans 'Стоимость публикации в журналах с открытым доступом варьируется от 500 до 5000 долларов США. Публикации в журналах с закрытым доступом бесплатны.' %}
                                     </p>
                                 </div>
                             </div>
@@ -411,21 +423,21 @@
                         <div class="d-flex w-100 justify-content-center">
                             <hr class="" style="width: 93%; background-color: #fff;">
                         </div>
-                        <div class="card border-0" style="background:transparent ">
+                        <div class="card border-0" style="background:transparent " itemscope itemtype="https://schema.org/Question">
                             <div class="card-header border-0 " id="headingTwo">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex"
                                          type="button"
                                          data-toggle="collapse" data-target="#collapseTwo">
                                         <div class="card-header-color"
-                                             style="white-space:normal">{% trans 'Предполагает ли публикация выплаты её автору?' %}</div>
+                                             style="white-space:normal" itemprop="name">{% trans 'Предполагает ли публикация выплаты её автору?' %}</div>
                                         <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body border-0">
-                                    <p class="pl-3">{% trans 'Премирование за выход научных публикаций обычно осуществляется университетом, под эгидой которого они были выпущены.' %} </p>
+                                    <p class="pl-3" itemprop="suggestedAnswer">{% trans 'Премирование за выход научных публикаций обычно осуществляется университетом, под эгидой которого они были выпущены.' %} </p>
                                 </div>
                             </div>
                         </div>
@@ -436,21 +448,21 @@
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
                     <div class="accordion" id="accordionExample">
 
-                        <div class="card border-0" style="background:transparent ">
+                        <div class="card border-0" style="background:transparent " itemscope itemtype="https://schema.org/Question">
                             <div class="card-header border-0 " id="headingThree">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex"
                                          type="button"
                                          data-toggle="collapse" data-target="#collapseThree">
                                         <div class="card-header-color"
-                                             style="white-space:normal">{% trans 'В чём разница между открытым и закрытым доступом к статье?' %}</div>
+                                             style="white-space:normal" itemprop="name">{% trans 'В чём разница между открытым и закрытым доступом к статье?' %}</div>
                                         <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p class="pl-3">{% trans 'С публикацией, размещённой в журнале с открытым доступом, мировое научное сообщество может ознакомиться сразу. На публикации в журналах закрытым доступом в течение 12-36 месяцев действует эмбарго, и в это время её могут читать только подписчики конкретного издания.' %}</p>
+                                    <p class="pl-3" itemprop="suggestedAnswer">{% trans 'С публикацией, размещённой в журнале с открытым доступом, мировое научное сообщество может ознакомиться сразу. На публикации в журналах закрытым доступом в течение 12-36 месяцев действует эмбарго, и в это время её могут читать только подписчики конкретного издания.' %}</p>
                                 </div>
                             </div>
                         </div>
@@ -459,21 +471,21 @@
                         <div class="d-flex w-100 justify-content-center">
                             <hr class="" style="width: 93%; background-color: #fff;">
                         </div>
-                        <div class="card border-0" style="background:transparent ">
+                        <div class="card border-0" style="background:transparent " itemscope itemtype="https://schema.org/Question">
                             <div class="card-header border-0 " id="headingFour">
                                 <h2 class="mb-0">
                                     <div class="btn btn-link btn-block text-left collapsed btn-toggle justify-content-between d-flex"
                                          type="button"
                                          data-toggle="collapse" data-target="#collapseFour">
                                         <div class="card-header-color  "
-                                             style="white-space:normal;  ">{% trans 'Что, если мне не понравится результат работы?' %}</div>
+                                             style="white-space:normal;  " itemprop="name">{% trans 'Что, если мне не понравится результат работы?' %}</div>
                                         <i class="bi text-white bi-chevron-down"></i>
                                     </div>
                                 </h2>
                             </div>
                             <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p class="pl-3">{% trans 'Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, если вы не будете удовлетворены.' %}</p>
+                                    <p class="pl-3" itemprop="suggestedAnswer">{% trans 'Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, если вы не будете удовлетворены.' %}</p>
                                 </div>
                             </div>
                         </div>
