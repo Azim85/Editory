@@ -1,9 +1,9 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import WebinarsModel, TranslationModel
+from .models import WebinarsModel, TranslationModel, top5Uz
 
 from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
                      DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
-                     ResearchStrategyModel)
+                     ResearchStrategyModel, top10Uz, top25, top10)
 
 
 class AboutUsTranslation(TranslationOptions):
@@ -60,6 +60,22 @@ class ResearchStrategyTranslations(TranslationOptions):
     fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9')
 
 
+class top10UzTranslations(TranslationOptions):
+    fields = ('name', 'description')
+
+
+class top10Translations(TranslationOptions):
+    fields = ('name', 'description')
+
+
+class top25Translations(TranslationOptions):
+    fields = ('name', 'description')
+
+
+class top5UzTranslations(TranslationOptions):
+    fields = ('name', 'description')
+
+
 translator.register(AboutUsModel, AboutUsTranslation)
 translator.register(BakModel, BakTranslation)
 translator.register(ConferencesModel, ConferencesTranslation)
@@ -81,3 +97,7 @@ class TramslationsTranslations(TranslationOptions):
 # translator.register(AboutUsModel, AboutUsTranslation)
 translator.register(WebinarsModel, WebinarTranslations)
 translator.register(TranslationModel, TramslationsTranslations)
+translator.register(top10Uz, top10UzTranslations)
+translator.register(top25, top25Translations)
+translator.register(top5Uz, top5UzTranslations)
+translator.register(top10, top10Translations)
