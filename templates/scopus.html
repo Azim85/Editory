@@ -48,19 +48,10 @@
                     <div class="d-flex align-items-center">
                         <div class="text3-text">
                             <img class="img-fluid" src="{% static 'pages/images/Group 544.png' %}">
-                            {% if request.user.is_superuser %}
-                                <button type="button" class="btn btn-secondary text3-btn">Edit</button>
-                            {% endif %}
+                            
                         </div>
 
-                        <div class="text3-form" style="display: none;">
-                            <form action="{% url 'setpage:scopus-change' %}" method="POST"
-                                  enctype="multipart/form-data">
-                                {% csrf_token %}
-                                <span>{{ scopus.text3 }}</span>
-                                <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                            </form>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -74,40 +65,26 @@
 
 
         <div class="container pb-100">
+            <h3 class="py-3">{% trans 'Наши гарантии' %}</h3>
             <div class="row row-cols-md-3 row-cols-1 pt-100 ">
+                
                 <div class="col text-center">
                     <div class="text4-text">
                         <img class="img-fluid" src="{{ text.text4.url }}" alt="">
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text4-btn">Edit</button>
-                        {% endif %}
+                        
                     </div>
 
-                    <div class="text4-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <span>{{ scopus.text4 }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
+                   
                     <p class="mx-auto pt-5 text5-text" style="max-width:200px">{{ text.text5 }}
                     </p>
                 </div>
                 <div class="col text-center">
                     <div class="text6-text">
                         <img class="img-fluid" src="{{ text.text6.url }}" alt="">
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text6-btn">Edit</button>
-                        {% endif %}
+                        
                     </div>
 
-                    <div class="text6-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <span>{{ scopus.text6 }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
+                   
                     <p class="mx-auto pt-5 text7-text" style="max-width:200px">{{ text.text7 }}
                     </p>
                 </div>
@@ -115,18 +92,10 @@
 
                     <div class="text8-text">
                         <img class="img-fluid" src="{{ text.text8.url }}" alt="">
-                        {% if request.user.is_superuser %}
-                            <button type="button" class="btn btn-secondary text8-btn">Edit</button>
-                        {% endif %}
+                        
                     </div>
 
-                    <div class="text8-form" style="display: none;">
-                        <form action="{% url 'setpage:scopus-change' %}" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <span>{{ scopus.text8 }}</span>
-                            <button type="submit" class="btn btn-secondary mt-2">Save changes</button>
-                        </form>
-                    </div>
+                    
                     <p class="mx-auto pt-5 text9-text" style="max-width:200px">{{ text.text9 }}
                     </p>
                 </div>
@@ -136,7 +105,7 @@
             <div class="container bg-white py-5 mt-5 padding_bak"
                  style="border: 2px solid #2A819E; border-radius:15px; ">
                 <div>
-                    {{ text.text10 }}
+                    {{ text.text10|safe }}
                 </div>
             </div>
         </div>
@@ -145,6 +114,7 @@
 
     <div id="Forma" class="container mt-100 pb-100">
         <p style="max-width: 660px;">{{ text.text11 }}</p>
+        <h2 class="mb-3 mt-2">{% trans 'Форма заявки' %}</h2>
         <form class="mt-5" method="post" name="consultation" action="{% url 'requests:scopus' %}#Forma">
             {% csrf_token %}
             <div class="row text-secondary">

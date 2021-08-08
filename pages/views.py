@@ -15,7 +15,8 @@ from django.http import JsonResponse
 import sys, glob, os
 from django.core.files import File
 from django.conf import settings
-from setpage.models import AboutUsModel, ContactModel, LangEditModel, ResearchStrategyModel
+from setpage.models import AboutUsModel, ContactModel, LangEditModel, ResearchStrategyModel, top10Uz, top25, top5Uz, \
+    top10
 from setpage.forms import AboutUSForm, ContactForm, LangForm
 
 from dateutil.rrule import rrule, MONTHLY
@@ -187,20 +188,29 @@ def get_context_data(self, **kwargs):
     return context
 
 
-class top25(TemplateView):
-    template_name = 'scientific_paper/top25.html'
+def top25v(request):
+    return render(request, 'scientific_paper/top25.html', {
+        'text': top25.objects.all()
+    })
 
 
-class top2uzb(TemplateView):
-    template_name = 'scientific_paper/top2uzb.html'
+def top2uzb(request):
+    return render(request, 'scientific_paper/top2uzb.html', {
+        'text': top5Uz.objects.all()
+    })
 
 
-class top10(TemplateView):
-    template_name = 'scientific_paper/top10.html'
+def top10one(request):
+    return render(request, 'scientific_paper/top10.html', {
+        'text': top10Uz.objects.all()
+    })
 
 
-class top10uz(TemplateView):
-    template_name = 'scientific_paper/top10uz.html'
+
+def top10uz(request):
+    return render(request, 'scientific_paper/top10uz.html', {
+        'text': top10.objects.all()
+    })
 
 
 def change_image(request):

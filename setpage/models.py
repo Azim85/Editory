@@ -9,8 +9,8 @@ class AboutUsModel(models.Model):
     text4 = models.CharField(max_length=255, blank=True, null=True)
     text5 = models.TextField(blank=True)
     text6 = models.CharField(max_length=255, blank=True, null=True)
-    text7 = models.CharField(max_length=255, blank=True, null=True)
-    text8 = models.CharField(max_length=255, blank=True, null=True)
+    text7 = RichTextUploadingField(null=True, blank=True)
+    text8 = RichTextUploadingField(null=True, blank=True)
     text9 = RichTextUploadingField(blank=True)
 
 
@@ -173,3 +173,29 @@ class ResearchStrategyModel(models.Model):
     text7 = RichTextUploadingField()
     text8 = RichTextUploadingField()
     text9 = RichTextUploadingField()
+
+
+class top10Uz(models.Model):
+    name = models.TextField()
+    link = models.CharField(max_length=255)
+    description = RichTextUploadingField()
+    number = models.CharField(max_length=10)
+
+
+class top25(models.Model):
+    name = models.TextField()
+    link = models.CharField(max_length=255)
+    description = RichTextUploadingField()
+    number = models.CharField(max_length=10)
+
+
+class top5Uz(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    description = models.TextField()
+
+
+class top10(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    description = models.TextField()
