@@ -28,7 +28,7 @@
         </div>
         <div class="row">
             {% for t in text %}
-                <div class="col-lg-8 my-3">{{ t.id }}. <a
+                <div class="col-lg-8 my-3 {% cycle '' 'bg-secondary' %}">{{ t.id }}. <a
                         href="{{ t.link }}"
                         target="_blank" rel="noopener"
                         style="color: #263236 "><strong>{{ t.name }}</strong></a>
