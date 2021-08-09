@@ -11,6 +11,11 @@
             margin-top: 40px;
             margin-bottom: 40px;
         }
+
+        .bggm {
+            background: linear-gradient(
+                    98.46deg, #eff9fa -2.78%, rgba(236, 243, 243, 0) 86.58%);
+        }
     </style>
 {% endblock %}
 
@@ -26,144 +31,21 @@
             <div class="text-secondary mr-5 ">Кол-во цитирований</div>
 
         </div>
+
         <div class="row">
             {% for t in text %}
-                <div class="col-lg-8 my-3">{{ t.id }}. <a
-                        href="{{ t.link }}"
-                        target="_blank" rel="noopener"
-                        style="color: #263236 "><strong>{{ t.name }}</strong></a>
-                    <br>
-                    {{ t.description|safe }}
+                <div class="col-lg-12 row {% cycle '' 'bggm' %}">
+                    <div class="col-lg-8 my-3 ">{{ t.id }}. <a
+                            href="{{ t.link }}"
+                            target="_blank" rel="noopener"
+                            style="color: #263236 "><strong>{{ t.name }}</strong></a>
+                        <br>
+                        {{ t.description|safe }}
+                    </div>
+                    <div class="col-lg-4 text-center"><strong>{{ t.number }}</strong></div>
                 </div>
-                <div class="col-lg-4 text-center"><strong>{{ t.number }}</strong></div>
             {% endfor %}
 
         </div>
-        <ol class="ml-4">
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html"
-                   target="_blank" rel="noopener"><strong>Deep Residual Learning for Image Recognition</strong></a> <br>
-                IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2016, процитировано
-                <strong>49301</strong> раз;
-            </li>
-            <li>
-                <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/Redmon_You_Only_Look_CVPR_2016_paper.html"
-                   target="_blank" rel="noopener"><strong>You Only Look Once: Unified, Real-Time Object
-                    Detection</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2016,
-                процитировано <strong>9772</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Huang_Densely_Connected_Convolutional_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Densely Connected Convolutional Networks</strong></a> <br>
-                IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2017, процитировано
-                <strong>9733</strong> раз;
-            </li>
-            <li>
-                <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/Szegedy_Rethinking_the_Inception_CVPR_2016_paper.html"
-                   target="_blank" rel="noopener"><strong>Rethinking the Inception Architecture for Computer
-                    Vision</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2016,
-                процитировано <strong>8499</strong> раз;
-            </li>
-            <li><a href="https://www.nature.com/articles/nature16961?MRK_CMPG_SOURCE=sm_tw_pp" target="_blank"
-                   rel="noopener"><strong>Mastering the game of Go with deep neural networks and tree
-                search</strong></a><br> Nature, 2016, процитировано <strong>7698</strong> раз;
-            </li>
-            <li><a href="https://www.nature.com/articles/nature19057" target="_blank" rel="noopener"><strong>Analysis of
-                protein-coding genetic variation in 60,706 humans</strong></a> <br> Nature, 2016, процитировано <strong>6387</strong>
-                раз;
-            </li>
-            <li><a href="https://www.nature.com/articles/nature15393" target="_blank" rel="noopener"><strong>A global
-                reference for human genetic variation</strong></a><br> Nature, 2016, процитировано <strong>6011</strong>
-                раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Isola_Image-To-Image_Translation_With_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Image-To-Image Translation With Conditional Adversarial
-                    Networks</strong></a><br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2017,
-                процитировано <strong>5624</strong> раз;
-            </li>
-            <li>
-                <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Schroff_FaceNet_A_Unified_2015_CVPR_paper.html"
-                   target="_blank" rel="noopener"><strong>FaceNet: A Unified Embedding for Face Recognition and
-                    Clustering</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2017,
-                процитировано <strong>5405</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Redmon_YOLO9000_Better_Faster_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>YOLO9000: Better, Faster, Stronger</strong></a> <br> IEEE/CVF
-                Conference on Computer Vision and Pattern Recognition, 2017, процитировано <strong>4960</strong> раз;
-            </li>
-            <li><a href="https://www.nejm.org/doi/full/10.1056/nejmoa1606774" target="_blank" rel="noopener"><strong>Pembrolizumab
-                versus Chemotherapy for PD-L1&ndash;Positive Non&ndash;Small-Cell Lung Cancer </strong></a><br> The New
-                England Journal of Medicine, 2017, процитировано <strong>4124</strong> раз;
-            </li>
-            <li><a href="https://www.nature.com/articles/nature21056?spm=5176.100239.blogcont100708.20.u9mVh9"
-                   target="_blank" rel="noopener"><strong>Dermatologist-level classification of skin cancer with deep
-                neural networks</strong></a> <br> Nature, 2017, процитировано <strong>4076</strong> раз;&nbsp;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Lin_Feature_Pyramid_Networks_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Feature Pyramid Networks for Object Detection</strong></a>
-                <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2017, процитировано
-                <strong>3879</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Ledig_Photo-Realistic_Single_Image_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Photo-Realistic Single Image Super-Resolution Using a
-                    Generative Adversarial Network</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern
-                Recognition, 2017, процитировано <strong>3741</strong> раз;
-            </li>
-            <li><a href="https://www.nature.com/articles/nature24270?sf123103138=1" target="_blank"
-                   rel="noopener"><strong>Mastering the game of Go without human knowledge</strong></a> <br> Nature,
-                2017, процитировано <strong>3668</strong> раз;&nbsp;
-            </li>
-            <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1603827" target="_blank" rel="noopener"><strong>Liraglutide
-                and Cardiovascular Outcomes in Type 2 Diabetes</strong></a><br> The New England Journal of Medicine,
-                2016, процитировано <strong>3503</strong> раз;
-            </li>
-            <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0140673615012817" target="_blank"
-                   rel="noopener"><strong>Pembrolizumab versus docetaxel for previously treated, PD-L1-positive,
-                advanced non-small-cell lung cancer (KEYNOTE-010): a randomised controlled trial</strong></a> <br> The
-                Lancet, 2016, процитировано <strong>3371</strong> раз;
-            </li>
-            <li><a href="https://science.sciencemag.org/content/356/6345/1376.abstract" target="_blank"
-                   rel="noopener"><strong>Iodide management in formamidinium-lead-halide&ndash;based perovskite layers
-                for efficient solar cells</strong></a><br> Science, 2016, процитировано <strong>3370 </strong>раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html"
-                   target="_blank" rel="noopener"><strong>Squeeze-and-Excitation Networks</strong></a> <br> IEEE/CVF
-                Conference on Computer Vision and Pattern Recognition, 2017, процитировано <strong>3314</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2016/html/Cordts_The_Cityscapes_Dataset_CVPR_2016_paper.html"
-                   target="_blank" rel="noopener"><strong>The Cityscapes Dataset for Semantic Urban Scene
-                    Understanding</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition,
-                2017, процитировано <strong>3121</strong> раз;
-            </li>
-            <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0140673615010247" target="_blank"
-                   rel="noopener"><strong>Breastfeeding in the 21st century: epidemiology, mechanisms, and lifelong
-                effect</strong></a><br> Science, 2016, процитировано <strong>3004 </strong>раз;
-            </li>
-            <li><a href="https://www.nejm.org/doi/full/10.1056/nejmoa1611925" target="_blank" rel="noopener"><strong>Canagliflozin
-                and Cardiovascular and Renal Events in Type 2 Diabetes</strong></a> <br> The New England Journal of
-                Medicine, 2017, процитировано <strong>2869</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Zhao_Pyramid_Scene_Parsing_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Pyramid Scene Parsing Network</strong></a> <br> IEEE/CVF
-                Conference on Computer Vision and Pattern Recognition, 2017, процитировано <strong>2767</strong> раз;
-            </li>
-            <li>
-                <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Chollet_Xception_Deep_Learning_CVPR_2017_paper.html"
-                   target="_blank" rel="noopener"><strong>Xception: Deep Learning With Depthwise Separable
-                    Convolutions</strong></a> <br> IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2017,
-                процитировано <strong>2746</strong> раз;
-            </li>
-            <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1707914" target="_blank" rel="noopener"><strong>Antiinflammatory
-                Therapy with Canakinumab for Atherosclerotic Disease</strong></a> <br> The New England Journal of
-                Medicine, 2017, процитировано <strong>2731</strong> раз.
-            </li>
-        </ol>
     </div>
 {% endblock %}
