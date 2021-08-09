@@ -328,7 +328,6 @@ class TranslationView(View):
         form = TranslationForm(request.POST, request.FILES)
 
         user = request.user
-        word_amount = request.POST.get('word_amount')
         language = request.POST.get('language')
         research_area = request.POST.get('research_area')
         comment = request.POST.get('comment')
@@ -338,7 +337,7 @@ class TranslationView(View):
         valid_ext = ['docx', 'pptx', 'txt']
         files = str(file).split('.')
         if files[1] in valid_ext:
-            done = Translation.objects.create(user=user, word_amount=word_amount, language=language,
+            done = Translation.objects.create(user=user, char_amount=0, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
         

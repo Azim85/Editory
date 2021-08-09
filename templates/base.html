@@ -10,7 +10,10 @@
     <meta name="keywords" content="Editory, Исследования, публикации, корректировка, научные журналы, ВАК, диссертация, гранты, патенты, Scopus, научные конференции, переводы статей">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Editory{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/svg" href="{% static 'pages/images/pen.svg' %}">
+    <title>{% block title %}
+        {% if title %}{{title}}{% else %}Editory{% endif %}
+        {% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'pages/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'pages/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
@@ -45,8 +48,8 @@
     {% block css %}{% endblock %}
 </head>
 
-<body class="main-font" style="font-size: 18px;  ">
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<body class="main-font" id="bodyy" style="font-size: 18px;  ">
+<button  id="myBtn" title="Go to top">Top</button>
 
 
 <div id="mobile" class="container-fluid nav-holder fixed-top w-100" >
@@ -67,17 +70,18 @@
     {% include 'components/footer.html' %}
 </div>
 
+
 <script src="{% static 'pages/jquery-3.6.0.js' %}"></script>
 <script src="{% static 'pages/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'pages/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'pages/js/main.js' %}"></script>
-{% block js %}
-{% endblock %}
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 <script>
     $(document).ready(function () {
-
+        let qwer = document.querySelector('#bodyy')
+        qwer.addEventListener('click', function(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
         $('.darken').mouseover(function () {
             $(this).css({
                 'font-weight': 'bold',
@@ -85,33 +89,33 @@
                 'font-size': '21px'
             })
         })
-            
-            $('.darken').mouseleave(function () {
-                $(this).css({
-                    'font-weight': 'normal',
-                    'font-size': '18px'
-                })
+
+        $('.darken').mouseleave(function () {
+            $(this).css({
+                'font-weight': 'normal',
+                'font-size': '18px'
             })
+        })
 
-            $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
-                e.preventDefault();
-                $(this).parent().addClass("show");
-                $(this).attr("aria-expanded", "true");
-                $(this).next().addClass("show");
-            });
+        $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
+            e.preventDefault();
+            $(this).parent().addClass("show");
+            $(this).attr("aria-expanded", "true");
+            $(this).next().addClass("show");
+        });
 
-            window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-            gtag('js', new Date());
+        gtag('js', new Date());
 
-            gtag('config', 'G-8BXGYGEMEL');
+        gtag('config', 'G-8BXGYGEMEL');
 
 
-        
+
 
 
         //Get the button
@@ -138,15 +142,17 @@
         }
 
         // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+       
 
     })
 
 
 </script>
+
+{% block js %}
+{% endblock %}
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXGYGEMEL"></script>
 
 
 </body>
