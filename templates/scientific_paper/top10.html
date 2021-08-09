@@ -29,15 +29,16 @@
         </div>
         <div class="row">
             {% for t in text %}
-                <div class="col-lg-12 row {% cycle '' 'bggm' %}"></div>
-            <div class="col-lg-8 my-3">{{ t.id }}. <a
-                    href="{{ t.link }}"
-                    target="_blank" rel="noopener"
-            style="color: #263236 "><strong>{{ t.name }}</strong></a>
-                <br>
-                {{ t.description|safe }}
-            </div>
-            <div class="col-lg-4 text-center"><strong>{{ t.number }}</strong></div>
+                <div class="col-lg-12 row {% cycle '' 'bggm' %}">
+                    <div class="col-lg-8 my-3">{{ t.id }}. <a
+                            href="{{ t.link }}"
+                            target="_blank" rel="noopener"
+                            style="color: #263236 "><strong>{{ t.name }}</strong></a>
+                        <br>
+                        {{ t.description|safe }}
+                    </div>
+                    <div class="col-lg-4 text-center"><strong>{{ t.number }}</strong></div>
+                </div>
             {% endfor %}
         </div>
     </div>
