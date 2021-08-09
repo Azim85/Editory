@@ -107,7 +107,7 @@ mix-blend-mode: luminosity;
 
             <div class="col-lg-6">
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.first_name}}
@@ -115,7 +115,7 @@ mix-blend-mode: luminosity;
                     </div>
                 </div>
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                     <div class="col-sm-6">
                         {{form.last_name}}
@@ -123,7 +123,7 @@ mix-blend-mode: luminosity;
                     </div>
                 </div>
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.phone}}
@@ -131,7 +131,7 @@ mix-blend-mode: luminosity;
                     </div>
                 </div>
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Email' %}</label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.email}}
@@ -142,7 +142,7 @@ mix-blend-mode: luminosity;
 
             <div class="col-lg-6">
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.organization}}
@@ -150,7 +150,7 @@ mix-blend-mode: luminosity;
                     </div>
                 </div>
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.org_contacts}}
@@ -158,7 +158,7 @@ mix-blend-mode: luminosity;
                     </div>
                 </div>
     
-                <div class="form-group row">
+                <div class="form-group row d-flex align-items-center">
                     <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
                     <div class="col-sm-6 d-flex flex-column">
                         {{form.org_address}}
@@ -177,19 +177,22 @@ mix-blend-mode: luminosity;
                     <small class="text-danger">{{form.comment.errors}}</small>
                 </div>
             <!-- </div> -->
-            <div class="form-group container row w-100" style="margin-top: 60px">
-                <div class="col-lg-11 d-flex justify-content-between">
-                    <div class='mr-auto'>
-                        <label for="id_is_agree" style="cursor: pointer;">
-                            {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
-                </div>
+                        <div class="row col-lg-11 my-4  mb-100 d-flex align-items-center pl-3 justify-content-between">
+                <label for="id_is_agree" class="d-flex align-items-center pl-3 pl-lg-0 my-3 my-lg-0" style="cursor: pointer;">
+                    {{ form.is_agree }}<span
+                        class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                </label>
+
+                <button type="submit"
+                        class="btn btn-primary px-4 my-3 ml-3  col-12 col-lg-auto">{% trans 'Отправить работу' %}
+                </button>
                 <div class="col-12">
                     <small class="text-danger">{{ form.is_agree.errors }}</small>
                 </div>
+
+
             </div>
+
 
            
         </div>
