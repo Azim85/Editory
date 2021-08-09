@@ -2,12 +2,20 @@
 {% load static %}
 {% load i18n %}
 
+{% block meta %}
+    <meta property="og:title" content="Полный спектр научных консультаций">
+    <meta property="og:description" content="Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{% static 'pages/images/typewriter копия 1.png' %}">
+    <meta property="og:url" content="htts://editory.org"> <!--updated with jquery script -->
+    <meta property="og:site_name" content="EDITORY.ORG"> 
+{% endblock meta %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/scientific.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/readbook.jpg' %});
+    <div id="image" class="bg-me h-600" style="background-image: url({% static 'pages/images/readbook.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
@@ -17,8 +25,8 @@ mix-blend-mode: luminosity;
                 <div class="row py-5 text-white">
                     <div class="col-lg-6 d-flex align-items-center">
                         <div class="">
-                            <div class="font-65 font-weight-bold">{% trans 'Научные издания' %}</div>
-                            <div class="font-22 mt-3">
+                            <div id="title" class="font-65 font-weight-bold">{% trans 'Научные издания' %}</div>
+                            <div id="description" class="font-22 mt-3">
                                 {% trans 'Позвольте Editory стать вашим проводником в мир доступной информации. Здесь вы найдёте рейтинги исследовательских журналов Узбекистана и всего мира, тезисы и диссертации, а также монографии, с которыми обязательно следует ознакомиться, чтобы оставаться на одной волне с последними научными тенденциями. К вашим услугам — самые качественные материалы от признанных экспертов. Editory желает вам приятного чтения.' %}
                             </div>
                         </div>
@@ -72,3 +80,17 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 {% endblock %}
+
+{% block js %}
+    <script>
+    $(document).ready(function() {
+            // Load page-specific meta data for Open Graph
+            $('meta[property=og:title]').attr('content', $('#title').text() + ' | Editory.org');
+            $('meta[property=og:description]').attr('content', $('#description').text());
+            $('meta[property=og:type]').attr('content', 'website');
+            $('meta[property=og:image]').attr('content', $('#image').css('background-image'));
+            $('meta[property=og:url').attr("content", $(location).attr('href'));
+        });
+
+    </script>
+{% endblock js %}
