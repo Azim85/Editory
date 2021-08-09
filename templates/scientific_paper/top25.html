@@ -11,6 +11,9 @@
             margin-top: 40px;
             margin-bottom: 40px;
         }
+        .bggm{
+            background-color: lightblue;
+        }
     </style>
 {% endblock %}
 
@@ -26,9 +29,10 @@
             <div class="text-secondary mr-5 ">Кол-во цитирований</div>
 
         </div>
+
         <div class="row">
             {% for t in text %}
-                <div class="col-lg-12 row {% cycle '' 'bg-info' %}">
+                <div class="col-lg-12 row {% cycle '' 'bggm' %}">
                     <div class="col-lg-8 my-3 ">{{ t.id }}. <a
                             href="{{ t.link }}"
                             target="_blank" rel="noopener"
