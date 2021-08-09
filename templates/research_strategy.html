@@ -160,7 +160,7 @@
         <div id="Forma" class="">
             {{ text.text9|safe }}
         </div>
-        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?#Forma&data=1">
+        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?data={{ raqam }}&#Forma">
             {% csrf_token %}
             <div class="row text-secondary">
                 <div class="col-lg-6">
