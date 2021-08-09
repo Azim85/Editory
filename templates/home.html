@@ -516,14 +516,14 @@
 
                         <h2 class=" mb-5">{% trans 'Заявка на' %} <span
                                 class="main-color">{% trans 'бесплатную' %}</span> <br>{% trans 'консультацию' %}</h2>
-                        <div>{% trans 'Оставьте свои данные и наш консультант свяжется с вами в течение часа' %}</div>
+                        <div class="pr-lg-5">{% trans 'Оставьте свои данные и наш консультант свяжется с вами в течение часа' %}</div>
 
                     </div>
                     <div class="col-lg-6">
 
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                            <div class="col-sm-6 d-flex flex-column">
+                            <div class="col-sm-8 d-flex flex-column">
                                 {{ form.first_name }}
                                 <small class="text-danger">{{ form.first_name.errors }}</small>
                             </div>
@@ -532,17 +532,17 @@
                         <div class="form-group row mt-5">
                             <label for="inputPassword"
                                    class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 {{ form.phone }}
                                 <small class="text-danger">{{ form.phone.errors }}</small>
                             </div>
                         </div>
 
-                        <div class="form-group row mt-5">
-                            <div class="d-flex">
-                                <div class="mr-4">{{ form.is_agree }}</div>
-                                <div>{% trans 'Согласие с политикой конфиденциальности' %}</div>
-                            </div>
+
+                        <div class="  form-group row mt-5 px-3">
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
                         </div>
 
 

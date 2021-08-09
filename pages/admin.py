@@ -11,8 +11,7 @@ from .models import (
 
     Tariffs,
 
-    WebinarsUrl1,
-    WebinarsUrl2
+
 
 )
 
@@ -57,7 +56,5 @@ admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopResearches, TopResearchesAdminForm)
 admin.site.register(ResumeModel, ResumeModelAdmin)
 admin.site.register(About_us_news)
-admin.site.register(WebinarsUrl1)
-admin.site.register(WebinarsUrl2)
 admin.site.register(Tariffs)
 

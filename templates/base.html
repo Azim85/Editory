@@ -6,14 +6,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="yandex-verification" content="fa6d45fb08906cfe"/>
     <meta charset="UTF-8">
-    <meta name="description" content="Editory - это научно-консалтинговая компания, которая разрабатывает стратегии для исследований, публикует статьи в международных журналах, корректирует диссертации. На счету более 500 публикаций в Scopus и около 1000 - в журналах ВАК. Помогает сориентироваться в системе грантов и патентов. Помагает как с участием так и с организацией международных конференций. Переводит статьи и материалы на международные языки.">
-    <meta name="keywords" content="Editory, Исследования, публикации, корректировка, научные журналы, ВАК, диссертация, гранты, патенты, Scopus, научные конференции, переводы статей">
+    <meta name="description"
+          content="Editory - это научно-консалтинговая компания, которая разрабатывает стратегии для исследований, публикует статьи в международных журналах, корректирует диссертации. На счету более 500 публикаций в Scopus и около 1000 - в журналах ВАК. Помогает сориентироваться в системе грантов и патентов. Помагает как с участием так и с организацией международных конференций. Переводит статьи и материалы на международные языки.">
+    <meta name="keywords"
+          content="Editory, Исследования, публикации, корректировка, научные журналы, ВАК, диссертация, гранты, патенты, Scopus, научные конференции, переводы статей">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/svg" href="{% static 'pages/images/pen.svg' %}">
     <title>{% block title %}
-        {% if title %}{{title}}{% else %}Editory{% endif %}
-        {% endblock title %}</title>
+        {% if title %}{{ title }}{% else %}Editory{% endif %}
+    {% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'pages/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'pages/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
@@ -37,6 +39,18 @@
             cursor: pointer;
         }
 
+        .podloj {
+            background: #83c7de;
+            border-radius: 5px;
+        }
+
+        .darkenn:hover {
+            font-size: 21px;
+            color: black !important;
+            font-weight: bold;
+        }
+
+
         @keyframes message {
             from {
                 opacity: 0
@@ -46,17 +60,17 @@
             }
         }
 
-        
+
     </style>
     {% block css %}{% endblock %}
 </head>
 
 <body class="main-font" id="bodyy" style="font-size: 18px;  ">
-    
-<a href="#bodyy"  id="myBtn"  title="Go to top">Top</button>
+
+<a href="#bodyy" id="myBtn" title="Go to top">Top</a>
 
 
-<div id="mobile" class="container-fluid nav-holder fixed-top w-100" >
+<div id="mobile" class="container-fluid nav-holder fixed-top w-100">
     {% include 'components/mobile_navbar.html' %}
 </div>
 
@@ -83,22 +97,6 @@
     $(document).ready(function () {
 
 
-
-        $('.darken').mouseover(function () {
-            $(this).css({
-                'font-weight': 'bold',
-                'color': 'black',
-                'font-size': '21px'
-            })
-        })
-
-        $('.darken').mouseleave(function () {
-            $(this).css({
-                'font-weight': 'normal',
-                'font-size': '18px'
-            })
-        })
-
         $(".filter-dropdown").on("click", ".dropdown-toggle1", function (e) {
             e.preventDefault();
             $(this).parent().addClass("show");
@@ -115,9 +113,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-8BXGYGEMEL');
-
-
-
 
 
         //Get the button
@@ -144,7 +139,7 @@
         }
 
         // When the user clicks on the button, scroll to the top of the document
-       
+
 
     })
 
