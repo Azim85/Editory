@@ -3,6 +3,7 @@ from django.db import models
 from users.models import CustomUser
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.translation import gettext as _
 
 
 class ResearchGrant(models.Model):
@@ -294,9 +295,18 @@ class Language(models.Model):
 
 
 RESEARCH_AREA = (
-    ('TEXT', 'TEXT'),
-    ('TEXT', 'TEXT'),
+    ('АСТРОНОМИЯ И ПЛАНЕТОЛОГИЯ', _('АСТРОНОМИЯ И ПЛАНЕТОЛОГИЯ')),
+    ('БИОЛОГИЯ', _('БИОЛОГИЯ')),
+    ('БИЗНЕС', _('БИЗНЕС')),
+    ('ХИМИЯ', _('ХИМИЯ')),
+    ('ЭКОЛОГИЯ И НАУКА О ЗЕМЛЕ', _('ЭКОЛОГИЯ И НАУКА О ЗЕМЛЕ')),
+    ('ИНЖЕНЕРИЯ', _('ИНЖЕНЕРИЯ')),
+    ('МЕДИЦИНА', _('МЕДИЦИНА')),
+    ('ФИЗИКА', _('ФИЗИКА')),
+    ('СОЦИАЛЬНЫЕ НАУКИ', _('СОЦИАЛЬНЫЕ НАУКИ')),
+    ('ДРУГОЕ', _('ДРУГОЕ'),)
 )
+
 
 LANG = (
     ('English', 'English'),
