@@ -9,7 +9,7 @@
 {% block content %}
 
 
-    <div class="bg-me h-600" style="background-image: url({% static 'pages/images/image56.jpg' %});
+    <div id="image" class="bg-me h-600" style="background-image: url({% static 'pages/images/image56.jpg' %});
             background-size: cover;">
         <div class="h-100" style="background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
@@ -17,9 +17,9 @@ mix-blend-mode: luminosity;
             <div class="container h-100 d-flex align-items-center">
                 <div class="row py-5">
                     <div class="col-lg-7 text-white ">
-                        <div class="geometria pb-3 font-weight-bold text-break"
+                        <div id="title" class="geometria pb-3 font-weight-bold text-break"
                              style="font-size: 55px">{% trans 'Исследовательские платформы' %}</div>
-                        <div class="font-22">
+                        <div id="description" class="font-22">
                             {% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}</div>
 
                     </div>
@@ -49,3 +49,17 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 {% endblock content %}
+
+{% block js %}
+    <script>
+    $(document).ready(function() {
+            // Load page-specific meta data for Open Graph
+            $('meta[property=og:title]').attr('content', $('#title').text() + ' | Editory.org');
+            $('meta[property=og:description]').attr('content', $('#description').text());
+            $('meta[property=og:type]').attr('content', 'website');
+            $('meta[property=og:image]').attr('content', $('#image').css('background-image'));
+            $('meta[property=og:url').attr("content", $(location).attr('href'));
+        });
+
+    </script>
+{% endblock js %}
