@@ -27,7 +27,7 @@
 
     <div class="bg-me-home h-600"
          style="background-image: url({% static 'pages/images/image52.jpg' %});
-                 background-size: cover;">
+                 background-size: cover; ">
         <div class="h-100" style="
 background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
 mix-blend-mode: luminosity;
@@ -56,7 +56,7 @@ mix-blend-mode: luminosity;
 
                 <div class="tab-pane fade {% if raqam == '1' %}active show{% endif %}" id="nav-home" role="tabpanel"
                      aria-labelledby="nav-home-tab">
-                    <div class="container mb-5 ">
+                    <div class="container ">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
@@ -76,7 +76,7 @@ mix-blend-mode: luminosity;
                 <div class="tab-pane fade {% if raqam == '2' %}active show{% endif %}" id="nav-profile" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
 
-                    <div class="container mb-5">
+                    <div class="container ">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
@@ -96,7 +96,7 @@ mix-blend-mode: luminosity;
                 <div class="tab-pane fade {% if raqam == '3' %}active show{% endif %}" id="nav-contact" role="tabpanel"
                      aria-labelledby="nav-contact-tab">
 
-                    <div class="container mb-5">
+                    <div class="container ">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
@@ -114,7 +114,7 @@ mix-blend-mode: luminosity;
                 </div>
                 <div class="tab-pane fade {% if raqam == '4' %}active show{% endif %}" id="nav-fourth" role="tabpanel"
                      aria-labelledby="nav-fourth-tab">
-                    <div class="container mb-5">
+                    <div class="container ">
                         <div class="row py-5">
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text-white">
@@ -123,6 +123,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                     <div class="pb-4 text8-text">{{ text.text8 }}
                                     </div>
+                                    <a href="#Forma" class="btn btn-light px-5">{% trans 'Отправить работу' %} </a> 
                                 </div>
                             </div>
 
@@ -297,7 +298,7 @@ mix-blend-mode: luminosity;
                 $('#id_choose').val('Статистический анализ')
             }
         else
-            if ({{ raqam }} == 3
+            if ({{ raqam }} == 4
         )
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
