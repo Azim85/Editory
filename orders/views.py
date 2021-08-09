@@ -153,12 +153,12 @@ class CreateOrderView(View):
 class ChooseTypeView(View):
     def get(self, request):
         order = OrderModel.objects.first()
-        return render(request, 'payment_type.html', {'order':order})
+        return render(request, 'payment_type.html', {'order':order, 'title':'Payment type'})
 
 class TransPaymentView(View):
     def get(self, request):
         order = OrderModel.objects.first()
-        return render(request, 'translation_payment.html', {'order':order})
+        return render(request, 'translation_payment.html', {'order':order, 'title': 'Payment - Transaction'})
 
 class ChangePaymentTypeView(View):
     def post(self, request):

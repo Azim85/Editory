@@ -28,6 +28,7 @@ class Research(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Research, self).get_context_data(**kwargs)
         context['text'] = ResearchPlatformsContext.objects.all()
+        context['title'] = 'Research Platform'
         return context
 
 
@@ -36,6 +37,7 @@ class ResearchIntelligense(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ResearchIntelligense, self).get_context_data(**kwargs)
+        context['title'] = 'Research Intelligens'
         return context
 
 
@@ -44,6 +46,7 @@ class Scientific(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Scientific, self).get_context_data(**kwargs)
+        context['title'] = 'Scientific Papers'
         return context
 
 
@@ -53,6 +56,7 @@ class TopResearchess(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(TopResearchess, self).get_context_data(**kwargs)
         context['top_researches'] = TopResearches.objects.all()
+        context['title'] = 'Top Researches'
         return context
 
 
@@ -67,6 +71,7 @@ class WebinarsView(TemplateView):
         context['text'] = text
         context['url1'] = WebinarsUrl1.objects.all()
         context['url2'] = WebinarsUrl2.objects.all()
+        context['title'] = 'Webinars'
         return context
 
 
@@ -75,7 +80,7 @@ class Conferences(View):
     def get(self, request):
         text = ConferencesModel.objects.first()
         con = ConferencesForm(instance=text)
-        context = {'form': FreeConsultationForm(), 'con': con, 'text': text}
+        context = {'form': FreeConsultationForm(), 'con': con, 'text': text, 'title':'Conferencess'}
         return render(request, 'conferences.html', context)
 
     def post(self, request):
@@ -103,7 +108,7 @@ class CreateConferences(View):
     def get(self, request):
         text = CreateConferenceModel.objects.first()
         con = CreateConferenceForm(instance=text)
-        context = {'form': OrganizeConferencesForm(), 'text': text, 'con': con}
+        context = {'form': OrganizeConferencesForm(), 'text': text, 'con': con, 'title':'Create Conferencess'}
         return render(request, 'creat_conference.html', context)
 
     def post(self, request):
@@ -120,7 +125,7 @@ class Design(View):
     def get(self, request):
         obj = DesignModel.objects.first()
         design = DesignForm(instance=obj)
-        context = {'form': DesignsForm(), 'text': obj, 'design': design}
+        context = {'form': DesignsForm(), 'text': obj, 'design': design, 'title':'Design'}
         return render(request, 'design.html', context)
 
     def post(self, request):
@@ -139,7 +144,7 @@ class Design(View):
 class ConsultationView(View):
     def get(self, request):
         form = FreeConsultationForm()
-        return render(request, 'conferences.html', {'form': form})
+        return render(request, 'conferences.html', {'form': form, 'title': 'Consultation'})
 
     def post(self, request):
         form = FreeConsultationForm(request.POST)
@@ -185,7 +190,7 @@ class Proofreading(View):
         data = request.GET.get('data')
         obj = ProofModel.objects.first()
         proof = ProofForm(instance=obj)
-        context = {'form': ProofreadingForm(), 'raqam': data, 'text': obj, 'proof': proof}
+        context = {'form': ProofreadingForm(), 'raqam': data, 'text': obj, 'proof': proof, 'title':'Proofreading'}
         return render(request, 'proofreading.html', context)
 
     def post(self, request):
@@ -206,7 +211,7 @@ class Proofreading(View):
 
 class Peer_review(View):
     def get(self, request):
-        context = {'form': PeerReviewForm()}
+        context = {'form': PeerReviewForm(), 'title':'Peer Review'}
         return render(request, 'peer_review.html', context)
 
     def post(self, request):
@@ -229,7 +234,7 @@ class BAKView(View):
         bak = BakForm(instance=obj)
         form = BaksForm()
 
-        return render(request, 'bak.html', {'form': form, 'bak': bak, 'text': obj})
+        return render(request, 'bak.html', {'form': form, 'bak': bak, 'text': obj, 'title':'BAK'})
 
     def post(self, request):
         form = BaksForm(request.POST)
@@ -250,7 +255,7 @@ class ScopusView(View):
 
         obj = ScopusModel.objects.first()
         scopus = ScopusForm(instance=obj)
-        return render(request, 'scopus.html', {'form': form, 'text': obj, 'scopus': scopus})
+        return render(request, 'scopus.html', {'form': form, 'text': obj, 'scopus': scopus, 'title': 'Scopus'})
 
     def post(self, request):
         form = ScopusesForm(request.POST)
@@ -270,7 +275,7 @@ class GrantsView(View):
         grant = GrantForm(instance=obj)
         form = GrantsForm()
 
-        return render(request, 'grants.html', {'form': form, 'text': obj, 'grant': grant})
+        return render(request, 'grants.html', {'form': form, 'text': obj, 'grant': grant, 'title':'Grants'})
 
     def post(self, request):
         form = GrantsForm(request.POST, request.FILES)
@@ -291,7 +296,7 @@ class PatentsView(View):
 
         obj = PatentModel.objects.first()
         patent = PatentForm(instance=obj)
-        return render(request, 'patents.html', {'form': form, 'text': obj, 'patent': patent})
+        return render(request, 'patents.html', {'form': form, 'text': obj, 'patent': patent, 'title':'Patent'})
 
     def post(self, request):
         form = PatentsForm(request.POST, request.FILES)
@@ -319,7 +324,7 @@ class TranslationView(View):
             translations = TranslationsForm(instance=text)
 
             form = TranslationForm()
-            return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations})
+            return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations, 'title':'Translation'})
         request.session['back-trans'] = 'requests:translation'    
         return redirect('users:login')
 
@@ -328,7 +333,6 @@ class TranslationView(View):
         form = TranslationForm(request.POST, request.FILES)
 
         user = request.user
-        word_amount = request.POST.get('word_amount')
         language = request.POST.get('language')
         research_area = request.POST.get('research_area')
         comment = request.POST.get('comment')
@@ -338,7 +342,7 @@ class TranslationView(View):
         valid_ext = ['docx', 'pptx', 'txt']
         files = str(file).split('.')
         if files[1] in valid_ext:
-            done = Translation.objects.create(user=user, word_amount=word_amount, language=language,
+            done = Translation.objects.create(user=user, char_amount=0, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
         

@@ -17,8 +17,13 @@
 
             <div class="row mt-5">
                 <div class="col-lg-9 img-fluid">
-                    <h6 id="category" class="main-color">{{ topic.material_name|upper }}</h6>
-                    <div id="title" class="font-weight-bold h3" style="">{{ topic.title }}</div>
+<<<<<<< HEAD
+                    <h6 class="main-color">{{ topic.material_name|safe|upper }}</h6>
+                    <div class="font-weight-bold h3" style="">{{ topic.title }}</div>
+=======
+                    <h6 class="main-color">{{ topic.material_name|safe|upper }}</h6>
+                    <div class="font-weight-bold h3" style="">{{ topic.title }}</div>
+>>>>>>> c06551dae222dfca9158ee82dd30bd30d6226dba
                     <sub class="text-secondary">{{ topic.created_at|date:'d M' }}</sub>
                     <meta id="date" data-name="{{ topic.created_at|date: '%Y-%m-%d'}}">
                     <div id="description" class="mt-3 mb-5 img-fluid" style="font-size: 22px;">{{ topic.description|safe }}</div>
@@ -37,9 +42,9 @@
                                     </div>
                                     <div class="mt-4 mb-5 px-4 h-100">
                                         <div class="main-color  mb-2"
-                                             style="font-size: smaller">{{ topic.title }}</div>
+                                             style="font-size: smaller">{{ topic.title|safe }}</div>
                                         <div class=""
-                                             style="font-size: 25px; line-height: 31px;">{{ topic.title }}</div>
+                                             style="font-size: 25px; line-height: 31px;">{{ topic.title|safe }}</div>
                                     </div>
                                 </a>
                             </div>

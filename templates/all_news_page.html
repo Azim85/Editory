@@ -25,7 +25,7 @@
             <div class="row">
                 {% for topic in topics %}
                 <div class="col-lg-6 mb-5" style="line-height: 1;">
-                    <h4 style="color: black;">{{topic.title}}</h4>
+                    <a href="{{topic.get_absolute_url}}"><h4 style="color: black;">{{topic.title}}</h4></a>
                     <p style="color: black; line-height:0.5" class="text-dark">{{topic.description|safe|truncatewords:50}}</p>
                     <span style="line-height: 1;">Published {{topic.created_at|date:'d F Y'}}</span>
                     <hr>

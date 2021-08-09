@@ -50,6 +50,7 @@ class Article(DetailView):
         context['get_by_theme'] = Topic.objects.filter(
             material_name=self.object.material_name).exclude(pk=self.object.id)[:3]
         context['form'] = TopicForm(instance=topic)
+        context['title'] = f'news:{topic.material_name}'
         return context
 
 
@@ -72,6 +73,7 @@ class Articles(TemplateView):
             context['random_topic'] = random.choice(random_topic)
             context['last_week'] = last_week[:6]
             context['top_8'] = top_8
+            context['title'] = 'All news'
         except:
             pass
         return context
@@ -85,7 +87,7 @@ class AboutUs(View):
         form = ResumeForm()
         slick = About_us_news.objects.all()
 
-        context = {'form': form, 'staffs': staffs, 'text': text, 'about': about, "slick": slick}
+        context = {'form': form, 'staffs': staffs, 'text': text, 'about': about, "slick": slick, 'title':'About Us'}
         return render(request, 'about_us.html', context)
 
     def post(self, request):
@@ -109,7 +111,7 @@ class Contact(View):
     def get(self, request):
         text = ContactModel.objects.first()
         form = ContactForm(instance=text)
-        return render(request, 'contact.html', {'text': text, 'form': form})
+        return render(request, 'contact.html', {'text': text, 'form': form, 'title':'Contacts'})
 
 
 class Paper(DetailView):
@@ -144,7 +146,7 @@ class Research_strategy(View):
         # message = request.GET.get('pk')
         # kwargs = pk
         text = ResearchStrategyModel.objects.first()
-        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm(), 'raqam': data, 'text': text}
+        context = {'forms': OrganizeResearchForm(), 'form': ConsultationForm(), 'raqam': data, 'text': text, 'title':'Resaearch Strategy'}
         return render(request, 'research_strategy.html', context)
 
     def post(self, request):
@@ -167,7 +169,7 @@ class Language_editing(View):
         obj = LangEditModel.objects.first()
         lang = LangForm(instance=obj)
         return render(request, 'language_editing.html', {'form': form, 'forms': forms, 'text': obj,
-                                                         'lang': lang, 'tariffs': tariffs})
+                                                         'lang': lang, 'tariffs': tariffs, 'title':'Languge Editing'})
 
     def post(self, request):
         forms = LanguageForm(request.POST, request.FILES)
@@ -190,26 +192,26 @@ def get_context_data(self, **kwargs):
 
 def top25v(request):
     return render(request, 'scientific_paper/top25.html', {
-        'text': top25.objects.all()
+        'text': top25.objects.all(), 'title': 'Top-25'
     })
 
 
 def top2uzb(request):
     return render(request, 'scientific_paper/top2uzb.html', {
-        'text': top5Uz.objects.all()
+        'text': top5Uz.objects.all(), 'title':'Top2-UZB'
     })
 
 
 def top10one(request):
     return render(request, 'scientific_paper/top10.html', {
-        'text': top10Uz.objects.all()
+        'text': top10Uz.objects.all(), 'title':'Top10-One'
     })
 
 
 
 def top10uz(request):
     return render(request, 'scientific_paper/top10uz.html', {
-        'text': top10.objects.all()
+        'text': top10.objects.all(), 'title':'Top10-UZ'
     })
 
 
