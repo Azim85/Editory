@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% block meta %}
+    <meta property="og:title" content="Полный спектр научных консультаций">
+    <meta property="og:description" content="Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{% static 'pages/images/typewriter копия 1.png' %}">
+    <meta property="og:url" content="htts://editory.org"> <!--updated with jquery script -->
+    <meta property="og:site_name" content="EDITORY.ORG"> 
+{% endblock meta %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/article.css' %}">
 {% endblock %}
@@ -58,12 +65,11 @@
 
     $(document).ready(function() {
             // Load page-specific meta data for Open Graph
-            $('meta[property=og:title]').attr('content', $('#title').text() + ' | Editory.org');
-            $('meta[property=og:description]').attr('content', $('#description').text());
-            $('meta[property=og:type]').attr('content', 'article');
-            $('meta[property=og:image]').attr('content', $('#image').css('background-image'));
-            $('meta[property=og:url').attr("content", $(location).attr('href'));
-            $('meta[property=article:date_published]').attr('content', $('#date').data());
+            $("meta[property='og:title']").attr('content', $('#title').text() + ' | Editory.org');
+            $("meta[property='og:description']").attr('content', $('#description').text());
+            $("meta[property='og:type']").attr('content', 'article');
+            $("meta[property='og:image']").attr('content', $('#image').css('background-image'));
+            $("meta[property='og:url']").attr("content", $(location).attr('href'));
         });
 
     </script>
