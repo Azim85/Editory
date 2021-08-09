@@ -339,16 +339,18 @@ class TranslationView(View):
         file = request.FILES.get('file')
         char_amount = 0
 
-        f = str(file)
-        valid_ext = ['docx', 'pptx', 'txt']
-        files = str(file).split('.')
-        if f.endswith('.docx') or f.endswith('.pttx'):
-            done = Translation.objects.create(user=user, char_amount=0, language=language,
+
+        done = Translation.objects.create(user=user, char_amount=0, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
+
+        
+        
+        if str(done.file).endswith('.docx') or str(done.file).endswith('.pttx'):
+            
         
             if done:
-                text = textract.process(f'media/files/{file}')
+                text = textract.process(f'media/{done.file}')
                 text2 = codecs.escape_decode(str(text))[0].decode()[2:-1]
                 t = (',').join(text2.split('\n'))
                 k = ''
@@ -380,6 +382,7 @@ class TranslationView(View):
 
         else:
             messages.warning(request, 'Убедитесь, что загруженый файл в формате docx или pptx.')
+            done.delete()
             return redirect('requests:translation')
 
         
