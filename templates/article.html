@@ -9,7 +9,7 @@
 {% block content %}
     <div style="padding: 20px"></div>
         <div class="container mt-5">
-            <div style="background-image: url({{ topic.main_image.url }}); background-repeat: no-repeat; height: 420px;
+            <div id="image" style="background-image: url({{ topic.main_image.url }}); background-repeat: no-repeat; height: 420px;
                 width: 100%;
                 background-size: cover;
                 background-position: center">
@@ -20,7 +20,7 @@
                     <h6 class="main-color">{{ topic.material_name|safe|upper }}</h6>
                     <div class="font-weight-bold h3" style="">{{ topic.title }}</div>
                     <sub class="text-secondary">{{ topic.created_at|date:'d M' }}</sub>
-                    <div class="mt-3 mb-5 img-fluid" style="font-size: 22px;">{{ topic.description|safe }}</div>
+                    <div id="description" class="mt-3 mb-5 img-fluid" style="font-size: 22px;">{{ topic.description|safe }}</div>
                     <div>{{ topic.others|safe }}</div>
                 </div>
             </div>
@@ -54,6 +54,18 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'pages/js/topic.js' %}"></script>
+    <script src="{% static 'pages/js/topic.js' %}">
+
+    $(document).ready(function() {
+            // Load page-specific meta data for Open Graph
+            $('meta[property=og:title]').attr('content', $('#title').text() + ' | Editory.org');
+            $('meta[property=og:description]').attr('content', $('#description').text());
+            $('meta[property=og:type]').attr('content', 'article');
+            $('meta[property=og:image]').attr('content', $('#image').css('background-image'));
+            $('meta[property=og:url').attr("content", $(location).attr('href'));
+            $('meta[property=article:date_published]').attr('content', $('#date').data());
+        });
+
+    </script>
 {% endblock js %}
 
