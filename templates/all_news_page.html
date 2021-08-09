@@ -44,7 +44,7 @@
 
 
         <div class="col-lg-3 d-flex flex-column align-items-center">
-            <a href="{% url 'pages:allnews' %}" class="btn btn-secondary">All news</a>
+            <a href="{% url 'pages:news' %}" class="btn btn-secondary">All news</a>
             {% for year, months in years.items %}
                 <h3 class="mt-2 border-bottom w-50 text-center">{{ year }}</h3>
                 <div class="d-flex flex-column align-items-center w-100">
