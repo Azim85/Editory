@@ -7,11 +7,11 @@
 {% block content %}
     <div class="container pt-5" style="min-height: 60vh;">
         <div class="row ">
-            <h1 class="text-center w-100 border-bottom">Payment</h1>
+            <h1 class="text-center w-100 border-bottom">{% trans 'Оплата' %}</h1>
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">client:</p>
+                        <p class="mb-0">{% trans 'Заказчик' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.user.first_name }}</p>
@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Phone number:</p>
+                        <p class="mb-0">{% trans 'Телефонный номер' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.user.phone }}</p>
@@ -31,7 +31,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Payment type:</p>
+                        <p class="mb-0">{% trans 'Способ оплаты' %}:</p>
                     </div>
                     <div class="col-6">
                         <form action="{% url 'orders:change-payment-type' %}" method="POST" id="translation">
@@ -48,7 +48,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Service:</p>
+                        <p class="mb-0">{% trans 'Услуга' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.product }}</p>
@@ -58,7 +58,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Amount of chars:</p>
+                        <p class="mb-0">{% trans 'Количество символов' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ request.session.charcount }}</p>
@@ -68,7 +68,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Summa:</p>
+                        <p class="mb-0">{% trans 'Сумма' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.amount }} sum</p>
@@ -76,7 +76,7 @@
                 </div>
                 <hr>
 
-                <a href="{% url 'requests:translation' %}" class="btn btn-secondary">Cancel</a>
+                <a href="{% url 'requests:translation' %}" class="btn btn-secondary mb-5">{% trans 'отмена'%}</a>
 
             </div>
             <div class="col-lg-6 d-flex justify-content-center align-items-center">

@@ -339,9 +339,10 @@ class TranslationView(View):
         file = request.FILES.get('file')
         char_amount = 0
 
+        f = str(file)
         valid_ext = ['docx', 'pptx', 'txt']
         files = str(file).split('.')
-        if files[1] in valid_ext:
+        if f.endswith('.docx') or f.endswith('.pttx'):
             done = Translation.objects.create(user=user, char_amount=0, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
