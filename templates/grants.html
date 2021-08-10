@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% block meta %}
+    <meta property="og:title" content="{{ text.text1 }}">
+    <meta property="og:description" content="{{ text.text2 }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{% static 'pages/images/image49.jpg' %}">
+    <meta property="og:url" content="htts://editory.org{{ request.path }}">
+    <meta property="og:site_name" content="EDITORY.ORG">
+{% endblock meta %}
+
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/bak.css' %}">{% endblock %}
 
