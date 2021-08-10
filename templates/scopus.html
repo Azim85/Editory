@@ -48,10 +48,9 @@
                     <div class="d-flex align-items-center">
                         <div class="text3-text">
                             <img class="img-fluid" src="{% static 'pages/images/Group 544.png' %}">
-                            
+
                         </div>
 
-                        
 
                     </div>
                 </div>
@@ -67,24 +66,24 @@
         <div class="container pb-100">
             <h3 class="py-3">{% trans 'Наши гарантии' %}</h3>
             <div class="row row-cols-md-3 row-cols-1 pt-100 ">
-                
+
                 <div class="col text-center">
                     <div class="text4-text">
                         <img class="img-fluid" src="{{ text.text4.url }}" alt="">
-                        
+
                     </div>
 
-                   
+
                     <p class="mx-auto pt-5 text5-text" style="max-width:200px">{{ text.text5 }}
                     </p>
                 </div>
                 <div class="col text-center">
                     <div class="text6-text">
                         <img class="img-fluid" src="{{ text.text6.url }}" alt="">
-                        
+
                     </div>
 
-                   
+
                     <p class="mx-auto pt-5 text7-text" style="max-width:200px">{{ text.text7 }}
                     </p>
                 </div>
@@ -92,10 +91,10 @@
 
                     <div class="text8-text">
                         <img class="img-fluid" src="{{ text.text8.url }}" alt="">
-                        
+
                     </div>
 
-                    
+
                     <p class="mx-auto pt-5 text9-text" style="max-width:200px">{{ text.text9 }}
                     </p>
                 </div>
@@ -117,101 +116,92 @@
         <h2 class="mb-3 mt-2">{% trans 'Форма заявки' %}</h2>
         <form class="mt-5" method="post" name="consultation" action="{% url 'requests:scopus' %}#Forma">
             {% csrf_token %}
-                    <div class="row text-secondary">
+            <div class="row text-secondary">
 
 
-            <div class="col-lg-6">
+                <div class="col-lg-6">
 
-                <div class="form-group row d-flex align-items-center">
-                    <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.first_name}}
-                        <small class="text-danger">{{form.first_name.errors}}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
-                    <div class="col-sm-6">
-                        {{form.last_name}}
-                        <small class="text-danger">{{form.last_name.errors}}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.phone}}
-                        <small class="text-danger">{{form.phone.errors}}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Email' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.email}}
-                        <small class="text-danger">{{form.email.errors}}</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.organization}}
-                        <small class="text-danger">{{form.organization.errors}}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.org_contacts}}
-                        <small class="text-danger">{{form.org_contacts.errors}}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row d-flex align-items-center">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
-                    <div class="col-sm-6 d-flex flex-column">
-                        {{form.org_address}}
-                        <small class="text-danger">{{form.org_address.errors}}</small>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-            <!-- <div class="form-group row  d-flex" style="width: 100vw;"> -->
-                <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
-                <div class="col-lg-9 d-flex ">
-                    {{form.comment}}
-                    <small class="text-danger">{{form.comment.errors}}</small>
-                </div>
-
-
-                {{form.file_upload}}
-
-                <div class="form-group container row w-100" style="margin-top: 60px">
-                    <div class="col-lg-11 d-flex justify-content-between">
-                        <div class='mr-auto'>
-                            <label for="id_is_agree" style="cursor: pointer;">
-                                {{ form.is_agree }}<span
-                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                            </label>
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.first_name }}
+                            <small class="text-danger">{{ form.first_name.errors }}</small>
                         </div>
-                        <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
-                    </div>
-                    <div class="col-12">
-                        <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
 
-            <!-- </div> -->
-                        <div class="row col-lg-11 my-4  mb-100 d-flex align-items-center pl-3 justify-content-between">
-                <label for="id_is_agree" class="d-flex align-items-center pl-3 pl-lg-0 my-3 my-lg-0" style="cursor: pointer;">
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                        <div class="col-sm-6">
+                            {{ form.last_name }}
+                            <small class="text-danger">{{ form.last_name.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.phone }}
+                            <small class="text-danger">{{ form.phone.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Email' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.email }}
+                            <small class="text-danger">{{ form.email.errors }}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.organization }}
+                            <small class="text-danger">{{ form.organization.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.org_contacts }}
+                            <small class="text-danger">{{ form.org_contacts.errors }}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row d-flex align-items-center">
+                        <label for="inputPassword"
+                               class="col-sm-4 col-form-label">{% trans 'Адрес организации' %}</label>
+                        <div class="col-sm-6 d-flex flex-column">
+                            {{ form.org_address }}
+                            <small class="text-danger">{{ form.org_address.errors }}</small>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- <div class="form-group row  d-flex" style="width: 100vw;"> -->
+                <label for="" class="col-lg-2 col-form-label">{% trans 'Комментарий' %}</label>
+                <div class="col-lg-9 d-flex ">
+                    {{ form.comment }}
+                    <small class="text-danger">{{ form.comment.errors }}</small>
+                </div>
+
+
+                <div class="offset-lg-2 mt-3 col-lg-9  d-flex align-items-center">
+                    <label for="file" class="input-preview h-100 w-100 form-input">
+                        <!-- <input type="file" class="bg-danger"> -->
+                        {{ form.file_upload }}
+                        <small class="text-danger">{{ form.file_upload.errors }}</small>
+                    </label>
+                </div>
+
+                <div class="row col-lg-11 my-4  mb-100 d-flex align-items-center pl-3 justify-content-between">
+                <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0" style="cursor: pointer;">
                     {{ form.is_agree }}<span
                         class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                 </label>
@@ -221,15 +211,10 @@
                 </button>
                 <div class="col-12">
                     <small class="text-danger">{{ form.is_agree.errors }}</small>
-
                 </div>
 
 
             </div>
-
-
-
-        </div>
 
 
         </form>
