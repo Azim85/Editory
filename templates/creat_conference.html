@@ -3,11 +3,12 @@
 {% load i18n %}
 {% block meta %}
     <meta property="og:title" content="Полный спектр научных консультаций">
-    <meta property="og:description" content="Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации">
+    <meta property="og:description"
+          content="Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{% static 'pages/images/typewriter копия 1.png' %}">
     <meta property="og:url" content="htts://editory.org"> <!--updated with jquery script -->
-    <meta property="og:site_name" content="EDITORY.ORG"> 
+    <meta property="og:site_name" content="EDITORY.ORG">
 {% endblock meta %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/conferences.css' %}">
@@ -43,7 +44,8 @@ mix-blend-mode: luminosity;
                 <div class="row padding_me">
                     <div class="col-lg-9">
                         <div class="text-white row">
-                            <div id="title" class="col-lg-12 h1 pb-4 font-65 font-weight-bold text1-text">{{ text.text1 }}
+                            <div id="title"
+                                 class="col-lg-12 h1 pb-4 font-65 font-weight-bold text1-text">{{ text.text1 }}
                             </div>
                             <div id="description" class="col-lg-8 pb-4 text2-text">{{ text.text2 }}
                             </div>
@@ -85,7 +87,7 @@ mix-blend-mode: luminosity;
                         <div class="row text-secondary">
                             <div class="col-lg-6">
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.first_name }}
@@ -93,7 +95,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -102,7 +104,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -111,7 +113,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
 
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
@@ -124,10 +126,10 @@ mix-blend-mode: luminosity;
 
                             </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 d-flex flex-column justify-content-araund">
 
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="" class="col-sm-4 col-form-label">{% trans 'Организация' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.organization }}
@@ -135,7 +137,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for=""
                                            class="col-sm-4 col-form-label">{% trans 'Контакты организации' %} </label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -144,7 +146,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for=""
                                            class="col-sm-4 col-form-label">{% trans 'Адрес организации' %} </label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -154,7 +156,7 @@ mix-blend-mode: luminosity;
                                 </div>
                             </div>
 
-                            <label for="" class="col-lg-2 col-form-label">{% trans 'комментарий' %}</label>
+                            <label for="" class="col-lg-2 col-form-label">{% trans 'Комментарий' %}</label>
                             <div class="col-lg-9 d-flex pb-3">
                                 {{ form.comment }}
                                 <small class="text-danger">{{ form.comment.errors }}</small>
@@ -166,21 +168,24 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
+
+
+
             <div class="container">
-                <div class="row mb-100">
-                    <div class="col-lg-11 d-flex  justify-content-between">
-                        <div class='mr-auto'>
-                            <label for="id_is_agree" style="cursor: pointer;">
+                <div class="row col-lg-11  mb-100 d-flex align-items-center pl-3 justify-content-between">
+                    <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0" style="cursor: pointer;">
                                 {{ form.is_agree }}<span
                                     class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                             </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
 
-                    </div>
+                    <button type="submit"
+                            class="btn btn-primary px-4 my-3 ml-3 my-lg-0 col-12 col-lg-auto">{% trans 'Отправить работу' %}
+                    </button>
                     <div class="col-12">
                         <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
+
+
                 </div>
             </div>
     </form>

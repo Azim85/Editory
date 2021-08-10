@@ -4,7 +4,7 @@ from .models import WebinarsModel, TranslationModel
 
 from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
                      DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
-                     ResearchStrategyModel, top10Uz, top25, top10 ,top5Uz)
+                     ResearchStrategyModel, top10Uz, top25, top10 ,top5Uz, WebinarsUrls1)
 
 from modeltranslation.admin import TabbedTranslationAdmin
 
@@ -85,3 +85,4 @@ admin.site.register(top10)
 admin.site.register(top10Uz)
 admin.site.register(top25)
 admin.site.register(top5Uz)
+admin.site.register(WebinarsUrls1)

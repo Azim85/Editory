@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView, View
 
-from pages.models import TopResearches, WebinarsUrl1, WebinarsUrl2
+from pages.models import TopResearches
 
 
 from my_requests.models import TranslationCostModel
@@ -17,7 +17,7 @@ from .models import Translation, ResearchPlatformsContext, GetDesign
 from setpage.forms import WebinarsForm, TranslationsForm
 
 from setpage.models import ( WebinarsModel, TranslationModel, BakModel, ConferencesModel, CreateConferenceModel, DesignModel, GrantsModel,
-                            PatentModel, ScopusModel, ProofModel)
+                            PatentModel, ScopusModel, ProofModel, WebinarsUrls1)
 from setpage.forms import BakForm, ConferencesForm, CreateConferenceForm, DesignForm, GrantForm, PatentForm, ScopusForm, \
     ProofForm
 
@@ -69,8 +69,8 @@ class WebinarsView(TemplateView):
         text = WebinarsModel.objects.first()
         context['webinar'] = WebinarsForm(instance=text)
         context['text'] = text
-        context['url1'] = WebinarsUrl1.objects.all()
-        context['url2'] = WebinarsUrl2.objects.all()
+        context['url1'] = WebinarsUrls1.objects.filter().order_by('-id')[:5]
+        context['url2'] = WebinarsUrls1.objects.filter().order_by('-id')[5:10]
         context['title'] = 'Webinars'
         return context
 

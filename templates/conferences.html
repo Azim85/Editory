@@ -99,7 +99,7 @@ mix-blend-mode: luminosity;
                         <div class="row text-secondary">
                             <div class="col-lg-6">
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.first_name }}
@@ -107,7 +107,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -116,7 +116,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Занятость' %}</label>
                                     <div class="col-sm-6 check">
@@ -137,7 +137,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Место работы' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -146,7 +146,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Ученая степень' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -157,7 +157,7 @@ mix-blend-mode: luminosity;
                             </div>
 
                             <div class="col-lg-6">
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -166,7 +166,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
 
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
@@ -176,7 +176,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="" class="col-sm-4 col-form-label">{% trans 'Название статьи' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.application_name }}
@@ -184,7 +184,7 @@ mix-blend-mode: luminosity;
                                     </div>
                                 </div>
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Конференция' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -194,7 +194,7 @@ mix-blend-mode: luminosity;
                                 </div>
 
 
-                                <div class="form-group row my-4">
+                                <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
                                            class="col-sm-4 col-form-label">{% trans 'Секция' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
@@ -383,10 +383,9 @@ mix-blend-mode: luminosity;
             $("meta[property='og:type']").attr('content', 'website');
             $("meta[property='og:image']").attr('content', $('#image').css('background-image'));
             $("meta[property='og:url']").attr("content", $(location).attr('href'));
-        });
-
-
         })
+
+
 
         const fileImage = document.querySelector('.input-preview__src');
         const filePreview = document.querySelector('.input-preview');

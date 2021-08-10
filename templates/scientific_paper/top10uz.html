@@ -11,6 +11,10 @@
             margin-top: 40px;
             margin-bottom: 40px;
         }
+        .bggm {
+            background: linear-gradient(
+                    98.46deg, #eff9fa -2.78%, rgba(236, 243, 243, 0) 86.58%);
+        }
     </style>
 {% endblock %}
 
@@ -24,70 +28,12 @@
         </div>
         <ol class="ml-4">
             {% for t in text %}
-            <li><a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
+            <li class="{% cycle '' 'bggm' %}"><a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
                 <br>
             {{ t.description }}
             </li>
             {% endfor %}
 
-
-            <li><a href="https://www.proquest.com/docview/305192100" target="_blank" rel="noopener"><strong>Cognitive
-                effects on the neurophysiology and biomechanics of stroke recovery</strong></a> <br> Diamond, Solomon
-                Gilbert, Harvard University, 2004, Ph.D. Subject: Biomedical engineering
-            </li>
-            <li><a href="https://www.proquest.com/docview/1972120488" target="_blank" rel="noopener"><strong>Why Did You
-                Stay?: A Case Study of Male Student Persistence in Technical College</strong></a> <br>
-                Froehlich-Mueller, Kerry, Northcentral University, 2017, Ed.D. Subject: Community college education
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:10638662"
-                   target="_blank" rel="noopener"><strong>How High School Students' Perceptions of Their Teacher-Student
-                    Relationships Relate to Their Academic Achievement</strong></a> <br> Short, Lori A., Northcentral
-                University, 2017, Ed.D. Subject: Secondary education
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:10188962"
-                   target="_blank" rel="noopener"><strong>Social Media and Self-Evaluation: The Examination of Social
-                    Media Use on Identity, Social Comparison, and Self-Esteem in Young Female Adults</strong></a> <br>
-                Solomon, Michelle, William James College, 2016, Psy.D. Subject: Clinical psychology
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:3234775"
-                   target="_blank" rel="noopener"><strong>The use of cost information in pricing decisions and cost
-                    management strategies</strong></a><br> Hsu, Sylvia Hsingwen, The University of Wisconsin - Madison,
-                2006, Ph.D. Subject: Accounting
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:3567985"
-                   target="_blank" rel="noopener"><strong>Korean American Artists and the 1992 Los Angeles
-                    Riots</strong></a> <br> Park, Eun Jung, University of California, San Diego, 2013, Ph.D. Subject:
-                Art history
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:10843428"
-                   target="_blank" rel="noopener"><strong>Teacher-Writer Perceptions on the Essence of Writing:
-                    Influences, Identity and Habits of Mind to Sustain a Writing Life </strong></a><br> Daniels, Shari
-                Lynn, The University of North Dakota, 2018, Ph.D. Subject: Teacher education
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:10746805"
-                   target="_blank" rel="noopener"><strong>Factors that Influence Successful Organizational Change in
-                    Corporations: Examination of Change Management, Employees' Reaction to Change, and Change
-                    Outcomes</strong></a> <br> Roberts, Augustus Dee, University of Maryland University College, 2017,
-                D.Mgt. Subject: Management
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:10617201"
-                   target="_blank" rel="noopener"><strong>The Effects of Teaching Reading Using the Gradual Release of
-                    Responsibility Model and 4th Grade Reading</strong></a> <br> Young, Marthel I., Trevecca Nazarene
-                University, 2017, Ed.D. Subject: Reading instruction
-            </li>
-            <li>
-                <a href="https://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pqdiss&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&amp;rft_dat=xri:pqdiss:3341563"
-                   target="_blank" rel="noopener"><strong>The dynamic assessment of narratives: A bilingual
-                    study</strong></a> <br> Fiestas, Christine Eve, The University of Texas at Austin, 2008, Ph.D.
-                Subject: Speech therapy
-            </li>
         </ol>
     </div>
 {% endblock %}
