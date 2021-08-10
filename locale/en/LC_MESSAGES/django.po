@@ -435,7 +435,7 @@ msgstr "Publication of works"
 #: templates/components/mobile_navbar.html:129
 #: templates/components/new_navbar.html:295 templates/home.html:176
 msgid "Публикация в ВАК"
-msgstr "Publication in the Higher Attestation Commission"
+msgstr "Publication in BAK"
 
 #: templates/components/mobile_navbar.html:135 templates/home.html:179
 msgid "Публикация в Scopus/ Web of Science"

@@ -160,8 +160,10 @@
         <div id="Forma" class="">
             {{ text.text9|safe }}
         </div>
-        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?data=1&#Forma">
+
+        <form class="mt-5" method="post" name="consultation" action="{% url 'pages:research_strategy' %}?&#Forma">
             {% csrf_token %}
+
             <div class="row text-secondary">
                 <div class="col-lg-6">
 
@@ -261,11 +263,24 @@
 
     <script>
 
-
+     
+        
         $(document).ready(function () {
-            if ({{ raqam }} ===
-            1
-        )
+
+        let getData = document.querySelector('.get_data')
+        let got = getData.innerHTML
+        
+            //if (got === '1'){
+
+             //window.location.href = "{% url 'pages:research_strategy' %}?data=1"; 
+            //}
+           
+
+          
+        
+
+            if ({{ raqam }} === 1)
+
             {
                 $('.center-text').css('display', 'inline')
                 $('.center-text-second').css('display', 'none')
@@ -275,10 +290,8 @@
                 $('#id_select_topic').val('Стратегия исследования')
                 {#$('.center-text').html('{{ text.text5|safe }}')#}
             }
-        else
-            if ({{ raqam }} ===
-            2
-        )
+        else if ({{ raqam }} === 2 || got === '2') 
+
             {
                 $('.center-text').css('display', 'none')
                 $('.center-text-second').css('display', 'inline')
@@ -289,10 +302,8 @@
                 {#$('.center-text').html("{{ text.text6|safe }}")#}
 
             }
-        else
-            if ({{ raqam }} ===
-            3
-        )
+        else if ({{ raqam }} === 3 || got === '3')
+
             {
                 $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image45.jpg' %})')
 
@@ -302,10 +313,8 @@
                 $('.center-text-fourth').css('display', 'none')
                 $('#id_select_topic').val('Научное финансирование')
             }
-        else
-            if ({{ raqam }} ===
-            4
-        )
+        else if ({{ raqam }} === 4 || got === '4')
+
             {
                 $('.center-text').css('display', 'none')
                 $('.center-text-second').css('display', 'none')
