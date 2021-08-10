@@ -46,7 +46,7 @@ mix-blend-mode: luminosity;
 
 
                         <div class="col-lg-6 font-22">
-                            {{ text.text2|safe}}
+                            {{ text.text2|safe }}
 
 
                         </div>
@@ -123,14 +123,14 @@ mix-blend-mode: luminosity;
 
             {% for tar in tariffs %}
                 <div class="col-6 my-3 text11-text">{{ tar.text|safe }}</div>
-                <div class="col-2 " >
+                <div class="col-2 ">
                     {% if tar.stendart %}
                         <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
                     {% else %}
                         <img src="{% static 'pages/svg/Group 191.svg' %}" height="30px">
                     {% endif %}
                 </div>
-                <div class="col-2 " >
+                <div class="col-2 ">
                     {% if tar.express %}
                         <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
                     {% else %}
@@ -138,7 +138,7 @@ mix-blend-mode: luminosity;
                     {% endif %}
                 </div>
 
-                <div class="col-2 " >
+                <div class="col-2 ">
                     {% if tar.premium %}
                         <img src="{% static 'pages/svg/Vector 18.svg' %}" height="26px">
                     {% else %}
@@ -342,13 +342,12 @@ mix-blend-mode: luminosity;
                                 </div>
                             </div>
 
-                            <div class="col-lg-12 row px-4">
-                                <div class="col-lg-6  row my-4">
-                                    <div class="">
-                                        {{ forms.file }}
-                                    </div>
-                                </div>
-
+                            <div class=" mt-3 col-lg-12  d-flex align-items-center">
+                                <label for="file" class="input-preview h-100 w-100 form-input">
+                                    <!-- <input type="file" class="bg-danger"> -->
+                                    {{ form.file_upload }}
+                                    <small class="text-danger">{{ form.file_upload.errors }}</small>
+                                </label>
                             </div>
 
                             <div class="col-lg-12 row px-4">
