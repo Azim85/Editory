@@ -6,7 +6,7 @@
     <meta property="og:description" content="Разрабатываем стратегии для исследований, публикуем статьи в международных журналах, корректируем диссертации">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{% static 'pages/images/typewriter копия 1.png' %}">
-    <meta property="og:url" content="htts://editory.org"> <!--updated with jquery script -->
+    <meta property="og:url" content="http://editory.org{{ request.path }}">
     <meta property="og:site_name" content="EDITORY.ORG"> 
 {% endblock meta %}
 {% block css %}
@@ -593,8 +593,6 @@
             $('#hideform').click(function () {
             $('div.forma').css('display', 'none')
 
-            // Update URL for Open Graph property in meta tag
-            $("meta[property='og:url']").attr('content', $(location).attr('href'))
         })
         ;
         
