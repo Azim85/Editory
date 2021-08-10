@@ -156,6 +156,7 @@ class Research_strategy(View):
             done = forms.save()
             if done:
                 messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                
                 return redirect('pages:research_strategy')
         else:
             return render(request, 'research_strategy.html', {'forms': forms})
@@ -325,3 +326,7 @@ class SearchView(View):
         news = Topic.objects.filter(
             Q(material_name__icontains=q) | Q(title__icontains=q) | Q(description__icontains=q)).distinct()
         return render(request, 'search.html', {'news': news, 'query': q})
+
+
+def all_webinars(request):
+    return render(request, 'all_webinars.html')

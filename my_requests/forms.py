@@ -19,15 +19,15 @@ from .models import (Consultation,
                      GetDesign
                      )
 
-
+# updated
 class ConsultationForm(forms.ModelForm):
+    is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'phone', 'is_agree')
+        fields = ('first_name', 'phone', 'is_agree')
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
@@ -39,11 +39,6 @@ class ConsultationForm(forms.ModelForm):
                 return phone
         raise forms.ValidationError('неправильный формат номера телефона')
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not '@' in email:
-            raise forms.ValidationError('электронная почта недействительна')
-        return email
 
 
 class LanguageForm(forms.ModelForm):
@@ -397,6 +392,7 @@ class DesignsForm(forms.ModelForm):
 # updated
 class BaksForm(forms.ModelForm):
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    file_upload = forms.FileField(required=False)
 
     class Meta:
         model = Baks
@@ -444,6 +440,7 @@ class BaksForm(forms.ModelForm):
 # updated
 class ScopusesForm(forms.ModelForm):
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    application_upload = forms.FileField(required=False)
 
     class Meta:
         model = Scopus

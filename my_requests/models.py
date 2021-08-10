@@ -96,6 +96,7 @@ class Baks(models.Model):
     organization = models.CharField(max_length=255)
     org_contacts = models.CharField(max_length=255)
     org_address = models.CharField(max_length=255)
+    file_upload = models.FileField(upload_to='files/', null=True, blank=True)
     comment = models.TextField(blank=True, null=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -117,6 +118,7 @@ class Scopus(models.Model):
     organization = models.CharField(max_length=255)
     org_contacts = models.CharField(max_length=255)
     org_address = models.CharField(max_length=255)
+    file_upload = models.FileField(upload_to='files/', null=True, blank=True)
     comment = models.TextField(blank=True, null=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -267,7 +269,6 @@ class Grants(models.Model):
 
 class Consultation(models.Model):
     first_name = models.CharField(max_length=100, null=True)
-    last_name = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=15, null=True)
     is_agree = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

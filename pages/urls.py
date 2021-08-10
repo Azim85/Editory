@@ -27,5 +27,6 @@ urlpatterns = [
     path('change_description', change_description, name="description-change"),
 
     path('search/', SearchView.as_view(), name='search'),
+    path('all_webinars/', all_webinars, name='all-webinars')
 
 ]

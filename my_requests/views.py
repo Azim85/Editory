@@ -143,26 +143,22 @@ class Design(View):
 
 class ConsultationView(View):
     def get(self, request):
-        form = FreeConsultationForm()
-        return render(request, 'conferences.html', {'form': form, 'title': 'Consultation'})
+        form = ConsultationForm()
+        return render(request, 'home.html', {'form': form, 'title': 'Consultation'})
 
     def post(self, request):
-        form = FreeConsultationForm(request.POST)
-        if request.user.is_authenticated:
-            if form.is_valid():
-                if request.POST.get('is_agree') and request.POST.get('is_agree') == 'on':
-                    done = form.save()
-                    if done:
-                        messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                        return redirect('requests:consultation')
-                else:
-                    messages.error(request, 'вы  должны согласиться прежде чем отправить форму ')
-                    return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
-            else:
-                return render(request, 'conferences.html', {'validated': 'validated', 'form': form})
+        form = ConsultationForm(request.POST)
+        
+        if form.is_valid():
+            
+            done = form.save()
+            if done:
+                messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
+                return redirect('pages:home')
+            
         else:
-            messages.error(request, 'Чтобы отправить форму, вы должны сначала войти в систему')
-            return redirect('users:login')
+            return render(request, 'home.html', {'validated': 'validated', 'form': form})
+    
 
 
 # class FreeConsultationView(View):
