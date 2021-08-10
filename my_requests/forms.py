@@ -397,6 +397,7 @@ class DesignsForm(forms.ModelForm):
 # updated
 class BaksForm(forms.ModelForm):
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    file_upload = forms.FileField(required=False)
 
     class Meta:
         model = Baks
@@ -444,6 +445,7 @@ class BaksForm(forms.ModelForm):
 # updated
 class ScopusesForm(forms.ModelForm):
     is_agree = forms.BooleanField(error_messages={'required': 'Вы должны согласиться с Правилами и Условиями'})
+    application_upload = forms.FileField(required=False)
 
     class Meta:
         model = Scopus

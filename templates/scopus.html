@@ -191,6 +191,24 @@
                     {{form.comment}}
                     <small class="text-danger">{{form.comment.errors}}</small>
                 </div>
+
+
+                {{form.file_upload}}
+
+                <div class="form-group container row w-100" style="margin-top: 60px">
+                    <div class="col-lg-11 d-flex justify-content-between">
+                        <div class='mr-auto'>
+                            <label for="id_is_agree" style="cursor: pointer;">
+                                {{ form.is_agree }}<span
+                                    class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">{% trans 'Заказать консультацию' %}</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
+                    </div>
+
             <!-- </div> -->
                         <div class="row col-lg-11 my-4  mb-100 d-flex align-items-center pl-3 justify-content-between">
                 <label for="id_is_agree" class="d-flex align-items-center pl-3 pl-lg-0 my-3 my-lg-0" style="cursor: pointer;">
@@ -203,6 +221,7 @@
                 </button>
                 <div class="col-12">
                     <small class="text-danger">{{ form.is_agree.errors }}</small>
+
                 </div>
 
 
