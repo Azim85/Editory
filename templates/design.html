@@ -70,7 +70,7 @@ mix-blend-mode: luminosity;
         <div class="container py-5">
             <div class="row ">
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
-                    <div class="img-src" style="background-image: url('{{ text.text3.url }}'); height: 390px; background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+                    <img src="{{ text.text3.url }}" class="img-fluid" alt="">
                     <h3 class="h3-text mt-3 ">
                         {{ text.text4 }}
                     </h3>
@@ -80,17 +80,17 @@ mix-blend-mode: luminosity;
 
                 </div>
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
-                    <div class="img-src d-lg-none d-block" style="background-image: url('{{ text.text6.url }}'); height: 390px; background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+                    <img src="{{ text.text6.url }}" class="img-fluid d-lg-none d-block" alt="">
+
                     <h3 class="h3-text mt-3 mt-lg-0 ">{{ text.text7 }}</h3>
                     <p class="simple-text">
                         {{ text.text8 }}
                     </p>
-                    <div class="img-src d-none d-lg-block" style="background-image: url('{{ text.text6.url }}'); height: 390px; background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
-
-
+                    <img src="{{ text.text6.url }}" class="img-fluid d-none d-lg-block" alt="">
                 </div>
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
-                    <div class="img-src" style="background-image: url('{{ text.text9.url }}'); height: 390px; background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+                    <img src="{{ text.text9.url }}" class="img-fluid" alt="">
+
                     <h3 class="h3-text mt-3 ">{{ text.text10 }}</h3>
                     <p class="simple-text">
                         {{ text.text11 }}
@@ -174,20 +174,21 @@ mix-blend-mode: luminosity;
 
                 </div>
                 <div class="row col-lg-11 my-4  mb-100 d-flex align-items-center pl-3 justify-content-between">
-                <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0" style="cursor: pointer;">
-                    {{ form.is_agree }}<span
-                        class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                </label>
+                    <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0"
+                           style="cursor: pointer;">
+                        {{ form.is_agree }}<span
+                            class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                    </label>
 
-                <button type="submit"
-                        class="btn btn-primary px-4 my-3 ml-3 my-lg-0 col-12 col-lg-auto">{% trans 'Отправить работу' %}
-                </button>
-                <div class="col-12">
-                    <small class="text-danger">{{ form.is_agree.errors }}</small>
+                    <button type="submit"
+                            class="btn btn-primary px-4 my-3 ml-3 my-lg-0 col-12 col-lg-auto">{% trans 'Отправить работу' %}
+                    </button>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
+                    </div>
+
+
                 </div>
-
-
-            </div>
             </div>
 
         </form>
