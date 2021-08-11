@@ -91,6 +91,7 @@ mix-blend-mode: luminosity;
               enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row text-secondary">
+
                 <div class="col-lg-6">
 
                     <div class="form-group row d-flex align-items-center">
@@ -176,12 +177,13 @@ mix-blend-mode: luminosity;
                 <div class="col-12">
                     <small class="text-danger">{{ form.is_agree.errors }}</small>
                 </div>
-
-
             </div>
 
+            
         </form>
     </div>
+
+    
 
 
 

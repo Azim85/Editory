@@ -28,14 +28,20 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class HomeView(TemplateView):
-    template_name = 'home.html'
+class HomeView(View):
 
-    def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data(**kwargs)
-        context['form'] = ConsultationForm()
-        # self.request.session['logged'] = 'pages:home'
-        return context
+    def get(self, request):
+        form = ConsultationForm()
+        request.session['get_data'] = ''
+        return render(request, 'home.html', {'form':form})
+    # template_name = 'home.html'
+
+    # def get_context_data(self, **kwargs):
+    #     self.request.session['get_data'] = 'hello'
+    #     context = super(HomeView, self).get_context_data(**kwargs)
+    #     context['form'] = 
+    #     # self.request.session['logged'] = 'pages:home'
+    #     return context
 
 
 class Article(DetailView):
@@ -142,6 +148,9 @@ class Research_strategy(View):
 
     def get(self, request):
         data = request.GET.get('data')
+
+        
+
         # print(pk)
         # message = request.GET.get('pk')
         # kwargs = pk
@@ -151,13 +160,16 @@ class Research_strategy(View):
 
     def post(self, request):
         forms = OrganizeResearchForm(request.POST)
+
+        print(request.POST.get('data'))
         
         if forms.is_valid():
             done = forms.save()
             if done:
                 messages.success(request, 'Ваш запрос успешно отправлен, мы скоро свяжемся с вами!')
-                
+                        
                 return redirect('pages:research_strategy')
+
         else:
             return render(request, 'research_strategy.html', {'forms': forms})
         
