@@ -37,7 +37,7 @@ urlpatterns = [
     path('apelsin_pay/', include('apelsinuz.urls')),
     path('paycom/', include('paymeuz.urls')),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    path('sitemaps.xml', sitemap, {'sitemaps': sitemaps}),
+    path('sitemaps.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     
 ]
 
