@@ -23,10 +23,12 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
 from pages.sitemaps import StaticViewSitemap, ArticleSitemap
+from my_requests.sitemaps import RequestSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
     'articles': ArticleSitemap,
+    'requests': RequestSitemap
 }
 
 urlpatterns = [

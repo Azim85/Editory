@@ -1,4 +1,3 @@
-from django.conf.urls import i18n
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
 from pages.models import Topic
