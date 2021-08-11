@@ -2,11 +2,11 @@
 {% load static %}
 {% load i18n %}
 {% block meta %}
-    <meta property="og:title" content="Исследовательские платформы">
-    <meta property="og:description" content="Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.">
+    <meta property="og:title" content="{% trans 'Исследовательские платформы' %}">
+    <meta property="og:description" content="{% trans 'Исследовательские платформы - это успешный инструмент для междисциплинарных исследовательских проектов сотрудничества. Создание исследовательских платформ инициируется учеными и исследовательскими группами различных дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса заявок. Заявки оцениваются международными экспертами.' %}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{% static 'pages/images/typewriter копия 1.png' %}">
-    <meta property="og:url" content="htts://editory.org{{ request.path }}"> <!--updated with jquery script -->
+    <meta property="og:url" content="htts://editory.org{{ request.path }}">
     <meta property="og:site_name" content="EDITORY.ORG"> 
 {% endblock meta %}
 {% block css %}

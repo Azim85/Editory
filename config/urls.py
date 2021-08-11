@@ -19,12 +19,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
+# Sitemap libraries for search engines
+from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import TemplateView
+from pages.sitemaps import StaticViewSitemap, ArticleSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'articles': ArticleSitemap,
+}
+
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('apelsin_pay/', include('apelsinuz.urls')),
     path('paycom/', include('paymeuz.urls')),
+    path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    
 ]
+
+
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
@@ -33,6 +48,7 @@ urlpatterns += i18n_patterns(
     path('orders/', include('orders.urls')),
     path('editable/', include('setpage.urls')),
     path('', include('pages.urls')),
+    
 )
 
 if settings.DEBUG:
