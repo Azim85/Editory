@@ -5,7 +5,7 @@
     <meta property="og:title" content="Консультация по диссертациям">
     <meta property="og:description" content="Рецензирование, методология исследования, статистический анализ, статистический анализ, корректура и редактирование">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{% static 'pages/images/image52.jpg' %}">
+    <meta property="og:image" content="{% static 'pages/images/image52.webp' %}">
     <meta property="og:url" content="htts://editory.org{{ request.path }}">
     <meta property="og:site_name" content="EDITORY.ORG">
 {% endblock meta %}
@@ -33,7 +33,7 @@
     </div>
 
     <div class="bg-me-home h-600"
-         style="background-image: url({% static 'pages/images/image52.jpg' %});
+         style="background-image: url({% static 'pages/images/image52.webp' %});
                  background-size: cover; ">
         <div class="h-100" style="
 background: linear-gradient(104.63deg, #173E51 0.43%, rgba(28, 98, 121, 0.35) 63.59%, rgba(255, 255, 255, 0) 96.89%);
@@ -288,7 +288,7 @@ mix-blend-mode: luminosity;
             if ({{ raqam }} == 1
         )
             {
-                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.jpg' %})')
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.webp' %})')
                 $('.section_2').css('background', '#40545C')
                 $('#id_choose').val('Рецензирование')
             }
@@ -296,7 +296,7 @@ mix-blend-mode: luminosity;
             if ({{ raqam }} == 2
         )
             {
-                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.jpg' %})')
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.webp' %})')
                 $('.section_2').css('background', '#2A819E')
                 $('#id_choose').val('Методология исследования')
             }
@@ -304,7 +304,7 @@ mix-blend-mode: luminosity;
             if ({{ raqam }} == 3
         )
             {
-                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.jpg' %})')
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.webp' %})')
                 $('.section_2').css('background', '#CE935E')
                 $('#id_choose').val('Статистический анализ')
             }
@@ -312,7 +312,7 @@ mix-blend-mode: luminosity;
             if ({{ raqam }} == 4
         )
             {
-                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
+                $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.webp' %})')
                 $('.section_2').css('background', '#CE935E')
                 $('#id_choose').val('Корректура и редактирование')
             }
@@ -320,22 +320,22 @@ mix-blend-mode: luminosity;
 
 
         $('#nav-home-tab').on('click', function () {
-            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.jpg' %})')
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image52.webp' %})')
             $('.section_2').css('background', '#40545C')
             $('#id_choose').val('Рецензирование')
         })
         $('#nav-profile-tab').on('click', function () {
-            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.jpg' %})')
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image53.webp' %})')
             $('.section_2').css('background', '#2A819E')
             $('#id_choose').val('Методология исследования')
         })
         $('#nav-contact-tab').on('click', function () {
-            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.jpg' %})')
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/image54.webp' %})')
             $('.section_2').css('background', '#CE935E')
             $('#id_choose').val('Статистический анализ')
         })
         $('#nav-fouth-tab').on('click', function () {
-            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.jpg' %})')
+            $('.bg-me-home').css('background-image', 'url({% static 'pages/images/debby-hudson-asviIGR3CPE-unsplash.webp' %})')
             $('.section_2').css('background', '#CE935E')
             $('#id_choose').val('Корректура и редактирование')
         })
