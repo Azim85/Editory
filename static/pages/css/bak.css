@@ -1,1 +1,20 @@
 .pano{position:relative;height:774.16px;width:100%;background-repeat:no-repeat;background-position:bottom;background-size:cover}.content{font-size:1.5vw;border:1px solid red}.head-word{font-size:65px;color:#263236;font-weight:700;line-height:1}@media screen and (max-width:992px){.pt-auto{display:none}.head-word{font-size:30px!important;color:#263236;font-weight:700;line-height:1}.content{font-size:18px}.padding_bak{padding-left:40px!important;padding-right:40px!important}}.padding_bak{padding-left:100px;padding-right:100px}
+.input-preview {
+  border: 1px dashed #00a1a8;
+  border-radius: 15px;
+  /*width: 90vw;*/
+  /*height: 200px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  transition: ease-in-out 750ms;
+}
+.form-input input {
+    margin: 0 auto;
+    padding: 5vw;
+    border-radius: 15px
+}
