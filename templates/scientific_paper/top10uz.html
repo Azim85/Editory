@@ -27,7 +27,7 @@
         </div>
         <ol class="ml-4">
             {% for t in text %}
-            <li class="{% cycle '' 'bggm' %}"><a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
+            <li class="{% cycle '' 'bggm' %} p-4"><a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
                 <br>
             {{ t.description }}
             </li>
