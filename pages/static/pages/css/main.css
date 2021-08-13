@@ -4,7 +4,9 @@
     font-weight: 400;
     src: local('Geometria'), url(../fonts/Geometria.woff) format('woff')
 }
-
+input:not([type='checkbox']), select, button, label{
+    height: 48px !important;
+}
 #myBtn {
     display: none;
     position: fixed;
@@ -161,7 +163,7 @@ html {
 }
 
 .pb-100 {
-    padding-bottom: 50px !important
+    padding-bottom: 65px !important
 }
 
 .main-font {

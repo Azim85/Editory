@@ -77,7 +77,7 @@ class About_us_news(models.Model):
 
 
 class Tariffs(models.Model):
-    text = RichTextUploadingField()
+    text = models.TextField()
     stendart = models.BooleanField()
     express = models.BooleanField()
     premium = models.BooleanField()

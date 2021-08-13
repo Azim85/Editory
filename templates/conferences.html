@@ -7,7 +7,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="{% static 'pages/images/image50.jpg' %}">
     <meta property="og:url" content="htts://editory.org{{ request.path }}">
-    <meta property="og:site_name" content="EDITORY.ORG"> 
+    <meta property="og:site_name" content="EDITORY.ORG">
 {% endblock meta %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/conferences.css' %}">
@@ -100,7 +100,8 @@ mix-blend-mode: luminosity;
                             <div class="col-lg-6">
 
                                 <div class="form-group row my-4 d-flex align-items-center">
-                                    <label for="" class="col-sm-4 col-form-label">{% trans 'Имя' %}</label>
+                                    <label for=""
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Имя' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.first_name }}
                                         <small class="text-danger align-self-start">{{ form.first_name.errors }}</small>
@@ -109,7 +110,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Фамилия' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Фамилия' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.last_name }}
                                         <small class="text-danger align-self-start">{{ form.last_name.errors }}</small>
@@ -118,7 +119,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Занятость' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Занятость' %}</label>
                                     <div class="col-sm-6 check">
                                         <div style="display:none">{{ form.busyness }}</div>
                                         <div class="row ">
@@ -139,7 +140,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Место работы' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Место работы' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.place_of_work }}
                                         <small class="text-danger align-self-start">{{ form.place_of_work.errors }}</small>
@@ -148,7 +149,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Ученая степень' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Ученая степень' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.academic_degree }}
                                         <small class="text-danger align-self-start">{{ form.academic_degree.errors }}</small>
@@ -159,7 +160,7 @@ mix-blend-mode: luminosity;
                             <div class="col-lg-6">
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Номер телефона' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Номер телефона' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.phone }}
                                         <small class="text-danger align-self-start">{{ form.phone.errors }}</small>
@@ -169,7 +170,7 @@ mix-blend-mode: luminosity;
                                 <div class="form-group row my-4 d-flex align-items-center">
 
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Эл. почта' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Эл. почта' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.email }}
                                         <small class="text-danger align-self-start">{{ form.email.errors }}</small>
@@ -177,7 +178,8 @@ mix-blend-mode: luminosity;
                                 </div>
 
                                 <div class="form-group row my-4 d-flex align-items-center">
-                                    <label for="" class="col-sm-4 col-form-label">{% trans 'Название статьи' %}</label>
+                                    <label for=""
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Название статьи' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.application_name }}
                                         <small class="text-danger align-self-start">{{ form.application_name.errors }}</small>
@@ -186,7 +188,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Конференция' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Конференция' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.conference }}
                                         <small class="text-danger align-self-start">{{ form.conference.errors }}</small>
@@ -196,7 +198,7 @@ mix-blend-mode: luminosity;
 
                                 <div class="form-group row my-4 d-flex align-items-center">
                                     <label for="inputPassword"
-                                           class="col-sm-4 col-form-label">{% trans 'Секция' %}</label>
+                                           class="col-sm-4 col-form-label d-flex align-items-center">{% trans 'Секция' %}</label>
                                     <div class="col-sm-6 d-flex flex-column">
                                         {{ form.section }}
                                         <small class="text-danger align-self-start">{{ form.section.errors }}</small>
@@ -221,21 +223,23 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
-            <div class="container">
-                <div class="row mb-100 ">
-                    <div class="col-lg-11 d-flex  justify-content-between">
-                        <div class='mr-auto'>
-                            <label for="id_is_agree" style="cursor: pointer;">
+            <div class="container pr-lg-0 pr-3 ">
+                <div class="row col-lg-11 p-0 p-lg-3  mb-100 d-flex align-items-center pl-3 justify-content-between">
+                    <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0" style="cursor: pointer;">
                                 {{ form.is_agree }}<span
                                     class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
                             </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary px-4 mr-4">{% trans 'Отправить работу' %}</button>
-                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary px-4 my-3 ml-3 my-lg-0 col-12 col-lg-auto">{% trans 'Отправить работу' %}
+                    </button>
                     <div class="col-12">
                         <small class="text-danger">{{ form.is_agree.errors }}</small>
                     </div>
+
+
                 </div>
+
             </div>
         </div>
     </form>
@@ -378,7 +382,6 @@ mix-blend-mode: luminosity;
             })
 
         })
-
 
 
         const fileImage = document.querySelector('.input-preview__src');
