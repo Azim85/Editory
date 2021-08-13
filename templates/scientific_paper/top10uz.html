@@ -25,12 +25,12 @@
                 по материалам сайта <a href="http://proquest.com" target="_blank" rel="noopener" class="text-primary">Proquest.com</a>.
             </p>
         </div>
-        <ol class="ml-4">
+        <ol class="row">
             {% for t in text %}
-            <li class="{% cycle '' 'bggm' %}"><a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
+            <div class="col-lg-12 {% cycle '' 'bggm' %} my-3 p-4">{{ t.id }}   <a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
                 <br>
             {{ t.description }}
-            </li>
+            </div>
             {% endfor %}
 
         </ol>

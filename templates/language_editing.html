@@ -14,7 +14,6 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="fixed-top" style="top:137px; z-index: 1000">
         {% if messages %}
             {% for message in messages %}
@@ -343,31 +342,13 @@ mix-blend-mode: luminosity;
                             </div>
 
 
-                            <div class="col-lg-11 row pr-3 pr-lg-0 w-100">
-                                <label for="file" class="input-preview ml-3 h-100 w-100 form-input">
+                            <div class=" col-lg-11 my- d-flex align-items-center ">
+                                <label for="file" class="input-preview w-100 h-25 form-input">
 
                                     {{ form.file }}
                                     <small class="text-danger">{{ form.file.errors }}</small>
 
-
                                 </label>
-
-                            </div>
-
-                            <div class="col-lg-12 row px-4">
-                                <div class="col-lg-6  row my-4">
-                                    <label for="id_is_agree" style="cursor: pointer;">
-                                        {{ forms.is_agree }}<span
-                                            class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                                    </label>
-                                    <small class="text-danger">{{ forms.is_agree.errors }}</small>
-                                </div>
-
-                                <div class="col-lg-6  row my-4 d-flex justify-content-end">
-                                    <button type="submit"
-                                            class="btn btn-primary px-4">{% trans 'Заказать консультацию' %}</button>
-                                </div>
-
                             </div>
                         </div>
 
@@ -376,7 +357,23 @@ mix-blend-mode: luminosity;
 
                 </div>
             </div>
+            <div class="container pr-lg-0 pr-3 ">
+                <div class="row col-lg-11 p-0 p-lg-3  mb-100 d-flex align-items-center pl-3 justify-content-between">
+                    <label for="id_is_agree" class="d-flex align-items-center pl-3 my-3 my-lg-0"
+                           style="cursor: pointer;">
+                        {{ form.is_agree }}<span
+                            class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                    </label>
 
+                    <button type="submit"
+                            class="btn btn-primary px-4 my-3 ml-3 my-lg-0 col-12 col-lg-auto">{% trans 'Отправить работу' %}
+                    </button>
+                    <div class="col-12">
+                        <small class="text-danger">{{ form.is_agree.errors }}</small>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </form>
 
