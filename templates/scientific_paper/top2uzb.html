@@ -28,7 +28,7 @@
         <p class="mb-100">Перед вами &mdash; наша выборка журналов с публикациями, заслуживающими внимания.</p>
         <div class="row">
             {% for t in text %}
-                <div class="col-lg-12 row {% cycle '' 'bggm' %}">
+                <div class="col-lg-12 row {% cycle '' 'bggm' %} py-3">
                     <div class="col-lg-5 mb-5 mt-2 h2"><a href="{{ t.link }}" style="color: #2A819E">{{ t.name }}</a></div>
                     <div class="col-lg-7 mb-5 mt-2">{{ t.description }}</div>
                 </div>
