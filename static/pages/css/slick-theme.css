@@ -17,7 +17,9 @@
     position: absolute;
     top: 100%;
     margin-top: 50px;
-    margin-left: 75vw;
+    right: 51%;
+    /*margin-left: 75vw;*/
+
     display: block;
     width: 20px;
     height: 20px;
@@ -40,7 +42,7 @@
     top: 100%;
     margin-top: 50px;
     display: block;
-    left: 80vw;
+    left: 50%;
     width: 20px;
     height: 20px;
     padding: 0;
@@ -57,7 +59,7 @@
 
 @media (max-width: 1370px) {
     .slick-prev {
-            margin-left: 70vw;
+            /*margin-left: 70vw;*/
 
     }
 

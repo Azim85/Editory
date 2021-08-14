@@ -19,11 +19,15 @@
 .qqq .col-2{
     text-align: center;
 }
-@supports ((position:-webkit-sticky) or (position:sticky)) {
-    .sticky-top {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        z-index: 1020
-    }
+.input-preview {
+    border: 1px dashed #00a1a8;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: ease-in-out 750ms
 }
