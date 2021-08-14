@@ -31,7 +31,7 @@
                 <div class="d-flex w-100 align-items-center mt-5 justify-content-between mb-5">
                     <small><a href="{% url 'users:register' %}" class="k">{% trans 'Регистрация' %}</a></small>
                     <button type="submit" class="sign-up text-white font-weight-bold k">{% trans 'Вход' %}</button>
-                    <small><a href="" class="k">{% trans 'забыл пароль?' %}</a></small>
+                    <small><a href="{% url 'reset_password' %}" class="k">{% trans 'забыл пароль?' %}</a></small>
                 </div>
             </form>
         </div>
