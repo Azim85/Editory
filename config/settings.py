@@ -137,6 +137,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 
+
+
 TIME_ZONE = 'Asia/Tashkent'
 
 LANGUAGE_CODE = 'ru'
@@ -222,8 +224,8 @@ LOGGING = {
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'mail.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rizaevazim7@gmail.com'
+EMAIL_HOST_USER = 'rizaevazimjon@yandex.ru'
 EMAIL_HOST_PASSWORD = 'apple1976'
