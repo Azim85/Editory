@@ -161,7 +161,7 @@ class ProofreadingForm(forms.ModelForm):
         widgets = {
             'author': forms.TextInput(attrs={'class': 'form-control'}),
             'material_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'research_area': forms.TextInput(attrs={'class': 'form-control'}),
+            'research_area': forms.Select(attrs={'class': 'form-control'}),
             'choose': forms.TextInput(attrs={'class': 'form-control'}),
             'word_count': forms.NumberInput(attrs={'min': '0', 'class': 'form-control'}),
             'language_editing': forms.Select(attrs={'class': 'form-control'}),

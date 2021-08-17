@@ -375,10 +375,11 @@ LANGUAGE = (
 )
 
 
+# updated
 class Proofreading(models.Model):
     author = models.CharField(max_length=100)
     material_name = models.CharField(max_length=255)
-    research_area = models.CharField(max_length=255)
+    research_area = models.CharField(max_length=255, choices=RESEARCH_AREA)
     choose = models.CharField(max_length=100)
     word_count = models.CharField(max_length=100)
     language_editing = models.CharField(max_length=50, choices=LANGUAGE)
