@@ -229,4 +229,4 @@ EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'azimriza@yandex.com'
-EMAIL_HOST_PASSWORD = 'apple1976'
+EMAIL_HOST_PASSWORD = 'applecore'
