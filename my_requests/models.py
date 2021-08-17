@@ -317,7 +317,7 @@ LANG = (
 
 # updated
 class Translation(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=True, null=True)
     language = models.CharField(max_length=100, choices=LANG)
     research_area = models.CharField(max_length=100, choices=RESEARCH_AREA)
     comment = models.TextField(blank=True)
