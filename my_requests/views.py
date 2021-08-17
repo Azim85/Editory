@@ -311,14 +311,13 @@ import codecs
 
 class TranslationView(View):
     def get(self, request):
-        if request.user.is_authenticated:
-            text = TranslationModel.objects.first()
-            translations = TranslationsForm(instance=text)
+        
+        text = TranslationModel.objects.first()
+        translations = TranslationsForm(instance=text)
 
-            form = TranslationForm()
-            return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations, 'title':'Translation'})
-        request.session['back-trans'] = 'requests:translation'    
-        return redirect('users:login')
+        form = TranslationForm()
+        return render(request, 'translation.html', {'form': form, 'text': text, 'translations': translations, 'title':'Translation'})
+        # request.session['back-trans'] = 'requests:translation'    
 
     def post(self, request):
         cost = TranslationCostModel.objects.first()
@@ -332,7 +331,7 @@ class TranslationView(View):
         char_amount = 0
 
 
-        done = Translation.objects.create(user=user, char_amount=0, language=language,
+        done = Translation.objects.create( char_amount=0, language=language,
                                             research_area=research_area, comment=comment, file=file, 
                                             )
 
@@ -361,11 +360,11 @@ class TranslationView(View):
             payment_type = 3
             payment_status = 0
             delivery_status = 0
-            email = user.email
-            phone = user.phone
+            email = 'example@mail.com'
+            phone = '998906568899'
             file = f'files/{file}'
 
-            created = OrderModel.objects.create(user=user, product=product, amount=amount, payment_type=payment_type,
+            created = OrderModel.objects.create( product=product, amount=amount, payment_type=payment_type,
             payment_status=payment_status, delivery_status=delivery_status, email=email, phone=phone, file=file )
             if created:
                 request.session['charcount'] = char_amount
