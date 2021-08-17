@@ -4,7 +4,7 @@
     font-weight: 400;
     src: local('Geometria'), url(../fonts/Geometria.woff) format('woff')
 }
-input:not([type='checkbox']), select, button, label{
+input:not([type='checkbox'], #labelcom), select, button, label{
     height: 48px !important;
 }
 #myBtn {
