@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'setpage'
 ]
 
-
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
