@@ -35,3 +35,9 @@
     position: relative;
     transition: ease-in-out 750ms
 }
+
+.form-input input {
+    margin: 0 auto;
+    padding: 5vw;
+    border-radius: 15px
+}
