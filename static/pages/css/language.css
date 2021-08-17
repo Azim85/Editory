@@ -16,6 +16,10 @@
     border-radius: 3px ;
 }
 
+.bg-cost{
+    background: #DDE5E9;
+}
+
 .qqq .col-2{
     text-align: center;
 }
@@ -30,4 +34,10 @@
     background-position: center;
     position: relative;
     transition: ease-in-out 750ms
+}
+
+.form-input input {
+    margin: 0 auto;
+    padding: 5vw;
+    border-radius: 15px
 }

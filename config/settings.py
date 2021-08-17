@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'setpage'
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -224,8 +224,8 @@ LOGGING = {
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.yandex.ru'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'info@editory.org'
-EMAIL_HOST_PASSWORD = 'editory.org'
+EMAIL_HOST_USER = 'rizaevazim7@gmail.com'
+EMAIL_HOST_PASSWORD = 'apple1976'
