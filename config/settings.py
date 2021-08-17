@@ -224,8 +224,8 @@ LOGGING = {
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST = 'mail.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'azimriza@yandex.com'
-EMAIL_HOST_PASSWORD = 'apple1976'
+EMAIL_HOST_USER = 'info@editory.org'
+EMAIL_HOST_PASSWORD = 'editory.org'
