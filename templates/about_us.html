@@ -147,7 +147,7 @@ mix-blend-mode: luminosity;
         </div>
     </div>
 
-    <section class="section-slick container" style="margin-top: 100px">
+    <section class="section-slick container" style="margin-top: 100px; margin-bottom: 100px;">
         <h3 class="pb-3">{% trans 'Новости' %}</h3>
 
         <div class="slick slick-news position-relative row">
@@ -208,7 +208,7 @@ mix-blend-mode: luminosity;
     {% endif %}
 
 
-    <div id="Forma" class="container mt-100 mb-5">
+    <div id="Forma" class="container mt-100 mb-5 pt-5">
         <div class="row">
             <div class="col-lg-4 img-fluid mb-5">
                 <img src="{% static 'pages/svg/Group 478.svg' %}">
@@ -280,26 +280,24 @@ mix-blend-mode: luminosity;
                     </div>
                     <div class="col-lg-9 row w-100">
                         <div class="col-lg-12 d-flex ml-3 p-0 flex-column">
-                            <label for="file" class="input-preview  form-input">
+                            <label for="file" class="input-preview h-100  form-input">
                                 {{ form.resume }}
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row d-flex justify-content-between">
-                        <div class=" mb-3">
-                            <label for="id_is_agree" style="cursor: pointer;">
-                                {{ form.is_agree }}<span class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-info px-5 mr-lg-5">{% trans 'Отправить резюме' %}</button>
+                <div class="my-4  col-lg-11 px-3 px-lg-0 d-lg-flex d-block align-items-center  justify-content-between">
+                <label for="id_is_agree" class="d-flex align-items-center pl-0 my-3 my-lg-0" style="cursor: pointer;">
+                    {{ form.is_agree }}<span
+                        class="ml-3"> {% trans 'Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных' %}</span>
+                </label>
 
-                    </div>
-                    <div class="col-12">
-                        <small class="text-danger">{{ form.is_agree.errors }}</small>
-                    </div>
-                </div>
+                <button type="submit"
+                        class="btn btn-primary px-4 my-3  my-lg-0 col-12 col-lg-auto">{% trans 'Отправить резюме' %}
+                </button>
+
+            </div>
+
             </form>
 
         </div>
@@ -342,7 +340,7 @@ mix-blend-mode: luminosity;
             });
 
             $('.slick-news').slick({
-                dots: true,
+                dots: false,
                 infinite: true,
                 speed: 300,
                 slidesToShow: 3,
