@@ -3,20 +3,20 @@
 {% load i18n %}
 {% block css %}
     <style>
-        a {
-            color: #000000;
-            text-decoration: none;
-        }
         a:hover {
-            color: #000000;
+            color: black;
+            text-decoration: none;
+
         }
+
 
         ol li {
             margin-top: 40px;
             margin-bottom: 40px;
         }
+
         .bggm {
-           background-color: #eeeee4;
+            background-color: #eeeee4;
         }
     </style>
 {% endblock %}
@@ -31,10 +31,11 @@
         </div>
         <ol class="row">
             {% for t in text %}
-            <div class="col-lg-12 {% cycle '' 'bggm' %}  p-4">{{ t.id }}   <a href="{{ t.link }}" target="_blank" rel="noopener"><strong>{{ t.name }}</strong></a>
-                <br>
-            {{ t.description }}
-            </div>
+                <div class="col-lg-12 {% cycle '' 'bggm' %}  p-4">{{ t.id }} <a href="{{ t.link }}" target="_blank"
+                                                                                rel="noopener"><strong>{{ t.name }}</strong></a>
+                    <br>
+                    {{ t.description }}
+                </div>
             {% endfor %}
 
         </ol>
