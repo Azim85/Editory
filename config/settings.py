@@ -237,4 +237,5 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'info@editory.org'
-EMAIL_HOST_PASSWORD = 'editory.org'
+EMAIL_HOST_PASSWORD = 'mkscjgncimsnhxfl'
+
