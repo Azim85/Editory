@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-
-
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,7 +47,6 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
-
 
     'users',
     'pages',
@@ -137,19 +134,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 
-
-
 TIME_ZONE = 'Asia/Tashkent'
 
 LANGUAGE_CODE = 'ru'
-
 
 LANGUAGES = [
     ('ru', 'Русский'),
     ('en', 'English'),
     ('uz', 'O\'zbek'),
 ]
-
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
@@ -179,9 +172,9 @@ MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_CONFIGS = {
-'default': {
-'toolbar': 'full',
-},
+    'default': {
+        'toolbar': 'full',
+    },
 }
 
 PAYMEUZ_SETTINGS = {
@@ -220,12 +213,11 @@ LOGGING = {
     }
 }
 
-
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rizaevazim7@gmail.com'
-EMAIL_HOST_PASSWORD = 'apple1976'
+EMAIL_HOST_USER = 'info@editory.org'
+EMAIL_HOST_PASSWORD = 'mkscjgncimsnhxfl'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

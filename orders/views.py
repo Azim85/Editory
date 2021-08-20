@@ -3,6 +3,7 @@ from .forms import OrderForm
 from django.views.generic import View
 from django.contrib import messages
 from django.shortcuts import redirect, render
+from my_requests.models import Translation
 
 # from clickuz import ClickUz
 from django.contrib.auth.decorators import user_passes_test
@@ -157,8 +158,23 @@ class ChooseTypeView(View):
 
 class TransPaymentView(View):
     def get(self, request):
-        order = OrderModel.objects.first()
-        return render(request, 'translation_payment.html', {'order':order, 'title': 'Payment - Transaction'})
+        if request.user.is_authenticated:
+            order = OrderModel.objects.first()
+            order.user = request.user
+            order.email = request.user.email
+            order.phone = request.user.phone
+            order.save()
+            
+
+            trans = Translation.objects.first()
+            trans.user = request.user
+            trans.save()
+            
+
+            request.session['back-trans'] = ''
+            return render(request, 'translation_payment.html', {'order':order, 'title': 'Payment - Transaction'})
+        request.session['back-trans'] = 'orders:translation-payment'
+        return redirect('users:login')
 
 class ChangePaymentTypeView(View):
     def post(self, request):

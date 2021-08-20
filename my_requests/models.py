@@ -317,7 +317,7 @@ LANG = (
 
 # updated
 class Translation(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=True, null=True)
     language = models.CharField(max_length=100, choices=LANG)
     research_area = models.CharField(max_length=100, choices=RESEARCH_AREA)
     comment = models.TextField(blank=True)
@@ -375,10 +375,11 @@ LANGUAGE = (
 )
 
 
+# updated
 class Proofreading(models.Model):
     author = models.CharField(max_length=100)
     material_name = models.CharField(max_length=255)
-    research_area = models.CharField(max_length=255)
+    research_area = models.CharField(max_length=255, choices=RESEARCH_AREA)
     choose = models.CharField(max_length=100)
     word_count = models.CharField(max_length=100)
     language_editing = models.CharField(max_length=50, choices=LANGUAGE)
