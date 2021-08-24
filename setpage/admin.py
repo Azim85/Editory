@@ -58,10 +58,10 @@ class WebinarsAdmin(TabbedTranslationAdmin):
 
 
 class TranslationsAdmin(TabbedTranslationAdmin):
-    list_display = ['text1', 'text2', 'text3', 'text4', 'text5']
-
-class ResearchStrategyAdmin(TabbedTranslationAdmin):
     list_display = ['text1']
+
+# class ResearchStrategyAdmin(TabbedTranslationAdmin):
+#     list_display = ['text1']
 
 
 admin.site.register(AboutUsModel, AboutUsAdmin)
@@ -79,7 +79,7 @@ admin.site.register(PatentModel, PatentAdmin)
 admin.site.register(ScopusModel, ScopusAdmin)
 admin.site.register(ProofModel, ProofAdmin)
 admin.site.register(LangEditModel, LangAdmin)
-admin.site.register(ResearchStrategyModel, ResearchStrategyAdmin)
+admin.site.register(ResearchStrategyModel)
 
 admin.site.register(top10)
 admin.site.register(top10Uz)
