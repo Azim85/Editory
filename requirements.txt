@@ -15,10 +15,12 @@ django-resized==0.3.11
 django-reversion==4.0.0
 django-sekizai==2.0.0
 django-treebeard==4.5.1
+django-environ==0.4.5
 djangocms-admin-style==2.0.2
 djangorestframework==3.12.4
 docx2txt==0.8
 EbookLib==0.17.1
+environ==1.0
 extract-msg==0.23.1
 gunicorn==20.1.0
 idna==2.10

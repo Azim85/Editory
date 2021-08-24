@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+environ.Env.read_env()
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -102,14 +109,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'NAME': 'editory',
-        'USER': 'root',
-        'PASSWORD': 'Qwerty123$',
-    }
+    'default':  env.db()
 }
 
 # Password validation
@@ -179,9 +179,9 @@ CKEDITOR_CONFIGS = {
 
 PAYMEUZ_SETTINGS = {
     'TEST_ENV': True,
-    'ID': '60b7cf520d44ad636479d80b',
+    'ID': env('PAYME_ID'),
 
-    'KEY': 'MF6DEPdA25JO9I6YZsoJfgcYjfPjArjwYD6d',
+    'KEY': env('PAYME_KEY'),
 
     'ACCOUNTS': {
         'KEY_1': 'order_id',
@@ -217,7 +217,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'info@editory.org'
-EMAIL_HOST_PASSWORD = 'mkscjgncimsnhxfl'
+EMAIL_HOST_USER = env('EMAIL_USERNAME')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
