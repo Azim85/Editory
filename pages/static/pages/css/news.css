@@ -143,8 +143,9 @@ section {
     border-radius: 10px;
     transition: height .5s;
     width: 100%;
+    padding-top: 50px;
     color: #fff;
-    height: 200px;
+    height: 250px;
     background: #000;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .7567401960784313) 26%)
 }
