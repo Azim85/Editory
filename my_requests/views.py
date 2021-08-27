@@ -229,7 +229,7 @@ class BAKView(View):
         return render(request, 'bak.html', {'form': form, 'bak': bak, 'text': obj, 'title':'BAK'})
 
     def post(self, request):
-        form = BaksForm(request.POST)
+        form = BaksForm(request.POST, request.FILES)
         
         if form.is_valid():
             done = form.save(commit=False)
@@ -250,7 +250,7 @@ class ScopusView(View):
         return render(request, 'scopus.html', {'form': form, 'text': obj, 'scopus': scopus, 'title': 'Scopus'})
 
     def post(self, request):
-        form = ScopusesForm(request.POST)
+        form = ScopusesForm(request.POST, request.FILES)
         if form.is_valid():
             done = form.save(commit=False)
             done.save()
