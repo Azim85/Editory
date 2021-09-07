@@ -66,7 +66,7 @@ class Articles(TemplateView):
     def get_context_data(self, **kwargs):
         random_topic = []
         last_week = []
-        k = datetime.datetime.today() - datetime.timedelta(days=7)
+        k = datetime.datetime.today() - datetime.timedelta(days=6)
         for i in Topic.objects.all():
             random_topic.append(i)
             if (k.month == i.created_at.month and k.year == i.created_at.year) and k.day < i.created_at.day:

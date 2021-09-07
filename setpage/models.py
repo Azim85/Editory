@@ -33,16 +33,16 @@ class TranslationModel(models.Model):
 
 class BakModel(models.Model):
     text1 = models.CharField(max_length=255, blank=True)
-    text2 = models.TextField(max_length=255, blank=True)
+    text2 = models.TextField(blank=True)
     text3 = models.CharField(max_length=255, blank=True)
     text4 = models.ImageField(upload_to='pages/', blank=True)
-    text5 = models.TextField(max_length=255, blank=True)
+    text5 = models.TextField(blank=True)
     text6 = models.ImageField(upload_to='pages/', blank=True)
-    text7 = models.TextField(max_length=255, blank=True)
+    text7 = models.TextField(blank=True)
     text8 = models.ImageField(upload_to='pages/', blank=True)
-    text9 = models.TextField(max_length=255, blank=True)
+    text9 = models.TextField(blank=True)
     text10 = RichTextUploadingField(blank=True)
-    text11 = models.TextField(max_length=255, blank=True)
+    text11 = models.TextField(blank=True)
 
     def __str__(self):
         return self.text1
