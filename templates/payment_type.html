@@ -7,12 +7,12 @@
 {% block content %}
     <div class="container py-5">
         <div class="row ">
-            <h1 class="text-center w-100 border-bottom">Payment</h1>
+            <h1 class="text-center w-100 border-bottom">{% trans 'Оплата' %}</h1>
 
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">client:</p>
+                        <p class="mb-0">{% trans 'клиент' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.user.first_name }}</p>
@@ -22,7 +22,7 @@
 
                 <div class="row">
                     <div class="col-lg-5 col-6">
-                        <p class="mb-0">Phone:</p>
+                        <p class="mb-0">{% trans 'Телефон' %}:</p>
                     </div>
                     <div class="col-lg-7 col-6">
                         <p class="mb-0">{{ order.user.phone }}</p>
@@ -32,7 +32,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Payment type:</p>
+                        <p class="mb-0">{% trans 'Способ оплаты' %}:</p>
                     </div>
                     <div class="col-6">
                         {% if order.payment_type == 3 %}
@@ -47,7 +47,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Service:</p>
+                        <p class="mb-0">{% trans 'Услуга' %}:</p>
                     </div>
                     <div class="col-6">
                         <p class="mb-0">{{ order.product }}</p>
@@ -57,15 +57,15 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0">Summa:</p>
+                        <p class="mb-0">{% trans 'Сумма' %}:</p>
                     </div>
                     <div class="col-6">
-                        <p class="mb-0">{{ order.amount }} sum</p>
+                        <p class="mb-0">{{ order.amount }} {% trans 'сумм' %}</p>
                     </div>
                 </div>
                 <hr>
 
-                <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary ">Cancel</a>
+                <a href="{% url 'pages:language_editing' %}" class="btn btn-secondary ">{% trans 'Отмена' %}</a>
 
             </div>
 

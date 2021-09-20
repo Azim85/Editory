@@ -49,16 +49,16 @@
                     <div class="nav nav-tabs border-0 " id="nav-tab" role="tablist">
                         <a class="nav-link {% if raqam == '1' %}active{% endif %}   text-white" id="nav-home-tab"
                            data-toggle="tab" href="#nav-home"
-                           role="tab" aria-controls="nav-home" aria-selected="true">Стратегия исследования</a>
+                           role="tab" aria-controls="nav-home" aria-selected="true">{% trans 'Стратегия исследования' %}</a>
                         <a class="nav-link {% if raqam == '2' %}active{% endif %} text-white" id="nav-profile-tab"
                            data-toggle="tab" href="#nav-profile"
-                           role="tab" aria-controls="nav-profile" aria-selected="false">Партнерство и сотрудничество</a>
+                           role="tab" aria-controls="nav-profile" aria-selected="false">{% trans 'Партнерство и сотрудничество' %}</a>
                         <a class="nav-link {% if raqam == '3' %}active{% endif %} text-white" id="nav-contact-tab"
                            data-toggle="tab" href="#nav-contact"
-                           role="tab" aria-controls="nav-contact" aria-selected="false">Финансирование</a>
+                           role="tab" aria-controls="nav-contact" aria-selected="false">{% trans 'Финансирование' %}</a>
                         <a class="nav-link {% if raqam == '4' %}active{% endif %} text-white" id="nav-fouth-tab"
                            data-toggle="tab" href="#nav-fourth"
-                           role="tab" aria-controls="nav-fourth" aria-selected="false">Управление исследованиями</a>
+                           role="tab" aria-controls="nav-fourth" aria-selected="false">{% trans 'Управление исследованиями' %}</a>
                     </div>
                 </nav>
             </div>
@@ -74,7 +74,7 @@
                                          style=" line-height:106.3%; font-weight:600">{% trans 'Стратегия исследования' %}</div>
                                     <div class="pb-4 font-22">{{ text.text1|safe }}
                                     </div>
-                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">{% trans 'Заказать консультацию' %}</a>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                     <div class="font-65 geometria pb-4"
                                          style="font-weight: 600; line-height:106.3% ">{% trans 'Партнёрство и сотрудничество' %}</div>
                                     <div class="pb-4 font-22">{{ text.text2|safe }}</div>
-                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">{% trans 'Заказать консультацию' %}</a>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                          style=" font-weight:600; line-height:106.3%">{% trans 'Финансирование' %}</div>
                                     <div class="pb-4 font-22">
                                         {{ text.text3|safe }}</div>
-                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">{% trans 'Заказать консультацию' %}</a>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                     <div class="pb-4 font-22">
                                         {{ text.text4|safe }}
                                     </div>
-                                    <a href="#Forma" class="btn btn-light px-5 py-2">Заказать консультацию</a>
+                                    <a href="#Forma" class="btn btn-light px-5 py-2">{% trans 'Заказать консультацию' %}</a>
                                 </div>
                             </div>
                         </div>

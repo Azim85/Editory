@@ -37,7 +37,7 @@
                         <form action="{% url 'orders:change-payment-type' %}" method="POST" id="translation">
                             {% csrf_token %}
                             <select name="payment-type" id="payment-type" class="form-control">
-                                <option value="" selected>Choose payment type</option>
+                                <option value="" selected>{% trans 'Выберите способ оплаты' %}</option>
                                 <option value="3">Apelsin</option>
                                 <option value="4">Payme</option>
                             </select>

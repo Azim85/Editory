@@ -3,128 +3,128 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-09 18:27+0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-09-14 14:07+0500\n"
+"PO-Revision-Date: 2021-09-16 12:27+0500\n"
+"Language: uz@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: my_requests/models.py:298
-msgid "АСТРОНОМИЯ И ПЛАНЕТОЛОГИЯ"
-msgstr "ASTRONOMIYA VA PLANNETOLOGIYA"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 3.0\n"
 
 #: my_requests/models.py:299
+msgid "АСТРОНОМИЯ И ПЛАНЕТОЛОГИЯ"
+msgstr "ASTRONOMIYA VA PLANETOLOGIYA"
+
+#: my_requests/models.py:300
 msgid "БИОЛОГИЯ"
 msgstr "BIOLOGIYA"
 
-#: my_requests/models.py:300
+#: my_requests/models.py:301
 msgid "БИЗНЕС"
 msgstr "BIZNES"
 
-#: my_requests/models.py:301
-msgid "ХИМИЯ"
-msgstr "XIMYA"
-
 #: my_requests/models.py:302
-msgid "ЭКОЛОГИЯ И НАУКА О ЗЕМЛЕ"
-msgstr "EKOLOGIYA VA YER FANI"
+msgid "ХИМИЯ"
+msgstr "KIMYO"
 
 #: my_requests/models.py:303
+msgid "ЭКОЛОГИЯ И НАУКА О ЗЕМЛЕ"
+msgstr "EKOLOGIYA VA OLAM HAQIDAGI FAN"
+
+#: my_requests/models.py:304
 msgid "ИНЖЕНЕРИЯ"
 msgstr "MUHANDISLIK"
 
-#: my_requests/models.py:304
+#: my_requests/models.py:305
 msgid "МЕДИЦИНА"
 msgstr "TIBBIYOT"
 
-#: my_requests/models.py:305
+#: my_requests/models.py:306
 msgid "ФИЗИКА"
 msgstr "FIZIKA"
 
-#: my_requests/models.py:306
+#: my_requests/models.py:307
 msgid "СОЦИАЛЬНЫЕ НАУКИ"
 msgstr "IJTIMOIY FANLAR"
 
-#: my_requests/models.py:307
+#: my_requests/models.py:308
 msgid "ДРУГОЕ"
 msgstr "BOSHQALAR"
 
 #: orders/forms.py:7 orders/models.py:13
 msgid "Apelsin"
-msgstr ""
+msgstr "Apelsin"
 
 #: orders/forms.py:8 orders/models.py:14
 msgid "Payme"
-msgstr ""
+msgstr "Payme"
 
 #: orders/models.py:11
 msgid "Наличные"
-msgstr ""
+msgstr "Naqd pul"
 
 #: orders/models.py:12
 msgid "Пластиковая карта"
-msgstr ""
+msgstr "Plastik karta"
 
 #: orders/models.py:18
 msgid "обрабатывается..."
-msgstr ""
+msgstr "so'rovingiz amalga oshirilmoqda."
 
 #: orders/models.py:19 orders/models.py:28
 msgid "В ожидании"
-msgstr ""
+msgstr "Iltimos kuting"
 
 #: orders/models.py:20
 msgid "Ошибка"
-msgstr ""
+msgstr "Xatolik yuz berdi"
 
 #: orders/models.py:21
 msgid "Завершено"
-msgstr ""
+msgstr "Yakunlandi"
 
 #: orders/models.py:22
 msgid "Отменен"
-msgstr ""
+msgstr "Bekor qilindi"
 
 #: orders/models.py:23
 msgid "Истёк"
-msgstr ""
+msgstr "Kutish vaqti tugadi"
 
 #: orders/models.py:24 orders/models.py:31
 msgid "Возвращен"
-msgstr ""
+msgstr "So'rov qaytib berildi"
 
 #: orders/models.py:29
 msgid "На доставке"
-msgstr ""
+msgstr "Yetkazib berish jarayonida"
 
 #: orders/models.py:30
 msgid "Доставлен"
-msgstr ""
+msgstr "Yetkazildi"
 
 #: orders/models.py:38
 msgid "user"
-msgstr ""
+msgstr "foydalanuvchi"
 
 #: orders/models.py:40 paymeuz/models.py:11
 msgid "amount"
-msgstr ""
+msgstr "miqdor"
 
 #: orders/models.py:41
 msgid "phone"
-msgstr ""
+msgstr "telefon"
 
 #: orders/models.py:43
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: orders/models.py:52
 msgid "type"
@@ -132,441 +132,465 @@ msgstr ""
 
 #: orders/models.py:53 paymeuz/models.py:14
 msgid "status"
-msgstr ""
+msgstr "holati"
 
 #: orders/models.py:54
 msgid "delivery status"
-msgstr ""
+msgstr "yetkazib berish holati"
 
 #: orders/models.py:73
 msgid "order"
-msgstr ""
+msgstr "buyurtma"
 
 #: orders/models.py:74
 msgid "orders"
-msgstr ""
+msgstr "buyurtmalar"
 
 #: paymeuz/keywords.py:56
 msgid "processing"
-msgstr ""
+msgstr "amalga oshirilmoqda"
 
 #: paymeuz/keywords.py:57
 msgid "success"
-msgstr ""
+msgstr "muvaffaqiyat"
 
 #: paymeuz/keywords.py:58
 msgid "failed"
-msgstr ""
+msgstr "amalga oshirilmadi"
 
 #: paymeuz/keywords.py:59
 msgid "canceled"
-msgstr ""
+msgstr "tugatildi"
 
 #: paymeuz/models.py:8
 msgid "transaction id"
-msgstr ""
+msgstr "kelishuv raqami"
 
 #: paymeuz/models.py:9
 msgid "request id"
-msgstr ""
+msgstr "so'rov raqami"
 
 #: paymeuz/models.py:10
 msgid "order id"
-msgstr ""
+msgstr "buyurtma raqami"
 
 #: paymeuz/models.py:12
 msgid "state"
-msgstr ""
+msgstr "holat"
 
 #: paymeuz/models.py:16
 msgid "date"
-msgstr ""
+msgstr "sana"
 
 #: paymeuz/models.py:17
 msgid "create time"
-msgstr ""
+msgstr "yaratilgan vaqt"
 
 #: paymeuz/models.py:18
 msgid "perform time"
-msgstr ""
+msgstr "amalga oshirilgan vaqt"
 
 #: paymeuz/models.py:19
 msgid "cancel time"
-msgstr ""
+msgstr "tugatilgan vaqt"
 
 #: paymeuz/models.py:20
 msgid "cancel reason"
-msgstr ""
+msgstr "tugatilish sababi"
 
 #: paymeuz/models.py:26
 msgid "payme transaction"
-msgstr ""
+msgstr "payme o'tkazmasi"
 
 #: paymeuz/models.py:27
 msgid "payme transactions"
-msgstr ""
+msgstr "payme o'tkazmalari"
 
 #: templates/about_us.html:68 templates/editors/aboutus.html:76
-#: templates/home.html:50
+#: templates/home.html:54
 msgid "Задать вопрос"
-msgstr ""
+msgstr "Savol berish"
 
 #: templates/about_us.html:151 templates/components/footer.html:23
 #: templates/components/mobile_navbar.html:34
 #: templates/components/new_navbar.html:153
 msgid "Новости"
-msgstr ""
+msgstr "Yangiliklar"
 
-#: templates/about_us.html:183 templates/article.html:29
+#: templates/about_us.html:183 templates/article.html:36
 msgid "Читайте также"
-msgstr ""
+msgstr "Shuningdek"
 
 #: templates/about_us.html:222 templates/editors/aboutus.html:221
 msgid "Открыть форму"
-msgstr ""
+msgstr "Shaklni ochish"
 
-#: templates/about_us.html:239 templates/bak.html:111
-#: templates/conferences.html:96 templates/creat_conference.html:82
-#: templates/design.html:104 templates/editors/aboutus.html:238
-#: templates/grants.html:88 templates/home.html:525
-#: templates/language_editing.html:306 templates/patents.html:80
-#: templates/research_strategy.html:162 templates/scopus.html:124
+#: templates/about_us.html:239 templates/bak.html:123
+#: templates/conferences.html:104 templates/creat_conference.html:90
+#: templates/design.html:112 templates/editors/aboutus.html:238
+#: templates/grants.html:98 templates/home.html:557
+#: templates/language_editing.html:304 templates/patents.html:87
+#: templates/research_strategy.html:173 templates/scopus.html:132
 #: users/templates/users/register.html:12
 msgid "Имя"
 msgstr "Ism"
 
-#: templates/about_us.html:247 templates/bak.html:119
-#: templates/conferences.html:105 templates/creat_conference.html:91
-#: templates/design.html:112 templates/editors/aboutus.html:246
-#: templates/grants.html:96 templates/language_editing.html:315
-#: templates/patents.html:88 templates/research_strategy.html:170
-#: templates/scopus.html:132
+#: templates/about_us.html:247 templates/bak.html:131
+#: templates/conferences.html:113 templates/creat_conference.html:99
+#: templates/design.html:120 templates/editors/aboutus.html:246
+#: templates/grants.html:106 templates/language_editing.html:313
+#: templates/patents.html:95 templates/research_strategy.html:181
+#: templates/scopus.html:140
 msgid "Фамилия"
-msgstr "Familiya"
+msgstr "Sharif"
 
 #: templates/about_us.html:257 templates/editors/aboutus.html:256
 msgid "Профессия"
-msgstr "Mutaxassislik"
+msgstr "Kasb"
 
 #: templates/about_us.html:269
 msgid "Пара слов о себе"
-msgstr "O'zim haqimda"
+msgstr "O'zingiz haqida qisqacha yozing"
 
 #: templates/about_us.html:279 templates/editors/aboutus.html:278
-#: templates/translation.html:115
 msgid "Резюме"
-msgstr "Resume"
+msgstr "Rezyume"
 
-#: templates/about_us.html:293 templates/bak.html:184
-#: templates/conferences.html:223 templates/creat_conference.html:168
-#: templates/design.html:173 templates/grants.html:162
-#: templates/language_editing.html:356 templates/research_strategy.html:190
-#: templates/scopus.html:198 templates/translation.html:148
+#: templates/about_us.html:292 templates/bak.html:203
+#: templates/conferences.html:230 templates/creat_conference.html:177
+#: templates/design.html:180 templates/grants.html:171 templates/home.html:577
+#: templates/language_editing.html:362 templates/patents.html:160
+#: templates/proofreading.html:256 templates/research_strategy.html:235
+#: templates/scopus.html:212 templates/translation.html:154
 msgid "Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных"
 msgstr ""
+"Arizani to'ldirib siz shaxsiy ma'lumotlaringizdan foydalanishga ruxsat "
+"berasiz"
 
 #: templates/about_us.html:296 templates/editors/aboutus.html:294
-#: templates/translation.html:153
 msgid "Отправить резюме"
-msgstr ""
+msgstr "Rezyume jo'natish"
 
-#: templates/bak.html:44 templates/bak.html:187 templates/design.html:41
-#: templates/design.html:176 templates/grants.html:44 templates/grants.html:165
-#: templates/home.html:553 templates/language_editing.html:47
-#: templates/language_editing.html:363 templates/patents.html:44
-#: templates/patents.html:159 templates/research_strategy.html:230
-#: templates/scopus.html:43 templates/scopus.html:201
+#: templates/all_news_page.html:47
+msgid "Все новости"
+msgstr "Barcha yangiliklar"
+
+#: templates/all_news_page.html:72
+msgid "Предыдущий"
+msgstr "Avvalgi"
+
+#: templates/all_news_page.html:91
+msgid "Следующий"
+msgstr "Keyingi"
+
+#: templates/bak.html:55 templates/design.html:49 templates/design.html:184
+#: templates/grants.html:53 templates/home.html:583
+#: templates/language_editing.html:53 templates/patents.html:51
+#: templates/research_strategy.html:77 templates/research_strategy.html:93
+#: templates/research_strategy.html:113 templates/research_strategy.html:131
+#: templates/scopus.html:50
 msgid "Заказать консультацию"
-msgstr ""
+msgstr "Konsultatsiyaga yozilish"
 
-#: templates/bak.html:104 templates/scopus.html:117
+#: templates/bak.html:116 templates/scopus.html:123
 msgid "Форма заявки"
-msgstr ""
+msgstr "Ariza shakli"
 
-#: templates/bak.html:127 templates/conferences.html:155
-#: templates/creat_conference.html:100 templates/design.html:120
-#: templates/grants.html:104 templates/home.html:534
-#: templates/language_editing.html:325 templates/patents.html:97
-#: templates/research_strategy.html:177 templates/scopus.html:140
+#: templates/bak.html:139 templates/conferences.html:163
+#: templates/creat_conference.html:108 templates/design.html:128
+#: templates/grants.html:114 templates/home.html:566
+#: templates/language_editing.html:227 templates/language_editing.html:323
+#: templates/language_editing.html:407 templates/patents.html:103
+#: templates/research_strategy.html:188 templates/scopus.html:148
 #: users/templates/users/register.html:22
 msgid "Номер телефона"
-msgstr ""
+msgstr "Telefon raqam"
 
-#: templates/bak.html:135 templates/design.html:128 templates/grants.html:112
-#: templates/patents.html:105 templates/scopus.html:148
+#: templates/bak.html:147 templates/design.html:136 templates/grants.html:122
+#: templates/patents.html:111 templates/scopus.html:156
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: templates/bak.html:146 templates/creat_conference.html:124
-#: templates/design.html:140 templates/grants.html:122
-#: templates/patents.html:117 templates/peer_review.html:66
-#: templates/research_strategy.html:201 templates/scopus.html:159
+#: templates/bak.html:158 templates/creat_conference.html:132
+#: templates/design.html:148 templates/grants.html:132
+#: templates/patents.html:121 templates/peer_review.html:66
+#: templates/research_strategy.html:200 templates/scopus.html:167
 msgid "Организация"
-msgstr ""
+msgstr "Tashkilot"
 
-#: templates/bak.html:154 templates/creat_conference.html:133
-#: templates/design.html:149 templates/grants.html:131
-#: templates/patents.html:126 templates/research_strategy.html:210
-#: templates/scopus.html:168
+#: templates/bak.html:167 templates/creat_conference.html:141
+#: templates/design.html:157 templates/grants.html:141
+#: templates/patents.html:130 templates/research_strategy.html:209
+#: templates/scopus.html:176
 msgid "Контакты организации"
-msgstr ""
+msgstr "Tashkilotning telefon raqamlari"
 
-#: templates/bak.html:162 templates/creat_conference.html:142
-#: templates/design.html:158 templates/grants.html:140
-#: templates/patents.html:135 templates/research_strategy.html:220
-#: templates/scopus.html:177
+#: templates/bak.html:176 templates/creat_conference.html:150
+#: templates/design.html:166 templates/grants.html:150
+#: templates/patents.html:139 templates/research_strategy.html:219
+#: templates/scopus.html:185
 msgid "Адрес организации"
-msgstr ""
+msgstr "Tashkilot manzili"
 
-#: templates/bak.html:174 templates/creat_conference.html:150
-#: templates/scopus.html:187
-msgid "комментарий"
-msgstr ""
+#: templates/bak.html:186 templates/creat_conference.html:158
+#: templates/scopus.html:195
+msgid "Комментарий"
+msgstr "Sharh"
+
+#: templates/bak.html:207 templates/peer_review.html:105
+#: templates/proofreading.html:75 templates/proofreading.html:95
+#: templates/proofreading.html:115 templates/proofreading.html:133
+#: templates/proofreading.html:260 templates/scopus.html:216
+#: templates/translation.html:55 templates/translation.html:158
+msgid "Отправить работу"
+msgstr "Ishni jo'natish"
 
 #: templates/components/footer.html:19
 msgid "Карта сайта"
-msgstr ""
+msgstr "Sayt xaritasi"
 
 #: templates/components/footer.html:21
 #: templates/components/mobile_navbar.html:196
 #: templates/components/new_navbar.html:14
 msgid "О нас"
-msgstr ""
+msgstr "Biz haqimizda"
 
 #: templates/components/footer.html:25
 msgid "Продукты и материалы"
-msgstr ""
+msgstr "Biz taklif qiladigan xizmatlar"
 
 #: templates/components/footer.html:29
 #: templates/components/mobile_navbar.html:190
 #: templates/components/new_navbar.html:18
 msgid "Контакты"
-msgstr ""
+msgstr "Murojaat uchun"
 
 #: templates/components/footer.html:32
 msgid "г. Ташкент, Алмазарский район, Себзар 3"
-msgstr ""
+msgstr "Toshkent shahar, Olmazor tumani, Sebzor 3"
 
 #: templates/components/footer.html:36
 msgid "Мы в соцсетях"
-msgstr ""
+msgstr "Biz ijtimoiy tarmoqlarda"
 
 #: templates/components/mobile_navbar.html:40
 #: templates/components/new_navbar.html:160
 msgid "Продукты/материалы"
-msgstr ""
+msgstr "Biz taklif qiladigan xizmatlar"
 
 #: templates/components/mobile_navbar.html:43
-#: templates/components/new_navbar.html:169 templates/research_platform.html:21
+#: templates/components/new_navbar.html:169 templates/research_platform.html:5
+#: templates/research_platform.html:28
 msgid "Исследовательские платформы"
-msgstr ""
+msgstr "Tadqiqot platformalari"
 
 #: templates/components/mobile_navbar.html:50
 #: templates/components/new_navbar.html:176
 msgid "Организация исследований"
-msgstr ""
+msgstr "Tadqiqotni shakllantirish"
 
 #: templates/components/mobile_navbar.html:54
 #: templates/components/new_navbar.html:183
-#: templates/research_intelligense.html:14 templates/research_strategy.html:65
+#: templates/research_intelligense.html:14 templates/research_strategy.html:52
+#: templates/research_strategy.html:74
 msgid "Стратегия исследования"
-msgstr ""
+msgstr "Tadqiqot strategiyasini ishlab chiqish"
 
 #: templates/components/mobile_navbar.html:60
 #: templates/components/new_navbar.html:187
 msgid "Научное сотрудничество"
-msgstr ""
+msgstr "Ilmiy hamkorlikni yo'lga qo'yish"
 
 #: templates/components/mobile_navbar.html:66
 #: templates/components/new_navbar.html:191
 msgid "Научное финансирование"
-msgstr ""
+msgstr "Ilmiy tadqiqotni moliyalashtirish"
 
 #: templates/components/mobile_navbar.html:72
 #: templates/components/new_navbar.html:195
 msgid "Управление и ведение"
-msgstr ""
+msgstr "Tashkiliy vazifalar"
 
 #: templates/components/mobile_navbar.html:79
 #: templates/components/new_navbar.html:205
 msgid "Образование"
-msgstr ""
+msgstr "Ta'lim"
 
 #: templates/components/mobile_navbar.html:85
 #: templates/components/new_navbar.html:230
 msgid "Услуги"
-msgstr ""
+msgstr "Xizmatlar"
 
 #: templates/components/mobile_navbar.html:89
 #: templates/components/new_navbar.html:240
 msgid "Конференции"
-msgstr ""
+msgstr "Konferensiyalar"
 
 #: templates/components/mobile_navbar.html:93
 #: templates/components/new_navbar.html:247
 msgid "Участие в конференциях"
-msgstr ""
+msgstr "Konferensiyada ishtirok etish"
 
 #: templates/components/mobile_navbar.html:99
 #: templates/components/new_navbar.html:251
 msgid "Организация конференций"
-msgstr ""
+msgstr "Konferensiya tashkil qilish"
 
 #: templates/components/mobile_navbar.html:107
 #: templates/components/new_navbar.html:268
 msgid "Исследовательские проекты"
-msgstr ""
+msgstr "Tadqiqotga doir loyihalar"
 
 #: templates/components/mobile_navbar.html:111
 #: templates/components/new_navbar.html:275
 msgid "Исследовательские гранты"
-msgstr ""
+msgstr "Tadqiqotga doir grantlar"
 
 #: templates/components/mobile_navbar.html:117
 #: templates/components/new_navbar.html:279
 msgid "Исследовательские патенты"
-msgstr ""
+msgstr "Tadqiqotga doir patentlar"
 
 #: templates/components/mobile_navbar.html:125
-#: templates/components/new_navbar.html:288 templates/services.html:42
+#: templates/components/new_navbar.html:288 templates/home.html:181
+#: templates/services.html:42
 msgid "Публикация работ"
-msgstr ""
+msgstr "Maqola chop etish"
 
 #: templates/components/mobile_navbar.html:129
-#: templates/components/new_navbar.html:295 templates/home.html:176
+#: templates/components/new_navbar.html:295 templates/home.html:189
 msgid "Публикация в ВАК"
-msgstr ""
+msgstr "OAKda maqola chop etish"
 
-#: templates/components/mobile_navbar.html:135 templates/home.html:179
+#: templates/components/mobile_navbar.html:135 templates/home.html:192
 msgid "Публикация в Scopus/ Web of Science"
-msgstr ""
+msgstr "Scopus/Web of Scienceda maqola chop etish"
 
 #: templates/components/mobile_navbar.html:143
 #: templates/components/new_navbar.html:308
 msgid "Консультация по диссертациям"
-msgstr ""
+msgstr "Dissertatsiya yuzasidan maslahat olish"
 
 #: templates/components/mobile_navbar.html:147
 #: templates/components/mobile_navbar.html:178
 #: templates/components/new_navbar.html:327
-#: templates/components/new_navbar.html:339 templates/proofreading.html:51
+#: templates/components/new_navbar.html:339 templates/proofreading.html:58
 msgid "Корректура и редактирование"
-msgstr ""
+msgstr "Tahrirlash"
 
 #: templates/components/mobile_navbar.html:153
 #: templates/components/new_navbar.html:315
 msgid "Рецензирование диссертации"
-msgstr ""
+msgstr "Dissertatsiyaga taqriz yozish"
 
 #: templates/components/mobile_navbar.html:159
-#: templates/components/new_navbar.html:319 templates/proofreading.html:44
+#: templates/components/new_navbar.html:319 templates/proofreading.html:51
 msgid "Методология исследования"
-msgstr ""
+msgstr "Tadqiqot metodologiyasi"
 
 #: templates/components/mobile_navbar.html:165
-#: templates/components/new_navbar.html:323 templates/proofreading.html:47
+#: templates/components/new_navbar.html:323 templates/proofreading.html:54
 msgid "Статистический анализ"
-msgstr ""
+msgstr "Statistik tahlil"
 
 #: templates/components/mobile_navbar.html:172
 #: templates/components/new_navbar.html:335
 msgid "Графические материалы"
-msgstr ""
+msgstr "Grafik materiallar"
 
 #: templates/components/mobile_navbar.html:184
 #: templates/components/new_navbar.html:343
 msgid "Переводы"
-msgstr ""
+msgstr "Tarjimalar"
 
 #: templates/components/new_navbar.html:212
 msgid "Научные работы"
-msgstr ""
+msgstr "Ilmiy ishlar"
 
-#: templates/components/new_navbar.html:216 templates/webinars.html:16
+#: templates/components/new_navbar.html:216 templates/webinars.html:24
 msgid "Вебинары и семинары"
-msgstr ""
+msgstr "Webinar va seminarlar"
 
 #: templates/components/new_navbar.html:299
 msgid "Публикация в Scopus/ Web"
-msgstr ""
+msgstr "Scopus/Web of Scienceda maqola chop etish"
 
-#: templates/conferences.html:42 templates/creat_conference.html:44
+#: templates/conferences.html:49 templates/conferences.html:234
+#: templates/creat_conference.html:52 templates/grants.html:175
+#: templates/patents.html:164 templates/research_strategy.html:245
 msgid "Оставить заявку"
-msgstr ""
+msgstr "Ariza qoldirish"
 
-#: templates/conferences.html:114
+#: templates/conferences.html:122
 msgid "Занятость"
-msgstr ""
+msgstr "Bandlik"
 
-#: templates/conferences.html:121
+#: templates/conferences.html:129
 msgid "Студент"
-msgstr ""
+msgstr "Talaba"
 
-#: templates/conferences.html:126
+#: templates/conferences.html:134
 msgid "Работаю"
-msgstr ""
+msgstr "Ishchi"
 
-#: templates/conferences.html:135
+#: templates/conferences.html:143
 msgid "Место работы"
-msgstr ""
+msgstr "Ish joyi"
 
-#: templates/conferences.html:144
+#: templates/conferences.html:152
 msgid "Ученая степень"
-msgstr ""
+msgstr "Ilmiy darajasi"
 
-#: templates/conferences.html:165 templates/contact.html:40
-#: templates/creat_conference.html:110 templates/language_editing.html:335
+#: templates/conferences.html:173 templates/contact.html:40
+#: templates/creat_conference.html:118 templates/language_editing.html:237
+#: templates/language_editing.html:333 templates/language_editing.html:417
 #: users/templates/users/login.html:20 users/templates/users/register.html:17
 msgid "Эл. почта"
-msgstr ""
-
-#: templates/conferences.html:173
-msgid "Название статьи"
-msgstr ""
+msgstr "E-mail"
 
 #: templates/conferences.html:182
+msgid "Название статьи"
+msgstr "Maqola nomi"
+
+#: templates/conferences.html:191
 msgid "Конференция"
-msgstr ""
+msgstr "Konferensiya"
 
-#: templates/conferences.html:192
+#: templates/conferences.html:201
 msgid "Секция"
-msgstr ""
-
-#: templates/conferences.html:226 templates/creat_conference.html:171
-#: templates/peer_review.html:105 templates/proofreading.html:68
-#: templates/proofreading.html:88 templates/proofreading.html:108
-#: templates/proofreading.html:126 templates/proofreading.html:254
-#: templates/translation.html:48
-msgid "Отправить работу"
-msgstr ""
+msgstr "Sho'ba"
 
 #: templates/contact.html:12
 msgid "Есть вопросы"
-msgstr ""
+msgstr "Qo'shimcha savollar"
 
 #: templates/contact.html:12
 msgid "Свяжитесь с Editory"
-msgstr ""
+msgstr "Editory bilan bog'lanish"
 
 #: templates/contact.html:20
 msgid "Номера телефонов"
-msgstr ""
+msgstr "Telefon raqami"
 
 #: templates/contact.html:46
 msgid "Адрес"
-msgstr ""
+msgstr "Manzil"
+
+#: templates/creat_conference.html:181
+msgid "Оставитиь заявку"
+msgstr "Ariza qoldirish"
 
 #: templates/dissertation.html:17
 msgid "Корректура"
-msgstr ""
+msgstr "Dissertatsiyani"
 
 #: templates/dissertation.html:18
 msgid "и редактирование"
-msgstr ""
+msgstr "tahrir"
 
 #: templates/dissertation.html:18
 msgid "диссертации"
-msgstr ""
+msgstr "qilish"
 
 #: templates/dissertation.html:19
 msgid ""
@@ -576,23 +600,27 @@ msgid ""
 "дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
 "заявок."
 msgstr ""
+"Akademik ish- fanlararo ilmiy -tadqiqot loyihalari uchun muvaffaqiyatli "
+"vositadir. Tadqiqot platformalarini yaratishni turli fan va fakultetlarning "
+"akademiklari va tadqiqot guruhlari boshlab beradilar, ular o'z arizalarini "
+"taklif ko'rinishida yuborishlari mumkin."
 
 #: templates/dissertation.html:32
 msgid "Опытные профессионалы, сервис в котором вы нуждаетесь"
-msgstr ""
+msgstr "Sizga yordami tega oladigan xizmat turi va mutaxassislar"
 
 #: templates/dissertation.html:33
 #, python-format
 msgid "100%% гарантия"
-msgstr ""
+msgstr "100%%garantiya"
 
 #: templates/dissertation.html:34
 msgid "Безупречная репутация компании"
-msgstr ""
+msgstr "Nomiga aslo dog' tushmaydigan kompaniya"
 
 #: templates/dissertation.html:35
 msgid "Мы предоставляем комплексные решения ваших проблем"
-msgstr ""
+msgstr "Muammolaringizga umumiy yechim bera olamiz"
 
 #: templates/dissertation.html:38
 msgid ""
@@ -604,6 +632,13 @@ msgid ""
 "просто, ведь для этого нужно подготовить целый ряд материалов и соблюсти "
 "массу правил по их оформлению."
 msgstr ""
+"Ilmiy konferensiyalar bu- tadqiqotni amalga oshirayotgan jamoa vakillarining "
+"o'zaro ta'sirining alohida turi bo'lib, ular o'z ishlarini materiallar "
+"to'plami ko'rinishida taqdim etadilar va hamkasblari bilan ham muhokama "
+"qiladilar. Xalqaro konferensiyalarda qatnashish har qanday mutaxassis "
+"faoliyatining juda muhim bosqichidir, lekin bunga erishish oson emas, chunki "
+"buning uchun siz bir qator materiallarni tayyorlashingiz va ularni tuzishda "
+"ko'plab qoidalarga rioya qilishingiz kerak."
 
 #: templates/dissertation.html:40
 msgid ""
@@ -613,58 +648,70 @@ msgid ""
 "протяжении многих лет, и прекрасно знаем требования, нормы и правила "
 "подготовки материалов для участия в конференциях различного плана и уровня."
 msgstr ""
-
-#: templates/home.html:45
-msgid "Полный"
-msgstr ""
-
-#: templates/home.html:46
-msgid "спектр научных консультаций"
-msgstr ""
+"Agar siz tadqiqot ishingiz u yoki bu ilmiy anjumanda qatnashishini "
+"istasangiz, bizning kompaniyamiz sizga bu masalani hal qilishda yordam "
+"berishdan xursand bo'ladi. Biz ko'p yillar davomida bunday masalalar bilan "
+"professional tarzda shug'ullanib kelamiz , har xil turdagi  va darajadagi "
+"konferensiyalarda qatnashish uchun materiallarni tayyorlash talablari, "
+"me'yorlari va qoidalarini yaxshi bilamiz."
 
 #: templates/home.html:48
+msgid "Полный"
+msgstr "Ilmiy maslahatlarning"
+
+#: templates/home.html:49
+msgid "спектр научных консультаций"
+msgstr "keng ko'lami"
+
+#: templates/home.html:52
 msgid ""
 "Разрабатываем стратегии для исследований, публикуем статьи в международных "
 "журналах, корректируем диссертации"
 msgstr ""
+"Biz ilmiy tadqiqot uchun to’liq strategiya ishlab chiqamiz, xalqaro "
+"jurnallarda maqolalar chop etamiz, dissertatsiyalarni tahrir qilamiz"
 
-#: templates/home.html:69
+#: templates/home.html:75
 msgid "лет опыта"
-msgstr ""
+msgstr "yillik tajriba"
 
-#: templates/home.html:73
+#: templates/home.html:79
 msgid "статей в Scopus"
-msgstr ""
+msgstr "Scopusda chop etilgan maqolalar"
 
-#: templates/home.html:77
+#: templates/home.html:83
 msgid "университетов в рейтинге QS"
-msgstr ""
+msgstr "QS reytingidagi Universitetlar"
 
-#: templates/home.html:81
+#: templates/home.html:87
 msgid "статей в ВАК"
-msgstr ""
+msgstr "OAKda maqolalar"
 
-#: templates/home.html:99
+#: templates/home.html:105
 msgid ""
 "научно-консалтинговая компания с опытом более 6 лет. Среди наших партнёров — "
 "крупные международные издательства. На нашем счету более 500 публикаций в "
 "Scopus и около 1000 — в журналах ВАК. Поможем сориентироваться в системе "
 "грантов и патентов."
 msgstr ""
+"6 yildan ortiq tajribaga ega ilmiy- konsalting kompaniya. Yirik xalqaro "
+"nashriyotlar bor hamkorlik qilamiz.  Scopusda 500dan ortiq va OAK "
+"jurnallarida 1000dan ortiq maqola chop etishga muvaffaq bo’lganmiz. Biz "
+"sizga grantlar va patentlar izlashda va qo’lga kiritishga ko’maklashamiz."
 
-#: templates/home.html:111
+#: templates/home.html:117
 msgid "Наши услуги"
-msgstr ""
+msgstr "Biz sizga taklif qila oladigan xizmatlar"
 
-#: templates/home.html:124 templates/services.html:20
+#: templates/home.html:132 templates/services.html:20
 msgid "Патенты и"
-msgstr ""
+msgstr "Patentlar va"
 
-#: templates/home.html:124 templates/services.html:20
+#: templates/home.html:132 templates/services.html:20
 msgid "финансирование"
-msgstr ""
+msgstr "moliyalashtirish"
 
-#: templates/home.html:128 templates/services.html:23
+#: templates/home.html:137 templates/services.html:23
 #: templates/services.html:34 templates/services.html:45
 #: templates/services.html:56
 msgid ""
@@ -672,338 +719,454 @@ msgid ""
 "интеллектуальную собственность? Консультируем и оформляем все необходимые "
 "документы."
 msgstr ""
+"O'z tadqiqotingizni qo'llab -quvvatlash yoki intellektual mulkingizni himoya "
+"qilish imkoniyatini qidiryapsizmi? Biz maslahat berish va barcha kerakli "
+"hujjatlarni tayyorlashda ko'maklashamiz."
 
-#: templates/home.html:133
+#: templates/home.html:142
 msgid "Ислледовательский грант"
-msgstr ""
+msgstr "Tadqiqot uchun taqdim etiladigan grantlar"
 
-#: templates/home.html:137
+#: templates/home.html:146
 msgid "Как получить патент?"
-msgstr ""
+msgstr "Qanday qilib patent olish mumkin?"
 
-#: templates/home.html:146 templates/services.html:31
+#: templates/home.html:157 templates/services.html:31
 msgid "Международные"
-msgstr ""
+msgstr "Xalqaro"
 
-#: templates/home.html:147 templates/services.html:31
+#: templates/home.html:158 templates/services.html:31
 msgid "конференции"
-msgstr ""
+msgstr "konferensiyalar"
 
-#: templates/home.html:150
+#: templates/home.html:161
 msgid ""
 "Помогаем как с участием, так и с организацией. Хотите ускорить свой "
 "прогресс, выехав за рубеж, или собрать экспертов мирового уровня здесь? "
 "Обращайтесь к нам."
 msgstr ""
+"Biz tashkiliy ishlarda ham, ishtirok etishda ham yordam beramiz. Chet elga "
+"sayohat qilish yoki bu yerda jahon darajasidagi mutaxassislarni to'plash "
+"orqali o'z yutuqlaringizni tezlashtirishni xohlaysizmi? Biz bilan bog'laning."
 
-#: templates/home.html:155
+#: templates/home.html:166
 msgid "Как организовать конференцию?"
-msgstr ""
+msgstr "Konferensiyani qanday qilib tashkillashtirish mumkin?"
 
-#: templates/home.html:159
+#: templates/home.html:170
 msgid "Участвовать в международных      конференциях"
-msgstr ""
+msgstr "Xalqaro konferensiyada ishtirok etish"
 
-#: templates/home.html:171
+#: templates/home.html:184
 msgid ""
 "Оформляем научные материалы для журналов Scopus и ВАК. Берём на себя полные "
 "обязательства по доведению материала до публикации."
 msgstr ""
+" Scopus va Oliy attestatsiya komissiyasi jurnallari uchun ilmiy materiallar "
+"tayyorlaymiz. Materialni nashrga etish uchun to'liq javobgarlikni o'z "
+"zimmamizga olamiz."
 
-#: templates/home.html:188
+#: templates/home.html:203
 msgid "Консультация"
-msgstr ""
+msgstr "Dissertatasiya yuzasidan"
 
-#: templates/home.html:189
+#: templates/home.html:204
 msgid "по диссертациям"
-msgstr ""
+msgstr "maslahat olish"
 
-#: templates/home.html:192
+#: templates/home.html:207
 msgid ""
 "Научные конференции являются особенным видом взаимодействия между "
 "представителями исследовательского сообщества, в ходе которого они "
 "представляют свои работы в форме сборников"
 msgstr ""
+"Ilmiy konferensiyalar - tadqiqot davomida ishtirok etuvchi jamoa "
+"vakillarining o'zaro hamkorligi bo'lib, ular o'z ishlarini to'plam shaklida "
+"taqdim etadilar."
 
-#: templates/home.html:204
+#: templates/home.html:220
 msgid "Визуальные решения"
-msgstr ""
+msgstr "Ko'rgazmali yechim"
 
-#: templates/home.html:207
+#: templates/home.html:224
 msgid ""
 "Международные издания очень требовательны к качеству графических материалов. "
 "Доверьтесь профессионалам и не беспокойтесь за судьбу своей публикации."
 msgstr ""
+"Xalqaro nashriyotlar grafik materiallarning sifatiga juda talabchan. O'z "
+"ishining mutaxassislariga ishoning va maqolangiz taqdiri haqida qayg'urishga "
+"hojat ham qolmaydi."
 
-#: templates/home.html:219 templates/services.html:72
+#: templates/home.html:237 templates/services.html:72
 msgid "Переводы материалов"
-msgstr ""
+msgstr "Tarjima ishlari"
 
-#: templates/home.html:222
+#: templates/home.html:241
 msgid ""
 "Знакомьте научное сообщество со своими разработками благодаря качественным "
 "переводам на международные языки — опытные специалисты Editory к вашим "
 "услугам."
 msgstr ""
+"Xorijiy tillarga yuqori sifatli tarjima orqali o'z ilmiy ishingizni jahon "
+"ilmiy hamjamiyatiga taqdim eting- Editoryning tajribali mutaxassislari "
+"sizning xizmatingizda."
 
-#: templates/home.html:242
+#: templates/home.html:261
 msgid "Наши принципы"
-msgstr ""
+msgstr "Bizning tamoyillarimiz"
 
-#: templates/home.html:258
+#: templates/home.html:277
 msgid "Качество работы"
-msgstr ""
+msgstr "Ish sifati"
 
-#: templates/home.html:260
+#: templates/home.html:279
 msgid ""
 "Наука не прощает ошибок. Ответственность за работу на каждом этапе — вопрос "
 "репутации для нас."
 msgstr ""
+"Ilmda xatolar kechirilmaydi. Har bir bosqichda ishga mas'uliyat bilan "
+"yondashish biz uchun obro' masalasidir."
 
-#: templates/home.html:269
+#: templates/home.html:288
 msgid "Оперативность"
-msgstr ""
+msgstr "Tezkorlik "
 
-#: templates/home.html:271
+#: templates/home.html:290
 msgid ""
 "Собираем сведения, настраиваем коммуникации и выдаём результат в кратчайшие "
 "сроки"
 msgstr ""
+"Ma'lumotlarni  to'playmiz, aloqa o'rnatamiz va natijani imkon qadar tezroq "
+"yetkazib beramiz "
 
-#: templates/home.html:283
+#: templates/home.html:302
 msgid "Доверие"
-msgstr ""
+msgstr "Ishonch"
 
-#: templates/home.html:285
+#: templates/home.html:304
 msgid ""
 "Заботимся о репутации и персональных данных наших клиентах так же, как и о "
 "своих собственных"
 msgstr ""
+"Biz mijozlarimizning obro'si va shaxsiy ma'lumotlari bilan bir qatorda o'z "
+"shaxsiy ma'lumotlarimiz haqida ham qayg'uramiz"
 
-#: templates/home.html:296
+#: templates/home.html:315
 msgid "Управление рисками"
-msgstr ""
+msgstr "Qaltis vaziyatlardan chiqish"
 
-#: templates/home.html:298
+#: templates/home.html:317
 msgid ""
 "Наш опыт взаимодействия с научным сообществом позволяет избежать большинства "
 "трудностей в работе"
 msgstr ""
-
-#: templates/home.html:310
-msgid "Мы вывели в рейтинг QS"
-msgstr ""
-
-#: templates/home.html:321
-msgid "Национальный университет Узбекистана им. Мирзо-Улугбека"
-msgstr ""
+"Ilmiy hamjamiyat bilan muloqot orqali egallagan  tajribamiz ishda yuzaga "
+"keluvchi qiyinchiliklarning ko'p qismini chetlab o'tishga imkon beradi"
 
 #: templates/home.html:329
+msgid "Мы вывели в рейтинг QS"
+msgstr "Biz QS reytingiga kirishga ko’maklashgan oliy o’quv yurtlari"
+
+#: templates/home.html:340
+msgid "Национальный университет Узбекистана им. Мирзо-Улугбека"
+msgstr "Mirzo Ulug'bek nomidagi O'zbekiston Milliy Universiteti"
+
+#: templates/home.html:348
 msgid "Международная Исламская Академия Узбекистана"
-msgstr ""
+msgstr "Xalqaro Islom Akademiyasi"
 
-#: templates/home.html:337
+#: templates/home.html:356
 msgid "Ташкентский педиатрический медицинский институт"
-msgstr ""
+msgstr "Toshkent Pediatriya Tibbiyot Instituti"
 
-#: templates/home.html:345
+#: templates/home.html:364
 msgid "Ташкентская медицинская академия"
-msgstr ""
+msgstr "Toshkent Tibbiyot Akademiyasi"
 
-#: templates/home.html:353
+#: templates/home.html:372
 msgid "Ташкентский государственный экономический университет"
-msgstr ""
+msgstr "Toshkent Davlat Iqtisodiyot Universiteti"
 
-#: templates/home.html:406
+#: templates/home.html:425
 msgid "Ответы на вопросы"
-msgstr ""
+msgstr "Savollarga javoblar"
 
-#: templates/home.html:418
+#: templates/home.html:439
 msgid "Сколько стоит публикация статьи в Scopus?"
-msgstr ""
+msgstr "Scopusda maqola chop etish necha pul turadi?"
 
-#: templates/home.html:426
+#: templates/home.html:448
 msgid ""
 "Стоимость публикации в журналах с открытым доступом варьируется от 500 до "
 "5000 долларов США. Публикации в журналах с закрытым доступом бесплатны."
 msgstr ""
+"Ommaviy kirish ruxsat etilgan jurnallarda maqola nashr etish 500dan 5000 "
+"AQSh dollarigacha mablag’ talab etadi. Xususiy obunaga ega bo’lmay turib "
+"kirish imkoni berilmaydigan  jurnallarda esa nashrlar bepul. "
 
-#: templates/home.html:441
+#: templates/home.html:465
 msgid "Предполагает ли публикация выплаты её автору?"
-msgstr ""
+msgstr "Chop etilgan maqola evaziga to’lov ham taklif etiladimi ?"
 
-#: templates/home.html:448
+#: templates/home.html:473
 msgid ""
 "Премирование за выход научных публикаций обычно осуществляется "
 "университетом, под эгидой которого они были выпущены."
 msgstr ""
+"Universitet  qo'l ostida chop etilgan maqolalar evaziga beriladigan yutuq "
+"puli aynan Universitet tomonidan ta’sis etiladi"
 
-#: templates/home.html:466
+#: templates/home.html:493
 msgid "В чём разница между открытым и закрытым доступом к статье?"
-msgstr ""
+msgstr "Jurnallarga ommaviy va xususiy obuna bo’lishning farqi nimada?"
 
-#: templates/home.html:473
+#: templates/home.html:501
 msgid ""
 "С публикацией, размещённой в журнале с открытым доступом, мировое научное "
 "сообщество может ознакомиться сразу. На публикации в журналах закрытым "
 "доступом в течение 12-36 месяцев действует эмбарго, и в это время её могут "
 "читать только подписчики конкретного издания."
 msgstr ""
+"Jahon ilmiy hamjamiyati ochiq jurnalda joylashtirilgan maqola bilan darhol "
+"tanishishi mumkin. Yopiq jurnallar esa 12-36 oygacha maqolaning boshqa "
+"manbalarda aks etishiga  taqiq qo’yadi va xususiy obunaga ega bo’lgan "
+"o’quvchilargina u bilan tanishib chiqish huquqiga ega bo’lishlari mumkin. "
 
-#: templates/home.html:489
+#: templates/home.html:519
 msgid "Что, если мне не понравится результат работы?"
-msgstr ""
+msgstr "Men natija bilan qoniqmaydigan bo’lsamchi?"
 
-#: templates/home.html:496
+#: templates/home.html:527
 msgid ""
 "Мы настолько уверены в качестве наших услуг, что обещаем вернуть деньги, "
 "если вы не будете удовлетворены."
 msgstr ""
+"Biz o’z xizmatlarimiz sifatiga shunchalik ishonamizki, agar qoniqmasangiz "
+"pulingizni qaytarib olishingiz mumkin bo’ladi"
 
-#: templates/home.html:517
+#: templates/home.html:548
 msgid "Заявка на"
-msgstr ""
+msgstr "Bepul "
 
-#: templates/home.html:518
+#: templates/home.html:549
 msgid "бесплатную"
-msgstr ""
+msgstr "maslahat olish"
 
-#: templates/home.html:518
+#: templates/home.html:549
 msgid "консультацию"
-msgstr ""
+msgstr "uchun ariza"
 
-#: templates/home.html:519
+#: templates/home.html:550
 msgid "Оставьте свои данные и наш консультант свяжется с вами в течение часа"
 msgstr ""
+"O'z ma'lumotlaringizni qoldiring va bizning maslahatchimiz siz bilan bir "
+"soat ichida bog'lanadi"
 
-#: templates/home.html:544 templates/peer_review.html:102
-msgid "Согласие с политикой конфиденциальности"
-msgstr ""
-
-#: templates/language_editing.html:67
+#: templates/language_editing.html:73 templates/language_editing.html:118
+#: templates/language_editing.html:157
 msgid "Стандарт"
-msgstr ""
+msgstr "Ish"
 
-#: templates/language_editing.html:69 templates/language_editing.html:86
-#: templates/language_editing.html:103
+#: templates/language_editing.html:75 templates/language_editing.html:90
+#: templates/language_editing.html:104
 msgid "рабочих дней"
-msgstr ""
+msgstr "kunlari"
 
-#: templates/language_editing.html:70 templates/language_editing.html:88
-#: templates/language_editing.html:105
+#: templates/language_editing.html:76 templates/language_editing.html:91
+#: templates/language_editing.html:106
 msgid "сумов/слово"
 msgstr ""
 
-#: templates/language_editing.html:84
+#: templates/language_editing.html:88 templates/language_editing.html:119
+#: templates/language_editing.html:175
 msgid "Экспресс"
-msgstr ""
+msgstr "Exspress"
 
-#: templates/language_editing.html:101
+#: templates/language_editing.html:102 templates/language_editing.html:120
+#: templates/language_editing.html:191
 msgid "Премиум"
-msgstr ""
+msgstr "Primium"
+
+#: templates/language_editing.html:117
+msgid "Что входит в тариф"
+msgstr "Tarifga nimalar kiradi?"
 
 #: templates/language_editing.html:151
 msgid "Количество слов"
-msgstr ""
+msgstr "So'zlar miqdori"
 
 #: templates/language_editing.html:165 templates/language_editing.html:181
 #: templates/language_editing.html:198
 msgid "Выбрать"
-msgstr ""
+msgstr "Tanlash"
 
 #: templates/language_editing.html:171 templates/language_editing.html:186
-#: templates/language_editing.html:204
+#: templates/language_editing.html:204 templates/language_editing.html:257
+#: templates/language_editing.html:436
 msgid "сум"
-msgstr ""
+msgstr "qiymat"
 
-#: templates/language_editing.html:280 templates/language_editing.html:459
+#: templates/language_editing.html:222 templates/language_editing.html:397
+msgid "Форма оплаты"
+msgstr "To'lov turi"
+
+#: templates/language_editing.html:247 templates/language_editing.html:427
+msgid "Файл"
+msgstr "Fayl"
+
+#: templates/language_editing.html:257 templates/language_editing.html:436
+msgid "Цена"
+msgstr "Narx"
+
+#: templates/language_editing.html:278 templates/language_editing.html:456
 msgid "Заказать"
-msgstr ""
+msgstr "Buyurtma berish"
 
-#: templates/news.html:20
+#: templates/language_editing.html:366
+msgid "Отправить заявку"
+msgstr "Arizani jo'natish"
+
+#: templates/language_editing.html:476
+msgid "внимание"
+msgstr "Diqqat"
+
+#: templates/language_editing.html:482
+msgid "зарегистрируйтесь чтобы выполнить запрос"
+msgstr "So'rovni amalga oshirish uchun ro'yxatdan o'ting"
+
+#: templates/language_editing.html:485
+msgid "Закрыть"
+msgstr "Yopish"
+
+#: templates/language_editing.html:487 users/templates/users/register.html:38
+msgid "Зарегистрироваться"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/news.html:27 templates/search.html:15
 msgid "ВСЕ НОВОСТИ"
-msgstr ""
+msgstr "Barcha yangiliklar"
 
-#: templates/news.html:74
+#: templates/news.html:81
 msgid "На этой неделе"
-msgstr ""
+msgstr "Bu haftadagi"
 
-#: templates/news.html:88
+#: templates/news.html:95
 msgid "Новостей на этой неделю не найдено"
-msgstr ""
+msgstr "Bu haftalik yangiliklar topilmadi"
 
-#: templates/patents.html:156 templates/proofreading.html:250
-msgid ""
-"Оставляя заявку, вы соглашаетесь с обработкой ваших персональных данных."
-msgstr ""
+#: templates/paper.html:18
+msgid "Эрик Берн"
+msgstr "Erik Bren"
+
+#: templates/payment_type.html:10 templates/translation_payment.html:10
+msgid "Оплата"
+msgstr "To'lov"
+
+#: templates/payment_type.html:15
+msgid "клиент"
+msgstr "Mijoz"
+
+#: templates/payment_type.html:25
+msgid "Телефон"
+msgstr "Telefon"
+
+#: templates/payment_type.html:35 templates/translation_payment.html:34
+#: users/templates/users/dashboard.html:156
+#: users/templates/users/dashboard.html:202
+msgid "Способ оплаты"
+msgstr "To'lov turi"
+
+#: templates/payment_type.html:50 templates/translation_payment.html:51
+#: users/templates/users/dashboard.html:153
+#: users/templates/users/dashboard.html:200
+msgid "Услуга"
+msgstr "Xizmat"
+
+#: templates/payment_type.html:60 templates/translation_payment.html:71
+#: users/templates/users/dashboard.html:155
+msgid "Сумма"
+msgstr "Summa"
+
+#: templates/payment_type.html:63
+msgid "сумм"
+msgstr "Sum"
+
+#: templates/payment_type.html:68
+msgid "Отмена"
+msgstr "Bekor qilish"
 
 #: templates/payment_type.html:88 templates/translation_payment.html:98
 msgid "Оплатить с помощью"
-msgstr ""
+msgstr "To'lov turi"
 
 #: templates/payment_type.html:101 templates/translation_payment.html:111
 msgid "Оплатить спомощью"
-msgstr ""
+msgstr "To'lov turi"
 
 #: templates/peer_review.html:13
 msgid "Заказ рецензии"
-msgstr ""
+msgstr "Dissertatsiya uchun "
 
 #: templates/peer_review.html:13
 msgid "на диссертацию"
-msgstr ""
+msgstr "taqrizga buyurtma berish"
 
-#: templates/peer_review.html:21 templates/proofreading.html:164
+#: templates/peer_review.html:21 templates/proofreading.html:171
 msgid "Имя автора"
-msgstr ""
+msgstr "Muallifning ismi sharifi"
 
-#: templates/peer_review.html:30 templates/proofreading.html:174
+#: templates/peer_review.html:30 templates/proofreading.html:181
 msgid "Название материала"
-msgstr ""
+msgstr "Ilmiy ishning nomi"
 
-#: templates/peer_review.html:39 templates/proofreading.html:183
-#: templates/translation.html:83
+#: templates/peer_review.html:39 templates/proofreading.html:190
+#: templates/translation.html:90
 msgid "Область исследований"
-msgstr ""
+msgstr "Tadqiqot sohasi"
 
 #: templates/peer_review.html:58
 msgid "Научная степень автора"
-msgstr ""
+msgstr "Muallifning ilmiy darajasi"
 
 #: templates/peer_review.html:75
 msgid "Научный руководитель"
-msgstr ""
+msgstr "Ilmiy rahbar"
 
-#: templates/peer_review.html:88 templates/proofreading.html:232
-#: templates/translation.html:105
+#: templates/peer_review.html:88 templates/proofreading.html:239
+#: templates/translation.html:112
 msgid "Комментарии/ особые пожелания"
-msgstr ""
+msgstr "Sharhlar/ maxsus qo'shimchalar"
 
-#: templates/proofreading.html:41
+#: templates/peer_review.html:102
+msgid "Согласие с политикой конфиденциальности"
+msgstr "Maxfiylik siyosatiga rozilik berish"
+
+#: templates/proofreading.html:48
 msgid "Рецензирование"
-msgstr ""
+msgstr "Taqriz yozish"
 
-#: templates/proofreading.html:155
+#: templates/proofreading.html:162
 msgid "Заявка на корректуру"
-msgstr ""
+msgstr "Tahrirga buyurtma berish hamda"
 
-#: templates/proofreading.html:155
+#: templates/proofreading.html:162
 msgid "и редактирование диссертации"
-msgstr ""
+msgstr "dissertatsiyani tahrirlash"
 
-#: templates/proofreading.html:203
+#: templates/proofreading.html:210
 msgid "Кол-во слов"
-msgstr ""
+msgstr "So'zlar soni"
 
-#: templates/proofreading.html:212 templates/translation.html:94
+#: templates/proofreading.html:219 templates/translation.html:101
 msgid "Язык редактирования"
-msgstr ""
+msgstr "Tahrir tili"
 
-#: templates/proofreading.html:221
+#: templates/proofreading.html:228
 msgid "Сертификат об использовании языкового редактирования"
-msgstr ""
+msgstr "Tillararo tahrirlash huquqini beruvchi sertifikat"
 
-#: templates/research_intelligense.html:15 templates/research_platform.html:23
+#: templates/research_intelligense.html:15 templates/research_platform.html:6
+#: templates/research_platform.html:30
 msgid ""
 "Исследовательские платформы - это успешный инструмент для междисциплинарных "
 "исследовательских проектов сотрудничества. Создание исследовательских "
@@ -1011,10 +1174,16 @@ msgid ""
 "дисциплин и факультетов, которые могут подавать свои заявки в ходе конкурса "
 "заявок. Заявки оцениваются международными экспертами."
 msgstr ""
+"Tadqiqot platformalari fanlararo ilmiy hamkorlik loyihalari uchun "
+"muvaffaqiyatli vositadir. Tadqiqot platformalarini yaratishni turli fanlar "
+"va fakultetlarning akademiklari va tadqiqot guruhlari boshlab beradilar, "
+"ular o'z arizalarini taklif ko'rinishida yuborishlari mumkin. Arizalar "
+"xalqaro ekspertlar tomonidan baholanadi."
 
 #: templates/research_intelligense.html:19
 msgid "Для чего нужна стратегия исследования?"
 msgstr ""
+"Ilmiy tadqiqot uchun puxta ishlab chiqilgan ish rejasi nima uchun muhim?"
 
 #: templates/research_intelligense.html:21
 #: templates/research_intelligense.html:30
@@ -1025,6 +1194,12 @@ msgid ""
 "представляет собой интересный эксперимент проверки направлений "
 "прогрессивного развития."
 msgstr ""
+"Kadrlar tayyorlash doirasi va joyining xilma -xil va boy tajribasi "
+"ishtirokchilar tomonidan qo'yilgan vazifalarga nisbatan egallagan "
+"pozitsiyalarini ishlab chiqishda muhim vazifalarni bajarishga imkon beradi. "
+"Boshqa tarafdan qaralsa, kadrlar tayyorlash doirasi va joyi-progressiv "
+"rivojlanish yo'nalishlarini tekshirishda qiziqarli tajriba vositasini ham "
+"bajaradi."
 
 #: templates/research_intelligense.html:23
 #: templates/research_intelligense.html:32
@@ -1039,6 +1214,16 @@ msgid ""
 "забывать, что рамки и место обучения кадров требуют определения и уточнения "
 "направлений прогрессивного развития."
 msgstr ""
+"Turli va boy tajriba, tuzilmaning mustahkamlanishi va rivojlanishi kadrlar "
+"tayyorlash tizimini shakllantirishda muhim rol o'ynaydi, dolzarb "
+"ehtiyojlarni qondiradi. Yuqori darajadagi mafkuraviy mulohazalar, "
+"shuningdek, faoliyatning turli shakllarini yanada rivojlantirish, "
+"rivojlanish modellarini joriy etish va modernizatsiya qilish jarayonini o'z "
+"ichiga oladi. Bu muammolarning ahamiyati shunchalik ravshanki, pozitsiyani "
+"shakllantirish bo'yicha kundalik ishlarning boshlanishi progressiv "
+"rivojlanish yo'nalishlarini shakllantirishda muhim rol o'ynaydi. Shuni esdan "
+"chiqarmaslik kerakki, kadrlar tayyorlash doirasi va joyi progressiv "
+"rivojlanish yo'nalishlarini aniqlash va tushuntirishni talab qiladi."
 
 #: templates/research_intelligense.html:25
 msgid ""
@@ -1046,32 +1231,42 @@ msgid ""
 "базу данных рефератов и цитирований с расширенными данными и связанным "
 "научным контентом."
 msgstr ""
+"Scopus keng qamrovli, puxta tuzilgan referatlar va iqtiboslar bazasini "
+"ilg'or ma'lumotlar va tegishli ilmiy tarkib bilan birlashtirib turadi"
 
 #: templates/research_intelligense.html:26
 msgid "Б.Махкамов"
-msgstr ""
+msgstr "B.Mahkamov"
 
-#: templates/research_platform.html:42
+#: templates/research_platform.html:49
 msgid "Смотреть исходники"
-msgstr ""
+msgstr "Manbani ko'rish "
 
-#: templates/research_strategy.html:82
-msgid "Партнёрство и сотрудничество"
-msgstr ""
+#: templates/research_strategy.html:55
+msgid "Партнерство и сотрудничество"
+msgstr "Sheriklik va hamkorlik"
 
-#: templates/research_strategy.html:101
+#: templates/research_strategy.html:58 templates/research_strategy.html:110
 msgid "Финансирование"
-msgstr ""
+msgstr "Moliyalashtirish"
 
-#: templates/research_strategy.html:118
+#: templates/research_strategy.html:61
+msgid "Управление исследованиями"
+msgstr "Ilmiy ishni boshqarish"
+
+#: templates/research_strategy.html:91
+msgid "Партнёрство и сотрудничество"
+msgstr "Sheriklik va hamkorlik"
+
+#: templates/research_strategy.html:127
 msgid "Управление исследовательским процессом"
-msgstr ""
+msgstr "Ilmiy jarayonni boshqarish"
 
-#: templates/scientific_papers.html:20
+#: templates/scientific_papers.html:28
 msgid "Научные издания"
-msgstr ""
+msgstr "Ilmiy nashrlar"
 
-#: templates/scientific_papers.html:22
+#: templates/scientific_papers.html:30
 msgid ""
 "Позвольте Editory стать вашим проводником в мир доступной информации. Здесь "
 "вы найдёте рейтинги исследовательских журналов Узбекистана и всего мира, "
@@ -1080,113 +1275,119 @@ msgid ""
 "тенденциями. К вашим услугам — самые качественные материалы от признанных "
 "экспертов. Editory желает вам приятного чтения."
 msgstr ""
+"Editory sizga ma'lumot olamiga yo'l ko'rsatuvchi bo'lishiga imkon bering. Bu "
+"yerda siz O'zbekiston va butun dunyodagi tadqiqot jurnallarining "
+"reytinglarini, tezislar va dissertatsiyalarini, shuningdek, so'nggi ilmiy "
+"tendentsiyalardan ortda qolmaslik  uchun albatta o'qishingiz kerak bo'lgan "
+"monografiyalarni topasiz. Sizning xizmatingizda - taniqli mutaxassislarning "
+"eng yuqori sifatli materiallari. Editory sizga yoqimli mutolaa tilaydi."
 
-#: templates/scientific_papers.html:38
+#: templates/scientific_papers.html:46
 msgid "ТОП-25 наиболее цитируемых статей"
-msgstr ""
+msgstr "Top-25 ta eng ko'p havola keltirilgan maqolalar"
 
-#: templates/scientific_papers.html:39
+#: templates/scientific_papers.html:47
 msgid ""
 "Мы подобрали 5 наиболее заметных и полезных изданий среди всего многообразия "
 "международных журналов"
 msgstr ""
+"Biz turli xil xalqaro jurnallar orasida eng ko'zga ko'ringan va foydali 5 "
+"nashrni tanladik"
 
-#: templates/scientific_papers.html:48
+#: templates/scientific_papers.html:56
 msgid "ТОП-5 изданий Узбекистана"
-msgstr ""
+msgstr "O'zbekistondagi Top-5 nashrlar"
 
-#: templates/scientific_papers.html:49
+#: templates/scientific_papers.html:57
 msgid ""
 "Будьте в курсе актуальных исследований и проблем научного сообщества нашей "
 "республики"
 msgstr ""
+"Respublikamiz ilmiy hamjamiyatining dolzarb tadqiqotlari va muammolaridan "
+"xabardor bo'ling"
 
-#: templates/scientific_papers.html:57
+#: templates/scientific_papers.html:65
 msgid "ТОП-10 самых цитируемых статей учёных Узбекистана"
-msgstr ""
+msgstr "O'zbekiston olimlarining eng ko'p havola qilingan TOP-10 maqolalari"
 
-#: templates/scientific_papers.html:58
+#: templates/scientific_papers.html:66
 msgid ""
 "Предлагаем к ознакомлению наиболее заметные и интересные научные работы за "
 "последнее время"
 msgstr ""
+"Biz so'nggi yillardagi eng diqqatga sazovor va qiziqarli ilmiy ishlarni "
+"ko'rib chiqishni taklif qilamiz"
 
-#: templates/scientific_papers.html:66
+#: templates/scientific_papers.html:74
 msgid "ТОП-10 диссертаций, изменивших науку"
-msgstr ""
+msgstr "Top-10 ta ilm-fanni o'zgartira olgan dissertatsiyalar"
 
-#: templates/scientific_papers.html:67
+#: templates/scientific_papers.html:75
 msgid ""
 "Погрузитесь в изучение фундаментальных исследования, сделавшие значительный "
 "вклад в мировую науку"
 msgstr ""
+"Jahon ilm-faniga katta hissa qo'shgan fundamental tadqiqotlarni o'rganing"
 
-#: templates/scopus.html:68
+#: templates/scopus.html:74
 msgid "Наши гарантии"
-msgstr ""
+msgstr "Bizning kafolatimiz"
 
 #: templates/services.html:53
 msgid "Консультация по"
-msgstr ""
+msgstr "Dissertatsiya yuzasidan"
 
 #: templates/services.html:53
 msgid "диссертациям"
-msgstr ""
+msgstr "maslahat olish"
 
 #: templates/services.html:65
 msgid "Дополнительные"
-msgstr ""
+msgstr "Qo'shimcha"
 
 #: templates/services.html:65
 msgid "услуги"
-msgstr ""
+msgstr "xizmatlar"
 
 #: templates/services.html:71
 msgid "Визуальное оформление статей"
-msgstr ""
+msgstr "Maqolani ko'rgazmali bezash"
 
 #: templates/services.html:73
 msgid "Распечатка публикаций"
-msgstr ""
+msgstr "Nashr etilgan maqolani chop etish"
 
-#: templates/translation_payment.html:10
-msgid "Оплата"
+#: templates/translation.html:143
+msgid "Вы можете конвертировать свои файлы в формат docx здесь"
 msgstr ""
+"O'z hujjatlaringizni docx formatiga shu yerda konvertatsiya qilishingiz "
+"mumkin"
 
 #: templates/translation_payment.html:14
 msgid "Заказчик"
-msgstr ""
+msgstr "Buyutma beruvchi"
 
 #: templates/translation_payment.html:24
 msgid "Телефонный номер"
-msgstr ""
+msgstr "Telefon raqam"
 
-#: templates/translation_payment.html:34
-#: users/templates/users/dashboard.html:156
-#: users/templates/users/dashboard.html:202
-msgid "Способ оплаты"
-msgstr ""
-
-#: templates/translation_payment.html:51
-#: users/templates/users/dashboard.html:153
-#: users/templates/users/dashboard.html:200
-msgid "Услуга"
-msgstr ""
+#: templates/translation_payment.html:40
+msgid "Выберите способ оплаты"
+msgstr "To'lov usulini tanlang"
 
 #: templates/translation_payment.html:61
 msgid "Количество символов"
-msgstr ""
-
-#: templates/translation_payment.html:71
-#: users/templates/users/dashboard.html:155
-msgid "Сумма"
-msgstr ""
+msgstr "Belgilar soni"
 
 #: templates/translation_payment.html:79
 msgid "отмена"
-msgstr ""
+msgstr "Bekor qilindi"
 
 #: templates/webinars.html:19
+msgid "Все вебинары"
+msgstr "Barcha webinarlar"
+
+#: templates/webinars.html:27
 msgid ""
 "Как написать научную статью? Как взаимодействовать с исследовательскими "
 "платформами и быстро находить нужную информацию? Правильный подход — ключ к "
@@ -1194,6 +1395,13 @@ msgid ""
 "понять, как именно следует действовать. Наш опыт достаточно разнообразен, "
 "чтобы вы нашли в наших материалах ответы на любые вопросы."
 msgstr ""
+"Qanday qilib ilmiy maqola yozish kerak? Qanday qilib tadqiqot "
+"platformalaridan foydalanish va kerakli ma'lumotlarni tezda topish mumkin? "
+"To'g'ri yondashuv - muvaffaqiyat kaliti. O'z g'oyalaringizni amalga "
+"oshirishdan qo'rqmang! Editory webinari sizga qanday davom etish kerakligini "
+"tushunishga yordam beradi. Bizning tajribamiz juda xilma -xil sohalarni "
+"qamrab olgan bo'lib, materiallarimiz orqali har qanday savolingizga javob "
+"topishingiz mumkin."
 
 #: users/managers.py:15
 msgid "The Email must be set"
@@ -1209,83 +1417,79 @@ msgstr ""
 
 #: users/models.py:10
 msgid "email address"
-msgstr ""
+msgstr "email manzil"
 
 #: users/templates/users/dashboard.html:17
 msgid "оплата проведена успешно"
-msgstr ""
+msgstr "To'lov muvaffaqiyatli amalga oshirildi"
 
 #: users/templates/users/dashboard.html:51
 msgid "Редактировать профиль"
-msgstr ""
+msgstr "Shaxsiy sahifaga o'zgartish kiritish"
 
 #: users/templates/users/dashboard.html:69
 msgid "Сменить статус"
-msgstr ""
+msgstr "Statusni o'zgartirish"
 
 #: users/templates/users/dashboard.html:125
 msgid "Сохранить изменения"
-msgstr ""
+msgstr "O'zgarishni saqlash"
 
 #: users/templates/users/dashboard.html:147
 msgid "История"
-msgstr ""
+msgstr "Tarix"
 
 #: users/templates/users/dashboard.html:154
 #: users/templates/users/dashboard.html:201
 msgid "Дата"
-msgstr ""
+msgstr "Sana"
 
 #: users/templates/users/dashboard.html:157
 msgid "Статус"
-msgstr ""
+msgstr "Holat"
 
 #: users/templates/users/dashboard.html:158
 #: users/templates/users/dashboard.html:188
 msgid "принимать"
-msgstr ""
+msgstr "qabul qilish"
 
 #: users/templates/users/dashboard.html:175
 #: users/templates/users/dashboard.html:179
 msgid "не оплачен"
-msgstr ""
+msgstr "To'lov amalga oshirilmagan"
 
 #: users/templates/users/dashboard.html:177
 msgid "оплачен"
-msgstr ""
+msgstr "To'landi"
 
 #: users/templates/users/dashboard.html:184
 msgid "принимать как оплачено"
-msgstr ""
+msgstr "To'landi"
 
 #: users/templates/users/dashboard.html:203
 msgid "Статус оплаты"
-msgstr ""
+msgstr "To'lov holati"
 
 #: users/templates/users/dashboard.html:252
 msgid "Оплачен"
-msgstr ""
+msgstr "To'landi"
 
 #: users/templates/users/login.html:18 users/templates/users/login.html:33
 msgid "Вход"
-msgstr ""
+msgstr "Kirish"
 
 #: users/templates/users/login.html:27 users/templates/users/register.html:28
 msgid "Пароль"
-msgstr ""
+msgstr "Parol"
 
 #: users/templates/users/login.html:32 users/templates/users/register.html:10
 msgid "Регистрация"
-msgstr ""
+msgstr "Ro'yxatdan o'tish"
 
 #: users/templates/users/login.html:34
 msgid "забыл пароль?"
-msgstr ""
+msgstr "Parolni unutdingizmi?"
 
 #: users/templates/users/register.html:33
-msgid "Подверждении пароля"
-msgstr ""
-
-#: users/templates/users/register.html:38
-msgid "Зарегистрироваться"
-msgstr ""
+msgid "Подтверждение пароля"
+msgstr "Parolni tasdiqlash"

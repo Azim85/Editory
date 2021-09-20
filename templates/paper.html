@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block css %}
 
@@ -14,7 +15,7 @@
             </div>
             <div class="offset-1 col-lg-7">
                 <div class="h2">{{ single_research.title }}</div>
-                <div class="small text-secondary py-3">Эрик Берн</div>
+                <div class="small text-secondary py-3">{% trans 'Эрик Берн' %}</div>
                 <div>{{ single_research.description }}</div>
             </div>
         </div>
@@ -24,7 +25,6 @@
             <div class="row">
                 <div class="col-lg-8"> {{ single_research.more|safe }}</div>
             </div>
-            -->
         </div>
     </div>
 
