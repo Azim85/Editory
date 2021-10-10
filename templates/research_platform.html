@@ -45,7 +45,7 @@ mix-blend-mode: luminosity;
                 {% for t in text %}
                     <div class="col-lg-6 mb-5">
                         <div class="main-color h3 font-weight-bold">{{ t.name }}</div>
-                        <div class="mb-3">{{ t.context }}</div>
+                        <div class="mb-3">{{ t.context|safe }}</div>
                         <a href="{{ t.link }}" class="link-color ">{% trans 'Смотреть исходники' %}</a>
                     </div>
                 {% endfor %}
