@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import WebinarsModel, TranslationModel
 
-from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
+from .models import (AboutUsModel, ResearchPlatformsContext, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
                      DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
                      ResearchStrategyModel, top10Uz, top25, top10 ,top5Uz, WebinarsUrls1)
 
@@ -80,6 +80,8 @@ admin.site.register(ScopusModel, ScopusAdmin)
 admin.site.register(ProofModel, ProofAdmin)
 admin.site.register(LangEditModel, LangAdmin)
 admin.site.register(ResearchStrategyModel)
+
+admin.site.register(ResearchPlatformsContext)
 
 admin.site.register(top10)
 admin.site.register(top10Uz)

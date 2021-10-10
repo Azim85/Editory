@@ -12,7 +12,8 @@ from orders.models import OrderModel
 
 from .forms import (ConsultationForm, FreeConsultationForm, ProofreadingForm, BaksForm, ScopusesForm,
                     PeerReviewForm, OrganizeConferencesForm, GrantsForm, TranslationForm, PatentsForm, DesignsForm)
-from .models import Translation, ResearchPlatformsContext, GetDesign
+from .models import Translation,  GetDesign
+from setpage.models import ResearchPlatformsContext
 
 from setpage.forms import WebinarsForm, TranslationsForm
 

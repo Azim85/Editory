@@ -206,3 +206,9 @@ class WebinarsUrls1(models.Model):
 
     def __str__(self):
         return self.url
+
+
+class ResearchPlatformsContext(models.Model):
+    name = models.CharField(max_length=100)
+    context = RichTextUploadingField(null=True, blank=True)
+    link = models.CharField(max_length=255)

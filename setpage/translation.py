@@ -1,10 +1,12 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import WebinarsModel, TranslationModel, top5Uz
-
 from .models import (AboutUsModel, BakModel, ConferencesModel, ContactModel, CreateConferenceModel,
                      DesignModel, GrantsModel, PatentModel, ScopusModel, ProofModel, LangEditModel,
-                     ResearchStrategyModel, top10Uz, top25, top10)
+                     ResearchStrategyModel, top10Uz, top25, top10, ResearchPlatformsContext)
 
+
+class ResearchPlatformsContextTranslation(TranslationOptions):
+    fields = ('context',)
 
 class AboutUsTranslation(TranslationOptions):
     fields = ('text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9')
@@ -76,6 +78,7 @@ class top5UzTranslations(TranslationOptions):
     fields = ('name', 'description')
 
 
+translator.register(ResearchPlatformsContext, ResearchPlatformsContextTranslation)
 translator.register(AboutUsModel, AboutUsTranslation)
 translator.register(BakModel, BakTranslation)
 translator.register(ConferencesModel, ConferencesTranslation)

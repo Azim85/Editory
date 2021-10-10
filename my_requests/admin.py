@@ -14,7 +14,6 @@ from .models import (
     Grants,
     Language,
     Translation,
-    ResearchPlatformsContext,
     GetPatent,
     GetGrant,
     GetDesign,
@@ -41,7 +40,6 @@ class ProofreadingAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ResearchGrant)
-admin.site.register(ResearchPlatformsContext)
 admin.site.register(Language)
 admin.site.register(PublicationToScopus)
 admin.site.register(OrderReviewForDissertation)
