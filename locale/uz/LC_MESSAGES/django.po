@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-14 14:07+0500\n"
-"PO-Revision-Date: 2021-09-16 12:27+0500\n"
+"PO-Revision-Date: 2021-10-18 15:09+0500\n"
 "Language: uz@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -367,7 +367,7 @@ msgstr "Murojaat uchun"
 
 #: templates/components/footer.html:32
 msgid "г. Ташкент, Алмазарский район, Себзар 3"
-msgstr "Toshkent shahar, Olmazor tumani, Sebzor 3"
+msgstr "Toshkent, Olmazar mahallasi, Sebzar 3"
 
 #: templates/components/footer.html:36
 msgid "Мы в соцсетях"
@@ -965,7 +965,7 @@ msgstr ""
 #: templates/language_editing.html:73 templates/language_editing.html:118
 #: templates/language_editing.html:157
 msgid "Стандарт"
-msgstr "Ish"
+msgstr "Standart"
 
 #: templates/language_editing.html:75 templates/language_editing.html:90
 #: templates/language_editing.html:104
@@ -980,12 +980,12 @@ msgstr ""
 #: templates/language_editing.html:88 templates/language_editing.html:119
 #: templates/language_editing.html:175
 msgid "Экспресс"
-msgstr "Exspress"
+msgstr "Ekspress"
 
 #: templates/language_editing.html:102 templates/language_editing.html:120
 #: templates/language_editing.html:191
 msgid "Премиум"
-msgstr "Primium"
+msgstr "Premium"
 
 #: templates/language_editing.html:117
 msgid "Что входит в тариф"
